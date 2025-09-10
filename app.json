@@ -1,0 +1,39 @@
+{
+  "id": "b8a0c5af-539b-4899-bfc7-b408d3960add",
+  "name": "JGContainer",
+  "publisher": "Comm-IT",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+    {
+      "id": "aaa6af16-1561-4892-9abc-905252fa9776",
+      "name": "Logistics",
+      "version": "1.0.0.0",
+      "publisher": "Comm-IT"
+    }
+  ],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "26.0.0.0",
+  "idRanges": [
+    {
+      "from": 50200,
+      "to": 50250
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "15.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}
