@@ -12,7 +12,7 @@ report 50211 "Sales Quotation Report"
         dataitem(SalesHeader; "Sales Header")
         {
             RequestFilterFields = "No.";
-
+            // Modify
             // --- Company Info ---
             column(companyName; CompanyInfo.Name) { }
             column(CompanyAddress; CompanyAddress) { }
