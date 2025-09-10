@@ -5,7 +5,7 @@ report 50211 "Sales Quotation Report"
     DefaultLayout = RDLC;
     PreviewMode = PrintLayout;
     RDLCLayout = './src/Reports/Layouts/SalesQuotation.rdlc';
-    UsageCategory = ReportsAndAnalysis;
+    UsageCategory = ReportsAndAnalysis; 
 
     dataset
     {
