@@ -5,14 +5,14 @@ report 50211 "Sales Quotation Report"
     DefaultLayout = RDLC;
     PreviewMode = PrintLayout;
     RDLCLayout = './src/Reports/Layouts/SalesQuotation.rdlc';
-    UsageCategory = ReportsAndAnalysis;
+    UsageCategory = ReportsAndAnalysis; 
 
     dataset
     {
         dataitem(SalesHeader; "Sales Header")
         {
             RequestFilterFields = "No.";
-
+            // Modify
             // --- Company Info ---
             column(companyName; CompanyInfo.Name) { }
             column(CompanyAddress; CompanyAddress) { }
