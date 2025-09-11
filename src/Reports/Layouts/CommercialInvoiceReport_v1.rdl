@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-10T01:46:11.2821590Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-11T04:33:48.2941138Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -5366,7 +5366,7 @@
               <Value>=First(Fields!CompanyPicture1.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
-              <Top>0.49833cm</Top>
+              <Top>0.18083cm</Top>
               <Left>12.28581cm</Left>
               <Height>2.26675cm</Height>
               <Width>2.04352cm</Width>
@@ -5382,7 +5382,7 @@
               <Value>=First(Fields!CompanyPicture2.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
-              <Top>0.49833cm</Top>
+              <Top>0.18083cm</Top>
               <Left>14.32933cm</Left>
               <Height>2.26675cm</Height>
               <Width>2.22356cm</Width>
@@ -5398,7 +5398,7 @@
               <Value>=First(Fields!CompanyPicture3.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
-              <Top>0.49833cm</Top>
+              <Top>0.18083cm</Top>
               <Left>16.55289cm</Left>
               <Height>2.26675cm</Height>
               <Width>2.02102cm</Width>
@@ -5438,9 +5438,9 @@
                 </Paragraph>
               </Paragraphs>
               <Top>0.20945cm</Top>
-              <Left>2.21519cm</Left>
+              <Left>0.22346cm</Left>
               <Height>0.37013cm</Height>
-              <Width>10.23006cm</Width>
+              <Width>10.3241cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
