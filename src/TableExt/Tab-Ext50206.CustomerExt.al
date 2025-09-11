@@ -9,7 +9,7 @@ tableextension 50206 "Customer Ext" extends Customer
         }
         field(50202; "Incoterms"; Code[20])
         {
-            Caption = 'Incoterms';
+            Caption = 'Incoterms'; //Done
             DataClassification = CustomerContent;
             TableRelation = Incoterms.Code;
         }
