@@ -2232,9 +2232,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>0.61147cm</Top>
+              <Top>0.27281cm</Top>
               <Left>1.4423cm</Left>
-              <Height>17.79319pt</Height>
+              <Height>27.393pt</Height>
               <Width>10.04054cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
@@ -2655,9 +2655,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>0.61147cm</Top>
+              <Top>0.27281cm</Top>
               <Left>7.60094cm</Left>
-              <Height>17.79288pt</Height>
+              <Height>27.39269pt</Height>
               <Width>3.8819cm</Width>
               <ZIndex>17</ZIndex>
               <Style>
@@ -2672,7 +2672,6 @@
               <Value>=First(Fields!CompanyPicture1.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
-              <Top>0.27281cm</Top>
               <Left>11.79533cm</Left>
               <Height>2.26675cm</Height>
               <Width>2.04352cm</Width>
@@ -2688,7 +2687,6 @@
               <Value>=First(Fields!CompanyPicture2.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
-              <Top>0.27281cm</Top>
               <Left>13.83886cm</Left>
               <Height>2.26675cm</Height>
               <Width>2.22356cm</Width>
@@ -2704,7 +2702,6 @@
               <Value>=First(Fields!CompanyPicture3.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
-              <Top>0.27281cm</Top>
               <Left>16.06242cm</Left>
               <Height>2.26675cm</Height>
               <Width>2.02102cm</Width>
@@ -2720,9 +2717,9 @@
               <Value>=First(Fields!CompanyLogo.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
-              <Top>0.59031cm</Top>
+              <Top>0.27281cm</Top>
               <Left>0.34765cm</Left>
-              <Height>0.64441cm</Height>
+              <Height>0.96191cm</Height>
               <Width>1.09465cm</Width>
               <ZIndex>21</ZIndex>
               <Style>

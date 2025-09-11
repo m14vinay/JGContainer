@@ -4614,16 +4614,16 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>0.49833cm</Top>
+              <Top>0.18083cm</Top>
               <Left>1.35324cm</Left>
-              <Height>15pt</Height>
+              <Height>24pt</Height>
               <Width>10.12118cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Top</VerticalAlign>
+                <VerticalAlign>Middle</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="CompanyAddress">
@@ -5302,16 +5302,16 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>0.49833cm</Top>
+              <Top>0.18083cm</Top>
               <Left>7.54356cm</Left>
-              <Height>15pt</Height>
+              <Height>24pt</Height>
               <Width>3.8819cm</Width>
               <ZIndex>15</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Top</VerticalAlign>
+                <VerticalAlign>Middle</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="ExecutionTimeTextBox41">
@@ -5350,10 +5350,10 @@
               <Value>=First(Fields!CompanyLogo.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
-              <Top>0.49833cm</Top>
+              <Top>0.18083cm</Top>
               <Left>0.37213cm</Left>
-              <Height>0.59972cm</Height>
-              <Width>0.94583cm</Width>
+              <Height>0.91722cm</Height>
+              <Width>0.98111cm</Width>
               <ZIndex>17</ZIndex>
               <Style>
                 <Border>
@@ -5366,9 +5366,8 @@
               <Value>=First(Fields!CompanyPicture1.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
-              <Top>0.18083cm</Top>
               <Left>12.28581cm</Left>
-              <Height>2.26675cm</Height>
+              <Height>2.44758cm</Height>
               <Width>2.04352cm</Width>
               <ZIndex>18</ZIndex>
               <Style>
@@ -5382,9 +5381,8 @@
               <Value>=First(Fields!CompanyPicture2.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
-              <Top>0.18083cm</Top>
               <Left>14.32933cm</Left>
-              <Height>2.26675cm</Height>
+              <Height>2.44758cm</Height>
               <Width>2.22356cm</Width>
               <ZIndex>19</ZIndex>
               <Style>
@@ -5398,9 +5396,8 @@
               <Value>=First(Fields!CompanyPicture3.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
-              <Top>0.18083cm</Top>
               <Left>16.55289cm</Left>
-              <Height>2.26675cm</Height>
+              <Height>2.44758cm</Height>
               <Width>2.02102cm</Width>
               <ZIndex>20</ZIndex>
               <Style>
