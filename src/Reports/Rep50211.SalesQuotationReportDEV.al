@@ -5,7 +5,7 @@ report 50211 "Sales Quotation Report"
     DefaultLayout = RDLC;
     PreviewMode = PrintLayout;
     RDLCLayout = './src/Reports/Layouts/SalesQuotation.rdlc';
-    UsageCategory = ReportsAndAnalysis; 
+    UsageCategory = ReportsAndAnalysis;
 
     dataset
     {
@@ -199,6 +199,9 @@ report 50211 "Sales Quotation Report"
     local procedure GetCompanyInfo()
     var
         Country: Record "Country/Region";
+        County: Record County;
+        CountyName: Text;
+
     begin
         if not CompanyInfo.Get() then
             CompanyInfo.Init();
@@ -211,9 +214,14 @@ report 50211 "Sales Quotation Report"
             CompanyAddress += ', ' + CompanyInfo."Post Code";
         if CompanyInfo.City <> '' then
             CompanyAddress += ', ' + CompanyInfo.City;
+        if (CompanyInfo.County <> '') then
+            if County.Get(CompanyInfo.County) then
+                CountyName := County.Description;
+        CompanyAddress += ', ' + CountyName;
         if CompanyInfo."Country/Region Code" <> '' then
             if Country.Get(CompanyInfo."Country/Region Code") then
                 CompanyAddress += ', ' + Country.Name;
+
 
         // Bank 1
         Clear(Bank1_AccountNo);
@@ -250,14 +258,21 @@ report 50211 "Sales Quotation Report"
     var
         CountryRegion: Record "Country/Region";
         CountryName: Text;
+        County: Record County;
+        CountyName: Text;
+
     begin
         if SalesHeader."Bill-to Country/Region Code" <> '' then
             if CountryRegion.Get(SalesHeader."Bill-to Country/Region Code") then
                 CountryName := CountryRegion.Name;
 
+        if (CompanyInfo.County <> '') then
+            if County.Get(CompanyInfo.County) then
+                CountyName := County.Description;
+
         exit(Format(SalesHeader."Bill-to Post Code" + ', '
                   + SalesHeader."Bill-to City" + ', '
-                  + SalesHeader."Bill-to County" + ', '
+                  + CountyName + ', '
                   + CountryName));
     end;
 
@@ -285,14 +300,21 @@ report 50211 "Sales Quotation Report"
     var
         CountryRegion: Record "Country/Region";
         CountryName: Text;
+        County: Record County;
+        CountyName: Text;
+
     begin
         if SalesHeader."Ship-to Country/Region Code" <> '' then
             if CountryRegion.Get(SalesHeader."Ship-to Country/Region Code") then
                 CountryName := CountryRegion.Name;
 
+        if (CompanyInfo.County <> '') then
+            if County.Get(CompanyInfo.County) then
+                CountyName := County.Description;
+
         exit(Format(SalesHeader."Ship-to Post Code" + ', '
                   + SalesHeader."Ship-to City" + ', '
-                  + SalesHeader."Ship-to County" + ', '
+                  + CountyName + ', '
                   + CountryName));
     end;
 
@@ -320,6 +342,33 @@ report 50211 "Sales Quotation Report"
         exit(Addr);
     end;
 
+    // local procedure AmountInWords()
+    // var
+    //     SalesLineTemp: Record "Sales Line";
+    //     CurrencyCodeToUse: Code[10];
+    //     GLSetup: Record "General Ledger Setup";
+    // begin
+    //     TotalAmountLCY := 0;
+    //     SalesLineTemp.SetRange("Document No.", SalesHeader."No.");
+    //     SalesLineTemp.SetRange("Document Type", SalesHeader."Document Type");
+    //     // Exclude charge items from total amount calculation if needed
+    //     // SalesLineTemp.SetFilter(Type, '<>%1', SalesLineTemp.Type::"Charge (Item)");
+
+    //     if SalesLineTemp.FindSet() then
+    //         repeat
+    //             TotalAmountLCY += SalesLineTemp."Amount (ACY)";
+    //         until SalesLineTemp.Next() = 0;
+
+    //     CurrencyCodeToUse := SalesLineTemp."Currency Code";
+    //     if CurrencyCodeToUse = '' then
+    //         if GLSetup.Get() then
+    //             CurrencyCodeToUse := GLSetup."LCY Code";
+
+    //     CheckCU.InitTextVariable();
+    //     CheckCU.FormatNoText2(NoText, Abs(TotalAmountLCY), CurrencyCodeToUse);
+    //     AmtInWords := NoText[1] + ' ' + NoText[2];
+    // end;
+
     local procedure AmountInWords()
     var
         SalesLineTemp: Record "Sales Line";
@@ -334,7 +383,7 @@ report 50211 "Sales Quotation Report"
 
         if SalesLineTemp.FindSet() then
             repeat
-                TotalAmountLCY += SalesLineTemp."Amount (ACY)";
+                TotalAmountLCY += SalesLineTemp."Amount Including VAT (ACY)";
             until SalesLineTemp.Next() = 0;
 
         CurrencyCodeToUse := SalesLineTemp."Currency Code";
