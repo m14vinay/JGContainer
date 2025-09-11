@@ -394,6 +394,12 @@ report 50211 "Sales Quotation Report"
         CheckCU.InitTextVariable();
         CheckCU.FormatNoText2(NoText, Abs(TotalAmountLCY), CurrencyCodeToUse);
         AmtInWords := NoText[1] + ' ' + NoText[2];
+
+        if UpperCase(CurrencyCodeToUse) = 'MYR' then
+            if StrPos(AmtInWords, 'ONLY') > 0 then
+                AmtInWords := 'Malaysian Ringgit ' + StrSubstNo('%1 Sen ONLY', DelStr(AmtInWords, StrPos(AmtInWords, 'ONLY'), StrLen('ONLY')), '')
+            else
+                AmtInWords := 'Malaysian Ringgit ' + AmtInWords;
     end;
 
     local procedure BuildBank2Address(Bank: Record "Bank Account"): Text
