@@ -253,7 +253,7 @@ report 50211 "Sales Quotation Report"
     begin
         exit(Format(SalesHeader."Bill-to Address" + ', ' + SalesHeader."Bill-to Address 2"));
     end;
-
+    // c
     local procedure GetBillPostCityCountReg(): Text
     var
         CountryRegion: Record "Country/Region";
