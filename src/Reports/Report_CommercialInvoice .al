@@ -1,7 +1,7 @@
 report 50200 CommercialInvoiceReport
 {
     DefaultLayout = RDLC;
-    RDLCLayout = './src/Reports/Layouts/CommercialInvoiceReport.rdl';
+    RDLCLayout = './src/Reports/Layouts/CommercialInvoiceReport_v1.rdl';
     Caption = 'Commercial Invoice';
     ApplicationArea = Suite;
     UsageCategory = Documents;
@@ -289,9 +289,9 @@ report 50200 CommercialInvoiceReport
                     Packsize: Record "Pack Size";
                     SalesPrice: Record "Sales Price";
                 begin
-                    NettWeight += "Net Weight" * Quantity;
-                    GrossWeight += "Gross Weight" * Quantity;
-                    UnitVolume += "Unit Volume" * Quantity;
+                    NettWeight += "Net Weight";
+                    GrossWeight += "Gross Weight";
+                    UnitVolume += "Unit Volume";
                     ShowAmount := "Line Amount";
                     SalesTax := "Amount Including VAT" - "Line Amount";
                     TotalShowAmount := ShowAmount + TotalShowAmount + SalesTax;
