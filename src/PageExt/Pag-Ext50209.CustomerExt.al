@@ -27,6 +27,14 @@ pageextension 50209 "Customer Ext" extends "Customer Card"
         {
             Editable = false;
         }
+        addafter("Phone No.")
+        {
+            field("Phone No. 2"; Rec."Phone No. 2")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Specifies the customer''s telephone number 2.';
+            }
+        }
     }
     actions
     {

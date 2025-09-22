@@ -15,12 +15,8 @@ pageextension 50231 PostedSalesShipment extends "Posted Sales Shipments"
                     OrderNo: Record "Sales Shipment Header";
                 begin
                     MyReportID := Report::DeliveryOrderReport; // Replace with your report ID or name
-                    // Run without request page
-                    // Report.Run(MyReportID, false, false); 
-
-                    // Run with request page
+                    
                     CurrPage.SetSelectionFilter(OrderNo);
-                    //SalesOrderNo.SetRange("Order No.", rec."Order No.");
                     Report.RunModal(MyReportID, true, false, OrderNo);
                 end;
             }

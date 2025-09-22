@@ -89,7 +89,6 @@ codeunit 50202 "Sales Custom WorkFlow Mgt"
 
         end;
     end;
-
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Approvals Mgmt.", OnPopulateApprovalEntryArgument, '', false, false)]
     local procedure OnPopulateApprovalEntryArgument(RecRef: RecordRef; var ApprovalEntryArgument: Record "Approval Entry"; WorkFlowStepInstance: Record "Workflow Step Instance")
     var
@@ -159,10 +158,39 @@ codeunit 50202 "Sales Custom WorkFlow Mgt"
     begin
         if RecordRef.Number = DATABASE::"Sales Price" then
             CardPageID := PAGE::"Sales Prices cust";
-
     end;
 
-
+     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Approvals Mgmt.", OnBeforeApproveApprovalRequests, '', false, false)]
+    local procedure UpdateSalesOrderSequenceApproval(var ApprovalEntry: Record "Approval Entry")
+    var
+        SalesHeader : Record "Sales Header";
+        SequenceNo :Integer;
+    begin
+        SequenceNo := ApprovalEntry."Sequence No.";
+        If SalesHeader.Get(ApprovalEntry."Record ID to Approve") then begin
+            ApprovalEntry.Reset();
+            ApprovalEntry.SetRange("Sequence No.",SequenceNo);
+            ApprovalEntry.SetRange("Record ID to Approve",SalesHeader.RecordId);
+            ApprovalEntry.SetRange(Status,ApprovalEntry.Status::Open);
+        end;
+    end;
+     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Approvals Mgmt.", OnBeforeCheckUserAsApprovalAdministrator, '', false, false)]
+    local procedure SkipUserIDCheck(ApprovalEntry: Record "Approval Entry"; var IsHandled: Boolean)
+    var
+        SalesHeader : Record "Sales Header";
+        SequenceNo :Integer;
+    begin
+        SequenceNo := ApprovalEntry."Sequence No.";
+        If SalesHeader.Get(ApprovalEntry."Record ID to Approve") then begin
+            ApprovalEntry.Reset();
+            ApprovalEntry.SetRange("Sequence No.",SequenceNo);
+            ApprovalEntry.SetRange("Record ID to Approve",SalesHeader.RecordId);
+            ApprovalEntry.SetRange(Status,ApprovalEntry.Status::Open);
+            If ApprovalEntry.Count > 1 then
+              IsHandled := True;
+        end;
+    end;
+    
 
     var
         WorkflowManagement: Codeunit "Workflow Management";

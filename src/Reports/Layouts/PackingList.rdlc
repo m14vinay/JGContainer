@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-08-26T06:16:59.2141858Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-18T05:16:15.6237183Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -935,7 +935,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!NetWeight.Value * Fields!Quantity.Value</Value>
+                                  <Value>=Fields!NetWeight.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -984,7 +984,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!GrossWeight.Value * Fields!Quantity.Value</Value>
+                                  <Value>=Fields!GrossWeight.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -1033,7 +1033,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Unit_Volume.Value * Fields!Quantity.Value</Value>
+                                  <Value>=Fields!Unit_Volume.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -1311,7 +1311,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=SUM(Fields!NetWeight.Value * Fields!Quantity.Value)</Value>
+                                  <Value>=SUM(Fields!NetWeight.Value)</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -1343,7 +1343,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=SUM(Fields!GrossWeight.Value * Fields!Quantity.Value)</Value>
+                                  <Value>=SUM(Fields!GrossWeight.Value)</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -1376,7 +1376,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=SUM(Fields!Unit_Volume.Value * Fields!Quantity.Value)</Value>
+                                  <Value>=SUM(Fields!Unit_Volume.Value)</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>

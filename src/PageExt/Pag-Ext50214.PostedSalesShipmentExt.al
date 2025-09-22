@@ -77,7 +77,7 @@ pageextension 50214 "Posted Sales Shipment Ext" extends "Posted Sales Shipment"
                 Image = ViewDetails;
                 Promoted = True;
                 PromotedIsBig = True;
-                PromotedCategory = Category7;
+                PromotedCategory = Category5;
                 ToolTip = 'Show Transport Cost Details';
                 trigger OnAction()
                 var

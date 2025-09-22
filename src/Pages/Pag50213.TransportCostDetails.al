@@ -4,7 +4,8 @@ page 50213 "Transport Cost Details"
     Caption = 'Transport Cost Details';
     PageType = List;
     SourceTable = "Transport Cost Details";
-    SourceTableTemporary = True;
+    Editable = false;
+    DeleteAllowed = false;
     layout
     {
         area(Content)
@@ -74,11 +75,12 @@ page 50213 "Transport Cost Details"
         WarehouseShipment: Record "Warehouse Shipment Services";
         PostedSalesShipment: Record "Sales Shipment Header";
         SalesShipmentLine: Record "Sales Shipment Line";
-        TransportCostDetails: Record "Transport Cost Details" temporary;
-        TransportCostDetailsLine: Record "Transport Cost Details" temporary;
+        TransportCostDetails: Record "Transport Cost Details";
+        TransportCostDetailsLine: Record "Transport Cost Details";
         SingleInstance: Codeunit JGSingleInstance;
     begin
-        TransportCostDetails.DeleteAll();
+        If TransportCostDetailsLine.FindSet() then
+            TransportCostDetailsLine.DeleteAll();
         WarehouseShipment.Reset();
         WarehouseShipment.SetRange("Whse Shipment No.", SingleInstance.GetWhseShipNo());
         If WarehouseShipment.FindSet() then
@@ -87,12 +89,13 @@ page 50213 "Transport Cost Details"
                     SalesShipmentLine.Reset();
                     SalesShipmentLine.SetRange("Document No.", SingleInstance.GetShipNo());
                     SalesShipmentLine.SetRange(Type, SalesShipmentLine.Type::Item);
+                    SalesShipmentLine.SetFilter(Quantity, '>%1', 0);
                     If SalesShipmentLine.FindSet() then
                         repeat
                             TransportCostDetails.Init();
                             TransportCostDetailsLine.SetAscending("Line No", false);
-                            If TransportCostDetails.FindFirst() then
-                                TransportCostDetails."Line No" := TransportCostDetails."Line No" + 10000
+                            If TransportCostDetailsLine.FindFirst() then
+                                TransportCostDetails."Line No" := TransportCostDetailsLine."Line No" + 10000
                             else
                                 TransportCostDetails."Line No" := 10000;
                             TransportCostDetails."Item No." := SalesShipmentLine."No.";
@@ -111,8 +114,8 @@ page 50213 "Transport Cost Details"
                 If WarehouseShipment."Rate Type" = WarehouseShipment."Rate Type"::Fixed then begin
                     TransportCostDetails.Init();
                     TransportCostDetailsLine.SetAscending("Line No", false);
-                    If TransportCostDetails.FindFirst() then
-                        TransportCostDetails."Line No" := TransportCostDetails."Line No" + 10000
+                    If TransportCostDetailsLine.FindFirst() then
+                        TransportCostDetails."Line No" := TransportCostDetailsLine."Line No" + 10000
                     else
                         TransportCostDetails."Line No" := 10000;
                     TransportCostDetails."Item No." := WarehouseShipment."Item Code";
@@ -123,7 +126,7 @@ page 50213 "Transport Cost Details"
                     TransportCostDetails.Carrier := WarehouseShipment."Carrier Code";
                     TransportCostDetails."Vendor No." := WarehouseShipment."Vendor No.";
                     if PostedSalesShipment.get(SingleInstance.GetShipNo()) then;
-                        TransportCostDetails."DO" := PostedSalesShipment."No.";
+                    TransportCostDetails."DO" := PostedSalesShipment."No.";
                     TransportCostDetails."DO Date" := PostedSalesShipment."Shipment Date";
                     TransportCostDetails.Customer := PostedSalesShipment."Sell-to Customer No.";
                     TransportCostDetails.Insert();

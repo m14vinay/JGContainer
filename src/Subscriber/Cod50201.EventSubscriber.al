@@ -36,43 +36,52 @@ codeunit 50201 "Event Subscriber"
     begin
         SalesLine."Price Per Piece" := TempSalesPrice."Price Per Piece";
     end;
+
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterValidateEvent', 'Ship-to Code', false, false)]
-    local procedure UpdateDeliveryAreaCode(var Rec : Record "Sales Header"; var xRec: Record "Sales Header"; CurrFieldNo: Integer)
+    local procedure UpdateDeliveryAreaCode(var Rec: Record "Sales Header"; var xRec: Record "Sales Header"; CurrFieldNo: Integer)
     var
-    ShipToAddress : Record "Ship-to Address";
+        ShipToAddress: Record "Ship-to Address";
     begin
-        If ShipToAddress.Get(Rec."Sell-to Customer No.",Rec."Ship-to Code") then
-        Rec."Delivery Area" := ShipToAddress."Delivery Area";
+        If ShipToAddress.Get(Rec."Sell-to Customer No.", Rec."Ship-to Code") then
+            Rec."Delivery Area" := ShipToAddress."Delivery Area";
     end;
-     [EventSubscriber(ObjectType::Codeunit, CodeUnit::"Get Source Doc. Outbound", 'OnAfterFindWarehouseRequestForSalesOrder', '', false, false)]
+
+    [EventSubscriber(ObjectType::Codeunit, CodeUnit::"Get Source Doc. Outbound", 'OnAfterFindWarehouseRequestForSalesOrder', '', false, false)]
     local procedure UpdateDeliveryCode(var WarehouseRequest: Record "Warehouse Request"; SalesHeader: Record "Sales Header")
     begin
-       WarehouseRequest."Delivery Area" := SalesHeader."Delivery Area";
+        WarehouseRequest."Delivery Area" := SalesHeader."Delivery Area";
     end;
+
     [EventSubscriber(ObjectType::Report, Report::"Get Source Documents", 'OnSalesLineOnAfterCreateShptHeader', '', false, false)]
     local procedure UpdaeWhseShipDeliveryArea(var WhseShptHeader: Record "Warehouse Shipment Header"; WhseHeaderCreated: Boolean; SalesHeader: Record "Sales Header"; SalesLine: Record "Sales Line"; WarehouseRequest: Record "Warehouse Request");
     begin
-       WhseShptHeader."Delivery Area" := SalesHeader."Delivery Area";
-       WhseShptHeader.Modify();
+        WhseShptHeader."Delivery Area" := SalesHeader."Delivery Area";
+        WhseShptHeader.Modify();
     end;
-    [EventSubscriber(ObjectType::Codeunit, CodeUnit::"Whse.-Post Shipment", 'OnPostSourceDocument', '', false, false)]
-    local procedure UpdateSalesHeaderWhse(var WhseShptHeader: Record "Warehouse Shipment Header"; var WhseShptLine: Record "Warehouse Shipment Line"; var CounterDocOK: Integer; var SourceHeader: Variant; WhsePostParameters: Record "Whse. Post Parameters"; Print: Boolean; var DocumentEntryToPrint: Record "Document Entry")
+
+    [EventSubscriber(ObjectType::Codeunit, CodeUnit::"Whse.-Post Shipment", 'OnCodeOnAfterGetWhseShptHeader', '', false, false)]
+    local procedure UpdateSalesHeaderWhse(var WarehouseShipmentHeader: Record "Warehouse Shipment Header")
     var
-    SalesHeader : Record "Sales Header";
-    WareShipLine : Record "Warehouse Shipment Line";
+        SalesHeader: Record "Sales Header";
+        WareShipLine: Record "Warehouse Shipment Line";
     begin
-       If WareShipLine.FindSet() then repeat
-          If WareShipLine."Source Document" = WareShipLine."Source Document"::"Sales Order" then begin
-              SalesHeader.Reset();
-              SalesHeader.SetRange("Document Type",SalesHeader."Document Type"::Order);
-              SalesHeader.SetRange("No.",WareShipLine."Source No.");
-              If SalesHeader.FindFirst() then begin
-                SalesHeader."Whse Ship No" := WareShipLine."No.";
-                SalesHeader.Modify(false);
-              end;
-          end;
-       until WareShipLine.Next() = 0
+        WareShipLine.Reset();
+        WareShipLine.SetRange("No.", WarehouseShipmentHeader."No.");
+        WareShipLine.SetRange("Source Document",WareShipLine."Source Document"::"Sales Order");
+        If WareShipLine.FindSet() then
+            repeat
+                
+                    SalesHeader.Reset();
+                    SalesHeader.SetRange("Document Type", SalesHeader."Document Type"::Order);
+                    SalesHeader.SetRange("No.", WareShipLine."Source No.");
+                    If SalesHeader.FindFirst() then begin
+                        SalesHeader."Whse Ship No" := WareShipLine."No.";
+                        SalesHeader.Modify(false);
+                    end;
+               
+            until WareShipLine.Next() = 0;
+
     end;
-    
+
 
 }
