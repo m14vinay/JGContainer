@@ -238,6 +238,10 @@ report 50200 CommercialInvoiceReport
             {
 
             }
+              column(CommercialInvoiceNo; "Commercial Invoice No")
+            {
+
+            }
             dataitem("Sales Line"; "Sales Line")
             {
                 DataItemLink = "Document No." = field("No.");

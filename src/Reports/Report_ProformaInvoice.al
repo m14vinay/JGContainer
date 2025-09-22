@@ -210,6 +210,10 @@ report 50209 ProfomaInvoice
             {
 
             }
+             column(ProformaInvoiceNo; "Proforma Invoice No")
+            {
+
+            }
             dataitem("Sales Line"; "Sales Line")
             {
                 DataItemLink = "Document No." = field("No.");

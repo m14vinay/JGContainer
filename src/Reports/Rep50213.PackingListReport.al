@@ -5,7 +5,7 @@ report 50213 "Packing List Report"
     Caption = 'Packing List Report';
     DefaultLayout = RDLC;
     PreviewMode = PrintLayout;
-    RDLCLayout = './src/Reports/Layouts/PackingList.rdlc';
+    RDLCLayout = './src/Reports/Layouts/PackingList.rdl';
 
     dataset
     {
@@ -37,6 +37,7 @@ report 50213 "Packing List Report"
             column(ShipmentFrom; "Shipment From") { }
             column(ShipmentTo; "Shipment To") { }
             column(Vessel; Vessel) { }
+            column(CommercialInvoiceNo; "Commercial Invoice No") { }
             dataitem(SalesLine; "Sales Line")
             {
                 DataItemLink = "Document Type" = field("Document Type"),

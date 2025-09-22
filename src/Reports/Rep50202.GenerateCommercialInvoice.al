@@ -27,7 +27,6 @@ report 50202 "Generate Commercial Invoice"
                 SalesInvoice."Order No" := SalesHeader."No.";
                 SalesInvoice.Validate("Currency Code",SalesHeader."Currency Code");
                 SalesInvoice.Validate("Your Reference",SalesHeader."Your Reference");
-                SalesInvoice.Validate("Dimension Set ID", SalesHeader."Dimension Set ID");
                 SalesInvoice.Validate("Payment Method Code" , SalesHeader."Payment Method Code");
                 SalesInvoice.Validate("Gen. Bus. Posting Group", SalesHeader."Gen. Bus. Posting Group");
                 SalesInvoice.Validate("VAT Bus. Posting Group" , SalesHeader."VAT Bus. Posting Group");
@@ -36,6 +35,7 @@ report 50202 "Generate Commercial Invoice"
                 SalesInvoice.Validate("Shipping Agent Service Code",SalesHeader."Shipping Agent Service Code");
                 SalesInvoice.Validate(Incoterms,SalesHeader.Incoterms);
                 SalesInvoice.Validate("Location Code",SalesHeader."Location Code");
+                SalesInvoice.Validate("Dimension Set ID", SalesHeader."Dimension Set ID");
                 SalesInvoice.Modify();
                 If SalesOrder.Get(SalesOrder."Document Type"::Order,SalesHeader."No.") then begin
                    SalesOrder."Commercial Invoice No" := SalesInvoice."No.";
