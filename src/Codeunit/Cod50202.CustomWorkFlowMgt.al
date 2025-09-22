@@ -158,7 +158,6 @@ codeunit 50202 "Sales Custom WorkFlow Mgt"
     begin
         if RecordRef.Number = DATABASE::"Sales Price" then
             CardPageID := PAGE::"Sales Prices cust";
-
     end;
 
      [EventSubscriber(ObjectType::Codeunit, Codeunit::"Approvals Mgmt.", OnBeforeApproveApprovalRequests, '', false, false)]
