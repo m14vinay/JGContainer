@@ -149,6 +149,7 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
                 PromotedCategory = Category7;
                 trigger OnAction()
                 var
+                    SalesHeader : Record "Sales Header";
                     GLSetup: Record "General Ledger Setup";
                     NoSeries: Codeunit "No. Series";
                     SalesReceSetup: Record "Sales & Receivables Setup";
@@ -156,9 +157,10 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
                     MyReportID: Integer;
                 begin
                     GLSetup.Get();
+                    CurrPage.SetSelectionFilter(SalesHeader);
                     MyReportID := Report::"Generate Commercial Invoice";
                     If (Rec."Currency Code" <> GLSetup."LCY Code") and (Rec."Currency Code" <> '') then
-                        Report.RunModal(MyReportID, true, false, Rec);
+                        Report.RunModal(MyReportID, true, false, SalesHeader);
 
 
                 end;
