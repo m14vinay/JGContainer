@@ -33,6 +33,12 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
                 ApplicationArea = All;
                 Editable = false;
             }
+            field("Commercial Invoice No"; Rec."Commercial Invoice No")
+            {
+                ToolTip = 'Commercial Invoice No';
+                ApplicationArea = All;
+                Editable = false;
+            }
         }
         addafter("Package Tracking No.")
         {
@@ -115,7 +121,7 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
                 Image = CreateDocument; // Optional icon
                 Promoted = true;
                 PromotedIsBig = true;
-                PromotedCategory = Category11;
+                PromotedCategory = Category7;
                 trigger OnAction()
                 var
                     GLSetup: Record "General Ledger Setup";
@@ -131,6 +137,30 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
                             Rec.Modify();
                         end else
                             Message('Proforma Invoice exists');
+                end;
+            }
+            action(GenerateCommercialInvoice)
+            {
+                ApplicationArea = All;
+                Caption = 'Generate Commercial Invoice & Packing List';
+                Image = CreateDocument; // Optional icon
+                Promoted = true;
+                PromotedIsBig = true;
+                PromotedCategory = Category7;
+                trigger OnAction()
+                var
+                    GLSetup: Record "General Ledger Setup";
+                    NoSeries: Codeunit "No. Series";
+                    SalesReceSetup: Record "Sales & Receivables Setup";
+                    CommercialInvoice: Report "Generate Commercial Invoice";
+                    MyReportID: Integer;
+                begin
+                    GLSetup.Get();
+                    MyReportID := Report::"Generate Commercial Invoice";
+                    If (Rec."Currency Code" <> GLSetup."LCY Code") and (Rec."Currency Code" <> '') then
+                        Report.RunModal(MyReportID, true, false, Rec);
+
+
                 end;
             }
         }

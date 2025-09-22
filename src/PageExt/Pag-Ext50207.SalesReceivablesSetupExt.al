@@ -16,6 +16,11 @@ pageextension 50207 "Sales Receivables Setup Ext" extends "Sales & Receivables S
                 ApplicationArea = All;
                 ToolTip = 'Specifies Proforma Invoice Nos.';
             }
+            field("Commercial Invoice Nos."; Rec."Commercial Invoice Nos.")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Specifies Commercial Invoice Nos.';
+            }
         }
     }
 }

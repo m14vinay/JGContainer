@@ -59,6 +59,16 @@ tableextension 50207 "Sales Header Ext" extends "Sales Header"
             Caption = 'Proforma Invoice No';
             DataClassification = CustomerContent;
         }
+         field(50210; "Commercial Invoice No"; Code[20])
+        {
+            Caption = 'Commercial Invoice No';
+            DataClassification = CustomerContent;
+        }
+         field(50211; "Order No"; Code[20])
+        {
+            Caption = 'Order No';
+            DataClassification = CustomerContent;
+        }
         modify("Sell-to Customer No.")
         {
             trigger OnAfterValidate()

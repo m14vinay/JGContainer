@@ -14,5 +14,11 @@ tableextension 50202 "Sales Receivables Setup" extends "Sales & Receivables Setu
             DataClassification = CustomerContent;
             TableRelation = "No. Series".Code;
         }
+         field(50202; "Commercial Invoice Nos."; Code[20])
+        {
+            Caption = 'Commercial Invoice Nos.';
+            DataClassification = CustomerContent;
+            TableRelation = "No. Series".Code;
+        }
     }
 }

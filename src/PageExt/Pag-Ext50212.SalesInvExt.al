@@ -26,6 +26,11 @@ pageextension 50212 "Sales Inv Ext" extends "Sales Invoice"
                 ToolTip = 'Specifies vessel';
                 ApplicationArea = All;
             }
+            field("Order No"; Rec."Order No")
+            {
+                ToolTip = 'Order No';
+                ApplicationArea = All;
+            }
         }
         addafter("Package Tracking No.")
         {
