@@ -8,5 +8,11 @@ tableextension 50202 "Sales Receivables Setup" extends "Sales & Receivables Setu
             DataClassification = CustomerContent;
             TableRelation = "VAT Business Posting Group".Code;
         }
+        field(50201; "Proforma Invoice Nos."; Code[20])
+        {
+            Caption = 'Proforma Invoice Nos.';
+            DataClassification = CustomerContent;
+            TableRelation = "No. Series".Code;
+        }
     }
 }

@@ -9,5 +9,13 @@ pageextension 50207 "Sales Receivables Setup Ext" extends "Sales & Receivables S
                 ToolTip = 'Specifies SST Exempted Business Posting Group';
             }
         }
+        addafter("Order Nos.")
+        {
+            field("Proforma Invoice Nos."; Rec."Proforma Invoice Nos.")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Specifies Proforma Invoice Nos.';
+            }
+        }
     }
 }
