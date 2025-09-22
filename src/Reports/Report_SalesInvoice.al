@@ -227,7 +227,7 @@ report 50207 SalesInvoiceReport
                 {
 
                 }
-                column(UnitPrice; Unit_Price)
+                column(UnitPrice; "Price Per Piece")
                 {
 
                 }
