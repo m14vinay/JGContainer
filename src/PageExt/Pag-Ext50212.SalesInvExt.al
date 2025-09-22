@@ -16,7 +16,7 @@ pageextension 50212 "Sales Inv Ext" extends "Sales Invoice"
             {
                 ToolTip = 'Delivery Area';
                 ApplicationArea = All;
-                 Editable = DeliveryAreaEditable;
+                Editable = DeliveryAreaEditable;
             }
         }
         addafter(Status)
@@ -30,6 +30,7 @@ pageextension 50212 "Sales Inv Ext" extends "Sales Invoice"
             {
                 ToolTip = 'Order No';
                 ApplicationArea = All;
+                Editable = false;
             }
         }
         addafter("Package Tracking No.")
