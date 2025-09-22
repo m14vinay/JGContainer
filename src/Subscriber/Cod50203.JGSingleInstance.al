@@ -17,6 +17,8 @@ codeunit 50203 "JGSingleInstance"
     end;
     procedure GetShipNo() : Code[20]
     begin
+
+      
       Exit(DONo);
     end;
     var

@@ -25,13 +25,13 @@ table 50202 "SST Exemption Details"
     }
     keys
     {
-        key(PK; "Customer No.", "SST Exemption Registration No.", "Effective Date")
+        key(PK; "Customer No.","SST Exemption Registration No.","Effective Date")
         {
             Clustered = true;
         }
     }
     fieldgroups
     {
-        fieldgroup(DropDown; "Customer No.", "SST Exemption Registration No.", "Effective Date") { }
+        fieldgroup(DropDown;"Customer No.","SST Exemption Registration No.","Effective Date"){}
     }
 }

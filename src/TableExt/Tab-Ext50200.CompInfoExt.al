@@ -22,25 +22,25 @@ tableextension 50200 "Comp Info Ext" extends "Company Information"
             Caption = 'Picture';
             SubType = Bitmap;
         }
-        field(50205; "Marketing Phone No"; Text[30])
+         field(50205; "Marketing Phone No"; Text[30])
         {
             Caption = 'Marketing Phone No';
         }
-        field(50206; "Marketing Email"; Text[80])
+         field(50206; "Marketing Email"; Text[80])
         {
             Caption = 'Marketing Email';
         }
-        field(50207; "Alternative Bank 1"; Code[20])
+         field(50207; "Alternative Bank 1"; Code[20])
         {
             Caption = 'Alternative Bank 1';
             TableRelation = "Bank Account"."No.";
         }
-        field(50208; "Alternative Bank 2"; Code[20])
+         field(50208; "Alternative Bank 2"; Code[20])
         {
             Caption = 'Alternative Bank 2';
             TableRelation = "Bank Account"."No.";
         }
-        field(50209; "Print Name"; Text[100])
+         field(50209; "Print Name"; Text[100])
         {
             Caption = 'Print Name';
         }

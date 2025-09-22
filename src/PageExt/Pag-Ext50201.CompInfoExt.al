@@ -26,15 +26,6 @@ pageextension 50201 "Comp Info Ext" extends "Company Information"
                 ApplicationArea = All;
             }
         }
-        addafter(Name)
-        {
-            field("Print Name"; Rec."Print Name")
-            {
-                Caption = 'Print Name';
-                ToolTip = 'Specifies the Print Name of Company on the Report';
-                ApplicationArea = All;
-            }
-        }
         addafter(Picture)
         {
             field("Company Logo 1"; Rec."Company Logo 1")
@@ -43,13 +34,13 @@ pageextension 50201 "Comp Info Ext" extends "Company Information"
                 ToolTip = 'Specifies the company''s Logo 1';
                 ApplicationArea = All;
             }
-            field("Company Logo 2"; Rec."Company Logo 2")
+             field("Company Logo 2"; Rec."Company Logo 2")
             {
                 Caption = 'Company Logo 2';
                 ToolTip = 'Specifies the company''s Logo 2';
                 ApplicationArea = All;
             }
-            field("Company Logo 3"; Rec."Company Logo 3")
+             field("Company Logo 3"; Rec."Company Logo 3")
             {
                 Caption = 'Company Logo 3';
                 ToolTip = 'Specifies the company''s Logo 3';
@@ -64,7 +55,7 @@ pageextension 50201 "Comp Info Ext" extends "Company Information"
                 ToolTip = 'Specifies the Alternative Bank 1';
                 ApplicationArea = All;
             }
-            field("Alternative Bank 2"; Rec."Alternative Bank 2")
+             field("Alternative Bank 2"; Rec."Alternative Bank 2")
             {
                 Caption = 'Alternative Bank 2';
                 ToolTip = 'Specifies the Alternative Bank 2';
@@ -79,10 +70,19 @@ pageextension 50201 "Comp Info Ext" extends "Company Information"
                 ToolTip = 'Specifies the Marketing Phone No';
                 ApplicationArea = All;
             }
-            field("Marketing Email"; Rec."Marketing Email")
+             field("Marketing Email"; Rec."Marketing Email")
             {
                 Caption = 'Marketing Email';
                 ToolTip = 'Specifies the Marketing Email';
+                ApplicationArea = All;
+            }
+        }
+        addafter(Name)
+        {
+            field("Print Name"; Rec."Print Name")
+            {
+                Caption = 'Print Name';
+                ToolTip = 'Specifies the Print Name';
                 ApplicationArea = All;
             }
         }
