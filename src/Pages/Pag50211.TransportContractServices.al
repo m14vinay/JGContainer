@@ -4,7 +4,8 @@ page 50211 "Transport Contract Services"
     Caption = 'Transport Contract Services';
     PageType = List;
     SourceTable = "Transport Contract Pricing";
-
+    Editable = false;
+    DeleteAllowed = false;
     layout
     {
         area(Content)

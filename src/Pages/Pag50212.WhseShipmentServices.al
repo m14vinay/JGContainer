@@ -4,7 +4,11 @@ page 50212 "Whse Shipment Services"
     Caption = 'Shipment Services';
     PageType = List;
     SourceTable = "Warehouse Shipment Services";
-    
+   // Editable = false;
+    DeleteAllowed = true;
+    InsertAllowed = false;
+    ModifyAllowed = false;
+
     layout
     {
         area(Content)
