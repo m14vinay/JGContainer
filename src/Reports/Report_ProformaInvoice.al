@@ -1,5 +1,6 @@
 report 50209 ProfomaInvoice
 {
+    // Profoma Invoice
     DefaultLayout = RDLC;
     RDLCLayout = './src/Reports/Layouts/ProformaInvoice.rdl';
     Caption = 'Proforma Invoice';
