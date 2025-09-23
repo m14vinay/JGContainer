@@ -2,30 +2,6 @@ pageextension 50201 "Comp Info Ext" extends "Company Information"
 {
     layout
     {
-        modify("VAT Registration No.")
-        {
-            Caption = 'SST Registration No.';
-            ToolTip = 'Specifies the company''s SST registration number.';
-        }
-        modify("Registration No.")
-        {
-            Caption = 'Business Registration No.';
-            ToolTip = 'Specifies the company''s registration number.';
-        }
-        modify("Industrial Classification")
-        {
-            Caption = 'MSIC Code';
-            ToolTip = 'Specifies the company''s MSIC Code.';
-        }
-        addafter("Industrial Classification")
-        {
-            field("Business Activity"; Rec."Business Activity")
-            {
-                Caption = 'Business Activity';
-                ToolTip = 'Specifies the company''s Business Activity';
-                ApplicationArea = All;
-            }
-        }
         addafter(Picture)
         {
             field("Company Logo 1"; Rec."Company Logo 1")
