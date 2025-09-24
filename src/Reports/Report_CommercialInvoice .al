@@ -41,7 +41,7 @@ report 50200 CommercialInvoiceReport
             column(CompanyInfoHomePage; CompanyInfo."Home Page")
             {
             }
-            column(CompanyInfoVATRegNo; CompanyInfo."VAT Registration No.")
+            column(CompanyInfoVATRegNo; CompanyInfo."ADY E-INV SST Reg No.")
             {
             }
             column(CompanyInfoBusinessRegistrationNo; CompanyInfo."Registration No.")
@@ -238,7 +238,7 @@ report 50200 CommercialInvoiceReport
             {
 
             }
-              column(CommercialInvoiceNo; "Commercial Invoice No")
+            column(CommercialInvoiceNo; "Commercial Invoice No")
             {
 
             }

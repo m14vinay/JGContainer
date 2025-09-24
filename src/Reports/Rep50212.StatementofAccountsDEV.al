@@ -136,7 +136,7 @@ report 50212 "SOA"
                 {
 
                 }
-                column(CompanySSTNo; Companyinfo."VAT Registration No.")
+                column(CompanySSTNo; Companyinfo."ADY E-INV SST Reg No.")
                 {
 
                 }

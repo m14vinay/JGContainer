@@ -45,7 +45,7 @@ report 50209 ProfomaInvoice
             column(CompanyInfoHomePage; CompanyInfo."Home Page")
             {
             }
-            column(CompanyInfoVATRegNo; CompanyInfo."VAT Registration No.")
+            column(CompanyInfoVATRegNo; CompanyInfo."ADY E-INV SST Reg No.")
             {
             }
             column(CompanyInfoBusinessRegistrationNo; CompanyInfo."Registration No.")
@@ -210,7 +210,7 @@ report 50209 ProfomaInvoice
             {
 
             }
-             column(ProformaInvoiceNo; "Proforma Invoice No")
+            column(ProformaInvoiceNo; "Proforma Invoice No")
             {
 
             }

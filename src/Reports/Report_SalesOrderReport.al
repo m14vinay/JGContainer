@@ -44,7 +44,7 @@ report 50208 SalesOrderReport
             column(CompanyInfoHomePage; CompanyInfo."Home Page")
             {
             }
-            column(CompanyInfoVATRegNo; CompanyInfo."VAT Registration No.")
+            column(CompanyInfoVATRegNo; CompanyInfo."ADY E-INV SST Reg No.")
             {
             }
             column(CompanyInfoBusinessRegistrationNo; CompanyInfo."Registration No.")

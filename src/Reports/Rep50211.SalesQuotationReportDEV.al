@@ -4,7 +4,7 @@ report 50211 "Sales Quotation Report"
     Caption = 'Sales Quotation Report';
     DefaultLayout = RDLC;
     PreviewMode = PrintLayout;
-    RDLCLayout = './src/Reports/Layouts/SalesQuotation.rdlc';
+    RDLCLayout = './src/Reports/Layouts/SalesQuotation.rdl';
     UsageCategory = ReportsAndAnalysis;
 
     dataset
@@ -19,7 +19,7 @@ report 50211 "Sales Quotation Report"
             column(companyPhone; CompanyInfo."Phone No.") { }
             column(companyFax; CompanyInfo."Fax No.") { }
             column(companyEmail; CompanyInfo."E-mail") { }
-            column(companySSTReg; CompanyInfo."VAT Registration No.") { }
+            column(companySSTReg; CompanyInfo."ADY E-INV SST Reg No.") { }
             column(companyPicture; CompanyInfo.Picture) { }
             column(companyLogo1; CompanyInfo."Company Logo 1") { }
             column(companyLogo2; CompanyInfo."Company Logo 2") { }
