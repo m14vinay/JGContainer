@@ -1,7 +1,25 @@
-pageextension 50216 "Posted Sales CrMemo Ext" extends "Posted Sales Credit Memo"
+pageextension 50240 "Blanket Order Ext" extends "Blanket Sales Order"
 {
     layout
     {
+        addafter("Status")
+        {
+            field(Vessel; Rec.Vessel)
+            {
+                ToolTip = 'Specifies vessel';
+                ApplicationArea = All;
+            }
+            field("Vehicle No."; Rec."Vehicle No.")
+            {
+                ToolTip = 'Specifies vehicle no';
+                ApplicationArea = All;
+            }
+            field(Measurement; Rec.Measurement)
+            {
+                ToolTip = 'Measurement';
+                ApplicationArea = All;
+            }
+        }
         addafter("Shipment Method Code")
         {
             field(Incoterms; Rec.Incoterms)
@@ -11,20 +29,7 @@ pageextension 50216 "Posted Sales CrMemo Ext" extends "Posted Sales Credit Memo"
             }
 
         }
-        addafter("Responsibility Center")
-        {
-            field(Vessel; Rec.Vessel)
-            {
-                ToolTip = 'Specifies vessel';
-                ApplicationArea = All;
-            }
-             field(Measurement; Rec.Measurement)
-            {
-                ToolTip = 'Measurement';
-                ApplicationArea = All;
-            }
-        }
-        addafter("Package Tracking No.")
+         addafter("Package Tracking No.")
         {
             field("Shipment From"; Rec."Shipment From")
             {

@@ -44,5 +44,10 @@ tableextension 50210 "Sales Shipment Hdr" extends "Sales Shipment Header"
             Caption = 'Whse Ship No';
             DataClassification = CustomerContent;
         }
+          field(50213; "Measurement"; Text[50])
+        {
+            Caption = 'Measurement';
+            DataClassification = CustomerContent;
+        }
     }
 }

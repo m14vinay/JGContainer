@@ -69,6 +69,16 @@ tableextension 50207 "Sales Header Ext" extends "Sales Header"
             Caption = 'Order No';
             DataClassification = CustomerContent;
         }
+        field(50212; "Commercial Invoice Date"; Date)
+        {
+            Caption = 'Commercial Invoice Date';
+            DataClassification = CustomerContent;
+        }
+          field(50213; "Measurement"; Text[50])
+        {
+            Caption = 'Measurement';
+            DataClassification = CustomerContent;
+        }
         modify("Sell-to Customer No.")
         {
             trigger OnAfterValidate()

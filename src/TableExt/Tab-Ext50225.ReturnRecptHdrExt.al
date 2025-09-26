@@ -1,4 +1,4 @@
-tableextension 50211 "Sales Header Archive Ext" extends "Sales Header Archive"
+tableextension 50225 "Return Recpt Hdr Ext" extends "Return Receipt Header"
 {
     fields
     {
@@ -34,7 +34,7 @@ tableextension 50211 "Sales Header Archive Ext" extends "Sales Header Archive"
             DataClassification = CustomerContent;
             TableRelation = "Delivery Area"."Delivery Area Code";
         }
-          field(50213; "Measurement"; Text[50])
+        field(50213; "Measurement"; Text[50])
         {
             Caption = 'Measurement';
             DataClassification = CustomerContent;

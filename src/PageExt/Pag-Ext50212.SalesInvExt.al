@@ -26,6 +26,11 @@ pageextension 50212 "Sales Inv Ext" extends "Sales Invoice"
                 ToolTip = 'Specifies vessel';
                 ApplicationArea = All;
             }
+            field(Measurement; Rec.Measurement)
+            {
+                ToolTip = 'Measurement';
+                ApplicationArea = All;
+            }
             field("Order No"; Rec."Order No")
             {
                 ToolTip = 'Order No';

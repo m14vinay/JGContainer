@@ -34,5 +34,10 @@ tableextension 50208 "Sales Inv Hdr Ext" extends "Sales Invoice Header"
             DataClassification = CustomerContent;
             TableRelation = "Delivery Area"."Delivery Area Code";
         }
+          field(50213; "Measurement"; Text[50])
+        {
+            Caption = 'Measurement';
+            DataClassification = CustomerContent;
+        }
     }
 }

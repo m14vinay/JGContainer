@@ -31,6 +31,11 @@ pageextension 50214 "Posted Sales Shipment Ext" extends "Posted Sales Shipment"
                 ToolTip = 'Specifies vehicle no';
                 ApplicationArea = All;
             }
+             field(Measurement; Rec.Measurement)
+            {
+                ToolTip = 'Measurement';
+                ApplicationArea = All;
+            }
         }
         addafter("Package Tracking No.")
         {
