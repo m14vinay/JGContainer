@@ -16,5 +16,13 @@ pageextension 50221 "Posted Sales Invoice Line Ext" extends "Posted Sales Invoic
                 ApplicationArea = All;
             }
         }
+         Modify("Net Weight")
+        {
+            Visible = true;
+        }
+        Modify("Gross Weight")
+        {
+            Visible = true;
+        }
     }
 }

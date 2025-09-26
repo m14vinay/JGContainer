@@ -16,5 +16,13 @@ pageextension 50206 "Sales Quote Subform" extends "Sales Quote Subform"
                 ApplicationArea = All;
             }
         }
+         Modify("Net Weight")
+        {
+            Visible = true;
+        }
+        Modify("Gross Weight")
+        {
+            Visible = true;
+        }
     }
 }

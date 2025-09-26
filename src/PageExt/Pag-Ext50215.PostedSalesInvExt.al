@@ -47,6 +47,7 @@ pageextension 50215 "Posted Sales Inv Ext" extends "Posted Sales Invoice"
                 ApplicationArea = All;
             }
         }
+        
     }
     actions
     {

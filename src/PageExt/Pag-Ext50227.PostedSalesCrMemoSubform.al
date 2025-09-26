@@ -16,5 +16,13 @@ pageextension 50227 "Posted Sales Cr Memo Subform" extends "Posted Sales Cr. Mem
                 ApplicationArea = All;
             }
         }
+         Modify("Net Weight")
+        {
+            Visible = true;
+        }
+        Modify("Gross Weight")
+        {
+            Visible = true;
+        }
     }
 }
