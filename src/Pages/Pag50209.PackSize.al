@@ -25,6 +25,16 @@ page 50209 "Pack Size"
                     ToolTip = 'Specifies the value of the Qty Per Pack field.', Comment = '%';
                     BlankZero = true;
                 }
+                field("Qty of Pieces Per Pack"; Rec."Qty of Pieces Per Pack")
+                {
+                    ToolTip = 'Specifies the value of the Qty of Pieces Per Pack field.', Comment = '%';
+                    BlankZero = true;
+                }
+                field("Qty of Cartons"; Rec."Qty of Cartons")
+                {
+                    ToolTip = 'Specifies the value of the Qty of Cartons field.', Comment = '%';
+                    BlankZero = true;
+                }
             }
         }
     }
