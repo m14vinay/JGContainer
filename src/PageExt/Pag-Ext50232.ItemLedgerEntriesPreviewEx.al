@@ -1,14 +1,6 @@
-pageextension 50226 "Item Ledger Entries Ext" extends "Item Ledger Entries"
+pageextension 50232 "Item Ledger Entries Preview Ex" extends "Item Ledger Entries Preview"
 {
     layout{
-        addafter("Item No.")
-        {
-            field("Customer No."; Rec."Customer No.")
-            {
-                ToolTip = 'Specifies the Customer no';
-                ApplicationArea = All;
-            }
-        }
         addafter(Quantity)
         {
              field("Quantity Pieces"; Rec."Quantity Pieces")

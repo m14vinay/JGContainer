@@ -82,6 +82,13 @@ codeunit 50201 "Event Subscriber"
             until WareShipLine.Next() = 0;
 
     end;
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Item Jnl.-Post Line", 'OnAfterInitItemLedgEntry', '', false, false)]
+    local procedure OnAfterInitItemLedgEntry(var NewItemLedgEntry: Record "Item Ledger Entry"; var ItemJournalLine: Record "Item Journal Line")
+    begin
+        NewItemLedgEntry."Quantity Pieces" := ItemJournalLine."Quantity Pieces";
+        NewItemLedgEntry."Net Weight" := ItemJournalLine."Net Weight";
+    end;
+    
 
 
 }
