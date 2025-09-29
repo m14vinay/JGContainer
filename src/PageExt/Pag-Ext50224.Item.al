@@ -16,6 +16,11 @@ pageextension 50224 Item extends "Item Card"
                 ToolTip = 'Specifies the Brand of the Item';
                 ApplicationArea = All;
             }
+             field("Print Charges in Footer"; Rec."Print Charges in Footer")
+            {
+                ToolTip = 'Specifies the Print Charges in Footer for Reports';
+                ApplicationArea = All;
+            }
         }
         addafter(Description)
         {

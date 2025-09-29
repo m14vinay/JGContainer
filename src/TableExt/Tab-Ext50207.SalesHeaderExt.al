@@ -28,9 +28,9 @@ tableextension 50207 "Sales Header Ext" extends "Sales Header"
             Caption = 'Vehicle No.';
             DataClassification = CustomerContent;
         }
-        field(50206; "SST Exemption registration No."; Text[20])
+        field(50206; "SST Exemption Registration No."; Text[20])
         {
-            Caption = 'SST Exemption registration No.';
+            Caption = 'SST Exemption Registration No.';
             DataClassification = CustomerContent;
             TableRelation = "SST Exemption Details"."SST Exemption Registration No." where("Customer No." = field("Sell-to Customer No."));
             trigger OnValidate()

@@ -12,11 +12,16 @@ tableextension 50219 "Item Ext" extends Item
             Caption = 'Brand';
             DataClassification = CustomerContent;
         }
-         field(50203; "Pack Size"; Code[20])
+        field(50203; "Pack Size"; Code[20])
         {
             Caption = 'Pack Size';
             DataClassification = CustomerContent;
             TableRelation = "Pack Size".Code;
+        }
+        field(50204; "Print Charges in Footer"; Boolean)
+        {
+            Caption = 'Print Charges in Footer';
+            DataClassification = CustomerContent;
         }
     }
 }
