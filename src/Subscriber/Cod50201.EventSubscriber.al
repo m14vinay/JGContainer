@@ -88,6 +88,18 @@ codeunit 50201 "Event Subscriber"
         NewItemLedgEntry."Quantity Pieces" := ItemJournalLine."Quantity Pieces";
         NewItemLedgEntry."Net Weight" := ItemJournalLine."Net Weight";
     end;
+    [EventSubscriber(ObjectType::Table, Database::"Transfer Shipment Line", 'OnAfterCopyFromTransferLine', '', false, false)]
+    local procedure OnAfterCopyFromTransferLine(var TransferShipmentLine: Record "Transfer Shipment Line"; TransferLine: Record "Transfer Line")
+
+    begin
+       TransferShipmentLine."Quantity Pieces" := TransferLine."Quantity Pieces";
+    end;
+    [EventSubscriber(ObjectType::Table, Database::"Transfer Receipt Line", 'OnAfterCopyFromTransferLine', '', false, false)]
+    local procedure OnAfterCopyFromTransferLineRecpt(var TransferReceiptLine: Record "Transfer Receipt Line"; TransferLine: Record "Transfer Line")
+
+    begin
+       TransferReceiptLine."Quantity Pieces" := TransferLine."Quantity Pieces";
+    end;
     
 
 
