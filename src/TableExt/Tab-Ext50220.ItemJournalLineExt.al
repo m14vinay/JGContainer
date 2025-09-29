@@ -22,7 +22,6 @@ tableextension 50220 "Item Journal Line Ext" extends "Item Journal Line"
             DataClassification = CustomerContent;
             DecimalPlaces = 0 : 2;
             BlankZero = True;
-            Editable = false;
         }
         modify(Quantity)
         {
