@@ -214,7 +214,7 @@ report 50200 CommercialInvoiceReport
             {
 
             }
-            column(Measurement; UnitVolume)
+            column(Measurement; "UnitVolume")
             {
 
             }
