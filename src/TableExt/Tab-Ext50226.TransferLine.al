@@ -7,6 +7,7 @@ tableextension 50226 "Transfer Line" extends "Transfer Line"
             Caption = 'Quantity Pieces';
             DataClassification = CustomerContent;
             Editable = false;
+            BlankZero = true;
         }
         modify(Quantity)
         {

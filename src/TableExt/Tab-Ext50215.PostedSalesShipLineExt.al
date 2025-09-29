@@ -7,6 +7,7 @@ tableextension 50215 "Posted Sales Ship Line Ext" extends "Sales Shipment Line"
             Caption = 'Quantity Pieces';
             DataClassification = CustomerContent;
             Editable = false;
+            BlankZero = true;
         }
         field(50208; "Qty Per Pack"; Decimal)
         {
@@ -14,6 +15,7 @@ tableextension 50215 "Posted Sales Ship Line Ext" extends "Sales Shipment Line"
             DataClassification = CustomerContent;
             DecimalPlaces = 0 : 2;
             Editable = false;
+            BlankZero = true;
         }
     }
 }

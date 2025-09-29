@@ -7,6 +7,7 @@ tableextension 50228 "Transfer Receipt Line Ext" extends "Transfer Receipt Line"
             Caption = 'Quantity Pieces';
             DataClassification = CustomerContent;
             Editable = false;
+            BlankZero = true;
         }
     }
 }

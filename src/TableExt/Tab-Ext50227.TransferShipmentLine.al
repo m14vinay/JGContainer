@@ -7,6 +7,7 @@ tableextension 50227 "Transfer Shipment Line Ext" extends "Transfer Shipment Lin
             Caption = 'Quantity Pieces';
             DataClassification = CustomerContent;
             Editable = false;
+            BlankZero = true;
         }
     }
 }

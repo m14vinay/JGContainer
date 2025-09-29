@@ -7,12 +7,14 @@ tableextension 50204 "Sales Line Ext" extends "Sales Line"
             Caption = 'Price Per Piece';
             DataClassification = CustomerContent;
             Editable = false;
+            BlankZero = true;
         }
         field(50202; "Quantity Pieces"; Decimal)
         {
             Caption = 'Quantity Pieces';
             DataClassification = CustomerContent;
             Editable = false;
+            BlankZero = true;
         }
         field(50208; "Qty Per Pack"; Decimal)
         {
@@ -20,6 +22,7 @@ tableextension 50204 "Sales Line Ext" extends "Sales Line"
             DataClassification = CustomerContent;
             DecimalPlaces = 0 : 2;
             Editable = false;
+            BlankZero = true;
         }
         modify(Quantity)
         {
