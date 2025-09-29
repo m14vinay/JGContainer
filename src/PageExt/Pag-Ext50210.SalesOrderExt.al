@@ -27,6 +27,11 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
                 ToolTip = 'Specifies vessel';
                 ApplicationArea = All;
             }
+            field(Measurement; Rec.Measurement)
+            {
+                ToolTip = 'Measurement';
+                ApplicationArea = All;
+            }
             field("Proforma Invoice No"; Rec."Proforma Invoice No")
             {
                 ToolTip = 'Proforma Invoice No';
@@ -36,6 +41,12 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
             field("Commercial Invoice No"; Rec."Commercial Invoice No")
             {
                 ToolTip = 'Commercial Invoice No';
+                ApplicationArea = All;
+                Editable = false;
+            }
+            field("Commercial Invoice Date"; Rec."Commercial Invoice Date")
+            {
+                ToolTip = 'Commercial Invoice Date';
                 ApplicationArea = All;
                 Editable = false;
             }

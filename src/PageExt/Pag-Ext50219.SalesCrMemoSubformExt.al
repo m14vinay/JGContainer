@@ -16,5 +16,13 @@ pageextension 50219 "Sales Cr Memo Subform Ext" extends "Sales Cr. Memo Subform"
                 ApplicationArea = All;
             }
         }
+         Modify("Net Weight")
+        {
+            Visible = true;
+        }
+        Modify("Gross Weight")
+        {
+            Visible = true;
+        }
     }
 }

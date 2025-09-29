@@ -12,5 +12,13 @@ pageextension 50222 "Posted Sales Ship Subform Ext" extends "Posted Sales Shpt. 
                 ApplicationArea = All;
             }
         }
+         Modify("Net Weight")
+        {
+            Visible = true;
+        }
+        Modify("Gross Weight")
+        {
+            Visible = true;
+        }
     }
 }

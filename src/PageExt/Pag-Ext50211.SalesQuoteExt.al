@@ -27,6 +27,11 @@ pageextension 50211 "Sales Quote Ext" extends "Sales Quote"
                 ToolTip = 'Specifies vessel';
                 ApplicationArea = All;
             }
+            field(Measurement; Rec.Measurement)
+            {
+                ToolTip = 'Measurement';
+                ApplicationArea = All;
+            }
         }
         addafter("Package Tracking No.")
         {

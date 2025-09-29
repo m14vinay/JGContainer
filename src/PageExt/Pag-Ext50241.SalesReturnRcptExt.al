@@ -1,6 +1,6 @@
-pageextension 50216 "Posted Sales CrMemo Ext" extends "Posted Sales Credit Memo"
+pageextension 50241 "Sales Return Rcpt Ext" extends "Posted Return Receipt"
 {
-    layout
+     layout
     {
         addafter("Shipment Method Code")
         {
@@ -18,7 +18,7 @@ pageextension 50216 "Posted Sales CrMemo Ext" extends "Posted Sales Credit Memo"
                 ToolTip = 'Specifies vessel';
                 ApplicationArea = All;
             }
-             field(Measurement; Rec.Measurement)
+            field(Measurement; Rec.Measurement)
             {
                 ToolTip = 'Measurement';
                 ApplicationArea = All;

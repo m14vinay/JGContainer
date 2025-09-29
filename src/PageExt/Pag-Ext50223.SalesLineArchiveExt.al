@@ -16,5 +16,13 @@ pageextension 50223 "Sales Line Archive Ext" extends "Sales Order Archive Subfor
                 ApplicationArea = All;
             }
         }
+         Modify("Net Weight")
+        {
+            Visible = true;
+        }
+        Modify("Gross Weight")
+        {
+            Visible = true;
+        }
     }
 }

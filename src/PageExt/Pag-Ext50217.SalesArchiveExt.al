@@ -25,6 +25,11 @@ pageextension 50217 "Sales Archive Ext" extends "Sales Order Archive"
                 ToolTip = 'Specifies vessel';
                 ApplicationArea = All;
             }
+             field(Measurement; Rec.Measurement)
+            {
+                ToolTip = 'Measurement';
+                ApplicationArea = All;
+            }
         }
         addafter("Package Tracking No.")
         {

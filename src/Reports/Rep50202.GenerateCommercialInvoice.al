@@ -39,6 +39,7 @@ report 50202 "Generate Commercial Invoice"
                 SalesInvoice.Modify();
                 If SalesOrder.Get(SalesOrder."Document Type"::Order,SalesHeader."No.") then begin
                    SalesOrder."Commercial Invoice No" := SalesInvoice."No.";
+                   SalesOrder."Commercial Invoice Date" := CommercialInvoiceDate;
                    SalesOrder.Modify();
                 end;
 

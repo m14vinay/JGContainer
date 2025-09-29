@@ -19,6 +19,18 @@ table 50201 "Pack Size"
             Caption = 'Qty Per Pack';
             DecimalPlaces = 0:2;
         }
+         field(4; "Qty of Pieces Per Pack"; Decimal)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Qty of Pieces Per Pack';
+            DecimalPlaces = 0:2;
+        }
+         field(5; "Qty of Cartons"; Decimal)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Qty of Cartons/Trays Per Pallet';
+            DecimalPlaces = 0:2;
+        }
     }
     keys
     {

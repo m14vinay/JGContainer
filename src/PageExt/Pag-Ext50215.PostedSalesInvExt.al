@@ -25,6 +25,12 @@ pageextension 50215 "Posted Sales Inv Ext" extends "Posted Sales Invoice"
                 ToolTip = 'Specifies vessel';
                 ApplicationArea = All;
             }
+             field(Measurement; Rec.Measurement)
+            {
+                ToolTip = 'Measurement';
+                ApplicationArea = All;
+            }
+            
         }
         addafter("Package Tracking No.")
         {
@@ -47,6 +53,7 @@ pageextension 50215 "Posted Sales Inv Ext" extends "Posted Sales Invoice"
                 ApplicationArea = All;
             }
         }
+        
     }
     actions
     {

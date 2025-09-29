@@ -16,5 +16,13 @@ pageextension 50208 "Sales Invoice Subform Ext" extends "Sales Invoice Subform"
                 ApplicationArea = All;
             }
         }
+         Modify("Net Weight")
+        {
+            Visible = true;
+        }
+        Modify("Gross Weight")
+        {
+            Visible = true;
+        }
     }
 }

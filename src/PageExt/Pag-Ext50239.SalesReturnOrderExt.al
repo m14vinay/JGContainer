@@ -1,8 +1,26 @@
-pageextension 50216 "Posted Sales CrMemo Ext" extends "Posted Sales Credit Memo"
+pageextension 50239 "Sales Return Order Ext" extends "Sales Return Order"
 {
     layout
     {
-        addafter("Shipment Method Code")
+        addafter(Status)
+        {
+            field(Vessel; Rec.Vessel)
+            {
+                ToolTip = 'Specifies vessel';
+                ApplicationArea = All;
+            }
+            field("Vehicle No."; Rec."Vehicle No.")
+            {
+                ToolTip = 'Specifies vehicle no';
+                ApplicationArea = All;
+            }
+            field(Measurement; Rec.Measurement)
+            {
+                ToolTip = 'Measurement';
+                ApplicationArea = All;
+            }
+        }
+         addafter("Shipping Agent Code")
         {
             field(Incoterms; Rec.Incoterms)
             {
@@ -11,20 +29,7 @@ pageextension 50216 "Posted Sales CrMemo Ext" extends "Posted Sales Credit Memo"
             }
 
         }
-        addafter("Responsibility Center")
-        {
-            field(Vessel; Rec.Vessel)
-            {
-                ToolTip = 'Specifies vessel';
-                ApplicationArea = All;
-            }
-             field(Measurement; Rec.Measurement)
-            {
-                ToolTip = 'Measurement';
-                ApplicationArea = All;
-            }
-        }
-        addafter("Package Tracking No.")
+         addafter("Package Tracking No.")
         {
             field("Shipment From"; Rec."Shipment From")
             {

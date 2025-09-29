@@ -135,7 +135,7 @@ report 50200 CommercialInvoiceReport
             column(SalesPerson; "Salesperson Code")
             {
             }
-            column(Document_Date; Format("Document Date"))
+            column(Document_Date; Format("Commercial Invoice Date"))
             {
             }
             column("selltocustomercode"; "Sell-to Customer No.")
