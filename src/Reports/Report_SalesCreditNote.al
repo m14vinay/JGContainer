@@ -223,7 +223,7 @@ report 50205 SalesCreditNoteReport
             {
                 DataItemLink = "Document No." = field("No.");
                 DataItemLinkReference = "Sales Cr.Memo Header";
-                DataItemTableView = where(Type = const(Item));
+                //DataItemTableView = where(Type = const(Item));
                 column(Type; "Type")
                 {
 

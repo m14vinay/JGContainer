@@ -215,7 +215,7 @@ report 50206 SalesDebitNoteReport
             {
                 DataItemLink = "Document No." = field("No.");
                 DataItemLinkReference = "Sales Invoice Header";
-                DataItemTableView = where(Type = const(Item));
+                //DataItemTableView = where(Type = const(Item));
                 column(Type; "Type")
                 {
 

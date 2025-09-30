@@ -251,7 +251,7 @@ report 50200 CommercialInvoiceReport
             {
                 DataItemLink = "Document No." = field("No.");
                 DataItemLinkReference = "Sales Header";
-                DataItemTableView = where(Type = const(Item));
+                //DataItemTableView = where(Type = const(Item));
                 column(Type; "Type")
                 {
 
