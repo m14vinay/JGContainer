@@ -27,6 +27,11 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
                 ToolTip = 'Specifies vessel';
                 ApplicationArea = All;
             }
+              field("Vessel 1"; Rec."Vessel 1")
+            {
+                ToolTip = 'Specifies Mother vessel';
+                ApplicationArea = All;
+            }
             field(Measurement; Rec.Measurement)
             {
                 ToolTip = 'Measurement';

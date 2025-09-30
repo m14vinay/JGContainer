@@ -18,7 +18,12 @@ pageextension 50216 "Posted Sales CrMemo Ext" extends "Posted Sales Credit Memo"
                 ToolTip = 'Specifies vessel';
                 ApplicationArea = All;
             }
-             field(Measurement; Rec.Measurement)
+            field("Vessel 1"; Rec."Vessel 1")
+            {
+                ToolTip = 'Specifies Mother vessel';
+                ApplicationArea = All;
+            }
+            field(Measurement; Rec.Measurement)
             {
                 ToolTip = 'Measurement';
                 ApplicationArea = All;
