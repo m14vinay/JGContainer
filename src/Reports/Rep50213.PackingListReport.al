@@ -38,12 +38,12 @@ report 50213 "Packing List Report"
             column(ShipmentTo; "Shipment To") { }
             column(Vessel; Vessel) { }
             column(CommercialInvoiceNo; "Commercial Invoice No") { }
+            column(Commercial_Invoice_Date; Format("Commercial Invoice Date")) { }
             dataitem(SalesLine; "Sales Line")
             {
                 DataItemLink = "Document Type" = field("Document Type"),
                                "Document No." = field("No.");
-                DataItemTableView = sorting("Document No.", "Line No.") where(Type = const(Item));
-
+                DataItemTableView = sorting("Document No.", "Line No.");
                 column(Job_No_; "Shortcut Dimension 2 Code") { }
                 column(ItemNo; "No.") { }
                 column(Description; Description) { }
@@ -54,8 +54,6 @@ report 50213 "Packing List Report"
                 column(GrossWeight; "Gross Weight") { }
                 column(Unit_Volume; "Unit Volume") { }
                 column(QtyPerPack; QtyPerPack) { }
-
-
                 trigger OnAfterGetRecord()
                 begin
                     LineNo += 1;
@@ -64,12 +62,17 @@ report 50213 "Packing List Report"
                 end;
 
                 trigger OnPreDataItem()
+                var
+                    ItemRec: Record Item;
                 begin
                     LineNo := 0;
                     TotalQuantity := 0;
                     TotalNetWeight := 0;
                     TotalGrossWeight := 0;
                     TotalVolume := 0;
+                    SetRange(Type, SalesLine.Type::Item);
+                    ItemRec.SetRange(Type, ItemRec.Type::Inventory);
+                    SetTableView(ItemRec);
                 end;
             }
 
@@ -98,6 +101,7 @@ report 50213 "Packing List Report"
     end;
 
     var
+        DocumentDate: date;
         CompanyInfo: Record "Company Information";
         Item: Record Item;
         PackSize: Record "Pack Size";

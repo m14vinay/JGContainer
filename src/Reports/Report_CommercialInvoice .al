@@ -123,7 +123,7 @@ report 50200 CommercialInvoiceReport
             column(SalesHeaderNo_; "No.")
             {
             }
-            column(DueDate; Format("Due Date"))
+            column(DueDate; DueDate)
             {
             }
             column(PaymentTerms; "Payment Terms Code")
@@ -292,6 +292,7 @@ report 50200 CommercialInvoiceReport
                 {
 
                 }
+                column(UnitVolume; UnitVolume) { }
                 trigger OnAfterGetRecord()
                 var
                     ItemCard: Record Item;
@@ -331,6 +332,7 @@ report 50200 CommercialInvoiceReport
                 Customer: Record "Customer";
                 SalesLine: Record "Sales Line";
                 VATPostingSetup: Record "VAT Posting Setup";
+                SalesHeader: Record "Sales Header";
             begin
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
@@ -365,6 +367,10 @@ report 50200 CommercialInvoiceReport
                     if VATPostingSetup.FindFirst() then begin
                         SalesTaxPercent := 'Sales Tax ' + VATPostingSetup."VAT %".ToText() + ' %';
                     end;
+                end;
+                SalesHeader.SetRange("No.", "Commercial Invoice No");
+                if SalesHeader.FindFirst() then begin
+                    DueDate := SalesHeader."Due Date";
                 end;
             end;
 
@@ -406,6 +412,7 @@ report 50200 CommercialInvoiceReport
     end;
 
     var
+        DueDate: Date;
         Currency_Code: Text;
         SalesTaxPercent: Text;
         CompanyCounty: Text;
