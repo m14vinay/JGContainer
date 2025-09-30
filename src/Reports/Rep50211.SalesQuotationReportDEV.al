@@ -373,10 +373,6 @@ report 50211 "Sales Quotation Report"
         CurrencyCodeToUse: Code[10];
         GLSetup: Record "General Ledger Setup";
     begin
-        CurrencyCodeToUse := SalesLineTemp."Currency Code";
-        if CurrencyCodeToUse = '' then
-            if GLSetup.Get() then
-                CurrencyCodeToUse := GLSetup."LCY Code";
         SalesHeader.CalcFields("Amount Including VAT");
         CheckCU.InitTextVariable();
         CheckCU.FormatNoText(NoText, Abs(SalesHeader."Amount Including VAT"), CurrencyCodeToUse);
