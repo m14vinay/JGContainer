@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-30T05:35:59.8465387Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-30T10:42:26.6762332Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -32,7 +32,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>18.60756cm</Width>
+                  <Width>18.63381cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -59,7 +59,7 @@
                                     <Width>2.33474cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>1.4792cm</Width>
+                                    <Width>1.46841cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
                                     <Width>2.16904cm</Width>
@@ -68,7 +68,7 @@
                                     <Width>1.64299cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>2.4921cm</Width>
+                                    <Width>2.58346cm</Width>
                                   </TablixColumn>
                                 </TablixColumns>
                                 <TablixRows>
@@ -470,7 +470,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>="Amount ( "+ Fields!Currency_Code.Value+" )"</Value>
+                                                    <Value>="Amount("+ Fields!Currency_Code.Value+")"</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>9pt</FontSize>
@@ -1112,7 +1112,7 @@
                               <Top>0.17639cm</Top>
                               <Left>0.35581cm</Left>
                               <Height>2.28474cm</Height>
-                              <Width>18.1194cm</Width>
+                              <Width>18.19997cm</Width>
                               <Style>
                                 <Border>
                                   <Style>Solid</Style>
@@ -3606,7 +3606,7 @@
               <BreakLocation>End</BreakLocation>
             </PageBreak>
             <Height>10.10012cm</Height>
-            <Width>18.60756cm</Width>
+            <Width>18.63381cm</Width>
             <Style />
           </Tablix>
         </ReportItems>
