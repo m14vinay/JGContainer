@@ -132,11 +132,15 @@ report 50211 "Sales Quotation Report"
 
             begin
                 GetCompanyInfo();
-                AmountInWords();
                 CalculateTransportCharges();
                 LoadWorkDescription();
+                SalesHeader.CalcFields("Amount Including VAT");
+                CheckCU.InitTextVariable();
+                CheckCU.FormatNoText(NoText, Abs(SalesHeader."Amount Including VAT"), SalesHeader."Currency Code");
+                AmtInWords := NoText[1] + ' ' + NoText[2];
                 if ("Currency Code" = '') then begin
                     Currency_Code := 'MYR';
+                    AmtInWords := 'Malaysian Ringgit ' + StrSubstNo('%1 Sen ONLY', DelStr(AmtInWords, StrPos(AmtInWords, 'ONLY'), StrLen('ONLY')), '')
                 end
                 else begin
                     Currency_Code := "Currency Code";
@@ -365,24 +369,6 @@ report 50211 "Sales Quotation Report"
                 Addr += ', ' + Country.Name;
 
         exit(Addr);
-    end;
-
-    local procedure AmountInWords()
-    var
-        SalesLineTemp: Record "Sales Line";
-        CurrencyCodeToUse: Code[10];
-        GLSetup: Record "General Ledger Setup";
-    begin
-        SalesHeader.CalcFields("Amount Including VAT");
-        CheckCU.InitTextVariable();
-        CheckCU.FormatNoText(NoText, Abs(SalesHeader."Amount Including VAT"), CurrencyCodeToUse);
-        AmtInWords := NoText[1] + ' ' + NoText[2];
-
-        if UpperCase(CurrencyCodeToUse) = 'MYR' then
-            if StrPos(AmtInWords, 'ONLY') > 0 then
-                AmtInWords := 'Malaysian Ringgit ' + StrSubstNo('%1 Sen ONLY', DelStr(AmtInWords, StrPos(AmtInWords, 'ONLY'), StrLen('ONLY')), '')
-            else
-                AmtInWords := 'Malaysian Ringgit ' + AmtInWords;
     end;
 
     local procedure BuildBank2Address(Bank: Record "Bank Account"): Text
