@@ -181,6 +181,17 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
 
                 end;
             }
+           
+        }
+        modify(ProformaInvoice)
+        {
+            trigger OnBeforeAction()
+            var
+                myInt: Integer;
+            begin
+                If Rec."Proforma Invoice No" = '' then
+                  Error('Generate Proforma Invoice before report is printed.');
+            end;
         }
     }
     trigger OnAfterGetRecord()
