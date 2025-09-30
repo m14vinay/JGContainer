@@ -67,40 +67,73 @@ codeunit 50201 "Event Subscriber"
     begin
         WareShipLine.Reset();
         WareShipLine.SetRange("No.", WarehouseShipmentHeader."No.");
-        WareShipLine.SetRange("Source Document",WareShipLine."Source Document"::"Sales Order");
+        WareShipLine.SetRange("Source Document", WareShipLine."Source Document"::"Sales Order");
         If WareShipLine.FindSet() then
             repeat
-                
-                    SalesHeader.Reset();
-                    SalesHeader.SetRange("Document Type", SalesHeader."Document Type"::Order);
-                    SalesHeader.SetRange("No.", WareShipLine."Source No.");
-                    If SalesHeader.FindFirst() then begin
-                        SalesHeader."Whse Ship No" := WareShipLine."No.";
-                        SalesHeader.Modify(false);
-                    end;
-               
+
+                SalesHeader.Reset();
+                SalesHeader.SetRange("Document Type", SalesHeader."Document Type"::Order);
+                SalesHeader.SetRange("No.", WareShipLine."Source No.");
+                If SalesHeader.FindFirst() then begin
+                    SalesHeader."Whse Ship No" := WareShipLine."No.";
+                    SalesHeader.Modify(false);
+                end;
+
             until WareShipLine.Next() = 0;
 
     end;
+
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Item Jnl.-Post Line", 'OnAfterInitItemLedgEntry', '', false, false)]
     local procedure OnAfterInitItemLedgEntry(var NewItemLedgEntry: Record "Item Ledger Entry"; var ItemJournalLine: Record "Item Journal Line")
     begin
-        NewItemLedgEntry."Quantity Pieces" := ItemJournalLine."Quantity Pieces";
-        NewItemLedgEntry."Net Weight" := ItemJournalLine."Net Weight";
+        if ItemJournalLine."Entry Type" in
+          [ItemJournalLine."Entry Type"::Sale,
+           ItemJournalLine."Entry Type"::"Negative Adjmt.",
+           ItemJournalLine."Entry Type"::Transfer,
+           ItemJournalLine."Entry Type"::Consumption,
+           ItemJournalLine."Entry Type"::"Assembly Consumption"]
+       then begin
+            NewItemLedgEntry."Quantity Pieces" := -ItemJournalLine."Quantity Pieces";
+            NewItemLedgEntry."Net Weight" := ItemJournalLine."Net Weight";
+        end else begin
+            NewItemLedgEntry."Quantity Pieces" := ItemJournalLine."Quantity Pieces";
+            NewItemLedgEntry."Net Weight" := ItemJournalLine."Net Weight";
+        end;
+
     end;
+
     [EventSubscriber(ObjectType::Table, Database::"Transfer Shipment Line", 'OnAfterCopyFromTransferLine', '', false, false)]
     local procedure OnAfterCopyFromTransferLine(var TransferShipmentLine: Record "Transfer Shipment Line"; TransferLine: Record "Transfer Line")
 
     begin
-       TransferShipmentLine."Quantity Pieces" := TransferLine."Quantity Pieces";
+        TransferShipmentLine."Quantity Pieces" := TransferLine."Quantity Pieces";
     end;
+
     [EventSubscriber(ObjectType::Table, Database::"Transfer Receipt Line", 'OnAfterCopyFromTransferLine', '', false, false)]
     local procedure OnAfterCopyFromTransferLineRecpt(var TransferReceiptLine: Record "Transfer Receipt Line"; TransferLine: Record "Transfer Line")
 
     begin
-       TransferReceiptLine."Quantity Pieces" := TransferLine."Quantity Pieces";
+        TransferReceiptLine."Quantity Pieces" := TransferLine."Quantity Pieces";
     end;
-    
+    [EventSubscriber(ObjectType::Codeunit, CodeUnit::"TransferOrder-Post Shipment", 'OnAfterCreateItemJnlLine', '', false, false)]
+    local procedure OnAfterCreateItemJnlLine(var ItemJournalLine: Record "Item Journal Line"; TransferLine: Record "Transfer Line"; TransferShipmentHeader: Record "Transfer Shipment Header"; TransferShipmentLine: Record "Transfer Shipment Line")
+
+    begin
+        ItemJournalLine."Quantity Pieces" := TransferLine."Quantity Pieces";
+    end;
+     [EventSubscriber(ObjectType::Codeunit, CodeUnit::"TransferOrder-Post Receipt", 'OnBeforePostItemJournalLine', '', false, false)]
+    local procedure OnBeforePostItemJournalLine(var ItemJournalLine: Record "Item Journal Line"; TransferLine: Record "Transfer Line"; TransferReceiptHeader: Record "Transfer Receipt Header"; TransferReceiptLine: Record "Transfer Receipt Line"; CommitIsSuppressed: Boolean; TransLine: Record "Transfer Line"; PostedWhseRcptHeader: Record "Posted Whse. Receipt Header")
+
+    begin
+        ItemJournalLine."Quantity Pieces" := TransferLine."Quantity Pieces";
+    end;
+    [EventSubscriber(ObjectType::Codeunit, CodeUnit::"TransferOrder-Post Transfer", 'OnAfterCreateItemJnlLine', '', false, false)]
+    local procedure OnAfterCreateItemJnlLineTransfer(var ItemJnlLine: Record "Item Journal Line"; TransLine: Record "Transfer Line"; DirectTransHeader: Record "Direct Trans. Header"; DirectTransLine: Record "Direct Trans. Line")
+
+    begin
+        ItemJnlLine."Quantity Pieces" := TransLine."Quantity Pieces";
+    end;
+
 
 
 }
