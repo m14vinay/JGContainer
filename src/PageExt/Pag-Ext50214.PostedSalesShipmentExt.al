@@ -26,12 +26,17 @@ pageextension 50214 "Posted Sales Shipment Ext" extends "Posted Sales Shipment"
                 ToolTip = 'Specifies vessel';
                 ApplicationArea = All;
             }
+            field("Vessel 1"; Rec."Vessel 1")
+            {
+                ToolTip = 'Specifies Mother vessel';
+                ApplicationArea = All;
+            }
             field("Vehicle No."; Rec."Vehicle No.")
             {
                 ToolTip = 'Specifies vehicle no';
                 ApplicationArea = All;
             }
-             field(Measurement; Rec.Measurement)
+            field(Measurement; Rec.Measurement)
             {
                 ToolTip = 'Measurement';
                 ApplicationArea = All;

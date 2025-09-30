@@ -10,7 +10,7 @@ tableextension 50225 "Return Recpt Hdr Ext" extends "Return Receipt Header"
         field(50202; Vessel; Text[50])
         {
             DataClassification = CustomerContent;
-            Caption = 'Vessel';
+            Caption = 'Feeder Vessel';
         }
         field(50203; "Shipment From"; Text[100])
         {
@@ -38,6 +38,11 @@ tableextension 50225 "Return Recpt Hdr Ext" extends "Return Receipt Header"
         {
             Caption = 'Measurement';
             DataClassification = CustomerContent;
+        }
+          field(50214; "Vessel 1"; Text[50])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Mother Vessel';
         }
     }
 }

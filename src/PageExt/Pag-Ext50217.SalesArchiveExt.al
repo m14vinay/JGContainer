@@ -10,7 +10,7 @@ pageextension 50217 "Sales Archive Ext" extends "Sales Order Archive"
                 ApplicationArea = All;
             }
         }
-         addafter("Ship-to Phone No.")
+        addafter("Ship-to Phone No.")
         {
             field("Delivery Area"; Rec."Delivery Area")
             {
@@ -25,7 +25,12 @@ pageextension 50217 "Sales Archive Ext" extends "Sales Order Archive"
                 ToolTip = 'Specifies vessel';
                 ApplicationArea = All;
             }
-             field(Measurement; Rec.Measurement)
+            field("Vessel 1"; Rec."Vessel 1")
+            {
+                ToolTip = 'Specifies Mother vessel';
+                ApplicationArea = All;
+            }
+            field(Measurement; Rec.Measurement)
             {
                 ToolTip = 'Measurement';
                 ApplicationArea = All;

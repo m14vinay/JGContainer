@@ -24,5 +24,15 @@ tableextension 50205 "Posted Sales Inv Ext" extends "Sales Invoice Line"
             Editable = false;
             BlankZero = true;
         }
+        field(50209; "Container No."; Text[100])
+        {
+            Caption = 'Container No.';
+            DataClassification = CustomerContent;
+        }
+         field(50210; "Seal"; Text[100])
+        {
+            Caption = 'Seal';
+            DataClassification = CustomerContent;
+        }
     }
 }

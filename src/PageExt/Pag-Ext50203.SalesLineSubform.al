@@ -16,6 +16,16 @@ pageextension 50203 "Sales Line Subform" extends "Sales Order Subform"
             {
                 ApplicationArea = All;
             }
+             field("Container No."; Rec."Container No.")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Specifies the Container No.';
+            }
+             field(Seal; Rec.Seal)
+            {
+                ApplicationArea = All;
+                ToolTip = 'Specifies the Seal';
+            }
 
         }
         Modify("Net Weight")

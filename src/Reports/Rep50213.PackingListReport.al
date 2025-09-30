@@ -26,6 +26,7 @@ report 50213 "Packing List Report"
             // --- Report header ---
             column(ReportTitle; 'PACKING LIST') { }
             column(ReportDate; Today) { }
+            column(CommercialInvoiceDate; SalesHeader."Commercial Invoice Date") { }
 
             // --- Sales Header fields ---
             column(SalesNo; "No.") { }

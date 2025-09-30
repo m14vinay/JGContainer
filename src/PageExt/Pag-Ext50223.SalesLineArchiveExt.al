@@ -15,6 +15,16 @@ pageextension 50223 "Sales Line Archive Ext" extends "Sales Order Archive Subfor
             {
                 ApplicationArea = All;
             }
+              field("Container No."; Rec."Container No.")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Specifies the Container No.';
+            }
+             field(Seal; Rec.Seal)
+            {
+                ApplicationArea = All;
+                ToolTip = 'Specifies the Seal';
+            }
         }
          Modify("Net Weight")
         {

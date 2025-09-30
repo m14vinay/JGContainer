@@ -19,6 +19,16 @@ pageextension 50235 "Sales Return Ord Line Ext" extends "Sales Return Order Subf
                 ApplicationArea = All;
                 ToolTip = 'Specifies the Qty Per Pack';
             }
+              field("Container No."; Rec."Container No.")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Specifies the Container No.';
+            }
+             field(Seal; Rec.Seal)
+            {
+                ApplicationArea = All;
+                ToolTip = 'Specifies the Seal';
+            }
         }
          Modify("Net Weight")
         {

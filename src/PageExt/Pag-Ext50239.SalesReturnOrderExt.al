@@ -9,6 +9,11 @@ pageextension 50239 "Sales Return Order Ext" extends "Sales Return Order"
                 ToolTip = 'Specifies vessel';
                 ApplicationArea = All;
             }
+              field("Vessel 1"; Rec."Vessel 1")
+            {
+                ToolTip = 'Specifies Mother vessel';
+                ApplicationArea = All;
+            }
             field("Vehicle No."; Rec."Vehicle No.")
             {
                 ToolTip = 'Specifies vehicle no';

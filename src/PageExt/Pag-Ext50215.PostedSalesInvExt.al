@@ -25,12 +25,17 @@ pageextension 50215 "Posted Sales Inv Ext" extends "Posted Sales Invoice"
                 ToolTip = 'Specifies vessel';
                 ApplicationArea = All;
             }
-             field(Measurement; Rec.Measurement)
+            field("Vessel 1"; Rec."Vessel 1")
+            {
+                ToolTip = 'Specifies Mother vessel';
+                ApplicationArea = All;
+            }
+            field(Measurement; Rec.Measurement)
             {
                 ToolTip = 'Measurement';
                 ApplicationArea = All;
             }
-            
+
         }
         addafter("Package Tracking No.")
         {
@@ -53,7 +58,7 @@ pageextension 50215 "Posted Sales Inv Ext" extends "Posted Sales Invoice"
                 ApplicationArea = All;
             }
         }
-        
+
     }
     actions
     {
@@ -72,11 +77,11 @@ pageextension 50215 "Posted Sales Inv Ext" extends "Posted Sales Invoice"
                     MyReportID: Integer;
                     DocumentNo: Record "Sales Invoice Header";
                 begin
-                    MyReportID := Report::SalesDebitNoteReport;  
+                    MyReportID := Report::SalesDebitNoteReport;
 
-                
+
                     CurrPage.SetSelectionFilter(DocumentNo);
-                   
+
                     Report.RunModal(MyReportID, true, false, DocumentNo);
                 end;
             }

@@ -27,6 +27,11 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
                 ToolTip = 'Specifies vessel';
                 ApplicationArea = All;
             }
+              field("Vessel 1"; Rec."Vessel 1")
+            {
+                ToolTip = 'Specifies Mother vessel';
+                ApplicationArea = All;
+            }
             field(Measurement; Rec.Measurement)
             {
                 ToolTip = 'Measurement';
@@ -176,6 +181,17 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
 
                 end;
             }
+           
+        }
+        modify(ProformaInvoice)
+        {
+            trigger OnBeforeAction()
+            var
+                myInt: Integer;
+            begin
+                If Rec."Proforma Invoice No" = '' then
+                  Error('Generate Proforma Invoice before report is printed.');
+            end;
         }
     }
     trigger OnAfterGetRecord()
