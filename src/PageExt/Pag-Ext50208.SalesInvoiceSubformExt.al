@@ -15,6 +15,16 @@ pageextension 50208 "Sales Invoice Subform Ext" extends "Sales Invoice Subform"
             {
                 ApplicationArea = All;
             }
+             field("Container No."; Rec."Container No.")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Specifies the Container No.';
+            }
+             field(Seal; Rec.Seal)
+            {
+                ApplicationArea = All;
+                ToolTip = 'Specifies the Seal';
+            }
         }
          Modify("Net Weight")
         {

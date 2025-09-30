@@ -15,6 +15,16 @@ pageextension 50219 "Sales Cr Memo Subform Ext" extends "Sales Cr. Memo Subform"
             {
                 ApplicationArea = All;
             }
+             field("Container No."; Rec."Container No.")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Specifies the Container No.';
+            }
+             field(Seal; Rec.Seal)
+            {
+                ApplicationArea = All;
+                ToolTip = 'Specifies the Seal';
+            }
         }
          Modify("Net Weight")
         {
