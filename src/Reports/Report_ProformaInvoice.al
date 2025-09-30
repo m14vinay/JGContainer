@@ -214,6 +214,11 @@ report 50209 ProfomaInvoice
             {
 
             }
+            column(SalesTaxPercent; SalesTaxPercent)
+            {
+
+            }
+            column(Currency_Code; Currency_Code) { }
             dataitem("Sales Line"; "Sales Line")
             {
                 DataItemLink = "Document No." = field("No.");
@@ -284,6 +289,8 @@ report 50209 ProfomaInvoice
             var
                 CountryRegion: Record "Country/Region";
                 Customer: Record "Customer";
+                Salesline: Record "Sales Line";
+                VATPostingSetup: Record "VAT Posting Setup";
             begin
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
@@ -303,6 +310,20 @@ report 50209 ProfomaInvoice
                 AmountInWordCal := NoText[1] + ' ' + NoText[2];
                 if ("Currency Code" = '') then begin
                     AmountInWords := 'Malaysian Ringgit ' + AmountInWordCal;
+                    Currency_Code := 'MYR';
+                end
+                else begin
+                    AmountInWords := AmountInWordCal;
+                    Currency_Code := "Currency Code";
+                end;
+                Salesline.SetRange("Document No.", "No.");
+                Salesline.SetRange(Type, Salesline.Type::Item);
+                if Salesline.FindFirst() then begin
+                    VATPostingSetup.SetRange("VAT Bus. Posting Group", Salesline."VAT Bus. Posting Group");
+                    VATPostingSetup.SetRange("VAT Prod. Posting Group", Salesline."VAT Prod. Posting Group");
+                    if VATPostingSetup.FindFirst() then begin
+                        SalesTaxPercent := 'Sales Tax ' + VATPostingSetup."VAT %".ToText() + ' %';
+                    end;
                 end;
             end;
 
@@ -344,6 +365,8 @@ report 50209 ProfomaInvoice
     end;
 
     var
+        Currency_Code: Text;
+        SalesTaxPercent: Text;
         CompanyCounty: Text;
         Packing: Decimal;
         AmountInWordCal: Text;

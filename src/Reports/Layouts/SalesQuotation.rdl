@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-10T01:56:11.1822674Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-30T04:51:03.8716223Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -524,7 +524,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Amount (MYR)</Value>
+                                                    <Value>="Amount ( "+Fields!Currency_Code.Value+" )"</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>8pt</FontSize>
@@ -945,7 +945,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!Amount__ACY_.Value</Value>
+                                                    <Value>=Fields!Amount.Value</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>8pt</FontSize>
@@ -1122,7 +1122,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Sum(Fields!Amount__ACY_.Value)</Value>
+                                                    <Value>=Sum(Fields!Amount.Value)</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>8pt</FontSize>
@@ -1192,8 +1192,6 @@
                               </TablixRowHierarchy>
                               <KeepTogether>true</KeepTogether>
                               <DataSetName>DataSet_Result</DataSetName>
-                              <Top>0cm</Top>
-                              <Left>0cm</Left>
                               <Height>2.27129cm</Height>
                               <Width>18.10486cm</Width>
                               <Style>
@@ -1378,7 +1376,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!Amount__ACY_.Value</Value>
+                                                    <Value>=Fields!Amount.Value</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>8pt</FontSize>
@@ -1508,6 +1506,7 @@
                                       <TablixCell />
                                       <TablixCell>
                                         <CellContents>
+                                          <rd:Selected>true</rd:Selected>
                                           <Textbox Name="Textbox204">
                                             <rd:DefaultName>Textbox202</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
@@ -1516,7 +1515,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Sales Tax 10%</Value>
+                                                    <Value>=Fields!SalesTaxPercent.Value</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>8pt</FontSize>
@@ -1559,7 +1558,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Sum(Fields!Amount_Including_VAT.Value) - Sum(Fields!Amount__ACY_.Value)</Value>
+                                                    <Value>=Sum(Fields!Amount_Including_VAT.Value) - Sum(Fields!Amount.Value)</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>8pt</FontSize>
@@ -1890,7 +1889,6 @@
                               <KeepTogether>true</KeepTogether>
                               <DataSetName>DataSet_Result</DataSetName>
                               <Top>2.27129cm</Top>
-                              <Left>0cm</Left>
                               <Height>2.41713cm</Height>
                               <Width>18.10487cm</Width>
                               <ZIndex>1</ZIndex>
@@ -1939,7 +1937,6 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>0cm</Top>
                                   <Left>0.017cm</Left>
                                   <Height>14.5pt</Height>
                                   <Width>4.07774cm</Width>
@@ -2264,7 +2261,6 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <Top>5.46764cm</Top>
-                                  <Left>0cm</Left>
                                   <Height>12.52479pt</Height>
                                   <Width>3.01761cm</Width>
                                   <ZIndex>9</ZIndex>
@@ -2295,7 +2291,6 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <Top>4.99051cm</Top>
-                                  <Left>0cm</Left>
                                   <Height>12.52479pt</Height>
                                   <Width>3.01761cm</Width>
                                   <ZIndex>10</ZIndex>
@@ -2326,7 +2321,6 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <Top>5.90948cm</Top>
-                                  <Left>0cm</Left>
                                   <Height>12.52479pt</Height>
                                   <Width>3.01761cm</Width>
                                   <ZIndex>11</ZIndex>
@@ -2451,7 +2445,6 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <Top>6.52771cm</Top>
-                                  <Left>0cm</Left>
                                   <Height>17.52479pt</Height>
                                   <Width>10.19556cm</Width>
                                   <ZIndex>15</ZIndex>
@@ -2482,7 +2475,6 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <Top>7.62307cm</Top>
-                                  <Left>0cm</Left>
                                   <Height>12.52479pt</Height>
                                   <Width>3.00163cm</Width>
                                   <ZIndex>16</ZIndex>
@@ -2513,7 +2505,6 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <Top>7.14594cm</Top>
-                                  <Left>0cm</Left>
                                   <Height>12.52479pt</Height>
                                   <Width>3.00163cm</Width>
                                   <ZIndex>17</ZIndex>
@@ -2544,7 +2535,6 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <Top>8.06491cm</Top>
-                                  <Left>0cm</Left>
                                   <Height>12.52479pt</Height>
                                   <Width>3.00163cm</Width>
                                   <ZIndex>18</ZIndex>
@@ -2668,7 +2658,6 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <Top>8.50675cm</Top>
-                                  <Left>0cm</Left>
                                   <Height>12.52479pt</Height>
                                   <Width>3.01761cm</Width>
                                   <ZIndex>22</ZIndex>
@@ -2699,7 +2688,6 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <Top>8.94859cm</Top>
-                                  <Left>0cm</Left>
                                   <Height>12.52479pt</Height>
                                   <Width>3.01761cm</Width>
                                   <ZIndex>23</ZIndex>
@@ -3162,6 +3150,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
+            <DataSetName>DataSet_Result</DataSetName>
             <Top>0.08865cm</Top>
             <Left>0.07682cm</Left>
             <Height>14.31531cm</Height>
@@ -4856,7 +4845,6 @@
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
               <Top>1.24547cm</Top>
-              <Left>0cm</Left>
               <Height>0.70554cm</Height>
               <Width>0.8697cm</Width>
               <ZIndex>35</ZIndex>
@@ -5351,6 +5339,12 @@ j3/yPJ57/gVlR3/2Ao7Ko/k89s3/fye2iX2bZvo2bSjfppm+TTN9m5bk2zTTt2lJvk1L8m1akm/TTN+m
         </Field>
         <Field Name="TotalTransportChargeFormat">
           <DataField>TotalTransportChargeFormat</DataField>
+        </Field>
+        <Field Name="SalesTaxPercent">
+          <DataField>SalesTaxPercent</DataField>
+        </Field>
+        <Field Name="Currency_Code">
+          <DataField>Currency_Code</DataField>
         </Field>
         <Field Name="Customers_Mobile_Phone_No_">
           <DataField>Customers_Mobile_Phone_No_</DataField>

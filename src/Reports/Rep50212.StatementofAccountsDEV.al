@@ -299,7 +299,7 @@ report 50212 "SOA"
                             column(PostDate_DtldCustLedgEntries; Format("Posting Date"))
                             {
                             }
-                            column(DocDate_; "Document Date") { }
+                            column(DocDate_; Format("Document Date")) { }
                             column(DocNo_DtldCustLedgEntries; "Document No.")
                             {
                             }

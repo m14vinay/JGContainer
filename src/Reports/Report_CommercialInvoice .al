@@ -242,6 +242,11 @@ report 50200 CommercialInvoiceReport
             {
 
             }
+            column(SalesTaxPercent; SalesTaxPercent)
+            {
+
+            }
+            column(Currency_Code; Currency_Code) { }
             dataitem("Sales Line"; "Sales Line")
             {
                 DataItemLink = "Document No." = field("No.");
@@ -324,7 +329,8 @@ report 50200 CommercialInvoiceReport
             var
                 CountryRegion: Record "Country/Region";
                 Customer: Record "Customer";
-                SalesInvoiceLine: Record "Sales Invoice Line";
+                SalesLine: Record "Sales Line";
+                VATPostingSetup: Record "VAT Posting Setup";
             begin
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
@@ -344,11 +350,21 @@ report 50200 CommercialInvoiceReport
                 AmountInWordCal := NoText[1] + ' ' + NoText[2];
                 if ("Currency Code" = '') then begin
                     AmountInWords := 'Malaysian Ringgit ' + AmountInWordCal;
+                    Currency_Code := 'MYR';
+                end
+                else begin
+                    AmountInWords := AmountInWordCal;
+                    Currency_Code := "Currency Code";
                 end;
-                SalesInvoiceLine.SetRange("Document No.", "No.");
-                SalesInvoiceLine.SetRange(Type, SalesInvoiceLine.Type::Item);
-                if SalesInvoiceLine.FindFirst() then begin
-                    DONo := SalesInvoiceLine."Shipment No.";
+                SalesLine.SetRange("Document No.", "No.");
+                SalesLine.SetRange(Type, SalesLine.Type::Item);
+                if SalesLine.FindFirst() then begin
+                    DONo := SalesLine."Shipment No.";
+                    VATPostingSetup.SetRange("VAT Bus. Posting Group", SalesLine."VAT Bus. Posting Group");
+                    VATPostingSetup.SetRange("VAT Prod. Posting Group", SalesLine."VAT Prod. Posting Group");
+                    if VATPostingSetup.FindFirst() then begin
+                        SalesTaxPercent := 'Sales Tax ' + VATPostingSetup."VAT %".ToText() + ' %';
+                    end;
                 end;
             end;
 
@@ -390,6 +406,8 @@ report 50200 CommercialInvoiceReport
     end;
 
     var
+        Currency_Code: Text;
+        SalesTaxPercent: Text;
         CompanyCounty: Text;
         UnitVolume: Decimal;
         TariffNumber: Code[20];

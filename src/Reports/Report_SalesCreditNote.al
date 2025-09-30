@@ -214,6 +214,11 @@ report 50205 SalesCreditNoteReport
             {
 
             }
+            column(SalesTaxPercent; SalesTaxPercent)
+            {
+
+            }
+            column(Currency_Code; Currency_Code) { }
             dataitem("Sales Cr.Memo Line"; "Sales Cr.Memo Line")
             {
                 DataItemLink = "Document No." = field("No.");
@@ -291,6 +296,7 @@ report 50205 SalesCreditNoteReport
                 CountryRegion: Record "Country/Region";
                 Customer: Record "Customer";
                 SalesCreditMemoline: Record "Sales Cr.Memo Line";
+                VATPostingSetup: Record "VAT Posting Setup";
             begin
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
@@ -310,11 +316,21 @@ report 50205 SalesCreditNoteReport
                 AmountInWordCal := NoText[1] + ' ' + NoText[2];
                 if ("Currency Code" = '') then begin
                     AmountInWords := 'Malaysian Ringgit ' + AmountInWordCal;
+                    Currency_Code := 'MYR';
+                end
+                else begin
+                    AmountInWords := AmountInWordCal;
+                    Currency_Code := "Currency Code";
                 end;
                 SalesCreditMemoline.SetRange("Document No.", "No.");
                 SalesCreditMemoline.SetRange(Type, SalesCreditMemoline.Type::Item);
                 if SalesCreditMemoline.FindFirst() then begin
                     DONo := SalesCreditMemoline."Return Receipt No.";
+                    VATPostingSetup.SetRange("VAT Bus. Posting Group", SalesCreditMemoline."VAT Bus. Posting Group");
+                    VATPostingSetup.SetRange("VAT Prod. Posting Group", SalesCreditMemoline."VAT Prod. Posting Group");
+                    if VATPostingSetup.FindFirst() then begin
+                        SalesTaxPercent := 'Sales Tax ' + VATPostingSetup."VAT %".ToText() + ' %';
+                    end;
                 end;
             end;
 
@@ -356,6 +372,8 @@ report 50205 SalesCreditNoteReport
     end;
 
     var
+        Currency_Code: Text;
+        SalesTaxPercent: Text;
         CompanyCounty: Text;
         Unit_Price: Decimal;
         DONo: Text;

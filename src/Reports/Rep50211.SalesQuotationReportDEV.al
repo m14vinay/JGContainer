@@ -62,6 +62,11 @@ report 50211 "Sales Quotation Report"
             column(AmountInWords; AmtInWords) { }
 
             column(TotalTransportCharge; TotalTransportCharge) { }
+            column(SalesTaxPercent; SalesTaxPercent)
+            {
+
+            }
+            column(Currency_Code; Currency_Code) { }
 
             // --- Related Customer ---
             dataitem(Customer; Customer)
@@ -87,7 +92,6 @@ report 50211 "Sales Quotation Report"
                 column(Type; Type) { }
                 column(Quantity_Pieces; "Quantity Pieces") { }
                 column(Price_Per_Piece; "Price Per Piece") { }
-
                 dataitem(Item; "Item")
                 {
                     DataItemLink = "No." = field("No.");
@@ -122,11 +126,30 @@ report 50211 "Sales Quotation Report"
             }
 
             trigger OnAfterGetRecord()
+            var
+                Salesline: Record "Sales Line";
+                VATPostingSetup: Record "VAT Posting Setup";
+
             begin
                 GetCompanyInfo();
                 AmountInWords();
                 CalculateTransportCharges();
                 LoadWorkDescription();
+                if ("Currency Code" = '') then begin
+                    Currency_Code := 'MYR';
+                end
+                else begin
+                    Currency_Code := "Currency Code";
+                end;
+                Salesline.SetRange("Document No.", "No.");
+                Salesline.SetRange(Type, Salesline.Type::Item);
+                if Salesline.FindFirst() then begin
+                    VATPostingSetup.SetRange("VAT Bus. Posting Group", Salesline."VAT Bus. Posting Group");
+                    VATPostingSetup.SetRange("VAT Prod. Posting Group", Salesline."VAT Prod. Posting Group");
+                    if VATPostingSetup.FindFirst() then begin
+                        SalesTaxPercent := 'Sales Tax ' + VATPostingSetup."VAT %".ToText() + ' %';
+                    end;
+                end;
             end;
         }
     }
@@ -157,6 +180,8 @@ report 50211 "Sales Quotation Report"
     end;
 
     var
+        Currency_Code: Text;
+        SalesTaxPercent: Text;
         CompanyInfo: Record "Company Information";
         CompanyAddress: Text;
         CountryRegion: Record "Country/Region";
@@ -342,33 +367,6 @@ report 50211 "Sales Quotation Report"
         exit(Addr);
     end;
 
-    // local procedure AmountInWords()
-    // var
-    //     SalesLineTemp: Record "Sales Line";
-    //     CurrencyCodeToUse: Code[10];
-    //     GLSetup: Record "General Ledger Setup";
-    // begin
-    //     TotalAmountLCY := 0;
-    //     SalesLineTemp.SetRange("Document No.", SalesHeader."No.");
-    //     SalesLineTemp.SetRange("Document Type", SalesHeader."Document Type");
-    //     // Exclude charge items from total amount calculation if needed
-    //     // SalesLineTemp.SetFilter(Type, '<>%1', SalesLineTemp.Type::"Charge (Item)");
-
-    //     if SalesLineTemp.FindSet() then
-    //         repeat
-    //             TotalAmountLCY += SalesLineTemp."Amount (ACY)";
-    //         until SalesLineTemp.Next() = 0;
-
-    //     CurrencyCodeToUse := SalesLineTemp."Currency Code";
-    //     if CurrencyCodeToUse = '' then
-    //         if GLSetup.Get() then
-    //             CurrencyCodeToUse := GLSetup."LCY Code";
-
-    //     CheckCU.InitTextVariable();
-    //     CheckCU.FormatNoText2(NoText, Abs(TotalAmountLCY), CurrencyCodeToUse);
-    //     AmtInWords := NoText[1] + ' ' + NoText[2];
-    // end;
-
     local procedure AmountInWords()
     var
         SalesLineTemp: Record "Sales Line";
@@ -392,7 +390,7 @@ report 50211 "Sales Quotation Report"
                 CurrencyCodeToUse := GLSetup."LCY Code";
 
         CheckCU.InitTextVariable();
-        CheckCU.FormatNoText2(NoText, Abs(TotalAmountLCY), CurrencyCodeToUse);
+        CheckCU.FormatNoText(NoText, Abs(TotalAmountLCY), CurrencyCodeToUse);
         AmtInWords := NoText[1] + ' ' + NoText[2];
 
         if UpperCase(CurrencyCodeToUse) = 'MYR' then

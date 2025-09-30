@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-11T04:33:50.8556105Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-30T04:14:18.5537918Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -528,7 +528,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Amount (MYR)</Value>
+                                                    <Value>="Amount ( "+ Fields!Currency_Code.Value+" )"</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>9pt</FontSize>
@@ -1621,6 +1621,7 @@
                                       <TablixCell />
                                       <TablixCell>
                                         <CellContents>
+                                          <rd:Selected>true</rd:Selected>
                                           <Textbox Name="Textbox320">
                                             <rd:DefaultName>Textbox320</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
@@ -1629,7 +1630,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Sales Tax 10%</Value>
+                                                    <Value>=Fields!SalesTaxPercent.Value</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>9pt</FontSize>
@@ -1785,7 +1786,7 @@
                                                     <Value>AMOUNT IN WORDS :</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
-                                                      <FontSize>9pt</FontSize>
+                                                      <FontSize>8pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                     </Style>
                                                   </TextRun>
@@ -1825,7 +1826,7 @@
                                                     <Value>=Fields!AmountInWords.Value</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
-                                                      <FontSize>9pt</FontSize>
+                                                      <FontSize>8pt</FontSize>
                                                       <FontWeight>Normal</FontWeight>
                                                     </Style>
                                                   </TextRun>
@@ -2018,7 +2019,7 @@
                                                     <Value>SALES TAX EXEMPTION NO :</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
-                                                      <FontSize>9pt</FontSize>
+                                                      <FontSize>8pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                     </Style>
                                                   </TextRun>
@@ -2041,15 +2042,14 @@
                                               <PaddingBottom>2pt</PaddingBottom>
                                             </Style>
                                           </Textbox>
-                                          <ColSpan>3</ColSpan>
+                                          <ColSpan>2</ColSpan>
                                         </CellContents>
                                       </TablixCell>
                                       <TablixCell />
-                                      <TablixCell />
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="SSTExemption">
-                                            <rd:DefaultName>SSTExemption</rd:DefaultName>
+                                          <Textbox Name="SSTExemption1">
+                                            <rd:DefaultName>SSTExemption1</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
@@ -2057,6 +2057,44 @@
                                                 <TextRuns>
                                                   <TextRun>
                                                     <Value>=Fields!SSTExemption.Value</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>8pt</FontSize>
+                                                      <FontWeight>Normal</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Left</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <Style>
+                                              <Border>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <RightBorder>
+                                                <Style>None</Style>
+                                              </RightBorder>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Textbox9">
+                                            <rd:DefaultName>Textbox9</rd:DefaultName>
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value />
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>9pt</FontSize>
@@ -2162,7 +2200,7 @@
                                                     <Value>Remarks :</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
-                                                      <FontSize>9pt</FontSize>
+                                                      <FontSize>8pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                     </Style>
                                                   </TextRun>
@@ -2202,7 +2240,7 @@
                                                     <Value>=Fields!Work_Description.Value</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
-                                                      <FontSize>9pt</FontSize>
+                                                      <FontSize>8pt</FontSize>
                                                       <FontWeight>Normal</FontWeight>
                                                     </Style>
                                                   </TextRun>
@@ -5092,6 +5130,12 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         </Field>
         <Field Name="SSTExemption">
           <DataField>SSTExemption</DataField>
+        </Field>
+        <Field Name="SalesTaxPercent">
+          <DataField>SalesTaxPercent</DataField>
+        </Field>
+        <Field Name="Currency_Code">
+          <DataField>Currency_Code</DataField>
         </Field>
         <Field Name="Type">
           <DataField>Type</DataField>
