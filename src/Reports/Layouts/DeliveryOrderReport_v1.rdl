@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-30T04:28:39.1734724Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-09-30T08:23:42.4209942Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -1086,7 +1086,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="Returnable Pallet: "+First(Fields!Quantity.Value, "DataSet_Result")</Value>
+                    <Value>="Returnable Pallet: "+Format(First(Fields!Quantity.Value, "DataSet_Result"))</Value>
                     <Style>
                       <FontFamily>Segoe UI</FontFamily>
                       <FontWeight>Bold</FontWeight>

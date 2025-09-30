@@ -44,37 +44,37 @@ report 50213 "Packing List Report"
             {
                 DataItemLink = "Document Type" = field("Document Type"),
                                "Document No." = field("No.");
-                DataItemTableView = sorting("Document No.", "Line No.");
-                column(Job_No_; "Shortcut Dimension 2 Code") { }
-                column(ItemNo; "No.") { }
-                column(Description; Description) { }
-                column(Quantity; Quantity) { }
-                column(QuantityBase; "Quantity (Base)") { }
-                column(Quantity_Pieces; "Quantity Pieces") { }
-                column(NetWeight; "Net Weight") { }
-                column(GrossWeight; "Gross Weight") { }
-                column(Unit_Volume; "Unit Volume") { }
-                column(QtyPerPack; QtyPerPack) { }
-                trigger OnAfterGetRecord()
-                begin
-                    LineNo += 1;
-                    GetPackSizeQty();
-                    AccumulateTotals();
-                end;
+                DataItemTableView = sorting("Document No.", "Line No.") where(Type = const(item));
+                dataitem(itemrecord; Item)
+                {
+                    DataItemLink = "No." = field("No.");
+                    DataItemTableView = where(Type = const(Inventory));
+                    column(Job_No_; SalesLine."Shortcut Dimension 2 Code") { }
+                    column(ItemNo; SalesLine."No.") { }
+                    column(Description; SalesLine.Description) { }
+                    column(Quantity; SalesLine.Quantity) { }
+                    column(QuantityBase; SalesLine."Quantity (Base)") { }
+                    column(Quantity_Pieces; SalesLine."Quantity Pieces") { }
+                    column(NetWeight; SalesLine."Net Weight") { }
+                    column(GrossWeight; SalesLine."Gross Weight") { }
+                    column(Unit_Volume; SalesLine."Unit Volume") { }
+                    column(QtyPerPack; QtyPerPack) { }
+                    trigger OnAfterGetRecord()
+                    begin
+                        LineNo += 1;
+                        GetPackSizeQty();
+                        AccumulateTotals();
+                    end;
 
-                trigger OnPreDataItem()
-                var
-                    ItemRec: Record Item;
-                begin
-                    LineNo := 0;
-                    TotalQuantity := 0;
-                    TotalNetWeight := 0;
-                    TotalGrossWeight := 0;
-                    TotalVolume := 0;
-                    SetRange(Type, SalesLine.Type::Item);
-                    ItemRec.SetRange(Type, ItemRec.Type::Inventory);
-                    SetTableView(ItemRec);
-                end;
+                    trigger OnPreDataItem()
+                    begin
+                        LineNo := 0;
+                        TotalQuantity := 0;
+                        TotalNetWeight := 0;
+                        TotalGrossWeight := 0;
+                        TotalVolume := 0;
+                    end;
+                }
             }
 
             // --- Totals ---

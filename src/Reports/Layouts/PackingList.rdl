@@ -22,154 +22,6 @@
       <rd:DataSourceID>848055eb-d646-4962-9ce1-9c258be6521b</rd:DataSourceID>
     </DataSource>
   </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-      <Fields>
-        <Field Name="CompanyName">
-          <DataField>CompanyName</DataField>
-        </Field>
-        <Field Name="CompanyRegNo">
-          <DataField>CompanyRegNo</DataField>
-        </Field>
-        <Field Name="CompanyCountry">
-          <DataField>CompanyCountry</DataField>
-        </Field>
-        <Field Name="CompanyAddress">
-          <DataField>CompanyAddress</DataField>
-        </Field>
-        <Field Name="CompanyPhoneFax">
-          <DataField>CompanyPhoneFax</DataField>
-        </Field>
-        <Field Name="CompanyLogo">
-          <DataField>CompanyLogo</DataField>
-        </Field>
-        <Field Name="GetCompanyCountryName">
-          <DataField>GetCompanyCountryName</DataField>
-        </Field>
-        <Field Name="GetCompanyAddress">
-          <DataField>GetCompanyAddress</DataField>
-        </Field>
-        <Field Name="ReportTitle">
-          <DataField>ReportTitle</DataField>
-        </Field>
-        <Field Name="ReportDate">
-          <DataField>ReportDate</DataField>
-        </Field>
-        <Field Name="CommercialInvoiceDate">
-          <DataField>CommercialInvoiceDate</DataField>
-        </Field>
-        <Field Name="SalesNo">
-          <DataField>SalesNo</DataField>
-        </Field>
-        <Field Name="SellToName">
-          <DataField>SellToName</DataField>
-        </Field>
-        <Field Name="SellToAddress">
-          <DataField>SellToAddress</DataField>
-        </Field>
-        <Field Name="SellToAddress2">
-          <DataField>SellToAddress2</DataField>
-        </Field>
-        <Field Name="SellToPostCountry">
-          <DataField>SellToPostCountry</DataField>
-        </Field>
-        <Field Name="ShipmentFrom">
-          <DataField>ShipmentFrom</DataField>
-        </Field>
-        <Field Name="ShipmentTo">
-          <DataField>ShipmentTo</DataField>
-        </Field>
-        <Field Name="Vessel">
-          <DataField>Vessel</DataField>
-        </Field>
-        <Field Name="CommercialInvoiceNo">
-          <DataField>CommercialInvoiceNo</DataField>
-        </Field>
-        <Field Name="Commercial_Invoice_Date">
-          <DataField>Commercial_Invoice_Date</DataField>
-        </Field>
-        <Field Name="TotalQuantity">
-          <DataField>TotalQuantity</DataField>
-        </Field>
-        <Field Name="TotalQuantityFormat">
-          <DataField>TotalQuantityFormat</DataField>
-        </Field>
-        <Field Name="TotalNetWeight">
-          <DataField>TotalNetWeight</DataField>
-        </Field>
-        <Field Name="TotalNetWeightFormat">
-          <DataField>TotalNetWeightFormat</DataField>
-        </Field>
-        <Field Name="TotalGrossWeight">
-          <DataField>TotalGrossWeight</DataField>
-        </Field>
-        <Field Name="TotalGrossWeightFormat">
-          <DataField>TotalGrossWeightFormat</DataField>
-        </Field>
-        <Field Name="TotalVolume">
-          <DataField>TotalVolume</DataField>
-        </Field>
-        <Field Name="TotalVolumeFormat">
-          <DataField>TotalVolumeFormat</DataField>
-        </Field>
-        <Field Name="Job_No_">
-          <DataField>Job_No_</DataField>
-        </Field>
-        <Field Name="ItemNo">
-          <DataField>ItemNo</DataField>
-        </Field>
-        <Field Name="Description">
-          <DataField>Description</DataField>
-        </Field>
-        <Field Name="Quantity">
-          <DataField>Quantity</DataField>
-        </Field>
-        <Field Name="QuantityFormat">
-          <DataField>QuantityFormat</DataField>
-        </Field>
-        <Field Name="QuantityBase">
-          <DataField>QuantityBase</DataField>
-        </Field>
-        <Field Name="QuantityBaseFormat">
-          <DataField>QuantityBaseFormat</DataField>
-        </Field>
-        <Field Name="Quantity_Pieces">
-          <DataField>Quantity_Pieces</DataField>
-        </Field>
-        <Field Name="Quantity_PiecesFormat">
-          <DataField>Quantity_PiecesFormat</DataField>
-        </Field>
-        <Field Name="NetWeight">
-          <DataField>NetWeight</DataField>
-        </Field>
-        <Field Name="NetWeightFormat">
-          <DataField>NetWeightFormat</DataField>
-        </Field>
-        <Field Name="GrossWeight">
-          <DataField>GrossWeight</DataField>
-        </Field>
-        <Field Name="GrossWeightFormat">
-          <DataField>GrossWeightFormat</DataField>
-        </Field>
-        <Field Name="Unit_Volume">
-          <DataField>Unit_Volume</DataField>
-        </Field>
-        <Field Name="Unit_VolumeFormat">
-          <DataField>Unit_VolumeFormat</DataField>
-        </Field>
-        <Field Name="QtyPerPack">
-          <DataField>QtyPerPack</DataField>
-        </Field>
-        <Field Name="QtyPerPackFormat">
-          <DataField>QtyPerPackFormat</DataField>
-        </Field>
-      </Fields>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -2432,12 +2284,6 @@
       </Page>
     </ReportSection>
   </ReportSections>
-  <ReportParametersLayout>
-    <GridLayoutDefinition>
-      <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
-    </GridLayoutDefinition>
-  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -2477,4 +2323,152 @@ End Function
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+        </Field>
+        <Field Name="CompanyRegNo">
+          <DataField>CompanyRegNo</DataField>
+        </Field>
+        <Field Name="CompanyCountry">
+          <DataField>CompanyCountry</DataField>
+        </Field>
+        <Field Name="CompanyAddress">
+          <DataField>CompanyAddress</DataField>
+        </Field>
+        <Field Name="CompanyPhoneFax">
+          <DataField>CompanyPhoneFax</DataField>
+        </Field>
+        <Field Name="CompanyLogo">
+          <DataField>CompanyLogo</DataField>
+        </Field>
+        <Field Name="GetCompanyCountryName">
+          <DataField>GetCompanyCountryName</DataField>
+        </Field>
+        <Field Name="GetCompanyAddress">
+          <DataField>GetCompanyAddress</DataField>
+        </Field>
+        <Field Name="ReportTitle">
+          <DataField>ReportTitle</DataField>
+        </Field>
+        <Field Name="ReportDate">
+          <DataField>ReportDate</DataField>
+        </Field>
+        <Field Name="CommercialInvoiceDate">
+          <DataField>CommercialInvoiceDate</DataField>
+        </Field>
+        <Field Name="SalesNo">
+          <DataField>SalesNo</DataField>
+        </Field>
+        <Field Name="SellToName">
+          <DataField>SellToName</DataField>
+        </Field>
+        <Field Name="SellToAddress">
+          <DataField>SellToAddress</DataField>
+        </Field>
+        <Field Name="SellToAddress2">
+          <DataField>SellToAddress2</DataField>
+        </Field>
+        <Field Name="SellToPostCountry">
+          <DataField>SellToPostCountry</DataField>
+        </Field>
+        <Field Name="ShipmentFrom">
+          <DataField>ShipmentFrom</DataField>
+        </Field>
+        <Field Name="ShipmentTo">
+          <DataField>ShipmentTo</DataField>
+        </Field>
+        <Field Name="Vessel">
+          <DataField>Vessel</DataField>
+        </Field>
+        <Field Name="CommercialInvoiceNo">
+          <DataField>CommercialInvoiceNo</DataField>
+        </Field>
+        <Field Name="Commercial_Invoice_Date">
+          <DataField>Commercial_Invoice_Date</DataField>
+        </Field>
+        <Field Name="TotalQuantity">
+          <DataField>TotalQuantity</DataField>
+        </Field>
+        <Field Name="TotalQuantityFormat">
+          <DataField>TotalQuantityFormat</DataField>
+        </Field>
+        <Field Name="TotalNetWeight">
+          <DataField>TotalNetWeight</DataField>
+        </Field>
+        <Field Name="TotalNetWeightFormat">
+          <DataField>TotalNetWeightFormat</DataField>
+        </Field>
+        <Field Name="TotalGrossWeight">
+          <DataField>TotalGrossWeight</DataField>
+        </Field>
+        <Field Name="TotalGrossWeightFormat">
+          <DataField>TotalGrossWeightFormat</DataField>
+        </Field>
+        <Field Name="TotalVolume">
+          <DataField>TotalVolume</DataField>
+        </Field>
+        <Field Name="TotalVolumeFormat">
+          <DataField>TotalVolumeFormat</DataField>
+        </Field>
+        <Field Name="Job_No_">
+          <DataField>Job_No_</DataField>
+        </Field>
+        <Field Name="ItemNo">
+          <DataField>ItemNo</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="Quantity">
+          <DataField>Quantity</DataField>
+        </Field>
+        <Field Name="QuantityFormat">
+          <DataField>QuantityFormat</DataField>
+        </Field>
+        <Field Name="QuantityBase">
+          <DataField>QuantityBase</DataField>
+        </Field>
+        <Field Name="QuantityBaseFormat">
+          <DataField>QuantityBaseFormat</DataField>
+        </Field>
+        <Field Name="Quantity_Pieces">
+          <DataField>Quantity_Pieces</DataField>
+        </Field>
+        <Field Name="Quantity_PiecesFormat">
+          <DataField>Quantity_PiecesFormat</DataField>
+        </Field>
+        <Field Name="NetWeight">
+          <DataField>NetWeight</DataField>
+        </Field>
+        <Field Name="NetWeightFormat">
+          <DataField>NetWeightFormat</DataField>
+        </Field>
+        <Field Name="GrossWeight">
+          <DataField>GrossWeight</DataField>
+        </Field>
+        <Field Name="GrossWeightFormat">
+          <DataField>GrossWeightFormat</DataField>
+        </Field>
+        <Field Name="Unit_Volume">
+          <DataField>Unit_Volume</DataField>
+        </Field>
+        <Field Name="Unit_VolumeFormat">
+          <DataField>Unit_VolumeFormat</DataField>
+        </Field>
+        <Field Name="QtyPerPack">
+          <DataField>QtyPerPack</DataField>
+        </Field>
+        <Field Name="QtyPerPackFormat">
+          <DataField>QtyPerPackFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
 </Report>
