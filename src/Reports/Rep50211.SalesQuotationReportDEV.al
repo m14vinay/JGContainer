@@ -373,24 +373,13 @@ report 50211 "Sales Quotation Report"
         CurrencyCodeToUse: Code[10];
         GLSetup: Record "General Ledger Setup";
     begin
-        TotalAmountLCY := 0;
-        SalesLineTemp.SetRange("Document No.", SalesHeader."No.");
-        SalesLineTemp.SetRange("Document Type", SalesHeader."Document Type");
-        // Exclude charge items from total amount calculation if needed
-        // SalesLineTemp.SetFilter(Type, '<>%1', SalesLineTemp.Type::"Charge (Item)");
-
-        if SalesLineTemp.FindSet() then
-            repeat
-                TotalAmountLCY += SalesLineTemp."Amount Including VAT (ACY)";
-            until SalesLineTemp.Next() = 0;
-
         CurrencyCodeToUse := SalesLineTemp."Currency Code";
         if CurrencyCodeToUse = '' then
             if GLSetup.Get() then
                 CurrencyCodeToUse := GLSetup."LCY Code";
-
+        SalesHeader.CalcFields("Amount Including VAT");
         CheckCU.InitTextVariable();
-        CheckCU.FormatNoText(NoText, Abs(TotalAmountLCY), CurrencyCodeToUse);
+        CheckCU.FormatNoText(NoText, Abs(SalesHeader."Amount Including VAT"), CurrencyCodeToUse);
         AmtInWords := NoText[1] + ' ' + NoText[2];
 
         if UpperCase(CurrencyCodeToUse) = 'MYR' then
