@@ -92,12 +92,40 @@ report 50211 "Sales Quotation Report"
                 column(Type; Type) { }
                 column(Quantity_Pieces; "Quantity Pieces") { }
                 column(Price_Per_Piece; "Price Per Piece") { }
+                column(IsCharge; IsCharge)
+                {
+
+                }
+                column(SubTotal; SubTotal)
+                {
+
+                }
+                column(LineNo; LineNo)
+                {
+
+                }
                 dataitem(Item; "Item")
                 {
                     DataItemLink = "No." = field("No.");
                     column(Variant_code; "No.") { }
                     column(Pack_Size; "Pack Size") { }
                 }
+                trigger OnAfterGetRecord()
+                var
+                    ItemCard: Record "Item";
+                begin
+                    if ItemCard.Get("No.") then begin
+                        if (ItemCard."Print Charges in Footer") then
+                            IsCharge := true
+                        else begin
+                            LineNo := LineNo + 1;
+                            IsCharge := false;
+                            SubTotal += "Sales Line"."Line Amount";
+                        end;
+                    end
+                    else
+                        IsCharge := true;
+                end;
 
                 trigger OnPreDataItem()
                 begin
@@ -184,6 +212,9 @@ report 50211 "Sales Quotation Report"
     end;
 
     var
+        LineNo: Integer;
+        SubTotal: Decimal;
+        IsCharge: Boolean;
         Currency_Code: Text;
         SalesTaxPercent: Text;
         CompanyInfo: Record "Company Information";

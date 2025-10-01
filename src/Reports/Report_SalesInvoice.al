@@ -215,7 +215,6 @@ report 50207 SalesInvoiceReport
             {
                 DataItemLink = "Document No." = field("No.");
                 DataItemLinkReference = "Sales Invoice Header";
-                //DataItemTableView = where(Type = const(Item));
                 column(Type; "Type")
                 {
 
@@ -256,6 +255,18 @@ report 50207 SalesInvoiceReport
                 {
 
                 }
+                column(IsCharge; IsCharge)
+                {
+
+                }
+                column(SubTotal; SubTotal)
+                {
+
+                }
+                column(LineNo; LineNo)
+                {
+
+                }
                 trigger OnAfterGetRecord()
                 var
                     ItemCard: Record Item;
@@ -280,7 +291,18 @@ report 50207 SalesInvoiceReport
                             Unit_Price := SalesPrice."Price Per Piece";
                         end;
                     end else
-                        Clear(Variant_Code);  //         
+                        Clear(Variant_Code);  //    
+                    if ItemCard.Get("No.") then begin
+                        if (ItemCard."Print Charges in Footer") then
+                            IsCharge := true
+                        else begin
+                            LineNo := LineNo + 1;
+                            IsCharge := false;
+                            SubTotal += "Sales Invoice Line"."Line Amount";
+                        end;
+                    end
+                    else
+                        IsCharge := true;
 
                 end;
             }
@@ -366,6 +388,9 @@ report 50207 SalesInvoiceReport
     end;
 
     var
+        LineNo: Integer;
+        SubTotal: Decimal;
+        IsCharge: Boolean;
         Currency_Code: Text;
         SalesTaxPercent: Text;
         CompanyCounty: Text;

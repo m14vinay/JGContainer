@@ -218,8 +218,7 @@ report 50208 SalesOrderReport
             {
                 DataItemLink = "Document No." = field("No.");
                 DataItemLinkReference = "Sales Header";
-                //  DataItemTableView = where(Type = const(Item));
-                column(Type; "Type")
+                column(Type; "Sales Line"."Type")
                 {
 
                 }
@@ -227,15 +226,15 @@ report 50208 SalesOrderReport
                 {
 
                 }
-                column(ItemCode; "Item Reference No.")
+                column(ItemCode; "Sales Line"."Item Reference No.")
                 {
 
                 }
-                column(Noofplts; "Quantity")
+                column(Noofplts; "Sales Line"."Quantity")
                 {
 
                 }
-                column(UnitPrice; "Price Per Piece")
+                column(UnitPrice; "Sales Line"."Price Per Piece")
                 {
 
                 }
@@ -243,19 +242,31 @@ report 50208 SalesOrderReport
                 {
 
                 }
-                column(Quantity; "Quantity Pieces")
+                column(Quantity; "Sales Line"."Quantity Pieces")
                 {
 
                 }
-                column(No_; "Shortcut Dimension 2 Code")
+                column(No_; "Sales Line"."Shortcut Dimension 2 Code")
                 {
 
                 }
-                column(Description; "Description")
+                column(Description; "Sales Line"."Description")
                 {
 
                 }
-                column(Amount; "Line Amount")
+                column(Amount; "Sales Line"."Line Amount")
+                {
+
+                }
+                column(IsCharge; IsCharge)
+                {
+
+                }
+                column(SubTotal; SubTotal)
+                {
+
+                }
+                column(LineNo; LineNo)
                 {
 
                 }
@@ -264,8 +275,9 @@ report 50208 SalesOrderReport
                     ItemCard: Record Item;
                     Packsize: Record "Pack Size";
                 begin
-                    ShowAmount := "Line Amount";
-                    SalesTax := "Amount Including VAT" - "Line Amount";
+                    IsCharge := false;
+                    ShowAmount := "Sales Line"."Line Amount";
+                    SalesTax := "Sales Line"."Amount Including VAT" - "Sales Line"."Line Amount";
                     TotalShowAmount := ShowAmount + TotalShowAmount + SalesTax;
                     if ItemCard.Get("No.") then begin
                         Variant_Code := ItemCard."Pack Size";   // Custom field from Item
@@ -275,9 +287,21 @@ report 50208 SalesOrderReport
                         else
                             Clear(Packing);
                     end else
-                        Clear(Variant_Code);  //               
+                        Clear(Variant_Code);
+                    if ItemCard.Get("No.") then begin
+                        if (ItemCard."Print Charges in Footer") then
+                            IsCharge := true
+                        else begin
+                            LineNo := LineNo + 1;
+                            IsCharge := false;
+                            SubTotal += "Sales Line"."Line Amount";
+                        end;
+                    end
+                    else
+                        IsCharge := true;
                 end;
             }
+
 
             trigger OnAfterGetRecord()
             var
@@ -358,6 +382,9 @@ report 50208 SalesOrderReport
     end;
 
     var
+        LineNo: Integer;
+        SubTotal: Decimal;
+        IsCharge: Boolean;
         Currency_Code: Text;
         SalesTaxPercent: Text;
         CompanyCounty: Text;

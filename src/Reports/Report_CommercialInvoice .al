@@ -293,6 +293,18 @@ report 50200 CommercialInvoiceReport
 
                 }
                 column(UnitVolume; UnitVolume) { }
+                column(IsCharge; IsCharge)
+                {
+
+                }
+                column(SubTotal; SubTotal)
+                {
+
+                }
+                column(LineNo; LineNo)
+                {
+
+                }
                 trigger OnAfterGetRecord()
                 var
                     ItemCard: Record Item;
@@ -321,7 +333,18 @@ report 50200 CommercialInvoiceReport
                             Unit_Price := SalesPrice."Price Per Piece";
                         end;
                     end else
-                        Clear(Variant_Code);  //                
+                        Clear(Variant_Code);  //    
+                    if ItemCard.Get("No.") then begin
+                        if (ItemCard."Print Charges in Footer") then
+                            IsCharge := true
+                        else begin
+                            LineNo := LineNo + 1;
+                            IsCharge := false;
+                            SubTotal += "Sales Line"."Line Amount";
+                        end;
+                    end
+                    else
+                        IsCharge := true;
 
                 end;
             }
@@ -412,6 +435,9 @@ report 50200 CommercialInvoiceReport
     end;
 
     var
+        LineNo: Integer;
+        SubTotal: Decimal;
+        IsCharge: Boolean;
         DueDate: Date;
         Currency_Code: Text;
         SalesTaxPercent: Text;

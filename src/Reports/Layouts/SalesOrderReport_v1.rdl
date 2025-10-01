@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-30T02:37:19.6057577Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-10-01T11:32:04.1965632Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -580,15 +580,15 @@
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="Textbox216">
-                                            <rd:DefaultName>Textbox216</rd:DefaultName>
+                                          <Textbox Name="LineNo">
+                                            <rd:DefaultName>LineNo</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=RowNumber(Nothing)</Value>
+                                                    <Value>=Fields!LineNo.Value</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>9pt</FontSize>
@@ -1154,15 +1154,15 @@
                                       <TablixCell />
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="Textbox258">
-                                            <rd:DefaultName>Textbox258</rd:DefaultName>
+                                          <Textbox Name="SubTotal">
+                                            <rd:DefaultName>SubTotal</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=If(Fields!Type.Value="Item",Sum(Fields!Amount.Value),0)</Value>
+                                                    <Value>=Last(Fields!SubTotal.Value)</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>9pt</FontSize>
@@ -1216,7 +1216,7 @@
                                   <TablixMember>
                                     <Group Name="Details" />
                                     <Visibility>
-                                      <Hidden>=If(Fields!Type.Value="Item",False,True)</Hidden>
+                                      <Hidden>=If(Fields!IsCharge.Value="False",False,True)</Hidden>
                                     </Visibility>
                                   </TablixMember>
                                   <TablixMember>
@@ -2270,7 +2270,7 @@
                                   <TablixMember>
                                     <Group Name="Details2" />
                                     <Visibility>
-                                      <Hidden>=If(Fields!Type.Value="Charge (Item)",False,True)</Hidden>
+                                      <Hidden>=IIf(Fields!IsCharge.Value=true,False,True)</Hidden>
                                     </Visibility>
                                   </TablixMember>
                                   <TablixMember>
@@ -5207,6 +5207,18 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         </Field>
         <Field Name="AmountFormat">
           <DataField>AmountFormat</DataField>
+        </Field>
+        <Field Name="IsCharge">
+          <DataField>IsCharge</DataField>
+        </Field>
+        <Field Name="SubTotal">
+          <DataField>SubTotal</DataField>
+        </Field>
+        <Field Name="SubTotalFormat">
+          <DataField>SubTotalFormat</DataField>
+        </Field>
+        <Field Name="LineNo">
+          <DataField>LineNo</DataField>
         </Field>
       </Fields>
       <Query>

@@ -264,6 +264,18 @@ report 50205 SalesCreditNoteReport
                 {
 
                 }
+                column(IsCharge; IsCharge)
+                {
+
+                }
+                column(SubTotal; SubTotal)
+                {
+
+                }
+                column(LineNo; LineNo)
+                {
+
+                }
                 trigger OnAfterGetRecord()
                 var
                     ItemCard: Record Item;
@@ -281,7 +293,18 @@ report 50205 SalesCreditNoteReport
                         else
                             Clear(Packing);
                     end else
-                        Clear(Variant_Code);  //                         
+                        Clear(Variant_Code);  // 
+                    if ItemCard.Get("No.") then begin
+                        if (ItemCard."Print Charges in Footer") then
+                            IsCharge := true
+                        else begin
+                            LineNo := LineNo + 1;
+                            IsCharge := false;
+                            SubTotal += "Sales Cr.Memo Line"."Line Amount";
+                        end;
+                    end
+                    else
+                        IsCharge := true;
                     SalesPrice.SetRange("Item No.", "No.");
                     SalesPrice.SetRange("Sales Code", "Sell-to Customer No.");
                     SalesPrice.SetRange("Unit of Measure Code", "Unit of Measure Code");
@@ -372,6 +395,9 @@ report 50205 SalesCreditNoteReport
     end;
 
     var
+        LineNo: Integer;
+        SubTotal: Decimal;
+        IsCharge: Boolean;
         Currency_Code: Text;
         SalesTaxPercent: Text;
         CompanyCounty: Text;

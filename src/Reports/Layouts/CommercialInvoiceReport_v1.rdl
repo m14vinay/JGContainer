@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-30T10:42:26.6762332Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-10-01T12:13:37.6090950Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -53,22 +53,22 @@
                                     <Width>1.83704cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>5.16686cm</Width>
+                                    <Width>5.00572cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
                                     <Width>2.33474cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>1.46841cm</Width>
+                                    <Width>1.62955cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
                                     <Width>2.16904cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>1.64299cm</Width>
+                                    <Width>1.65378cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>2.58346cm</Width>
+                                    <Width>2.4921cm</Width>
                                   </TablixColumn>
                                 </TablixColumns>
                                 <TablixRows>
@@ -522,15 +522,15 @@
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="Textbox216">
-                                            <rd:DefaultName>Textbox216</rd:DefaultName>
+                                          <Textbox Name="LineNo">
+                                            <rd:DefaultName>LineNo</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=If(Fields!Type.Value="Item",RowNumber(Nothing),1)</Value>
+                                                    <Value>=Fields!LineNo.Value</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>9pt</FontSize>
@@ -1046,7 +1046,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=If(Fields!Type.Value="Item",Sum(Fields!Amount.Value),0)</Value>
+                                                    <Value>=Last(Fields!SubTotal.Value)</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>9pt</FontSize>
@@ -1100,7 +1100,7 @@
                                   <TablixMember>
                                     <Group Name="Details" />
                                     <Visibility>
-                                      <Hidden>=If(Fields!Type.Value="Item",False,True)</Hidden>
+                                      <Hidden>=If(Fields!IsCharge.Value="False",False,True)</Hidden>
                                     </Visibility>
                                   </TablixMember>
                                   <TablixMember>
@@ -1112,7 +1112,7 @@
                               <Top>0.17639cm</Top>
                               <Left>0.35581cm</Left>
                               <Height>2.28474cm</Height>
-                              <Width>18.19997cm</Width>
+                              <Width>18.1194cm</Width>
                               <Style>
                                 <Border>
                                   <Style>Solid</Style>
@@ -2157,7 +2157,7 @@
                                   <TablixMember>
                                     <Group Name="Details2" />
                                     <Visibility>
-                                      <Hidden>=If(Fields!Type.Value="Charge (Item)",False,True)</Hidden>
+                                      <Hidden>=IIf(Fields!IsCharge.Value=true,False,True)</Hidden>
                                     </Visibility>
                                   </TablixMember>
                                   <TablixMember>
@@ -5658,6 +5658,18 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         </Field>
         <Field Name="UnitVolumeFormat">
           <DataField>UnitVolumeFormat</DataField>
+        </Field>
+        <Field Name="IsCharge">
+          <DataField>IsCharge</DataField>
+        </Field>
+        <Field Name="SubTotal">
+          <DataField>SubTotal</DataField>
+        </Field>
+        <Field Name="SubTotalFormat">
+          <DataField>SubTotalFormat</DataField>
+        </Field>
+        <Field Name="LineNo">
+          <DataField>LineNo</DataField>
         </Field>
       </Fields>
       <Query>

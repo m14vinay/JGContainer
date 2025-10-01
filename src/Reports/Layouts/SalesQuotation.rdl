@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-09-30T07:56:05.3809857Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-10-01T12:13:54.2547428Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -516,7 +516,6 @@
                                       </TablixCell>
                                       <TablixCell>
                                         <CellContents>
-                                          <rd:Selected>true</rd:Selected>
                                           <Textbox Name="Textbox102">
                                             <rd:DefaultName>Textbox99</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
@@ -587,7 +586,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=RunningValue(Fields!No_.Value, Count, Nothing)</Value>
+                                                    <Value>=Fields!LineNo.Value</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>8pt</FontSize>
@@ -1123,12 +1122,12 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Sum(Fields!Amount.Value)</Value>
+                                                    <Value>=Last(Fields!SubTotal.Value)</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>8pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
-                                                      <Format>n2</Format>
+                                                      <Format>#,0.00;(#,0.00)</Format>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
@@ -1183,7 +1182,7 @@
                                       </TablixMember>
                                     </TablixMembers>
                                     <Visibility>
-                                      <Hidden>=If(Fields!Type.Value="Item",False,True)</Hidden>
+                                      <Hidden>=If(Fields!IsCharge.Value="False",False,True)</Hidden>
                                     </Visibility>
                                   </TablixMember>
                                   <TablixMember>
@@ -1878,7 +1877,7 @@
                                       <TablixMember />
                                     </TablixMembers>
                                     <Visibility>
-                                      <Hidden>=If(Fields!Type.Value="Charge (Item)",False,True)</Hidden>
+                                      <Hidden>=IIf(Fields!IsCharge.Value=true,False,True)</Hidden>
                                     </Visibility>
                                   </TablixMember>
                                   <TablixMember />
@@ -5408,6 +5407,18 @@ j3/yPJ57/gVlR3/2Ao7Ko/k89s3/fye2iX2bZvo2bSjfppm+TTN9m5bk2zTTt2lJvk1L8m1akm/TTN+m
         </Field>
         <Field Name="Price_Per_PieceFormat">
           <DataField>Price_Per_PieceFormat</DataField>
+        </Field>
+        <Field Name="IsCharge">
+          <DataField>IsCharge</DataField>
+        </Field>
+        <Field Name="SubTotal">
+          <DataField>SubTotal</DataField>
+        </Field>
+        <Field Name="SubTotalFormat">
+          <DataField>SubTotalFormat</DataField>
+        </Field>
+        <Field Name="LineNo">
+          <DataField>LineNo</DataField>
         </Field>
         <Field Name="Variant_code">
           <DataField>Variant_code</DataField>
