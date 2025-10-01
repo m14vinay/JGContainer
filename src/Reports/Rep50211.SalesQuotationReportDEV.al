@@ -126,31 +126,6 @@ report 50211 "Sales Quotation Report"
                     else
                         IsCharge := true;
                 end;
-
-                trigger OnPreDataItem()
-                begin
-                    // Show all lines EXCEPT Charge (Item) type
-                    // SetFilter(Type, '<>%1', "Sales Line".Type::"Charge (Item)");
-                end;
-            }
-
-            // --- Transport Charges (only Charge Items) ---
-            dataitem(TransportCharges; "Sales Line")
-            {
-                DataItemLink = "Document No." = field("No."),
-                "Document Type" = field("Document Type");
-
-                // Fixed: Added missing Amount column
-                column(Amount_Charge; Amount) { }
-                column(Amount__ACY_Charge; "Amount (ACY)") { }
-                column(Description_charge; Description) { }
-                column(No_Charge; "No.") { }
-                column(Type_Charge; Type) { }
-
-                trigger OnPreDataItem()
-                begin
-                    SetRange(Type, TransportCharges.Type::"Charge (Item)");
-                end;
             }
 
             trigger OnAfterGetRecord()
