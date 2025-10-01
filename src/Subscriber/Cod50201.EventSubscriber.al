@@ -83,23 +83,14 @@ codeunit 50201 "Event Subscriber"
 
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Item Jnl.-Post Line", 'OnAfterInitItemLedgEntry', '', false, false)]
-    local procedure OnAfterInitItemLedgEntry(var NewItemLedgEntry: Record "Item Ledger Entry"; var ItemJournalLine: Record "Item Journal Line")
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Item Jnl.-Post Line", 'OnBeforeInsertItemLedgEntryProcedure', '', false, false)]
+    local procedure OnAfterInitItemLedgEntry(var ItemLedgerEntry: Record "Item Ledger Entry"; var IsHandled: Boolean; var ItemJournalLine: Record "Item Journal Line")
     begin
-        if ItemJournalLine."Entry Type" in
-          [ItemJournalLine."Entry Type"::Sale,
-           ItemJournalLine."Entry Type"::"Negative Adjmt.",
-           ItemJournalLine."Entry Type"::Transfer,
-           ItemJournalLine."Entry Type"::Consumption,
-           ItemJournalLine."Entry Type"::"Assembly Consumption"]
-       then begin
-            NewItemLedgEntry."Quantity Pieces" := -ItemJournalLine."Quantity Pieces";
-            NewItemLedgEntry."Net Weight" := ItemJournalLine."Net Weight";
-        end else begin
-            NewItemLedgEntry."Quantity Pieces" := ItemJournalLine."Quantity Pieces";
-            NewItemLedgEntry."Net Weight" := ItemJournalLine."Net Weight";
-        end;
-
+        If ItemLedgerEntry.Quantity > 0 then 
+            ItemLedgerEntry."Quantity Pieces" := ItemJournalLine."Quantity Pieces"
+        else
+           ItemLedgerEntry."Quantity Pieces" := -ItemJournalLine."Quantity Pieces";
+        ItemLedgerEntry."Net Weight" := ItemJournalLine."Net Weight";
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Transfer Shipment Line", 'OnAfterCopyFromTransferLine', '', false, false)]
