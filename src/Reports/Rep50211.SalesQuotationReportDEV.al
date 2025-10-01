@@ -120,7 +120,7 @@ report 50211 "Sales Quotation Report"
                         else begin
                             LineNo := LineNo + 1;
                             IsCharge := false;
-                            SubTotal += "Sales Line"."Line Amount";
+                            SubTotal += Amount;
                         end;
                     end
                     else
@@ -132,10 +132,9 @@ report 50211 "Sales Quotation Report"
             var
                 Salesline: Record "Sales Line";
                 VATPostingSetup: Record "VAT Posting Setup";
-
             begin
                 GetCompanyInfo();
-                CalculateTransportCharges();
+                //CalculateTransportCharges();
                 LoadWorkDescription();
                 SalesHeader.CalcFields("Amount Including VAT");
                 CheckCU.InitTextVariable();
