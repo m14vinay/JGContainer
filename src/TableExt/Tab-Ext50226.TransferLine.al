@@ -11,11 +11,24 @@ tableextension 50226 "Transfer Line" extends "Transfer Line"
         }
         modify(Quantity)
         {
-           trigger OnAfterValidate()
+            trigger OnAfterValidate()
             var
                 Item: Record Item;
                 PackSize: Record "Pack Size";
             begin
+                If Item.Get("Item No.") then
+                    If PackSize.Get(Item."Pack Size") then
+                        "Quantity Pieces" := PackSize."Qty Per Pack" * Quantity;
+            end;
+        }
+        modify("Item No.")
+        {
+            trigger OnAfterValidate()
+            var
+                Item: Record Item;
+                PackSize: Record "Pack Size";
+            begin
+                If Quantity <> 0 then
                 If Item.Get("Item No.") then
                     If PackSize.Get(Item."Pack Size") then
                         "Quantity Pieces" := PackSize."Qty Per Pack" * Quantity;
