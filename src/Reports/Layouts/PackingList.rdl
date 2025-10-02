@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-10-01T07:16:05.9217297Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-10-02T05:50:41.5533058Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -829,15 +829,15 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox24">
-                          <rd:DefaultName>Textbox24</rd:DefaultName>
+                        <Textbox Name="Container">
+                          <rd:DefaultName>Container</rd:DefaultName>
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!Container.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -878,15 +878,16 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox26">
-                          <rd:DefaultName>Textbox26</rd:DefaultName>
+                        <rd:Selected>true</rd:Selected>
+                        <Textbox Name="SealNo">
+                          <rd:DefaultName>SealNo</rd:DefaultName>
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!SealNo.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -2463,6 +2464,12 @@ End Function
         </Field>
         <Field Name="QtyPerPackFormat">
           <DataField>QtyPerPackFormat</DataField>
+        </Field>
+        <Field Name="Container">
+          <DataField>Container</DataField>
+        </Field>
+        <Field Name="SealNo">
+          <DataField>SealNo</DataField>
         </Field>
       </Fields>
       <Query>

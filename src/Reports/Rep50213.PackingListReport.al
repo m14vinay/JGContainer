@@ -59,6 +59,8 @@ report 50213 "Packing List Report"
                     column(GrossWeight; SalesLine."Gross Weight") { }
                     column(Unit_Volume; SalesLine."Unit Volume") { }
                     column(QtyPerPack; QtyPerPack) { }
+                    column(Container; SalesLine."Container No.") { }
+                    column(SealNo; SalesLine.Seal) { }
                     trigger OnAfterGetRecord()
                     begin
                         LineNo += 1;
