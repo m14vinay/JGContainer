@@ -93,7 +93,7 @@ report 50201 DeliveryOrderReport
             column(Ship_to_Contact; "Ship-to Contact")
             {
             }
-            column(Document_Date; Format("Document Date"))
+            column(Document_Date; Format("Document Date",0, '<day,2>.<month,2>.<year4>'))
             {
             }
             column("selltocustomercode"; "Sell-to Customer No.")

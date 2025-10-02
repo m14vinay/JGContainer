@@ -123,7 +123,7 @@ report 50208 SalesOrderReport
             column(SalesHeaderNo_; "No.")
             {
             }
-            column(Shipment_Date; Format("Shipment Date"))
+            column(Shipment_Date; Format("Shipment Date", 0, '<day,2>.<month,2>.<year4>'))
             {
             }
             column(PaymentTerms; "Payment Terms Code")
@@ -138,7 +138,7 @@ report 50208 SalesOrderReport
             column(SalesPerson; "Salesperson Code")
             {
             }
-            column(Document_Date; Format("Document Date"))
+            column(Document_Date; Format("Document Date", 0, '<day,2>.<month,2>.<year4>'))
             {
             }
             column("selltocustomercode"; "Sell-to Customer No.")

@@ -51,7 +51,7 @@ report 50211 "Sales Quotation Report"
             column(Ship_to_Name; "Ship-to Name") { }
             column(GetFullShipAddress; GetFullShipAddress()) { }
             column(GetShipPostCityCountReg; GetShipPostCityCountReg()) { }
-            column(SalesHead_Document_Date; "Document Date") { }
+            column(SalesHead_Document_Date; Format("Document Date", 0, '<day,2>.<month,2>.<year4>')) { }
             column(SalesHead_No_; "No.") { }
             column(Payment_Terms_Code; "Payment Terms Code") { }
             column(Sell_to_Customer_No_; "Sell-to Customer No.") { }
