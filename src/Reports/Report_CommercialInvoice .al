@@ -222,7 +222,7 @@ report 50200 CommercialInvoiceReport
             {
 
             }
-            column(MotherVesselName; "Vessel")
+            column(MotherVesselName; "Vessel 1")
             {
 
             }
