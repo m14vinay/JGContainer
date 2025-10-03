@@ -260,6 +260,7 @@ report 50201 DeliveryOrderReport
         VendAddr: array[8] of Text[100];
         TotalShowAmount: Decimal;
         ShowAmount: Decimal;
+        SalesPersonPurch : Record "Salesperson/Purchaser";
 
     local procedure CurrencyCode(SrcCurrCode: Code[10]): Code[10]
     begin

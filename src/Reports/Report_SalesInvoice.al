@@ -120,9 +120,6 @@ report 50207 SalesInvoiceReport
             column(Ship_to_Contact; "Ship-to Contact")
             {
             }
-            column(SalesHeaderNo_; "Order No.")
-            {
-            }
             column(DueDate; Format("Due Date", 0, '<day,2>.<month,2>.<year4>'))
             {
             }
@@ -247,6 +244,10 @@ report 50207 SalesInvoiceReport
                 {
 
                 }
+                column(SalesHeaderNo_; "Order No.")
+                {
+                }
+
                 column(Description; "Description")
                 {
 
@@ -305,9 +306,10 @@ report 50207 SalesInvoiceReport
                         IsCharge := true;
 
                 end;
+
                 trigger OnPreDataItem()
                 begin
-                    "Sales Invoice Line".SetFilter("Sales Invoice Line".Type,'<>%1',"Sales Invoice Line".Type::" ");
+                    "Sales Invoice Line".SetFilter("Sales Invoice Line".Type, '<>%1', "Sales Invoice Line".Type::" ");
                 end;
             }
 
@@ -360,7 +362,7 @@ report 50207 SalesInvoiceReport
                 BankAccount: Record "Bank Account";
                 County: Record County;
             begin
-               
+
                 CompanyInfo.Get();
                 FormatAddr.Company(CompanyAddr, CompanyInfo);
                 begin
@@ -431,6 +433,7 @@ report 50207 SalesInvoiceReport
         VendAddr: array[8] of Text[100];
         TotalShowAmount: Decimal;
         ShowAmount: Decimal;
+        SalesPersonPurch: Record "Salesperson/Purchaser";
 
     local procedure CurrencyCode(SrcCurrCode: Code[10]): Code[10]
     begin

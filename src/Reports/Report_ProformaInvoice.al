@@ -124,7 +124,7 @@ report 50209 ProfomaInvoice
             column(SalesHeaderNo_; "No.")
             {
             }
-            column(Shipment_Date; Format("Shipment Date",0, '<day,2>.<month,2>.<year4>'))
+            column(Shipment_Date; Format("Requested Delivery Date",0, '<day,2>.<month,2>.<year4>'))
             {
             }
             column(PaymentTerms; "Payment Terms Code")
@@ -424,6 +424,7 @@ report 50209 ProfomaInvoice
         VendAddr: array[8] of Text[100];
         TotalShowAmount: Decimal;
         ShowAmount: Decimal;
+        SalesPersonPurch : Record "Salesperson/Purchaser";
 
     local procedure CurrencyCode(SrcCurrCode: Code[10]): Code[10]
     begin

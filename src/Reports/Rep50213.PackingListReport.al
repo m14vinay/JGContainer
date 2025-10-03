@@ -109,6 +109,7 @@ report 50213 "Packing List Report"
         Item: Record Item;
         PackSize: Record "Pack Size";
         CountryRegion: Record "Country/Region";
+        SalesPersonPurch : Record "Salesperson/Purchaser";
         CompanyAddress: Text[250];
         QtyPerPack: Decimal;
         LineNo: Integer;

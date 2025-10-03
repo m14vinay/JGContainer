@@ -123,7 +123,7 @@ report 50208 SalesOrderReport
             column(SalesHeaderNo_; "No.")
             {
             }
-            column(Shipment_Date; Format("Shipment Date", 0, '<day,2>.<month,2>.<year4>'))
+            column(Shipment_Date; Format("Requested Delivery Date", 0, '<day,2>.<month,2>.<year4>'))
             {
             }
             column(PaymentTerms; "Payment Terms Code")
@@ -135,7 +135,7 @@ report 50208 SalesOrderReport
             column(Incoterm; "Incoterms")
             {
             }
-            column(SalesPerson; "Salesperson Code")
+            column(SalesPerson; SalesPersonPurch.Name)
             {
             }
             column(Document_Date; Format("Document Date", 0, '<day,2>.<month,2>.<year4>'))
@@ -369,6 +369,7 @@ report 50208 SalesOrderReport
                         AlternateBankSwiftCode2 := BankAccount."SWIFT Code";
                     end;
                 end;
+                If SalesPersonPurch.Get("Salesperson Code") then;
                 GLSetup.Get();
             end;
         }
@@ -413,6 +414,7 @@ report 50208 SalesOrderReport
 
         Currency: Record Currency;
         FormatAddr: Codeunit "Format Address";
+        SalesPersonPurch : Record "Salesperson/Purchaser";
         ReportTitle: Text[30];
         CompanyAddr: array[8] of Text[100];
         VendAddr: array[8] of Text[100];
