@@ -5579,9 +5579,6 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         <Field Name="Shipment_To">
           <DataField>Shipment_To</DataField>
         </Field>
-        <Field Name="Measurement">
-          <DataField>Measurement</DataField>
-        </Field>
         <Field Name="FeederVesselName">
           <DataField>FeederVesselName</DataField>
         </Field>
