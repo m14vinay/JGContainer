@@ -120,7 +120,7 @@ report 50205 SalesCreditNoteReport
             column(Ship_to_Contact; "Ship-to Contact")
             {
             }
-            column(DueDate; Format("Due Date",0, '<day,2>.<month,2>.<year4>'))
+            column(DueDate; Format("Due Date", 0, '<day,2>.<month,2>.<year4>'))
             {
             }
             column(Shipment_Date; Format("Shipment Date"))
@@ -135,7 +135,7 @@ report 50205 SalesCreditNoteReport
             column(SalesPerson; "Salesperson Code")
             {
             }
-            column(Document_Date; Format("Document Date",0, '<day,2>.<month,2>.<year4>'))
+            column(Document_Date; Format("Document Date", 0, '<day,2>.<month,2>.<year4>'))
             {
             }
             column("selltocustomercode"; "Sell-to Customer No.")
@@ -311,6 +311,11 @@ report 50205 SalesCreditNoteReport
                     if SalesPrice.FindFirst() then begin
                         Unit_Price := SalesPrice."Price Per Piece";
                     end;
+                end;
+
+                trigger OnPreDataItem()
+                begin
+                    "Sales Cr.Memo Line".SetFilter("Sales Cr.Memo Line".Type, '<>%1', "Sales Cr.Memo Line".Type::" ");
                 end;
             }
 

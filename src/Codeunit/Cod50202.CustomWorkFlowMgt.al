@@ -167,12 +167,12 @@ codeunit 50202 "Sales Custom WorkFlow Mgt"
         SequenceNo :Integer;
     begin
         SequenceNo := ApprovalEntry."Sequence No.";
-        If SalesHeader.Get(ApprovalEntry."Record ID to Approve") then begin
+        //If SalesHeader.Get(ApprovalEntry."Record ID to Approve") then begin
             ApprovalEntry.Reset();
             ApprovalEntry.SetRange("Sequence No.",SequenceNo);
-            ApprovalEntry.SetRange("Record ID to Approve",SalesHeader.RecordId);
+            //ApprovalEntry.SetRange("Record ID to Approve",SalesHeader.RecordId);
             ApprovalEntry.SetRange(Status,ApprovalEntry.Status::Open);
-        end;
+        //end;
     end;
      [EventSubscriber(ObjectType::Codeunit, Codeunit::"Approvals Mgmt.", OnBeforeCheckUserAsApprovalAdministrator, '', false, false)]
     local procedure SkipUserIDCheck(ApprovalEntry: Record "Approval Entry"; var IsHandled: Boolean)
@@ -181,14 +181,14 @@ codeunit 50202 "Sales Custom WorkFlow Mgt"
         SequenceNo :Integer;
     begin
         SequenceNo := ApprovalEntry."Sequence No.";
-        If SalesHeader.Get(ApprovalEntry."Record ID to Approve") then begin
+        //If SalesHeader.Get(ApprovalEntry."Record ID to Approve") then begin
             ApprovalEntry.Reset();
             ApprovalEntry.SetRange("Sequence No.",SequenceNo);
-            ApprovalEntry.SetRange("Record ID to Approve",SalesHeader.RecordId);
+           // ApprovalEntry.SetRange("Record ID to Approve",SalesHeader.RecordId);
             ApprovalEntry.SetRange(Status,ApprovalEntry.Status::Open);
             If ApprovalEntry.Count > 1 then
               IsHandled := True;
-        end;
+       // end;
     end;
     
 

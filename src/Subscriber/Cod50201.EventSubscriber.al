@@ -144,6 +144,21 @@ codeunit 50201 "Event Subscriber"
         ItemJnlLine."Quantity Pieces" := TransLine."Quantity Pieces";
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, CodeUnit::"Sales-Post", 'OnPostItemJnlLineOnAfterPrepareItemJnlLine', '', false, false)]
+    local procedure OnPostItemJnlLineOnAfterPrepareItemJnlLine(var ItemJournalLine: Record "Item Journal Line"; SalesLine: Record "Sales Line")
+    var
+        Item: Record Item;
+        PackSize: Record "Pack Size";
+    begin
+
+        If Item.Get(SalesLine."No.") then
+            If PackSize.Get(Item."Pack Size") then
+                If SalesLine."Document Type" = SalesLine."Document Type"::"Return Order" then
+                    ItemJournalLine."Quantity Pieces" := SalesLine."Return Qty. to Receive" * PackSize."Qty Per Pack";
+                If (SalesLine."Document Type" = SalesLine."Document Type"::Order) and  (SalesLine."Qty. to Ship" <> 0) then
+                    ItemJournalLine."Quantity Pieces" := -SalesLine."Qty. to Ship" * PackSize."Qty Per Pack"
+    end;
+
 
 
 }

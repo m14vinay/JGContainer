@@ -214,10 +214,6 @@ report 50200 CommercialInvoiceReport
             {
 
             }
-            column(Measurement; "Measurement")
-            {
-
-            }
             column(FeederVesselName; "Vessel")
             {
 

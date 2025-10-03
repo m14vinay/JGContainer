@@ -305,6 +305,10 @@ report 50207 SalesInvoiceReport
                         IsCharge := true;
 
                 end;
+                trigger OnPreDataItem()
+                begin
+                    "Sales Invoice Line".SetFilter("Sales Invoice Line".Type,'<>%1',"Sales Invoice Line".Type::" ");
+                end;
             }
 
             trigger OnAfterGetRecord()
@@ -356,6 +360,7 @@ report 50207 SalesInvoiceReport
                 BankAccount: Record "Bank Account";
                 County: Record County;
             begin
+               
                 CompanyInfo.Get();
                 FormatAddr.Company(CompanyAddr, CompanyInfo);
                 begin
