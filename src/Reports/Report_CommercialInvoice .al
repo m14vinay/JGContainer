@@ -132,7 +132,7 @@ report 50200 CommercialInvoiceReport
             column(CustomerCode; "Sell-to Customer No.")
             {
             }
-            column(SalesPerson; "Salesperson Code")
+            column(SalesPerson; SalesPersonPurch.Name)
             {
             }
             column(Document_Date; Format("Commercial Invoice Date"))
@@ -353,6 +353,7 @@ report 50200 CommercialInvoiceReport
                 VATPostingSetup: Record "VAT Posting Setup";
                 SalesHeader: Record "Sales Header";
             begin
+                If SalesPersonPurch.Get("Salesperson Code") then;
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
                 if CountryRegion.Get("Ship-to Country/Region Code") then

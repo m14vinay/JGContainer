@@ -204,6 +204,7 @@ report 50201 DeliveryOrderReport
             var
                 CountryRegion: Record "Country/Region";
             begin
+                If SalesPersonPurch.Get("Salesperson Code") then ;
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
                 TotalShowAmount := ShowAmount + TotalShowAmount;

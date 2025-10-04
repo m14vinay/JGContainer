@@ -129,7 +129,7 @@ report 50207 SalesInvoiceReport
             column(CustomerCode; "Sell-to Customer No.")
             {
             }
-            column(SalesPerson; "Salesperson Code")
+            column(SalesPerson; SalesPersonPurch.Name)
             {
             }
             column(Document_Date; Format("Document Date", 0, '<day,2>.<month,2>.<year4>'))
@@ -320,6 +320,7 @@ report 50207 SalesInvoiceReport
                 SalesInvoiceLine: Record "Sales Invoice Line";
                 VATPostingSetup: Record "VAT Posting Setup";
             begin
+                If SalesPersonPurch.Get("Salesperson Code") then ;
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
                 if CountryRegion.Get("Ship-to Country/Region Code") then

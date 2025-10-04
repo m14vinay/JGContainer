@@ -310,6 +310,7 @@ report 50208 SalesOrderReport
                 VATPostingSetup: Record "VAT Posting Setup";
                 salesline: Record "Sales Line";
             begin
+                If SalesPersonPurch.Get("Salesperson Code") then ;
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
                 if CountryRegion.Get("Ship-to Country/Region Code") then
@@ -369,7 +370,7 @@ report 50208 SalesOrderReport
                         AlternateBankSwiftCode2 := BankAccount."SWIFT Code";
                     end;
                 end;
-                If SalesPersonPurch.Get("Salesperson Code") then;
+                
                 GLSetup.Get();
             end;
         }
@@ -400,6 +401,7 @@ report 50208 SalesOrderReport
         Variant_Code: Text;
         CompanyCountry: Text;
         Bill_to_Address: Text;
+        SalesPerson : Text[100];
         BIllpostcodecitycountrycounty: Text;
         Billtomobileno: Text;
         BilltoPhoneNo: Text;

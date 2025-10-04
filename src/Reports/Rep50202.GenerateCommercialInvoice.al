@@ -16,7 +16,7 @@ report 50202 "Generate Commercial Invoice"
                 SalesOrder : Record "Sales Header";
             begin
                 SalesRecSetup.Get();
-                SalesInvoice.InitFromSalesHeader(SalesHeader);
+                //SalesInvoice.InitFromSalesHeader(SalesHeader);
                 SalesInvoice.Validate("Document Type", SalesInvoice."Document Type"::Invoice);
                 SalesInvoice.Validate("No.", NoSeries.GetNextNo(SalesRecSetup."Commercial Invoice Nos."));
                 SalesInvoice.Status := SalesInvoice.Status::Open;
