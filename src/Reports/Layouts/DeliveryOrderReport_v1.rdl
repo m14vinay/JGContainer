@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-10-03T09:48:10.3736564Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-10-06T08:36:07.2333899Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -35,7 +35,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>1.9989cm</Height>
+                  <Height>1.73432cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -71,7 +71,7 @@
                                 </TablixColumns>
                                 <TablixRows>
                                   <TablixRow>
-                                    <Height>1.19999cm</Height>
+                                    <Height>0.86485cm</Height>
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
@@ -84,7 +84,7 @@
                                                   <TextRun>
                                                     <Value>Item Code</Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                     </Style>
                                                   </TextRun>
@@ -135,7 +135,7 @@
                                                   <TextRun>
                                                     <Value>Variant</Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                     </Style>
                                                   </TextRun>
@@ -166,7 +166,7 @@
                                                   <TextRun>
                                                     <Value>Description</Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                     </Style>
                                                   </TextRun>
@@ -217,7 +217,7 @@
                                                   <TextRun>
                                                     <Value>PO Number</Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                     </Style>
                                                   </TextRun>
@@ -268,7 +268,7 @@
                                                   <TextRun>
                                                     <Value>SO Number</Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                     </Style>
                                                   </TextRun>
@@ -319,7 +319,7 @@
                                                   <TextRun>
                                                     <Value>No of Plts</Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                     </Style>
                                                   </TextRun>
@@ -370,7 +370,7 @@
                                                   <TextRun>
                                                     <Value>Packing</Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                     </Style>
                                                   </TextRun>
@@ -421,7 +421,7 @@
                                                   <TextRun>
                                                     <Value>Quantity</Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                     </Style>
                                                   </TextRun>
@@ -435,7 +435,7 @@
                                                   <TextRun>
                                                     <Value>(In PCS)</Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                     </Style>
                                                   </TextRun>
@@ -491,7 +491,6 @@
                                                   <TextRun>
                                                     <Value>=Fields!No_.Value</Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>9pt</FontSize>
                                                     </Style>
                                                   </TextRun>
@@ -546,7 +545,6 @@
                                                   <TextRun>
                                                     <Value>=Fields!Variant_Code.Value</Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>9pt</FontSize>
                                                     </Style>
                                                   </TextRun>
@@ -601,7 +599,6 @@
                                                   <TextRun>
                                                     <Value>=Fields!Description.Value</Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>9pt</FontSize>
                                                       <Format>#,0.00;(#,0.00)</Format>
                                                     </Style>
@@ -657,7 +654,6 @@
                                                   <TextRun>
                                                     <Value>=Fields!External_Document_No_.Value</Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>9pt</FontSize>
                                                     </Style>
                                                   </TextRun>
@@ -712,7 +708,6 @@
                                                   <TextRun>
                                                     <Value>=Fields!Order_No_.Value</Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>9pt</FontSize>
                                                       <Format>#,0.00;(#,0.00)</Format>
                                                     </Style>
@@ -768,7 +763,6 @@
                                                   <TextRun>
                                                     <Value>=Fields!NoofPlts.Value</Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>9pt</FontSize>
                                                     </Style>
                                                   </TextRun>
@@ -823,7 +817,6 @@
                                                   <TextRun>
                                                     <Value>=Fields!Packing.Value</Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>9pt</FontSize>
                                                     </Style>
                                                   </TextRun>
@@ -878,7 +871,6 @@
                                                   <TextRun>
                                                     <Value>=Fields!NoofPlts.Value*Fields!Packing.Value</Value>
                                                     <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>9pt</FontSize>
                                                     </Style>
                                                   </TextRun>
@@ -951,7 +943,7 @@
                               <DataSetName>DataSet_Result</DataSetName>
                               <Top>0.18099cm</Top>
                               <Left>0.18981cm</Left>
-                              <Height>1.79999cm</Height>
+                              <Height>1.46485cm</Height>
                               <Width>17.72584cm</Width>
                               <Style>
                                 <Border>
@@ -1011,7 +1003,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet_Result</DataSetName>
-            <Height>1.9989cm</Height>
+            <Height>1.73432cm</Height>
             <Width>17.91565cm</Width>
             <Style />
           </Tablix>
@@ -1024,7 +1016,7 @@
                     <Value>Remarks:</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -1034,7 +1026,7 @@
                 </Style>
               </Paragraph>
             </Paragraphs>
-            <Top>2.06945cm</Top>
+            <Top>1.81545cm</Top>
             <Left>0.18981cm</Left>
             <Height>13.13773pt</Height>
             <Width>1.79798cm</Width>
@@ -1043,7 +1035,7 @@
               <Border>
                 <Style>None</Style>
               </Border>
-              <VerticalAlign>Top</VerticalAlign>
+              <VerticalAlign>Middle</VerticalAlign>
             </Style>
           </Textbox>
           <Textbox Name="ExecutionTimeTextBox50">
@@ -1055,7 +1047,7 @@
                     <Value>=First(Fields!Work_Description.Value, "DataSet_Result")</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -1065,7 +1057,7 @@
                 </Style>
               </Paragraph>
             </Paragraphs>
-            <Top>2.06945cm</Top>
+            <Top>1.81545cm</Top>
             <Left>2.02307cm</Left>
             <Height>13.13773pt</Height>
             <Width>11.83632cm</Width>
@@ -1085,7 +1077,7 @@
                   <TextRun>
                     <Value>="Returnable Pallet: "+Format(First(Fields!Quantity.Value, "DataSet_Result"))</Value>
                     <Style>
-                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -1095,7 +1087,7 @@
                 </Style>
               </Paragraph>
             </Paragraphs>
-            <Top>2.05181cm</Top>
+            <Top>1.79781cm</Top>
             <Left>13.85939cm</Left>
             <Height>13.63773pt</Height>
             <Width>4.05626cm</Width>
@@ -1104,17 +1096,17 @@
               <Border>
                 <Style>None</Style>
               </Border>
-              <VerticalAlign>Top</VerticalAlign>
+              <VerticalAlign>Middle</VerticalAlign>
             </Style>
           </Textbox>
         </ReportItems>
         <Height>2.93862cm</Height>
         <Style />
       </Body>
-      <Width>18.08344cm</Width>
+      <Width>18.1054cm</Width>
       <Page>
         <PageHeader>
-          <Height>9.16237cm</Height>
+          <Height>8.47445cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1127,8 +1119,8 @@
                     <TextRun>
                       <Value>DELIVERY ORDER</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
-                        <FontSize>12pt</FontSize>
+                        <FontFamily>Times New Roman</FontFamily>
+                        <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1139,8 +1131,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox32</rd:DefaultName>
-              <Top>3.78814cm</Top>
-              <Left>12.90028cm</Left>
+              <Top>3.39607cm</Top>
+              <Left>12.66026cm</Left>
               <Height>0.73367cm</Height>
               <Width>4.95845cm</Width>
               <Style>
@@ -1161,7 +1153,7 @@
                           <Value>=First(Fields!ShipemntHeaderNo.Value, "DataSet_Result")</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
-                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -1172,7 +1164,7 @@
                   </Paragraphs>
                   <Top>0.14463cm</Top>
                   <Left>3.79464cm</Left>
-                  <Height>14.5pt</Height>
+                  <Height>0.4cm</Height>
                   <Width>4.71843cm</Width>
                   <Style>
                     <Border>
@@ -1190,7 +1182,7 @@
                           <Value>=First(Fields!Document_Date.Value, "DataSet_Result")</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
-                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
                             <Format>d</Format>
                           </Style>
                         </TextRun>
@@ -1200,9 +1192,9 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>0.87076cm</Top>
+                  <Top>0.58501cm</Top>
                   <Left>3.79464cm</Left>
-                  <Height>14.91669pt</Height>
+                  <Height>0.4cm</Height>
                   <Width>4.71843cm</Width>
                   <ZIndex>1</ZIndex>
                   <Style>
@@ -1221,7 +1213,7 @@
                           <Value>=First(Fields!selltocustomercode.Value, "DataSet_Result")</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
-                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -1230,9 +1222,9 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>1.59102cm</Top>
+                  <Top>0.98777cm</Top>
                   <Left>3.79464cm</Left>
-                  <Height>13.58331pt</Height>
+                  <Height>0.4cm</Height>
                   <Width>4.71027cm</Width>
                   <ZIndex>2</ZIndex>
                   <Style>
@@ -1251,7 +1243,7 @@
                           <Value>=First(Fields!VehicleNo.Value, "DataSet_Result")</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
-                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -1260,9 +1252,9 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.28188cm</Top>
+                  <Top>1.39288cm</Top>
                   <Left>3.79464cm</Left>
-                  <Height>13.91669pt</Height>
+                  <Height>0.4cm</Height>
                   <Width>4.71843cm</Width>
                   <ZIndex>3</ZIndex>
                   <Style>
@@ -1280,7 +1272,7 @@
                         <TextRun>
                           <Value>=First(Fields!SystemModifiedBy.Value, "DataSet_Result")</Value>
                           <Style>
-                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
                             <FontWeight>Normal</FontWeight>
                           </Style>
                         </TextRun>
@@ -1290,9 +1282,9 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.91394cm</Top>
+                  <Top>1.83444cm</Top>
                   <Left>3.79464cm</Left>
-                  <Height>13.58331pt</Height>
+                  <Height>0.4cm</Height>
                   <Width>4.71843cm</Width>
                   <ZIndex>4</ZIndex>
                   <Style>
@@ -1311,7 +1303,7 @@
                           <Value>=First(Fields!Shipping_Agent_Code.Value, "DataSet_Result")</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
-                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -1320,161 +1312,11 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>3.61125cm</Top>
+                  <Top>2.27775cm</Top>
                   <Left>3.79464cm</Left>
-                  <Height>13.81695pt</Height>
+                  <Height>0.4cm</Height>
                   <Width>4.70374cm</Width>
                   <ZIndex>5</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <VerticalAlign>Middle</VerticalAlign>
-                  </Style>
-                </Textbox>
-                <Textbox Name="ExecutionTimeTextBox29">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value />
-                          <Style>
-                            <FontStyle>Normal</FontStyle>
-                            <FontFamily>Cambria</FontFamily>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>0.67674cm</Top>
-                  <Left>0.26458cm</Left>
-                  <Height>4.5pt</Height>
-                  <Width>8.23379cm</Width>
-                  <ZIndex>6</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <VerticalAlign>Middle</VerticalAlign>
-                  </Style>
-                </Textbox>
-                <Textbox Name="ExecutionTimeTextBox30">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value />
-                          <Style>
-                            <FontStyle>Normal</FontStyle>
-                            <FontFamily>Cambria</FontFamily>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>1.41757cm</Top>
-                  <Left>0.26458cm</Left>
-                  <Height>4.5pt</Height>
-                  <Width>8.23379cm</Width>
-                  <ZIndex>7</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <VerticalAlign>Middle</VerticalAlign>
-                  </Style>
-                </Textbox>
-                <Textbox Name="ExecutionTimeTextBox31">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value />
-                          <Style>
-                            <FontStyle>Normal</FontStyle>
-                            <FontFamily>Cambria</FontFamily>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>2.08785cm</Top>
-                  <Left>0.27928cm</Left>
-                  <Height>4.5pt</Height>
-                  <Width>8.23379cm</Width>
-                  <ZIndex>8</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <VerticalAlign>Middle</VerticalAlign>
-                  </Style>
-                </Textbox>
-                <Textbox Name="ExecutionTimeTextBox32">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value />
-                          <Style>
-                            <FontStyle>Normal</FontStyle>
-                            <FontFamily>Cambria</FontFamily>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>2.7934cm</Top>
-                  <Left>0.26458cm</Left>
-                  <Height>3.5pt</Height>
-                  <Width>8.23379cm</Width>
-                  <ZIndex>9</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <VerticalAlign>Middle</VerticalAlign>
-                  </Style>
-                </Textbox>
-                <Textbox Name="ExecutionTimeTextBox33">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value />
-                          <Style>
-                            <FontStyle>Normal</FontStyle>
-                            <FontFamily>Cambria</FontFamily>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>3.4284cm</Top>
-                  <Left>0.26458cm</Left>
-                  <Height>4.5pt</Height>
-                  <Width>8.23379cm</Width>
-                  <ZIndex>10</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -1491,7 +1333,7 @@
                           <Value>Delivery Order</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
-                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
                             <FontWeight>Normal</FontWeight>
                           </Style>
                         </TextRun>
@@ -1503,9 +1345,9 @@
                   </Paragraphs>
                   <Top>0.14463cm</Top>
                   <Left>0.26458cm</Left>
-                  <Height>14.08331pt</Height>
+                  <Height>0.4cm</Height>
                   <Width>3.17728cm</Width>
-                  <ZIndex>11</ZIndex>
+                  <ZIndex>6</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -1522,7 +1364,7 @@
                           <Value>DO Date</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
-                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
                             <FontWeight>Normal</FontWeight>
                           </Style>
                         </TextRun>
@@ -1532,11 +1374,11 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>0.87076cm</Top>
+                  <Top>0.58501cm</Top>
                   <Left>0.26458cm</Left>
-                  <Height>14.5pt</Height>
+                  <Height>0.4cm</Height>
                   <Width>3.17728cm</Width>
-                  <ZIndex>12</ZIndex>
+                  <ZIndex>7</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -1553,7 +1395,7 @@
                           <Value>Customer ID</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
-                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
                             <FontWeight>Normal</FontWeight>
                           </Style>
                         </TextRun>
@@ -1563,11 +1405,11 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>1.57632cm</Top>
+                  <Top>0.97307cm</Top>
                   <Left>0.26458cm</Left>
-                  <Height>14pt</Height>
+                  <Height>0.4cm</Height>
                   <Width>3.17728cm</Width>
-                  <ZIndex>13</ZIndex>
+                  <ZIndex>8</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -1584,7 +1426,7 @@
                           <Value>Vehicle No</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
-                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
                             <FontWeight>Normal</FontWeight>
                           </Style>
                         </TextRun>
@@ -1594,11 +1436,11 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.28188cm</Top>
+                  <Top>1.39288cm</Top>
                   <Left>0.26458cm</Left>
-                  <Height>14.5pt</Height>
+                  <Height>0.4cm</Height>
                   <Width>3.18382cm</Width>
-                  <ZIndex>14</ZIndex>
+                  <ZIndex>9</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -1615,7 +1457,7 @@
                           <Value>Prepared by</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
-                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
                             <FontWeight>Normal</FontWeight>
                           </Style>
                         </TextRun>
@@ -1625,11 +1467,11 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.93451cm</Top>
+                  <Top>1.85501cm</Top>
                   <Left>0.26458cm</Left>
-                  <Height>13pt</Height>
+                  <Height>0.4cm</Height>
                   <Width>3.17728cm</Width>
-                  <ZIndex>15</ZIndex>
+                  <ZIndex>10</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -1646,7 +1488,7 @@
                           <Value>Transported by</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
-                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
                             <FontWeight>Normal</FontWeight>
                           </Style>
                         </TextRun>
@@ -1656,11 +1498,11 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>3.61125cm</Top>
+                  <Top>2.27775cm</Top>
                   <Left>0.26458cm</Left>
-                  <Height>13.81695pt</Height>
+                  <Height>0.4cm</Height>
                   <Width>3.18382cm</Width>
-                  <ZIndex>16</ZIndex>
+                  <ZIndex>11</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -1677,7 +1519,7 @@
                           <Value>:</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
-                            <FontFamily>Cambria</FontFamily>
+                            <FontSize>9pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -1686,11 +1528,11 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>3.62243cm</Top>
+                  <Top>2.28893cm</Top>
                   <Left>3.4484cm</Left>
-                  <Height>13.81695pt</Height>
+                  <Height>0.4cm</Height>
                   <Width>0.31096cm</Width>
-                  <ZIndex>17</ZIndex>
+                  <ZIndex>12</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -1707,7 +1549,7 @@
                           <Value>:</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
-                            <FontFamily>Cambria</FontFamily>
+                            <FontSize>9pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -1718,9 +1560,9 @@
                   </Paragraphs>
                   <Top>0.14463cm</Top>
                   <Left>3.4484cm</Left>
-                  <Height>15.08331pt</Height>
+                  <Height>0.4cm</Height>
                   <Width>0.31096cm</Width>
-                  <ZIndex>18</ZIndex>
+                  <ZIndex>13</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -1737,7 +1579,7 @@
                           <Value>:</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
-                            <FontFamily>Cambria</FontFamily>
+                            <FontSize>9pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -1746,11 +1588,11 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>0.87076cm</Top>
+                  <Top>0.58501cm</Top>
                   <Left>3.44186cm</Left>
-                  <Height>14.5pt</Height>
+                  <Height>0.4cm</Height>
                   <Width>0.31096cm</Width>
-                  <ZIndex>19</ZIndex>
+                  <ZIndex>14</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -1767,7 +1609,7 @@
                           <Value>:</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
-                            <FontFamily>Cambria</FontFamily>
+                            <FontSize>9pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -1776,11 +1618,11 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>1.59102cm</Top>
+                  <Top>0.98777cm</Top>
                   <Left>3.4484cm</Left>
-                  <Height>13.58331pt</Height>
+                  <Height>0.4cm</Height>
                   <Width>0.34624cm</Width>
-                  <ZIndex>20</ZIndex>
+                  <ZIndex>15</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -1797,7 +1639,7 @@
                           <Value>:</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
-                            <FontFamily>Cambria</FontFamily>
+                            <FontSize>9pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -1806,11 +1648,11 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.2613cm</Top>
+                  <Top>1.3723cm</Top>
                   <Left>3.4484cm</Left>
-                  <Height>14.5pt</Height>
+                  <Height>0.4cm</Height>
                   <Width>0.31096cm</Width>
-                  <ZIndex>21</ZIndex>
+                  <ZIndex>16</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -1827,7 +1669,7 @@
                           <Value>:</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
-                            <FontFamily>Cambria</FontFamily>
+                            <FontSize>9pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -1836,11 +1678,11 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.93158cm</Top>
+                  <Top>1.85208cm</Top>
                   <Left>3.4484cm</Left>
-                  <Height>13.58331pt</Height>
+                  <Height>0.4cm</Height>
                   <Width>0.31096cm</Width>
-                  <ZIndex>22</ZIndex>
+                  <ZIndex>17</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -1850,9 +1692,9 @@
                 </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
-              <Top>4.6982cm</Top>
+              <Top>4.34895cm</Top>
               <Left>9.10564cm</Left>
-              <Height>4.26389cm</Height>
+              <Height>3.34157cm</Height>
               <Width>8.81cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
@@ -1872,7 +1714,7 @@
                           <Value>Delivery To :</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
-                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
                             <FontWeight>Bold</FontWeight>
                           </Style>
                         </TextRun>
@@ -1894,6 +1736,7 @@
                   </Style>
                 </Textbox>
                 <Textbox Name="ExecutionTimeTextBox17">
+                  <CanGrow>true</CanGrow>
                   <KeepTogether>true</KeepTogether>
                   <Paragraphs>
                     <Paragraph>
@@ -1902,7 +1745,7 @@
                           <Value>=First(Fields!Ship_to_Name.Value, "DataSet_Result")</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
-                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
                             <FontWeight>Bold</FontWeight>
                           </Style>
                         </TextRun>
@@ -1912,9 +1755,9 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>0.74729cm</Top>
+                  <Top>0.71554cm</Top>
                   <Left>0.2956cm</Left>
-                  <Height>14.5pt</Height>
+                  <Height>0.4cm</Height>
                   <Width>8.14332cm</Width>
                   <ZIndex>1</ZIndex>
                   <Style>
@@ -1925,6 +1768,7 @@
                   </Style>
                 </Textbox>
                 <Textbox Name="ExecutionTimeTextBox18">
+                  <CanGrow>true</CanGrow>
                   <KeepTogether>true</KeepTogether>
                   <Paragraphs>
                     <Paragraph>
@@ -1933,7 +1777,7 @@
                           <Value>=First(Fields!Ship_to_Address.Value, "DataSet_Result")</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
-                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -1942,9 +1786,9 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>1.25882cm</Top>
+                  <Top>1.16357cm</Top>
                   <Left>0.2956cm</Left>
-                  <Height>14.5pt</Height>
+                  <Height>0.4cm</Height>
                   <Width>8.14332cm</Width>
                   <ZIndex>2</ZIndex>
                   <Style>
@@ -1955,6 +1799,7 @@
                   </Style>
                 </Textbox>
                 <Textbox Name="ExecutionTimeTextBox19">
+                  <CanGrow>true</CanGrow>
                   <KeepTogether>true</KeepTogether>
                   <Paragraphs>
                     <Paragraph>
@@ -1963,7 +1808,7 @@
                           <Value>=First(Fields!Ship_to_Address_2.Value, "DataSet_Result")</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
-                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -1972,9 +1817,9 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>1.77035cm</Top>
+                  <Top>1.6116cm</Top>
                   <Left>0.2956cm</Left>
-                  <Height>14.5pt</Height>
+                  <Height>0.4cm</Height>
                   <Width>8.14332cm</Width>
                   <ZIndex>3</ZIndex>
                   <Style>
@@ -1985,6 +1830,7 @@
                   </Style>
                 </Textbox>
                 <Textbox Name="ExecutionTimeTextBox21">
+                  <CanGrow>true</CanGrow>
                   <KeepTogether>true</KeepTogether>
                   <Paragraphs>
                     <Paragraph>
@@ -1993,7 +1839,7 @@
                           <Value>=First(Fields!Ship_to_Contact.Value, "DataSet_Result")</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
-                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -2002,9 +1848,9 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>3.13972cm</Top>
+                  <Top>2.47297cm</Top>
                   <Left>1.73445cm</Left>
-                  <Height>14.5pt</Height>
+                  <Height>0.4cm</Height>
                   <Width>6.69631cm</Width>
                   <ZIndex>4</ZIndex>
                   <Style>
@@ -2015,6 +1861,7 @@
                   </Style>
                 </Textbox>
                 <Textbox Name="ExecutionTimeTextBox22">
+                  <CanGrow>true</CanGrow>
                   <KeepTogether>true</KeepTogether>
                   <Paragraphs>
                     <Paragraph>
@@ -2023,7 +1870,7 @@
                           <Value>=First(Fields!Ship_to_Phone_No_.Value, "DataSet_Result")</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
-                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -2032,9 +1879,9 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>3.65125cm</Top>
+                  <Top>2.95275cm</Top>
                   <Left>1.73445cm</Left>
-                  <Height>13pt</Height>
+                  <Height>0.4cm</Height>
                   <Width>6.70447cm</Width>
                   <ZIndex>5</ZIndex>
                   <Style>
@@ -2045,6 +1892,7 @@
                   </Style>
                 </Textbox>
                 <Textbox Name="ExecutionTimeTextBox47">
+                  <CanGrow>true</CanGrow>
                   <KeepTogether>true</KeepTogether>
                   <Paragraphs>
                     <Paragraph>
@@ -2053,7 +1901,7 @@
                           <Value>Tel No</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
-                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
                             <FontWeight>Bold</FontWeight>
                           </Style>
                         </TextRun>
@@ -2063,9 +1911,9 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>3.14265cm</Top>
+                  <Top>2.4759cm</Top>
                   <Left>0.28744cm</Left>
-                  <Height>14.41694pt</Height>
+                  <Height>0.4cm</Height>
                   <Width>1.13605cm</Width>
                   <ZIndex>6</ZIndex>
                   <Style>
@@ -2076,6 +1924,7 @@
                   </Style>
                 </Textbox>
                 <Textbox Name="ExecutionTimeTextBox48">
+                  <CanGrow>true</CanGrow>
                   <KeepTogether>true</KeepTogether>
                   <Paragraphs>
                     <Paragraph>
@@ -2084,7 +1933,7 @@
                           <Value>:</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
-                            <FontFamily>Cambria</FontFamily>
+                            <FontSize>9pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -2093,9 +1942,9 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>3.14265cm</Top>
+                  <Top>2.4759cm</Top>
                   <Left>1.42349cm</Left>
-                  <Height>14.41694pt</Height>
+                  <Height>0.4cm</Height>
                   <Width>0.31096cm</Width>
                   <ZIndex>7</ZIndex>
                   <Style>
@@ -2106,6 +1955,7 @@
                   </Style>
                 </Textbox>
                 <Textbox Name="ExecutionTimeTextBox49">
+                  <CanGrow>true</CanGrow>
                   <KeepTogether>true</KeepTogether>
                   <Paragraphs>
                     <Paragraph>
@@ -2114,7 +1964,7 @@
                           <Value>H/PNo</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
-                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
                             <FontWeight>Bold</FontWeight>
                           </Style>
                         </TextRun>
@@ -2124,9 +1974,9 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>3.65125cm</Top>
+                  <Top>2.95275cm</Top>
                   <Left>0.28744cm</Left>
-                  <Height>13pt</Height>
+                  <Height>0.4cm</Height>
                   <Width>1.13605cm</Width>
                   <ZIndex>8</ZIndex>
                   <Style>
@@ -2137,6 +1987,7 @@
                   </Style>
                 </Textbox>
                 <Textbox Name="ExecutionTimeTextBox51">
+                  <CanGrow>true</CanGrow>
                   <KeepTogether>true</KeepTogether>
                   <Paragraphs>
                     <Paragraph>
@@ -2145,7 +1996,7 @@
                           <Value>:</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
-                            <FontFamily>Cambria</FontFamily>
+                            <FontSize>9pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -2154,9 +2005,9 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>3.65125cm</Top>
+                  <Top>2.95275cm</Top>
                   <Left>1.42349cm</Left>
-                  <Height>13pt</Height>
+                  <Height>0.4cm</Height>
                   <Width>0.31096cm</Width>
                   <ZIndex>9</ZIndex>
                   <Style>
@@ -2167,6 +2018,7 @@
                   </Style>
                 </Textbox>
                 <Textbox Name="ExecutionTimeTextBox20">
+                  <CanGrow>true</CanGrow>
                   <KeepTogether>true</KeepTogether>
                   <Paragraphs>
                     <Paragraph>
@@ -2175,7 +2027,7 @@
                           <Value>=First(Fields!postcodecitycountrycounty.Value, "DataSet_Result")</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
-                            <FontFamily>Cambria</FontFamily>
+                            <FontSize>9pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -2184,9 +2036,9 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.28188cm</Top>
+                  <Top>2.05041cm</Top>
                   <Left>0.2956cm</Left>
-                  <Height>14.5pt</Height>
+                  <Height>0.4cm</Height>
                   <Width>8.14578cm</Width>
                   <ZIndex>10</ZIndex>
                   <Style>
@@ -2198,9 +2050,9 @@
                 </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
-              <Top>4.68702cm</Top>
+              <Top>4.33777cm</Top>
               <Left>0.18981cm</Left>
-              <Height>4.26389cm</Height>
+              <Height>3.55833cm</Height>
               <Width>8.73944cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
@@ -2215,12 +2067,10 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=First(Fields!PrintName.Value, "DataSet_Result")</Value>
+                      <Value>=First(Fields!PrintName.Value, "DataSet_Result") &amp; "(" +First(Fields!CompanyInfoBusinessRegistrationNo.Value, "DataSet_Result") +")"</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
-                        <FontFamily>Segoe UI</FontFamily>
-                        <FontSize>11pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
+                        <FontSize>14pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2230,15 +2080,16 @@
                 </Paragraph>
               </Paragraphs>
               <Top>0.27281cm</Top>
-              <Left>1.58341cm</Left>
-              <Height>27.393pt</Height>
-              <Width>9.89943cm</Width>
+              <Left>0.98264cm</Left>
+              <Height>17.99965pt</Height>
+              <Width>10.93969cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
                 </Border>
                 <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
               </Style>
             </Textbox>
             <Textbox Name="CompanyAddress">
@@ -2250,7 +2101,7 @@
                       <Value>=First(Fields!CompanyAddress.Value,"DataSet_Result")+",  " +First(Fields!CompanyPostcode.Value, "DataSet_Result") +",  " +First(Fields!CompanyCity.Value, "DataSet_Result")+",  " +First(Fields!CompanyState.Value, "DataSet_Result")+", "+First(Fields!CompanyCountry.Value, "DataSet_Result")</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2259,9 +2110,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>1.29208cm</Top>
+              <Top>0.94283cm</Top>
               <Left>0.34765cm</Left>
-              <Height>21.4688pt</Height>
+              <Height>0.4cm</Height>
               <Width>11.13519cm</Width>
               <ZIndex>4</ZIndex>
               <Style>
@@ -2280,7 +2131,7 @@
                       <Value>=First(Fields!CompanyInfoPhoneNo.Value, "DataSet_Result")</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2289,9 +2140,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>2.04945cm</Top>
+              <Top>1.3827cm</Top>
               <Left>2.94616cm</Left>
-              <Height>14.5pt</Height>
+              <Height>0.4cm</Height>
               <Width>8.53668cm</Width>
               <ZIndex>5</ZIndex>
               <Style>
@@ -2310,7 +2161,7 @@
                       <Value>=First(Fields!CompanyInfoFax.Value, "DataSet_Result")</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2319,9 +2170,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>2.56098cm</Top>
+              <Top>1.83073cm</Top>
               <Left>2.94616cm</Left>
-              <Height>15.50013pt</Height>
+              <Height>0.4cm</Height>
               <Width>8.53668cm</Width>
               <ZIndex>6</ZIndex>
               <Style>
@@ -2341,7 +2192,7 @@
                       <Value>=First(Fields!CompanyInfoEmail.Value, "DataSet_Result") + "     " + "URL :  " + First(Fields!CompanyInfoHomePage.Value, "DataSet_Result")</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2350,9 +2201,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>3.10779cm</Top>
+              <Top>2.28229cm</Top>
               <Left>2.94616cm</Left>
-              <Height>14.49978pt</Height>
+              <Height>0.4cm</Height>
               <Width>8.53668cm</Width>
               <ZIndex>7</ZIndex>
               <Style>
@@ -2371,7 +2222,7 @@
                       <Value>=First(Fields!CompanyInfoVATRegNo.Value, "DataSet_Result")</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2380,9 +2231,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>3.61931cm</Top>
+              <Top>2.73031cm</Top>
               <Left>2.94616cm</Left>
-              <Height>14.5pt</Height>
+              <Height>0.4cm</Height>
               <Width>8.53668cm</Width>
               <ZIndex>8</ZIndex>
               <Style>
@@ -2401,7 +2252,7 @@
                       <Value>Tel No</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2410,9 +2261,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>2.04945cm</Top>
+              <Top>1.3827cm</Top>
               <Left>0.39687cm</Left>
-              <Height>14.5pt</Height>
+              <Height>0.4cm</Height>
               <Width>2.22363cm</Width>
               <ZIndex>9</ZIndex>
               <Style>
@@ -2431,7 +2282,7 @@
                       <Value>Fax No</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2440,9 +2291,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>2.56098cm</Top>
+              <Top>1.83073cm</Top>
               <Left>0.39687cm</Left>
-              <Height>15.50013pt</Height>
+              <Height>0.4cm</Height>
               <Width>2.22363cm</Width>
               <ZIndex>10</ZIndex>
               <Style>
@@ -2461,7 +2312,7 @@
                       <Value>Email </Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2470,9 +2321,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>3.10779cm</Top>
+              <Top>2.28229cm</Top>
               <Left>0.39687cm</Left>
-              <Height>14.49984pt</Height>
+              <Height>0.4cm</Height>
               <Width>2.22363cm</Width>
               <ZIndex>11</ZIndex>
               <Style>
@@ -2491,7 +2342,7 @@
                       <Value>SST Number</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2500,9 +2351,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>3.61931cm</Top>
+              <Top>2.73031cm</Top>
               <Left>0.39687cm</Left>
-              <Height>14.5pt</Height>
+              <Height>0.4cm</Height>
               <Width>2.22363cm</Width>
               <ZIndex>12</ZIndex>
               <Style>
@@ -2521,7 +2372,7 @@
                       <Value>:</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
-                        <FontFamily>Cambria</FontFamily>
+                        <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2530,9 +2381,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>3.61931cm</Top>
+              <Top>2.73031cm</Top>
               <Left>2.6205cm</Left>
-              <Height>14.46882pt</Height>
+              <Height>0.4cm</Height>
               <Width>0.14927cm</Width>
               <ZIndex>13</ZIndex>
               <Style>
@@ -2551,7 +2402,7 @@
                       <Value>:</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
-                        <FontFamily>Cambria</FontFamily>
+                        <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2560,9 +2411,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>2.04945cm</Top>
+              <Top>1.3827cm</Top>
               <Left>2.6205cm</Left>
-              <Height>14.46882pt</Height>
+              <Height>0.4cm</Height>
               <Width>0.14927cm</Width>
               <ZIndex>14</ZIndex>
               <Style>
@@ -2581,7 +2432,7 @@
                       <Value>:</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
-                        <FontFamily>Cambria</FontFamily>
+                        <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2590,9 +2441,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>2.55988cm</Top>
+              <Top>1.82963cm</Top>
               <Left>2.6205cm</Left>
-              <Height>15.50012pt</Height>
+              <Height>0.4cm</Height>
               <Width>0.14927cm</Width>
               <ZIndex>15</ZIndex>
               <Style>
@@ -2611,7 +2462,7 @@
                       <Value>:</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
-                        <FontFamily>Cambria</FontFamily>
+                        <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2620,43 +2471,11 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>3.10779cm</Top>
+              <Top>2.28229cm</Top>
               <Left>2.6205cm</Left>
-              <Height>14.49984pt</Height>
+              <Height>0.4cm</Height>
               <Width>0.14927cm</Width>
               <ZIndex>16</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <VerticalAlign>Middle</VerticalAlign>
-              </Style>
-            </Textbox>
-            <Textbox Name="lbltelno2">
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>="(" +First(Fields!CompanyInfoBusinessRegistrationNo.Value, "DataSet_Result") +")"</Value>
-                      <Style>
-                        <FontStyle>Normal</FontStyle>
-                        <FontFamily>Segoe UI</FontFamily>
-                        <FontSize>11pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Left</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <Top>0.27281cm</Top>
-              <Left>7.60094cm</Left>
-              <Height>27.39269pt</Height>
-              <Width>3.8819cm</Width>
-              <ZIndex>17</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -2669,10 +2488,11 @@
               <Value>=First(Fields!CompanyPicture1.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
-              <Left>11.79533cm</Left>
-              <Height>2.26675cm</Height>
-              <Width>2.04352cm</Width>
-              <ZIndex>18</ZIndex>
+              <Top>0.25in</Top>
+              <Left>11.92233cm</Left>
+              <Height>2.04298cm</Height>
+              <Width>2.04298cm</Width>
+              <ZIndex>17</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -2684,10 +2504,11 @@
               <Value>=First(Fields!CompanyPicture2.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
-              <Left>13.83886cm</Left>
-              <Height>2.26675cm</Height>
-              <Width>2.22356cm</Width>
-              <ZIndex>19</ZIndex>
+              <Top>0.25in</Top>
+              <Left>13.99761cm</Left>
+              <Height>2.04298cm</Height>
+              <Width>2.04298cm</Width>
+              <ZIndex>18</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -2699,10 +2520,11 @@
               <Value>=First(Fields!CompanyPicture3.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
+              <Top>0.25in</Top>
               <Left>16.06242cm</Left>
-              <Height>2.26675cm</Height>
-              <Width>2.02102cm</Width>
-              <ZIndex>20</ZIndex>
+              <Height>2.04298cm</Height>
+              <Width>2.04298cm</Width>
+              <ZIndex>19</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -2716,9 +2538,9 @@
               <Sizing>Fit</Sizing>
               <Top>0.27281cm</Top>
               <Left>0.34765cm</Left>
-              <Height>0.96191cm</Height>
-              <Width>1.09465cm</Width>
-              <ZIndex>21</ZIndex>
+              <Height>17.99965pt</Height>
+              <Width>17.99965pt</Width>
+              <ZIndex>20</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -2742,7 +2564,6 @@
                     <TextRun>
                       <Value>Thank you for your business</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
                         <FontSize>9pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
@@ -2762,6 +2583,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
+                <VerticalAlign>Middle</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -2777,8 +2599,7 @@
                     <TextRun>
                       <Value>1.Goods sold are neither returnable or refundable.</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
-                        <FontSize>8pt</FontSize>
+                        <FontSize>9pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -2798,6 +2619,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
+                <VerticalAlign>Middle</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -2813,8 +2635,7 @@
                     <TextRun>
                       <Value>2.Claims for damages and/or shortage shall be notified with 7 days from receipt date</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
-                        <FontSize>8pt</FontSize>
+                        <FontSize>9pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -2849,7 +2670,6 @@
                     <TextRun>
                       <Value>="For " +First(Fields!CompanyInfoName.Value, "DataSet_Result")</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
                         <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
@@ -2882,7 +2702,6 @@
                     <TextRun>
                       <Value>For Transporter</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
                         <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
@@ -2918,7 +2737,6 @@
                     <TextRun>
                       <Value>Received by,</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
                         <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
@@ -2932,7 +2750,6 @@
                     <TextRun>
                       <Value>(Official Stamp &amp; Signature of Recipient)</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
                         <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
@@ -2968,7 +2785,6 @@
                     <TextRun>
                       <Value>Logistics</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
                         <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
@@ -3004,7 +2820,6 @@
                     <TextRun>
                       <Value>Security</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
                         <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
@@ -3088,7 +2903,6 @@
                     <TextRun>
                       <Value>Name :</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
                         <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
@@ -3109,6 +2923,7 @@
                 <BottomBorder>
                   <Style>Dashed</Style>
                 </BottomBorder>
+                <VerticalAlign>Middle</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -3124,7 +2939,6 @@
                     <TextRun>
                       <Value>Date :</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
                         <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
@@ -3145,6 +2959,7 @@
                 <BottomBorder>
                   <Style>Dashed</Style>
                 </BottomBorder>
+                <VerticalAlign>Middle</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -3160,7 +2975,6 @@
                     <TextRun>
                       <Value>Name :</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
                         <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
@@ -3183,6 +2997,7 @@
                   <Style>Dashed</Style>
                   <Width>1pt</Width>
                 </BottomBorder>
+                <VerticalAlign>Middle</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -3198,7 +3013,6 @@
                     <TextRun>
                       <Value>Date :</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
                         <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
@@ -3221,6 +3035,7 @@
                   <Style>Dashed</Style>
                   <Width>1pt</Width>
                 </BottomBorder>
+                <VerticalAlign>Middle</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -3236,7 +3051,6 @@
                     <TextRun>
                       <Value>Date :</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
                         <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
@@ -3259,6 +3073,7 @@
                   <Style>Dashed</Style>
                   <Width>1pt</Width>
                 </BottomBorder>
+                <VerticalAlign>Middle</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -3274,7 +3089,6 @@
                     <TextRun>
                       <Value>Name :</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
                         <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
@@ -3297,6 +3111,7 @@
                   <Style>Dashed</Style>
                   <Width>1pt</Width>
                 </BottomBorder>
+                <VerticalAlign>Middle</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -3312,7 +3127,6 @@
                     <TextRun>
                       <Value>Name :</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
                         <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
@@ -3335,6 +3149,7 @@
                   <Style>Dashed</Style>
                   <Width>1pt</Width>
                 </BottomBorder>
+                <VerticalAlign>Middle</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -3350,7 +3165,6 @@
                     <TextRun>
                       <Value>Date :</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
                         <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
@@ -3373,6 +3187,7 @@
                   <Style>Dashed</Style>
                   <Width>1pt</Width>
                 </BottomBorder>
+                <VerticalAlign>Middle</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -3388,7 +3203,6 @@
                     <TextRun>
                       <Value>IC/No. :</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
                         <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
@@ -3411,6 +3225,7 @@
                   <Style>Dashed</Style>
                   <Width>1pt</Width>
                 </BottomBorder>
+                <VerticalAlign>Middle</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -3426,7 +3241,6 @@
                     <TextRun>
                       <Value>IC/No. :</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
                         <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
@@ -3449,6 +3263,7 @@
                   <Style>Dashed</Style>
                   <Width>1pt</Width>
                 </BottomBorder>
+                <VerticalAlign>Middle</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>

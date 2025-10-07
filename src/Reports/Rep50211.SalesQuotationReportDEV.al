@@ -130,6 +130,10 @@ report 50211 "Sales Quotation Report"
                     else
                         IsCharge := true;
                 end;
+                trigger OnPreDataItem()
+                begin
+                    "Sales Line".SetFilter(Type,'<>%1',"Sales Line".Type::" ");
+                end;
             }
 
             trigger OnAfterGetRecord()

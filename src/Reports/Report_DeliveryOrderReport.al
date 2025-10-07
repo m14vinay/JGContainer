@@ -196,6 +196,7 @@ report 50201 DeliveryOrderReport
 
                 trigger OnPreDataItem()
                 begin
+                    "Sales Shipment Line".SetFilter("Sales Shipment Line".Type, '<>%1', "Sales Shipment Line".Type::" ");
                     "Sales Shipment Line".Setfilter(Quantity, '>%1', 0);
                 end;
             }

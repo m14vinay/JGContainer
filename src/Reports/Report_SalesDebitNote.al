@@ -120,10 +120,8 @@ report 50206 SalesDebitNoteReport
             column(Ship_to_Contact; "Ship-to Contact")
             {
             }
-            column(SalesHeaderNo_; "Order No.")
-            {
-            }
-            column(DueDate; Format("Due Date",0, '<day,2>.<month,2>.<year4>'))
+
+            column(DueDate; Format("Due Date", 0, '<day,2>.<month,2>.<year4>'))
             {
             }
             column(PaymentTerms; "Payment Terms Code")
@@ -135,7 +133,7 @@ report 50206 SalesDebitNoteReport
             column(SalesPerson; SalesPersonPurch.Name)
             {
             }
-            column(Document_Date; Format("Document Date",0, '<day,2>.<month,2>.<year4>'))
+            column(Document_Date; Format("Document Date", 0, '<day,2>.<month,2>.<year4>'))
             {
             }
             column("selltocustomercode"; "Sell-to Customer No.")
@@ -236,6 +234,9 @@ report 50206 SalesDebitNoteReport
                 {
 
                 }
+                column(SalesHeaderNo_; "Order No.")
+                {
+                }
                 column(Packing; Packing)
                 {
 
@@ -304,6 +305,11 @@ report 50206 SalesDebitNoteReport
                         Unit_Price := SalesPrice."Price Per Piece";
                     end;
                 end;
+
+                trigger OnPreDataItem()
+                begin
+                    "Sales Invoice Line".SetFilter(Type, '<>%1', "Sales Invoice Line".Type::" ");
+                end;
             }
 
             trigger OnAfterGetRecord()
@@ -313,7 +319,7 @@ report 50206 SalesDebitNoteReport
                 SalesInvoiceLine: Record "Sales Invoice Line";
                 VATPostingSetup: Record "VAT Posting Setup";
             begin
-                If SalesPersonPurch.Get("Salesperson Code") then ;
+                If SalesPersonPurch.Get("Salesperson Code") then;
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
                 if CountryRegion.Get("Ship-to Country/Region Code") then
@@ -371,7 +377,7 @@ report 50206 SalesDebitNoteReport
                     if BankAccount.Get(CompanyInfo."Alternative Bank 2") then begin
                         AlternateBankAccountNo2 := BankAccount."Bank Account No.";
                         AlternateBankName2 := BankAccount.Name;
-                        AlternateBankAddress2 := BankAccount."Address";
+                        AlternateBankAddress2 := BuildBank2Address(BankAccount);
                         AlternateBankSwiftCode2 := BankAccount."SWIFT Code";
                     end;
                 end;
@@ -426,7 +432,7 @@ report 50206 SalesDebitNoteReport
         VendAddr: array[8] of Text[100];
         TotalShowAmount: Decimal;
         ShowAmount: Decimal;
-        SalesPersonPurch : Record "Salesperson/Purchaser";
+        SalesPersonPurch: Record "Salesperson/Purchaser";
 
     local procedure CurrencyCode(SrcCurrCode: Code[10]): Code[10]
     begin
@@ -434,6 +440,34 @@ report 50206 SalesDebitNoteReport
             exit(GLSetup."LCY Code")
         else
             exit(SrcCurrCode);
+    end;
+
+    local procedure BuildBank2Address(Bank: Record "Bank Account"): Text
+    var
+        Country: Record "Country/Region";
+        County: Record County;
+        Addr: Text;
+    begin
+        if Bank.Address <> '' then
+            Addr += Bank.Address;
+        if Bank."Address 2" <> '' then
+            Addr += ', ' + Bank."Address 2";
+        if Bank."Post Code" <> '' then
+            Addr += ', ' + Bank."Post Code";
+        if Bank.City <> '' then
+            Addr += ', ' + Bank.City;
+        if Bank.County <> '' then
+            If County.Get(Bank.County) then
+                Addr += ', ' + County.Description;
+
+        if Bank."Country/Region Code" <> '' then begin
+            if Country.Get(Bank."Country/Region Code") then
+                Addr += ', ' + Country.Name
+            else
+                Addr += ', ' + Bank."Country/Region Code"; // fallback if record missing
+        end;
+
+        exit(Addr);
     end;
 
 }
