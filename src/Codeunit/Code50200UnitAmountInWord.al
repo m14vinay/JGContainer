@@ -71,7 +71,7 @@ codeunit 50200 CheckAmountInWord
                 AddToNoText(NoText, NoTextIndex, PrintExponent, Text026);
         IF (CurrencyCode <> '') THEN
             // AddToNoText(NoText, NoTextIndex, PrintExponent, '' + 'CENTS' + 'ONLY')  // R changes code
-            AddToNoText(NoText, NoTextIndex, PrintExponent, '' + 'ONLY')  // R changes code
+            AddToNoText(NoText, NoTextIndex, PrintExponent, 'Cents' + 'ONLY')  // R changes code
         ELSE
             // AddToNoText(NoText, NoTextIndex, PrintExponent, ' CENTS ONLY');
             AddToNoText(NoText, NoTextIndex, PrintExponent, ' ONLY');

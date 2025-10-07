@@ -123,7 +123,7 @@ report 50208 SalesOrderReport
             column(SalesHeaderNo_; "No.")
             {
             }
-            column(Shipment_Date; Format("Shipment Date"))
+            column(Shipment_Date; Format("Requested Delivery Date", 0, '<day,2>.<month,2>.<year4>'))
             {
             }
             column(PaymentTerms; "Payment Terms Code")
@@ -135,10 +135,10 @@ report 50208 SalesOrderReport
             column(Incoterm; "Incoterms")
             {
             }
-            column(SalesPerson; "Salesperson Code")
+            column(SalesPerson; SalesPersonPurch.Name)
             {
             }
-            column(Document_Date; Format("Document Date"))
+            column(Document_Date; Format("Document Date", 0, '<day,2>.<month,2>.<year4>'))
             {
             }
             column("selltocustomercode"; "Sell-to Customer No.")
@@ -300,6 +300,10 @@ report 50208 SalesOrderReport
                     else
                         IsCharge := true;
                 end;
+                 trigger OnPreDataItem()
+                begin
+                    "Sales Line".SetFilter(Type,'<>%1',"Sales Line".Type::" ");
+                end;
             }
 
 
@@ -310,6 +314,7 @@ report 50208 SalesOrderReport
                 VATPostingSetup: Record "VAT Posting Setup";
                 salesline: Record "Sales Line";
             begin
+                If SalesPersonPurch.Get("Salesperson Code") then ;
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
                 if CountryRegion.Get("Ship-to Country/Region Code") then
@@ -365,10 +370,11 @@ report 50208 SalesOrderReport
                     if BankAccount.Get(CompanyInfo."Alternative Bank 2") then begin
                         AlternateBankAccountNo2 := BankAccount."Bank Account No.";
                         AlternateBankName2 := BankAccount.Name;
-                        AlternateBankAddress2 := BankAccount."Address";
+                        AlternateBankAddress2 := BuildBank2Address(BankAccount);
                         AlternateBankSwiftCode2 := BankAccount."SWIFT Code";
                     end;
                 end;
+                
                 GLSetup.Get();
             end;
         }
@@ -399,6 +405,7 @@ report 50208 SalesOrderReport
         Variant_Code: Text;
         CompanyCountry: Text;
         Bill_to_Address: Text;
+        SalesPerson : Text[100];
         BIllpostcodecitycountrycounty: Text;
         Billtomobileno: Text;
         BilltoPhoneNo: Text;
@@ -413,6 +420,7 @@ report 50208 SalesOrderReport
 
         Currency: Record Currency;
         FormatAddr: Codeunit "Format Address";
+        SalesPersonPurch : Record "Salesperson/Purchaser";
         ReportTitle: Text[30];
         CompanyAddr: array[8] of Text[100];
         VendAddr: array[8] of Text[100];
@@ -425,6 +433,33 @@ report 50208 SalesOrderReport
             exit(GLSetup."LCY Code")
         else
             exit(SrcCurrCode);
+    end;
+    local procedure BuildBank2Address(Bank: Record "Bank Account"): Text
+    var
+        Country: Record "Country/Region";
+        County: Record County;
+        Addr: Text;
+    begin
+        if Bank.Address <> '' then
+            Addr += Bank.Address;
+        if Bank."Address 2" <> '' then
+            Addr += ', ' + Bank."Address 2";
+        if Bank."Post Code" <> '' then
+            Addr += ', ' + Bank."Post Code";
+        if Bank.City <> '' then
+            Addr += ', ' + Bank.City;
+        if Bank.County <> '' then
+            If County.Get(Bank.County) then
+                Addr += ', ' + County.Description;
+
+        if Bank."Country/Region Code" <> '' then begin
+            if Country.Get(Bank."Country/Region Code") then
+                Addr += ', ' + Country.Name
+            else
+                Addr += ', ' + Bank."Country/Region Code"; // fallback if record missing
+        end;
+
+        exit(Addr);
     end;
 
 }

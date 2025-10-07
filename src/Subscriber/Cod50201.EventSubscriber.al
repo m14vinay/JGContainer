@@ -86,43 +86,77 @@ codeunit 50201 "Event Subscriber"
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Item Jnl.-Post Line", 'OnBeforeInsertItemLedgEntryProcedure', '', false, false)]
     local procedure OnAfterInitItemLedgEntry(var ItemLedgerEntry: Record "Item Ledger Entry"; var IsHandled: Boolean; var ItemJournalLine: Record "Item Journal Line")
     begin
-        If ItemLedgerEntry.Quantity > 0 then 
+        If ItemLedgerEntry.Quantity > 0 then
             ItemLedgerEntry."Quantity Pieces" := ItemJournalLine."Quantity Pieces"
         else
-           ItemLedgerEntry."Quantity Pieces" := -ItemJournalLine."Quantity Pieces";
+            ItemLedgerEntry."Quantity Pieces" := -ItemJournalLine."Quantity Pieces";
         ItemLedgerEntry."Net Weight" := ItemJournalLine."Net Weight";
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Transfer Shipment Line", 'OnAfterCopyFromTransferLine', '', false, false)]
     local procedure OnAfterCopyFromTransferLine(var TransferShipmentLine: Record "Transfer Shipment Line"; TransferLine: Record "Transfer Line")
-
+    var
+        Item: Record Item;
+        PackSize: Record "Pack Size";
     begin
-        TransferShipmentLine."Quantity Pieces" := TransferLine."Quantity Pieces";
+        If Item.Get(TransferLine."Item No.") then
+            If PackSize.Get(Item."Pack Size") then
+                TransferShipmentLine."Quantity Pieces" := TransferLine."Qty. to Ship" * PackSize."Qty Per Pack";
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Transfer Receipt Line", 'OnAfterCopyFromTransferLine', '', false, false)]
     local procedure OnAfterCopyFromTransferLineRecpt(var TransferReceiptLine: Record "Transfer Receipt Line"; TransferLine: Record "Transfer Line")
-
+    var
+        Item: Record Item;
+        PackSize: Record "Pack Size";
     begin
-        TransferReceiptLine."Quantity Pieces" := TransferLine."Quantity Pieces";
+        If Item.Get(TransferLine."Item No.") then
+            If PackSize.Get(Item."Pack Size") then
+                TransferReceiptLine."Quantity Pieces" := TransferLine."Qty. to Receive" * PackSize."Qty Per Pack";
     end;
+
     [EventSubscriber(ObjectType::Codeunit, CodeUnit::"TransferOrder-Post Shipment", 'OnAfterCreateItemJnlLine', '', false, false)]
     local procedure OnAfterCreateItemJnlLine(var ItemJournalLine: Record "Item Journal Line"; TransferLine: Record "Transfer Line"; TransferShipmentHeader: Record "Transfer Shipment Header"; TransferShipmentLine: Record "Transfer Shipment Line")
-
+    var
+        Item: Record Item;
+        PackSize: Record "Pack Size";
     begin
-        ItemJournalLine."Quantity Pieces" := TransferLine."Quantity Pieces";
+        If Item.Get(TransferLine."Item No.") then
+            If PackSize.Get(Item."Pack Size") then
+                ItemJournalLine."Quantity Pieces" := TransferLine."Qty. to Ship" * PackSize."Qty Per Pack";
     end;
-     [EventSubscriber(ObjectType::Codeunit, CodeUnit::"TransferOrder-Post Receipt", 'OnBeforePostItemJournalLine', '', false, false)]
+
+    [EventSubscriber(ObjectType::Codeunit, CodeUnit::"TransferOrder-Post Receipt", 'OnBeforePostItemJournalLine', '', false, false)]
     local procedure OnBeforePostItemJournalLine(var ItemJournalLine: Record "Item Journal Line"; TransferLine: Record "Transfer Line"; TransferReceiptHeader: Record "Transfer Receipt Header"; TransferReceiptLine: Record "Transfer Receipt Line"; CommitIsSuppressed: Boolean; TransLine: Record "Transfer Line"; PostedWhseRcptHeader: Record "Posted Whse. Receipt Header")
-
+    var
+        Item: Record Item;
+        PackSize: Record "Pack Size";
     begin
-        ItemJournalLine."Quantity Pieces" := TransferLine."Quantity Pieces";
+        If Item.Get(TransferLine."Item No.") then
+            If PackSize.Get(Item."Pack Size") then
+                ItemJournalLine."Quantity Pieces" := TransferLine."Qty. to Receive" * PackSize."Qty Per Pack";
     end;
+
     [EventSubscriber(ObjectType::Codeunit, CodeUnit::"TransferOrder-Post Transfer", 'OnAfterCreateItemJnlLine', '', false, false)]
     local procedure OnAfterCreateItemJnlLineTransfer(var ItemJnlLine: Record "Item Journal Line"; TransLine: Record "Transfer Line"; DirectTransHeader: Record "Direct Trans. Header"; DirectTransLine: Record "Direct Trans. Line")
 
     begin
         ItemJnlLine."Quantity Pieces" := TransLine."Quantity Pieces";
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, CodeUnit::"Sales-Post", 'OnPostItemJnlLineOnAfterPrepareItemJnlLine', '', false, false)]
+    local procedure OnPostItemJnlLineOnAfterPrepareItemJnlLine(var ItemJournalLine: Record "Item Journal Line"; SalesLine: Record "Sales Line")
+    var
+        Item: Record Item;
+        PackSize: Record "Pack Size";
+    begin
+
+        If Item.Get(SalesLine."No.") then
+            If PackSize.Get(Item."Pack Size") then
+                If SalesLine."Document Type" = SalesLine."Document Type"::"Return Order" then
+                    ItemJournalLine."Quantity Pieces" := SalesLine."Return Qty. to Receive" * PackSize."Qty Per Pack";
+                If (SalesLine."Document Type" = SalesLine."Document Type"::Order) and  (SalesLine."Qty. to Ship" <> 0) then
+                    ItemJournalLine."Quantity Pieces" := -SalesLine."Qty. to Ship" * PackSize."Qty Per Pack"
     end;
 
 

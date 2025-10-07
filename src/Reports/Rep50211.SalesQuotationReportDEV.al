@@ -16,6 +16,8 @@ report 50211 "Sales Quotation Report"
             // --- Company Info ---
             column(companyName; CompanyInfo.Name) { }
             column(CompanyAddress; CompanyAddress) { }
+            column(CompInfoBankName; CompanyInfo."Bank Name") { }
+
             column(companyPhone; CompanyInfo."Phone No.") { }
             column(companyFax; CompanyInfo."Fax No.") { }
             column(companyEmail; CompanyInfo."E-mail") { }
@@ -51,11 +53,11 @@ report 50211 "Sales Quotation Report"
             column(Ship_to_Name; "Ship-to Name") { }
             column(GetFullShipAddress; GetFullShipAddress()) { }
             column(GetShipPostCityCountReg; GetShipPostCityCountReg()) { }
-            column(SalesHead_Document_Date; "Document Date") { }
+            column(SalesHead_Document_Date; Format("Document Date", 0, '<day,2>.<month,2>.<year4>')) { }
             column(SalesHead_No_; "No.") { }
             column(Payment_Terms_Code; "Payment Terms Code") { }
             column(Sell_to_Customer_No_; "Sell-to Customer No.") { }
-            column(Salesperson_Code; "Salesperson Code") { }
+            column(Salesperson_Code; SalesPersonPurch.Name) { }
             column(Incoterms; Incoterms) { }
             column(Work_Description; WorkDescriptionTxt) { }
 
@@ -92,6 +94,7 @@ report 50211 "Sales Quotation Report"
                 column(Type; Type) { }
                 column(Quantity_Pieces; "Quantity Pieces") { }
                 column(Price_Per_Piece; "Price Per Piece") { }
+                column(QtyPerPack; "Qty Per Pack") { }
                 column(IsCharge; IsCharge)
                 {
 
@@ -114,6 +117,7 @@ report 50211 "Sales Quotation Report"
                 var
                     ItemCard: Record "Item";
                 begin
+
                     if ItemCard.Get("No.") then begin
                         if (ItemCard."Print Charges in Footer") then
                             IsCharge := true
@@ -125,6 +129,10 @@ report 50211 "Sales Quotation Report"
                     end
                     else
                         IsCharge := true;
+                end;
+                trigger OnPreDataItem()
+                begin
+                    "Sales Line".SetFilter(Type,'<>%1',"Sales Line".Type::" ");
                 end;
             }
 
@@ -142,7 +150,7 @@ report 50211 "Sales Quotation Report"
                 AmtInWords := NoText[1] + ' ' + NoText[2];
                 if ("Currency Code" = '') then begin
                     Currency_Code := 'MYR';
-                    AmtInWords := 'Malaysian Ringgit ' + StrSubstNo('%1 Sen ONLY', DelStr(AmtInWords, StrPos(AmtInWords, 'ONLY'), StrLen('ONLY')), '')
+                    AmtInWords := 'Malaysian Ringgit ' + AmtInWords;
                 end
                 else begin
                     Currency_Code := "Currency Code";
@@ -156,6 +164,8 @@ report 50211 "Sales Quotation Report"
                         SalesTaxPercent := 'Sales Tax ' + VATPostingSetup."VAT %".ToText() + ' %';
                     end;
                 end;
+
+                If SalesPersonPurch.Get("Salesperson Code") then;
             end;
         }
     }
@@ -195,7 +205,7 @@ report 50211 "Sales Quotation Report"
         CompanyAddress: Text;
         CountryRegion: Record "Country/Region";
         Bank: Record "Bank Account";
-
+        SalesPersonPurch: Record "Salesperson/Purchaser";
         Bank1_AccountNo: Text;
         Bank1_Name: Text;
         Bank2_AccountNo: Text;
@@ -355,6 +365,7 @@ report 50211 "Sales Quotation Report"
     local procedure BuildBank2FullName(Bank: Record "Bank Account"): Text
     var
         Country: Record "Country/Region";
+        County: Record County;
         Addr: Text;
     begin
         // Addr := Bank.Name;
@@ -368,7 +379,8 @@ report 50211 "Sales Quotation Report"
         if Bank.City <> '' then
             Addr += ', ' + Bank.City;
         if Bank.County <> '' then
-            Addr += ', ' + Bank.County;
+            If County.Get(Bank.County) then
+                Addr += ', ' + County.Description;
         if Bank."Country/Region Code" <> '' then
             if Country.Get(Bank."Country/Region Code") then
                 Addr += ', ' + Country.Name;
@@ -379,6 +391,7 @@ report 50211 "Sales Quotation Report"
     local procedure BuildBank2Address(Bank: Record "Bank Account"): Text
     var
         Country: Record "Country/Region";
+        County: Record County;
         Addr: Text;
     begin
         if Bank.Address <> '' then
@@ -390,7 +403,8 @@ report 50211 "Sales Quotation Report"
         if Bank.City <> '' then
             Addr += ', ' + Bank.City;
         if Bank.County <> '' then
-            Addr += ', ' + Bank.County;
+            If County.Get(Bank.County) then
+                Addr += ', ' + County.Description;
 
         if Bank."Country/Region Code" <> '' then begin
             if Country.Get(Bank."Country/Region Code") then

@@ -120,7 +120,7 @@ report 50205 SalesCreditNoteReport
             column(Ship_to_Contact; "Ship-to Contact")
             {
             }
-            column(DueDate; Format("Due Date"))
+            column(DueDate; Format("Due Date", 0, '<day,2>.<month,2>.<year4>'))
             {
             }
             column(Shipment_Date; Format("Shipment Date"))
@@ -132,10 +132,10 @@ report 50205 SalesCreditNoteReport
             column(CustomerCode; "Sell-to Customer No.")
             {
             }
-            column(SalesPerson; "Salesperson Code")
+            column(SalesPerson; SalesPersonPurch.Name)
             {
             }
-            column(Document_Date; Format("Document Date"))
+            column(Document_Date; Format("Document Date", 0, '<day,2>.<month,2>.<year4>'))
             {
             }
             column("selltocustomercode"; "Sell-to Customer No.")
@@ -312,15 +312,22 @@ report 50205 SalesCreditNoteReport
                         Unit_Price := SalesPrice."Price Per Piece";
                     end;
                 end;
+
+                trigger OnPreDataItem()
+                begin
+                    "Sales Cr.Memo Line".SetFilter("Sales Cr.Memo Line".Type, '<>%1', "Sales Cr.Memo Line".Type::" ");
+                end;
             }
 
             trigger OnAfterGetRecord()
             var
                 CountryRegion: Record "Country/Region";
                 Customer: Record "Customer";
+                County : Record County;
                 SalesCreditMemoline: Record "Sales Cr.Memo Line";
                 VATPostingSetup: Record "VAT Posting Setup";
             begin
+                If SalesPersonPurch.Get("Salesperson Code") then ;
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
                 if CountryRegion.Get("Ship-to Country/Region Code") then
@@ -329,10 +336,11 @@ report 50205 SalesCreditNoteReport
                 Bill_to_Address := Customer.Address + ', ' + Customer."Address 2";
                 BilltoPhoneNo := Customer."Phone No.";
                 Billtomobileno := Customer."Mobile Phone No.";
-                BIllpostcodecitycountrycounty := Customer."Post Code" + ', ' + Customer.City + ', ' + Customer.County + ', ' + BIllCountry;
+                If County.Get(Customer.County) then;
+                BIllpostcodecitycountrycounty := Customer."Post Code" + ', ' + Customer.City + ', ' + County.Description + ', ' + BIllCountry;
                 if CountryRegion.Get(Customer."Country/Region Code") then
                     BIllCountry := CountryRegion.Name;
-                BIllpostcodecitycountrycounty := Customer."Post Code" + ', ' + Customer.City + ', ' + Customer.County + ', ' + BIllCountry;
+                BIllpostcodecitycountrycounty := Customer."Post Code" + ', ' + Customer.City + ', ' + County.Description + ', ' + BIllCountry;
                 "Sales Cr.Memo Header".CalcFields("Amount Including VAT");
                 CodeCheck.InitTextVariable();
                 CodeCheck.FormatNoText(NoText, Abs("Sales Cr.Memo Header"."Amount Including VAT"), "Currency Code");
@@ -378,7 +386,7 @@ report 50205 SalesCreditNoteReport
                     if BankAccount.Get(CompanyInfo."Alternative Bank 2") then begin
                         AlternateBankAccountNo2 := BankAccount."Bank Account No.";
                         AlternateBankName2 := BankAccount.Name;
-                        AlternateBankAddress2 := BankAccount."Address";
+                        AlternateBankAddress2 := BuildBank2Address(BankAccount);
                         AlternateBankSwiftCode2 := BankAccount."SWIFT Code";
                     end;
                 end;
@@ -433,6 +441,7 @@ report 50205 SalesCreditNoteReport
         VendAddr: array[8] of Text[100];
         TotalShowAmount: Decimal;
         ShowAmount: Decimal;
+        SalesPersonPurch : Record "Salesperson/Purchaser";
 
     local procedure CurrencyCode(SrcCurrCode: Code[10]): Code[10]
     begin
@@ -440,6 +449,33 @@ report 50205 SalesCreditNoteReport
             exit(GLSetup."LCY Code")
         else
             exit(SrcCurrCode);
+    end;
+    local procedure BuildBank2Address(Bank: Record "Bank Account"): Text
+    var
+        Country: Record "Country/Region";
+        County: Record County;
+        Addr: Text;
+    begin
+        if Bank.Address <> '' then
+            Addr += Bank.Address;
+        if Bank."Address 2" <> '' then
+            Addr += ', ' + Bank."Address 2";
+        if Bank."Post Code" <> '' then
+            Addr += ', ' + Bank."Post Code";
+        if Bank.City <> '' then
+            Addr += ', ' + Bank.City;
+        if Bank.County <> '' then
+            If County.Get(Bank.County) then
+                Addr += ', ' + County.Description;
+
+        if Bank."Country/Region Code" <> '' then begin
+            if Country.Get(Bank."Country/Region Code") then
+                Addr += ', ' + Country.Name
+            else
+                Addr += ', ' + Bank."Country/Region Code"; // fallback if record missing
+        end;
+
+        exit(Addr);
     end;
 
 }

@@ -4,24 +4,9 @@ pageextension 50240 "Blanket Order Ext" extends "Blanket Sales Order"
     {
         addafter("Status")
         {
-            field(Vessel; Rec.Vessel)
-            {
-                ToolTip = 'Specifies vessel';
-                ApplicationArea = All;
-            }
-              field("Vessel 1"; Rec."Vessel 1")
-            {
-                ToolTip = 'Specifies Mother vessel';
-                ApplicationArea = All;
-            }
             field("Vehicle No."; Rec."Vehicle No.")
             {
                 ToolTip = 'Specifies vehicle no';
-                ApplicationArea = All;
-            }
-            field(Measurement; Rec.Measurement)
-            {
-                ToolTip = 'Measurement';
                 ApplicationArea = All;
             }
         }

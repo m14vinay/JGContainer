@@ -14,11 +14,6 @@ pageextension 50213 "Sales CrMemo Ext" extends "Sales Credit Memo"
                 ToolTip = 'Specifies Mother vessel';
                 ApplicationArea = All;
             }
-            field(Measurement; Rec.Measurement)
-            {
-                ToolTip = 'Measurement';
-                ApplicationArea = All;
-            }
         }
         addafter("VAT Bus. Posting Group")
         {

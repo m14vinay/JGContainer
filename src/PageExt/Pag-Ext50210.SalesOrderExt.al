@@ -32,11 +32,6 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
                 ToolTip = 'Specifies Mother vessel';
                 ApplicationArea = All;
             }
-            field(Measurement; Rec.Measurement)
-            {
-                ToolTip = 'Measurement';
-                ApplicationArea = All;
-            }
             field("Proforma Invoice No"; Rec."Proforma Invoice No")
             {
                 ToolTip = 'Proforma Invoice No';

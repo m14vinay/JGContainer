@@ -13,16 +13,6 @@ pageextension 50241 "Sales Return Rcpt Ext" extends "Posted Return Receipt"
         }
         addafter("Responsibility Center")
         {
-            field(Vessel; Rec.Vessel)
-            {
-                ToolTip = 'Specifies vessel';
-                ApplicationArea = All;
-            }
-              field("Vessel 1"; Rec."Vessel 1")
-            {
-                ToolTip = 'Specifies Mother vessel';
-                ApplicationArea = All;
-            }
             field(Measurement; Rec.Measurement)
             {
                 ToolTip = 'Measurement';

@@ -93,7 +93,7 @@ report 50201 DeliveryOrderReport
             column(Ship_to_Contact; "Ship-to Contact")
             {
             }
-            column(Document_Date; Format("Document Date"))
+            column(Document_Date; Format("Document Date",0, '<day,2>.<month,2>.<year4>'))
             {
             }
             column("selltocustomercode"; "Sell-to Customer No.")
@@ -196,6 +196,7 @@ report 50201 DeliveryOrderReport
 
                 trigger OnPreDataItem()
                 begin
+                    "Sales Shipment Line".SetFilter("Sales Shipment Line".Type, '<>%1', "Sales Shipment Line".Type::" ");
                     "Sales Shipment Line".Setfilter(Quantity, '>%1', 0);
                 end;
             }
@@ -204,6 +205,7 @@ report 50201 DeliveryOrderReport
             var
                 CountryRegion: Record "Country/Region";
             begin
+                If SalesPersonPurch.Get("Salesperson Code") then ;
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
                 TotalShowAmount := ShowAmount + TotalShowAmount;
@@ -260,6 +262,7 @@ report 50201 DeliveryOrderReport
         VendAddr: array[8] of Text[100];
         TotalShowAmount: Decimal;
         ShowAmount: Decimal;
+        SalesPersonPurch : Record "Salesperson/Purchaser";
 
     local procedure CurrencyCode(SrcCurrCode: Code[10]): Code[10]
     begin

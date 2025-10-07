@@ -20,24 +20,6 @@ pageextension 50211 "Sales Quote Ext" extends "Sales Quote"
                 Editable = DeliveryAreaEditable;
             }
         }
-        addafter(Status)
-        {
-            field(Vessel; Rec.Vessel)
-            {
-                ToolTip = 'Specifies vessel';
-                ApplicationArea = All;
-            }
-             field("Vessel 1"; Rec."Vessel 1")
-            {
-                ToolTip = 'Specifies Mother vessel';
-                ApplicationArea = All;
-            }
-            field(Measurement; Rec.Measurement)
-            {
-                ToolTip = 'Measurement';
-                ApplicationArea = All;
-            }
-        }
         addafter("Package Tracking No.")
         {
             field("Shipment From"; Rec."Shipment From")

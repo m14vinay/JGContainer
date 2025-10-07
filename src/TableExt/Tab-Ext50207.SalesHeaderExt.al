@@ -74,11 +74,6 @@ tableextension 50207 "Sales Header Ext" extends "Sales Header"
             Caption = 'Commercial Invoice Date';
             DataClassification = CustomerContent;
         }
-          field(50213; "Measurement"; Text[50])
-        {
-            Caption = 'Measurement';
-            DataClassification = CustomerContent;
-        }
          field(50214; "Vessel 1"; Text[50])
         {
             DataClassification = CustomerContent;
