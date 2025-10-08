@@ -22,16 +22,6 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
         }
         addafter(Status)
         {
-            field(Vessel; Rec.Vessel)
-            {
-                ToolTip = 'Specifies vessel';
-                ApplicationArea = All;
-            }
-              field("Vessel 1"; Rec."Vessel 1")
-            {
-                ToolTip = 'Specifies Mother vessel';
-                ApplicationArea = All;
-            }
             field("Proforma Invoice No"; Rec."Proforma Invoice No")
             {
                 ToolTip = 'Proforma Invoice No';
@@ -61,6 +51,16 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
             field("Shipment To"; Rec."Shipment To")
             {
                 ToolTip = 'Specifies Shipment To';
+                ApplicationArea = All;
+            }
+            field(Vessel; Rec.Vessel)
+            {
+                ToolTip = 'Specifies vessel';
+                ApplicationArea = All;
+            }
+              field("Vessel 1"; Rec."Vessel 1")
+            {
+                ToolTip = 'Specifies Mother vessel';
                 ApplicationArea = All;
             }
         }

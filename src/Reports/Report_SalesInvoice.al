@@ -327,7 +327,7 @@ report 50207 SalesInvoiceReport
                 if CountryRegion.Get("Ship-to Country/Region Code") then
                     ShipCountry := CountryRegion.Name;
                 Customer.Get("Bill-to Customer No.");
-                Bill_to_Address := Customer.Address + ', ' + Customer."Address 2";
+                Bill_to_Address := Customer.Address;
                 BilltoPhoneNo := Customer."Phone No.";
                 Billtomobileno := Customer."Mobile Phone No.";
                 If County.get(Customer.County) then;

@@ -35,6 +35,14 @@ pageextension 50209 "Customer Ext" extends "Customer Card"
                 ToolTip = 'Specifies the customer''s telephone number 2.';
             }
         }
+        modify("E-Mail")
+        {
+            ShowMandatory = true;
+        }
+         modify("Phone No.")
+        {
+            ShowMandatory = true;
+        }
     }
     actions
     {

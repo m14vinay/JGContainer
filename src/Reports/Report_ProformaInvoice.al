@@ -36,6 +36,9 @@ report 50209 ProfomaInvoice
             column(CompanyInfoFax; CompanyInfo."Fax No.")
             {
             }
+            column(Incoterms; Incoterms)
+            {
+            }
             column(CompanyInfoPhoneNo; CompanyInfo."Marketing Phone No")
             {
             }
@@ -326,7 +329,7 @@ report 50209 ProfomaInvoice
                 if CountryRegion.Get("Ship-to Country/Region Code") then
                     ShipCountry := CountryRegion.Name;
                 Customer.Get("Bill-to Customer No.");
-                Bill_to_Address := Customer.Address + ', ' + Customer."Address 2";
+                Bill_to_Address := Customer.Address;
                 BilltoPhoneNo := Customer."Phone No.";
                 Billtomobileno := Customer."Mobile Phone No.";
                 BIllpostcodecitycountrycounty := Customer."Post Code" + ', ' + Customer.City + ', ' + Customer.County + ', ' + BIllCountry;
