@@ -14,32 +14,178 @@ report 50213 "Packing List Report"
             RequestFilterFields = "No.", "Sell-to Customer No.", "Order Date";
 
             // --- Company Information ---
-            column(CompanyName; CompanyInfo.Name) { }
-            column(CompanyRegNo; CompanyInfo."Registration No.") { }
-            column(CompanyCountry; CompanyInfo."Country/Region Code") { }
-            column(CompanyAddress; CompanyAddress) { }
+            column(PrintName; CompanyInfo."Print Name")
+            {
+            }
+            column(CompanyAddress; CompanyInfo."Address")
+            {
+            }
+            column(CompanyPostcode; CompanyInfo."Post Code")
+            {
+            }
+            column(CompanyCity; CompanyInfo."City")
+            {
+            }
+            column(CompanyState; CompanyCounty)
+            {
+            }
+            column(CompanyCountry; CompanyCountry)
+            {
+            }
+            column(CompanyInfoName; CompanyInfo.Name)
+            {
+            }
+            column(CompanyInfoFax; CompanyInfo."Fax No.")
+            {
+            }
+            column(CompanyInfoPhoneNo; CompanyInfo."Marketing Phone No")
+            {
+            }
+            column(CompanyInfoEmail; CompanyInfo."Marketing Email")
+            {
+            }
+            column(CompanyInfoHomePage; CompanyInfo."Home Page")
+            {
+            }
+            column(CompanyInfoVATRegNo; CompanyInfo."ADY E-INV SST Reg No.")
+            {
+            }
+            column(CompanyInfoBusinessRegistrationNo; CompanyInfo."Registration No.")
+            {
+            }
+            column(CompanyInfoGiroNo; CompanyInfo."Giro No.")
+            {
+            }
+            column(CompanyInfoBankName; CompanyInfo."Bank Name")
+            {
+            }
+            column(CompanyInfoBankAccountNo; CompanyInfo."Bank Account No.")
+            {
+            }
+            column(CompanyInfoBankBranchNo; CompanyInfo."Bank Branch No.")
+            {
+            }
+            column(CompanyLogo; CompanyInfo."Picture")
+            {
+            }
+            column(CompanyPicture1; CompanyInfo."Company Logo 1")
+            {
+            }
+            column(CompanyPicture2; CompanyInfo."Company Logo 2")
+            {
+            }
+            column(CompanyPicture3; CompanyInfo."Company Logo 3")
+            {
+            }
+            column(AlternateBank1; CompanyInfo."Alternative Bank 1")
+            {
+            }
+            column(AlternateBank2; CompanyInfo."Alternative Bank 2")
+            {
+            }
             column(CompanyPhoneFax; CompanyInfo."Marketing Email" + ' ' + CompanyInfo."Fax No.") { }
-            column(CompanyLogo; CompanyInfo.Picture) { }
-            column(GetCompanyCountryName; GetCompanyCountryName) { }
-            column(GetCompanyAddress; GetCompanyAddress) { }
-
             // --- Report header ---
             column(ReportTitle; 'PACKING LIST') { }
             column(ReportDate; Today) { }
             column(CommercialInvoiceDate; SalesHeader."Commercial Invoice Date") { }
 
             // --- Sales Header fields ---
-            column(SalesNo; "No.") { }
-            column(SellToName; "Sell-to Customer Name") { }
-            column(SellToAddress; "Sell-to Address") { }
-            column(SellToAddress2; "Sell-to Address 2") { }
-            column(SellToPostCountry; "Sell-to Post Code" + ' ' + GetCountyName()) { }
+            column(Bill_to_Name; "Bill-to Name")
+            {
+            }
+            column(Bill_to_Address; Bill_to_Address)
+            {
+            }
+            column(Bill_to_Address2; "Bill-to Address 2")
+            {
+            }
+            column(BilltoPhoneNo; BilltoPhoneNo)
+            {
+            }
+            column(Billtomobileno; Billtomobileno)
+            {
+            }
+            column(BIllpostcodecitycountrycounty; BIllpostcodecitycountrycounty)
+            {
 
-            column(ShipmentFrom; "Shipment From") { }
-            column(ShipmentTo; "Shipment To") { }
+            }
+            column(Ship_to_Name; "Ship-to Name")
+            {
+            }
+            column(Ship_to_Address; "Ship-to Address")
+            {
+            }
+            column(Ship_to_Address_2; "Ship-to Address 2")
+            {
+            }
+            column(Shippostcodecitycountrycounty; "Ship-to Post Code" + ', ' + "Ship-to City" + ', ' + "Ship-to County" + ', ' + ShipCountry)
+            {
+            }
+            column(Ship_to_Phone_No_; "Ship-to Phone No.")
+            {
+            }
+            column(Ship_to_Contact; "Ship-to Contact")
+            {
+            }
+            column(SalesHeaderNo_; "No.")
+            {
+            }
+            column(Shipment_Date; Format("Requested Delivery Date", 0, '<day,2>.<month,2>.<year4>'))
+            {
+            }
+            column(PaymentTerms; "Payment Terms Code")
+            {
+            }
+            column(CustomerCode; "Sell-to Customer No.")
+            {
+            }
+            column(Incoterm; "Incoterms")
+            {
+            }
+            column(SalesPerson; SalesPersonPurch.Name)
+            {
+            }
+            column(Document_Date; Format("Document Date", 0, '<day,2>.<month,2>.<year4>'))
+            {
+            }
+            column("selltocustomercode"; "Sell-to Customer No.")
+            {
+
+            }
+            column(Shipping_Agent_Code; "Shipping Agent Code")
+            {
+
+            }
+            column(External_Document_No_; "External Document No.")
+            {
+
+            }
+            column(Work_Description; GetWorkDescription())
+            {
+
+            }
+            column(ShipemntHeaderNo; "No.")
+            {
+
+            }
+
+            column(Currency; "Currency Code")
+            {
+
+            }
+            column(SSTExemption; "SST Exemption registration No.")
+            {
+
+            }
             column(Vessel; Vessel) { }
             column(CommercialInvoiceNo; "Commercial Invoice No") { }
-            column(Commercial_Invoice_Date; Format("Commercial Invoice Date")) { }
+            column(Commercial_Invoice_Date; Format("Commercial Invoice Date", 0, '<day,2>.<month,2>.<year4>')) { }
+            column(TotalQuantity; TotalQuantity) { }
+            column(TotalNetWeight; TotalNetWeight) { }
+            column(TotalGrossWeight; TotalGrossWeight) { }
+            column(TotalVolume; TotalVolume) { }
+            column(ShipmentFrom; "Shipment From") { }
+            column(ShipmentTo; "Shipment To") { }
             dataitem(SalesLine; "Sales Line")
             {
                 DataItemLink = "Document Type" = field("Document Type"),
@@ -78,18 +224,50 @@ report 50213 "Packing List Report"
                     end;
                 }
             }
-
-            // --- Totals ---
-            column(TotalQuantity; TotalQuantity) { }
-            column(TotalNetWeight; TotalNetWeight) { }
-            column(TotalGrossWeight; TotalGrossWeight) { }
-            column(TotalVolume; TotalVolume) { }
-
             trigger OnAfterGetRecord()
+            var
+                CountryRegion: Record "Country/Region";
+                Customer: Record "Customer";
+                VATPostingSetup: Record "VAT Posting Setup";
+                salesline: Record "Sales Line";
             begin
-                GetCompanyInfo();
+                If SalesPersonPurch.Get("Salesperson Code") then;
+                if not Currency.Get("Currency Code") then
+                    Currency.InitRoundingPrecision();
+                if CountryRegion.Get("Ship-to Country/Region Code") then
+                    ShipCountry := CountryRegion.Name;
+                Customer.Get("Bill-to Customer No.");
+                Bill_to_Address := Customer.Address + ', ' + Customer."Address 2";
+                BilltoPhoneNo := Customer."Phone No.";
+                Billtomobileno := Customer."Mobile Phone No.";
+                BIllpostcodecitycountrycounty := Customer."Post Code" + ', ' + Customer.City + ', ' + Customer.County + ', ' + BIllCountry;
+                if CountryRegion.Get(Customer."Country/Region Code") then
+                    BIllCountry := CountryRegion.Name;
+                BIllpostcodecitycountrycounty := Customer."Post Code" + ', ' + Customer.City + ', ' + Customer.County + ', ' + BIllCountry;
             end;
+
+            trigger OnPreDataItem()
+            var
+                CountryRegion: Record "Country/Region";
+                BankAccount: Record "Bank Account";
+                County: Record County;
+            begin
+                CompanyInfo.Get();
+                FormatAddr.Company(CompanyAddr, CompanyInfo);
+                begin
+
+                    if CountryRegion.Get(CompanyInfo."Country/Region Code") then
+                        CompanyCountry := CountryRegion.Name;
+                    if County.Get(CompanyInfo."County") then
+                        CompanyCounty := County."Description";
+                end;
+
+                GLSetup.Get();
+            end;
+
+
         }
+
     }
 
     requestpage
@@ -99,17 +277,28 @@ report 50213 "Packing List Report"
 
     trigger OnInitReport()
     begin
-        GetCompanyInfo();
         CompanyInfo.SetAutoCalcFields(Picture);
+        CompanyInfo.SetAutoCalcFields("Company Logo 1");
+        CompanyInfo.SetAutoCalcFields("Company Logo 2");
+        CompanyInfo.SetAutoCalcFields("Company Logo 3");
     end;
 
     var
+        CompanyAddr: array[8] of Text[100];
+        BIllpostcodecitycountrycounty: Text;
+        Bill_to_Address: Text;
+        CompanyCountry: Text;
+        CompanyCounty: Text;
+        Billtomobileno: Text;
+        BilltoPhoneNo: Text;
+        ShipCountry: text;
+        BIllCountry: Text;
         DocumentDate: date;
         CompanyInfo: Record "Company Information";
         Item: Record Item;
         PackSize: Record "Pack Size";
         CountryRegion: Record "Country/Region";
-        SalesPersonPurch : Record "Salesperson/Purchaser";
+        SalesPersonPurch: Record "Salesperson/Purchaser";
         CompanyAddress: Text[250];
         QtyPerPack: Decimal;
         LineNo: Integer;
@@ -117,47 +306,10 @@ report 50213 "Packing List Report"
         TotalNetWeight: Decimal;
         TotalGrossWeight: Decimal;
         TotalVolume: Decimal;
+        GLSetup: Record "General Ledger Setup";
+        Currency: Record Currency;
+        FormatAddr: Codeunit "Format Address";
 
-    local procedure GetCompanyInfo()
-    begin
-        if not CompanyInfo.Get() then
-            CompanyInfo.Init();
-
-        CompanyAddress := CompanyInfo.Address;
-        if CompanyInfo."Address 2" <> '' then
-            CompanyAddress += ', ' + CompanyInfo."Address 2";
-        if CompanyInfo."Post Code" <> '' then
-            CompanyAddress += ', ' + CompanyInfo."Post Code";
-        if CompanyInfo.City <> '' then
-            CompanyAddress += ', ' + CompanyInfo.City;
-        if CompanyInfo.County <> '' then
-            CompanyAddress += ', ' + CompanyInfo.County;
-        if CompanyInfo."Country/Region Code" <> '' then
-            if CountryRegion.Get(CompanyInfo."Country/Region Code") then
-                CompanyAddress += ', ' + CountryRegion.Name;
-    end;
-
-    local procedure GetSellToCountry(): Text
-    var
-        CountryRegion: Record "Country/Region";
-    begin
-        if SalesHeader."Sell-to Country/Region Code" <> '' then
-            if CountryRegion.Get(SalesHeader."Sell-to Country/Region Code") then
-                exit(CountryRegion.Name);
-
-        exit('');
-    end;
-
-    local procedure GetCompanyCountryName(): Text
-    var
-        CountryRegion: Record "Country/Region";
-    begin
-        if CompanyInfo."Country/Region Code" <> '' then
-            if CountryRegion.Get(CompanyInfo."Country/Region Code") then
-                exit(CountryRegion.Name);
-
-        exit('');
-    end;
 
     local procedure GetPackSizeQty()
     begin
@@ -178,42 +330,40 @@ report 50213 "Packing List Report"
         TotalVolume += SalesLine."Unit Volume";
     end;
 
-    local procedure GetCompanyAddress(): Text
-    var
-        CountryRegion: Record "Country/Region";
-        County: Record County;
-        CountryName: Text;
-        CountyName: Text;
+    local procedure CurrencyCode(SrcCurrCode: Code[10]): Code[10]
     begin
-        if CompanyInfo."Country/Region Code" <> '' then
-            if CountryRegion.Get(CompanyInfo."Country/Region Code") then
-                CountryName := CountryRegion.Name;
-
-        if (CompanyInfo.County <> '') then
-            if County.Get(CompanyInfo.County) then
-                CountyName := County.Description;
-
-        exit(
-            Format(
-                CompanyInfo.Address + ', ' +
-                CompanyInfo."Address 2" + ', ' +
-                CompanyInfo."Post Code" + ', ' +
-                CompanyInfo.City + ', ' +
-                CountyName + ', ' +
-                CountryName
-            )
-        );
+        if SrcCurrCode = '' then
+            exit(GLSetup."LCY Code")
+        else
+            exit(SrcCurrCode);
     end;
 
-    local procedure GetCountyName(): Text
+    local procedure BuildBank2Address(Bank: Record "Bank Account"): Text
     var
-        CountyRec: Record County;
+        Country: Record "Country/Region";
+        County: Record County;
+        Addr: Text;
     begin
-        if (SalesHeader."Sell-to County" <> '') then
-            if CountyRec.Get(SalesHeader."Sell-to County") then
-                exit(CountyRec.Description);
+        if Bank.Address <> '' then
+            Addr += Bank.Address;
+        if Bank."Address 2" <> '' then
+            Addr += ', ' + Bank."Address 2";
+        if Bank."Post Code" <> '' then
+            Addr += ', ' + Bank."Post Code";
+        if Bank.City <> '' then
+            Addr += ', ' + Bank.City;
+        if Bank.County <> '' then
+            If County.Get(Bank.County) then
+                Addr += ', ' + County.Description;
 
-        exit(SalesHeader."Sell-to County");
+        if Bank."Country/Region Code" <> '' then begin
+            if Country.Get(Bank."Country/Region Code") then
+                Addr += ', ' + Country.Name
+            else
+                Addr += ', ' + Bank."Country/Region Code"; // fallback if record missing
+        end;
+
+        exit(Addr);
     end;
 
 }
