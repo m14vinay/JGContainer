@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-10-06T04:40:24.3240117Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-10-07T05:51:45.6690569Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -76,7 +76,7 @@
                                 </TablixColumns>
                                 <TablixRows>
                                   <TablixRow>
-                                    <Height>0.84389cm</Height>
+                                    <Height>1.00264cm</Height>
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
@@ -1164,7 +1164,7 @@
                               <DataSetName>DataSet_Result</DataSetName>
                               <Top>0.17639cm</Top>
                               <Left>0.35581cm</Left>
-                              <Height>1.84084cm</Height>
+                              <Height>1.99959cm</Height>
                               <Width>18.13792cm</Width>
                               <Style>
                                 <Border>
@@ -1529,7 +1529,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>AMOUNT IN WORDS : </Value>
+                                                    <Value>AMOUNT IN WORDS :</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -1541,7 +1541,6 @@
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Textbox280</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Style>Solid</Style>
@@ -1561,6 +1560,7 @@
                                       <TablixCell>
                                         <CellContents>
                                           <Textbox Name="AmountInWords">
+                                            <rd:DefaultName>AmountInWords</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
@@ -1579,24 +1579,20 @@
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>AmountInWords</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Style>Solid</Style>
                                               </Border>
-                                              <RightBorder>
+                                              <LeftBorder>
                                                 <Style>None</Style>
-                                              </RightBorder>
-                                              <PaddingLeft>5pt</PaddingLeft>
+                                              </LeftBorder>
+                                              <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                             </Style>
                                           </Textbox>
-                                          <ColSpan>7</ColSpan>
+                                          <ColSpan>4</ColSpan>
                                         </CellContents>
                                       </TablixCell>
-                                      <TablixCell />
-                                      <TablixCell />
-                                      <TablixCell />
                                       <TablixCell />
                                       <TablixCell />
                                       <TablixCell />
@@ -1700,7 +1696,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>SALES TAX EXEMPTION NO : </Value>
+                                                    <Value EvaluationMode="Constant">SALES TAX EXEMPTION NO :</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -1712,7 +1708,6 @@
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Textbox289</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Style>Solid</Style>
@@ -1732,6 +1727,7 @@
                                       <TablixCell>
                                         <CellContents>
                                           <Textbox Name="SSTExemption1">
+                                            <rd:DefaultName>SSTExemption1</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
@@ -1749,15 +1745,17 @@
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>SSTExemption1</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Style>Solid</Style>
                                               </Border>
+                                              <LeftBorder>
+                                                <Style>None</Style>
+                                              </LeftBorder>
                                               <RightBorder>
                                                 <Style>None</Style>
                                               </RightBorder>
-                                              <PaddingLeft>5pt</PaddingLeft>
+                                              <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                             </Style>
                                           </Textbox>
@@ -1766,6 +1764,7 @@
                                       <TablixCell>
                                         <CellContents>
                                           <Textbox Name="SSTExemption">
+                                            <rd:DefaultName>SSTExemption</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
@@ -1784,7 +1783,6 @@
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>SSTExemption</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Style>Solid</Style>
@@ -1805,10 +1803,6 @@
                                       <TablixCell />
                                       <TablixCell />
                                       <TablixCell />
-                                      <TablixCell />
-                                      <TablixCell />
-                                      <TablixCell />
-                                      <TablixCell />
                                     </TablixCells>
                                   </TablixRow>
                                   <TablixRow>
@@ -1824,7 +1818,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Remarks : </Value>
+                                                    <Value>Remarks :</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -1836,7 +1830,6 @@
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Textbox298</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Style>Solid</Style>
@@ -1856,6 +1849,7 @@
                                       <TablixCell>
                                         <CellContents>
                                           <Textbox Name="Work_Description">
+                                            <rd:DefaultName>Work_Description</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
@@ -1874,24 +1868,20 @@
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Work_Description</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Style>Solid</Style>
                                               </Border>
-                                              <RightBorder>
+                                              <LeftBorder>
                                                 <Style>None</Style>
-                                              </RightBorder>
-                                              <PaddingLeft>5pt</PaddingLeft>
+                                              </LeftBorder>
+                                              <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                             </Style>
                                           </Textbox>
-                                          <ColSpan>9</ColSpan>
+                                          <ColSpan>6</ColSpan>
                                         </CellContents>
                                       </TablixCell>
-                                      <TablixCell />
-                                      <TablixCell />
-                                      <TablixCell />
                                       <TablixCell />
                                       <TablixCell />
                                       <TablixCell />
@@ -1937,7 +1927,7 @@
                                 </TablixMembers>
                               </TablixRowHierarchy>
                               <DataSetName>DataSet_Result</DataSetName>
-                              <Top>2.02368cm</Top>
+                              <Top>2.18243cm</Top>
                               <Left>0.35581cm</Left>
                               <Height>2.08248cm</Height>
                               <Width>18.13792cm</Width>
@@ -2481,7 +2471,7 @@
                       <Value>SALE ORDER</Value>
                       <Style>
                         <FontFamily>Times New Roman</FontFamily>
-                        <FontSize>16pt</FontSize>
+                        <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -2491,10 +2481,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>Textbox32</rd:DefaultName>
               <Top>2.73627cm</Top>
               <Left>13.15987cm</Left>
-              <Height>0.79618cm</Height>
+              <Height>0.55082cm</Height>
               <Width>4.69886cm</Width>
               <Style>
                 <Border>
@@ -2527,7 +2516,7 @@
                   <Top>0.07778in</Top>
                   <Left>2.55609cm</Left>
                   <Height>12.5pt</Height>
-                  <Width>2.31896cm</Width>
+                  <Width>1.9844cm</Width>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -2559,7 +2548,7 @@
                   <Top>0.6738cm</Top>
                   <Left>2.55609cm</Left>
                   <Height>11.59987pt</Height>
-                  <Width>2.31896cm</Width>
+                  <Width>1.9844cm</Width>
                   <ZIndex>1</ZIndex>
                   <Style>
                     <Border>
@@ -2591,7 +2580,7 @@
                   <Top>1.11829cm</Top>
                   <Left>2.55609cm</Left>
                   <Height>13.58331pt</Height>
-                  <Width>2.31896cm</Width>
+                  <Width>1.9844cm</Width>
                   <ZIndex>2</ZIndex>
                   <Style>
                     <Border>
@@ -2623,7 +2612,7 @@
                   <Top>1.60924cm</Top>
                   <Left>2.55609cm</Left>
                   <Height>13.91669pt</Height>
-                  <Width>2.31896cm</Width>
+                  <Width>1.9844cm</Width>
                   <ZIndex>3</ZIndex>
                   <Style>
                     <Border>
@@ -2656,7 +2645,7 @@
                   <Top>2.10901cm</Top>
                   <Left>2.55609cm</Left>
                   <Height>13.58331pt</Height>
-                  <Width>2.31896cm</Width>
+                  <Width>1.9844cm</Width>
                   <ZIndex>4</ZIndex>
                   <Style>
                     <Border>
@@ -2688,7 +2677,7 @@
                   <Top>2.58819cm</Top>
                   <Left>2.55609cm</Left>
                   <Height>13.81695pt</Height>
-                  <Width>2.31896cm</Width>
+                  <Width>1.9844cm</Width>
                   <ZIndex>5</ZIndex>
                   <Style>
                     <Border>
@@ -3068,7 +3057,7 @@
                   <Top>3.08091cm</Top>
                   <Left>2.55609cm</Left>
                   <Height>13.08328pt</Height>
-                  <Width>2.31896cm</Width>
+                  <Width>1.9844cm</Width>
                   <ZIndex>17</ZIndex>
                   <Style>
                     <Border>
@@ -3100,7 +3089,7 @@
                   <Top>3.5748cm</Top>
                   <Left>2.55609cm</Left>
                   <Height>13.81695pt</Height>
-                  <Width>2.31896cm</Width>
+                  <Width>1.9844cm</Width>
                   <ZIndex>18</ZIndex>
                   <Style>
                     <Border>
@@ -3239,9 +3228,9 @@
               </ReportItems>
               <KeepTogether>true</KeepTogether>
               <Top>3.35765cm</Top>
-              <Left>13.48744cm</Left>
+              <Left>13.83669cm</Left>
               <Height>4.26331cm</Height>
-              <Width>4.87505cm</Width>
+              <Width>4.65704cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -3302,7 +3291,7 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>0.60383cm</Top>
+                  <Top>0.63558cm</Top>
                   <Left>0.1515cm</Left>
                   <Height>14.5pt</Height>
                   <Width>6.54236cm</Width>
@@ -3333,7 +3322,7 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>1.11536cm</Top>
+                  <Top>1.14711cm</Top>
                   <Left>0.1515cm</Left>
                   <Height>13.56683pt</Height>
                   <Width>6.54236cm</Width>
@@ -3364,7 +3353,7 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.07552cm</Top>
+                  <Top>2.10727cm</Top>
                   <Left>0.1515cm</Left>
                   <Height>14.5pt</Height>
                   <Width>6.54236cm</Width>
@@ -3395,7 +3384,7 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.61526cm</Top>
+                  <Top>2.64701cm</Top>
                   <Left>1.56845cm</Left>
                   <Height>14.5pt</Height>
                   <Width>5.09535cm</Width>
@@ -3426,7 +3415,7 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>3.12679cm</Top>
+                  <Top>3.15854cm</Top>
                   <Left>1.56845cm</Left>
                   <Height>13pt</Height>
                   <Width>5.10351cm</Width>
@@ -3457,7 +3446,7 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.61819cm</Top>
+                  <Top>2.64994cm</Top>
                   <Left>0.1515cm</Left>
                   <Height>14.41694pt</Height>
                   <Width>1.13605cm</Width>
@@ -3488,7 +3477,7 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.61819cm</Top>
+                  <Top>2.64994cm</Top>
                   <Left>1.25749cm</Left>
                   <Height>14.41694pt</Height>
                   <Width>0.31096cm</Width>
@@ -3519,7 +3508,7 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>3.12679cm</Top>
+                  <Top>3.15854cm</Top>
                   <Left>0.1515cm</Left>
                   <Height>13pt</Height>
                   <Width>1.13605cm</Width>
@@ -3550,7 +3539,7 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>3.12679cm</Top>
+                  <Top>3.15854cm</Top>
                   <Left>1.25749cm</Left>
                   <Height>13pt</Height>
                   <Width>0.31096cm</Width>
@@ -3581,7 +3570,7 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>1.59397cm</Top>
+                  <Top>1.62572cm</Top>
                   <Left>0.1515cm</Left>
                   <Height>13.6502pt</Height>
                   <Width>6.5123cm</Width>
@@ -3992,9 +3981,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>0.53916cm</Top>
-                  <Left>0.1905cm</Left>
+                  <Left>0.17639cm</Left>
                   <Height>14.5pt</Height>
-                  <Width>5.92025cm</Width>
+                  <Width>6.14956cm</Width>
                   <ZIndex>1</ZIndex>
                   <Style>
                     <Border>
@@ -4025,7 +4014,7 @@
                   <Top>1.05069cm</Top>
                   <Left>0.17639cm</Left>
                   <Height>14.5pt</Height>
-                  <Width>5.92025cm</Width>
+                  <Width>6.14956cm</Width>
                   <ZIndex>2</ZIndex>
                   <Style>
                     <Border>
@@ -4056,7 +4045,7 @@
                   <Top>1.56222cm</Top>
                   <Left>0.17639cm</Left>
                   <Height>14.5pt</Height>
-                  <Width>5.92025cm</Width>
+                  <Width>6.14956cm</Width>
                   <ZIndex>3</ZIndex>
                   <Style>
                     <Border>
@@ -4087,7 +4076,7 @@
                   <Top>2.64584cm</Top>
                   <Left>1.59334cm</Left>
                   <Height>14.5pt</Height>
-                  <Width>4.47324cm</Width>
+                  <Width>4.70255cm</Width>
                   <ZIndex>4</ZIndex>
                   <Style>
                     <Border>
@@ -4118,7 +4107,7 @@
                   <Top>3.15737cm</Top>
                   <Left>1.59334cm</Left>
                   <Height>13pt</Height>
-                  <Width>4.4814cm</Width>
+                  <Width>4.71071cm</Width>
                   <ZIndex>5</ZIndex>
                   <Style>
                     <Border>
@@ -4273,7 +4262,7 @@
                   <Top>2.07375cm</Top>
                   <Left>0.17639cm</Left>
                   <Height>14.5pt</Height>
-                  <Width>5.92271cm</Width>
+                  <Width>6.15202cm</Width>
                   <ZIndex>10</ZIndex>
                   <Style>
                     <Border>
@@ -4287,7 +4276,7 @@
               <Top>3.47581cm</Top>
               <Left>7.24017cm</Left>
               <Height>3.67948cm</Height>
-              <Width>6.46952cm</Width>
+              <Width>6.45541cm</Width>
               <ZIndex>14</ZIndex>
               <Style>
                 <Border>
@@ -4314,7 +4303,7 @@
                 </Paragraph>
               </Paragraphs>
               <Top>3.5552cm</Top>
-              <Left>15.76432cm</Left>
+              <Left>16.08182cm</Left>
               <Height>13.5pt</Height>
               <Width>0.31096cm</Width>
               <ZIndex>15</ZIndex>
@@ -4330,7 +4319,7 @@
               <Value>=First(Fields!CompanyPicture1.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
-              <Top>0.0875in</Top>
+              <Top>0.2625in</Top>
               <Left>12.21623cm</Left>
               <Height>1.88525cm</Height>
               <Width>2.04352cm</Width>
@@ -4346,7 +4335,7 @@
               <Value>=First(Fields!CompanyPicture2.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
-              <Top>0.0875in</Top>
+              <Top>0.2625in</Top>
               <Left>14.25976cm</Left>
               <Height>1.88525cm</Height>
               <Width>2.22356cm</Width>
@@ -4362,7 +4351,7 @@
               <Value>=First(Fields!CompanyPicture3.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
-              <Top>0.0875in</Top>
+              <Top>0.2625in</Top>
               <Left>16.48333cm</Left>
               <Height>1.88525cm</Height>
               <Width>2.02102cm</Width>
