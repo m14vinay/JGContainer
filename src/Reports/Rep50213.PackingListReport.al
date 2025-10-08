@@ -87,7 +87,7 @@ report 50213 "Packing List Report"
             // --- Report header ---
             column(ReportTitle; 'PACKING LIST') { }
             column(ReportDate; Today) { }
-            column(CommercialInvoiceDate; SalesHeader."Commercial Invoice Date") { }
+            column(CommercialInvoiceDate; Format(SalesHeader."Commercial Invoice Date", 0, '<day,2>.<month,2>.<year4>')) { }
 
             // --- Sales Header fields ---
             column(Bill_to_Name; "Bill-to Name")
