@@ -1978,7 +1978,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>No</Value>
+                          <Value>Inv. No</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontSize>9pt</FontSize>
@@ -2010,7 +2010,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>PO No</Value>
+                          <Value>Order No</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontSize>9pt</FontSize>
@@ -2087,7 +2087,7 @@
                   </Paragraphs>
                   <Top>1.09477cm</Top>
                   <Left>2.24513cm</Left>
-                  <Height>14.83342pt</Height>
+                  <Height>14pt</Height>
                   <Width>0.27568cm</Width>
                   <ZIndex>7</ZIndex>
                   <Style>
