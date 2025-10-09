@@ -185,14 +185,16 @@ codeunit 50202 "Sales Custom WorkFlow Mgt"
     var
         SalesHeader: Record "Sales Header";
         SequenceNo: Integer;
+        RecordIDtoApprove : RecordId;
     begin
         SequenceNo := ApprovalEntry."Sequence No.";
+        RecordIDtoApprove := ApprovalEntry."Record ID to Approve";
         //If SalesHeader.Get(ApprovalEntry."Record ID to Approve") then begin
         ApprovalEntry.Reset();
         ApprovalEntry.SetRange("Sequence No.", SequenceNo);
-        ApprovalEntry.SetRange("Record ID to Approve", ApprovalEntry."Record ID to Approve");
+        ApprovalEntry.SetRange("Record ID to Approve", RecordIDtoApprove);
         ApprovalEntry.SetRange(Status, ApprovalEntry.Status::Open);
-        If ApprovalEntry.Count > 1 then
+        If ApprovalEntry.Count > 0 then
             IsHandled := True;
         //end;
     end;
