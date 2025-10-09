@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-10-09T03:44:06.6712106Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-10-09T05:05:35.2198486Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -22,6 +22,271 @@
       <rd:DataSourceID>3f1f0eb4-9fd3-47b9-ac59-0b5b15b1672c</rd:DataSourceID>
     </DataSource>
   </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+      <Fields>
+        <Field Name="PrintName">
+          <DataField>PrintName</DataField>
+        </Field>
+        <Field Name="CompanyAddress">
+          <DataField>CompanyAddress</DataField>
+        </Field>
+        <Field Name="CompanyPostcode">
+          <DataField>CompanyPostcode</DataField>
+        </Field>
+        <Field Name="CompanyCity">
+          <DataField>CompanyCity</DataField>
+        </Field>
+        <Field Name="CompanyState">
+          <DataField>CompanyState</DataField>
+        </Field>
+        <Field Name="CompanyCountry">
+          <DataField>CompanyCountry</DataField>
+        </Field>
+        <Field Name="CompanyInfoName">
+          <DataField>CompanyInfoName</DataField>
+        </Field>
+        <Field Name="CompanyInfoFax">
+          <DataField>CompanyInfoFax</DataField>
+        </Field>
+        <Field Name="CompanyInfoPhoneNo">
+          <DataField>CompanyInfoPhoneNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoEmail">
+          <DataField>CompanyInfoEmail</DataField>
+        </Field>
+        <Field Name="CompanyInfoHomePage">
+          <DataField>CompanyInfoHomePage</DataField>
+        </Field>
+        <Field Name="CompanyInfoVATRegNo">
+          <DataField>CompanyInfoVATRegNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoBusinessRegistrationNo">
+          <DataField>CompanyInfoBusinessRegistrationNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoGiroNo">
+          <DataField>CompanyInfoGiroNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoBankName">
+          <DataField>CompanyInfoBankName</DataField>
+        </Field>
+        <Field Name="CompanyInfoBankAccountNo">
+          <DataField>CompanyInfoBankAccountNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoBankBranchNo">
+          <DataField>CompanyInfoBankBranchNo</DataField>
+        </Field>
+        <Field Name="CompanyLogo">
+          <DataField>CompanyLogo</DataField>
+        </Field>
+        <Field Name="CompanyPicture1">
+          <DataField>CompanyPicture1</DataField>
+        </Field>
+        <Field Name="CompanyPicture2">
+          <DataField>CompanyPicture2</DataField>
+        </Field>
+        <Field Name="CompanyPicture3">
+          <DataField>CompanyPicture3</DataField>
+        </Field>
+        <Field Name="AlternateBank1">
+          <DataField>AlternateBank1</DataField>
+        </Field>
+        <Field Name="AlternateBank2">
+          <DataField>AlternateBank2</DataField>
+        </Field>
+        <Field Name="ReportTitle">
+          <DataField>ReportTitle</DataField>
+        </Field>
+        <Field Name="Bill_to_Name">
+          <DataField>Bill_to_Name</DataField>
+        </Field>
+        <Field Name="Bill_to_Address">
+          <DataField>Bill_to_Address</DataField>
+        </Field>
+        <Field Name="Bill_to_Address2">
+          <DataField>Bill_to_Address2</DataField>
+        </Field>
+        <Field Name="BilltoPhoneNo">
+          <DataField>BilltoPhoneNo</DataField>
+        </Field>
+        <Field Name="Billtomobileno">
+          <DataField>Billtomobileno</DataField>
+        </Field>
+        <Field Name="BIllpostcodecitycountrycounty">
+          <DataField>BIllpostcodecitycountrycounty</DataField>
+        </Field>
+        <Field Name="Ship_to_Name">
+          <DataField>Ship_to_Name</DataField>
+        </Field>
+        <Field Name="Ship_to_Address">
+          <DataField>Ship_to_Address</DataField>
+        </Field>
+        <Field Name="Ship_to_Address_2">
+          <DataField>Ship_to_Address_2</DataField>
+        </Field>
+        <Field Name="Shippostcodecitycountrycounty">
+          <DataField>Shippostcodecitycountrycounty</DataField>
+        </Field>
+        <Field Name="Ship_to_Phone_No_">
+          <DataField>Ship_to_Phone_No_</DataField>
+        </Field>
+        <Field Name="Ship_to_Contact">
+          <DataField>Ship_to_Contact</DataField>
+        </Field>
+        <Field Name="SalesHeaderNo_">
+          <DataField>SalesHeaderNo_</DataField>
+        </Field>
+        <Field Name="Shipment_Date">
+          <DataField>Shipment_Date</DataField>
+        </Field>
+        <Field Name="PaymentTerms">
+          <DataField>PaymentTerms</DataField>
+        </Field>
+        <Field Name="CustomerCode">
+          <DataField>CustomerCode</DataField>
+        </Field>
+        <Field Name="Incoterm">
+          <DataField>Incoterm</DataField>
+        </Field>
+        <Field Name="SalesPerson">
+          <DataField>SalesPerson</DataField>
+        </Field>
+        <Field Name="Document_Date">
+          <DataField>Document_Date</DataField>
+        </Field>
+        <Field Name="selltocustomercode">
+          <DataField>selltocustomercode</DataField>
+        </Field>
+        <Field Name="Shipping_Agent_Code">
+          <DataField>Shipping_Agent_Code</DataField>
+        </Field>
+        <Field Name="External_Document_No_">
+          <DataField>External_Document_No_</DataField>
+        </Field>
+        <Field Name="Work_Description">
+          <DataField>Work_Description</DataField>
+        </Field>
+        <Field Name="ShipemntHeaderNo">
+          <DataField>ShipemntHeaderNo</DataField>
+        </Field>
+        <Field Name="ShowAmount">
+          <DataField>ShowAmount</DataField>
+        </Field>
+        <Field Name="ShowAmountFormat">
+          <DataField>ShowAmountFormat</DataField>
+        </Field>
+        <Field Name="CurrencyCodeCurrencyCode">
+          <DataField>CurrencyCodeCurrencyCode</DataField>
+        </Field>
+        <Field Name="AmountInWords">
+          <DataField>AmountInWords</DataField>
+        </Field>
+        <Field Name="TotalShowAmount">
+          <DataField>TotalShowAmount</DataField>
+        </Field>
+        <Field Name="TotalShowAmountFormat">
+          <DataField>TotalShowAmountFormat</DataField>
+        </Field>
+        <Field Name="SalesTax">
+          <DataField>SalesTax</DataField>
+        </Field>
+        <Field Name="SalesTaxFormat">
+          <DataField>SalesTaxFormat</DataField>
+        </Field>
+        <Field Name="AlternateBankName1">
+          <DataField>AlternateBankName1</DataField>
+        </Field>
+        <Field Name="AlternateBankName2">
+          <DataField>AlternateBankName2</DataField>
+        </Field>
+        <Field Name="AlternateBankAccountNo2">
+          <DataField>AlternateBankAccountNo2</DataField>
+        </Field>
+        <Field Name="AlternateBankAddress2">
+          <DataField>AlternateBankAddress2</DataField>
+        </Field>
+        <Field Name="AlternateBankSwiftCode2">
+          <DataField>AlternateBankSwiftCode2</DataField>
+        </Field>
+        <Field Name="AlternateBankAccountNo1">
+          <DataField>AlternateBankAccountNo1</DataField>
+        </Field>
+        <Field Name="Currency">
+          <DataField>Currency</DataField>
+        </Field>
+        <Field Name="SSTExemption">
+          <DataField>SSTExemption</DataField>
+        </Field>
+        <Field Name="SalesTaxPercent">
+          <DataField>SalesTaxPercent</DataField>
+        </Field>
+        <Field Name="Currency_Code">
+          <DataField>Currency_Code</DataField>
+        </Field>
+        <Field Name="Type">
+          <DataField>Type</DataField>
+        </Field>
+        <Field Name="Variant_Code">
+          <DataField>Variant_Code</DataField>
+        </Field>
+        <Field Name="ItemCode">
+          <DataField>ItemCode</DataField>
+        </Field>
+        <Field Name="Noofplts">
+          <DataField>Noofplts</DataField>
+        </Field>
+        <Field Name="NoofpltsFormat">
+          <DataField>NoofpltsFormat</DataField>
+        </Field>
+        <Field Name="UnitPrice">
+          <DataField>UnitPrice</DataField>
+        </Field>
+        <Field Name="UnitPriceFormat">
+          <DataField>UnitPriceFormat</DataField>
+        </Field>
+        <Field Name="Packing">
+          <DataField>Packing</DataField>
+        </Field>
+        <Field Name="PackingFormat">
+          <DataField>PackingFormat</DataField>
+        </Field>
+        <Field Name="Quantity">
+          <DataField>Quantity</DataField>
+        </Field>
+        <Field Name="QuantityFormat">
+          <DataField>QuantityFormat</DataField>
+        </Field>
+        <Field Name="No_">
+          <DataField>No_</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="Amount">
+          <DataField>Amount</DataField>
+        </Field>
+        <Field Name="AmountFormat">
+          <DataField>AmountFormat</DataField>
+        </Field>
+        <Field Name="IsCharge">
+          <DataField>IsCharge</DataField>
+        </Field>
+        <Field Name="SubTotal">
+          <DataField>SubTotal</DataField>
+        </Field>
+        <Field Name="SubTotalFormat">
+          <DataField>SubTotalFormat</DataField>
+        </Field>
+        <Field Name="LineNo">
+          <DataField>LineNo</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -897,6 +1162,7 @@
                                                     <Value>=Fields!Quantity.Value</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
+                                                      <Format>#,0;(#,0)</Format>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
@@ -910,32 +1176,13 @@
                                               <Border>
                                                 <Style>Solid</Style>
                                               </Border>
-                                              <TopBorder>
-                                                <Color>Black</Color>
-                                                <Style>Solid</Style>
-                                                <Width>1pt</Width>
-                                              </TopBorder>
-                                              <BottomBorder>
-                                                <Color>Black</Color>
-                                                <Style>Solid</Style>
-                                                <Width>1pt</Width>
-                                              </BottomBorder>
-                                              <LeftBorder>
-                                                <Color>Black</Color>
-                                                <Style>Solid</Style>
-                                                <Width>1pt</Width>
-                                              </LeftBorder>
-                                              <RightBorder>
-                                                <Color>Black</Color>
-                                                <Style>Solid</Style>
-                                                <Width>1pt</Width>
-                                              </RightBorder>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
                                               <PaddingBottom>2pt</PaddingBottom>
                                             </Style>
                                           </Textbox>
+                                          <rd:Selected>true</rd:Selected>
                                         </CellContents>
                                       </TablixCell>
                                       <TablixCell>
@@ -1526,10 +1773,17 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>AMOUNT IN WORDS :</Value>
+                                                    <Value>AMOUNT IN WORDS : </Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                  <TextRun>
+                                                    <Value>=Fields!AmountInWords.Value</Value>
+                                                    <Style>
+                                                      <FontSize>9pt</FontSize>
+                                                      <FontWeight>Normal</FontWeight>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
@@ -1550,47 +1804,12 @@
                                               <PaddingRight>2pt</PaddingRight>
                                             </Style>
                                           </Textbox>
-                                          <ColSpan>3</ColSpan>
+                                          <ColSpan>7</ColSpan>
                                         </CellContents>
                                       </TablixCell>
                                       <TablixCell />
                                       <TablixCell />
-                                      <TablixCell>
-                                        <CellContents>
-                                          <Textbox Name="AmountInWords">
-                                            <CanGrow>true</CanGrow>
-                                            <KeepTogether>true</KeepTogether>
-                                            <Paragraphs>
-                                              <Paragraph>
-                                                <TextRuns>
-                                                  <TextRun>
-                                                    <Value>=Fields!AmountInWords.Value</Value>
-                                                    <Style>
-                                                      <FontSize>9pt</FontSize>
-                                                      <FontWeight>Normal</FontWeight>
-                                                    </Style>
-                                                  </TextRun>
-                                                </TextRuns>
-                                                <Style>
-                                                  <TextAlign>Left</TextAlign>
-                                                </Style>
-                                              </Paragraph>
-                                            </Paragraphs>
-                                            <rd:DefaultName>AmountInWords</rd:DefaultName>
-                                            <Style>
-                                              <Border>
-                                                <Style>Solid</Style>
-                                              </Border>
-                                              <LeftBorder>
-                                                <Style>None</Style>
-                                              </LeftBorder>
-                                              <PaddingLeft>2pt</PaddingLeft>
-                                              <PaddingRight>2pt</PaddingRight>
-                                            </Style>
-                                          </Textbox>
-                                          <ColSpan>4</ColSpan>
-                                        </CellContents>
-                                      </TablixCell>
+                                      <TablixCell />
                                       <TablixCell />
                                       <TablixCell />
                                       <TablixCell />
@@ -1815,10 +2034,17 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Remarks :</Value>
+                                                    <Value>Remarks : </Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                  <TextRun>
+                                                    <Value>=Fields!Work_Description.Value</Value>
+                                                    <Style>
+                                                      <FontSize>9pt</FontSize>
+                                                      <FontWeight>Normal</FontWeight>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
@@ -1839,47 +2065,12 @@
                                               <PaddingRight>2pt</PaddingRight>
                                             </Style>
                                           </Textbox>
-                                          <ColSpan>3</ColSpan>
+                                          <ColSpan>9</ColSpan>
                                         </CellContents>
                                       </TablixCell>
                                       <TablixCell />
                                       <TablixCell />
-                                      <TablixCell>
-                                        <CellContents>
-                                          <Textbox Name="Work_Description">
-                                            <CanGrow>true</CanGrow>
-                                            <KeepTogether>true</KeepTogether>
-                                            <Paragraphs>
-                                              <Paragraph>
-                                                <TextRuns>
-                                                  <TextRun>
-                                                    <Value>=Fields!Work_Description.Value</Value>
-                                                    <Style>
-                                                      <FontSize>9pt</FontSize>
-                                                      <FontWeight>Normal</FontWeight>
-                                                    </Style>
-                                                  </TextRun>
-                                                </TextRuns>
-                                                <Style>
-                                                  <TextAlign>Left</TextAlign>
-                                                </Style>
-                                              </Paragraph>
-                                            </Paragraphs>
-                                            <rd:DefaultName>Work_Description</rd:DefaultName>
-                                            <Style>
-                                              <Border>
-                                                <Style>Solid</Style>
-                                              </Border>
-                                              <LeftBorder>
-                                                <Style>None</Style>
-                                              </LeftBorder>
-                                              <PaddingLeft>2pt</PaddingLeft>
-                                              <PaddingRight>2pt</PaddingRight>
-                                            </Style>
-                                          </Textbox>
-                                          <ColSpan>6</ColSpan>
-                                        </CellContents>
-                                      </TablixCell>
+                                      <TablixCell />
                                       <TablixCell />
                                       <TablixCell />
                                       <TablixCell />
@@ -3585,7 +3776,7 @@
               <Top>3.47581cm</Top>
               <Left>0.35581cm</Left>
               <Height>3.67948cm</Height>
-              <Width>6.88436cm</Width>
+              <Width>6.74325cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -3948,7 +4139,7 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>0.03292cm</Top>
-                  <Left>0.17639cm</Left>
+                  <Left>0.10936cm</Left>
                   <Height>13.15014pt</Height>
                   <Width>4.72137cm</Width>
                   <Style>
@@ -3979,9 +4170,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>0.53916cm</Top>
-                  <Left>0.17639cm</Left>
+                  <Left>0.10936cm</Left>
                   <Height>14.5pt</Height>
-                  <Width>5.88498cm</Width>
+                  <Width>6.04379cm</Width>
                   <ZIndex>1</ZIndex>
                   <Style>
                     <Border>
@@ -4010,9 +4201,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>1.05069cm</Top>
-                  <Left>0.17639cm</Left>
+                  <Left>0.10936cm</Left>
                   <Height>14.5pt</Height>
-                  <Width>5.88498cm</Width>
+                  <Width>6.04379cm</Width>
                   <ZIndex>2</ZIndex>
                   <Style>
                     <Border>
@@ -4041,9 +4232,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>1.56222cm</Top>
-                  <Left>0.17639cm</Left>
+                  <Left>0.10936cm</Left>
                   <Height>14.5pt</Height>
-                  <Width>5.88498cm</Width>
+                  <Width>6.04379cm</Width>
                   <ZIndex>3</ZIndex>
                   <Style>
                     <Border>
@@ -4072,9 +4263,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>2.64584cm</Top>
-                  <Left>1.59334cm</Left>
+                  <Left>1.52631cm</Left>
                   <Height>14.5pt</Height>
-                  <Width>4.43797cm</Width>
+                  <Width>4.59678cm</Width>
                   <ZIndex>4</ZIndex>
                   <Style>
                     <Border>
@@ -4103,9 +4294,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>3.15737cm</Top>
-                  <Left>1.59334cm</Left>
+                  <Left>1.52631cm</Left>
                   <Height>13pt</Height>
-                  <Width>4.44613cm</Width>
+                  <Width>4.60494cm</Width>
                   <ZIndex>5</ZIndex>
                   <Style>
                     <Border>
@@ -4134,7 +4325,7 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>2.64877cm</Top>
-                  <Left>0.17639cm</Left>
+                  <Left>0.10936cm</Left>
                   <Height>14.41694pt</Height>
                   <Width>1.13605cm</Width>
                   <ZIndex>6</ZIndex>
@@ -4165,7 +4356,7 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>2.64877cm</Top>
-                  <Left>1.28238cm</Left>
+                  <Left>1.21535cm</Left>
                   <Height>14.41694pt</Height>
                   <Width>0.31096cm</Width>
                   <ZIndex>7</ZIndex>
@@ -4196,7 +4387,7 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>3.15737cm</Top>
-                  <Left>0.17639cm</Left>
+                  <Left>0.10936cm</Left>
                   <Height>13pt</Height>
                   <Width>1.13605cm</Width>
                   <ZIndex>8</ZIndex>
@@ -4227,7 +4418,7 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>3.15737cm</Top>
-                  <Left>1.28238cm</Left>
+                  <Left>1.21535cm</Left>
                   <Height>13pt</Height>
                   <Width>0.31096cm</Width>
                   <ZIndex>9</ZIndex>
@@ -4258,9 +4449,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>2.07375cm</Top>
-                  <Left>0.17639cm</Left>
+                  <Left>0.10936cm</Left>
                   <Height>14.5pt</Height>
-                  <Width>5.88744cm</Width>
+                  <Width>6.04625cm</Width>
                   <ZIndex>10</ZIndex>
                   <Style>
                     <Border>
@@ -4272,9 +4463,9 @@
               </ReportItems>
               <KeepTogether>true</KeepTogether>
               <Top>3.47581cm</Top>
-              <Left>7.24017cm</Left>
+              <Left>7.08495cm</Left>
               <Height>3.67948cm</Height>
-              <Width>6.06383cm</Width>
+              <Width>6.21905cm</Width>
               <ZIndex>14</ZIndex>
               <Style>
                 <Border>
@@ -4464,6 +4655,12 @@
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -4565,269 +4762,4 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>b717bad0-0854-4d81-a0b2-005cf04cd18a</rd:ReportID>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Fields>
-        <Field Name="PrintName">
-          <DataField>PrintName</DataField>
-        </Field>
-        <Field Name="CompanyAddress">
-          <DataField>CompanyAddress</DataField>
-        </Field>
-        <Field Name="CompanyPostcode">
-          <DataField>CompanyPostcode</DataField>
-        </Field>
-        <Field Name="CompanyCity">
-          <DataField>CompanyCity</DataField>
-        </Field>
-        <Field Name="CompanyState">
-          <DataField>CompanyState</DataField>
-        </Field>
-        <Field Name="CompanyCountry">
-          <DataField>CompanyCountry</DataField>
-        </Field>
-        <Field Name="CompanyInfoName">
-          <DataField>CompanyInfoName</DataField>
-        </Field>
-        <Field Name="CompanyInfoFax">
-          <DataField>CompanyInfoFax</DataField>
-        </Field>
-        <Field Name="CompanyInfoPhoneNo">
-          <DataField>CompanyInfoPhoneNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoEmail">
-          <DataField>CompanyInfoEmail</DataField>
-        </Field>
-        <Field Name="CompanyInfoHomePage">
-          <DataField>CompanyInfoHomePage</DataField>
-        </Field>
-        <Field Name="CompanyInfoVATRegNo">
-          <DataField>CompanyInfoVATRegNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoBusinessRegistrationNo">
-          <DataField>CompanyInfoBusinessRegistrationNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoGiroNo">
-          <DataField>CompanyInfoGiroNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoBankName">
-          <DataField>CompanyInfoBankName</DataField>
-        </Field>
-        <Field Name="CompanyInfoBankAccountNo">
-          <DataField>CompanyInfoBankAccountNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoBankBranchNo">
-          <DataField>CompanyInfoBankBranchNo</DataField>
-        </Field>
-        <Field Name="CompanyLogo">
-          <DataField>CompanyLogo</DataField>
-        </Field>
-        <Field Name="CompanyPicture1">
-          <DataField>CompanyPicture1</DataField>
-        </Field>
-        <Field Name="CompanyPicture2">
-          <DataField>CompanyPicture2</DataField>
-        </Field>
-        <Field Name="CompanyPicture3">
-          <DataField>CompanyPicture3</DataField>
-        </Field>
-        <Field Name="AlternateBank1">
-          <DataField>AlternateBank1</DataField>
-        </Field>
-        <Field Name="AlternateBank2">
-          <DataField>AlternateBank2</DataField>
-        </Field>
-        <Field Name="ReportTitle">
-          <DataField>ReportTitle</DataField>
-        </Field>
-        <Field Name="Bill_to_Name">
-          <DataField>Bill_to_Name</DataField>
-        </Field>
-        <Field Name="Bill_to_Address">
-          <DataField>Bill_to_Address</DataField>
-        </Field>
-        <Field Name="Bill_to_Address2">
-          <DataField>Bill_to_Address2</DataField>
-        </Field>
-        <Field Name="BilltoPhoneNo">
-          <DataField>BilltoPhoneNo</DataField>
-        </Field>
-        <Field Name="Billtomobileno">
-          <DataField>Billtomobileno</DataField>
-        </Field>
-        <Field Name="BIllpostcodecitycountrycounty">
-          <DataField>BIllpostcodecitycountrycounty</DataField>
-        </Field>
-        <Field Name="Ship_to_Name">
-          <DataField>Ship_to_Name</DataField>
-        </Field>
-        <Field Name="Ship_to_Address">
-          <DataField>Ship_to_Address</DataField>
-        </Field>
-        <Field Name="Ship_to_Address_2">
-          <DataField>Ship_to_Address_2</DataField>
-        </Field>
-        <Field Name="Shippostcodecitycountrycounty">
-          <DataField>Shippostcodecitycountrycounty</DataField>
-        </Field>
-        <Field Name="Ship_to_Phone_No_">
-          <DataField>Ship_to_Phone_No_</DataField>
-        </Field>
-        <Field Name="Ship_to_Contact">
-          <DataField>Ship_to_Contact</DataField>
-        </Field>
-        <Field Name="SalesHeaderNo_">
-          <DataField>SalesHeaderNo_</DataField>
-        </Field>
-        <Field Name="Shipment_Date">
-          <DataField>Shipment_Date</DataField>
-        </Field>
-        <Field Name="PaymentTerms">
-          <DataField>PaymentTerms</DataField>
-        </Field>
-        <Field Name="CustomerCode">
-          <DataField>CustomerCode</DataField>
-        </Field>
-        <Field Name="Incoterm">
-          <DataField>Incoterm</DataField>
-        </Field>
-        <Field Name="SalesPerson">
-          <DataField>SalesPerson</DataField>
-        </Field>
-        <Field Name="Document_Date">
-          <DataField>Document_Date</DataField>
-        </Field>
-        <Field Name="selltocustomercode">
-          <DataField>selltocustomercode</DataField>
-        </Field>
-        <Field Name="Shipping_Agent_Code">
-          <DataField>Shipping_Agent_Code</DataField>
-        </Field>
-        <Field Name="External_Document_No_">
-          <DataField>External_Document_No_</DataField>
-        </Field>
-        <Field Name="Work_Description">
-          <DataField>Work_Description</DataField>
-        </Field>
-        <Field Name="ShipemntHeaderNo">
-          <DataField>ShipemntHeaderNo</DataField>
-        </Field>
-        <Field Name="ShowAmount">
-          <DataField>ShowAmount</DataField>
-        </Field>
-        <Field Name="ShowAmountFormat">
-          <DataField>ShowAmountFormat</DataField>
-        </Field>
-        <Field Name="CurrencyCodeCurrencyCode">
-          <DataField>CurrencyCodeCurrencyCode</DataField>
-        </Field>
-        <Field Name="AmountInWords">
-          <DataField>AmountInWords</DataField>
-        </Field>
-        <Field Name="TotalShowAmount">
-          <DataField>TotalShowAmount</DataField>
-        </Field>
-        <Field Name="TotalShowAmountFormat">
-          <DataField>TotalShowAmountFormat</DataField>
-        </Field>
-        <Field Name="SalesTax">
-          <DataField>SalesTax</DataField>
-        </Field>
-        <Field Name="SalesTaxFormat">
-          <DataField>SalesTaxFormat</DataField>
-        </Field>
-        <Field Name="AlternateBankName1">
-          <DataField>AlternateBankName1</DataField>
-        </Field>
-        <Field Name="AlternateBankName2">
-          <DataField>AlternateBankName2</DataField>
-        </Field>
-        <Field Name="AlternateBankAccountNo2">
-          <DataField>AlternateBankAccountNo2</DataField>
-        </Field>
-        <Field Name="AlternateBankAddress2">
-          <DataField>AlternateBankAddress2</DataField>
-        </Field>
-        <Field Name="AlternateBankSwiftCode2">
-          <DataField>AlternateBankSwiftCode2</DataField>
-        </Field>
-        <Field Name="AlternateBankAccountNo1">
-          <DataField>AlternateBankAccountNo1</DataField>
-        </Field>
-        <Field Name="Currency">
-          <DataField>Currency</DataField>
-        </Field>
-        <Field Name="SSTExemption">
-          <DataField>SSTExemption</DataField>
-        </Field>
-        <Field Name="SalesTaxPercent">
-          <DataField>SalesTaxPercent</DataField>
-        </Field>
-        <Field Name="Currency_Code">
-          <DataField>Currency_Code</DataField>
-        </Field>
-        <Field Name="Type">
-          <DataField>Type</DataField>
-        </Field>
-        <Field Name="Variant_Code">
-          <DataField>Variant_Code</DataField>
-        </Field>
-        <Field Name="ItemCode">
-          <DataField>ItemCode</DataField>
-        </Field>
-        <Field Name="Noofplts">
-          <DataField>Noofplts</DataField>
-        </Field>
-        <Field Name="NoofpltsFormat">
-          <DataField>NoofpltsFormat</DataField>
-        </Field>
-        <Field Name="UnitPrice">
-          <DataField>UnitPrice</DataField>
-        </Field>
-        <Field Name="UnitPriceFormat">
-          <DataField>UnitPriceFormat</DataField>
-        </Field>
-        <Field Name="Packing">
-          <DataField>Packing</DataField>
-        </Field>
-        <Field Name="PackingFormat">
-          <DataField>PackingFormat</DataField>
-        </Field>
-        <Field Name="Quantity">
-          <DataField>Quantity</DataField>
-        </Field>
-        <Field Name="QuantityFormat">
-          <DataField>QuantityFormat</DataField>
-        </Field>
-        <Field Name="No_">
-          <DataField>No_</DataField>
-        </Field>
-        <Field Name="Description">
-          <DataField>Description</DataField>
-        </Field>
-        <Field Name="Amount">
-          <DataField>Amount</DataField>
-        </Field>
-        <Field Name="AmountFormat">
-          <DataField>AmountFormat</DataField>
-        </Field>
-        <Field Name="IsCharge">
-          <DataField>IsCharge</DataField>
-        </Field>
-        <Field Name="SubTotal">
-          <DataField>SubTotal</DataField>
-        </Field>
-        <Field Name="SubTotalFormat">
-          <DataField>SubTotalFormat</DataField>
-        </Field>
-        <Field Name="LineNo">
-          <DataField>LineNo</DataField>
-        </Field>
-      </Fields>
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-    </DataSet>
-  </DataSets>
 </Report>
