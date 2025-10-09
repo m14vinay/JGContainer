@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-10-09T07:21:46.1229268Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-10-09T13:47:31.2072996Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -24,277 +24,6 @@
       <rd:DataSourceID>3f1f0eb4-9fd3-47b9-ac59-0b5b15b1672c</rd:DataSourceID>
     </DataSource>
   </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-      <Fields>
-        <Field Name="PrintName">
-          <DataField>PrintName</DataField>
-        </Field>
-        <Field Name="CompanyAddress">
-          <DataField>CompanyAddress</DataField>
-        </Field>
-        <Field Name="CompanyPostcode">
-          <DataField>CompanyPostcode</DataField>
-        </Field>
-        <Field Name="CompanyCity">
-          <DataField>CompanyCity</DataField>
-        </Field>
-        <Field Name="CompanyState">
-          <DataField>CompanyState</DataField>
-        </Field>
-        <Field Name="CompanyCountry">
-          <DataField>CompanyCountry</DataField>
-        </Field>
-        <Field Name="CompanyInfoName">
-          <DataField>CompanyInfoName</DataField>
-        </Field>
-        <Field Name="CompanyInfoFax">
-          <DataField>CompanyInfoFax</DataField>
-        </Field>
-        <Field Name="Incoterms">
-          <DataField>Incoterms</DataField>
-        </Field>
-        <Field Name="CompanyInfoPhoneNo">
-          <DataField>CompanyInfoPhoneNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoEmail">
-          <DataField>CompanyInfoEmail</DataField>
-        </Field>
-        <Field Name="CompanyInfoHomePage">
-          <DataField>CompanyInfoHomePage</DataField>
-        </Field>
-        <Field Name="CompanyInfoVATRegNo">
-          <DataField>CompanyInfoVATRegNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoBusinessRegistrationNo">
-          <DataField>CompanyInfoBusinessRegistrationNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoGiroNo">
-          <DataField>CompanyInfoGiroNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoBankName">
-          <DataField>CompanyInfoBankName</DataField>
-        </Field>
-        <Field Name="CompanyInfoBankAccountNo">
-          <DataField>CompanyInfoBankAccountNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoBankBranchNo">
-          <DataField>CompanyInfoBankBranchNo</DataField>
-        </Field>
-        <Field Name="CompanyLogo">
-          <DataField>CompanyLogo</DataField>
-        </Field>
-        <Field Name="CompanyPicture1">
-          <DataField>CompanyPicture1</DataField>
-        </Field>
-        <Field Name="CompanyPicture2">
-          <DataField>CompanyPicture2</DataField>
-        </Field>
-        <Field Name="CompanyPicture3">
-          <DataField>CompanyPicture3</DataField>
-        </Field>
-        <Field Name="AlternateBank1">
-          <DataField>AlternateBank1</DataField>
-        </Field>
-        <Field Name="AlternateBank2">
-          <DataField>AlternateBank2</DataField>
-        </Field>
-        <Field Name="ReportTitle">
-          <DataField>ReportTitle</DataField>
-        </Field>
-        <Field Name="Bill_to_Name">
-          <DataField>Bill_to_Name</DataField>
-        </Field>
-        <Field Name="Bill_to_Address">
-          <DataField>Bill_to_Address</DataField>
-        </Field>
-        <Field Name="Bill_to_Address2">
-          <DataField>Bill_to_Address2</DataField>
-        </Field>
-        <Field Name="BilltoPhoneNo">
-          <DataField>BilltoPhoneNo</DataField>
-        </Field>
-        <Field Name="Billtomobileno">
-          <DataField>Billtomobileno</DataField>
-        </Field>
-        <Field Name="BIllpostcodecitycountrycounty">
-          <DataField>BIllpostcodecitycountrycounty</DataField>
-        </Field>
-        <Field Name="Ship_to_Name">
-          <DataField>Ship_to_Name</DataField>
-        </Field>
-        <Field Name="Ship_to_Address">
-          <DataField>Ship_to_Address</DataField>
-        </Field>
-        <Field Name="Ship_to_Address_2">
-          <DataField>Ship_to_Address_2</DataField>
-        </Field>
-        <Field Name="Shippostcodecitycountrycounty">
-          <DataField>Shippostcodecitycountrycounty</DataField>
-        </Field>
-        <Field Name="Ship_to_Phone_No_">
-          <DataField>Ship_to_Phone_No_</DataField>
-        </Field>
-        <Field Name="Ship_to_Contact">
-          <DataField>Ship_to_Contact</DataField>
-        </Field>
-        <Field Name="SalesHeaderNo_">
-          <DataField>SalesHeaderNo_</DataField>
-        </Field>
-        <Field Name="Shipment_Date">
-          <DataField>Shipment_Date</DataField>
-        </Field>
-        <Field Name="PaymentTerms">
-          <DataField>PaymentTerms</DataField>
-        </Field>
-        <Field Name="CustomerCode">
-          <DataField>CustomerCode</DataField>
-        </Field>
-        <Field Name="Incoterm">
-          <DataField>Incoterm</DataField>
-        </Field>
-        <Field Name="SalesPerson">
-          <DataField>SalesPerson</DataField>
-        </Field>
-        <Field Name="Document_Date">
-          <DataField>Document_Date</DataField>
-        </Field>
-        <Field Name="selltocustomercode">
-          <DataField>selltocustomercode</DataField>
-        </Field>
-        <Field Name="Shipping_Agent_Code">
-          <DataField>Shipping_Agent_Code</DataField>
-        </Field>
-        <Field Name="External_Document_No_">
-          <DataField>External_Document_No_</DataField>
-        </Field>
-        <Field Name="Work_Description">
-          <DataField>Work_Description</DataField>
-        </Field>
-        <Field Name="ShipemntHeaderNo">
-          <DataField>ShipemntHeaderNo</DataField>
-        </Field>
-        <Field Name="ShowAmount">
-          <DataField>ShowAmount</DataField>
-        </Field>
-        <Field Name="ShowAmountFormat">
-          <DataField>ShowAmountFormat</DataField>
-        </Field>
-        <Field Name="CurrencyCodeCurrencyCode">
-          <DataField>CurrencyCodeCurrencyCode</DataField>
-        </Field>
-        <Field Name="AmountInWords">
-          <DataField>AmountInWords</DataField>
-        </Field>
-        <Field Name="TotalShowAmount">
-          <DataField>TotalShowAmount</DataField>
-        </Field>
-        <Field Name="TotalShowAmountFormat">
-          <DataField>TotalShowAmountFormat</DataField>
-        </Field>
-        <Field Name="SalesTax">
-          <DataField>SalesTax</DataField>
-        </Field>
-        <Field Name="SalesTaxFormat">
-          <DataField>SalesTaxFormat</DataField>
-        </Field>
-        <Field Name="AlternateBankName1">
-          <DataField>AlternateBankName1</DataField>
-        </Field>
-        <Field Name="AlternateBankName2">
-          <DataField>AlternateBankName2</DataField>
-        </Field>
-        <Field Name="AlternateBankAccountNo2">
-          <DataField>AlternateBankAccountNo2</DataField>
-        </Field>
-        <Field Name="AlternateBankAddress2">
-          <DataField>AlternateBankAddress2</DataField>
-        </Field>
-        <Field Name="AlternateBankSwiftCode2">
-          <DataField>AlternateBankSwiftCode2</DataField>
-        </Field>
-        <Field Name="AlternateBankAccountNo1">
-          <DataField>AlternateBankAccountNo1</DataField>
-        </Field>
-        <Field Name="Currency">
-          <DataField>Currency</DataField>
-        </Field>
-        <Field Name="SSTExemption">
-          <DataField>SSTExemption</DataField>
-        </Field>
-        <Field Name="ProformaInvoiceNo">
-          <DataField>ProformaInvoiceNo</DataField>
-        </Field>
-        <Field Name="SalesTaxPercent">
-          <DataField>SalesTaxPercent</DataField>
-        </Field>
-        <Field Name="Currency_Code">
-          <DataField>Currency_Code</DataField>
-        </Field>
-        <Field Name="Type">
-          <DataField>Type</DataField>
-        </Field>
-        <Field Name="Variant_Code">
-          <DataField>Variant_Code</DataField>
-        </Field>
-        <Field Name="ItemCode">
-          <DataField>ItemCode</DataField>
-        </Field>
-        <Field Name="Noofplts">
-          <DataField>Noofplts</DataField>
-        </Field>
-        <Field Name="NoofpltsFormat">
-          <DataField>NoofpltsFormat</DataField>
-        </Field>
-        <Field Name="UnitPrice">
-          <DataField>UnitPrice</DataField>
-        </Field>
-        <Field Name="UnitPriceFormat">
-          <DataField>UnitPriceFormat</DataField>
-        </Field>
-        <Field Name="Packing">
-          <DataField>Packing</DataField>
-        </Field>
-        <Field Name="PackingFormat">
-          <DataField>PackingFormat</DataField>
-        </Field>
-        <Field Name="Quantity">
-          <DataField>Quantity</DataField>
-        </Field>
-        <Field Name="QuantityFormat">
-          <DataField>QuantityFormat</DataField>
-        </Field>
-        <Field Name="No_">
-          <DataField>No_</DataField>
-        </Field>
-        <Field Name="Description">
-          <DataField>Description</DataField>
-        </Field>
-        <Field Name="Amount">
-          <DataField>Amount</DataField>
-        </Field>
-        <Field Name="AmountFormat">
-          <DataField>AmountFormat</DataField>
-        </Field>
-        <Field Name="IsCharge">
-          <DataField>IsCharge</DataField>
-        </Field>
-        <Field Name="SubTotal">
-          <DataField>SubTotal</DataField>
-        </Field>
-        <Field Name="SubTotalFormat">
-          <DataField>SubTotalFormat</DataField>
-        </Field>
-        <Field Name="LineNo">
-          <DataField>LineNo</DataField>
-        </Field>
-      </Fields>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -308,7 +37,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>11.444cm</Height>
+                  <Height>12.07039cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -327,7 +56,7 @@
                                     <Width>2.08538cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>4.96608cm</Width>
+                                    <Width>5.03664cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
                                     <Width>1.39192cm</Width>
@@ -821,7 +550,7 @@
                                     </TablixCells>
                                   </TablixRow>
                                   <TablixRow>
-                                    <Height>0.50522cm</Height>
+                                    <Height>0.54225cm</Height>
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
@@ -1239,7 +968,7 @@
                                     </TablixCells>
                                   </TablixRow>
                                   <TablixRow>
-                                    <Height>0.50522cm</Height>
+                                    <Height>0.54225cm</Height>
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
@@ -1400,10 +1129,9 @@
                                 </TablixMembers>
                               </TablixRowHierarchy>
                               <DataSetName>DataSet_Result</DataSetName>
-                              <Top>0cm</Top>
                               <Left>0.01632cm</Left>
-                              <Height>2.0366cm</Height>
-                              <Width>18.78013cm</Width>
+                              <Height>2.11066cm</Height>
+                              <Width>18.85069cm</Width>
                               <Style>
                                 <Border>
                                   <Style>Solid</Style>
@@ -1440,7 +1168,7 @@
                                     <Width>2.13099cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>3.36594cm</Width>
+                                    <Width>3.42139cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
                                     <Width>1.78385cm</Width>
@@ -1463,7 +1191,7 @@
                                 </TablixColumns>
                                 <TablixRows>
                                   <TablixRow>
-                                    <Height>0.50522cm</Height>
+                                    <Height>0.54225cm</Height>
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
@@ -1610,7 +1338,7 @@
                                     </TablixCells>
                                   </TablixRow>
                                   <TablixRow>
-                                    <Height>0.50522cm</Height>
+                                    <Height>0.54225cm</Height>
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
@@ -1761,7 +1489,7 @@
                                     </TablixCells>
                                   </TablixRow>
                                   <TablixRow>
-                                    <Height>0.50522cm</Height>
+                                    <Height>0.90885cm</Height>
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
@@ -1907,7 +1635,7 @@
                                     </TablixCells>
                                   </TablixRow>
                                   <TablixRow>
-                                    <Height>0.50522cm</Height>
+                                    <Height>0.54225cm</Height>
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
@@ -1967,6 +1695,7 @@
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
+                                                <LeftIndent>2pt</LeftIndent>
                                                 <Style>
                                                   <TextAlign>Left</TextAlign>
                                                 </Style>
@@ -2035,7 +1764,7 @@
                                     </TablixCells>
                                   </TablixRow>
                                   <TablixRow>
-                                    <Height>0.50522cm</Height>
+                                    <Height>0.54225cm</Height>
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
@@ -2133,10 +1862,10 @@
                                 </TablixMembers>
                               </TablixRowHierarchy>
                               <DataSetName>DataSet_Result</DataSetName>
-                              <Top>2.0366cm</Top>
+                              <Top>2.11066cm</Top>
                               <Left>0.01632cm</Left>
-                              <Height>2.5261cm</Height>
-                              <Width>18.79524cm</Width>
+                              <Height>3.07785cm</Height>
+                              <Width>18.85069cm</Width>
                               <ZIndex>1</ZIndex>
                               <Style>
                                 <Border>
@@ -2184,7 +1913,6 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>0cm</Top>
                                   <Left>0.05598cm</Left>
                                   <Height>0.50404cm</Height>
                                   <Width>13.66958cm</Width>
@@ -2611,8 +2339,7 @@
                                 </Textbox>
                               </ReportItems>
                               <KeepTogether>true</KeepTogether>
-                              <Top>4.94721cm</Top>
-                              <Left>0cm</Left>
+                              <Top>5.5736cm</Top>
                               <Height>6.49679cm</Height>
                               <Width>13.72556cm</Width>
                               <ZIndex>2</ZIndex>
@@ -2649,15 +2376,15 @@
             <PageBreak>
               <BreakLocation>End</BreakLocation>
             </PageBreak>
-            <Height>11.444cm</Height>
+            <Height>12.07039cm</Height>
             <Width>18.86701cm</Width>
             <Style />
           </Tablix>
         </ReportItems>
-        <Height>11.444cm</Height>
+        <Height>12.07039cm</Height>
         <Style />
       </Body>
-      <Width>18.86701cm</Width>
+      <Width>19cm</Width>
       <Page>
         <PageHeader>
           <Height>7.80418cm</Height>
@@ -2688,7 +2415,7 @@
               <Top>2.35859cm</Top>
               <Left>12.36489cm</Left>
               <Height>1.49091cm</Height>
-              <Width>6.43156cm</Width>
+              <Width>6.50212cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -2711,14 +2438,15 @@
                           </Style>
                         </TextRun>
                       </TextRuns>
+                      <LeftIndent>5pt</LeftIndent>
                       <Style>
                         <TextAlign>Left</TextAlign>
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Left>2.58431cm</Left>
+                  <Left>3.00604cm</Left>
                   <Height>12.75591pt</Height>
-                  <Width>2.60591cm</Width>
+                  <Width>3.49608cm</Width>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -2740,15 +2468,16 @@
                           </Style>
                         </TextRun>
                       </TextRuns>
+                      <LeftIndent>5pt</LeftIndent>
                       <Style>
                         <TextAlign>Left</TextAlign>
                       </Style>
                     </Paragraph>
                   </Paragraphs>
                   <Top>0.46152cm</Top>
-                  <Left>2.58431cm</Left>
+                  <Left>3.00604cm</Left>
                   <Height>12.75591pt</Height>
-                  <Width>2.60591cm</Width>
+                  <Width>3.49608cm</Width>
                   <ZIndex>1</ZIndex>
                   <Style>
                     <Border>
@@ -2770,15 +2499,16 @@
                           </Style>
                         </TextRun>
                       </TextRuns>
+                      <LeftIndent>5pt</LeftIndent>
                       <Style>
                         <TextAlign>Left</TextAlign>
                       </Style>
                     </Paragraph>
                   </Paragraphs>
                   <Top>0.92073cm</Top>
-                  <Left>2.58431cm</Left>
+                  <Left>3.00604cm</Left>
                   <Height>12.49483pt</Height>
-                  <Width>2.60591cm</Width>
+                  <Width>3.49608cm</Width>
                   <ZIndex>2</ZIndex>
                   <Style>
                     <Border>
@@ -2800,15 +2530,16 @@
                           </Style>
                         </TextRun>
                       </TextRuns>
+                      <LeftIndent>5pt</LeftIndent>
                       <Style>
                         <TextAlign>Left</TextAlign>
                       </Style>
                     </Paragraph>
                   </Paragraphs>
                   <Top>1.36152cm</Top>
-                  <Left>2.58431cm</Left>
+                  <Left>3.00604cm</Left>
                   <Height>12.75591pt</Height>
-                  <Width>2.60591cm</Width>
+                  <Width>3.49608cm</Width>
                   <ZIndex>3</ZIndex>
                   <Style>
                     <Border>
@@ -2831,15 +2562,16 @@
                           </Style>
                         </TextRun>
                       </TextRuns>
+                      <LeftIndent>5pt</LeftIndent>
                       <Style>
                         <TextAlign>Left</TextAlign>
                       </Style>
                     </Paragraph>
                   </Paragraphs>
                   <Top>1.81152cm</Top>
-                  <Left>2.58431cm</Left>
+                  <Left>3.00604cm</Left>
                   <Height>12.75591pt</Height>
-                  <Width>2.60591cm</Width>
+                  <Width>3.49608cm</Width>
                   <ZIndex>4</ZIndex>
                   <Style>
                     <Border>
@@ -2861,201 +2593,17 @@
                           </Style>
                         </TextRun>
                       </TextRuns>
+                      <LeftIndent>5pt</LeftIndent>
                       <Style>
                         <TextAlign>Left</TextAlign>
                       </Style>
                     </Paragraph>
                   </Paragraphs>
                   <Top>2.26152cm</Top>
-                  <Left>2.58431cm</Left>
+                  <Left>3.00604cm</Left>
                   <Height>12.75591pt</Height>
-                  <Width>2.60591cm</Width>
+                  <Width>3.49608cm</Width>
                   <ZIndex>5</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <VerticalAlign>Middle</VerticalAlign>
-                  </Style>
-                </Textbox>
-                <Textbox Name="ExecutionTimeTextBox34">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>Date</Value>
-                          <Style>
-                            <FontStyle>Normal</FontStyle>
-                            <FontSize>9pt</FontSize>
-                            <FontWeight>Normal</FontWeight>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Left>0cm</Left>
-                  <Height>0.45cm</Height>
-                  <Width>2.27335cm</Width>
-                  <ZIndex>6</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <VerticalAlign>Middle</VerticalAlign>
-                  </Style>
-                </Textbox>
-                <Textbox Name="ExecutionTimeTextBox35">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>No</Value>
-                          <Style>
-                            <FontStyle>Normal</FontStyle>
-                            <FontSize>9pt</FontSize>
-                            <FontWeight>Normal</FontWeight>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>0.46152cm</Top>
-                  <Left>0cm</Left>
-                  <Height>0.45cm</Height>
-                  <Width>2.27335cm</Width>
-                  <ZIndex>7</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <VerticalAlign>Middle</VerticalAlign>
-                  </Style>
-                </Textbox>
-                <Textbox Name="ExecutionTimeTextBox36">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>PO No</Value>
-                          <Style>
-                            <FontStyle>Normal</FontStyle>
-                            <FontSize>9pt</FontSize>
-                            <FontWeight>Normal</FontWeight>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>0.91152cm</Top>
-                  <Left>0cm</Left>
-                  <Height>0.45cm</Height>
-                  <Width>2.27335cm</Width>
-                  <ZIndex>8</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <VerticalAlign>Middle</VerticalAlign>
-                  </Style>
-                </Textbox>
-                <Textbox Name="ExecutionTimeTextBox37">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>Delivery Date</Value>
-                          <Style>
-                            <FontStyle>Normal</FontStyle>
-                            <FontSize>9pt</FontSize>
-                            <FontWeight>Normal</FontWeight>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>1.36152cm</Top>
-                  <Left>0cm</Left>
-                  <Height>0.45cm</Height>
-                  <Width>2.27335cm</Width>
-                  <ZIndex>9</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <VerticalAlign>Middle</VerticalAlign>
-                  </Style>
-                </Textbox>
-                <Textbox Name="ExecutionTimeTextBox38">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>Terms</Value>
-                          <Style>
-                            <FontStyle>Normal</FontStyle>
-                            <FontSize>9pt</FontSize>
-                            <FontWeight>Normal</FontWeight>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>1.81152cm</Top>
-                  <Left>0cm</Left>
-                  <Height>0.45cm</Height>
-                  <Width>2.27335cm</Width>
-                  <ZIndex>10</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <VerticalAlign>Middle</VerticalAlign>
-                  </Style>
-                </Textbox>
-                <Textbox Name="ExecutionTimeTextBox39">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>Customer Code</Value>
-                          <Style>
-                            <FontStyle>Normal</FontStyle>
-                            <FontSize>9pt</FontSize>
-                            <FontWeight>Normal</FontWeight>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>2.26152cm</Top>
-                  <Left>0cm</Left>
-                  <Height>0.45cm</Height>
-                  <Width>2.27335cm</Width>
-                  <ZIndex>11</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3082,10 +2630,10 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>2.26152cm</Top>
-                  <Left>2.27335cm</Left>
+                  <Left>2.75269cm</Left>
                   <Height>12.75591pt</Height>
-                  <Width>0.31096cm</Width>
-                  <ZIndex>12</ZIndex>
+                  <Width>0.25335cm</Width>
+                  <ZIndex>6</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3112,10 +2660,10 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>0.46152cm</Top>
-                  <Left>2.27335cm</Left>
+                  <Left>2.75269cm</Left>
                   <Height>12.75591pt</Height>
-                  <Width>0.31096cm</Width>
-                  <ZIndex>13</ZIndex>
+                  <Width>0.25335cm</Width>
+                  <ZIndex>7</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3142,10 +2690,10 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>0.91152cm</Top>
-                  <Left>2.27335cm</Left>
+                  <Left>2.75269cm</Left>
                   <Height>12.75591pt</Height>
-                  <Width>0.31096cm</Width>
-                  <ZIndex>14</ZIndex>
+                  <Width>0.25335cm</Width>
+                  <ZIndex>8</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3172,10 +2720,10 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>1.36152cm</Top>
-                  <Left>2.27335cm</Left>
+                  <Left>2.75269cm</Left>
                   <Height>12.75591pt</Height>
-                  <Width>0.31096cm</Width>
-                  <ZIndex>15</ZIndex>
+                  <Width>0.25335cm</Width>
+                  <ZIndex>9</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3202,10 +2750,10 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>1.81152cm</Top>
-                  <Left>2.27335cm</Left>
+                  <Left>2.75269cm</Left>
                   <Height>12.75591pt</Height>
-                  <Width>0.31096cm</Width>
-                  <ZIndex>16</ZIndex>
+                  <Width>0.25335cm</Width>
+                  <ZIndex>10</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3227,16 +2775,17 @@
                           </Style>
                         </TextRun>
                       </TextRuns>
+                      <LeftIndent>5pt</LeftIndent>
                       <Style>
                         <TextAlign>Left</TextAlign>
                       </Style>
                     </Paragraph>
                   </Paragraphs>
                   <Top>2.71152cm</Top>
-                  <Left>2.58431cm</Left>
+                  <Left>3.00604cm</Left>
                   <Height>12.75591pt</Height>
-                  <Width>2.60591cm</Width>
-                  <ZIndex>17</ZIndex>
+                  <Width>3.49608cm</Width>
+                  <ZIndex>11</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3258,77 +2807,17 @@
                           </Style>
                         </TextRun>
                       </TextRuns>
+                      <LeftIndent>5pt</LeftIndent>
                       <Style>
                         <TextAlign>Left</TextAlign>
                       </Style>
                     </Paragraph>
                   </Paragraphs>
                   <Top>3.16152cm</Top>
-                  <Left>2.58431cm</Left>
+                  <Left>3.00604cm</Left>
                   <Height>12.75591pt</Height>
-                  <Width>2.60591cm</Width>
-                  <ZIndex>18</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <VerticalAlign>Middle</VerticalAlign>
-                  </Style>
-                </Textbox>
-                <Textbox Name="ExecutionTimeTextBox53">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>Incoterm</Value>
-                          <Style>
-                            <FontStyle>Normal</FontStyle>
-                            <FontSize>9pt</FontSize>
-                            <FontWeight>Normal</FontWeight>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>2.71152cm</Top>
-                  <Height>0.45cm</Height>
-                  <Width>2.27335cm</Width>
-                  <ZIndex>19</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <VerticalAlign>Middle</VerticalAlign>
-                  </Style>
-                </Textbox>
-                <Textbox Name="ExecutionTimeTextBox54">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>Sales Person</Value>
-                          <Style>
-                            <FontStyle>Normal</FontStyle>
-                            <FontSize>9pt</FontSize>
-                            <FontWeight>Normal</FontWeight>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>3.16152cm</Top>
-                  <Left>0cm</Left>
-                  <Height>0.45cm</Height>
-                  <Width>2.27335cm</Width>
-                  <ZIndex>20</ZIndex>
+                  <Width>3.49608cm</Width>
+                  <ZIndex>12</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3355,10 +2844,10 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>3.16152cm</Top>
-                  <Left>2.27335cm</Left>
+                  <Left>2.75269cm</Left>
                   <Height>12.75591pt</Height>
-                  <Width>0.31096cm</Width>
-                  <ZIndex>21</ZIndex>
+                  <Width>0.25335cm</Width>
+                  <ZIndex>13</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3385,10 +2874,10 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>2.71152cm</Top>
-                  <Left>2.27335cm</Left>
+                  <Left>2.75269cm</Left>
                   <Height>12.75591pt</Height>
-                  <Width>0.31096cm</Width>
-                  <ZIndex>22</ZIndex>
+                  <Width>0.25335cm</Width>
+                  <ZIndex>14</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3399,9 +2888,9 @@
               </ReportItems>
               <KeepTogether>true</KeepTogether>
               <Top>3.84951cm</Top>
-              <Left>13.60623cm</Left>
+              <Left>12.36489cm</Left>
               <Height>3.61152cm</Height>
-              <Width>5.19022cm</Width>
+              <Width>6.50212cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -3464,7 +2953,7 @@
                   <Top>0.66607cm</Top>
                   <Left>0.32359cm</Left>
                   <Height>0.45cm</Height>
-                  <Width>6.19664cm</Width>
+                  <Width>5.62514cm</Width>
                   <ZIndex>1</ZIndex>
                   <Style>
                     <Border>
@@ -3495,7 +2984,7 @@
                   <Top>1.11607cm</Top>
                   <Left>0.32359cm</Left>
                   <Height>0.45cm</Height>
-                  <Width>6.19664cm</Width>
+                  <Width>5.62514cm</Width>
                   <ZIndex>2</ZIndex>
                   <Style>
                     <Border>
@@ -3526,7 +3015,7 @@
                   <Top>2.02957cm</Top>
                   <Left>0.32359cm</Left>
                   <Height>0.45cm</Height>
-                  <Width>6.19664cm</Width>
+                  <Width>5.62514cm</Width>
                   <ZIndex>3</ZIndex>
                   <Style>
                     <Border>
@@ -3557,7 +3046,7 @@
                   <Top>2.47957cm</Top>
                   <Left>1.95405cm</Left>
                   <Height>14.5pt</Height>
-                  <Width>4.56618cm</Width>
+                  <Width>3.99468cm</Width>
                   <ZIndex>4</ZIndex>
                   <Style>
                     <Border>
@@ -3588,7 +3077,7 @@
                   <Top>2.9911cm</Top>
                   <Left>1.95405cm</Left>
                   <Height>11.64649pt</Height>
-                  <Width>4.56618cm</Width>
+                  <Width>3.99468cm</Width>
                   <ZIndex>5</ZIndex>
                   <Style>
                     <Border>
@@ -3619,7 +3108,7 @@
                   <Top>1.57957cm</Top>
                   <Left>0.32359cm</Left>
                   <Height>0.45cm</Height>
-                  <Width>6.19664cm</Width>
+                  <Width>5.62514cm</Width>
                   <ZIndex>6</ZIndex>
                   <Style>
                     <Border>
@@ -3755,13 +3244,13 @@
               </ReportItems>
               <KeepTogether>true</KeepTogether>
               <Top>3.84951cm</Top>
-              <Left>0cm</Left>
               <Height>3.62269cm</Height>
-              <Width>6.52023cm</Width>
+              <Width>5.96625cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
                   <Style>Solid</Style>
+                  <Width>0.5pt</Width>
                 </Border>
               </Style>
             </Rectangle>
@@ -3771,7 +3260,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=First(Fields!PrintName.Value, "DataSet_Result") &amp; "(" +First(Fields!CompanyInfoBusinessRegistrationNo.Value, "DataSet_Result") +")"</Value>
+                      <Value>=First(Fields!PrintName.Value, "DataSet_Result") &amp; " (" +First(Fields!CompanyInfoBusinessRegistrationNo.Value, "DataSet_Result") +")"</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontSize>14pt</FontSize>
@@ -3815,7 +3304,6 @@
                 </Paragraph>
               </Paragraphs>
               <Top>1.22023cm</Top>
-              <Left>0cm</Left>
               <Height>15.93128pt</Height>
               <Width>12.36489cm</Width>
               <ZIndex>4</ZIndex>
@@ -3936,7 +3424,6 @@
                 </Paragraph>
               </Paragraphs>
               <Top>1.80122cm</Top>
-              <Left>0cm</Left>
               <Height>0.45cm</Height>
               <Width>2.23995cm</Width>
               <ZIndex>8</ZIndex>
@@ -3966,7 +3453,6 @@
                 </Paragraph>
               </Paragraphs>
               <Top>2.25122cm</Top>
-              <Left>0cm</Left>
               <Height>0.45cm</Height>
               <Width>2.23995cm</Width>
               <ZIndex>9</ZIndex>
@@ -3996,7 +3482,6 @@
                 </Paragraph>
               </Paragraphs>
               <Top>2.70242cm</Top>
-              <Left>0cm</Left>
               <Height>0.45cm</Height>
               <Width>2.23995cm</Width>
               <ZIndex>10</ZIndex>
@@ -4120,7 +3605,7 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>0.19158cm</Top>
-                  <Left>0.32464cm</Left>
+                  <Left>0.39504cm</Left>
                   <Height>12.75591pt</Height>
                   <Width>4.72137cm</Width>
                   <Style>
@@ -4151,9 +3636,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>0.66607cm</Top>
-                  <Left>0.32464cm</Left>
+                  <Left>0.39504cm</Left>
                   <Height>0.45cm</Height>
-                  <Width>6.14956cm</Width>
+                  <Width>5.63915cm</Width>
                   <ZIndex>1</ZIndex>
                   <Style>
                     <Border>
@@ -4182,9 +3667,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>1.11607cm</Top>
-                  <Left>0.32464cm</Left>
+                  <Left>0.39504cm</Left>
                   <Height>12.75591pt</Height>
-                  <Width>6.15202cm</Width>
+                  <Width>5.64161cm</Width>
                   <ZIndex>2</ZIndex>
                   <Style>
                     <Border>
@@ -4213,9 +3698,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>1.57957cm</Top>
-                  <Left>0.32464cm</Left>
+                  <Left>0.39504cm</Left>
                   <Height>12.75591pt</Height>
-                  <Width>6.14956cm</Width>
+                  <Width>5.63915cm</Width>
                   <ZIndex>3</ZIndex>
                   <Style>
                     <Border>
@@ -4244,9 +3729,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>2.47957cm</Top>
-                  <Left>1.74159cm</Left>
+                  <Left>1.81199cm</Left>
                   <Height>14.5pt</Height>
-                  <Width>4.73261cm</Width>
+                  <Width>4.2222cm</Width>
                   <ZIndex>4</ZIndex>
                   <Style>
                     <Border>
@@ -4275,9 +3760,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>2.9911cm</Top>
-                  <Left>1.74159cm</Left>
+                  <Left>1.81199cm</Left>
                   <Height>11.64649pt</Height>
-                  <Width>4.73507cm</Width>
+                  <Width>4.22466cm</Width>
                   <ZIndex>5</ZIndex>
                   <Style>
                     <Border>
@@ -4306,7 +3791,7 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>2.47957cm</Top>
-                  <Left>0.32464cm</Left>
+                  <Left>0.39504cm</Left>
                   <Height>14.5pt</Height>
                   <Width>1.13605cm</Width>
                   <ZIndex>6</ZIndex>
@@ -4337,7 +3822,7 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>2.47957cm</Top>
-                  <Left>1.46069cm</Left>
+                  <Left>1.53109cm</Left>
                   <Height>14.5pt</Height>
                   <Width>0.2809cm</Width>
                   <ZIndex>7</ZIndex>
@@ -4368,7 +3853,7 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>2.9911cm</Top>
-                  <Left>0.32464cm</Left>
+                  <Left>0.39504cm</Left>
                   <Height>11.64649pt</Height>
                   <Width>1.13605cm</Width>
                   <ZIndex>8</ZIndex>
@@ -4399,7 +3884,7 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>2.9911cm</Top>
-                  <Left>1.46069cm</Left>
+                  <Left>1.53109cm</Left>
                   <Height>11.64649pt</Height>
                   <Width>0.2809cm</Width>
                   <ZIndex>9</ZIndex>
@@ -4430,9 +3915,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>2.02957cm</Top>
-                  <Left>0.32464cm</Left>
+                  <Left>0.39504cm</Left>
                   <Height>12.75591pt</Height>
-                  <Width>6.15202cm</Width>
+                  <Width>5.64161cm</Width>
                   <ZIndex>10</ZIndex>
                   <Style>
                     <Border>
@@ -4444,13 +3929,14 @@
               </ReportItems>
               <KeepTogether>true</KeepTogether>
               <Top>3.84951cm</Top>
-              <Left>6.52023cm</Left>
+              <Left>5.96625cm</Left>
               <Height>3.62269cm</Height>
-              <Width>6.5152cm</Width>
+              <Width>6.03665cm</Width>
               <ZIndex>14</ZIndex>
               <Style>
                 <Border>
                   <Style>Solid</Style>
+                  <Width>0.5pt</Width>
                 </Border>
               </Style>
             </Rectangle>
@@ -4474,9 +3960,9 @@
                 </Paragraph>
               </Paragraphs>
               <Top>3.8495cm</Top>
-              <Left>15.87958cm</Left>
+              <Left>15.11758cm</Left>
               <Height>12.75625pt</Height>
-              <Width>0.31096cm</Width>
+              <Width>0.25335cm</Width>
               <ZIndex>15</ZIndex>
               <Style>
                 <Border>
@@ -4539,7 +4025,6 @@
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
               <Top>0.29595cm</Top>
-              <Left>0cm</Left>
               <Height>24pt</Height>
               <Width>25.69993pt</Width>
               <ZIndex>19</ZIndex>
@@ -4549,6 +4034,262 @@
                 </Border>
               </Style>
             </Image>
+            <Textbox Name="ExecutionTimeTextBox34">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Date</Value>
+                      <Style>
+                        <FontStyle>Normal</FontStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Normal</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <LeftIndent>3pt</LeftIndent>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>3.8495cm</Top>
+              <Left>12.36489cm</Left>
+              <Height>0.45cm</Height>
+              <Width>2.75269cm</Width>
+              <ZIndex>20</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="ExecutionTimeTextBox35">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>No</Value>
+                      <Style>
+                        <FontStyle>Normal</FontStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Normal</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <LeftIndent>3pt</LeftIndent>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>4.31102cm</Top>
+              <Left>12.36489cm</Left>
+              <Height>0.45cm</Height>
+              <Width>2.75269cm</Width>
+              <ZIndex>21</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="ExecutionTimeTextBox36">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>PO No</Value>
+                      <Style>
+                        <FontStyle>Normal</FontStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Normal</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <LeftIndent>3pt</LeftIndent>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>4.76102cm</Top>
+              <Left>12.36489cm</Left>
+              <Height>0.45cm</Height>
+              <Width>2.75269cm</Width>
+              <ZIndex>22</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="ExecutionTimeTextBox37">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Delivery Date</Value>
+                      <Style>
+                        <FontStyle>Normal</FontStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Normal</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <LeftIndent>3pt</LeftIndent>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>5.21102cm</Top>
+              <Left>12.36489cm</Left>
+              <Height>0.45cm</Height>
+              <Width>2.75269cm</Width>
+              <ZIndex>23</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="ExecutionTimeTextBox38">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Terms</Value>
+                      <Style>
+                        <FontStyle>Normal</FontStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Normal</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <LeftIndent>3pt</LeftIndent>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>5.66102cm</Top>
+              <Left>12.36489cm</Left>
+              <Height>0.45cm</Height>
+              <Width>2.75269cm</Width>
+              <ZIndex>24</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="ExecutionTimeTextBox39">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Customer Code</Value>
+                      <Style>
+                        <FontStyle>Normal</FontStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Normal</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <LeftIndent>3pt</LeftIndent>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>6.11102cm</Top>
+              <Left>12.36489cm</Left>
+              <Height>0.45cm</Height>
+              <Width>2.75269cm</Width>
+              <ZIndex>25</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="ExecutionTimeTextBox53">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Incoterm</Value>
+                      <Style>
+                        <FontStyle>Normal</FontStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Normal</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <LeftIndent>3pt</LeftIndent>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>6.56102cm</Top>
+              <Left>12.36489cm</Left>
+              <Height>0.45cm</Height>
+              <Width>2.75269cm</Width>
+              <ZIndex>26</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="ExecutionTimeTextBox54">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Sales Person</Value>
+                      <Style>
+                        <FontStyle>Normal</FontStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Normal</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <LeftIndent>3pt</LeftIndent>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>7.01102cm</Top>
+              <Left>12.36489cm</Left>
+              <Height>0.45cm</Height>
+              <Width>2.75269cm</Width>
+              <ZIndex>27</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
           </ReportItems>
           <Style />
         </PageHeader>
@@ -4566,9 +4307,7 @@
                   <TextRuns>
                     <TextRun>
                       <Value EvaluationMode="Constant">THIS IS COMPUTER GENERATED DOCUMENT. NO SIGNATURE REQUIRED.</Value>
-                      <Style>
-                        <FontSize>9pt</FontSize>
-                      </Style>
+                      <Style />
                     </TextRun>
                   </TextRuns>
                   <Style>
@@ -4577,9 +4316,8 @@
                 </Paragraph>
               </Paragraphs>
               <Top>0.32109cm</Top>
-              <Left>0cm</Left>
               <Height>0.37013cm</Height>
-              <Width>11.56624cm</Width>
+              <Width>13.72556cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -4630,7 +4368,7 @@
         <InteractiveHeight>11in</InteractiveHeight>
         <InteractiveWidth>8.5in</InteractiveWidth>
         <LeftMargin>1cm</LeftMargin>
-        <RightMargin>0cm</RightMargin>
+        <RightMargin>1cm</RightMargin>
         <TopMargin>0.5cm</TopMargin>
         <BottomMargin>0.5cm</BottomMargin>
         <ColumnSpacing>1.27cm</ColumnSpacing>
@@ -4638,12 +4376,6 @@
       </Page>
     </ReportSection>
   </ReportSections>
-  <ReportParametersLayout>
-    <GridLayoutDefinition>
-      <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
-    </GridLayoutDefinition>
-  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -4743,4 +4475,275 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
   </EmbeddedImages>
   <Language>=User!Language</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="PrintName">
+          <DataField>PrintName</DataField>
+        </Field>
+        <Field Name="CompanyAddress">
+          <DataField>CompanyAddress</DataField>
+        </Field>
+        <Field Name="CompanyPostcode">
+          <DataField>CompanyPostcode</DataField>
+        </Field>
+        <Field Name="CompanyCity">
+          <DataField>CompanyCity</DataField>
+        </Field>
+        <Field Name="CompanyState">
+          <DataField>CompanyState</DataField>
+        </Field>
+        <Field Name="CompanyCountry">
+          <DataField>CompanyCountry</DataField>
+        </Field>
+        <Field Name="CompanyInfoName">
+          <DataField>CompanyInfoName</DataField>
+        </Field>
+        <Field Name="CompanyInfoFax">
+          <DataField>CompanyInfoFax</DataField>
+        </Field>
+        <Field Name="Incoterms">
+          <DataField>Incoterms</DataField>
+        </Field>
+        <Field Name="CompanyInfoPhoneNo">
+          <DataField>CompanyInfoPhoneNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoEmail">
+          <DataField>CompanyInfoEmail</DataField>
+        </Field>
+        <Field Name="CompanyInfoHomePage">
+          <DataField>CompanyInfoHomePage</DataField>
+        </Field>
+        <Field Name="CompanyInfoVATRegNo">
+          <DataField>CompanyInfoVATRegNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoBusinessRegistrationNo">
+          <DataField>CompanyInfoBusinessRegistrationNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoGiroNo">
+          <DataField>CompanyInfoGiroNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoBankName">
+          <DataField>CompanyInfoBankName</DataField>
+        </Field>
+        <Field Name="CompanyInfoBankAccountNo">
+          <DataField>CompanyInfoBankAccountNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoBankBranchNo">
+          <DataField>CompanyInfoBankBranchNo</DataField>
+        </Field>
+        <Field Name="CompanyLogo">
+          <DataField>CompanyLogo</DataField>
+        </Field>
+        <Field Name="CompanyPicture1">
+          <DataField>CompanyPicture1</DataField>
+        </Field>
+        <Field Name="CompanyPicture2">
+          <DataField>CompanyPicture2</DataField>
+        </Field>
+        <Field Name="CompanyPicture3">
+          <DataField>CompanyPicture3</DataField>
+        </Field>
+        <Field Name="AlternateBank1">
+          <DataField>AlternateBank1</DataField>
+        </Field>
+        <Field Name="AlternateBank2">
+          <DataField>AlternateBank2</DataField>
+        </Field>
+        <Field Name="ReportTitle">
+          <DataField>ReportTitle</DataField>
+        </Field>
+        <Field Name="Bill_to_Name">
+          <DataField>Bill_to_Name</DataField>
+        </Field>
+        <Field Name="Bill_to_Address">
+          <DataField>Bill_to_Address</DataField>
+        </Field>
+        <Field Name="Bill_to_Address2">
+          <DataField>Bill_to_Address2</DataField>
+        </Field>
+        <Field Name="BilltoPhoneNo">
+          <DataField>BilltoPhoneNo</DataField>
+        </Field>
+        <Field Name="Billtomobileno">
+          <DataField>Billtomobileno</DataField>
+        </Field>
+        <Field Name="BIllpostcodecitycountrycounty">
+          <DataField>BIllpostcodecitycountrycounty</DataField>
+        </Field>
+        <Field Name="Ship_to_Name">
+          <DataField>Ship_to_Name</DataField>
+        </Field>
+        <Field Name="Ship_to_Address">
+          <DataField>Ship_to_Address</DataField>
+        </Field>
+        <Field Name="Ship_to_Address_2">
+          <DataField>Ship_to_Address_2</DataField>
+        </Field>
+        <Field Name="Shippostcodecitycountrycounty">
+          <DataField>Shippostcodecitycountrycounty</DataField>
+        </Field>
+        <Field Name="Ship_to_Phone_No_">
+          <DataField>Ship_to_Phone_No_</DataField>
+        </Field>
+        <Field Name="Ship_to_Contact">
+          <DataField>Ship_to_Contact</DataField>
+        </Field>
+        <Field Name="SalesHeaderNo_">
+          <DataField>SalesHeaderNo_</DataField>
+        </Field>
+        <Field Name="Shipment_Date">
+          <DataField>Shipment_Date</DataField>
+        </Field>
+        <Field Name="PaymentTerms">
+          <DataField>PaymentTerms</DataField>
+        </Field>
+        <Field Name="CustomerCode">
+          <DataField>CustomerCode</DataField>
+        </Field>
+        <Field Name="Incoterm">
+          <DataField>Incoterm</DataField>
+        </Field>
+        <Field Name="SalesPerson">
+          <DataField>SalesPerson</DataField>
+        </Field>
+        <Field Name="Document_Date">
+          <DataField>Document_Date</DataField>
+        </Field>
+        <Field Name="selltocustomercode">
+          <DataField>selltocustomercode</DataField>
+        </Field>
+        <Field Name="Shipping_Agent_Code">
+          <DataField>Shipping_Agent_Code</DataField>
+        </Field>
+        <Field Name="External_Document_No_">
+          <DataField>External_Document_No_</DataField>
+        </Field>
+        <Field Name="Work_Description">
+          <DataField>Work_Description</DataField>
+        </Field>
+        <Field Name="ShipemntHeaderNo">
+          <DataField>ShipemntHeaderNo</DataField>
+        </Field>
+        <Field Name="ShowAmount">
+          <DataField>ShowAmount</DataField>
+        </Field>
+        <Field Name="ShowAmountFormat">
+          <DataField>ShowAmountFormat</DataField>
+        </Field>
+        <Field Name="CurrencyCodeCurrencyCode">
+          <DataField>CurrencyCodeCurrencyCode</DataField>
+        </Field>
+        <Field Name="AmountInWords">
+          <DataField>AmountInWords</DataField>
+        </Field>
+        <Field Name="TotalShowAmount">
+          <DataField>TotalShowAmount</DataField>
+        </Field>
+        <Field Name="TotalShowAmountFormat">
+          <DataField>TotalShowAmountFormat</DataField>
+        </Field>
+        <Field Name="SalesTax">
+          <DataField>SalesTax</DataField>
+        </Field>
+        <Field Name="SalesTaxFormat">
+          <DataField>SalesTaxFormat</DataField>
+        </Field>
+        <Field Name="AlternateBankName1">
+          <DataField>AlternateBankName1</DataField>
+        </Field>
+        <Field Name="AlternateBankName2">
+          <DataField>AlternateBankName2</DataField>
+        </Field>
+        <Field Name="AlternateBankAccountNo2">
+          <DataField>AlternateBankAccountNo2</DataField>
+        </Field>
+        <Field Name="AlternateBankAddress2">
+          <DataField>AlternateBankAddress2</DataField>
+        </Field>
+        <Field Name="AlternateBankSwiftCode2">
+          <DataField>AlternateBankSwiftCode2</DataField>
+        </Field>
+        <Field Name="AlternateBankAccountNo1">
+          <DataField>AlternateBankAccountNo1</DataField>
+        </Field>
+        <Field Name="Currency">
+          <DataField>Currency</DataField>
+        </Field>
+        <Field Name="SSTExemption">
+          <DataField>SSTExemption</DataField>
+        </Field>
+        <Field Name="ProformaInvoiceNo">
+          <DataField>ProformaInvoiceNo</DataField>
+        </Field>
+        <Field Name="SalesTaxPercent">
+          <DataField>SalesTaxPercent</DataField>
+        </Field>
+        <Field Name="Currency_Code">
+          <DataField>Currency_Code</DataField>
+        </Field>
+        <Field Name="Type">
+          <DataField>Type</DataField>
+        </Field>
+        <Field Name="Variant_Code">
+          <DataField>Variant_Code</DataField>
+        </Field>
+        <Field Name="ItemCode">
+          <DataField>ItemCode</DataField>
+        </Field>
+        <Field Name="Noofplts">
+          <DataField>Noofplts</DataField>
+        </Field>
+        <Field Name="NoofpltsFormat">
+          <DataField>NoofpltsFormat</DataField>
+        </Field>
+        <Field Name="UnitPrice">
+          <DataField>UnitPrice</DataField>
+        </Field>
+        <Field Name="UnitPriceFormat">
+          <DataField>UnitPriceFormat</DataField>
+        </Field>
+        <Field Name="Packing">
+          <DataField>Packing</DataField>
+        </Field>
+        <Field Name="PackingFormat">
+          <DataField>PackingFormat</DataField>
+        </Field>
+        <Field Name="Quantity">
+          <DataField>Quantity</DataField>
+        </Field>
+        <Field Name="QuantityFormat">
+          <DataField>QuantityFormat</DataField>
+        </Field>
+        <Field Name="No_">
+          <DataField>No_</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="Amount">
+          <DataField>Amount</DataField>
+        </Field>
+        <Field Name="AmountFormat">
+          <DataField>AmountFormat</DataField>
+        </Field>
+        <Field Name="IsCharge">
+          <DataField>IsCharge</DataField>
+        </Field>
+        <Field Name="SubTotal">
+          <DataField>SubTotal</DataField>
+        </Field>
+        <Field Name="SubTotalFormat">
+          <DataField>SubTotalFormat</DataField>
+        </Field>
+        <Field Name="LineNo">
+          <DataField>LineNo</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
 </Report>
