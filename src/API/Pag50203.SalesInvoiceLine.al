@@ -85,6 +85,18 @@ page 50203 "Sales Invoice Line"
                 {
                     Caption = 'Unit of Measure Code';
                 }
+                  field(pricePerPiece; Rec."Price Per Piece")
+                {
+                    Caption = 'Price Per Piece';
+                }
+                 field(qtyPerPack; Rec."Qty Per Pack")
+                {
+                    Caption = 'Qty Per Pack';
+                }
+                 field(quantityPieces; Rec."Quantity Pieces")
+                {
+                    Caption = 'Quantity Pieces';
+                }
             }
         }
     }

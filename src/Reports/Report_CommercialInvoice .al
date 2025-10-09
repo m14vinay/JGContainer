@@ -245,6 +245,7 @@ report 50200 CommercialInvoiceReport
             {
 
             }
+            column(EffectiveDate;EffectiveDate){}
             column(Currency_Code; Currency_Code) { }
             dataitem("Sales Line"; "Sales Line")
             {
@@ -359,7 +360,9 @@ report 50200 CommercialInvoiceReport
                 SalesLine: Record "Sales Line";
                 VATPostingSetup: Record "VAT Posting Setup";
                 SalesHeader: Record "Sales Header";
+                SSTExemption : Record "SST Exemption Details";
             begin
+                Clear(EffectiveDate);
                 If SalesPersonPurch.Get("Salesperson Code") then;
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
@@ -399,6 +402,12 @@ report 50200 CommercialInvoiceReport
                 if SalesHeader.FindFirst() then begin
                     DueDate := SalesHeader."Due Date";
                 end;
+
+                SSTExemption.Reset();
+                SSTExemption.SetRange("Customer No.","Sell-to Customer No.");
+                SSTExemption.SetRange("SST Exemption Registration No.","SST Exemption Registration No.");
+                If SSTExemption.FindFirst() then
+                    EffectiveDate := SSTExemption."Effective Date";
             end;
 
             trigger OnPreDataItem()
@@ -448,6 +457,7 @@ report 50200 CommercialInvoiceReport
         CompanyCounty: Text;
         UnitVolume: Decimal;
         TariffNumber: Code[20];
+        EffectiveDate : Date;
         NettWeight: Decimal;
         GrossWeight: Decimal;
         Unit_Price: Decimal;
