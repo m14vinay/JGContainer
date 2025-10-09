@@ -31,13 +31,13 @@ codeunit 50201 "Event Subscriber"
         end;
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, CodeUnit::"Sales Price Calc. Mgt.", 'OnAfterFindSalesLineItemPrice', '', false, false)]
-    local procedure UpdatePricePerPiece(var SalesLine: Record "Sales Line"; var TempSalesPrice: Record "Sales Price" temporary)
+    [EventSubscriber(ObjectType::Codeunit, CodeUnit::"Sales Price Calc. Mgt.", 'OnFindSalesLinePriceOnItemTypeOnAfterSetUnitPrice', '', false, false)]
+    local procedure UpdatePricePerPiece(var SalesHeader: Record "Sales Header"; var SalesLine: Record "Sales Line"; var TempSalesPrice: Record "Sales Price" temporary; CalledByFieldNo: Integer; FoundSalesPrice: Boolean)
     begin
-        If TempSalesPrice."Approval Status" = TempSalesPrice."Approval Status"::Released then
+        If TempSalesPrice."Approval Status" = TempSalesPrice."Approval Status"::Released then 
         
-            SalesLine."Price Per Piece" := TempSalesPrice."Price Per Piece";
-        
+            SalesLine."Price Per Piece" := TempSalesPrice."Price Per Piece"
+        Else
            SalesLine."Unit Price" := 0;
     end;
 
