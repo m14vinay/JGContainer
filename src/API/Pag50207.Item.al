@@ -25,6 +25,10 @@ page 50207 Item
                 {
                     Caption = 'Base Unit of Measure';
                 }
+                field(packSize; Rec."Pack Size")
+                {
+                    Caption = 'Pack Size';
+                }
             }
         }
     }

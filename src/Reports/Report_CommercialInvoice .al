@@ -360,7 +360,7 @@ report 50200 CommercialInvoiceReport
                 SalesLine: Record "Sales Line";
                 VATPostingSetup: Record "VAT Posting Setup";
                 SalesHeader: Record "Sales Header";
-                SSTExemption : Record "SST Exemption Details";
+                
             begin
                 Clear(EffectiveDate);
                 If SalesPersonPurch.Get("Salesperson Code") then;
@@ -458,6 +458,7 @@ report 50200 CommercialInvoiceReport
         UnitVolume: Decimal;
         TariffNumber: Code[20];
         EffectiveDate : Date;
+        SSTExemption : Record "SST Exemption Details";
         NettWeight: Decimal;
         GrossWeight: Decimal;
         Unit_Price: Decimal;
