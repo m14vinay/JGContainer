@@ -10,7 +10,7 @@ page 50203 "Sales Invoice Line"
     EntitySetName = 'SalesInvoiceLines';
     PageType = API;
     SourceTable = "Sales Invoice Line";
-    SourceTableView = where ("No." = filter(<>''));
+    SourceTableView = where ("No." = filter(<>''), Type = CONST(Item));
     layout
     {
         area(Content)
@@ -81,10 +81,7 @@ page 50203 "Sales Invoice Line"
                 {
                     Caption = 'Qty. per Unit of Measure';
                 }
-                field(unitOfMeasureCode; Rec."Unit of Measure Code")
-                {
-                    Caption = 'Unit of Measure Code';
-                }
+               
                   field(pricePerPiece; Rec."Price Per Piece")
                 {
                     Caption = 'Price Per Piece';
