@@ -46,7 +46,7 @@ page 50202 "Sales Invoice Hdr"
                 {
                     Caption = 'Shipment Date';
                 }
-                field(poNo; Rec."Your Reference")
+                field(poNo; Rec."External Document No.")
                 {
                     Caption = 'Po No.';
                 }
