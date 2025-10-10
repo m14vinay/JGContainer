@@ -203,6 +203,7 @@ report 50207 SalesInvoiceReport
             {
 
             }
+            column(EffectiveDate;Format(EffectiveDate, 0, '<day,2>.<month,2>.<year4>')){}
             column(SalesTaxPercent; SalesTaxPercent)
             {
 
@@ -321,6 +322,7 @@ report 50207 SalesInvoiceReport
                 SalesInvoiceLine: Record "Sales Invoice Line";
                 VATPostingSetup: Record "VAT Posting Setup";
             begin
+                Clear(EffectiveDate);
                 If SalesPersonPurch.Get("Salesperson Code") then ;
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
@@ -357,6 +359,12 @@ report 50207 SalesInvoiceReport
                         SalesTaxPercent := 'Sales Tax ' + VATPostingSetup."VAT %".ToText() + ' %';
                     end;
                 end;
+
+                SSTExemption.Reset();
+                SSTExemption.SetRange("Customer No.","Sell-to Customer No.");
+                SSTExemption.SetRange("SST Exemption Registration No.","SST Exemption Registration No.");
+                If SSTExemption.FindFirst() then
+                    EffectiveDate := SSTExemption."Effective Date";
             end;
             
 
@@ -419,6 +427,9 @@ report 50207 SalesInvoiceReport
         CompanyCountry: Text;
         Bill_to_Address: Text;
         BIllpostcodecitycountrycounty: Text;
+         EffectiveDate : Date;
+        SSTExemption : Record "SST Exemption Details";
+
         Billtomobileno: Text;
         BilltoPhoneNo: Text;
         SalesTax: Decimal;

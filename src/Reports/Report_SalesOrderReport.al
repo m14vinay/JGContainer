@@ -209,9 +209,9 @@ report 50208 SalesOrderReport
             {
 
             }
+            column(EffectiveDate;Format(EffectiveDate, 0, '<day,2>.<month,2>.<year4>')){}
             column(SalesTaxPercent; SalesTaxPercent)
             {
-
             }
             column(Currency_Code; Currency_Code) { }
             dataitem("Sales Line"; "Sales Line")
@@ -314,6 +314,7 @@ report 50208 SalesOrderReport
                 VATPostingSetup: Record "VAT Posting Setup";
                 salesline: Record "Sales Line";
             begin
+                Clear(EffectiveDate);
                 If SalesPersonPurch.Get("Salesperson Code") then ;
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
@@ -346,7 +347,13 @@ report 50208 SalesOrderReport
                     if VATPostingSetup.FindFirst() then begin
                         SalesTaxPercent := 'Sales Tax ' + VATPostingSetup."VAT %".ToText() + ' %';
                     end;
-                end
+                end;
+                SSTExemption.Reset();
+                SSTExemption.SetRange("Customer No.","Sell-to Customer No.");
+                SSTExemption.SetRange("SST Exemption Registration No.","SST Exemption Registration No.");
+                If SSTExemption.FindFirst() then
+                    EffectiveDate := SSTExemption."Effective Date";
+                
             end;
 
             trigger OnPreDataItem()
@@ -417,7 +424,8 @@ report 50208 SalesOrderReport
         CodeCheck: Codeunit 50200;
         CompanyInfo: Record "Company Information";
         GLSetup: Record "General Ledger Setup";
-
+        EffectiveDate : Date;
+        SSTExemption : Record "SST Exemption Details";
         Currency: Record Currency;
         FormatAddr: Codeunit "Format Address";
         SalesPersonPurch : Record "Salesperson/Purchaser";

@@ -150,33 +150,26 @@ report 50213 "Packing List Report"
             }
             column("selltocustomercode"; "Sell-to Customer No.")
             {
-
             }
             column(Shipping_Agent_Code; "Shipping Agent Code")
             {
-
             }
             column(External_Document_No_; "External Document No.")
             {
-
             }
             column(Work_Description; GetWorkDescription())
             {
-
             }
             column(ShipemntHeaderNo; "No.")
             {
-
             }
-
             column(Currency; "Currency Code")
             {
-
             }
             column(SSTExemption; "SST Exemption registration No.")
             {
-
             }
+            column(EffectiveDate;EffectiveDate){}
             column(Vessel; Vessel) { }
             column(CommercialInvoiceNo; "Commercial Invoice No") { }
             column(Commercial_Invoice_Date; Format("Commercial Invoice Date", 0, '<day,2>.<month,2>.<year4>')) { }
@@ -231,6 +224,7 @@ report 50213 "Packing List Report"
                 VATPostingSetup: Record "VAT Posting Setup";
                 salesline: Record "Sales Line";
             begin
+                Clear(EffectiveDate);
                 If SalesPersonPurch.Get("Salesperson Code") then;
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
@@ -244,6 +238,12 @@ report 50213 "Packing List Report"
                 if CountryRegion.Get(Customer."Country/Region Code") then
                     BIllCountry := CountryRegion.Name;
                 BIllpostcodecitycountrycounty := Customer."Post Code" + ', ' + Customer.City + ', ' + Customer.County + ', ' + BIllCountry;
+                
+                SSTExemption.Reset();
+                SSTExemption.SetRange("Customer No.","Sell-to Customer No.");
+                SSTExemption.SetRange("SST Exemption Registration No.","SST Exemption Registration No.");
+                If SSTExemption.FindFirst() then
+                    EffectiveDate := SSTExemption."Effective Date";
             end;
 
             trigger OnPreDataItem()
@@ -299,6 +299,9 @@ report 50213 "Packing List Report"
         PackSize: Record "Pack Size";
         CountryRegion: Record "Country/Region";
         SalesPersonPurch: Record "Salesperson/Purchaser";
+         EffectiveDate : Date;
+        SSTExemption : Record "SST Exemption Details";
+
         CompanyAddress: Text[250];
         QtyPerPack: Decimal;
         LineNo: Integer;

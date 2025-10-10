@@ -3476,6 +3476,9 @@ End Function
         <Field Name="SSTExemption">
           <DataField>SSTExemption</DataField>
         </Field>
+        <Field Name="EffectiveDate">
+          <DataField>EffectiveDate</DataField>
+        </Field>
         <Field Name="Vessel">
           <DataField>Vessel</DataField>
         </Field>

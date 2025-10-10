@@ -204,6 +204,7 @@ report 50206 SalesDebitNoteReport
             {
 
             }
+            column(EffectiveDate;Format(EffectiveDate, 0, '<day,2>.<month,2>.<year4>')){}
             column(SalesTaxPercent; SalesTaxPercent)
             {
 
@@ -319,6 +320,7 @@ report 50206 SalesDebitNoteReport
                 SalesInvoiceLine: Record "Sales Invoice Line";
                 VATPostingSetup: Record "VAT Posting Setup";
             begin
+                Clear(EffectiveDate);
                 If SalesPersonPurch.Get("Salesperson Code") then;
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
@@ -354,6 +356,12 @@ report 50206 SalesDebitNoteReport
                         SalesTaxPercent := 'Sales Tax ' + VATPostingSetup."VAT %".ToText() + ' %';
                     end;
                 end;
+
+                SSTExemption.Reset();
+                SSTExemption.SetRange("Customer No.","Sell-to Customer No.");
+                SSTExemption.SetRange("SST Exemption Registration No.","SST Exemption Registration No.");
+                If SSTExemption.FindFirst() then
+                    EffectiveDate := SSTExemption."Effective Date";
             end;
 
             trigger OnPreDataItem()
@@ -424,6 +432,8 @@ report 50206 SalesDebitNoteReport
         CodeCheck: Codeunit 50200;
         CompanyInfo: Record "Company Information";
         GLSetup: Record "General Ledger Setup";
+         EffectiveDate : Date;
+        SSTExemption : Record "SST Exemption Details";
 
         Currency: Record Currency;
         FormatAddr: Codeunit "Format Address";

@@ -245,7 +245,7 @@ report 50200 CommercialInvoiceReport
             {
 
             }
-            column(EffectiveDate;EffectiveDate){}
+            column(EffectiveDate;Format(EffectiveDate, 0, '<day,2>.<month,2>.<year4>')){}
             column(Currency_Code; Currency_Code) { }
             dataitem("Sales Line"; "Sales Line")
             {
