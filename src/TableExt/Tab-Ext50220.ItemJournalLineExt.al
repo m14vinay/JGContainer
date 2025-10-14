@@ -59,6 +59,10 @@ tableextension 50220 "Item Journal Line Ext" extends "Item Journal Line"
                     "Net Weight" := Item."Net Weight"
             end;
         }
+        modify("VAT Reporting Date")
+        {
+            Caption = 'SST Reporting Date';
+        }
     }
 
 }

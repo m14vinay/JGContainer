@@ -10,5 +10,13 @@ tableextension 50222 "User Setup" extends "User Setup"
                                                           Blocked = const(false));
 
         }
+        modify("Allow VAT Date From")
+        {
+            Caption = 'Allow SST Date From';
+        }
+        modify("Allow VAT Date To")
+        {
+            Caption = 'Allow SST Date To';
+        }
     }
 }
