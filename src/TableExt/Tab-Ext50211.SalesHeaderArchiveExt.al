@@ -34,15 +34,43 @@ tableextension 50211 "Sales Header Archive Ext" extends "Sales Header Archive"
             DataClassification = CustomerContent;
             TableRelation = "Delivery Area"."Delivery Area Code";
         }
-          field(50213; "Measurement"; Text[50])
+        field(50213; "Measurement"; Text[50])
         {
             Caption = 'Measurement';
             DataClassification = CustomerContent;
         }
-         field(50214; "Vessel 1"; Text[50])
+        field(50214; "Vessel 1"; Text[50])
         {
             DataClassification = CustomerContent;
             Caption = 'Mother Vessel';
+        }
+        modify("Amount Including VAT")
+        {
+            Caption = 'Amount Including SST';
+        }
+        modify("Prices Including VAT")
+        {
+            Caption = 'Prices Including SST';
+        }
+        modify("VAT Base Discount %")
+        {
+            Caption = 'SST Base Discount %';
+        }
+        modify("VAT Bus. Posting Group")
+        {
+            Caption = 'SST Bus. Posting Group';
+        }
+        modify("VAT Country/Region Code")
+        {
+            Caption = 'SST Country/Region Code';
+        }
+        modify("VAT Registration No.")
+        {
+            Caption = 'SST Registration No.';
+        }
+        modify("VAT Reporting Date")
+        {
+            Caption = 'SST Reporting Date';
         }
     }
 }

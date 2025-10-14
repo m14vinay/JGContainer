@@ -31,6 +31,22 @@ tableextension 50206 "Customer Ext" extends Customer
                 end;
             end;
         }
+        modify("VAT Bus. Posting Group")
+        {
+            Caption = 'SST Bus. Posting Group';
+        }
+        modify("VAT Registration No.")
+        {
+            Caption = 'SST Registration No.';
+        }
+        modify("Validate EU Vat Reg. No.")
+        {
+            Caption = 'Validate EU SST Reg. No.';
+        }
+        modify("Prices Including VAT")
+        {
+            Caption = 'Prices Including SST';
+        }
     }
 
 }

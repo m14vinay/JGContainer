@@ -49,22 +49,22 @@ tableextension 50207 "Sales Header Ext" extends "Sales Header"
             DataClassification = CustomerContent;
             TableRelation = "Delivery Area"."Delivery Area Code";
         }
-         field(50208; "Whse Ship No"; Code[20])
+        field(50208; "Whse Ship No"; Code[20])
         {
             Caption = 'Whse Ship No';
             DataClassification = CustomerContent;
         }
-         field(50209; "Proforma Invoice No"; Code[20])
+        field(50209; "Proforma Invoice No"; Code[20])
         {
             Caption = 'Proforma Invoice No';
             DataClassification = CustomerContent;
         }
-         field(50210; "Commercial Invoice No"; Code[20])
+        field(50210; "Commercial Invoice No"; Code[20])
         {
             Caption = 'Commercial Invoice No';
             DataClassification = CustomerContent;
         }
-         field(50211; "Order No"; Code[20])
+        field(50211; "Order No"; Code[20])
         {
             Caption = 'Order No';
             DataClassification = CustomerContent;
@@ -74,7 +74,7 @@ tableextension 50207 "Sales Header Ext" extends "Sales Header"
             Caption = 'Commercial Invoice Date';
             DataClassification = CustomerContent;
         }
-         field(50214; "Vessel 1"; Text[50])
+        field(50214; "Vessel 1"; Text[50])
         {
             DataClassification = CustomerContent;
             Caption = 'Mother Vessel';
@@ -88,6 +88,42 @@ tableextension 50207 "Sales Header Ext" extends "Sales Header"
                 If Customer.Get("Sell-to Customer No.") then
                     Incoterms := Customer.Incoterms;
             end;
+        }
+        modify("VAT Base Discount %")
+        {
+            Caption = 'SST Base Discount %';
+        }
+        modify("VAT Bus. Posting Group")
+        {
+            Caption = 'SST Bus. Posting Group';
+        }
+        modify("VAT Country/Region Code")
+        {
+            Caption = 'SST Country/Region Code';
+        }
+        modify("VAT Registration No.")
+        {
+            Caption = 'SST Registration No.';
+        }
+        modify("VAT Reporting Date")
+        {
+            Caption = 'SST Reporting Date';
+        }
+        modify("Alt. VAT Bus Posting Group")
+        {
+            Caption = 'Alt. SST Bus Posting Group';
+        }
+        modify("Alt. VAT Registration No.")
+        {
+            Caption = 'Alt. SST Registration No.';
+        }
+        modify("Amount Including VAT")
+        {
+            Caption = 'Amount Including SST';
+        }
+        modify("Prices Including VAT")
+        {
+            Caption = 'Prices Including SST';
         }
     }
 

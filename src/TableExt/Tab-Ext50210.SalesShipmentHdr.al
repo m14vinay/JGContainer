@@ -44,15 +44,35 @@ tableextension 50210 "Sales Shipment Hdr" extends "Sales Shipment Header"
             Caption = 'Whse Ship No';
             DataClassification = CustomerContent;
         }
-          field(50213; "Measurement"; Text[50])
+        field(50213; "Measurement"; Text[50])
         {
             Caption = 'Measurement';
             DataClassification = CustomerContent;
         }
-         field(50214; "Vessel 1"; Text[50])
+        field(50214; "Vessel 1"; Text[50])
         {
             DataClassification = CustomerContent;
             Caption = 'Mother Vessel';
+        }
+        modify("Prices Including VAT")
+        {
+            Caption = 'Prices Including SST';
+        }
+        modify("VAT Base Discount %")
+        {
+            Caption = 'SST Base Discount %';
+        }
+        modify("VAT Bus. Posting Group")
+        {
+            Caption = 'SST Bus. Posting Group';
+        }
+        modify("VAT Country/Region Code")
+        {
+            Caption = 'SST Country/Region Code';
+        }
+        modify("VAT Registration No.")
+        {
+            Caption = 'SST Registration No.';
         }
     }
 }
