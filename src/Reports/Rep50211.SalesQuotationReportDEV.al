@@ -17,7 +17,7 @@ report 50211 "Sales Quotation Report"
             column(companyName; CompanyInfo.Name) { }
             column(CompanyAddress; CompanyAddress) { }
             column(CompInfoBankName; CompanyInfo."Bank Name") { }
-
+             column(BankAccountNo; CompanyInfo."Bank Account No.") { }
             column(companyPhone; CompanyInfo."Phone No.") { }
             column(companyFax; CompanyInfo."Fax No.") { }
             column(companyEmail; CompanyInfo."E-mail") { }
