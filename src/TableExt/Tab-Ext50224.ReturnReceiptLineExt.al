@@ -29,10 +29,30 @@ tableextension 50224 "Return Receipt Line Ext" extends "Return Receipt Line"
             Caption = 'Container No.';
             DataClassification = CustomerContent;
         }
-         field(50210; "Seal"; Text[100])
+        field(50210; "Seal"; Text[100])
         {
             Caption = 'Seal';
             DataClassification = CustomerContent;
+        }
+        modify("VAT %")
+        {
+            Caption = 'SST %';
+        }
+        modify("VAT Base Amount")
+        {
+            Caption = 'SST Base Amount';
+        }
+        modify("VAT Bus. Posting Group")
+        {
+            Caption = 'SST Bus. Posting Group';
+        }
+        modify("VAT Calculation Type")
+        {
+            Caption = 'SST Calculation Type';
+        }
+        modify("VAT Prod. Posting Group")
+        {
+            Caption = 'SST Prod. Posting Group';
         }
     }
 }

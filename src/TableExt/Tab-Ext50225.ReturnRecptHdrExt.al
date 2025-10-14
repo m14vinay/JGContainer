@@ -39,10 +39,26 @@ tableextension 50225 "Return Recpt Hdr Ext" extends "Return Receipt Header"
             Caption = 'Measurement';
             DataClassification = CustomerContent;
         }
-          field(50214; "Vessel 1"; Text[50])
+        field(50214; "Vessel 1"; Text[50])
         {
             DataClassification = CustomerContent;
             Caption = 'Mother Vessel';
+        }
+        modify("VAT Base Discount %")
+        {
+            Caption = 'SST Base Discount %';
+        }
+        modify("VAT Bus. Posting Group")
+        {
+            Caption = 'SST Bus. Posting Group';
+        }
+        modify("VAT Country/Region Code")
+        {
+            Caption = 'SST Country/Region Code';
+        }
+        modify("VAT Registration No.")
+        {
+            Caption = 'SST Registration No.';
         }
     }
 }
