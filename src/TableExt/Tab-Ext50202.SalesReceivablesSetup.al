@@ -14,11 +14,24 @@ tableextension 50202 "Sales Receivables Setup" extends "Sales & Receivables Setu
             DataClassification = CustomerContent;
             TableRelation = "No. Series".Code;
         }
-         field(50202; "Commercial Invoice Nos."; Code[20])
+        field(50202; "Commercial Invoice Nos."; Code[20])
         {
             Caption = 'Commercial Invoice Nos.';
             DataClassification = CustomerContent;
             TableRelation = "No. Series".Code;
         }
+        modify("VAT Bus. Posting Gr. (Price)")
+        {
+            Caption = 'SST Bus. Posting Gr. (Price)';
+        }
+        modify("Allow VAT Difference")
+        {
+            Caption = 'Allow SST Difference';
+        }
+        modify("Calc. Inv. Disc. per VAT ID")
+        {
+            Caption = 'Calc. Inv. Disc. per SST ID';
+        }
+
     }
 }

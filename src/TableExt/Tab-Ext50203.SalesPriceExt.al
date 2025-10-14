@@ -14,92 +14,99 @@ tableextension 50201 "Sales Price Ext" extends "Sales Price"
             DataClassification = CustomerContent;
             trigger OnValidate()
             var
-            Item : Record Item;
-            PackSize : Record "Pack Size";
+                Item: Record Item;
+                PackSize: Record "Pack Size";
             begin
-                If Item.Get("Item No.") then 
-                  If PackSize.Get(Item."Pack Size") then 
-                     "Unit Price" := PackSize."Qty Per Pack" * "Price Per Piece";
+                If Item.Get("Item No.") then
+                    If PackSize.Get(Item."Pack Size") then
+                        "Unit Price" := PackSize."Qty Per Pack" * "Price Per Piece";
             end;
         }
         modify("Sales Code")
         {
             trigger OnBeforeValidate()
             begin
-                Rec.TestField("Approval Status",Rec."Approval Status"::Open);
+                Rec.TestField("Approval Status", Rec."Approval Status"::Open);
             end;
         }
-         modify("Sales Type")
+        modify("Sales Type")
         {
             trigger OnBeforeValidate()
             begin
-                Rec.TestField("Approval Status",Rec."Approval Status"::Open);
+                Rec.TestField("Approval Status", Rec."Approval Status"::Open);
             end;
         }
-         modify("Currency Code")
+        modify("Currency Code")
         {
             trigger OnBeforeValidate()
             begin
-                Rec.TestField("Approval Status",Rec."Approval Status"::Open);
+                Rec.TestField("Approval Status", Rec."Approval Status"::Open);
             end;
         }
-         modify("Item No.")
+        modify("Item No.")
         {
             trigger OnBeforeValidate()
             begin
-                Rec.TestField("Approval Status",Rec."Approval Status"::Open);
+                Rec.TestField("Approval Status", Rec."Approval Status"::Open);
             end;
         }
-         modify("Unit of Measure Code")
+        modify("Unit of Measure Code")
         {
             trigger OnBeforeValidate()
             begin
-                Rec.TestField("Approval Status",Rec."Approval Status"::Open);
+                Rec.TestField("Approval Status", Rec."Approval Status"::Open);
             end;
         }
-         modify("Minimum Quantity")
+        modify("Minimum Quantity")
         {
             trigger OnBeforeValidate()
             begin
-                Rec.TestField("Approval Status",Rec."Approval Status"::Open);
+                Rec.TestField("Approval Status", Rec."Approval Status"::Open);
             end;
         }
-         modify("Cost-plus %")
+        modify("Cost-plus %")
         {
             trigger OnBeforeValidate()
             begin
-                Rec.TestField("Approval Status",Rec."Approval Status"::Open);
+                Rec.TestField("Approval Status", Rec."Approval Status"::Open);
             end;
         }
-         modify("Discount Amount")
+        modify("Discount Amount")
         {
             trigger OnBeforeValidate()
             begin
-                Rec.TestField("Approval Status",Rec."Approval Status"::Open);
+                Rec.TestField("Approval Status", Rec."Approval Status"::Open);
             end;
         }
-         modify("Unit Price")
+        modify("Unit Price")
         {
-            
-            trigger OnBeforeValidate()
-            begin
-                Rec.TestField("Approval Status",Rec."Approval Status"::Open);
-            end;
-        }
-         modify("Starting Date")
-        {
-            trigger OnBeforeValidate()
-            begin
-                Rec.TestField("Approval Status",Rec."Approval Status"::Open);
-            end;
-        }
-         modify("Ending Date")
-        {
-            trigger OnBeforeValidate()
-            begin
-                Rec.TestField("Approval Status",Rec."Approval Status"::Open);
-            end;
-        }
 
+            trigger OnBeforeValidate()
+            begin
+                Rec.TestField("Approval Status", Rec."Approval Status"::Open);
+            end;
+        }
+        modify("Starting Date")
+        {
+            trigger OnBeforeValidate()
+            begin
+                Rec.TestField("Approval Status", Rec."Approval Status"::Open);
+            end;
+        }
+        modify("Ending Date")
+        {
+            trigger OnBeforeValidate()
+            begin
+                Rec.TestField("Approval Status", Rec."Approval Status"::Open);
+            end;
+        }
+        modify("VAT Bus. Posting Gr. (Price)")
+        {
+            Caption = 'SST Bus. Posting Gr. (Price)';
+        }
+        modify("Price Includes VAT")
+        {
+            Caption = 'Price Includes SST';
+        }
     }
 }

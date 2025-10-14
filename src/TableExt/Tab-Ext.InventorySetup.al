@@ -8,7 +8,7 @@ tableextension 50203 "Inventory Setup" extends "Inventory Setup"
             DataClassification = CustomerContent;
             TableRelation = "Inventory Posting Group".Code;
         }
-         field(50202; "MR No."; Code[20])
+        field(50202; "MR No."; Code[20])
         {
             Caption = 'MR No.';
             DataClassification = CustomerContent;
