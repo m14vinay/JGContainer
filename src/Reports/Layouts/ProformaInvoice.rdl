@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-10-13T08:56:15.4870677Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-10-14T07:42:48.9975426Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -32,7 +32,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>18.895cm</Width>
+                  <Width>18.9211cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -47,31 +47,31 @@
                               <TablixBody>
                                 <TablixColumns>
                                   <TablixColumn>
-                                    <Width>1.06153cm</Width>
+                                    <Width>1.06645cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>1.56143cm</Width>
+                                    <Width>1.56635cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>2.08538cm</Width>
+                                    <Width>2.0903cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>5.03664cm</Width>
+                                    <Width>5.04156cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>1.39192cm</Width>
+                                    <Width>1.39684cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>1.43701cm</Width>
+                                    <Width>1.44193cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>2.19623cm</Width>
+                                    <Width>2.20115cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>1.70546cm</Width>
+                                    <Width>1.71038cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>2.37509cm</Width>
+                                    <Width>2.38001cm</Width>
                                   </TablixColumn>
                                 </TablixColumns>
                                 <TablixRows>
@@ -1129,9 +1129,9 @@
                                 </TablixMembers>
                               </TablixRowHierarchy>
                               <DataSetName>DataSet_Result</DataSetName>
-                              <Left>0.04431cm</Left>
+                              <Left>0cm</Left>
                               <Height>1.65071cm</Height>
-                              <Width>18.85069cm</Width>
+                              <Width>18.895cm</Width>
                               <Style>
                                 <Border>
                                   <Style>Solid</Style>
@@ -1159,34 +1159,34 @@
                               <TablixBody>
                                 <TablixColumns>
                                   <TablixColumn>
-                                    <Width>1.06153cm</Width>
+                                    <Width>1.06596cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>1.85825cm</Width>
+                                    <Width>1.86268cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>2.13099cm</Width>
+                                    <Width>2.13542cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>3.42139cm</Width>
+                                    <Width>3.42582cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>1.78385cm</Width>
+                                    <Width>1.78828cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>0.92967cm</Width>
+                                    <Width>0.9341cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>2.41855cm</Width>
+                                    <Width>2.42298cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>2.51523cm</Width>
+                                    <Width>2.51966cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>0.35614cm</Width>
+                                    <Width>0.36057cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>2.37509cm</Width>
+                                    <Width>2.37952cm</Width>
                                   </TablixColumn>
                                 </TablixColumns>
                                 <TablixRows>
@@ -1900,9 +1900,9 @@
                               </TablixRowHierarchy>
                               <DataSetName>DataSet_Result</DataSetName>
                               <Top>1.65071cm</Top>
-                              <Left>0.04431cm</Left>
+                              <Left>0cm</Left>
                               <Height>2cm</Height>
-                              <Width>18.85069cm</Width>
+                              <Width>18.895cm</Width>
                               <ZIndex>1</ZIndex>
                               <Style>
                                 <Border>
@@ -2413,19 +2413,18 @@
             <PageBreak>
               <BreakLocation>End</BreakLocation>
             </PageBreak>
-            <Left>0in</Left>
             <Height>9.89061cm</Height>
-            <Width>18.895cm</Width>
+            <Width>18.9211cm</Width>
             <Style />
           </Tablix>
         </ReportItems>
         <Height>9.89061cm</Height>
         <Style />
       </Body>
-      <Width>19cm</Width>
+      <Width>19.0261cm</Width>
       <Page>
         <PageHeader>
-          <Height>7.97474cm</Height>
+          <Height>7.91659cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -2440,7 +2439,7 @@
                       <Value>PROFORMA INVOICE</Value>
                       <Style>
                         <FontFamily>Times New Roman</FontFamily>
-                        <FontSize>17pt</FontSize>
+                        <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -2451,7 +2450,7 @@
                 </Paragraph>
               </Paragraphs>
               <Top>2.68762cm</Top>
-              <Left>12.49788cm</Left>
+              <Left>12.52398cm</Left>
               <Height>1.16188cm</Height>
               <Width>6.50212cm</Width>
               <Style>
@@ -3150,7 +3149,7 @@
               </ReportItems>
               <KeepTogether>true</KeepTogether>
               <Top>3.85942cm</Top>
-              <Left>12.69606cm</Left>
+              <Left>12.72216cm</Left>
               <Height>3.73663cm</Height>
               <Width>6.30394cm</Width>
               <ZIndex>1</ZIndex>
@@ -3512,9 +3511,8 @@
                 </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
-              <Top>3.85942cm</Top>
-              <Left>0in</Left>
-              <Height>3.33174cm</Height>
+              <Top>3.13569cm</Top>
+              <Height>2.99198cm</Height>
               <Width>6.26269cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
@@ -3543,7 +3541,7 @@
                 </Paragraph>
               </Paragraphs>
               <Top>0.3585cm</Top>
-              <Left>0.61605cm</Left>
+              <Left>0.64215cm</Left>
               <Height>17.99965pt</Height>
               <Width>11.86395cm</Width>
               <ZIndex>3</ZIndex>
@@ -3574,7 +3572,7 @@
                 </Paragraph>
               </Paragraphs>
               <Top>0.99349cm</Top>
-              <Left>0.00365in</Left>
+              <Left>0.01393in</Left>
               <Height>0.45cm</Height>
               <Width>12.47072cm</Width>
               <ZIndex>4</ZIndex>
@@ -3604,7 +3602,7 @@
                 </Paragraph>
               </Paragraphs>
               <Top>1.44109cm</Top>
-              <Left>2.75128cm</Left>
+              <Left>2.77738cm</Left>
               <Height>12.75591pt</Height>
               <Width>9.72872cm</Width>
               <ZIndex>5</ZIndex>
@@ -3635,7 +3633,7 @@
                 </Paragraph>
               </Paragraphs>
               <Top>1.89109cm</Top>
-              <Left>2.75128cm</Left>
+              <Left>2.77738cm</Left>
               <Height>12.75591pt</Height>
               <Width>9.72872cm</Width>
               <ZIndex>6</ZIndex>
@@ -3665,7 +3663,7 @@
                 </Paragraph>
               </Paragraphs>
               <Top>2.34109cm</Top>
-              <Left>2.75128cm</Left>
+              <Left>2.77738cm</Left>
               <Height>12.78995pt</Height>
               <Width>9.72872cm</Width>
               <ZIndex>7</ZIndex>
@@ -3695,7 +3693,7 @@
                 </Paragraph>
               </Paragraphs>
               <Top>1.44349cm</Top>
-              <Left>0.00365in</Left>
+              <Left>0.01393in</Left>
               <Height>0.45cm</Height>
               <Width>2.23995cm</Width>
               <ZIndex>8</ZIndex>
@@ -3725,7 +3723,7 @@
                 </Paragraph>
               </Paragraphs>
               <Top>1.89349cm</Top>
-              <Left>0.00365in</Left>
+              <Left>0.01393in</Left>
               <Height>0.45cm</Height>
               <Width>2.23995cm</Width>
               <ZIndex>9</ZIndex>
@@ -3755,7 +3753,7 @@
                 </Paragraph>
               </Paragraphs>
               <Top>2.34469cm</Top>
-              <Left>0.00365in</Left>
+              <Left>0.01393in</Left>
               <Height>0.45cm</Height>
               <Width>2.23995cm</Width>
               <ZIndex>10</ZIndex>
@@ -3785,7 +3783,7 @@
                 </Paragraph>
               </Paragraphs>
               <Top>2.34229cm</Top>
-              <Left>2.42562cm</Left>
+              <Left>2.45172cm</Left>
               <Height>12.75591pt</Height>
               <Width>0.31638cm</Width>
               <ZIndex>11</ZIndex>
@@ -3815,7 +3813,7 @@
                 </Paragraph>
               </Paragraphs>
               <Top>1.44109cm</Top>
-              <Left>2.42562cm</Left>
+              <Left>2.45172cm</Left>
               <Height>12.75591pt</Height>
               <Width>0.32566cm</Width>
               <ZIndex>12</ZIndex>
@@ -3845,7 +3843,7 @@
                 </Paragraph>
               </Paragraphs>
               <Top>1.89109cm</Top>
-              <Left>2.42562cm</Left>
+              <Left>2.45172cm</Left>
               <Height>12.75591pt</Height>
               <Width>0.31638cm</Width>
               <ZIndex>13</ZIndex>
@@ -3881,7 +3879,7 @@
                   <Top>0.12014cm</Top>
                   <Left>0cm</Left>
                   <Height>11.33858pt</Height>
-                  <Width>6.25206cm</Width>
+                  <Width>6.26269cm</Width>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3913,7 +3911,7 @@
                   <Top>0.52014cm</Top>
                   <Left>0cm</Left>
                   <Height>0.4cm</Height>
-                  <Width>6.25206cm</Width>
+                  <Width>6.26269cm</Width>
                   <ZIndex>1</ZIndex>
                   <Style>
                     <Border>
@@ -3945,7 +3943,7 @@
                   <Top>0.92014cm</Top>
                   <Left>0cm</Left>
                   <Height>11.66743pt</Height>
-                  <Width>6.25698cm</Width>
+                  <Width>6.26761cm</Width>
                   <ZIndex>2</ZIndex>
                   <Style>
                     <Border>
@@ -3977,7 +3975,7 @@
                   <Top>1.33174cm</Top>
                   <Left>0cm</Left>
                   <Height>11.33858pt</Height>
-                  <Width>6.25452cm</Width>
+                  <Width>6.26515cm</Width>
                   <ZIndex>3</ZIndex>
                   <Style>
                     <Border>
@@ -4009,7 +4007,7 @@
                   <Top>2.13174cm</Top>
                   <Left>1.6542cm</Left>
                   <Height>11.33858pt</Height>
-                  <Width>4.60278cm</Width>
+                  <Width>4.61341cm</Width>
                   <ZIndex>4</ZIndex>
                   <Style>
                     <Border>
@@ -4040,7 +4038,7 @@
                   <Top>2.53174cm</Top>
                   <Left>1.6542cm</Left>
                   <Height>11.33858pt</Height>
-                  <Width>4.60032cm</Width>
+                  <Width>4.61095cm</Width>
                   <ZIndex>5</ZIndex>
                   <Style>
                     <Border>
@@ -4197,7 +4195,7 @@
                   <Top>1.73174cm</Top>
                   <Left>0cm</Left>
                   <Height>0.4cm</Height>
-                  <Width>6.25698cm</Width>
+                  <Width>6.26761cm</Width>
                   <ZIndex>10</ZIndex>
                   <Style>
                     <Border>
@@ -4209,10 +4207,10 @@
                 </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
-              <Top>3.85942cm</Top>
+              <Top>3.13569cm</Top>
               <Left>6.26269cm</Left>
-              <Height>3.33174cm</Height>
-              <Width>6.26269cm</Width>
+              <Height>2.99198cm</Height>
+              <Width>6.26761cm</Width>
               <ZIndex>14</ZIndex>
               <Style>
                 <Border>
@@ -4241,7 +4239,7 @@
                 </Paragraph>
               </Paragraphs>
               <Top>3.8495cm</Top>
-              <Left>15.22341cm</Left>
+              <Left>15.24951cm</Left>
               <Height>12.75625pt</Height>
               <Width>0.25335cm</Width>
               <ZIndex>15</ZIndex>
@@ -4258,7 +4256,7 @@
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
               <Top>0.19198in</Top>
-              <Left>12.49788cm</Left>
+              <Left>12.52398cm</Left>
               <Height>2.2cm</Height>
               <Width>2.15973cm</Width>
               <ZIndex>16</ZIndex>
@@ -4274,7 +4272,7 @@
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
               <Top>0.19198in</Top>
-              <Left>14.65761cm</Left>
+              <Left>14.68371cm</Left>
               <Height>2.2cm</Height>
               <Width>2.15973cm</Width>
               <ZIndex>17</ZIndex>
@@ -4290,7 +4288,7 @@
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
               <Top>0.19198in</Top>
-              <Left>16.84027cm</Left>
+              <Left>16.86637cm</Left>
               <Height>2.2cm</Height>
               <Width>2.15973cm</Width>
               <ZIndex>18</ZIndex>
@@ -4306,7 +4304,7 @@
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
               <Top>0.3585cm</Top>
-              <Left>0.00365in</Left>
+              <Left>0.01393in</Left>
               <Height>0.63498cm</Height>
               <Width>0.60677cm</Width>
               <ZIndex>19</ZIndex>
@@ -4337,7 +4335,7 @@
                 </Paragraph>
               </Paragraphs>
               <Top>3.84951cm</Top>
-              <Left>12.69606cm</Left>
+              <Left>12.72216cm</Left>
               <Height>0.44999cm</Height>
               <Width>2.52735cm</Width>
               <ZIndex>20</ZIndex>
@@ -4351,7 +4349,7 @@
             <Rectangle Name="Rectangle6">
               <KeepTogether>true</KeepTogether>
               <Top>0cm</Top>
-              <Left>13.29478cm</Left>
+              <Left>13.32088cm</Left>
               <Height>0.48762cm</Height>
               <Width>3.34194cm</Width>
               <ZIndex>21</ZIndex>
@@ -4364,7 +4362,7 @@
             <Rectangle Name="Rectangle8">
               <KeepTogether>true</KeepTogether>
               <Top>0cm</Top>
-              <Left>6.15322cm</Left>
+              <Left>6.17932cm</Left>
               <Height>0.3585cm</Height>
               <Width>5cm</Width>
               <ZIndex>22</ZIndex>
@@ -4400,7 +4398,7 @@
                 </Paragraph>
               </Paragraphs>
               <Top>0.32109cm</Top>
-              <Left>0in</Left>
+              <Left>0.01028in</Left>
               <Height>0.37013cm</Height>
               <Width>13.72556cm</Width>
               <Style>
@@ -4430,7 +4428,7 @@
                 </Paragraph>
               </Paragraphs>
               <Top>0.32109cm</Top>
-              <Left>14.01511cm</Left>
+              <Left>14.04121cm</Left>
               <Height>0.37013cm</Height>
               <Width>4.78134cm</Width>
               <ZIndex>1</ZIndex>
