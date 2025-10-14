@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-10-10T06:08:07.8782607Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-10-14T01:16:31.5451059Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -24,6 +24,178 @@
       <rd:DataSourceID>3f1f0eb4-9fd3-47b9-ac59-0b5b15b1672c</rd:DataSourceID>
     </DataSource>
   </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+      <Fields>
+        <Field Name="PrintName">
+          <DataField>PrintName</DataField>
+        </Field>
+        <Field Name="CompanyAddress">
+          <DataField>CompanyAddress</DataField>
+        </Field>
+        <Field Name="CompanyPostcode">
+          <DataField>CompanyPostcode</DataField>
+        </Field>
+        <Field Name="CompanyCity">
+          <DataField>CompanyCity</DataField>
+        </Field>
+        <Field Name="CompanyState">
+          <DataField>CompanyState</DataField>
+        </Field>
+        <Field Name="CompanyCountry">
+          <DataField>CompanyCountry</DataField>
+        </Field>
+        <Field Name="CompanyInfoName">
+          <DataField>CompanyInfoName</DataField>
+        </Field>
+        <Field Name="CompanyInfoFax">
+          <DataField>CompanyInfoFax</DataField>
+        </Field>
+        <Field Name="CompanyInfoPhoneNo">
+          <DataField>CompanyInfoPhoneNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoEmail">
+          <DataField>CompanyInfoEmail</DataField>
+        </Field>
+        <Field Name="CompanyInfoHomePage">
+          <DataField>CompanyInfoHomePage</DataField>
+        </Field>
+        <Field Name="CompanyInfoVATRegNo">
+          <DataField>CompanyInfoVATRegNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoBusinessRegistrationNo">
+          <DataField>CompanyInfoBusinessRegistrationNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoGiroNo">
+          <DataField>CompanyInfoGiroNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoBankName">
+          <DataField>CompanyInfoBankName</DataField>
+        </Field>
+        <Field Name="CompanyInfoBankAccountNo">
+          <DataField>CompanyInfoBankAccountNo</DataField>
+        </Field>
+        <Field Name="CompanyLogo">
+          <DataField>CompanyLogo</DataField>
+        </Field>
+        <Field Name="CompanyPicture1">
+          <DataField>CompanyPicture1</DataField>
+        </Field>
+        <Field Name="CompanyPicture2">
+          <DataField>CompanyPicture2</DataField>
+        </Field>
+        <Field Name="CompanyPicture3">
+          <DataField>CompanyPicture3</DataField>
+        </Field>
+        <Field Name="ReportTitle">
+          <DataField>ReportTitle</DataField>
+        </Field>
+        <Field Name="Ship_to_Name">
+          <DataField>Ship_to_Name</DataField>
+        </Field>
+        <Field Name="Ship_to_Address">
+          <DataField>Ship_to_Address</DataField>
+        </Field>
+        <Field Name="Ship_to_Address_2">
+          <DataField>Ship_to_Address_2</DataField>
+        </Field>
+        <Field Name="postcodecitycountrycounty">
+          <DataField>postcodecitycountrycounty</DataField>
+        </Field>
+        <Field Name="Ship_to_Phone_No_">
+          <DataField>Ship_to_Phone_No_</DataField>
+        </Field>
+        <Field Name="Ship_to_Contact">
+          <DataField>Ship_to_Contact</DataField>
+        </Field>
+        <Field Name="Document_Date">
+          <DataField>Document_Date</DataField>
+        </Field>
+        <Field Name="selltocustomercode">
+          <DataField>selltocustomercode</DataField>
+        </Field>
+        <Field Name="VehicleNo">
+          <DataField>VehicleNo</DataField>
+        </Field>
+        <Field Name="SystemModifiedBy">
+          <DataField>SystemModifiedBy</DataField>
+        </Field>
+        <Field Name="Shipping_Agent_Code">
+          <DataField>Shipping_Agent_Code</DataField>
+        </Field>
+        <Field Name="External_Document_No_">
+          <DataField>External_Document_No_</DataField>
+        </Field>
+        <Field Name="Work_Description">
+          <DataField>Work_Description</DataField>
+        </Field>
+        <Field Name="ShipemntHeaderNo">
+          <DataField>ShipemntHeaderNo</DataField>
+        </Field>
+        <Field Name="ShowAmount">
+          <DataField>ShowAmount</DataField>
+        </Field>
+        <Field Name="ShowAmountFormat">
+          <DataField>ShowAmountFormat</DataField>
+        </Field>
+        <Field Name="CurrencyCodeCurrencyCode">
+          <DataField>CurrencyCodeCurrencyCode</DataField>
+        </Field>
+        <Field Name="AmountInWords">
+          <DataField>AmountInWords</DataField>
+        </Field>
+        <Field Name="TotalShowAmount">
+          <DataField>TotalShowAmount</DataField>
+        </Field>
+        <Field Name="TotalShowAmountFormat">
+          <DataField>TotalShowAmountFormat</DataField>
+        </Field>
+        <Field Name="HeaderOrderNo">
+          <DataField>HeaderOrderNo</DataField>
+        </Field>
+        <Field Name="Order_No_">
+          <DataField>Order_No_</DataField>
+        </Field>
+        <Field Name="Variant_Code">
+          <DataField>Variant_Code</DataField>
+        </Field>
+        <Field Name="PoNum">
+          <DataField>PoNum</DataField>
+        </Field>
+        <Field Name="SoNum">
+          <DataField>SoNum</DataField>
+        </Field>
+        <Field Name="NoofPlts">
+          <DataField>NoofPlts</DataField>
+        </Field>
+        <Field Name="NoofPltsFormat">
+          <DataField>NoofPltsFormat</DataField>
+        </Field>
+        <Field Name="Packing">
+          <DataField>Packing</DataField>
+        </Field>
+        <Field Name="PackingFormat">
+          <DataField>PackingFormat</DataField>
+        </Field>
+        <Field Name="Quantity">
+          <DataField>Quantity</DataField>
+        </Field>
+        <Field Name="QuantityFormat">
+          <DataField>QuantityFormat</DataField>
+        </Field>
+        <Field Name="No_">
+          <DataField>No_</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -37,7 +209,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>2.3577cm</Height>
+                  <Height>1.8317cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -73,7 +245,7 @@
                                 </TablixColumns>
                                 <TablixRows>
                                   <TablixRow>
-                                    <Height>1.02616cm</Height>
+                                    <Height>0.85071cm</Height>
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
@@ -200,6 +372,7 @@
                                                 <Style>Solid</Style>
                                               </RightBorder>
                                               <VerticalAlign>Middle</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
                                             </Style>
                                           </Textbox>
                                         </CellContents>
@@ -461,7 +634,7 @@
                                     </TablixCells>
                                   </TablixRow>
                                   <TablixRow>
-                                    <Height>0.54225cm</Height>
+                                    <Height>0.4cm</Height>
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
@@ -903,8 +1076,8 @@
                               <DataSetName>DataSet_Result</DataSetName>
                               <Top>0.18099cm</Top>
                               <Left>0.18981cm</Left>
-                              <Height>1.56841cm</Height>
-                              <Width>18.52383cm</Width>
+                              <Height>1.25071cm</Height>
+                              <Width>18.52382cm</Width>
                               <Style>
                                 <Border>
                                   <Style>Solid</Style>
@@ -947,9 +1120,9 @@
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <Top>1.7494cm</Top>
-                              <Left>0.18981cm</Left>
-                              <Height>0.6cm</Height>
+                              <Top>1.4317cm</Top>
+                              <Left>0.19473cm</Left>
+                              <Height>0.4cm</Height>
                               <Width>1.79798cm</Width>
                               <ZIndex>1</ZIndex>
                               <Style>
@@ -978,11 +1151,42 @@
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <Top>1.7494cm</Top>
-                              <Left>1.98779cm</Left>
-                              <Height>0.6cm</Height>
-                              <Width>11.8716cm</Width>
+                              <Top>1.4317cm</Top>
+                              <Left>1.99271cm</Left>
+                              <Height>0.4cm</Height>
+                              <Width>11.86667cm</Width>
                               <ZIndex>2</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="ExecutionTimeTextBox52">
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>="Returnable Pallet: "+Format(First(Fields!Quantity.Value, "DataSet_Result"))</Value>
+                                      <Style>
+                                        <FontSize>9pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <RightIndent>2pt</RightIndent>
+                                  <Style>
+                                    <TextAlign>Right</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <Top>1.4317cm</Top>
+                              <Left>13.85938cm</Left>
+                              <Height>0.4cm</Height>
+                              <Width>4.84117cm</Width>
+                              <ZIndex>3</ZIndex>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -1022,49 +1226,18 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet_Result</DataSetName>
-            <Height>2.3577cm</Height>
+            <Height>1.8317cm</Height>
             <Width>18.71364cm</Width>
             <Style />
           </Tablix>
-          <Textbox Name="ExecutionTimeTextBox52">
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>="Returnable Pallet: "+Format(First(Fields!Quantity.Value, "DataSet_Result"))</Value>
-                    <Style>
-                      <FontSize>9pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <RightIndent>2pt</RightIndent>
-                <Style>
-                  <TextAlign>Right</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <Top>1.7494cm</Top>
-            <Left>13.85939cm</Left>
-            <Height>0.6083cm</Height>
-            <Width>4.84117cm</Width>
-            <ZIndex>1</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-            </Style>
-          </Textbox>
         </ReportItems>
-        <Height>2.49765cm</Height>
+        <Height>1.9002cm</Height>
         <Style />
       </Body>
       <Width>19cm</Width>
       <Page>
         <PageHeader>
-          <Height>8.98278cm</Height>
+          <Height>6.99587cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1089,9 +1262,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>2.51002cm</Top>
-              <Left>12.22791cm</Left>
-              <Height>1.83893cm</Height>
+              <Top>2.55026cm</Top>
+              <Left>12.30142cm</Left>
+              <Height>31.22194pt</Height>
               <Width>6.47919cm</Width>
               <Style>
                 <Border>
@@ -1129,6 +1302,7 @@
                       <Style>None</Style>
                     </Border>
                     <VerticalAlign>Middle</VerticalAlign>
+                    <PaddingLeft>4pt</PaddingLeft>
                   </Style>
                 </Textbox>
                 <Textbox Name="ExecutionTimeTextBox24">
@@ -1160,6 +1334,7 @@
                       <Style>None</Style>
                     </Border>
                     <VerticalAlign>Middle</VerticalAlign>
+                    <PaddingLeft>4pt</PaddingLeft>
                   </Style>
                 </Textbox>
                 <Textbox Name="ExecutionTimeTextBox25">
@@ -1190,6 +1365,7 @@
                       <Style>None</Style>
                     </Border>
                     <VerticalAlign>Middle</VerticalAlign>
+                    <PaddingLeft>4pt</PaddingLeft>
                   </Style>
                 </Textbox>
                 <Textbox Name="ExecutionTimeTextBox26">
@@ -1211,15 +1387,16 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>1.52613cm</Top>
-                  <Left>3.48824cm</Left>
+                  <Left>3.50786cm</Left>
                   <Height>0.45cm</Height>
-                  <Width>5.86826cm</Width>
+                  <Width>5.84864cm</Width>
                   <ZIndex>3</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
                     </Border>
                     <VerticalAlign>Middle</VerticalAlign>
+                    <PaddingLeft>4pt</PaddingLeft>
                   </Style>
                 </Textbox>
                 <Textbox Name="txtpaymentamount">
@@ -1250,6 +1427,7 @@
                       <Style>None</Style>
                     </Border>
                     <VerticalAlign>Middle</VerticalAlign>
+                    <PaddingLeft>4pt</PaddingLeft>
                   </Style>
                 </Textbox>
                 <Textbox Name="ExecutionTimeTextBox28">
@@ -1280,6 +1458,7 @@
                       <Style>None</Style>
                     </Border>
                     <VerticalAlign>Middle</VerticalAlign>
+                    <PaddingLeft>4pt</PaddingLeft>
                   </Style>
                 </Textbox>
                 <Textbox Name="ExecutionTimeTextBox34">
@@ -1302,9 +1481,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>0.00128cm</Top>
-                  <Left>0.01308cm</Left>
+                  <Left>0cm</Left>
                   <Height>0.45cm</Height>
-                  <Width>3.14854cm</Width>
+                  <Width>3.16162cm</Width>
                   <ZIndex>6</ZIndex>
                   <Style>
                     <Border>
@@ -1364,9 +1543,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>1.01785cm</Top>
-                  <Left>0.01308cm</Left>
+                  <Left>0cm</Left>
                   <Height>0.45cm</Height>
-                  <Width>3.14854cm</Width>
+                  <Width>3.16162cm</Width>
                   <ZIndex>8</ZIndex>
                   <Style>
                     <Border>
@@ -1426,9 +1605,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>2.03441cm</Top>
-                  <Left>0.01308cm</Left>
+                  <Left>0.00654cm</Left>
                   <Height>0.45cm</Height>
-                  <Width>3.14854cm</Width>
+                  <Width>3.15508cm</Width>
                   <ZIndex>10</ZIndex>
                   <Style>
                     <Border>
@@ -1547,9 +1726,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>0.50956cm</Top>
-                  <Left>3.15508cm</Left>
+                  <Left>3.16162cm</Left>
                   <Height>0.45cm</Height>
-                  <Width>0.3397cm</Width>
+                  <Width>0.33316cm</Width>
                   <ZIndex>14</ZIndex>
                   <Style>
                     <Border>
@@ -1607,9 +1786,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>1.52613cm</Top>
-                  <Left>3.15508cm</Left>
+                  <Left>3.16162cm</Left>
                   <Height>0.45cm</Height>
-                  <Width>0.33316cm</Width>
+                  <Width>0.32662cm</Width>
                   <ZIndex>16</ZIndex>
                   <Style>
                     <Border>
@@ -1650,8 +1829,8 @@
                 </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
-              <Top>4.34895cm</Top>
-              <Left>9.3506cm</Left>
+              <Top>3.65042cm</Top>
+              <Left>9.41757cm</Left>
               <Height>3.01878cm</Height>
               <Width>9.36304cm</Width>
               <ZIndex>1</ZIndex>
@@ -1682,15 +1861,16 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>0.26554cm</Top>
-                  <Left>0.2956cm</Left>
-                  <Height>0.45cm</Height>
-                  <Width>8.14578cm</Width>
+                  <Top>0.12443cm</Top>
+                  <Left>0cm</Left>
+                  <Height>0.4cm</Height>
+                  <Width>8.80621cm</Width>
                   <Style>
                     <Border>
                       <Style>None</Style>
                     </Border>
                     <VerticalAlign>Middle</VerticalAlign>
+                    <PaddingLeft>3pt</PaddingLeft>
                   </Style>
                 </Textbox>
                 <Textbox Name="ExecutionTimeTextBox17">
@@ -1713,16 +1893,17 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>0.71554cm</Top>
-                  <Left>0.2956cm</Left>
-                  <Height>0.45cm</Height>
-                  <Width>8.14578cm</Width>
+                  <Top>0.52443cm</Top>
+                  <Left>0cm</Left>
+                  <Height>0.4cm</Height>
+                  <Width>8.80621cm</Width>
                   <ZIndex>1</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
                     </Border>
                     <VerticalAlign>Top</VerticalAlign>
+                    <PaddingLeft>3pt</PaddingLeft>
                   </Style>
                 </Textbox>
                 <Textbox Name="ExecutionTimeTextBox18">
@@ -1744,16 +1925,17 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>1.16554cm</Top>
-                  <Left>0.29806cm</Left>
-                  <Height>0.45cm</Height>
-                  <Width>8.14332cm</Width>
+                  <Top>0.92443cm</Top>
+                  <Left>0cm</Left>
+                  <Height>0.37361cm</Height>
+                  <Width>8.80621cm</Width>
                   <ZIndex>2</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
                     </Border>
                     <VerticalAlign>Top</VerticalAlign>
+                    <PaddingLeft>3pt</PaddingLeft>
                   </Style>
                 </Textbox>
                 <Textbox Name="ExecutionTimeTextBox19">
@@ -1775,16 +1957,17 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>1.61554cm</Top>
-                  <Left>0.29806cm</Left>
-                  <Height>0.45cm</Height>
-                  <Width>8.14332cm</Width>
+                  <Top>1.29804cm</Top>
+                  <Left>0cm</Left>
+                  <Height>0.4cm</Height>
+                  <Width>8.80867cm</Width>
                   <ZIndex>3</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
                     </Border>
                     <VerticalAlign>Top</VerticalAlign>
+                    <PaddingLeft>3pt</PaddingLeft>
                   </Style>
                 </Textbox>
                 <Textbox Name="ExecutionTimeTextBox21">
@@ -1806,10 +1989,10 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.86554cm</Top>
-                  <Left>1.72383cm</Left>
-                  <Height>0.45cm</Height>
-                  <Width>6.71755cm</Width>
+                  <Top>2.09804cm</Top>
+                  <Left>1.93909cm</Left>
+                  <Height>0.4cm</Height>
+                  <Width>6.86958cm</Width>
                   <ZIndex>4</ZIndex>
                   <Style>
                     <Border>
@@ -1837,10 +2020,10 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>3.31554cm</Top>
-                  <Left>1.72383cm</Left>
-                  <Height>0.45cm</Height>
-                  <Width>6.71755cm</Width>
+                  <Top>2.49804cm</Top>
+                  <Left>1.93663cm</Left>
+                  <Height>0.4cm</Height>
+                  <Width>6.86958cm</Width>
                   <ZIndex>5</ZIndex>
                   <Style>
                     <Border>
@@ -1869,16 +2052,17 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.86554cm</Top>
-                  <Left>0.2956cm</Left>
-                  <Height>0.45cm</Height>
-                  <Width>1.11727cm</Width>
+                  <Top>2.09804cm</Top>
+                  <Left>0cm</Left>
+                  <Height>0.4cm</Height>
+                  <Width>1.47964cm</Width>
                   <ZIndex>6</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
                     </Border>
                     <VerticalAlign>Middle</VerticalAlign>
+                    <PaddingLeft>3pt</PaddingLeft>
                   </Style>
                 </Textbox>
                 <Textbox Name="ExecutionTimeTextBox48">
@@ -1900,9 +2084,9 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.86554cm</Top>
-                  <Left>1.41287cm</Left>
-                  <Height>0.45cm</Height>
+                  <Top>2.09804cm</Top>
+                  <Left>1.48702cm</Left>
+                  <Height>0.4cm</Height>
                   <Width>0.31096cm</Width>
                   <ZIndex>7</ZIndex>
                   <Style>
@@ -1932,16 +2116,17 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>3.31554cm</Top>
-                  <Left>0.29806cm</Left>
-                  <Height>0.45cm</Height>
-                  <Width>1.11481cm</Width>
+                  <Top>2.49804cm</Top>
+                  <Left>0cm</Left>
+                  <Height>0.4cm</Height>
+                  <Width>1.47964cm</Width>
                   <ZIndex>8</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
                     </Border>
                     <VerticalAlign>Middle</VerticalAlign>
+                    <PaddingLeft>3pt</PaddingLeft>
                   </Style>
                 </Textbox>
                 <Textbox Name="ExecutionTimeTextBox51">
@@ -1963,10 +2148,10 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>3.31554cm</Top>
-                  <Left>1.41287cm</Left>
-                  <Height>0.45cm</Height>
-                  <Width>0.31096cm</Width>
+                  <Top>2.49804cm</Top>
+                  <Left>1.48702cm</Left>
+                  <Height>0.4cm</Height>
+                  <Width>0.3085cm</Width>
                   <ZIndex>9</ZIndex>
                   <Style>
                     <Border>
@@ -1994,24 +2179,25 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.06554cm</Top>
-                  <Left>0.29806cm</Left>
-                  <Height>0.8cm</Height>
-                  <Width>8.14332cm</Width>
+                  <Top>1.69804cm</Top>
+                  <Left>0cm</Left>
+                  <Height>0.4cm</Height>
+                  <Width>8.80621cm</Width>
                   <ZIndex>10</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
                     </Border>
                     <VerticalAlign>Top</VerticalAlign>
+                    <PaddingLeft>3pt</PaddingLeft>
                   </Style>
                 </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
-              <Top>4.33777cm</Top>
-              <Left>0.18981cm</Left>
-              <Height>4.14166cm</Height>
-              <Width>8.73944cm</Width>
+              <Top>3.6517cm</Top>
+              <Left>0.19473cm</Left>
+              <Height>3.0175cm</Height>
+              <Width>8.80867cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -2038,10 +2224,10 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>0.44738cm</Top>
-              <Left>1.17382cm</Left>
-              <Height>22.85594pt</Height>
-              <Width>11.05409cm</Width>
+              <Top>0.3585cm</Top>
+              <Left>0.79658cm</Left>
+              <Height>17.99965pt</Height>
+              <Width>11.50484cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
@@ -2069,10 +2255,10 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>1.35952cm</Top>
-              <Left>0.26058cm</Left>
+              <Top>0.99349cm</Top>
+              <Left>0.19473cm</Left>
               <Height>0.45cm</Height>
-              <Width>11.96733cm</Width>
+              <Width>12.10669cm</Width>
               <ZIndex>4</ZIndex>
               <Style>
                 <Border>
@@ -2099,10 +2285,10 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>1.80952cm</Top>
-              <Left>2.63348cm</Left>
+              <Top>1.44349cm</Top>
+              <Left>2.81571cm</Left>
               <Height>0.44693cm</Height>
-              <Width>9.59443cm</Width>
+              <Width>9.48571cm</Width>
               <ZIndex>5</ZIndex>
               <Style>
                 <Border>
@@ -2129,10 +2315,10 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>2.25952cm</Top>
-              <Left>2.63348cm</Left>
+              <Top>1.89349cm</Top>
+              <Left>2.81571cm</Left>
               <Height>0.45cm</Height>
-              <Width>9.59443cm</Width>
+              <Width>9.48571cm</Width>
               <ZIndex>6</ZIndex>
               <Style>
                 <Border>
@@ -2160,10 +2346,10 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>2.70911cm</Top>
-              <Left>2.63348cm</Left>
+              <Top>2.34308cm</Top>
+              <Left>2.81571cm</Left>
               <Height>0.45cm</Height>
-              <Width>9.59443cm</Width>
+              <Width>9.48571cm</Width>
               <ZIndex>7</ZIndex>
               <Style>
                 <Border>
@@ -2190,10 +2376,10 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>3.15911cm</Top>
-              <Left>2.63348cm</Left>
+              <Top>2.79308cm</Top>
+              <Left>2.81571cm</Left>
               <Height>0.44802cm</Height>
-              <Width>9.59443cm</Width>
+              <Width>9.48571cm</Width>
               <ZIndex>8</ZIndex>
               <Style>
                 <Border>
@@ -2220,10 +2406,10 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>1.80952cm</Top>
-              <Left>0.26058cm</Left>
+              <Top>1.44349cm</Top>
+              <Left>0.19473cm</Left>
               <Height>0.45cm</Height>
-              <Width>2.22363cm</Width>
+              <Width>2.29532cm</Width>
               <ZIndex>9</ZIndex>
               <Style>
                 <Border>
@@ -2250,10 +2436,10 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>2.25952cm</Top>
-              <Left>0.26058cm</Left>
+              <Top>1.89349cm</Top>
+              <Left>0.19473cm</Left>
               <Height>0.45cm</Height>
-              <Width>2.22363cm</Width>
+              <Width>2.29532cm</Width>
               <ZIndex>10</ZIndex>
               <Style>
                 <Border>
@@ -2280,10 +2466,10 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>2.70911cm</Top>
-              <Left>0.26058cm</Left>
+              <Top>2.34308cm</Top>
+              <Left>0.19473cm</Left>
               <Height>0.45cm</Height>
-              <Width>2.22363cm</Width>
+              <Width>2.29532cm</Width>
               <ZIndex>11</ZIndex>
               <Style>
                 <Border>
@@ -2310,10 +2496,10 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>3.15713cm</Top>
-              <Left>0.26058cm</Left>
+              <Top>2.7911cm</Top>
+              <Left>0.19473cm</Left>
               <Height>0.45cm</Height>
-              <Width>2.22363cm</Width>
+              <Width>2.29532cm</Width>
               <ZIndex>12</ZIndex>
               <Style>
                 <Border>
@@ -2340,8 +2526,8 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>3.15713cm</Top>
-              <Left>2.48421cm</Left>
+              <Top>2.7911cm</Top>
+              <Left>2.49005cm</Left>
               <Height>0.45cm</Height>
               <Width>0.14927cm</Width>
               <ZIndex>13</ZIndex>
@@ -2370,8 +2556,8 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>1.80952cm</Top>
-              <Left>2.48421cm</Left>
+              <Top>1.44349cm</Top>
+              <Left>2.49005cm</Left>
               <Height>0.44693cm</Height>
               <Width>0.14927cm</Width>
               <ZIndex>14</ZIndex>
@@ -2400,8 +2586,8 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>2.25952cm</Top>
-              <Left>2.48421cm</Left>
+              <Top>1.89349cm</Top>
+              <Left>2.49005cm</Left>
               <Height>0.45cm</Height>
               <Width>0.14927cm</Width>
               <ZIndex>15</ZIndex>
@@ -2430,8 +2616,8 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>2.70952cm</Top>
-              <Left>2.48421cm</Left>
+              <Top>2.34349cm</Top>
+              <Left>2.49005cm</Left>
               <Height>0.44959cm</Height>
               <Width>0.14927cm</Width>
               <ZIndex>16</ZIndex>
@@ -2447,8 +2633,8 @@
               <Value>=First(Fields!CompanyPicture1.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
-              <Top>0.17613in</Top>
-              <Left>12.22791cm</Left>
+              <Top>0.19198in</Top>
+              <Left>12.30142cm</Left>
               <Height>2.06264cm</Height>
               <Width>2.15973cm</Width>
               <ZIndex>17</ZIndex>
@@ -2463,8 +2649,8 @@
               <Value>=First(Fields!CompanyPicture2.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
-              <Top>0.17613in</Top>
-              <Left>14.38764cm</Left>
+              <Top>0.19198in</Top>
+              <Left>14.46115cm</Left>
               <Height>2.06264cm</Height>
               <Width>2.15973cm</Width>
               <ZIndex>18</ZIndex>
@@ -2479,8 +2665,8 @@
               <Value>=First(Fields!CompanyPicture3.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
-              <Top>0.17613in</Top>
-              <Left>16.54737cm</Left>
+              <Top>0.19198in</Top>
+              <Left>16.62088cm</Left>
               <Height>2.06264cm</Height>
               <Width>2.15973cm</Width>
               <ZIndex>19</ZIndex>
@@ -2495,10 +2681,10 @@
               <Value>=First(Fields!CompanyLogo.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>Fit</Sizing>
-              <Top>0.44628cm</Top>
-              <Left>0.26058cm</Left>
-              <Height>22.88712pt</Height>
-              <Width>22.88712pt</Width>
+              <Top>0.35851cm</Top>
+              <Left>0.18981cm</Left>
+              <Height>0.63498cm</Height>
+              <Width>0.60677cm</Width>
               <ZIndex>20</ZIndex>
               <Style>
                 <Border>
@@ -2506,11 +2692,37 @@
                 </Border>
               </Style>
             </Image>
+            <Rectangle Name="Rectangle6">
+              <KeepTogether>true</KeepTogether>
+              <Top>0cm</Top>
+              <Left>12.51222cm</Left>
+              <Height>0.48762cm</Height>
+              <Width>3.34194cm</Width>
+              <ZIndex>21</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Rectangle>
+            <Rectangle Name="Rectangle9">
+              <KeepTogether>true</KeepTogether>
+              <Top>0cm</Top>
+              <Left>7.33583cm</Left>
+              <Height>0.3585cm</Height>
+              <Width>5cm</Width>
+              <ZIndex>22</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Rectangle>
           </ReportItems>
           <Style />
         </PageHeader>
         <PageFooter>
-          <Height>6.46159cm</Height>
+          <Height>5.79131cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -2534,9 +2746,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>4.50284cm</Top>
+              <Top>4.20577cm</Top>
               <Left>0.18981cm</Left>
-              <Height>0.6cm</Height>
+              <Height>0.4cm</Height>
               <Width>18.51074cm</Width>
               <Style>
                 <Border>
@@ -2569,9 +2781,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>5.10284cm</Top>
+              <Top>4.60577cm</Top>
               <Left>0.18981cm</Left>
-              <Height>0.6cm</Height>
+              <Height>0.4cm</Height>
               <Width>18.51074cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
@@ -2605,9 +2817,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>5.70284cm</Top>
+              <Top>5.00577cm</Top>
               <Left>0.18981cm</Left>
-              <Height>0.6cm</Height>
+              <Height>0.4cm</Height>
               <Width>18.51074cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
@@ -2640,7 +2852,7 @@
               </Paragraphs>
               <Top>0.17639cm</Top>
               <Left>0.18981cm</Left>
-              <Height>0.6cm</Height>
+              <Height>0.4cm</Height>
               <Width>7.90121cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
@@ -2675,7 +2887,7 @@
               </Paragraphs>
               <Top>0.17639cm</Top>
               <Left>8.53649cm</Left>
-              <Height>0.6cm</Height>
+              <Height>0.4cm</Height>
               <Width>4.30889cm</Width>
               <ZIndex>4</ZIndex>
               <Style>
@@ -2723,7 +2935,7 @@
               </Paragraphs>
               <Top>0.17639cm</Top>
               <Left>13.31496cm</Left>
-              <Height>1.53486cm</Height>
+              <Height>1.34519cm</Height>
               <Width>5.39868cm</Width>
               <ZIndex>5</ZIndex>
               <Style>
@@ -2756,9 +2968,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>1.03461cm</Top>
+              <Top>0.75278cm</Top>
               <Left>0.18981cm</Left>
-              <Height>0.6cm</Height>
+              <Height>0.4cm</Height>
               <Width>3.73869cm</Width>
               <ZIndex>6</ZIndex>
               <Style>
@@ -2791,9 +3003,9 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>1.03461cm</Top>
+              <Top>0.75278cm</Top>
               <Left>4.46177cm</Left>
-              <Height>0.6cm</Height>
+              <Height>0.4cm</Height>
               <Width>3.62925cm</Width>
               <ZIndex>7</ZIndex>
               <Style>
@@ -2808,8 +3020,8 @@
               </Style>
             </Textbox>
             <Line Name="Line1">
-              <Top>1.99813cm</Top>
-              <Left>0.18981cm</Left>
+              <Top>1.68063cm</Top>
+              <Left>0.19473cm</Left>
               <Height>0cm</Height>
               <Width>4.19703cm</Width>
               <ZIndex>8</ZIndex>
@@ -2820,7 +3032,7 @@
               </Style>
             </Line>
             <Line Name="Line2">
-              <Top>1.99813cm</Top>
+              <Top>1.68063cm</Top>
               <Left>3.9285cm</Left>
               <Height>0cm</Height>
               <Width>4.16252cm</Width>
@@ -2832,7 +3044,7 @@
               </Style>
             </Line>
             <Line Name="Line3">
-              <Top>1.99813cm</Top>
+              <Top>1.68063cm</Top>
               <Left>7.85291cm</Left>
               <Height>0cm</Height>
               <Width>4.86731cm</Width>
@@ -2844,7 +3056,7 @@
               </Style>
             </Line>
             <Line Name="Line4">
-              <Top>1.99813cm</Top>
+              <Top>1.68063cm</Top>
               <Left>12.22791cm</Left>
               <Height>0cm</Height>
               <Width>6.47265cm</Width>
@@ -2872,9 +3084,9 @@
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>2.1216cm</Top>
+              <Top>1.8041cm</Top>
               <Left>0.18981cm</Left>
-              <Height>0.6cm</Height>
+              <Height>0.45cm</Height>
               <Width>3.73869cm</Width>
               <ZIndex>12</ZIndex>
               <Style>
@@ -2908,9 +3120,9 @@
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>2.89799cm</Top>
+              <Top>2.58049cm</Top>
               <Left>0.18981cm</Left>
-              <Height>0.6cm</Height>
+              <Height>0.45cm</Height>
               <Width>3.73869cm</Width>
               <ZIndex>13</ZIndex>
               <Style>
@@ -2944,9 +3156,9 @@
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>2.1216cm</Top>
+              <Top>1.8041cm</Top>
               <Left>4.46177cm</Left>
-              <Height>0.6cm</Height>
+              <Height>0.45cm</Height>
               <Width>3.62925cm</Width>
               <ZIndex>14</ZIndex>
               <Style>
@@ -2982,9 +3194,9 @@
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>2.89799cm</Top>
+              <Top>2.58049cm</Top>
               <Left>4.46177cm</Left>
-              <Height>0.6cm</Height>
+              <Height>0.45cm</Height>
               <Width>3.62925cm</Width>
               <ZIndex>15</ZIndex>
               <Style>
@@ -3020,9 +3232,9 @@
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>2.89799cm</Top>
+              <Top>2.58049cm</Top>
               <Left>8.53649cm</Left>
-              <Height>0.6cm</Height>
+              <Height>0.45cm</Height>
               <Width>4.30235cm</Width>
               <ZIndex>16</ZIndex>
               <Style>
@@ -3058,9 +3270,9 @@
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>2.1216cm</Top>
+              <Top>1.8041cm</Top>
               <Left>8.53649cm</Left>
-              <Height>0.6cm</Height>
+              <Height>0.45cm</Height>
               <Width>4.30235cm</Width>
               <ZIndex>17</ZIndex>
               <Style>
@@ -3096,9 +3308,9 @@
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>2.14573cm</Top>
+              <Top>1.8041cm</Top>
               <Left>13.31496cm</Left>
-              <Height>0.6cm</Height>
+              <Height>0.45cm</Height>
               <Width>5.38559cm</Width>
               <ZIndex>18</ZIndex>
               <Style>
@@ -3134,9 +3346,9 @@
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>2.92212cm</Top>
+              <Top>2.58049cm</Top>
               <Left>13.31496cm</Left>
-              <Height>0.6cm</Height>
+              <Height>0.45cm</Height>
               <Width>5.38559cm</Width>
               <ZIndex>19</ZIndex>
               <Style>
@@ -3172,9 +3384,9 @@
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>3.67438cm</Top>
+              <Top>3.35688cm</Top>
               <Left>8.53649cm</Left>
-              <Height>0.6cm</Height>
+              <Height>0.45cm</Height>
               <Width>4.30235cm</Width>
               <ZIndex>20</ZIndex>
               <Style>
@@ -3210,10 +3422,10 @@
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>3.6985cm</Top>
+              <Top>3.35688cm</Top>
               <Left>13.31496cm</Left>
-              <Height>0.6cm</Height>
-              <Width>5.3856cm</Width>
+              <Height>0.45cm</Height>
+              <Width>5.38559cm</Width>
               <ZIndex>21</ZIndex>
               <Style>
                 <Border>
@@ -3243,14 +3455,20 @@
         <InteractiveHeight>11in</InteractiveHeight>
         <InteractiveWidth>8.5in</InteractiveWidth>
         <LeftMargin>1cm</LeftMargin>
-        <RightMargin>1cm</RightMargin>
-        <TopMargin>1cm</TopMargin>
-        <BottomMargin>1cm</BottomMargin>
+        <RightMargin>0cm</RightMargin>
+        <TopMargin>0.25cm</TopMargin>
+        <BottomMargin>0.25cm</BottomMargin>
         <ColumnSpacing>1.27cm</ColumnSpacing>
         <Style />
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -3350,176 +3568,4 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
   </EmbeddedImages>
   <Language>=User!Language</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Fields>
-        <Field Name="PrintName">
-          <DataField>PrintName</DataField>
-        </Field>
-        <Field Name="CompanyAddress">
-          <DataField>CompanyAddress</DataField>
-        </Field>
-        <Field Name="CompanyPostcode">
-          <DataField>CompanyPostcode</DataField>
-        </Field>
-        <Field Name="CompanyCity">
-          <DataField>CompanyCity</DataField>
-        </Field>
-        <Field Name="CompanyState">
-          <DataField>CompanyState</DataField>
-        </Field>
-        <Field Name="CompanyCountry">
-          <DataField>CompanyCountry</DataField>
-        </Field>
-        <Field Name="CompanyInfoName">
-          <DataField>CompanyInfoName</DataField>
-        </Field>
-        <Field Name="CompanyInfoFax">
-          <DataField>CompanyInfoFax</DataField>
-        </Field>
-        <Field Name="CompanyInfoPhoneNo">
-          <DataField>CompanyInfoPhoneNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoEmail">
-          <DataField>CompanyInfoEmail</DataField>
-        </Field>
-        <Field Name="CompanyInfoHomePage">
-          <DataField>CompanyInfoHomePage</DataField>
-        </Field>
-        <Field Name="CompanyInfoVATRegNo">
-          <DataField>CompanyInfoVATRegNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoBusinessRegistrationNo">
-          <DataField>CompanyInfoBusinessRegistrationNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoGiroNo">
-          <DataField>CompanyInfoGiroNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoBankName">
-          <DataField>CompanyInfoBankName</DataField>
-        </Field>
-        <Field Name="CompanyInfoBankAccountNo">
-          <DataField>CompanyInfoBankAccountNo</DataField>
-        </Field>
-        <Field Name="CompanyLogo">
-          <DataField>CompanyLogo</DataField>
-        </Field>
-        <Field Name="CompanyPicture1">
-          <DataField>CompanyPicture1</DataField>
-        </Field>
-        <Field Name="CompanyPicture2">
-          <DataField>CompanyPicture2</DataField>
-        </Field>
-        <Field Name="CompanyPicture3">
-          <DataField>CompanyPicture3</DataField>
-        </Field>
-        <Field Name="ReportTitle">
-          <DataField>ReportTitle</DataField>
-        </Field>
-        <Field Name="Ship_to_Name">
-          <DataField>Ship_to_Name</DataField>
-        </Field>
-        <Field Name="Ship_to_Address">
-          <DataField>Ship_to_Address</DataField>
-        </Field>
-        <Field Name="Ship_to_Address_2">
-          <DataField>Ship_to_Address_2</DataField>
-        </Field>
-        <Field Name="postcodecitycountrycounty">
-          <DataField>postcodecitycountrycounty</DataField>
-        </Field>
-        <Field Name="Ship_to_Phone_No_">
-          <DataField>Ship_to_Phone_No_</DataField>
-        </Field>
-        <Field Name="Ship_to_Contact">
-          <DataField>Ship_to_Contact</DataField>
-        </Field>
-        <Field Name="Document_Date">
-          <DataField>Document_Date</DataField>
-        </Field>
-        <Field Name="selltocustomercode">
-          <DataField>selltocustomercode</DataField>
-        </Field>
-        <Field Name="VehicleNo">
-          <DataField>VehicleNo</DataField>
-        </Field>
-        <Field Name="SystemModifiedBy">
-          <DataField>SystemModifiedBy</DataField>
-        </Field>
-        <Field Name="Shipping_Agent_Code">
-          <DataField>Shipping_Agent_Code</DataField>
-        </Field>
-        <Field Name="External_Document_No_">
-          <DataField>External_Document_No_</DataField>
-        </Field>
-        <Field Name="Work_Description">
-          <DataField>Work_Description</DataField>
-        </Field>
-        <Field Name="ShipemntHeaderNo">
-          <DataField>ShipemntHeaderNo</DataField>
-        </Field>
-        <Field Name="ShowAmount">
-          <DataField>ShowAmount</DataField>
-        </Field>
-        <Field Name="ShowAmountFormat">
-          <DataField>ShowAmountFormat</DataField>
-        </Field>
-        <Field Name="CurrencyCodeCurrencyCode">
-          <DataField>CurrencyCodeCurrencyCode</DataField>
-        </Field>
-        <Field Name="AmountInWords">
-          <DataField>AmountInWords</DataField>
-        </Field>
-        <Field Name="TotalShowAmount">
-          <DataField>TotalShowAmount</DataField>
-        </Field>
-        <Field Name="TotalShowAmountFormat">
-          <DataField>TotalShowAmountFormat</DataField>
-        </Field>
-        <Field Name="HeaderOrderNo">
-          <DataField>HeaderOrderNo</DataField>
-        </Field>
-        <Field Name="Order_No_">
-          <DataField>Order_No_</DataField>
-        </Field>
-        <Field Name="Variant_Code">
-          <DataField>Variant_Code</DataField>
-        </Field>
-        <Field Name="PoNum">
-          <DataField>PoNum</DataField>
-        </Field>
-        <Field Name="SoNum">
-          <DataField>SoNum</DataField>
-        </Field>
-        <Field Name="NoofPlts">
-          <DataField>NoofPlts</DataField>
-        </Field>
-        <Field Name="NoofPltsFormat">
-          <DataField>NoofPltsFormat</DataField>
-        </Field>
-        <Field Name="Packing">
-          <DataField>Packing</DataField>
-        </Field>
-        <Field Name="PackingFormat">
-          <DataField>PackingFormat</DataField>
-        </Field>
-        <Field Name="Quantity">
-          <DataField>Quantity</DataField>
-        </Field>
-        <Field Name="QuantityFormat">
-          <DataField>QuantityFormat</DataField>
-        </Field>
-        <Field Name="No_">
-          <DataField>No_</DataField>
-        </Field>
-        <Field Name="Description">
-          <DataField>Description</DataField>
-        </Field>
-      </Fields>
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-    </DataSet>
-  </DataSets>
 </Report>
