@@ -111,9 +111,7 @@ report 50207 SalesInvoiceReport
             column(Ship_to_Address_2; "Ship-to Address 2")
             {
             }
-            column(Shippostcodecitycountrycounty; "Ship-to Post Code" + ', ' + "Ship-to City" + ', ' + "Ship-to County" + ', ' + ShipCountry)
-            {
-            }
+            column(Shippostcodecitycountrycounty; Shippostcodecitycountrycounty_g) { }
             column(Ship_to_Phone_No_; "Ship-to Phone No.")
             {
             }
@@ -203,7 +201,7 @@ report 50207 SalesInvoiceReport
             {
 
             }
-            column(EffectiveDate;Format(EffectiveDate, 0, '<day,2>.<month,2>.<year4>')){}
+            column(EffectiveDate; Format(EffectiveDate, 0, '<day,2>.<month,2>.<year4>')) { }
             column(SalesTaxPercent; SalesTaxPercent)
             {
 
@@ -278,34 +276,39 @@ report 50207 SalesInvoiceReport
                     ShowAmount := "Line Amount";
                     SalesTax := "Amount Including VAT" - "Line Amount";
                     TotalShowAmount := ShowAmount + TotalShowAmount + SalesTax;
-                    if ItemCard.Get("No.") then begin
-                        Variant_Code := ItemCard."Pack Size";   // Custom field from Item
-                        if Packsize.Get(Variant_Code) then begin
-                            Packing := Packsize."Qty Per Pack";
 
-                        end
-                        else
-                            Clear(Packing);
-                        SalesPrice.SetRange("Item No.", "No.");
-                        SalesPrice.SetRange("Sales Code", "Sell-to Customer No.");
-                        SalesPrice.SetRange("Unit of Measure Code", "Unit of Measure Code");
-                        if SalesPrice.FindFirst() then begin
-                            Unit_Price := SalesPrice."Price Per Piece";
-                        end;
-                    end else
-                        Clear(Variant_Code);  //    
-                    if ItemCard.Get("No.") then begin
-                        if (ItemCard."Print Charges in Footer") then
-                            IsCharge := true
-                        else begin
-                            LineNo := LineNo + 1;
-                            IsCharge := false;
-                            SubTotal += "Sales Invoice Line"."Line Amount";
-                        end;
-                    end
+                    if Type = Type::Item then begin
+                        if ItemCard.Get("No.") then begin
+                            Variant_Code := ItemCard."Pack Size";
+                            if Packsize.Get(Variant_Code) then begin
+                                Packing := Packsize."Qty Per Pack";
+                            end
+                            else
+                                Clear(Packing);
+                            SalesPrice.SetRange("Item No.", "No.");
+                            SalesPrice.SetRange("Sales Code", "Sell-to Customer No.");
+                            SalesPrice.SetRange("Unit of Measure Code", "Unit of Measure Code");
+                            if SalesPrice.FindFirst() then begin
+                                Unit_Price := SalesPrice."Price Per Piece";
+                            end;
+                        end else
+                            Clear(Variant_Code);
+                    end;
+
+                    IsCharge := false;
+                    if Type = Type::"Charge (Item)" then
+                        IsCharge := true
                     else
-                        IsCharge := true;
+                        if Type = Type::Item then begin
+                            if ItemCard.Get("No.") then
+                                if ItemCard."Print Charges in Footer" then
+                                    IsCharge := true;
+                        end;
 
+                    if not IsCharge then begin
+                        LineNo := LineNo + 1;
+                        SubTotal += "Sales Invoice Line"."Line Amount";
+                    end;
                 end;
 
                 trigger OnPreDataItem()
@@ -317,26 +320,43 @@ report 50207 SalesInvoiceReport
             trigger OnAfterGetRecord()
             var
                 CountryRegion: Record "Country/Region";
-                County : Record County;
+                County: Record County;
                 Customer: Record "Customer";
                 SalesInvoiceLine: Record "Sales Invoice Line";
                 VATPostingSetup: Record "VAT Posting Setup";
             begin
                 Clear(EffectiveDate);
-                If SalesPersonPurch.Get("Salesperson Code") then ;
+                If SalesPersonPurch.Get("Salesperson Code") then;
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
+
                 if CountryRegion.Get("Ship-to Country/Region Code") then
                     ShipCountry := CountryRegion.Name;
+
                 Customer.Get("Bill-to Customer No.");
                 Bill_to_Address := Customer.Address;
                 BilltoPhoneNo := Customer."Phone No.";
                 Billtomobileno := Customer."Mobile Phone No.";
-                If County.get(Customer.County) then;
-                BIllpostcodecitycountrycounty := Customer."Post Code" + ', ' + Customer.City + ', ' + County.Description + ', ' + BIllCountry;
                 if CountryRegion.Get(Customer."Country/Region Code") then
                     BIllCountry := CountryRegion.Name;
-                BIllpostcodecitycountrycounty := Customer."Post Code" + ', ' + Customer.City + ', ' + County.Description + ', ' + BIllCountry;
+
+                if Customer.County <> '' then begin
+                    if County.Get(Customer.County) then
+                        BIllpostcodecitycountrycounty := Customer."Post Code" + ', ' + Customer.City + ', ' + County.Description + ', ' + BIllCountry
+                    else
+                        BIllpostcodecitycountrycounty := Customer."Post Code" + ', ' + Customer.City + ', ' + Customer.County + ', ' + BIllCountry;
+                end else
+                    BIllpostcodecitycountrycounty := Customer."Post Code" + ', ' + Customer.City + ', ' + BIllCountry;
+
+                Clear(Shippostcodecitycountrycounty_g);
+                if "Ship-to County" <> '' then begin
+                    if County.Get("Ship-to County") then
+                        Shippostcodecitycountrycounty_g := "Ship-to Post Code" + ', ' + "Ship-to City" + ', ' + County.Description + ', ' + ShipCountry
+                    else
+                        Shippostcodecitycountrycounty_g := "Ship-to Post Code" + ', ' + "Ship-to City" + ', ' + "Ship-to County" + ', ' + ShipCountry;
+                end else
+                    Shippostcodecitycountrycounty_g := "Ship-to Post Code" + ', ' + "Ship-to City" + ', ' + ShipCountry;
+
                 "Sales Invoice Header".CalcFields("Amount Including VAT");
                 CodeCheck.InitTextVariable();
                 CodeCheck.FormatNoText(NoText, Abs("Sales Invoice Header"."Amount Including VAT"), "Currency Code");
@@ -349,6 +369,7 @@ report 50207 SalesInvoiceReport
                     AmountInWords := AmountInWordCal;
                     Currency_Code := "Currency Code";
                 end;
+
                 SalesInvoiceLine.SetRange("Document No.", "No.");
                 SalesInvoiceLine.SetRange(Type, SalesInvoiceLine.Type::Item);
                 if SalesInvoiceLine.FindFirst() then begin
@@ -361,12 +382,12 @@ report 50207 SalesInvoiceReport
                 end;
 
                 SSTExemption.Reset();
-                SSTExemption.SetRange("Customer No.","Sell-to Customer No.");
-                SSTExemption.SetRange("SST Exemption Registration No.","SST Exemption Registration No.");
+                SSTExemption.SetRange("Customer No.", "Sell-to Customer No.");
+                SSTExemption.SetRange("SST Exemption Registration No.", "SST Exemption Registration No.");
                 If SSTExemption.FindFirst() then
                     EffectiveDate := SSTExemption."Effective Date";
             end;
-            
+
 
             trigger OnPreDataItem()
             var
@@ -427,8 +448,8 @@ report 50207 SalesInvoiceReport
         CompanyCountry: Text;
         Bill_to_Address: Text;
         BIllpostcodecitycountrycounty: Text;
-         EffectiveDate : Date;
-        SSTExemption : Record "SST Exemption Details";
+        EffectiveDate: Date;
+        SSTExemption: Record "SST Exemption Details";
 
         Billtomobileno: Text;
         BilltoPhoneNo: Text;
@@ -449,6 +470,7 @@ report 50207 SalesInvoiceReport
         TotalShowAmount: Decimal;
         ShowAmount: Decimal;
         SalesPersonPurch: Record "Salesperson/Purchaser";
+        Shippostcodecitycountrycounty_g: Text;
 
     local procedure CurrencyCode(SrcCurrCode: Code[10]): Code[10]
     begin
@@ -457,6 +479,7 @@ report 50207 SalesInvoiceReport
         else
             exit(SrcCurrCode);
     end;
+
     local procedure BuildBank2Address(Bank: Record "Bank Account"): Text
     var
         Country: Record "Country/Region";

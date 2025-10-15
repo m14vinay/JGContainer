@@ -209,7 +209,7 @@ report 50208 SalesOrderReport
             {
 
             }
-            column(EffectiveDate;Format(EffectiveDate, 0, '<day,2>.<month,2>.<year4>')){}
+            column(EffectiveDate; Format(EffectiveDate, 0, '<day,2>.<month,2>.<year4>')) { }
             column(SalesTaxPercent; SalesTaxPercent)
             {
             }
@@ -275,34 +275,40 @@ report 50208 SalesOrderReport
                     ItemCard: Record Item;
                     Packsize: Record "Pack Size";
                 begin
-                    IsCharge := false;
                     ShowAmount := "Sales Line"."Line Amount";
                     SalesTax := "Sales Line"."Amount Including VAT" - "Sales Line"."Line Amount";
                     TotalShowAmount := ShowAmount + TotalShowAmount + SalesTax;
-                    if ItemCard.Get("No.") then begin
-                        Variant_Code := ItemCard."Pack Size";   // Custom field from Item
-                        if Packsize.Get(Variant_Code) then begin
-                            Packing := Packsize."Qty Per Pack";
-                        end
-                        else
-                            Clear(Packing);
-                    end else
-                        Clear(Variant_Code);
-                    if ItemCard.Get("No.") then begin
-                        if (ItemCard."Print Charges in Footer") then
-                            IsCharge := true
-                        else begin
-                            LineNo := LineNo + 1;
-                            IsCharge := false;
-                            SubTotal += "Sales Line"."Line Amount";
-                        end;
-                    end
+                    if "Sales Line".Type = "Sales Line".Type::Item then begin
+                        if ItemCard.Get("No.") then begin
+                            Variant_Code := ItemCard."Pack Size";
+                            if Packsize.Get(Variant_Code) then begin
+                                Packing := Packsize."Qty Per Pack";
+                            end
+                            else
+                                Clear(Packing);
+                        end else
+                            Clear(Variant_Code);
+                    end;
+
+                    IsCharge := false;
+                    if Type = Type::"Charge (Item)" then
+                        IsCharge := true
                     else
-                        IsCharge := true;
+                        if Type = Type::Item then begin
+                            if ItemCard.Get("No.") then
+                                if ItemCard."Print Charges in Footer" then
+                                    IsCharge := true;
+                        end;
+
+                    if not IsCharge then begin
+                        LineNo := LineNo + 1;
+                        SubTotal += "Sales Line"."Line Amount";
+                    end;
                 end;
-                 trigger OnPreDataItem()
+
+                trigger OnPreDataItem()
                 begin
-                    "Sales Line".SetFilter(Type,'<>%1',"Sales Line".Type::" ");
+                    "Sales Line".SetFilter(Type, '<>%1', "Sales Line".Type::" ");
                 end;
             }
 
@@ -315,7 +321,7 @@ report 50208 SalesOrderReport
                 salesline: Record "Sales Line";
             begin
                 Clear(EffectiveDate);
-                If SalesPersonPurch.Get("Salesperson Code") then ;
+                If SalesPersonPurch.Get("Salesperson Code") then;
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
                 if CountryRegion.Get("Ship-to Country/Region Code") then
@@ -349,11 +355,11 @@ report 50208 SalesOrderReport
                     end;
                 end;
                 SSTExemption.Reset();
-                SSTExemption.SetRange("Customer No.","Sell-to Customer No.");
-                SSTExemption.SetRange("SST Exemption Registration No.","SST Exemption Registration No.");
+                SSTExemption.SetRange("Customer No.", "Sell-to Customer No.");
+                SSTExemption.SetRange("SST Exemption Registration No.", "SST Exemption Registration No.");
                 If SSTExemption.FindFirst() then
                     EffectiveDate := SSTExemption."Effective Date";
-                
+
             end;
 
             trigger OnPreDataItem()
@@ -381,7 +387,7 @@ report 50208 SalesOrderReport
                         AlternateBankSwiftCode2 := BankAccount."SWIFT Code";
                     end;
                 end;
-                
+
                 GLSetup.Get();
             end;
         }
@@ -412,7 +418,7 @@ report 50208 SalesOrderReport
         Variant_Code: Text;
         CompanyCountry: Text;
         Bill_to_Address: Text;
-        SalesPerson : Text[100];
+        SalesPerson: Text[100];
         BIllpostcodecitycountrycounty: Text;
         Billtomobileno: Text;
         BilltoPhoneNo: Text;
@@ -424,11 +430,11 @@ report 50208 SalesOrderReport
         CodeCheck: Codeunit 50200;
         CompanyInfo: Record "Company Information";
         GLSetup: Record "General Ledger Setup";
-        EffectiveDate : Date;
-        SSTExemption : Record "SST Exemption Details";
+        EffectiveDate: Date;
+        SSTExemption: Record "SST Exemption Details";
         Currency: Record Currency;
         FormatAddr: Codeunit "Format Address";
-        SalesPersonPurch : Record "Salesperson/Purchaser";
+        SalesPersonPurch: Record "Salesperson/Purchaser";
         ReportTitle: Text[30];
         CompanyAddr: array[8] of Text[100];
         VendAddr: array[8] of Text[100];
@@ -442,6 +448,7 @@ report 50208 SalesOrderReport
         else
             exit(SrcCurrCode);
     end;
+
     local procedure BuildBank2Address(Bank: Record "Bank Account"): Text
     var
         Country: Record "Country/Region";

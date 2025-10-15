@@ -245,7 +245,7 @@ report 50200 CommercialInvoiceReport
             {
 
             }
-            column(EffectiveDate;Format(EffectiveDate, 0, '<day,2>.<month,2>.<year4>')){}
+            column(EffectiveDate; Format(EffectiveDate, 0, '<day,2>.<month,2>.<year4>')) { }
             column(Currency_Code; Currency_Code) { }
             dataitem("Sales Line"; "Sales Line")
             {
@@ -311,45 +311,52 @@ report 50200 CommercialInvoiceReport
                     Packsize: Record "Pack Size";
                     SalesPrice: Record "Sales Price";
                 begin
+                    // --- Your original calculations are preserved ---
                     NettWeight += "Net Weight";
                     GrossWeight += "Gross Weight";
                     UnitVolume += "Unit Volume";
                     ShowAmount := "Line Amount";
                     SalesTax := "Amount Including VAT" - "Line Amount";
                     TotalShowAmount := ShowAmount + TotalShowAmount + SalesTax;
-                    if ItemCard.Get("No.") then begin
-                        Variant_Code := ItemCard."Pack Size";   // Custom field from Item
-                        TariffNumber := ItemCard."Tariff No.";
-                        if Packsize.Get(Variant_Code) then begin
-                            Packing := Packsize."Qty Per Pack";
+                    if Type = Type::Item then begin
+                        if ItemCard.Get("No.") then begin
+                            Variant_Code := ItemCard."Pack Size";
+                            TariffNumber := ItemCard."Tariff No.";
+                            if Packsize.Get(Variant_Code) then begin
+                                Packing := Packsize."Qty Per Pack";
+                            end
+                            else
+                                Clear(Packing);
+                            SalesPrice.SetRange("Item No.", "No.");
+                            SalesPrice.SetRange("Sales Code", "Sell-to Customer No.");
+                            SalesPrice.SetRange("Unit of Measure Code", "Unit of Measure Code");
+                            if SalesPrice.FindFirst() then begin
+                                Unit_Price := SalesPrice."Price Per Piece";
+                            end;
+                        end else
+                            Clear(Variant_Code);
+                    end;
 
-                        end
-                        else
-                            Clear(Packing);
-                        SalesPrice.SetRange("Item No.", "No.");
-                        SalesPrice.SetRange("Sales Code", "Sell-to Customer No.");
-                        SalesPrice.SetRange("Unit of Measure Code", "Unit of Measure Code");
-                        if SalesPrice.FindFirst() then begin
-                            Unit_Price := SalesPrice."Price Per Piece";
-                        end;
-                    end else
-                        Clear(Variant_Code);  //    
-                    if ItemCard.Get("No.") then begin
-                        if (ItemCard."Print Charges in Footer") then
-                            IsCharge := true
-                        else begin
-                            LineNo := LineNo + 1;
-                            IsCharge := false;
-                            SubTotal += "Sales Line"."Line Amount";
-                        end;
-                    end
+                    // --- THE NEW COMBINED LOGIC ---
+                    IsCharge := false; // Default to false
+                    if Type = Type::"Charge (Item)" then
+                        IsCharge := true
                     else
-                        IsCharge := true;
+                        if Type = Type::Item then begin
+                            if ItemCard.Get("No.") then
+                                if ItemCard."Print Charges in Footer" then
+                                    IsCharge := true;
+                        end;
 
+                    if not IsCharge then begin
+                        LineNo := LineNo + 1;
+                        SubTotal += "Sales Line"."Line Amount";
+                    end;
                 end;
-                 trigger OnPreDataItem()
+
+                trigger OnPreDataItem()
                 begin
-                    "Sales Line".SetFilter(Type,'<>%1',"Sales Line".Type::" ");
+                    "Sales Line".SetFilter(Type, '<>%1', "Sales Line".Type::" ");
                 end;
             }
 
@@ -360,7 +367,7 @@ report 50200 CommercialInvoiceReport
                 SalesLine: Record "Sales Line";
                 VATPostingSetup: Record "VAT Posting Setup";
                 SalesHeader: Record "Sales Header";
-                
+
             begin
                 Clear(EffectiveDate);
                 If SalesPersonPurch.Get("Salesperson Code") then;
@@ -404,8 +411,8 @@ report 50200 CommercialInvoiceReport
                 end;
 
                 SSTExemption.Reset();
-                SSTExemption.SetRange("Customer No.","Sell-to Customer No.");
-                SSTExemption.SetRange("SST Exemption Registration No.","SST Exemption Registration No.");
+                SSTExemption.SetRange("Customer No.", "Sell-to Customer No.");
+                SSTExemption.SetRange("SST Exemption Registration No.", "SST Exemption Registration No.");
                 If SSTExemption.FindFirst() then
                     EffectiveDate := SSTExemption."Effective Date";
             end;
@@ -457,8 +464,8 @@ report 50200 CommercialInvoiceReport
         CompanyCounty: Text;
         UnitVolume: Decimal;
         TariffNumber: Code[20];
-        EffectiveDate : Date;
-        SSTExemption : Record "SST Exemption Details";
+        EffectiveDate: Date;
+        SSTExemption: Record "SST Exemption Details";
         NettWeight: Decimal;
         GrossWeight: Decimal;
         Unit_Price: Decimal;
@@ -493,7 +500,7 @@ report 50200 CommercialInvoiceReport
         VendAddr: array[8] of Text[100];
         TotalShowAmount: Decimal;
         ShowAmount: Decimal;
-        SalesPersonPurch : Record "Salesperson/Purchaser";
+        SalesPersonPurch: Record "Salesperson/Purchaser";
 
     local procedure CurrencyCode(SrcCurrCode: Code[10]): Code[10]
     begin
@@ -502,6 +509,7 @@ report 50200 CommercialInvoiceReport
         else
             exit(SrcCurrCode);
     end;
+
     local procedure BuildBank2Address(Bank: Record "Bank Account"): Text
     var
         Country: Record "Country/Region";

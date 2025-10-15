@@ -17,7 +17,7 @@ report 50211 "Sales Quotation Report"
             column(companyName; CompanyInfo.Name) { }
             column(CompanyAddress; CompanyAddress) { }
             column(CompInfoBankName; CompanyInfo."Bank Name") { }
-             column(BankAccountNo; CompanyInfo."Bank Account No.") { }
+            column(BankAccountNo; CompanyInfo."Bank Account No.") { }
             column(companyPhone; CompanyInfo."Phone No.") { }
             column(companyFax; CompanyInfo."Fax No.") { }
             column(companyEmail; CompanyInfo."E-mail") { }
@@ -113,26 +113,31 @@ report 50211 "Sales Quotation Report"
                     column(Variant_code; "No.") { }
                     column(Pack_Size; "Pack Size") { }
                 }
+
+
                 trigger OnAfterGetRecord()
                 var
                     ItemCard: Record "Item";
                 begin
-
-                    if ItemCard.Get("No.") then begin
-                        if (ItemCard."Print Charges in Footer") then
-                            IsCharge := true
-                        else begin
-                            LineNo := LineNo + 1;
-                            IsCharge := false;
-                            SubTotal += Amount;
-                        end;
-                    end
+                    IsCharge := false;
+                    if Type = Type::"Charge (Item)" then
+                        IsCharge := true
                     else
-                        IsCharge := true;
+                        if Type = Type::Item then begin
+                            if ItemCard.Get("No.") then
+                                if ItemCard."Print Charges in Footer" then
+                                    IsCharge := true;
+                        end;
+
+                    if not IsCharge then begin
+                        LineNo := LineNo + 1;
+                        SubTotal += Amount;
+                    end;
                 end;
+
                 trigger OnPreDataItem()
                 begin
-                    "Sales Line".SetFilter(Type,'<>%1',"Sales Line".Type::" ");
+                    "Sales Line".SetFilter(Type, '<>%1', "Sales Line".Type::" ");
                 end;
             }
 
@@ -276,7 +281,7 @@ report 50211 "Sales Quotation Report"
                 Bank1_Name := Bank.Name;
             end;
 
-        // Bank 2 - FIXED: Added missing assignments
+        // Bank 2 
         Clear(Bank2_AccountNo);
         Clear(Bank2_FullName);
         Clear(Bank2_Swift);

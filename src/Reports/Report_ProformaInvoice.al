@@ -127,7 +127,7 @@ report 50209 ProfomaInvoice
             column(SalesHeaderNo_; "No.")
             {
             }
-            column(Shipment_Date; Format("Requested Delivery Date",0, '<day,2>.<month,2>.<year4>'))
+            column(Shipment_Date; Format("Requested Delivery Date", 0, '<day,2>.<month,2>.<year4>'))
             {
             }
             column(PaymentTerms; "Payment Terms Code")
@@ -142,7 +142,7 @@ report 50209 ProfomaInvoice
             column(SalesPerson; SalesPersonPurch.Name)
             {
             }
-            column(Document_Date; Format("Document Date",0, '<day,2>.<month,2>.<year4>'))
+            column(Document_Date; Format("Document Date", 0, '<day,2>.<month,2>.<year4>'))
             {
             }
             column("selltocustomercode"; "Sell-to Customer No.")
@@ -213,7 +213,7 @@ report 50209 ProfomaInvoice
             {
 
             }
-            column(EffectiveDate;Format(EffectiveDate, 0, '<day,2>.<month,2>.<year4>')){}
+            column(EffectiveDate; Format(EffectiveDate, 0, '<day,2>.<month,2>.<year4>')) { }
             column(ProformaInvoiceNo; "Proforma Invoice No")
             {
 
@@ -288,33 +288,39 @@ report 50209 ProfomaInvoice
                     ShowAmount := "Line Amount";
                     SalesTax := "Amount Including VAT" - "Line Amount";
                     TotalShowAmount := ShowAmount + TotalShowAmount + SalesTax;
-                    if ItemCard.Get("No.") then begin
-                        Variant_Code := ItemCard."Pack Size";   // Custom field from Item
-                        if Packsize.Get(Variant_Code) then begin
-                            Packing := Packsize."Qty Per Pack";
-                        end
-                        else
-                            Clear(Packing);
-                    end else
-                        Clear(Variant_Code);  //   
-                    if ItemCard.Get("No.") then begin
-                        if (ItemCard."Print Charges in Footer") then
-                            IsCharge := true
-                        else begin
-                            LineNo := LineNo + 1;
-                            IsCharge := false;
-                            SubTotal += "Sales Line"."Line Amount";
-                        end;
-                    end
-                    else
-                        IsCharge := true;
 
+                    if Type = Type::Item then begin
+                        if ItemCard.Get("No.") then begin
+                            Variant_Code := ItemCard."Pack Size";
+                            if Packsize.Get(Variant_Code) then begin
+                                Packing := Packsize."Qty Per Pack";
+                            end
+                            else
+                                Clear(Packing);
+                        end else
+                            Clear(Variant_Code);
+                    end;
+                    IsCharge := false;
+                    if Type = Type::"Charge (Item)" then
+                        IsCharge := true
+                    else
+                        if Type = Type::Item then begin
+                            if ItemCard.Get("No.") then
+                                if ItemCard."Print Charges in Footer" then
+                                    IsCharge := true;
+                        end;
+
+                    if not IsCharge then begin
+                        LineNo := LineNo + 1;
+                        SubTotal += "Sales Line"."Line Amount";
+                    end;
                 end;
-                 trigger OnPreDataItem()
+
+                trigger OnPreDataItem()
                 begin
                     "Sales Line".SetFilter("Sales Line".Type, '<>%1', "Sales Line".Type::" ");
                 end;
-                
+
             }
 
             trigger OnAfterGetRecord()
@@ -361,8 +367,8 @@ report 50209 ProfomaInvoice
                 end;
 
                 SSTExemption.Reset();
-                SSTExemption.SetRange("Customer No.","Sell-to Customer No.");
-                SSTExemption.SetRange("SST Exemption Registration No.","SST Exemption Registration No.");
+                SSTExemption.SetRange("Customer No.", "Sell-to Customer No.");
+                SSTExemption.SetRange("SST Exemption Registration No.", "SST Exemption Registration No.");
                 If SSTExemption.FindFirst() then
                     EffectiveDate := SSTExemption."Effective Date";
             end;
@@ -433,8 +439,8 @@ report 50209 ProfomaInvoice
         CodeCheck: Codeunit 50200;
         CompanyInfo: Record "Company Information";
         GLSetup: Record "General Ledger Setup";
-         EffectiveDate : Date;
-        SSTExemption : Record "SST Exemption Details";
+        EffectiveDate: Date;
+        SSTExemption: Record "SST Exemption Details";
 
         Currency: Record Currency;
         FormatAddr: Codeunit "Format Address";
@@ -443,7 +449,7 @@ report 50209 ProfomaInvoice
         VendAddr: array[8] of Text[100];
         TotalShowAmount: Decimal;
         ShowAmount: Decimal;
-        SalesPersonPurch : Record "Salesperson/Purchaser";
+        SalesPersonPurch: Record "Salesperson/Purchaser";
 
     local procedure CurrencyCode(SrcCurrCode: Code[10]): Code[10]
     begin
@@ -452,6 +458,7 @@ report 50209 ProfomaInvoice
         else
             exit(SrcCurrCode);
     end;
+
     local procedure BuildBank2Address(Bank: Record "Bank Account"): Text
     var
         Country: Record "Country/Region";

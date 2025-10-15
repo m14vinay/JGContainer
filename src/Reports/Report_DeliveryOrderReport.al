@@ -83,9 +83,8 @@ report 50201 DeliveryOrderReport
             column(Ship_to_Address_2; "Ship-to Address 2")
             {
             }
-            column(postcodecitycountrycounty; "Ship-to Post Code" + ', ' + "Ship-to City" + ', ' + "Ship-to County" + ', ' + Country)
+            column(postcodecitycountrycounty; postcodecitycountrycounty_g)
             {
-
             }
             column(Ship_to_Phone_No_; "Ship-to Phone No.")
             {
@@ -93,7 +92,7 @@ report 50201 DeliveryOrderReport
             column(Ship_to_Contact; "Ship-to Contact")
             {
             }
-            column(Document_Date; Format("Document Date",0, '<day,2>.<month,2>.<year4>'))
+            column(Document_Date; Format("Document Date", 0, '<day,2>.<month,2>.<year4>'))
             {
             }
             column("selltocustomercode"; "Sell-to Customer No.")
@@ -204,16 +203,27 @@ report 50201 DeliveryOrderReport
             trigger OnAfterGetRecord()
             var
                 CountryRegion: Record "Country/Region";
+                County: Record County;
             begin
-                If SalesPersonPurch.Get("Salesperson Code") then ;
+                If SalesPersonPurch.Get("Salesperson Code") then;
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
                 TotalShowAmount := ShowAmount + TotalShowAmount;
                 CodeCheck.InitTextVariable();
                 CodeCheck.FormatNoText(NoText, Abs(TotalShowAmount), "Currency Code");
                 AmountInWords := NoText[1] + ' ' + NoText[2];
+
                 if CountryRegion.Get("Ship-to Country/Region Code") then
                     Country := CountryRegion.Name;
+
+                Clear(postcodecitycountrycounty_g);
+                if "Ship-to County" <> '' then begin
+                    if County.Get("Ship-to County") then
+                        postcodecitycountrycounty_g := "Ship-to Post Code" + ', ' + "Ship-to City" + ', ' + County.Description + ', ' + Country
+                    else
+                        postcodecitycountrycounty_g := "Ship-to Post Code" + ', ' + "Ship-to City" + ', ' + "Ship-to County" + ', ' + Country;
+                end else
+                    postcodecitycountrycounty_g := "Ship-to Post Code" + ', ' + "Ship-to City" + ', ' + Country;
             end;
 
             trigger OnPreDataItem()
@@ -262,7 +272,8 @@ report 50201 DeliveryOrderReport
         VendAddr: array[8] of Text[100];
         TotalShowAmount: Decimal;
         ShowAmount: Decimal;
-        SalesPersonPurch : Record "Salesperson/Purchaser";
+        SalesPersonPurch: Record "Salesperson/Purchaser";
+        postcodecitycountrycounty_g: Text;
 
     local procedure CurrencyCode(SrcCurrCode: Code[10]): Code[10]
     begin
