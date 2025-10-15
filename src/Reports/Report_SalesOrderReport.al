@@ -321,6 +321,7 @@ report 50208 SalesOrderReport
                 salesline: Record "Sales Line";
             begin
                 Clear(EffectiveDate);
+                Clear(SalesTaxPercent);
                 If SalesPersonPurch.Get("Salesperson Code") then;
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
@@ -346,14 +347,13 @@ report 50208 SalesOrderReport
                     AmountInWords := AmountInWordCal;
                     Currency_Code := "Currency Code";
                 end;
+                SalesLine.Reset();
                 SalesLine.SetRange("Document No.", "No.");
-                if SalesLine.FindFirst() then begin
-                    VATPostingSetup.SetRange("VAT Bus. Posting Group", SalesLine."VAT Bus. Posting Group");
-                    VATPostingSetup.SetRange("VAT Prod. Posting Group", SalesLine."VAT Prod. Posting Group");
-                    if VATPostingSetup.FindFirst() then begin
-                        SalesTaxPercent := 'Sales Tax ' + VATPostingSetup."VAT %".ToText() + ' %';
-                    end;
-                end;
+                SalesLine.SetFilter("VAT %", '>%1', 0);
+                if SalesLine.FindFirst() then
+                    SalesTaxPercent := 'Sales Tax ' + SalesLine."VAT %".ToText() + ' %';
+
+                
                 SSTExemption.Reset();
                 SSTExemption.SetRange("Customer No.", "Sell-to Customer No.");
                 SSTExemption.SetRange("SST Exemption Registration No.", "SST Exemption Registration No.");

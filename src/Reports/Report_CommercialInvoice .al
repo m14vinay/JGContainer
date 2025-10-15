@@ -397,13 +397,10 @@ report 50200 CommercialInvoiceReport
                 end;
                 SalesLine.SetRange("Document No.", "No.");
                 SalesLine.SetRange(Type, SalesLine.Type::Item);
+                SalesLine.SetFilter("VAT %", '>%1', 0);
                 if SalesLine.FindFirst() then begin
                     DONo := SalesLine."Shipment No.";
-                    VATPostingSetup.SetRange("VAT Bus. Posting Group", SalesLine."VAT Bus. Posting Group");
-                    VATPostingSetup.SetRange("VAT Prod. Posting Group", SalesLine."VAT Prod. Posting Group");
-                    if VATPostingSetup.FindFirst() then begin
-                        SalesTaxPercent := 'Sales Tax ' + VATPostingSetup."VAT %".ToText() + ' %';
-                    end;
+                    SalesTaxPercent := 'Sales Tax ' + SalesLine."VAT %".ToText() + ' %';
                 end;
                 SalesHeader.SetRange("No.", "Commercial Invoice No");
                 if SalesHeader.FindFirst() then begin

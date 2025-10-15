@@ -368,13 +368,10 @@ report 50205 SalesCreditNoteReport
 
                 SalesCreditMemoline.SetRange("Document No.", "No.");
                 SalesCreditMemoline.SetRange(Type, SalesCreditMemoline.Type::Item);
+                SalesCreditMemoline.SetFilter("VAT %", '>%1', 0);
                 if SalesCreditMemoline.FindFirst() then begin
                     DONo := SalesCreditMemoline."Return Receipt No.";
-                    VATPostingSetup.SetRange("VAT Bus. Posting Group", SalesCreditMemoline."VAT Bus. Posting Group");
-                    VATPostingSetup.SetRange("VAT Prod. Posting Group", SalesCreditMemoline."VAT Prod. Posting Group");
-                    if VATPostingSetup.FindFirst() then begin
-                        SalesTaxPercent := 'Sales Tax ' + VATPostingSetup."VAT %".ToText() + ' %';
-                    end;
+                    SalesTaxPercent := 'Sales Tax ' + SalesCreditMemoline."VAT %".ToText() + ' %';
                 end;
 
                 SSTExemption.Reset();

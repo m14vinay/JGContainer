@@ -363,13 +363,10 @@ report 50206 SalesDebitNoteReport
 
                 SalesInvoiceLine.SetRange("Document No.", "No.");
                 SalesInvoiceLine.SetRange(Type, SalesInvoiceLine.Type::Item);
+                SalesInvoiceLine.SetFilter("VAT %", '>%1', 0);
                 if SalesInvoiceLine.FindFirst() then begin
                     DONo := SalesInvoiceLine."Shipment No.";
-                    VATPostingSetup.SetRange("VAT Bus. Posting Group", SalesInvoiceLine."VAT Bus. Posting Group");
-                    VATPostingSetup.SetRange("VAT Prod. Posting Group", SalesInvoiceLine."VAT Prod. Posting Group");
-                    if VATPostingSetup.FindFirst() then begin
-                        SalesTaxPercent := 'Sales Tax ' + VATPostingSetup."VAT %".ToText() + ' %';
-                    end;
+                    SalesTaxPercent := 'Sales Tax ' + SalesInvoiceLine."VAT %".ToText() + ' %';
                 end;
 
                 SSTExemption.Reset();

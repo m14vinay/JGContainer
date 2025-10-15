@@ -162,13 +162,9 @@ report 50211 "Sales Quotation Report"
                 end;
                 Salesline.SetRange("Document No.", "No.");
                 Salesline.SetRange(Type, Salesline.Type::Item);
-                if Salesline.FindFirst() then begin
-                    VATPostingSetup.SetRange("VAT Bus. Posting Group", Salesline."VAT Bus. Posting Group");
-                    VATPostingSetup.SetRange("VAT Prod. Posting Group", Salesline."VAT Prod. Posting Group");
-                    if VATPostingSetup.FindFirst() then begin
-                        SalesTaxPercent := 'Sales Tax ' + VATPostingSetup."VAT %".ToText() + ' %';
-                    end;
-                end;
+                SalesLine.SetFilter("VAT %", '>%1', 0);
+                if Salesline.FindFirst() then
+                        SalesTaxPercent := 'Sales Tax ' + Salesline."VAT %".ToText() + ' %';
 
                 If SalesPersonPurch.Get("Salesperson Code") then;
             end;
