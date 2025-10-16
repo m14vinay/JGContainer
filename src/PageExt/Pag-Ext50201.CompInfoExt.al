@@ -62,5 +62,9 @@ pageextension 50201 "Comp Info Ext" extends "Company Information"
                 ApplicationArea = All;
             }
         }
+        modify("VAT Registration No.")
+        {
+            Caption = 'SST Registration No.';
+        }
     }
 }
