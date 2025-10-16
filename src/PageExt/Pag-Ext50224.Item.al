@@ -34,6 +34,18 @@ pageextension 50224 Item extends "Item Card"
         {
             Editable = false;
         }
+          modify("VAT Bus. Posting Gr. (Price)")
+        {
+            Caption = 'SST Bus. Posting Gr. (Price)';
+        }
+         modify("VAT Prod. Posting Group")
+        {
+            Caption = 'SST Prod. Posting Group';
+        }
+         modify("Price Includes VAT")
+        {
+            Caption = 'Price Includes SST';
+        }
     }
     actions
     {

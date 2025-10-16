@@ -32,5 +32,11 @@ pageextension 50241 "Sales Return Rcpt Ext" extends "Posted Return Receipt"
                 ApplicationArea = All;
             }
         }
+       
+        modify("VAT Registration No.")
+        {
+            Caption = 'SST Registration No.';
+        }
+        
     }
 }

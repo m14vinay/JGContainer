@@ -10,5 +10,6 @@ pageextension 50242 "Transfer Shipment Line Ext" extends "Posted Transfer Shpt. 
                 ApplicationArea = All;
             }
         }
+        
     }
 }

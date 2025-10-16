@@ -42,5 +42,13 @@ pageextension 50216 "Posted Sales CrMemo Ext" extends "Posted Sales Credit Memo"
                 ApplicationArea = All;
             }
         }
+        modify("VAT Registration No.")
+        {
+            Caption = 'SST Registration No.';
+        }
+        modify("VAT Reporting Date")
+        {
+            Caption = 'SST Reporting Date';
+        }
     }
 }

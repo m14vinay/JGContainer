@@ -58,6 +58,14 @@ pageextension 50215 "Posted Sales Inv Ext" extends "Posted Sales Invoice"
                 ApplicationArea = All;
             }
         }
+        modify("VAT Registration No.")
+        {
+            Caption = 'SST Registration No.';
+        }
+        modify("VAT Reporting Date")
+        {
+            Caption = 'SST Reporting Date';
+        }
 
     }
     actions

@@ -9,5 +9,13 @@ pageextension 50229 "User Setup" extends "User Setup"
                 ApplicationArea = All;
             }
         }
+         modify("Allow VAT From")
+        {
+            Caption = 'Allow SST From';
+        }
+         modify("Allow VAT To")
+        {
+            Caption = 'Allow SST To';
+        }
     }
 }

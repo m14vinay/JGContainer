@@ -66,5 +66,6 @@ pageextension 50201 "Comp Info Ext" extends "Company Information"
         {
             Caption = 'SST Registration No.';
         }
+         
     }
 }

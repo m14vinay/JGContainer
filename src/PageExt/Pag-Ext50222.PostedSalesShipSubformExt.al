@@ -30,5 +30,6 @@ pageextension 50222 "Posted Sales Ship Subform Ext" extends "Posted Sales Shpt. 
         {
             Visible = true;
         }
+          
     }
 }

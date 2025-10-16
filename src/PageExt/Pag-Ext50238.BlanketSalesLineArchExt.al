@@ -38,5 +38,9 @@ pageextension 50238 "Blanket Sales Line Arch Ext" extends "Blanket Sales Order A
         {
             Visible = true;
         }
+         modify("VAT Prod. Posting Group")
+        {
+            Caption = 'SST Prod. Posting Group';
+        }
     }
 }

@@ -32,5 +32,13 @@ pageextension 50240 "Blanket Order Ext" extends "Blanket Sales Order"
                 ApplicationArea = All;
             }
         }
+        modify("VAT Bus. Posting Group")
+        {
+            Caption = 'SST Bus. Posting Group';
+        }
+          modify("Prices Including VAT")
+        {
+            Caption = 'Prices Including SST';
+        }
     }
 }

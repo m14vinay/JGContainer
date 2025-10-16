@@ -41,6 +41,14 @@ pageextension 50211 "Sales Quote Ext" extends "Sales Quote"
                 ApplicationArea = All;
             }
         }
+          modify("VAT Bus. Posting Group")
+        {
+            Caption = 'SST Bus. Posting Group';
+        }
+          modify("Prices Including VAT")
+        {
+            Caption = 'Prices Including SST';
+        }
     }
     trigger OnAfterGetRecord()
     begin

@@ -22,5 +22,6 @@ pageextension 50225 "Item Journal Ext" extends "Item Journal"
                 ApplicationArea = All;
             }
         }
+        
     }
 }

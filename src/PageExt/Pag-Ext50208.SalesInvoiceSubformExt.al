@@ -34,5 +34,29 @@ pageextension 50208 "Sales Invoice Subform Ext" extends "Sales Invoice Subform"
         {
             Visible = true;
         }
+          modify("VAT Bus. Posting Group")
+        {
+            Caption = 'SST Bus. Posting Group';
+        }
+         modify("VAT Prod. Posting Group")
+        {
+            Caption = 'SST Prod. Posting Group';
+        }
+         modify("Total VAT Amount")
+        {
+            Caption = 'Total SST Amount';
+        }
+          modify("Total Amount Excl. VAT")
+        {
+            Caption = 'Total Amount Excl. SST';
+        }
+           modify("Total Amount Incl. VAT")
+        {
+            Caption = 'Total Amount Incl. SST';
+        }
+        modify("VAT %")
+        {
+            Caption = 'SST %';
+        }
     }
 }

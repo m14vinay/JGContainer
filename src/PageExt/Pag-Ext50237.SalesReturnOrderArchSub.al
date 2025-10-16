@@ -28,5 +28,13 @@ pageextension 50237 "Sales Return Order Arch Sub" extends "Sales Return Order Ar
         {
             Visible = true;
         }
+        modify("VAT Bus. Posting Group")
+        {
+            Caption = 'SST Bus. Posting Group';
+        }
+         modify("VAT Prod. Posting Group")
+        {
+            Caption = 'SST Prod. Posting Group';
+        }
     }
 }

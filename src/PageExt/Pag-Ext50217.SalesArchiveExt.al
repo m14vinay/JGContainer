@@ -49,5 +49,13 @@ pageextension 50217 "Sales Archive Ext" extends "Sales Order Archive"
                 ApplicationArea = All;
             }
         }
+        modify("VAT Reporting Date")
+        {
+            Caption = 'SST Reporting Date';
+        }
+          modify("Prices Including VAT")
+        {
+            Caption = 'Prices Including SST';
+        }
     }
 }

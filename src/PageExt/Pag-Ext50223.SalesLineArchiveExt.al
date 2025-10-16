@@ -34,5 +34,14 @@ pageextension 50223 "Sales Line Archive Ext" extends "Sales Order Archive Subfor
         {
             Visible = true;
         }
+            modify("VAT Bus. Posting Group")
+        {
+            Caption = 'SST Bus. Posting Group';
+        }
+         modify("VAT Prod. Posting Group")
+        {
+            Caption = 'SST Prod. Posting Group';
+        }
+        
     }
 }

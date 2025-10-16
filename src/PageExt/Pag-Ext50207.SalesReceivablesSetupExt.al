@@ -22,5 +22,17 @@ pageextension 50207 "Sales Receivables Setup Ext" extends "Sales & Receivables S
                 ToolTip = 'Specifies Commercial Invoice Nos.';
             }
         }
+            modify("VAT Bus. Posting Gr. (Price)")
+        {
+            Caption = 'SST Bus. Posting Gr. (Price)';
+        }
+         modify("Allow VAT Difference")
+        {
+            Caption = 'Allow SST Difference';
+        }
+         modify("Calc. Inv. Disc. per VAT ID")
+        {
+            Caption = 'Calc. Inv. Disc. per SST ID';
+        }
     }
 }

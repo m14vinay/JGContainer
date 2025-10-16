@@ -15,5 +15,6 @@ pageextension 50228 "Output Jnrl Ext" extends "Output Journal"
                 ApplicationArea = All;
             }
         }
+         
     }
 }

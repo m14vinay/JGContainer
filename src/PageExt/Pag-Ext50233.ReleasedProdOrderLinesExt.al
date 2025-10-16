@@ -9,5 +9,6 @@ pageextension 50233 "Released Prod. Order Lines Ext" extends "Released Prod. Ord
                 ApplicationArea = All;
             }
         }
+        
     }
 }

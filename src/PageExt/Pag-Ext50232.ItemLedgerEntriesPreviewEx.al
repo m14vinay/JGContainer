@@ -14,5 +14,6 @@ pageextension 50232 "Item Ledger Entries Preview Ex" extends "Item Ledger Entrie
                 ApplicationArea = All;
             }
         }
+        
     }
 }

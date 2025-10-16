@@ -38,5 +38,7 @@ pageextension 50236 "Sales Retur Rcpt Line Ext" extends "Posted Return Receipt S
         {
             Visible = true;
         }
+        
+        
     }
 }

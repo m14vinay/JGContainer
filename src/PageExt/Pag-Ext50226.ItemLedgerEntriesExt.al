@@ -22,5 +22,6 @@ pageextension 50226 "Item Ledger Entries Ext" extends "Item Ledger Entries"
                 ApplicationArea = All;
             }
         }
+        
     }
 }

@@ -17,6 +17,14 @@ pageextension 50202 "Sales Price Ext" extends "Sales Prices"
             }
            
         }
+         modify("VAT Bus. Posting Gr. (Price)")
+        {
+            Caption = 'SST Bus. Posting Gr. (Price)';
+        }
+         modify("Price Includes VAT")
+        {
+            Caption = 'Price Includes SST';
+        }
     }
     actions
     {

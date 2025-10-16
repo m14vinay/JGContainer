@@ -15,5 +15,7 @@ pageextension 50230 "Consumption Jnrl Ext" extends "Consumption Journal"
                 ApplicationArea = All;
             }
         }
+        
+        
     }
 }
