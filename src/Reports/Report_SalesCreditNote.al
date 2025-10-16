@@ -372,6 +372,13 @@ report 50205 SalesCreditNoteReport
                 if SalesCreditMemoline.FindFirst() then begin
                     DONo := SalesCreditMemoline."Return Receipt No.";
                     SalesTaxPercent := 'Sales Tax ' + SalesCreditMemoline."VAT %".ToText() + ' %';
+                end else begin
+                    SalesTaxPercent := 'Sales Tax ' + '0 %';
+                    SalesCreditMemoline.SetRange("Document No.", "No.");
+                    SalesCreditMemoline.SetRange(Type, SalesCreditMemoline.Type::Item);
+                    SalesCreditMemoline.SetRange("VAT %");
+                    if SalesCreditMemoline.FindFirst() then
+                        DONo := SalesCreditMemoline."Return Receipt No.";
                 end;
 
                 SSTExemption.Reset();

@@ -12,6 +12,7 @@ tableextension 50201 "Sales Price Ext" extends "Sales Price"
         {
             Caption = 'Price Per Piece';
             DataClassification = CustomerContent;
+            DecimalPlaces = 0:5;
             trigger OnValidate()
             var
                 Item: Record Item;

@@ -367,6 +367,13 @@ report 50206 SalesDebitNoteReport
                 if SalesInvoiceLine.FindFirst() then begin
                     DONo := SalesInvoiceLine."Shipment No.";
                     SalesTaxPercent := 'Sales Tax ' + SalesInvoiceLine."VAT %".ToText() + ' %';
+                end else begin
+                    SalesTaxPercent := 'Sales Tax ' + '0 %';
+                    SalesInvoiceLine.SetRange("Document No.", "No.");
+                    SalesInvoiceLine.SetRange(Type, SalesInvoiceLine.Type::Item);
+                    SalesInvoiceLine.SetRange("VAT %");
+                    if SalesInvoiceLine.FindFirst() then
+                        DONo := SalesInvoiceLine."Shipment No.";
                 end;
 
                 SSTExemption.Reset();

@@ -6,6 +6,7 @@ tableextension 50214 "Sales Line Archive Ext" extends "Sales Line Archive"
         {
             Caption = 'Price Per Piece';
             DataClassification = CustomerContent;
+            DecimalPlaces = 0 : 5;
             Editable = false;
             BlankZero = true;
         }

@@ -360,7 +360,9 @@ report 50209 ProfomaInvoice
                 Salesline.SetRange(Type, Salesline.Type::Item);
                 SalesLine.SetFilter("VAT %", '>%1', 0);
                 if Salesline.FindFirst() then
-                    SalesTaxPercent := 'Sales Tax ' + Salesline."VAT %".ToText() + ' %';
+                    SalesTaxPercent := 'Sales Tax ' + Salesline."VAT %".ToText() + ' %'
+                Else
+                    SalesTaxPercent := 'Sales Tax ' + '0 %';
 
 
 

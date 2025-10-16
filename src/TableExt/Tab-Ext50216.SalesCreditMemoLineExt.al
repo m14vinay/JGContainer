@@ -6,6 +6,7 @@ tableextension 50216 "Sales Credit Memo Line Ext" extends "Sales Cr.Memo Line"
         {
             Caption = 'Price Per Piece';
             DataClassification = CustomerContent;
+             DecimalPlaces = 0 : 5;
             Editable = false;
             BlankZero = true;
         }

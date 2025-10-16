@@ -6,6 +6,7 @@ tableextension 50204 "Sales Line Ext" extends "Sales Line"
         {
             Caption = 'Price Per Piece';
             DataClassification = CustomerContent;
+            DecimalPlaces = 0 : 5;
             Editable = false;
             BlankZero = true;
         }

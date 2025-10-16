@@ -351,7 +351,9 @@ report 50208 SalesOrderReport
                 SalesLine.SetRange("Document No.", "No.");
                 SalesLine.SetFilter("VAT %", '>%1', 0);
                 if SalesLine.FindFirst() then
-                    SalesTaxPercent := 'Sales Tax ' + SalesLine."VAT %".ToText() + ' %';
+                    SalesTaxPercent := 'Sales Tax ' + SalesLine."VAT %".ToText() + ' %'
+                Else
+                    SalesTaxPercent := 'Sales Tax ' + '0 %';
 
                 
                 SSTExemption.Reset();

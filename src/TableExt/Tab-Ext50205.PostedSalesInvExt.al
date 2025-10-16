@@ -6,6 +6,7 @@ tableextension 50205 "Posted Sales Inv Ext" extends "Sales Invoice Line"
         {
             Caption = 'Price Per Piece';
             DataClassification = CustomerContent;
+            DecimalPlaces = 0 : 5;
             Editable = false;
             BlankZero = true;
         }

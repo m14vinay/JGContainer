@@ -164,8 +164,9 @@ report 50211 "Sales Quotation Report"
                 Salesline.SetRange(Type, Salesline.Type::Item);
                 SalesLine.SetFilter("VAT %", '>%1', 0);
                 if Salesline.FindFirst() then
-                        SalesTaxPercent := 'Sales Tax ' + Salesline."VAT %".ToText() + ' %';
-
+                        SalesTaxPercent := 'Sales Tax ' + Salesline."VAT %".ToText() + ' %'
+                Else
+                    SalesTaxPercent := 'Sales Tax ' + '0 %';
                 If SalesPersonPurch.Get("Salesperson Code") then;
             end;
         }
