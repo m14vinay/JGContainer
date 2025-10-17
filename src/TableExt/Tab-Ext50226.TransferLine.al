@@ -9,6 +9,11 @@ tableextension 50226 "Transfer Line" extends "Transfer Line"
             Editable = false;
             BlankZero = true;
         }
+         field(50200; Returnable; Boolean)
+        {
+            Caption = 'Returnable';
+            DataClassification = ToBeClassified;
+        }
         modify(Quantity)
         {
             trigger OnAfterValidate()
