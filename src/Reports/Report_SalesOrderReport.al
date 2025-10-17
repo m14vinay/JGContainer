@@ -275,6 +275,7 @@ report 50208 SalesOrderReport
                     ItemCard: Record Item;
                     Packsize: Record "Pack Size";
                 begin
+
                     ShowAmount := "Sales Line"."Line Amount";
                     SalesTax := "Sales Line"."Amount Including VAT" - "Sales Line"."Line Amount";
                     TotalShowAmount := ShowAmount + TotalShowAmount + SalesTax;
@@ -320,6 +321,15 @@ report 50208 SalesOrderReport
                 VATPostingSetup: Record "VAT Posting Setup";
                 salesline: Record "Sales Line";
             begin
+
+                // Start - Added by NF on 22/05/2024 to calculate Total Amount including Sales Tax (For multi select)
+                Clear(TotalShowAmount);
+                Clear(SubTotal);
+                Clear(LineNo);
+                Clear(ShowAmount);
+                Clear(SalesTax);
+                // End - Added by NF on 22/05/2024 to calculate Total Amount including Sales Tax (For multi select)
+
                 Clear(EffectiveDate);
                 Clear(SalesTaxPercent);
                 If SalesPersonPurch.Get("Salesperson Code") then;
