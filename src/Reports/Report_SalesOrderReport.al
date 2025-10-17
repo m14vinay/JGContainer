@@ -355,7 +355,7 @@ report 50208 SalesOrderReport
                 Else
                     SalesTaxPercent := 'Sales Tax ' + '0 %';
 
-                
+
                 SSTExemption.Reset();
                 SSTExemption.SetRange("Customer No.", "Sell-to Customer No.");
                 SSTExemption.SetRange("SST Exemption Registration No.", "SST Exemption Registration No.");
@@ -392,6 +392,22 @@ report 50208 SalesOrderReport
 
                 GLSetup.Get();
             end;
+        }
+    }
+
+    requestpage
+    {
+        SaveValues = true;
+
+        layout
+        {
+            area(content)
+            {
+                group(Options)
+                {
+                    Caption = 'Options';
+                }
+            }
         }
     }
     trigger OnInitReport()
