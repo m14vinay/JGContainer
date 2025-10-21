@@ -145,14 +145,23 @@ report 50211 "Sales Quotation Report"
             var
                 Salesline: Record "Sales Line";
                 VATPostingSetup: Record "VAT Posting Setup";
+                TempCheckCU: Codeunit 50200;
+                TempNoText: array[2] of Text[80];
             begin
                 GetCompanyInfo();
+                Clear("Amount Including VAT");
+                Clear(SubTotal);
+                Clear(LineNo);
+                Clear(Amount);
+                Clear(AmtInWords);
+                Clear(TempNoText);
+
                 //CalculateTransportCharges();
                 LoadWorkDescription();
                 SalesHeader.CalcFields("Amount Including VAT");
-                CheckCU.InitTextVariable();
-                CheckCU.FormatNoText(NoText, Abs(SalesHeader."Amount Including VAT"), SalesHeader."Currency Code");
-                AmtInWords := NoText[1] + ' ' + NoText[2];
+                TempCheckCU.InitTextVariable();
+                TempCheckCU.FormatNoText(TempNoText, Abs(SalesHeader."Amount Including VAT"), SalesHeader."Currency Code");
+                AmtInWords := TempNoText[1] + ' ' + TempNoText[2];
                 if ("Currency Code" = '') then begin
                     Currency_Code := 'MYR';
                     AmtInWords := 'Malaysian Ringgit ' + AmtInWords;
@@ -164,7 +173,7 @@ report 50211 "Sales Quotation Report"
                 Salesline.SetRange(Type, Salesline.Type::Item);
                 SalesLine.SetFilter("VAT %", '>%1', 0);
                 if Salesline.FindFirst() then
-                        SalesTaxPercent := 'Sales Tax ' + Salesline."VAT %".ToText() + ' %'
+                    SalesTaxPercent := 'Sales Tax ' + Salesline."VAT %".ToText() + ' %'
                 Else
                     SalesTaxPercent := 'Sales Tax ' + '0 %';
                 If SalesPersonPurch.Get("Salesperson Code") then;
@@ -227,6 +236,7 @@ report 50211 "Sales Quotation Report"
     begin
         TotalAmountLCY := 0;
         TotalTransportCharge := 0;
+        Clear(NoText);
     end;
 
     local procedure LoadWorkDescription()

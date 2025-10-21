@@ -324,8 +324,11 @@ report 50207 SalesInvoiceReport
                 Customer: Record "Customer";
                 SalesInvoiceLine: Record "Sales Invoice Line";
                 VATPostingSetup: Record "VAT Posting Setup";
+                TempCodeCheck: Codeunit 50200;
+                TempNoText: array[2] of Text;
             begin
                 Clear(EffectiveDate);
+
                 If SalesPersonPurch.Get("Salesperson Code") then;
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
@@ -358,9 +361,9 @@ report 50207 SalesInvoiceReport
                     Shippostcodecitycountrycounty_g := "Ship-to Post Code" + ', ' + "Ship-to City" + ', ' + ShipCountry;
 
                 "Sales Invoice Header".CalcFields("Amount Including VAT");
-                CodeCheck.InitTextVariable();
-                CodeCheck.FormatNoText(NoText, Abs("Sales Invoice Header"."Amount Including VAT"), "Currency Code");
-                AmountInWordCal := NoText[1] + ' ' + NoText[2];
+                TempCodeCheck.InitTextVariable();
+                TempCodeCheck.FormatNoText(TempNoText, Abs("Sales Invoice Header"."Amount Including VAT"), "Currency Code");
+                AmountInWordCal := TempNoText[1] + ' ' + TempNoText[2];
                 if ("Currency Code" = '') then begin
                     AmountInWords := 'Malaysian Ringgit ' + AmountInWordCal;
                     Currency_Code := 'MYR';
