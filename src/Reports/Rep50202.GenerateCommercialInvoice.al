@@ -17,10 +17,15 @@ report 50202 "Generate Commercial Invoice"
             begin
                 SalesRecSetup.Get();
                 //SalesInvoice.InitFromSalesHeader(SalesHeader);
-                SalesInvoice.Validate("Document Type", SalesInvoice."Document Type"::Invoice);
-                SalesInvoice.Validate("No.", NoSeries.GetNextNo(SalesRecSetup."Commercial Invoice Nos."));
-                //SalesInvoice.Status := SalesInvoice.Status::Open;
                 SalesInvoice.InitRecord();
+                SalesInvoice.Validate("Document Type", SalesInvoice."Document Type"::Invoice);
+                
+                //SalesInvoice.Validate("No. Series",SalesRecSetup."Commercial Invoice Nos.");
+                //SalesInvoice.AssistEdit(SalesInvoice);
+                SalesInvoice."No. Series" := SalesRecSetup."Commercial Invoice Nos.";
+                SalesInvoice."No.":= NoSeries.GetNextNo(SalesInvoice."No. Series");
+                //SalesInvoice.Validate("Posting No. Series",SalesRecSetup."Commercial Invoice Nos.");
+                //SalesInvoice.Status := SalesInvoice.Status::Open;
                 SalesInvoice.Insert(True);
                 SalesInvoice.Validate("Sell-to Customer No.",SalesHeader."Sell-to Customer No.");
                 SalesInvoice.Validate("Posting Date",CommercialInvoiceDate);
