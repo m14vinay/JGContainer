@@ -313,6 +313,7 @@ report 50207 SalesInvoiceReport
 
                 trigger OnPreDataItem()
                 begin
+                    "Sales Invoice Line".SetRange("Document No.", "Sales Invoice Header"."No.");
                     "Sales Invoice Line".SetFilter("Sales Invoice Line".Type, '<>%1', "Sales Invoice Line".Type::" ");
                 end;
             }
@@ -328,6 +329,13 @@ report 50207 SalesInvoiceReport
                 TempNoText: array[2] of Text;
             begin
                 Clear(EffectiveDate);
+                Clear(LineNo);
+                Clear(SubTotal);
+                Clear(TotalShowAmount);
+                Clear(SalesTax);
+                Clear(ShowAmount);
+                Clear(SalesPersonPurch);
+                Clear(DONo);
 
                 If SalesPersonPurch.Get("Salesperson Code") then;
                 if not Currency.Get("Currency Code") then
@@ -394,7 +402,6 @@ report 50207 SalesInvoiceReport
                 If SSTExemption.FindFirst() then
                     EffectiveDate := SSTExemption."Effective Date";
             end;
-
 
             trigger OnPreDataItem()
             var
