@@ -337,14 +337,23 @@ report 50208 SalesOrderReport
                     Currency.InitRoundingPrecision();
                 if CountryRegion.Get("Ship-to Country/Region Code") then
                     ShipCountry := CountryRegion.Name;
-                Customer.Get("Bill-to Customer No.");
-                Bill_to_Address := Customer.Address;
-                BilltoPhoneNo := Customer."Phone No.";
-                Billtomobileno := Customer."Mobile Phone No.";
-                BIllpostcodecitycountrycounty := Customer."Post Code" + ', ' + Customer.City + ', ' + Customer.County + ', ' + BIllCountry;
-                if CountryRegion.Get(Customer."Country/Region Code") then
-                    BIllCountry := CountryRegion.Name;
-                BIllpostcodecitycountrycounty := Customer."Post Code" + ', ' + Customer.City + ', ' + Customer.County + ', ' + BIllCountry;
+
+                if "Sell-to Customer No." <> '' then begin
+                    if Customer.Get("Bill-to Customer No.") then begin
+                        Bill_to_Address := Customer.Address;
+                        BilltoPhoneNo := Customer."Phone No.";
+                        Billtomobileno := Customer."Mobile Phone No.";
+                        if CountryRegion.Get(Customer."Country/Region Code") then
+                            BIllCountry := CountryRegion.Name;
+                        BIllpostcodecitycountrycounty := Customer."Post Code" + ', ' + Customer.City + ', ' + Customer.County + ', ' + BIllCountry;
+                    end else begin
+                        Clear(Bill_to_Address);
+                        Clear(BilltoPhoneNo);
+                        Clear(Billtomobileno);
+                        Clear(BIllpostcodecitycountrycounty);
+                        Clear(BIllCountry);
+                    end;
+                end;
                 "Sales Header".CalcFields("Amount Including VAT");
                 CodeCheck.InitTextVariable();
                 CodeCheck.FormatNoText(NoText, Abs("Sales Header"."Amount Including VAT"), "Currency Code");
