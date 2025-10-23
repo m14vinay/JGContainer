@@ -315,6 +315,8 @@ report 50207 SalesInvoiceReport
                 begin
                     "Sales Invoice Line".SetRange("Document No.", "Sales Invoice Header"."No.");
                     "Sales Invoice Line".SetFilter("Sales Invoice Line".Type, '<>%1', "Sales Invoice Line".Type::" ");
+
+
                 end;
             }
 
