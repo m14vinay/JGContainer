@@ -5,6 +5,10 @@ pageextension 50248 "Sales Order List Ext" extends "Sales Order List"
         {
             Caption = 'Amount Including SST';
         }
+         modify("Amt. Ship. Not Inv. (LCY)")
+        {
+            Caption = 'Amount Shipped Not Invoiced (LCY) Incl. SST';
+        }
     }
     actions
     {

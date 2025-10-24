@@ -42,17 +42,40 @@ pageextension 50227 "Posted Sales Cr Memo Subform" extends "Posted Sales Cr. Mem
         {
             Caption = 'SST Prod. Posting Group';
         }
-         modify("Total VAT Amount")
+        modify("Total VAT Amount")
         {
-            Caption = 'Total SST Amount';
+            Caption = 'Total SST';
+            CaptionClass = GetCaptionWithCurrencyCode('Total SST');;
         }
-          modify("Total Amount Excl. VAT")
+        modify("Total Amount Excl. VAT")
         {
-            Caption = 'Total Amount Excl. SST';
-        }
-           modify("Total Amount Incl. VAT")
+            Caption = 'Total Excl. SST';
+            CaptionClass = GetCaptionWithCurrencyCode('Total Excl. SST');
+        } 
+        modify("Total Amount Incl. VAT")
         {
-            Caption = 'Total Amount Incl. SST';
+            Caption = 'Total Incl. SST';
+            CaptionClass = GetCaptionWithCurrencyCode('Total Incl. SST');
         }
     }
+    procedure GetCaptionWithCurrencyCode(CaptionWithoutCurrencyCode: Text): Text
+    var
+        GLSetup: Record "General Ledger Setup";
+        SalesCrHdr : Record "Sales Cr.Memo Header";
+        CurrencyCode : Text[20];
+    begin
+        If SalesCrHdr.Get(Rec."Document No.") then
+         CurrencyCode := SalesCrHdr."Currency Code";
+        if CurrencyCode = '' then begin
+            GLSetup.Get();
+            CurrencyCode := GLSetup.GetCurrencyCode(CurrencyCode);
+        end;
+
+
+        if CurrencyCode <> '' then
+            exit(CaptionWithoutCurrencyCode + StrSubstNo(' (%1)', CurrencyCode));
+
+        exit(CaptionWithoutCurrencyCode);
+    end;
+    
 }

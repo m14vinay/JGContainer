@@ -125,10 +125,6 @@ tableextension 50207 "Sales Header Ext" extends "Sales Header"
         {
             Caption = 'Prices Including SST';
         }
-        modify("Amt. Ship. Not Inv. (LCY)")
-        {
-            Caption = 'Amount Shipped Not Invoiced (LCY) Incl. SST';
-        }
     }
 
 }

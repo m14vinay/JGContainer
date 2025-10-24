@@ -44,15 +44,18 @@ pageextension 50219 "Sales Cr Memo Subform Ext" extends "Sales Cr. Memo Subform"
         }
          modify("Total VAT Amount")
         {
-            Caption = 'Total SST Amount';
+            Caption = 'Total SST';
+            CaptionClass = Rec.GetCaptionWithCurrencyCode('Total SST',Currency.Code);;
         }
-          modify("Total Amount Excl. VAT")
+        modify("Total Amount Excl. VAT")
         {
-            Caption = 'Total Amount Excl. SST';
+            Caption = 'Total Excl. SST';
+            CaptionClass = Rec.GetCaptionWithCurrencyCode('Total Excl. SST',Currency.Code);
         }
-           modify("Total Amount Incl. VAT")
+        modify("Total Amount Incl. VAT")
         {
-            Caption = 'Total Amount Incl. SST';
+            Caption = 'Total Incl. SST';
+            CaptionClass = Rec.GetCaptionWithCurrencyCode('Total Incl. SST',Currency.Code);
         }
        
     }
