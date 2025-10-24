@@ -1,5 +1,11 @@
 pageextension 50248 "Sales Order List Ext" extends "Sales Order List"
 {
+    layout{
+        modify("Amount Including VAT")
+        {
+            Caption = 'Amount Including SST';
+        }
+    }
     actions
     {
         modify("Print Confirmation")

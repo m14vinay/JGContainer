@@ -32,21 +32,24 @@ pageextension 50206 "Sales Quote Subform" extends "Sales Quote Subform"
         {
             Caption = 'SST Prod. Posting Group';
         }
-         modify("Total VAT Amount")
-        {
-            Caption = 'Total SST Amount';
-        }
-          modify("Total Amount Excl. VAT")
-        {
-            Caption = 'Total Amount Excl. SST';
-        }
-           modify("Total Amount Incl. VAT")
-        {
-            Caption = 'Total Amount Incl. SST';
-        }
         modify("Subtotal Excl. VAT")
         {
             Caption = 'Subtotal Excl. SST';
+        }
+        modify("Total VAT Amount")
+        {
+            Caption = 'Total SST';
+            CaptionClass = Rec.GetCaptionWithCurrencyCode('Total SST',Currency.Code);;
+        }
+        modify("Total Amount Excl. VAT")
+        {
+            Caption = 'Total Excl. SST';
+            CaptionClass = Rec.GetCaptionWithCurrencyCode('Total Excl. SST',Currency.Code);
+        }
+        modify("Total Amount Incl. VAT")
+        {
+            Caption = 'Total Incl. SST';
+            CaptionClass = Rec.GetCaptionWithCurrencyCode('Total Incl. SST',Currency.Code);
         }
     }
 }

@@ -180,5 +180,19 @@ tableextension 50204 "Sales Line Ext" extends "Sales Line"
             Caption = 'Shipped Not Inv. (LCY) No SST';
         }
     }
+     procedure GetCaptionWithCurrencyCode(CaptionWithoutCurrencyCode: Text; CurrencyCode: Code[10]): Text
+    var
+        GLSetup: Record "General Ledger Setup";
+    begin
+        if CurrencyCode = '' then begin
+            GLSetup.Get();
+            CurrencyCode := GLSetup.GetCurrencyCode(CurrencyCode);
+        end;
+
+        if CurrencyCode <> '' then
+            exit(CaptionWithoutCurrencyCode + StrSubstNo(' (%1)', CurrencyCode));
+
+        exit(CaptionWithoutCurrencyCode);
+    end;
 }
 
