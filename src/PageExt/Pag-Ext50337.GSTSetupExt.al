@@ -1,6 +1,5 @@
 pageextension 50337 "GST Setup Ext" extends "VAT Setup"
 {
-    Caption = 'SST Setup';
     layout
     {
         modify("Allow VAT To")
@@ -18,6 +17,12 @@ pageextension 50337 "GST Setup Ext" extends "VAT Setup"
         modify("Enable Non-Deductible VAT")
         {
             Caption = 'Enable Non-Deductible SST';
+        }
+    }
+    actions{
+        modify(VATPostingGroups)
+        {
+            Caption = 'SST Posting Groups';
         }
     }
 }

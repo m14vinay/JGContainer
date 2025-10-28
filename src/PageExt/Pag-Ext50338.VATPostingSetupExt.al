@@ -19,5 +19,13 @@ pageextension 50338 "VAT Posting Setup Ext" extends "VAT Posting Setup"
         {
             Caption = 'SST Identifier';
         }
+        modify("Sales VAT Account")
+        {
+            Caption = 'SST Account';
+        }
+         modify("VAT Prod. Posting Group")
+        {
+            Caption = 'SST Prod. Posting Group';
+        }
     }
 }

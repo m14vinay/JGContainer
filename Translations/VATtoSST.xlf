@@ -1,0 +1,621 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-AU" target-language="en-AU" original="Base Application">
+    <body>
+      <group id="body">
+       <trans-unit id="Page 4132487568 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Posting Setup</source>
+          <target state="translated">SST Posting Setup</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4132487568 - Control 3928393419 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether to recalculate VAT amounts when you post payments that trigger payment discounts.</source>
+          <target state="translated">Specifies whether to recalculate SST amounts when you post payments that trigger payment discounts.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup - Control Adjust for Payment Discount - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4132487568 - Control 171080247 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether the Non-Deductible VAT is considered for this particular combination of VAT business posting group and VAT product posting group.</source>
+          <target state="translated">Specifies whether the Non-Deductible SST is considered for this particular combination of SST business posting group and SST product posting group.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup - Control Allow Non-Deductible VAT - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4132487568 - Control 3543129988 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if this particular combination of VAT business posting group and VAT product posting group is blocked.</source>
+          <target state="translated">Specifies if this particular combination of SST business posting group and SST product posting group is blocked.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup - Control Blocked - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4132487568 - Control 224568314 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if documents that use this combination of VAT business posting group and VAT product posting group require a certificate of supply.</source>
+          <target state="translated">Specifies if documents that use this combination of SST business posting group and SST product posting group require a certificate of supply.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup - Control Certificate of Supply Required - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4132487568 - Control 3461834954 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies a description of the VAT posting setup</source>
+          <target state="translated">Specifies a description of the SST posting setup</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4132487568 - Control 1299529991 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if this combination of VAT business posting group and VAT product posting group are to be reported as services in the periodic VAT reports.</source>
+          <target state="translated">Specifies if this combination of SST business posting group and SST product posting group are to be reported as services in the periodic SST reports.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup - Control EU Service - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4132487568 - Control 2309662116 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the account associated with the VAT amount that is not deducted due to the type of goods or services purchased.</source>
+          <target state="translated">Specifies the account associated with the SST amount that is not deducted due to the type of goods or services purchased.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup - Control Non-Ded. Purchase VAT Account - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4132487568 - Control 3675839467 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the percentage of the transaction amount to which VAT is not applied.</source>
+          <target state="translated">Specifies the percentage of the transaction amount to which SST is not applied.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup - Control Non-Deductible VAT%  - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4132487568 - Control 63381393 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the number of the general ledger account to post unrealized purchase VAT to.</source>
+          <target state="translated">Specifies the number of the general ledger account to post unrealised Input Tax Credit to.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup - Control Purch. VAT Unreal. Account - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4132487568 - Control 290317523 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the general ledger account number to which to post purchase VAT for the particular combination of business group and product group.</source>
+          <target state="translated">Specifies the general ledger account number to which to post Input Tax Credit for the particular combination of business group and product group.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup - Control Purchase VAT Account - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4132487568 - Control 1665497752 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the general ledger account number to which you want to post reverse charge VAT (purchase VAT) for this combination of VAT business posting group and VAT product posting group, if you have selected the Reverse Charge VAT option in the VAT Calculation Type field.</source>
+          <target state="translated">Specifies the general ledger account number to which you want to post reverse charge SST (Input Tax Credit) for this combination of SST business posting group and SST product posting group, if you have selected the Reverse Charge SST option in the SST Calculation Type field.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup - Control Reverse Chrg. VAT Acc. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4132487568 - Control 2596317437 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the number of the general ledger account to post amounts for unrealized reverse charge VAT to.</source>
+          <target state="translated">Specifies the number of the general ledger account to post amounts for unrealised reverse charge SST to.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup - Control Reverse Chrg. VAT Unreal. Acc. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4132487568 - Control 1216917726 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the general ledger account number to which to post sales VAT for the particular combination of VAT business posting group and VAT product posting group.</source>
+          <target state="translated">Specifies the general ledger account number to which to post SST for the particular combination of SST business posting group and SST product posting group.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup - Control Sales VAT Account - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4132487568 - Control 2527862975 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the number of the general ledger account to post unrealized sales VAT to.</source>
+          <target state="translated">Specifies the number of the general ledger account to post unrealised SST to.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup - Control Sales VAT Unreal. Account - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4132487568 - Control 495755103 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the VAT category in connection with electronic document sending. For example, when you send sales documents through the PEPPOL service, the value in this field is used to populate the TaxApplied element in the Supplier group. The number is based on the UNCL5305 standard.</source>
+          <target state="translated">Specifies the SST category in connection with electronic document sending. For example, when you send sales documents through the PEPPOL service, the value in this field is used to populate the TaxApplied element in the Supplier group. The number is based on the UNCL5305 standard.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup - Control Tax Category - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4132487568 - Control 2743123148 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies how to handle unrealized VAT, which is VAT that is calculated but not due until the invoice is paid.</source>
+          <target state="translated">Specifies how to handle unrealised SST, which is SST that is calculated but not due until the invoice is paid.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup - Control Unrealized VAT Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4132487568 - Control 1246077090 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the relevant VAT rate for the particular combination of VAT business posting group and VAT product posting group. Do not enter the percent sign, only the number. For example, if the VAT rate is 25 %, enter 25 in this field.</source>
+          <target state="translated">Specifies the relevant SST rate for the particular combination of SST business posting group and SST product posting group. Do not enter the percent sign, only the number. For example, if the SST rate is 25 %, enter 25 in this field.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup - Control VAT % - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4132487568 - Control 1844012642 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the VAT specification of the involved customer or vendor to link transactions made for this record with the appropriate general ledger account according to the VAT posting setup.</source>
+          <target state="translated">Specifies the SST specification of the involved customer or vendor to link transactions made for this record with the appropriate general ledger account according to the SST posting setup.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup - Control VAT Bus. Posting Group - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4132487568 - Control 2971014054 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies how VAT will be calculated for purchases or sales of items with this particular combination of VAT business posting group and VAT product posting group.</source>
+          <target state="translated">Specifies how SST will be calculated for purchases or sales of items with this particular combination of SST business posting group and SST product posting group.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup - Control VAT Calculation Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4132487568 - Control 2162283589 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the VAT Clause Code that is associated with the VAT Posting Setup.</source>
+          <target state="translated">Specifies the SST Clause Code that is associated with the SST Posting Setup.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup - Control VAT Clause Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4132487568 - Control 2534656220 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies a code to group various VAT posting setups with similar attributes, for example VAT percentage.</source>
+          <target state="translated">Specifies a code to group various SST posting setups with similar attributes, for example SST percentage.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup - Control VAT Identifier - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4132487568 - Control 236064653 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the VAT specification of the involved item or resource to link transactions made for this record with the appropriate general ledger account according to the VAT posting setup.</source>
+          <target state="translated">Specifies the SST specification of the involved item or resource to link transactions made for this record with the appropriate general ledger account according to the SST posting setup.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup - Control VAT Prod. Posting Group - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4132487568 - Action 4254856415 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Copy selected fields or all fields in the VAT Posting Setup window to a new record. Before you start to copy, you must create the new record.</source>
+          <target state="translated">Copy selected fields or all fields in the SST Posting Setup window to a new record. Before you start to copy, you must create the new record.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup - Action Copy - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 434101636 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Posting Setup Card</source>
+          <target state="translated">SST Posting Setup Card</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup Card - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 434101636 - Control 3928393419 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether to recalculate VAT amounts when you post payments that trigger payment discounts.</source>
+          <target state="translated">Specifies whether to recalculate SST amounts when you post payments that trigger payment discounts.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup Card - Control Adjust for Payment Discount - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 434101636 - Control 171080247 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether the Non-Deductible VAT is considered for this particular combination of VAT business posting group and VAT product posting group.</source>
+          <target state="translated">Specifies whether the Non-Deductible SST is considered for this particular combination of SST business posting group and SST product posting group.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup Card - Control Allow Non-Deductible VAT - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 434101636 - Control 3543129988 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if this particular combination of VAT business posting group and VAT product posting group is blocked.</source>
+          <target state="translated">Specifies if this particular combination of SST business posting group and SST product posting group is blocked.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup Card - Control Blocked - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 434101636 - Control 224568314 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if documents that use this combination of VAT business posting group and VAT product posting group require a certificate of supply.</source>
+          <target state="translated">Specifies if documents that use this combination of SST business posting group and SST product posting group require a certificate of supply.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup Card - Control Certificate of Supply Required - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 434101636 - Control 3461834954 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies description for this particular combination of VAT business posting group and VAT product posting group.</source>
+          <target state="translated">Specifies description for this particular combination of SST business posting group and SST product posting group.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup Card - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 434101636 - Control 1299529991 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if this combination of VAT business posting group and VAT product posting group are to be reported as services in the periodic VAT reports.</source>
+          <target state="translated">Specifies if this combination of SST business posting group and SST product posting group are to be reported as services in the periodic SST reports.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup Card - Control EU Service - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 434101636 - Control 1553698291 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the percentage of the transaction amount to which VAT is not applied.</source>
+          <target state="translated">Specifies the percentage of the transaction amount to which SST is not applied.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup Card - Control Non-Deductible VAT % - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 434101636 - Control 495755103 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the VAT category in connection with electronic document sending. For example, when you send sales documents through the PEPPOL service, the value in this field is used to populate the TaxApplied element in the Supplier group. The number is based on the UNCL5305 standard.</source>
+          <target state="translated">Specifies the SST category in connection with electronic document sending. For example, when you send sales documents through the PEPPOL service, the value in this field is used to populate the TaxApplied element in the Supplier group. The number is based on the UNCL5305 standard.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup Card - Control Tax Category - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 434101636 - Control 2743123148 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies how to handle unrealized VAT, which is VAT that is calculated but not due until the invoice is paid.</source>
+          <target state="translated">Specifies how to handle unrealised SST, which is SST that is calculated but not due until the invoice is paid.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup Card - Control Unrealized VAT Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 434101636 - Control 1246077090 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the relevant VAT rate for the particular combination of VAT business posting group and VAT product posting group. Do not enter the percent sign, only the number. For example, if the VAT rate is 25 %, enter 25 in this field.</source>
+          <target state="translated">Specifies the relevant SST rate for the particular combination of SST business posting group and SST product posting group. Do not enter the percent sign, only the number. For example, if the SST rate is 25 %, enter 25 in this field.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup Card - Control VAT % - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 434101636 - Control 1844012642 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the VAT specification of the involved customer or vendor to link transactions made for this record with the appropriate general ledger account according to the VAT posting setup.</source>
+          <target state="translated">Specifies the SST specification of the involved customer or vendor to link transactions made for this record with the appropriate general ledger account according to the SST posting setup.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup Card - Control VAT Bus. Posting Group - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 434101636 - Control 2971014054 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies how VAT will be calculated for purchases or sales of items with this particular combination of VAT business posting group and VAT product posting group.</source>
+          <target state="translated">Specifies how SST will be calculated for purchases or sales of items with this particular combination of SST business posting group and SST product posting group.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup Card - Control VAT Calculation Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 434101636 - Control 2162283589 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the VAT Clause Code that is associated with the VAT Posting Setup.</source>
+          <target state="translated">Specifies the SST Clause Code that is associated with the SST Posting Setup.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup Card - Control VAT Clause Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 434101636 - Control 2534656220 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies a code to group various VAT posting setups with similar attributes, for example VAT percentage.</source>
+          <target state="translated">Specifies a code to group various SST posting setups with similar attributes, for example SST percentage.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup Card - Control VAT Identifier - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 434101636 - Control 236064653 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the VAT specification of the involved item or resource to link transactions made for this record with the appropriate general ledger account according to the VAT posting setup.</source>
+          <target state="translated">Specifies the SST specification of the involved item or resource to link transactions made for this record with the appropriate general ledger account according to the SST posting setup.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup Card - Control VAT Prod. Posting Group - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 434101636 - Control 2309662116 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the account associated with the VAT amount that is not deducted due to the type of goods or services purchased.</source>
+          <target state="translated">Specifies the account associated with the SST amount that is not deducted due to the type of goods or services purchased.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup Card - Control Non-Ded. Purchase VAT Account - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 434101636 - Control 63381393 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the general ledger account number to which to post unrealized purchase VAT (as calculated when you post purchase invoices) using this particular combination of VAT business posting group and VAT product posting group.</source>
+          <target state="translated">Specifies the general ledger account number to which to post unrealised input tax credit (as calculated when you post purchase invoices) using this particular combination of SST business posting group and SST product posting group.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup Card - Control Purch. VAT Unreal. Account - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 434101636 - Control 1665497752 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the general ledger account number to which you want to post reverse charge VAT (purchase VAT) for this combination of VAT business posting group and VAT product posting group, if you have selected the Reverse Charge VAT option in the VAT Calculation Type field.</source>
+          <target state="translated">Specifies the general ledger account number to which you want to post reverse charge SST (Input Tax Credit) for this combination of SST business posting group and SST product posting group, if you have selected the Reverse Charge SST option in the SST Calculation Type field.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup Card - Control Reverse Chrg. VAT Acc. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 434101636 - Control 1216917726 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the general ledger account number to which to post sales VAT for the particular combination of VAT business posting group and VAT product posting group.</source>
+          <target state="translated">Specifies the general ledger account number to which to post SST for the particular combination of SST business posting group and SST product posting group.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup Card - Control Sales VAT Account - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 434101636 - Control 2527862975 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the general ledger account number to which to post unrealized sales VAT (as calculated when you post sales invoices) using this particular combination of VAT business posting group and VAT product posting group.</source>
+          <target state="translated">Specifies the general ledger account number to which to post unrealised SST (as calculated when you post sales invoices) using this particular combination of SST business posting group and SST product posting group.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup Card - Control Sales VAT Unreal. Account - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 434101636 - Action 4254856415 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Copy selected fields or all fields in the VAT Posting Setup window to a new record. Before you start to copy, you must create the new record.</source>
+          <target state="translated">Copy selected fields or all fields in the SST Posting Setup window to a new record. Before you start to copy, you must create the new record.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Posting Setup Card - Action Copy - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Table 3588064852 - Field 1216917726 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales VAT Account</source>
+          <target state="translated">SST Account</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table VAT Setup Posting Groups - Field Sales VAT Account - Property Caption</note>
+        </trans-unit>
+         <trans-unit id="Table 3588064852 - Field 1665497752 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reverse Chrg. VAT Acc.</source>
+          <target state="translated">Reverse Chrg. SST Acc.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table VAT Setup Posting Groups - Field Reverse Chrg. VAT Acc. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4132487568 - Field 2971014054 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Calculation Type</source>
+          <target state="translated">SST Calculation Type</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table VAT Posting Setup - Field VAT Calculation Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 633887033 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Product Posting Group</source>
+          <target state="translated">SST Product Posting Group</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table VAT Product Posting Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1985924896 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Setup</source>
+          <target state="translated">SST Setup</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table VAT Setup - Property Caption</note>
+        </trans-unit>
+         <trans-unit id="Page 1985924896 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Setup</source>
+          <target state="translated">SST Setup</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1985924896 - Action 2198880604 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Opens the VAT rate change setup</source>
+          <target state="translated">Opens the SST rate change setup</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup - Action VATRateChangeSetup - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1985924896 - Action 2198880604 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Rate Change Setup</source>
+          <target state="translated">SST Rate Change Setup</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup - Action VATRateChangeSetup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1985924896 - Action 3314763057 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Posting Groups</source>
+          <target state="translated">SST Posting Groups</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup - Action VATPostingGroups - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1985924896 - Action 245833987 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Set up the trade-type posting groups that you assign to customer and vendor cards to link VAT amounts with the appropriate general ledger account.</source>
+          <target state="translated">Set up the trade-type posting groups that you assign to customer and vendor cards to link SST amounts with the appropriate general ledger account.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup - Action VATBusinessPostingGroups - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1985924896 - Action 245833987 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Business Posting Groups</source>
+          <target state="translated">SST Business Posting Groups</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup - Action VATBusinessPostingGroups - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1985924896 - Action 1727554479 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Open the VAT Clauses page.</source>
+          <target state="translated">Open the SST Clauses page.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup - Action VATClauses - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1985924896 - Action 1727554479 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Clauses</source>
+          <target state="translated">SST Clauses</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup - Action VATClauses - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1985924896 - Action 2353659728 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Posting Setup</source>
+          <target state="translated">SST Posting Setup</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup - Action VATPostingSetup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1985924896 - Action 3323812224 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Set up the item-type posting groups that you assign to customer and vendor cards to link VAT amounts with the appropriate general ledger account.</source>
+          <target state="translated">Set up the item-type posting groups that you assign to customer and vendor cards to link SST amounts with the appropriate general ledger account.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup - Action VATProductPostingGroups - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1985924896 - Action 3323812224 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Product Posting Groups</source>
+          <target state="translated">SST Product Posting Groups</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup - Action VATProductPostingGroups - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1985924896 - Action 4223267615 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Reporting</source>
+          <target state="translated">SST Reporting</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup - Action VATReporting - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1985924896 - Action 3491515226 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Open the VAT Reports Configuration page.</source>
+          <target state="translated">Open the SST Reports Configuration page.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup - Action VATReportsConfiguration - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1985924896 - Action 3491515226 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Reports Configuration</source>
+          <target state="translated">SST Reports Configuration</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup - Action VATReportsConfiguration - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1985924896 - Action 1388530142 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Set up number series and options for the report that you periodically send to the authorities to declare your VAT.</source>
+          <target state="translated">Set up number series and options for the report that you periodically send to the authorities to declare your SST.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup - Action VATReportSetup - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1985924896 - Action 1388530142 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Report Setup</source>
+          <target state="translated">SST Report Setup</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup - Action VATReportSetup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1985924896 - Action 2660230515 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepare the VAT Return report so you can submit VAT amounts to a tax authority.</source>
+          <target state="translated">Prepare the SST Return report so you can submit SST amounts to a tax authority.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup - Action VATReturn - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1985924896 - Action 2660230515 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Returns</source>
+          <target state="translated">SST Returns</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup - Action VATReturn - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1985924896 - Action 649471568 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Open the VAT return periods page.</source>
+          <target state="translated">Open the SST return periods page.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup - Action VATReturnPeriod - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1985924896 - Action 649471568 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Return Periods</source>
+          <target state="translated">SST Return Periods</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup - Action VATReturnPeriod - Property Caption</note>
+        </trans-unit>
+         <trans-unit id="Page 1985924896 - Action 2659986239 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Statement Templates</source>
+          <target state="translated">SST Statement Templates</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup - Action VATStatementTemplates - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1985924896 - Action 2946106874 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Statements</source>
+          <target state="translated">SST Statements</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup - Action VATStatement - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1985924896 - Property 2019332006" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New,Process,Report,VAT Posting Groups,VAT Reporting,Other</source>
+          <target state="translated">New,Process,Report,SST Posting Groups,SST Reporting,Other</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup - Property PromotedActionCategories</note>
+        </trans-unit>
+         <trans-unit id="Table 1994964448 - Field 1844012642 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Bus. Posting Group</source>
+          <target state="translated">SST Bus. Posting Group</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Customer - Field VAT Bus. Posting Group - Property Caption</note>
+        </trans-unit>
+         <trans-unit id="Page 1614820132 - Control 4211344265 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total Incl. VAT (ACY)</source>
+          <target state="translated">Total Incl. SST (ACY)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Statistics - Control TotalAmount2ACY - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1614820132 - Control 2163307880 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Amount (ACY)</source>
+          <target state="translated">SST Amount (ACY)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Statistics - Control VATAmountACY - Property Caption</note>
+        </trans-unit>
+         <trans-unit id="Page 1614820132 - Control 1520955896 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total excl. VAT (ACY)</source>
+          <target state="translated">Total excl. SST (ACY)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Statistics - Control TotalAmount1ACY - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1614820132 - Control 856663574 - Property 1295455071" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the total VAT amount that has been calculated for all the lines in the purchase order.</source>
+          <target state="translated">Specifies the total SST amount that has been calculated for all the lines in the purchase order.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Statistics - Control VATAmount[3]5D; - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1614820132 - Control 856663574 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Amount</source>
+          <target state="translated">SST Amount</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Statistics - Control VATAmount[3]5D; - Property Caption</note>
+        </trans-unit>
+         <trans-unit id="Page 1614820132 - Control 1036782720 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No. of VAT Lines</source>
+          <target state="translated">No. of SST Lines</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Statistics - Control TempVATAmountLine4.COUNT - Property Caption</note>
+        </trans-unit>
+         <trans-unit id="Page 1614820132 - Control 1123103128 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Amount</source>
+          <target state="translated">SST Amount</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Statistics - Control VATAmount_Invoicing - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1614820132 - Control 3509233236 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Amount</source>
+          <target state="translated">SST Amount</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Statistics - Control VATAmount[1]5D; - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1736440465 - NamedType 2476940767" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Amount</source>
+          <target state="translated">SST Amount</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Invoice Statistics - NamedType Text000</note>
+        </trans-unit>
+        <trans-unit id="Page 1736440465 - NamedType 3114637384" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1% VAT</source>
+          <target state="translated">%1% SST</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Invoice Statistics - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Page 1577340962 - Control 2163307880 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Amount (ACY)</source>
+          <target state="translated">SST Amount (ACY)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Statistics - Control VATAmountACY - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1577340962 - Control 1520955896 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total excl. VAT (ACY)</source>
+          <target state="translated">Total excl. SST (ACY)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Statistics - Control TotalAmount1ACY - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1577340962 - Control 2892191201 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Amount</source>
+          <target state="translated">SST Amount</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Statistics - Control VATAmount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1577340962 - Control 4211344265 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total Incl. VAT (ACY)</source>
+          <target state="translated">Total Incl. SST (ACY)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Statistics - Control TotalAmount2ACY - Property Caption</note>
+        </trans-unit>
+         <trans-unit id="Page 1736440465 - Control 1305347737 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total Incl. VAT</source>
+          <target state="translated">Total Incl. SST</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Invoice Statistics - Control AmountInclVAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1780952628 - Control 2892191201 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Amount</source>
+          <target state="translated">SST Amount</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purch. Credit Memo Statistics - Control VATAmount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1780952628 - Control 1305347737 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total Incl. VAT</source>
+          <target state="translated">Total Incl. SST</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purch. Credit Memo Statistics - Control AmountInclVAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 337631938 - Field 956009532 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allow VAT Date From</source>
+          <target state="translated">Allow SST Date From</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table User Setup - Field Allow VAT Date From - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 337631938 - Field 1610461535 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allow VAT Date To</source>
+          <target state="translated">Allow SST Date To</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table User Setup - Field Allow VAT Date To - Property Caption</note>
+        </trans-unit>
+          <trans-unit id="Page 1536854760 - Control 3447801137 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Date Type</source>
+          <target state="translated">SST Date Type</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Statement Preview - Control VATDateType - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1806786327 - Field 2686451424 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount Including VAT (ACY)</source>
+          <target state="translated">Amount Including SST (ACY)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Gen. Journal Line - Field Amount Including VAT (ACY</note>
+        </trans-unit>
+         <trans-unit id="Table 1806786327 - Field 3646211287 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Amount (ACY)</source>
+          <target state="translated">SST Amount (ACY)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Gen. Journal Line - Field VAT Amount (ACY</note>
+        </trans-unit>
+         <trans-unit id="Table 1806786327 - Field 3668425232 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Base (ACY)</source>
+          <target state="translated">SST Base (ACY)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Gen. Journal Line - Field VAT Base (ACY</note>
+        </trans-unit>
+        <trans-unit id="Table 1806786327 - Field 1023942530 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Difference (ACY)</source>
+          <target state="translated">SST Difference (ACY)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Gen. Journal Line - Field VAT Difference (ACY</note>
+        </trans-unit>
+         <trans-unit id="Table 1806786327 - Field 355385261 - Property 62802879" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Automatic VAT Entry,Manual VAT Entry</source>
+          <target state="translated">Automatic SST Entry,Manual SST Entry</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Gen. Journal Line - Field VAT Posting - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 1806786327 - Field 236064653 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Prod. Posting Group</source>
+          <target state="translated">SST Prod. Posting Group</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Gen. Journal Line - Field VAT Prod. Posting Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1806786327 - Field 350412371 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Date</source>
+          <target state="translated">SST Date</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Gen. Journal Line - Field VAT Reporting Date - Property Caption</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>
