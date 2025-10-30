@@ -615,6 +615,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Gen. Journal Line - Field VAT Reporting Date - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1577340962 - Control 2892191201 - Property 2879900210" maxwidth="0" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Amount</source>
+          <target state="translated">SST Amount</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Statistics - Control VATAmount - Property Caption</note>
+        </trans-unit>
       </group>
     </body>
   </file>

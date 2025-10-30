@@ -8,7 +8,6 @@ tableextension 50218 "Prod. Order Line Ext" extends "Prod. Order Line"
             DataClassification = CustomerContent;
             DecimalPlaces = 0 : 2;
             BlankZero = True;
-            Editable = false;
         }
         modify("Item No.")
         {
