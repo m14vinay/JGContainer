@@ -18,6 +18,41 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Incoterms - Field Description - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 4169440518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Label Print</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Item Label Print - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4169440518 - Field 1847934639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Batch No</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Item Label Print - Field Batch No - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4169440518 - Field 2814799924 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bin Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Item Label Print - Field Bin Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4169440518 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Item Label Print - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4169440518 - Field 568743302 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Item Label Print - Field Item No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4169440518 - Field 3891454143 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Location</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Item Label Print - Field Location - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4169440518 - Field 1891335241 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>UOM</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Item Label Print - Field UOM - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1966141544 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Pack Size</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -467,6 +502,51 @@
           <source>Pack Size</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Item - Control packSize - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4169440518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Label Print</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item Label Print - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4169440518 - Control 1847934639 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Batch No field.</source>
+          <note from="Developer" annotates="general" priority="2">%</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item Label Print - Control Batch No - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4169440518 - Control 2814799924 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Bin Code field.</source>
+          <note from="Developer" annotates="general" priority="2">%</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item Label Print - Control Bin Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4169440518 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Description field.</source>
+          <note from="Developer" annotates="general" priority="2">%</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item Label Print - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4169440518 - Control 568743302 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Item No. field.</source>
+          <note from="Developer" annotates="general" priority="2">%</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item Label Print - Control Item No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4169440518 - Control 3891454143 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Location field.</source>
+          <note from="Developer" annotates="general" priority="2">%</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item Label Print - Control Location - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4169440518 - Control 1891335241 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the UOM field.</source>
+          <note from="Developer" annotates="general" priority="2">%</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item Label Print - Control UOM - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4169440518 - Action 3229512621 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Will add Transport Contract services to Shipment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item Label Print - Action ItemLabel - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4169440518 - Action 3229512621 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print Item Label</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item Label Print - Action ItemLabel - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1966141544 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Pack Size</source>
@@ -1322,6 +1402,26 @@
           <source>Commercial Invoice Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Generate Commercial Invoice - Control CommercialInvoiceDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4169440518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Label Print</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Label Print - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4169440518 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Label Print - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4169440518 - Control 3192306909 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies how many copies of the label to print.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Label Print - Control NoofCopies - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 4169440518 - Control 3192306909 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No. of Copies</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Label Print - Control NoofCopies - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 112996903 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Packing List Report</source>
