@@ -77,6 +77,7 @@ report 50203 "Item Label Print"
                     // Encode the data string to the barcode font
                     GTINBarCode := BarcodeFontProvider.EncodeFont(BarcodeString, BarcodeSymbology);
                     GTINQRCode := BarcodeFontProvider2D.EncodeFont(BarcodeString, BarcodeSymbology2D);
+                    //BarcodeFontProvider2D.SetSize(BarcodeSymbology2D, Enum::"Barcode 2D Size"::Small);
                 end
             end;
         }

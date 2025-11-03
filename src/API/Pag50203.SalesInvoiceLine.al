@@ -94,6 +94,14 @@ page 50203 "Sales Invoice Line"
                 {
                     Caption = 'Quantity Pieces';
                 }
+                field(shortcutDimension1Code; Rec."Shortcut Dimension 1 Code")
+                {
+                    Caption = 'Shortcut Dimension 1 Code';
+                }
+                field(shortcutDimension2Code; Rec."Shortcut Dimension 2 Code")
+                {
+                    Caption = 'Shortcut Dimension 2 Code';
+                }
             }
         }
     }
