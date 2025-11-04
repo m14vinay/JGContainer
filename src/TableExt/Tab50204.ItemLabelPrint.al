@@ -4,7 +4,13 @@ table 50204 "Item Label Print"
     DataClassification = CustomerContent;
     
     fields
+
     {
+        field(7; "Entry No"; Integer)
+        {
+            Caption = 'Entry No';
+            AutoIncrement = true;
+        }
         field(1; "Item No."; Code[20])
         {
             Caption = 'Item No.';
@@ -44,7 +50,7 @@ table 50204 "Item Label Print"
     }
     keys
     {
-        key(PK; "Item No.")
+        key(PK; "Entry No")
         {
             Clustered = true;
         }

@@ -38,6 +38,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Item Label Print - Field Description - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 4169440518 - Field 329134311 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry No</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Item Label Print - Field Entry No - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 4169440518 - Field 568743302 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Item No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -707,6 +712,16 @@
           <source>Shipment No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Sales Invoice Line - Control shipmentNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2079186865 - Control 667097208 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Sales Invoice Line - Control shortcutDimension1Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2079186865 - Control 3389845713 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 2 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Sales Invoice Line - Control shortcutDimension2Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2079186865 - Control 3175374588 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Type</source>
