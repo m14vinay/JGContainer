@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-10-31T08:55:23.3875450Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-11-05T04:57:48.4477190Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -35,7 +35,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>4.34022cm</Height>
+                  <Height>4.24022cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -63,9 +63,9 @@
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
                               <Top>3.78486cm</Top>
-                              <Left>4.14279cm</Left>
+                              <Left>3.40548cm</Left>
                               <Height>0.35cm</Height>
-                              <Width>1.51222cm</Width>
+                              <Width>2.24953cm</Width>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -129,7 +129,7 @@
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
                               <Top>3.78133cm</Top>
-                              <Left>2.59529cm</Left>
+                              <Left>1.92854cm</Left>
                               <Height>0.35cm</Height>
                               <Width>1.47694cm</Width>
                               <ZIndex>2</ZIndex>
@@ -553,6 +553,7 @@
                             </Border>
                           </Style>
                         </Rectangle>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -571,6 +572,7 @@
                     <GroupExpressions>
                       <GroupExpression>=Fields!ItemNo.Value</GroupExpression>
                       <GroupExpression>=Fields!OutputNo.Value</GroupExpression>
+                      <GroupExpression>=Fields!EntryNo.Value</GroupExpression>
                     </GroupExpressions>
                     <PageBreak>
                       <BreakLocation>Between</BreakLocation>
@@ -595,7 +597,7 @@
               <BreakLocation>End</BreakLocation>
             </PageBreak>
             <Left>0.00001in</Left>
-            <Height>4.34022cm</Height>
+            <Height>4.24022cm</Height>
             <Width>5.65501cm</Width>
             <Style>
               <Border>
@@ -609,7 +611,7 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>4.34022cm</Height>
+        <Height>4.24022cm</Height>
         <Style />
       </Body>
       <Width>5.65504cm</Width>
@@ -684,6 +686,9 @@ End Function
         </Field>
         <Field Name="BatchNo">
           <DataField>BatchNo</DataField>
+        </Field>
+        <Field Name="EntryNo">
+          <DataField>EntryNo</DataField>
         </Field>
         <Field Name="GTINQRCode">
           <DataField>GTINQRCode</DataField>

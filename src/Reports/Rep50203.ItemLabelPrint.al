@@ -28,6 +28,9 @@ report 50203 "Item Label Print"
             column(BatchNo; "Batch No")
             {
             }
+            column(EntryNo; "Entry No")
+            {
+            }
             column(GTINQRCode; GTINQRCode) { }
             column(CompInfoName; CompInfo.Name) { }
             dataitem(CopyLoop; "Integer")

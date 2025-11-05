@@ -3348,6 +3348,41 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension User Setup - Control Shortcut Dimension 1 Code - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 519427812 - Change 79540530 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2248515987">
+          <source>Add.-Curr. SST Difference</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Entries Ext - Change Add.-Curr. VAT Difference - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 519427812 - Change 1844012642 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2248515987">
+          <source>SST Bus. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Entries Ext - Change VAT Bus. Posting Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 519427812 - Change 2971014054 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2248515987">
+          <source>SST Calculation Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Entries Ext - Change VAT Calculation Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 519427812 - Change 2992823416 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2248515987">
+          <source>SST Difference</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Entries Ext - Change VAT Difference - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 519427812 - Change 236064653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2248515987">
+          <source>SST Prod. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Entries Ext - Change VAT Prod. Posting Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 519427812 - Change 617267791 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2248515987">
+          <source>SST Registration No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Entries Ext - Change VAT Registration No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 519427812 - Change 350412371 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2248515987">
+          <source>SST Reporting Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Entries Ext - Change VAT Reporting Date - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 2087475983 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4132487568">
           <source>SST Posting Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3382,6 +3417,26 @@
           <source>SST Prod. Posting Group</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Posting Setup Ext - Change VAT Prod. Posting Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1184928737 - Change 720583271 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4062117826">
+          <source>SST Report Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Reports Configuration Ext - Change VAT Report Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1184928737 - Change 1318640161 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4062117826">
+          <source>SST Report Version</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Reports Configuration Ext - Change VAT Report Version - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1184928737 - Change 3421076227 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4062117826">
+          <source>SST Statement Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Reports Configuration Ext - Change VAT Statement Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1184928737 - Change 4038941498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4062117826">
+          <source>SST Statement Template</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Reports Configuration Ext - Change VAT Statement Template - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1680057832 - Control 2006507964 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4284303991">
           <source>Specifies Returnable</source>
