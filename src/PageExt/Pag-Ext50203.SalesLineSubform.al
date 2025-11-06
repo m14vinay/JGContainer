@@ -59,5 +59,7 @@ pageextension 50203 "Sales Line Subform" extends "Sales Order Subform"
             Caption = 'Total Incl. SST';
             CaptionClass = Rec.GetCaptionWithCurrencyCode('Total Incl. SST',Currency.Code);
         }
+        movebefore("Qty. to Assemble to Order";"Blanket Order No.")
+        movebefore("Qty. to Assemble to Order";"Blanket Order Line No.")
     }
 }
