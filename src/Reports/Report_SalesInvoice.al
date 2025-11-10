@@ -207,6 +207,7 @@ report 50207 SalesInvoiceReport
 
             }
             column(Currency_Code; Currency_Code) { }
+            column(GTINQRCode;GTINQRCode){}
             dataitem("Sales Invoice Line"; "Sales Invoice Line")
             {
                 DataItemLink = "Document No." = field("No.");
@@ -338,6 +339,21 @@ report 50207 SalesInvoiceReport
                 Clear(ShowAmount);
                 Clear(SalesPersonPurch);
                 Clear(DONo);
+                If "ADY E-INV QR Code".HasValue then begin
+                    "ADY E-INV QR Code".CreateInStream(EQRCodeStream,TextEncoding::UTF8);
+                    BarcodeFontProvider := Enum::"Barcode Font Provider"::IDAutomation1D;
+                    BarcodeFontProvider2D := Enum::"Barcode Font Provider 2D"::IDAutomation2D;
+                    EQRCodeStream.ReadText(BarcodeString);
+                   // BarcodeString := Format();
+                    
+                    // Validate the input
+                    BarcodeString := DelChr(BarcodeString, '=', ' ');
+                    Message('%1',BarcodeString);
+                    BarcodeFontProvider.ValidateInput(BarcodeString, BarcodeSymbology);
+                    // Encode the data string to the barcode font
+                    GTINBarCode := BarcodeFontProvider.EncodeFont(BarcodeString, BarcodeSymbology);
+                    GTINQRCode := BarcodeFontProvider2D.EncodeFont(BarcodeString, BarcodeSymbology2D);
+                end;
 
                 If SalesPersonPurch.Get("Salesperson Code") then;
                 if not Currency.Get("Currency Code") then
@@ -441,6 +457,8 @@ report 50207 SalesInvoiceReport
         CompanyInfo.SetAutoCalcFields("Company Logo 1");
         CompanyInfo.SetAutoCalcFields("Company Logo 2");
         CompanyInfo.SetAutoCalcFields("Company Logo 3");
+        BarcodeSymbology := Enum::"Barcode Symbology"::Code39;
+        BarcodeSymbology2D := Enum::"Barcode Symbology 2D"::"QR-Code";
     end;
 
     var
@@ -463,10 +481,17 @@ report 50207 SalesInvoiceReport
         Variant_Code: Text;
         CompanyCountry: Text;
         Bill_to_Address: Text;
+        EQRCodeStream: InStream;
         BIllpostcodecitycountrycounty: Text;
         EffectiveDate: Date;
         SSTExemption: Record "SST Exemption Details";
-
+        BarcodeFontProvider: Interface "Barcode Font Provider";
+        BarcodeFontProvider2D: Interface "Barcode Font Provider 2D";
+         BarcodeSymbology: Enum "Barcode Symbology";
+        BarcodeSymbology2D: Enum "Barcode Symbology 2D";
+        GTINBarCode: Text[500];
+        GTINQRCode: Text[500];
+        BarcodeString: Text[500];
         Billtomobileno: Text;
         BilltoPhoneNo: Text;
         SalesTax: Decimal;

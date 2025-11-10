@@ -35,11 +35,13 @@ tableextension 50207 "Sales Header Ext" extends "Sales Header"
             TableRelation = "SST Exemption Details"."SST Exemption Registration No." where("Customer No." = field("Sell-to Customer No."));
             trigger OnValidate()
             var
-                SalesReceivablesSetup: Record "Sales & Receivables Setup";
+                SSTExemptionDetails: Record "SST Exemption Details";
             begin
-                SalesReceivablesSetup.Get();
-                If "SST Exemption registration No." <> '' then
-                    Rec.Validate("VAT Bus. Posting Group", SalesReceivablesSetup."SST Exempted BPG");
+                SSTExemptionDetails.Reset();
+                SSTExemptionDetails.SetRange("Customer No.","Sell-to Customer No.");
+                SSTExemptionDetails.SetRange("SST Exemption Registration No.",Rec."SST Exemption Registration No.");
+                If SSTExemptionDetails.FindFirst() then
+                    Rec.Validate("VAT Bus. Posting Group", SSTExemptionDetails."SST Business Posting Group");
 
             end;
         }

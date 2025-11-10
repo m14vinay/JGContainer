@@ -20,6 +20,10 @@ page 50210 "SST Exemption Details"
                 {
                     ToolTip = 'Specifies the value of the SST Exemption Registration No. field.', Comment = '%';
                 }
+                field("SST Business Posting Group"; Rec."SST Business Posting Group")
+                {
+                    ToolTip = 'Specifies the value of the SST Business Posting Group field.', Comment = '%';
+                }
                 field("Effective Date"; Rec."Effective Date")
                 {
                     ToolTip = 'Specifies the value of the Effective Date field.', Comment = '%';

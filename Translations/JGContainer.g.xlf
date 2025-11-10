@@ -53,6 +53,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Item Label Print - Field Location - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 4169440518 - Field 2704404533 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Item Label Print - Field Quantity - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 4169440518 - Field 1891335241 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>UOM</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -107,6 +112,11 @@
           <source>Expiry Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table SST Exemption Details - Field Expiry Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 140502049 - Field 511768255 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SST Business Posting Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SST Exemption Details - Field SST Business Posting Group - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 140502049 - Field 4124938845 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>SST Exemption Registration No.</source>
@@ -537,6 +547,11 @@
           <source>Specifies the value of the Location field.</source>
           <note from="Developer" annotates="general" priority="2">%</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Item Label Print - Control Location - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4169440518 - Control 2704404533 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Quantity field.</source>
+          <note from="Developer" annotates="general" priority="2">%</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item Label Print - Control Quantity - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 4169440518 - Control 1891335241 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the UOM field.</source>
@@ -1162,6 +1177,11 @@
           <source>Specifies the value of the Expiry Date field.</source>
           <note from="Developer" annotates="general" priority="2">%</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SST Exemption Details - Control Expiry Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 140502049 - Control 511768255 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the SST Business Posting Group field.</source>
+          <note from="Developer" annotates="general" priority="2">%</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SST Exemption Details - Control SST Business Posting Group - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 140502049 - Control 4124938845 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the SST Exemption Registration No. field.</source>

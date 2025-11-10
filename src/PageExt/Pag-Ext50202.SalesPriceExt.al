@@ -71,9 +71,10 @@ pageextension 50202 "Sales Price Ext" extends "Sales Prices"
                     var
                         CustomWorkFlowMgt: Codeunit "Sales Custom WorkFlow Mgt";
                         RecRef: RecordRef;
+                        SalesPrice : Record "Sales Price";
                     begin
-
-                        RecRef.GetTable(Rec);
+                       CurrPage.SetSelectionFilter(SalesPrice);
+                        RecRef.GetTable(SalesPrice);
                         If CustomWorkFlowMgt.CheckSalesPriceApprovalPossible(RecRef) then
                             CustomWorkFlowMgt.OnSendSalesPriceForApproval(RecRef);
                     end;

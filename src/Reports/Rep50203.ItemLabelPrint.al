@@ -28,6 +28,9 @@ report 50203 "Item Label Print"
             column(BatchNo; "Batch No")
             {
             }
+             column(Quantity; Quantity)
+            {
+            }
             column(EntryNo; "Entry No")
             {
             }

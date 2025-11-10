@@ -36,6 +36,10 @@ page 50214 "Item Label Print"
                 {
                     ToolTip = 'Specifies the value of the Batch No field.', Comment = '%';
                 }
+                 field(Quantity; Rec.Quantity)
+                {
+                    ToolTip = 'Specifies the value of the Quantity field.', Comment = '%';
+                }
             }
         }
     }

@@ -22,6 +22,11 @@ table 50202 "SST Exemption Details"
         {
             Caption = 'Expiry Date';
         }
+        field(5; "SST Business Posting Group"; Code[20])
+        {
+            Caption = 'SST Business Posting Group';
+            TableRelation = "VAT Business Posting Group".Code;
+        }
     }
     keys
     {
@@ -32,6 +37,6 @@ table 50202 "SST Exemption Details"
     }
     fieldgroups
     {
-        fieldgroup(DropDown;"Customer No.","SST Exemption Registration No.","Effective Date"){}
+        fieldgroup(DropDown;"Customer No.","SST Exemption Registration No.","SST Business Posting Group","Effective Date"){}
     }
 }

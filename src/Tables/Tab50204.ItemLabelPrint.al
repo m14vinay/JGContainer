@@ -28,6 +28,7 @@ table 50204 "Item Label Print"
         field(2; Description; Text[100])
         {
             Caption = 'Description';
+            Editable = false;
         }
         field(3; Location; Code[10])
         {
@@ -46,6 +47,10 @@ table 50204 "Item Label Print"
         field(6; "Batch No"; Code[20])
         {
             Caption = 'Batch No';
+        }
+        field(8; "Quantity"; Integer)
+        {
+            Caption = 'Quantity';
         }
     }
     keys
