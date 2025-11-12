@@ -139,7 +139,7 @@ report 50213 "Packing List Report"
             column(CustomerCode; "Sell-to Customer No.")
             {
             }
-            column(Incoterm; "Incoterms")
+            column(Incoterm; "ADY E-INV Incoterms Code")
             {
             }
             column(SalesPerson; SalesPersonPurch.Name)

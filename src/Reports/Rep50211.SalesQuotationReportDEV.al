@@ -58,7 +58,7 @@ report 50211 "Sales Quotation Report"
             column(Payment_Terms_Code; "Payment Terms Code") { }
             column(Sell_to_Customer_No_; "Sell-to Customer No.") { }
             column(Salesperson_Code; SalesPersonPurch.Name) { }
-            column(Incoterms; Incoterms) { }
+            column(Incoterms; "ADY E-INV Incoterms Code") { }
             column(Work_Description; WorkDescriptionTxt) { }
 
             column(AmountInWords; AmtInWords) { }

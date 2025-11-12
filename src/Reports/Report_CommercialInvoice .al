@@ -20,7 +20,7 @@ report 50200 CommercialInvoiceReport
             column(CompanyCity; CompanyInfo."City")
             {
             }
-            column(Incoterms; Incoterms)
+            column(Incoterms; "ADY E-INV Incoterms Code")
             {
             }
             column(CompanyState; CompanyCounty)

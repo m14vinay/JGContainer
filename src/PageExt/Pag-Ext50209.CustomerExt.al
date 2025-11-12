@@ -12,11 +12,6 @@ pageextension 50209 "Customer Ext" extends "Customer Card"
         }
         addafter("Shipment Method Code")
         {
-             field(Incoterms; Rec.Incoterms)
-            {
-                ToolTip = 'Specifies Incoterms';
-                ApplicationArea = All;
-            }
              field("Place of Export"; Rec."Place of Export")
             {
                 ToolTip = 'Specifies Place of Export';

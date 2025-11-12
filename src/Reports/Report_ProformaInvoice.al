@@ -36,7 +36,7 @@ report 50209 ProfomaInvoice
             column(CompanyInfoFax; CompanyInfo."Fax No.")
             {
             }
-            column(Incoterms; Incoterms)
+            column(Incoterms; "ADY E-INV Incoterms Code")
             {
             }
             column(CompanyInfoPhoneNo; CompanyInfo."Marketing Phone No")
@@ -136,7 +136,7 @@ report 50209 ProfomaInvoice
             column(CustomerCode; "Sell-to Customer No.")
             {
             }
-            column(Incoterm; "Incoterms")
+            column(Incoterm; "ADY E-INV Incoterms Code")
             {
             }
             column(SalesPerson; SalesPersonPurch.Name)

@@ -2,15 +2,6 @@ pageextension 50211 "Sales Quote Ext" extends "Sales Quote"
 {
      layout
     {
-        addafter("Shipment Method Code")
-        {
-            field(Incoterms; Rec.Incoterms)
-            {
-                ToolTip = 'Specifies Incoterms';
-                ApplicationArea = All;
-            }
-
-        }
         addafter("Ship-to Phone No.")
         {
             field("Delivery Area"; Rec."Delivery Area")

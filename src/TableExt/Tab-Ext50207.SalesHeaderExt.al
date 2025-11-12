@@ -2,12 +2,6 @@ tableextension 50207 "Sales Header Ext" extends "Sales Header"
 {
     fields
     {
-        field(50201; "Incoterms"; Code[20])
-        {
-            Caption = 'Incoterms';
-            DataClassification = CustomerContent;
-            TableRelation = Incoterms;
-        }
         field(50202; Vessel; Text[50])
         {
             DataClassification = CustomerContent;
@@ -80,16 +74,6 @@ tableextension 50207 "Sales Header Ext" extends "Sales Header"
         {
             DataClassification = CustomerContent;
             Caption = 'Mother Vessel';
-        }
-        modify("Sell-to Customer No.")
-        {
-            trigger OnAfterValidate()
-            var
-                Customer: Record Customer;
-            begin
-                If Customer.Get("Sell-to Customer No.") then
-                    Incoterms := Customer.Incoterms;
-            end;
         }
         modify("VAT Base Discount %")
         {

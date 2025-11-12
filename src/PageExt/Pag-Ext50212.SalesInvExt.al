@@ -2,14 +2,6 @@ pageextension 50212 "Sales Inv Ext" extends "Sales Invoice"
 {
     layout
     {
-        addafter("Shipment Method Code")
-        {
-            field(Incoterms; Rec.Incoterms)
-            {
-                ToolTip = 'Specifies Incoterms';
-                ApplicationArea = All;
-            }
-        }
         addafter("Ship-to Phone No.")
         {
             field("Delivery Area"; Rec."Delivery Area")

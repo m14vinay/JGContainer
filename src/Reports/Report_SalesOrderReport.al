@@ -98,10 +98,14 @@ report 50208 SalesOrderReport
             column(Billtomobileno; Billtomobileno)
             {
             }
+            column(BillToAddrTxt; BillToAddrTxt)
+            {
+            }
             column(BIllpostcodecitycountrycounty; BIllpostcodecitycountrycounty)
             {
 
             }
+            column(ShipToAddrTxt;ShipToAddrTxt){}
             column(Ship_to_Name; "Ship-to Name")
             {
             }
@@ -132,7 +136,7 @@ report 50208 SalesOrderReport
             column(CustomerCode; "Sell-to Customer No.")
             {
             }
-            column(Incoterm; "Incoterms")
+            column(Incoterm; "ADY E-INV Incoterms Code")
             {
             }
             column(SalesPerson; SalesPersonPurch.Name)
@@ -332,6 +336,8 @@ report 50208 SalesOrderReport
 
                 Clear(EffectiveDate);
                 Clear(SalesTaxPercent);
+                cr := 13;
+                lf := 10;
                 If SalesPersonPurch.Get("Salesperson Code") then;
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
@@ -340,12 +346,18 @@ report 50208 SalesOrderReport
 
                 if "Sell-to Customer No." <> '' then begin
                     if Customer.Get("Bill-to Customer No.") then begin
-                        Bill_to_Address := Customer.Address;
+                        If Customer.Address <> '' then
+                            BillToAddrTxt += Customer.Address + Format(cr) + Format(lf);
+                        If Customer."Address 2" <> '' then
+                            BillToAddrTxt += Customer."Address 2" + Format(cr) + Format(lf);
+
                         BilltoPhoneNo := Customer."Phone No.";
                         Billtomobileno := Customer."Mobile Phone No.";
                         if CountryRegion.Get(Customer."Country/Region Code") then
                             BIllCountry := CountryRegion.Name;
                         BIllpostcodecitycountrycounty := Customer."Post Code" + ', ' + Customer.City + ', ' + Customer.County + ', ' + BIllCountry;
+                        If BIllpostcodecitycountrycounty <> '' then
+                            BillToAddrTxt += BIllpostcodecitycountrycounty;
                     end else begin
                         Clear(Bill_to_Address);
                         Clear(BilltoPhoneNo);
@@ -354,6 +366,20 @@ report 50208 SalesOrderReport
                         Clear(BIllCountry);
                     end;
                 end;
+    
+                If "Ship-to Address" <> '' then
+                    ShipToAddrTxt += "Ship-to Address"+ Format(cr) + Format(lf);
+                If "Ship-to Address 2" <> '' then
+                    ShipToAddrTxt += "Ship-to Address 2"+ Format(cr) + Format(lf);
+                If "Ship-to Post Code" <> '' then
+                    ShipToAddrTxt += "Ship-to Post Code" + ', ';
+                If "Ship-to City" <> '' then
+                    ShipToAddrTxt += "Ship-to City" + ', ';
+                If "Ship-to County" <> '' then
+                    ShipToAddrTxt += "Ship-to County" + ', ';
+                If ShipCountry <> '' then
+                    ShipToAddrTxt += ShipCountry;
+
                 "Sales Header".CalcFields("Amount Including VAT");
                 CodeCheck.InitTextVariable();
                 CodeCheck.FormatNoText(NoText, Abs("Sales Header"."Amount Including VAT"), "Currency Code");
@@ -475,8 +501,15 @@ report 50208 SalesOrderReport
         ReportTitle: Text[30];
         CompanyAddr: array[8] of Text[100];
         VendAddr: array[8] of Text[100];
+        BillToAddr: array[8] of Text[100];
+        ShipToAddr: array[8] of Text[100];
+        BillToAddrTxt: Text[100];
+        ShipToAddrTxt: Text[100];
+        Shiptotxt: Text[100];
         TotalShowAmount: Decimal;
         ShowAmount: Decimal;
+        cr: Char;
+        lf: Char;
 
     local procedure CurrencyCode(SrcCurrCode: Code[10]): Code[10]
     begin

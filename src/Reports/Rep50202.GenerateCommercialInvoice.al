@@ -39,7 +39,7 @@ report 50202 "Generate Commercial Invoice"
                 SalesInvoice.Validate("Shipment Method Code",SalesHeader."Shipment Method Code");
                 SalesInvoice.Validate("Shipping Agent Code",SalesHeader."Shipping Agent Code");
                 SalesInvoice.Validate("Shipping Agent Service Code",SalesHeader."Shipping Agent Service Code");
-                SalesInvoice.Validate(Incoterms,SalesHeader.Incoterms);
+                SalesInvoice.Validate("ADY E-INV Incoterms Code",SalesHeader."ADY E-INV Incoterms Code");
                 SalesInvoice.Validate("Location Code",SalesHeader."Location Code");
                 SalesInvoice.Validate("Dimension Set ID", SalesHeader."Dimension Set ID");
                 SalesInvoice.Modify();

@@ -7,12 +7,6 @@ tableextension 50206 "Customer Ext" extends Customer
             Caption = 'Agent/Distributor Name';
             DataClassification = CustomerContent;
         }
-        field(50202; "Incoterms"; Code[20])
-        {
-            Caption = 'Incoterms'; //Done
-            DataClassification = CustomerContent;
-            TableRelation = Incoterms.Code;
-        }
         field(50203; "Phone No. 2"; Text[30])
         {
             Caption = 'Phone No. 2';

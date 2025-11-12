@@ -10,15 +10,7 @@ pageextension 50240 "Blanket Order Ext" extends "Blanket Sales Order"
                 ApplicationArea = All;
             }
         }
-        addafter("Shipment Method Code")
-        {
-            field(Incoterms; Rec.Incoterms)
-            {
-                ToolTip = 'Specifies Incoterms';
-                ApplicationArea = All;
-            }
-
-        }
+        
          addafter("Package Tracking No.")
         {
             field("Shipment From"; Rec."Shipment From")

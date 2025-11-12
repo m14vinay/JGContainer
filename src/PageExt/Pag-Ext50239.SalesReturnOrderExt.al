@@ -10,15 +10,6 @@ pageextension 50239 "Sales Return Order Ext" extends "Sales Return Order"
                 ApplicationArea = All;
             }
         }
-         addafter("Shipping Agent Code")
-        {
-            field(Incoterms; Rec.Incoterms)
-            {
-                ToolTip = 'Specifies Incoterms';
-                ApplicationArea = All;
-            }
-
-        }
          addafter("Package Tracking No.")
         {
             field("Shipment From"; Rec."Shipment From")
