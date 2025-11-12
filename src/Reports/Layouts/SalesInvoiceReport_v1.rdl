@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-11-10T06:09:19.9793152Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-11-11T08:43:34.9709036Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -3855,35 +3855,22 @@
                                 </Border>
                               </Style>
                             </Rectangle>
-                            <Textbox Name="Textbox7">
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>=Fields!GTINQRCode.Value</Value>
-                                      <Style>
-                                        <FontFamily>IDAutomation2D</FontFamily>
-                                        <FontSize>8pt</FontSize>
-                                        <FontWeight>Bold</FontWeight>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style />
-                                </Paragraph>
-                              </Paragraphs>
-                              <rd:DefaultName>Textbox3</rd:DefaultName>
-                              <Top>9.64494cm</Top>
-                              <Left>15.02896cm</Left>
-                              <Height>1.1776in</Height>
-                              <Width>1.379in</Width>
+                            <Image Name="Image2">
+                              <Source>Database</Source>
+                              <Value>=Fields!GTINQRCode.Value</Value>
+                              <MIMEType>image/jpeg</MIMEType>
+                              <Sizing>FitProportional</Sizing>
+                              <Top>9.23605cm</Top>
+                              <Left>14.65162cm</Left>
+                              <Height>3.8cm</Height>
+                              <Width>3.75208cm</Width>
                               <ZIndex>10</ZIndex>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
                                 </Border>
                               </Style>
-                            </Textbox>
+                            </Image>
                           </ReportItems>
                           <KeepTogether>true</KeepTogether>
                           <Style />

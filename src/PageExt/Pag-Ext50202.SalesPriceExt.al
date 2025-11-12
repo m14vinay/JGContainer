@@ -5,7 +5,7 @@ pageextension 50202 "Sales Price Ext" extends "Sales Prices"
     {
         addafter("Unit Price")
         {
-             field("Price Per Piece"; Rec."Price Per Piece")
+            field("Price Per Piece"; Rec."Price Per Piece")
             {
                 ToolTip = 'Specifies the Price Per Piece';
                 ApplicationArea = All;
@@ -15,13 +15,13 @@ pageextension 50202 "Sales Price Ext" extends "Sales Prices"
                 ToolTip = 'Specifies the approval status';
                 ApplicationArea = All;
             }
-           
+
         }
-         modify("VAT Bus. Posting Gr. (Price)")
+        modify("VAT Bus. Posting Gr. (Price)")
         {
             Caption = 'SST Bus. Posting Gr. (Price)';
         }
-         modify("Price Includes VAT")
+        modify("Price Includes VAT")
         {
             Caption = 'Price Includes SST';
         }
@@ -71,12 +71,15 @@ pageextension 50202 "Sales Price Ext" extends "Sales Prices"
                     var
                         CustomWorkFlowMgt: Codeunit "Sales Custom WorkFlow Mgt";
                         RecRef: RecordRef;
-                        SalesPrice : Record "Sales Price";
+                        SalesPrice: Record "Sales Price";
                     begin
-                       CurrPage.SetSelectionFilter(SalesPrice);
-                        RecRef.GetTable(SalesPrice);
-                        If CustomWorkFlowMgt.CheckSalesPriceApprovalPossible(RecRef) then
-                            CustomWorkFlowMgt.OnSendSalesPriceForApproval(RecRef);
+                        CurrPage.SetSelectionFilter(SalesPrice);
+                        If SalesPrice.FindSet() then
+                            repeat
+                                RecRef.GetTable(SalesPrice);
+                                If CustomWorkFlowMgt.CheckSalesPriceApprovalPossible(RecRef) then
+                                    CustomWorkFlowMgt.OnSendSalesPriceForApproval(RecRef);
+                            until SalesPrice.Next() = 0;
                     end;
                 }
                 action(CancelApprovalRequest)
@@ -92,9 +95,14 @@ pageextension 50202 "Sales Price Ext" extends "Sales Prices"
                     var
                         CustomWorkFlowMgt: Codeunit "Sales Custom WorkFlow Mgt";
                         RecRef: RecordRef;
+                        SalesPrice: Record "Sales Price";
                     begin
-                        RecRef.GetTable(Rec);
-                        CustomWorkFlowMgt.OnCancelSalesPriceForApproval(RecRef);
+                        CurrPage.SetSelectionFilter(SalesPrice);
+                        If SalesPrice.FindSet() then
+                            repeat
+                                RecRef.GetTable(SalesPrice);
+                                CustomWorkFlowMgt.OnCancelSalesPriceForApproval(RecRef);
+                            until SalesPrice.Next() = 0;
                     end;
                 }
                 action(Approvals)
@@ -203,6 +211,7 @@ pageextension 50202 "Sales Price Ext" extends "Sales Prices"
         CanCancelApprovalForRecord: Boolean;
         OpenApprovalEntriesExistForCurrUser: Boolean;
         Text003: Label 'The approval process must be cancelled or completed to reopen this document.';
+
     trigger OnAfterGetCurrRecord()
     var
         ApprovalsMgmt: Codeunit "Approvals Mgmt.";
@@ -213,6 +222,7 @@ pageextension 50202 "Sales Price Ext" extends "Sales Prices"
         CanCancelApprovalForRecord := ApprovalsMgmt.CanCancelApprovalForRecord(Rec.RecordId());
         WorkflowWebhookMgt.GetCanRequestAndCanCancel(Rec.RecordId(), CanRequestApprovalForFlow, CanCancelApprovalForFlow);
     end;
+
     trigger OnOpenPage()
     var
         CurrCodeFilter: Text;
@@ -223,5 +233,5 @@ pageextension 50202 "Sales Price Ext" extends "Sales Prices"
         if (CurrCodeFilter = '''''') or (CurrCodeFilter = '') then
             Rec.SetRange("Currency Code"); // Remove blank filter
     end;
-    
+
 }
