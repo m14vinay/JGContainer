@@ -44,6 +44,9 @@ report 50201 DeliveryOrderReport
             column(CompanyInfoHomePage; CompanyInfo."Home Page")
             {
             }
+            column(ShipToAddrTxt; ShipToAddrTxt) { }
+            column(BillToAddrTxt; BillToAddrTxt) { }
+
             column(CompanyInfoVATRegNo; CompanyInfo."ADY E-INV SST Reg No.")
             {
             }
@@ -205,6 +208,10 @@ report 50201 DeliveryOrderReport
                 CountryRegion: Record "Country/Region";
                 County: Record County;
             begin
+                Clear(ShipToAddrTxt);
+                Clear(BillToAddrTxt);
+                cr := 13;
+                lf := 10;
                 If SalesPersonPurch.Get("Salesperson Code") then;
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
@@ -224,6 +231,28 @@ report 50201 DeliveryOrderReport
                         postcodecitycountrycounty_g := "Ship-to Post Code" + ', ' + "Ship-to City" + ', ' + "Ship-to County" + ', ' + Country;
                 end else
                     postcodecitycountrycounty_g := "Ship-to Post Code" + ', ' + "Ship-to City" + ', ' + Country;
+                If "Ship-to Address" <> '' then
+                    ShipToAddrTxt += "Ship-to Address" + Format(cr) + Format(lf);
+                If "Ship-to Address 2" <> '' then
+                    ShipToAddrTxt += "Ship-to Address 2" + Format(cr) + Format(lf);
+                If "Ship-to Post Code" <> '' then
+                    ShipToAddrTxt += "Ship-to Post Code" + ' ';
+                If "Ship-to City" <> '' then
+                    ShipToAddrTxt += "Ship-to City" + ', ';
+                If "Ship-to County" <> '' then
+                    if County.Get("Ship-to County") then begin
+                        If Country <> '' then
+                            ShipToAddrTxt += County.Description + ', '
+                        else
+                            ShipToAddrTxt += County.Description;
+                    end else begin
+                        If Country <> '' then
+                            ShipToAddrTxt += "Ship-to County" + ', '
+                        else
+                            ShipToAddrTxt += "Ship-to County";
+                    end;
+                If Country <> '' then
+                    ShipToAddrTxt += Country;
             end;
 
             trigger OnPreDataItem()
@@ -274,6 +303,11 @@ report 50201 DeliveryOrderReport
         ShowAmount: Decimal;
         SalesPersonPurch: Record "Salesperson/Purchaser";
         postcodecitycountrycounty_g: Text;
+        BillToAddrTxt: Text[200];
+        ShipToAddrTxt: Text[200];
+        Shiptotxt: Text[100];
+        cr: Char;
+        lf: Char;
 
     local procedure CurrencyCode(SrcCurrCode: Code[10]): Code[10]
     begin

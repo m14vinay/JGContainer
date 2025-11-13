@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-11-12T08:14:34.7466843Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-11-13T03:09:55.7561360Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -1152,7 +1152,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>SHIP TO ADDRESS :</Value>
+                                          <Value>="SHIP TO ADDRESS : " &amp; Fields!OwnCollectTxt.Value</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
@@ -3939,7 +3939,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=First(Fields!CompanyAddress.Value,"DataSet_Result")+",  " +First(Fields!CompanyPostcode.Value, "DataSet_Result") +",  " +First(Fields!CompanyCity.Value, "DataSet_Result")+",  " +First(Fields!CompanyState.Value, "DataSet_Result")+", "+First(Fields!CompanyCountry.Value, "DataSet_Result")</Value>
+                      <Value>=First(Fields!CompanyAddress.Value,"DataSet_Result")+"," +First(Fields!CompanyPostcode.Value, "DataSet_Result") +"  " +First(Fields!CompanyCity.Value, "DataSet_Result")+"," +First(Fields!CompanyState.Value, "DataSet_Result")+","+First(Fields!CompanyCountry.Value, "DataSet_Result")</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontSize>9pt</FontSize>
@@ -4699,6 +4699,9 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         </Field>
         <Field Name="Currency_Code">
           <DataField>Currency_Code</DataField>
+        </Field>
+        <Field Name="OwnCollectTxt">
+          <DataField>OwnCollectTxt</DataField>
         </Field>
         <Field Name="Type">
           <DataField>Type</DataField>

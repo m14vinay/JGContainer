@@ -29,6 +29,9 @@ report 50213 "Packing List Report"
             column(CompanyState; CompanyCounty)
             {
             }
+            column(ShipToAddrTxt; ShipToAddrTxt) { }
+            column(BillToAddrTxt; BillToAddrTxt) { }
+
             column(CompanyCountry; CompanyCountry)
             {
             }
@@ -169,7 +172,7 @@ report 50213 "Packing List Report"
             column(SSTExemption; "SST Exemption registration No.")
             {
             }
-            column(EffectiveDate;EffectiveDate){}
+            column(EffectiveDate; EffectiveDate) { }
             column(Vessel; Vessel) { }
             column(CommercialInvoiceNo; "Commercial Invoice No") { }
             column(Commercial_Invoice_Date; Format("Commercial Invoice Date", 0, '<day,2>.<month,2>.<year4>')) { }
@@ -225,6 +228,10 @@ report 50213 "Packing List Report"
                 salesline: Record "Sales Line";
             begin
                 Clear(EffectiveDate);
+                Clear(ShipToAddrTxt);
+                Clear(BillToAddrTxt);
+                cr := 13;
+                lf := 10;
                 If SalesPersonPurch.Get("Salesperson Code") then;
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
@@ -238,10 +245,54 @@ report 50213 "Packing List Report"
                 if CountryRegion.Get(Customer."Country/Region Code") then
                     BIllCountry := CountryRegion.Name;
                 BIllpostcodecitycountrycounty := Customer."Post Code" + ', ' + Customer.City + ', ' + Customer.County + ', ' + BIllCountry;
-                
+                If "Ship-to Address" <> '' then
+                    ShipToAddrTxt += "Ship-to Address" + Format(cr) + Format(lf);
+                If "Ship-to Address 2" <> '' then
+                    ShipToAddrTxt += "Ship-to Address 2" + Format(cr) + Format(lf);
+                If "Ship-to Post Code" <> '' then
+                    ShipToAddrTxt += "Ship-to Post Code" + ', ';
+                If "Ship-to City" <> '' then
+                    ShipToAddrTxt += "Ship-to City" + ', ';
+                If "Ship-to County" <> '' then
+                    if County.Get("Ship-to County") then begin
+                        If ShipCountry <> '' then
+                            ShipToAddrTxt += County.Description + ', '
+                        else
+                            ShipToAddrTxt += County.Description;
+                    end else begin
+                        If ShipCountry <> '' then
+                            ShipToAddrTxt += "Ship-to County" + ', '
+                        else
+                            ShipToAddrTxt += "Ship-to County";
+                    end;
+                If ShipCountry <> '' then
+                    ShipToAddrTxt += ShipCountry;
+
+                If Customer.Address <> '' then
+                    BillToAddrTxt += Customer.Address + Format(cr) + Format(lf);
+                If Customer."Address 2" <> '' then
+                    BillToAddrTxt += Customer."Address 2" + Format(cr) + Format(lf);
+                If Customer."Post Code" <> '' then
+                    BillToAddrTxt += Customer."Post Code" + ' ';
+                If Customer.City <> '' then
+                    BillToAddrTxt += Customer.City + ', ';
+                If Customer.County <> '' then
+                    if County.Get(Customer.County) then begin
+                        If BIllCountry <> '' then
+                            BillToAddrTxt += County.Description + ', '
+                        else
+                            BillToAddrTxt += County.Description;
+                    end else begin
+                        If BIllCountry <> '' then
+                            BillToAddrTxt += Customer.County + ', '
+                        else
+                            BillToAddrTxt += Customer.County;
+                    end;
+                If BIllCountry <> '' then
+                    BillToAddrTxt += BIllCountry;
                 SSTExemption.Reset();
-                SSTExemption.SetRange("Customer No.","Sell-to Customer No.");
-                SSTExemption.SetRange("SST Exemption Registration No.","SST Exemption Registration No.");
+                SSTExemption.SetRange("Customer No.", "Sell-to Customer No.");
+                SSTExemption.SetRange("SST Exemption Registration No.", "SST Exemption Registration No.");
                 If SSTExemption.FindFirst() then
                     EffectiveDate := SSTExemption."Effective Date";
             end;
@@ -299,8 +350,8 @@ report 50213 "Packing List Report"
         PackSize: Record "Pack Size";
         CountryRegion: Record "Country/Region";
         SalesPersonPurch: Record "Salesperson/Purchaser";
-         EffectiveDate : Date;
-        SSTExemption : Record "SST Exemption Details";
+        EffectiveDate: Date;
+        SSTExemption: Record "SST Exemption Details";
 
         CompanyAddress: Text[250];
         QtyPerPack: Decimal;
@@ -312,6 +363,12 @@ report 50213 "Packing List Report"
         GLSetup: Record "General Ledger Setup";
         Currency: Record Currency;
         FormatAddr: Codeunit "Format Address";
+        BillToAddrTxt: Text[200];
+        ShipToAddrTxt: Text[200];
+        Shiptotxt: Text[100];
+        cr: Char;
+        lf: Char;
+        County: Record County;
 
 
     local procedure GetPackSizeQty()

@@ -72,6 +72,9 @@ report 50209 ProfomaInvoice
             column(CompanyPicture1; CompanyInfo."Company Logo 1")
             {
             }
+            column(ShipToAddrTxt; ShipToAddrTxt) { }
+            column(BillToAddrTxt; BillToAddrTxt) { }
+
             column(CompanyPicture2; CompanyInfo."Company Logo 2")
             {
             }
@@ -331,6 +334,12 @@ report 50209 ProfomaInvoice
                 VATPostingSetup: Record "VAT Posting Setup";
             begin
                 Clear(EffectiveDate);
+                 Clear(ShipToAddrTxt);
+                Clear(BillToAddrTxt);
+                Clear(ShipCountry);
+                Clear(BIllCountry);
+                cr := 13;
+                lf := 10;
                 If SalesPersonPurch.Get("Salesperson Code") then;
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
@@ -344,6 +353,52 @@ report 50209 ProfomaInvoice
                 if CountryRegion.Get(Customer."Country/Region Code") then
                     BIllCountry := CountryRegion.Name;
                 BIllpostcodecitycountrycounty := Customer."Post Code" + ', ' + Customer.City + ', ' + Customer.County + ', ' + BIllCountry;
+                
+                  If Customer.Address <> '' then
+                    BillToAddrTxt += Customer.Address + Format(cr) + Format(lf);
+                If Customer."Address 2" <> '' then
+                    BillToAddrTxt += Customer."Address 2" + Format(cr) + Format(lf);
+                If Customer."Post Code" <> '' then
+                    BillToAddrTxt += Customer."Post Code" + ' ';
+                If Customer.City <> '' then
+                    BillToAddrTxt += Customer.City + ', ';
+                If Customer.County <> '' then
+                    if County.Get(Customer.County) then begin
+                        If BIllCountry <> '' then
+                            BillToAddrTxt += County.Description + ', '
+                        else
+                            BillToAddrTxt += County.Description;
+                    end else begin
+                        If BIllCountry <> '' then
+                            BillToAddrTxt += Customer.County + ', '
+                        else
+                            BillToAddrTxt += Customer.County;
+                    end;
+                If BIllCountry <> '' then
+                    BillToAddrTxt += BIllCountry;
+                
+                If "Ship-to Address" <> '' then
+                    ShipToAddrTxt += "Ship-to Address" + Format(cr) + Format(lf);
+                If "Ship-to Address 2" <> '' then
+                    ShipToAddrTxt += "Ship-to Address 2" + Format(cr) + Format(lf);
+                If "Ship-to Post Code" <> '' then
+                    ShipToAddrTxt += "Ship-to Post Code" + ' ';
+                If "Ship-to City" <> '' then
+                    ShipToAddrTxt += "Ship-to City" + ', ';
+                If "Ship-to County" <> '' then
+                    if County.Get("Ship-to County") then begin
+                        If ShipCountry <> '' then
+                            ShipToAddrTxt += County.Description + ', '
+                        else
+                            ShipToAddrTxt += County.Description;
+                    end else begin
+                        If ShipCountry <> '' then
+                            ShipToAddrTxt += "Ship-to County" + ', '
+                        else
+                            ShipToAddrTxt += "Ship-to County";
+                    end;
+                If ShipCountry <> '' then
+                    ShipToAddrTxt += ShipCountry;
                 "Sales Header".CalcFields("Amount Including VAT");
                 CodeCheck.InitTextVariable();
                 CodeCheck.FormatNoText(NoText, Abs("Sales Header"."Amount Including VAT"), "Currency Code");
@@ -450,6 +505,12 @@ report 50209 ProfomaInvoice
         TotalShowAmount: Decimal;
         ShowAmount: Decimal;
         SalesPersonPurch: Record "Salesperson/Purchaser";
+        BillToAddrTxt: Text[200];
+        ShipToAddrTxt: Text[200];
+        Shiptotxt: Text[100];
+        County: Record County;
+        cr: Char;
+        lf: Char;
 
     local procedure CurrencyCode(SrcCurrCode: Code[10]): Code[10]
     begin

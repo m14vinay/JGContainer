@@ -22,6 +22,7 @@ report 50211 "Sales Quotation Report"
             column(companyFax; CompanyInfo."Fax No.") { }
             column(companyEmail; CompanyInfo."E-mail") { }
             column(companySSTReg; CompanyInfo."ADY E-INV SST Reg No.") { }
+            column(ShipToAddrTxt; ShipToAddrTxt) { }
             column(companyPicture; CompanyInfo.Picture) { }
             column(companyLogo1; CompanyInfo."Company Logo 1") { }
             column(companyLogo2; CompanyInfo."Company Logo 2") { }
@@ -75,6 +76,38 @@ report 50211 "Sales Quotation Report"
             {
                 DataItemLink = "No." = field("Bill-to Customer No.");
                 column(Customers_Mobile_Phone_No_; "Mobile Phone No.") { }
+                column(BillToAddrTxt; BillToAddrTxt) { }
+                trigger OnAfterGetRecord()
+                begin
+                    Clear(BillToAddrTxt);
+                    cr := 13;
+                    lf := 10;
+                    If Customer.Address <> '' then
+                        BillToAddrTxt += Customer.Address + Format(cr) + Format(lf);
+                    If Customer."Address 2" <> '' then
+                        BillToAddrTxt += Customer."Address 2" + Format(cr) + Format(lf);
+                    If Customer."Post Code" <> '' then
+                        BillToAddrTxt += Customer."Post Code" + ' ';
+                    If Customer.City <> '' then
+                        BillToAddrTxt += Customer.City + ', ';
+                    Clear(CountryName);
+                    if CountryRegion.Get(Customer."Country/Region Code") then
+                        CountryName := CountryRegion.Name;
+                    If Customer.County <> '' then
+                        if County1.Get(Customer.County) then begin
+                            If CountryName <> '' then
+                                BillToAddrTxt += County1.Description + ', '
+                            else
+                                BillToAddrTxt += County1.Description;
+                        end else begin
+                            If CountryName <> '' then
+                                BillToAddrTxt += Customer.County + ', '
+                            else
+                                BillToAddrTxt += Customer.County;
+                        end;
+                    If CountryName <> '' then
+                        BillToAddrTxt += CountryName;
+                end;
             }
 
             // --- Sales Lines (excluding Charge Items) ---
@@ -155,7 +188,9 @@ report 50211 "Sales Quotation Report"
                 Clear(Amount);
                 Clear(AmtInWords);
                 Clear(TempNoText);
-
+                Clear(ShipToAddrTxt);
+                cr := 13;
+                lf := 10;
                 //CalculateTransportCharges();
                 LoadWorkDescription();
                 SalesHeader.CalcFields("Amount Including VAT");
@@ -177,6 +212,34 @@ report 50211 "Sales Quotation Report"
                 Else
                     SalesTaxPercent := 'Sales Tax ' + '0 %';
                 If SalesPersonPurch.Get("Salesperson Code") then;
+
+                If "Ship-to Address" <> '' then
+                    ShipToAddrTxt += "Ship-to Address" + Format(cr) + Format(lf);
+                If "Ship-to Address 2" <> '' then
+                    ShipToAddrTxt += "Ship-to Address 2" + Format(cr) + Format(lf);
+                If "Ship-to Post Code" <> '' then
+                    ShipToAddrTxt += "Ship-to Post Code" + ' ';
+                If "Ship-to City" <> '' then
+                    ShipToAddrTxt += "Ship-to City" + ', ';
+                Clear(CountryName);
+                if CountryRegion.Get("Ship-to Country/Region Code") then
+                    CountryName := CountryRegion.Name;
+                If "Ship-to County" <> '' then
+                    if County1.Get("Ship-to County") then begin
+                        If CountryName <> '' then
+                            ShipToAddrTxt += County1.Description + ', '
+                        else
+                            ShipToAddrTxt += County1.Description;
+                    end else begin
+                        If CountryName <> '' then
+                            ShipToAddrTxt += "Ship-to County" + ', '
+                        else
+                            ShipToAddrTxt += "Ship-to County";
+                    end;
+                If CountryName <> '' then
+                    ShipToAddrTxt += CountryName;
+
+
             end;
         }
     }
@@ -217,6 +280,7 @@ report 50211 "Sales Quotation Report"
         CountryRegion: Record "Country/Region";
         Bank: Record "Bank Account";
         SalesPersonPurch: Record "Salesperson/Purchaser";
+        BillCustomer: Record Customer;
         Bank1_AccountNo: Text;
         Bank1_Name: Text;
         Bank2_AccountNo: Text;
@@ -231,6 +295,14 @@ report 50211 "Sales Quotation Report"
         Bank2_Name: Text[100];
         Bank2_AddressFull: Text[250];
         TotalTransportCharge: Decimal;
+        BillToAddrTxt: Text[200];
+        ShipToAddrTxt: Text[200];
+        Shiptotxt: Text[100];
+        cr: Char;
+        lf: Char;
+        CountryName: Text;
+        County1: Record County;
+        CountyName: Text;
 
     trigger OnPreReport()
     begin
@@ -269,7 +341,7 @@ report 50211 "Sales Quotation Report"
         if CompanyInfo."Post Code" <> '' then
             CompanyAddress += ', ' + CompanyInfo."Post Code";
         if CompanyInfo.City <> '' then
-            CompanyAddress += ', ' + CompanyInfo.City;
+            CompanyAddress += ' ' + CompanyInfo.City;
         if (CompanyInfo.County <> '') then
             if County.Get(CompanyInfo.County) then
                 CountyName := County.Description;

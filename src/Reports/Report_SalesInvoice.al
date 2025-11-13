@@ -92,6 +92,8 @@ report 50207 SalesInvoiceReport
             column(Bill_to_Address2; "Bill-to Address 2")
             {
             }
+            column(ShipToAddrTxt; ShipToAddrTxt) { }
+            column(BillToAddrTxt; BillToAddrTxt) { }
             column(BilltoPhoneNo; BilltoPhoneNo)
             {
             }
@@ -340,7 +342,12 @@ report 50207 SalesInvoiceReport
                 Clear(SalesPersonPurch);
                 Clear(DONo);
                 CalcFields("ADY E-INV QR Code");
-               
+                Clear(ShipToAddrTxt);
+                Clear(BillToAddrTxt);
+                Clear(ShipCountry);
+                Clear(BIllCountry);
+                cr := 13;
+                lf := 10;
 
                 If SalesPersonPurch.Get("Salesperson Code") then;
                 if not Currency.Get("Currency Code") then
@@ -349,12 +356,35 @@ report 50207 SalesInvoiceReport
                 if CountryRegion.Get("Ship-to Country/Region Code") then
                     ShipCountry := CountryRegion.Name;
 
-                Customer.Get("Bill-to Customer No.");
+                If Customer.Get("Bill-to Customer No.") then;
+                If Customer.Address <> '' then
+                    BillToAddrTxt += Customer.Address + Format(cr) + Format(lf);
+                If Customer."Address 2" <> '' then
+                    BillToAddrTxt += Customer."Address 2" + Format(cr) + Format(lf);
+                If Customer."Post Code" <> '' then
+                    BillToAddrTxt += Customer."Post Code" + ' ';
+                If Customer.City <> '' then
+                    BillToAddrTxt += Customer.City + ', ';
+
                 Bill_to_Address := Customer.Address;
                 BilltoPhoneNo := Customer."Phone No.";
                 Billtomobileno := Customer."Mobile Phone No.";
                 if CountryRegion.Get(Customer."Country/Region Code") then
-                    BIllCountry := CountryRegion.Name;
+                    if CountryRegion.Name <> '' then;
+                If Customer.County <> '' then
+                    if County.Get(Customer.County) then begin
+                        If CountryRegion.Name <> '' then
+                            BillToAddrTxt += County.Description + ', '
+                        else
+                            BillToAddrTxt += County.Description;
+                    end else begin
+                        If CountryRegion.Name <> '' then
+                            BillToAddrTxt += Customer.County + ', '
+                        else
+                            BillToAddrTxt += Customer.County;
+                    end;
+
+                BillToAddrTxt += CountryRegion.Name;
 
                 if Customer.County <> '' then begin
                     if County.Get(Customer.County) then
@@ -372,6 +402,29 @@ report 50207 SalesInvoiceReport
                         Shippostcodecitycountrycounty_g := "Ship-to Post Code" + ', ' + "Ship-to City" + ', ' + "Ship-to County" + ', ' + ShipCountry;
                 end else
                     Shippostcodecitycountrycounty_g := "Ship-to Post Code" + ', ' + "Ship-to City" + ', ' + ShipCountry;
+
+                If "Ship-to Address" <> '' then
+                    ShipToAddrTxt += "Ship-to Address" + Format(cr) + Format(lf);
+                If "Ship-to Address 2" <> '' then
+                    ShipToAddrTxt += "Ship-to Address 2" + Format(cr) + Format(lf);
+                If "Ship-to Post Code" <> '' then
+                    ShipToAddrTxt += "Ship-to Post Code" + ' ';
+                If "Ship-to City" <> '' then
+                    ShipToAddrTxt += "Ship-to City" + ', ';
+                If "Ship-to County" <> '' then
+                    if County.Get("Ship-to County") then begin
+                        If ShipCountry <> '' then
+                            ShipToAddrTxt += County.Description + ', '
+                        else
+                            ShipToAddrTxt += County.Description;
+                    end else begin
+                        If ShipCountry <> '' then
+                            ShipToAddrTxt += "Ship-to County" + ', '
+                        else
+                            ShipToAddrTxt += "Ship-to County";
+                    end;
+                If ShipCountry <> '' then
+                    ShipToAddrTxt += ShipCountry;
 
                 "Sales Invoice Header".CalcFields("Amount Including VAT");
                 TempCodeCheck.InitTextVariable();
@@ -444,8 +497,8 @@ report 50207 SalesInvoiceReport
         CompanyInfo.SetAutoCalcFields("Company Logo 1");
         CompanyInfo.SetAutoCalcFields("Company Logo 2");
         CompanyInfo.SetAutoCalcFields("Company Logo 3");
-       
-       
+
+
     end;
 
     var
@@ -472,7 +525,7 @@ report 50207 SalesInvoiceReport
         BIllpostcodecitycountrycounty: Text;
         EffectiveDate: Date;
         SSTExemption: Record "SST Exemption Details";
-        
+
         Billtomobileno: Text;
         BilltoPhoneNo: Text;
         SalesTax: Decimal;
@@ -483,7 +536,7 @@ report 50207 SalesInvoiceReport
         CodeCheck: Codeunit 50200;
         CompanyInfo: Record "Company Information";
         GLSetup: Record "General Ledger Setup";
-        
+
         Currency: Record Currency;
         FormatAddr: Codeunit "Format Address";
         ReportTitle: Text[30];
@@ -493,7 +546,13 @@ report 50207 SalesInvoiceReport
         ShowAmount: Decimal;
         SalesPersonPurch: Record "Salesperson/Purchaser";
         Shippostcodecitycountrycounty_g: Text;
-    
+        BillToAddrTxt: Text[200];
+        ShipToAddrTxt: Text[200];
+        Shiptotxt: Text[100];
+        cr: Char;
+        lf: Char;
+
+
 
     local procedure CurrencyCode(SrcCurrCode: Code[10]): Code[10]
     begin

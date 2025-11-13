@@ -105,7 +105,7 @@ report 50208 SalesOrderReport
             {
 
             }
-            column(ShipToAddrTxt;ShipToAddrTxt){}
+            column(ShipToAddrTxt; ShipToAddrTxt) { }
             column(Ship_to_Name; "Ship-to Name")
             {
             }
@@ -218,6 +218,7 @@ report 50208 SalesOrderReport
             {
             }
             column(Currency_Code; Currency_Code) { }
+            column(OwnCollectTxt; OwnCollectTxt) { }
             dataitem("Sales Line"; "Sales Line")
             {
                 DataItemLink = "Document No." = field("No.");
@@ -332,32 +333,57 @@ report 50208 SalesOrderReport
                 Clear(LineNo);
                 Clear(ShowAmount);
                 Clear(SalesTax);
+                Clear(ShipToAddrTxt);
+                Clear(BillToAddrTxt);
+                Clear(ShipCountry);
+                Clear(BIllCountry);
+                cr := 13;
+                lf := 10;
                 // End - Added by NF on 22/05/2024 to calculate Total Amount including Sales Tax (For multi select)
 
                 Clear(EffectiveDate);
                 Clear(SalesTaxPercent);
-                cr := 13;
-                lf := 10;
+
                 If SalesPersonPurch.Get("Salesperson Code") then;
                 if not Currency.Get("Currency Code") then
                     Currency.InitRoundingPrecision();
                 if CountryRegion.Get("Ship-to Country/Region Code") then
                     ShipCountry := CountryRegion.Name;
-
+                If ShipmentMethod.Get("Shipment Method Code") then
+                    If ShipmentMethod.Code = 'OWN COLLEC' then
+                        OwnCollectTxt := ShipmentMethod.Description;
                 if "Sell-to Customer No." <> '' then begin
                     if Customer.Get("Bill-to Customer No.") then begin
                         If Customer.Address <> '' then
                             BillToAddrTxt += Customer.Address + Format(cr) + Format(lf);
                         If Customer."Address 2" <> '' then
                             BillToAddrTxt += Customer."Address 2" + Format(cr) + Format(lf);
+                        If Customer."Post Code" <> '' then
+                            BillToAddrTxt += Customer."Post Code" + ' ';
+                        If Customer.City <> '' then
+                            BillToAddrTxt += Customer.City + ', ';
+
 
                         BilltoPhoneNo := Customer."Phone No.";
                         Billtomobileno := Customer."Mobile Phone No.";
                         if CountryRegion.Get(Customer."Country/Region Code") then
                             BIllCountry := CountryRegion.Name;
                         BIllpostcodecitycountrycounty := Customer."Post Code" + ', ' + Customer.City + ', ' + Customer.County + ', ' + BIllCountry;
-                        If BIllpostcodecitycountrycounty <> '' then
-                            BillToAddrTxt += BIllpostcodecitycountrycounty;
+
+                        If Customer.County <> '' then
+                            if County.Get(Customer.County) then begin
+                                If BIllCountry <> '' then
+                                    BillToAddrTxt += County.Description + ', '
+                                else
+                                    BillToAddrTxt += County.Description;
+                            end else begin
+                                If BIllCountry <> '' then
+                                    BillToAddrTxt += Customer.County + ', '
+                                else
+                                    BillToAddrTxt += Customer.County;
+                            end;
+                        If BIllCountry <> '' then
+                            BillToAddrTxt += BIllCountry;
                     end else begin
                         Clear(Bill_to_Address);
                         Clear(BilltoPhoneNo);
@@ -366,17 +392,29 @@ report 50208 SalesOrderReport
                         Clear(BIllCountry);
                     end;
                 end;
-    
+
                 If "Ship-to Address" <> '' then
-                    ShipToAddrTxt += "Ship-to Address"+ Format(cr) + Format(lf);
+                    ShipToAddrTxt += "Ship-to Address" + Format(cr) + Format(lf);
                 If "Ship-to Address 2" <> '' then
-                    ShipToAddrTxt += "Ship-to Address 2"+ Format(cr) + Format(lf);
+                    ShipToAddrTxt += "Ship-to Address 2" + Format(cr) + Format(lf);
                 If "Ship-to Post Code" <> '' then
                     ShipToAddrTxt += "Ship-to Post Code" + ', ';
                 If "Ship-to City" <> '' then
                     ShipToAddrTxt += "Ship-to City" + ', ';
+
+
                 If "Ship-to County" <> '' then
-                    ShipToAddrTxt += "Ship-to County" + ', ';
+                    If County.Get("Ship-to County") then begin
+                        If ShipCountry <> '' then
+                            ShipToAddrTxt += County.Description + ', '
+                        else
+                            ShipToAddrTxt += County.Description;
+                    end else begin
+                        If ShipCountry <> '' then
+                            ShipToAddrTxt += "Ship-to County" + ', '
+                        else
+                            ShipToAddrTxt += "Ship-to County";
+                    end;
                 If ShipCountry <> '' then
                     ShipToAddrTxt += ShipCountry;
 
@@ -481,6 +519,7 @@ report 50208 SalesOrderReport
         Variant_Code: Text;
         CompanyCountry: Text;
         Bill_to_Address: Text;
+        County: Record County;
         SalesPerson: Text[100];
         BIllpostcodecitycountrycounty: Text;
         Billtomobileno: Text;
@@ -498,13 +537,15 @@ report 50208 SalesOrderReport
         Currency: Record Currency;
         FormatAddr: Codeunit "Format Address";
         SalesPersonPurch: Record "Salesperson/Purchaser";
+        ShipmentMethod: Record "Shipment Method";
+        OwnCollectTxt: Text[100];
         ReportTitle: Text[30];
         CompanyAddr: array[8] of Text[100];
         VendAddr: array[8] of Text[100];
         BillToAddr: array[8] of Text[100];
         ShipToAddr: array[8] of Text[100];
-        BillToAddrTxt: Text[100];
-        ShipToAddrTxt: Text[100];
+        BillToAddrTxt: Text[200];
+        ShipToAddrTxt: Text[200];
         Shiptotxt: Text[100];
         TotalShowAmount: Decimal;
         ShowAmount: Decimal;

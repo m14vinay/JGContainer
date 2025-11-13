@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-10-16T07:42:56.1448781Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-11-13T06:45:48.3110952Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -3197,7 +3197,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!Bill_to_Name.Value, "DataSet_Result")</Value>
+                          <Value>=Fields!Bill_to_Name.Value</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontSize>9pt</FontSize>
@@ -3230,7 +3230,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!Bill_to_Address.Value, "DataSet_Result")</Value>
+                          <Value>=Fields!BillToAddrTxt.Value</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontSize>9pt</FontSize>
@@ -3255,38 +3255,6 @@
                     <PaddingLeft>3pt</PaddingLeft>
                   </Style>
                 </Textbox>
-                <Textbox Name="ExecutionTimeTextBox19">
-                  <CanGrow>true</CanGrow>
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=First(Fields!BIllpostcodecitycountrycounty.Value, "DataSet_Result")</Value>
-                          <Style>
-                            <FontStyle>Normal</FontStyle>
-                            <FontSize>9pt</FontSize>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>1.73174cm</Top>
-                  <Left>0cm</Left>
-                  <Height>0.4cm</Height>
-                  <Width>6.26269cm</Width>
-                  <ZIndex>3</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <VerticalAlign>Top</VerticalAlign>
-                    <PaddingLeft>3pt</PaddingLeft>
-                  </Style>
-                </Textbox>
                 <Textbox Name="ExecutionTimeTextBox21">
                   <CanGrow>true</CanGrow>
                   <KeepTogether>true</KeepTogether>
@@ -3306,11 +3274,11 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.13174cm</Top>
+                  <Top>1.36974cm</Top>
                   <Left>1.91682cm</Left>
                   <Height>11.33858pt</Height>
                   <Width>4.34587cm</Width>
-                  <ZIndex>4</ZIndex>
+                  <ZIndex>3</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3337,48 +3305,16 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.53174cm</Top>
+                  <Top>1.76974cm</Top>
                   <Left>1.91682cm</Left>
                   <Height>11.33858pt</Height>
                   <Width>4.34587cm</Width>
-                  <ZIndex>5</ZIndex>
+                  <ZIndex>4</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
                     </Border>
                     <VerticalAlign>Middle</VerticalAlign>
-                  </Style>
-                </Textbox>
-                <Textbox Name="ExecutionTimeTextBox20">
-                  <CanGrow>true</CanGrow>
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=First(Fields!Bill_to_Address2.Value, "DataSet_Result")</Value>
-                          <Style>
-                            <FontStyle>Normal</FontStyle>
-                            <FontSize>9pt</FontSize>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>1.33174cm</Top>
-                  <Left>0.00978cm</Left>
-                  <Height>0.4cm</Height>
-                  <Width>6.25291cm</Width>
-                  <ZIndex>6</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <VerticalAlign>Middle</VerticalAlign>
-                    <PaddingLeft>3pt</PaddingLeft>
                   </Style>
                 </Textbox>
                 <Textbox Name="ExecutionTimeTextBox47">
@@ -3400,11 +3336,11 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.13174cm</Top>
+                  <Top>1.36974cm</Top>
                   <Left>0.01632cm</Left>
                   <Height>0.4cm</Height>
                   <Width>1.63136cm</Width>
-                  <ZIndex>7</ZIndex>
+                  <ZIndex>5</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3432,11 +3368,11 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.13174cm</Top>
+                  <Top>1.36974cm</Top>
                   <Left>1.64768cm</Left>
                   <Height>11.33858pt</Height>
                   <Width>0.16331cm</Width>
-                  <ZIndex>8</ZIndex>
+                  <ZIndex>6</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3463,11 +3399,11 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.53174cm</Top>
+                  <Top>1.76974cm</Top>
                   <Left>0.01632cm</Left>
                   <Height>0.4cm</Height>
                   <Width>1.63136cm</Width>
-                  <ZIndex>9</ZIndex>
+                  <ZIndex>7</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3495,11 +3431,11 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.53174cm</Top>
+                  <Top>1.76974cm</Top>
                   <Left>1.64768cm</Left>
                   <Height>0.4cm</Height>
                   <Width>0.16331cm</Width>
-                  <ZIndex>10</ZIndex>
+                  <ZIndex>8</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3510,7 +3446,7 @@
               </ReportItems>
               <KeepTogether>true</KeepTogether>
               <Top>3.13569cm</Top>
-              <Height>2.99198cm</Height>
+              <Height>2.3cm</Height>
               <Width>6.26269cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
@@ -3557,7 +3493,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=First(Fields!CompanyAddress.Value,"DataSet_Result")+",  " +First(Fields!CompanyPostcode.Value, "DataSet_Result") +",  " +First(Fields!CompanyCity.Value, "DataSet_Result")+",  " +First(Fields!CompanyState.Value, "DataSet_Result")+", "+First(Fields!CompanyCountry.Value, "DataSet_Result")</Value>
+                      <Value>=First(Fields!CompanyAddress.Value,"DataSet_Result")+", " +First(Fields!CompanyPostcode.Value, "DataSet_Result") +" " +First(Fields!CompanyCity.Value, "DataSet_Result")+", " +First(Fields!CompanyState.Value, "DataSet_Result")+", "+First(Fields!CompanyCountry.Value, "DataSet_Result")</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontSize>9pt</FontSize>
@@ -3926,7 +3862,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!Ship_to_Address.Value, "DataSet_Result")</Value>
+                          <Value>=Fields!ShipToAddrTxt.Value</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontSize>9pt</FontSize>
@@ -3943,38 +3879,6 @@
                   <Height>11.66743pt</Height>
                   <Width>6.26761cm</Width>
                   <ZIndex>2</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <VerticalAlign>Middle</VerticalAlign>
-                    <PaddingLeft>3pt</PaddingLeft>
-                  </Style>
-                </Textbox>
-                <Textbox Name="ExecutionTimeTextBox59">
-                  <CanGrow>true</CanGrow>
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=First(Fields!Ship_to_Address_2.Value, "DataSet_Result")</Value>
-                          <Style>
-                            <FontStyle>Normal</FontStyle>
-                            <FontSize>9pt</FontSize>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>1.33174cm</Top>
-                  <Left>0cm</Left>
-                  <Height>11.33858pt</Height>
-                  <Width>6.26515cm</Width>
-                  <ZIndex>3</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -4002,11 +3906,11 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.13174cm</Top>
+                  <Top>1.36974cm</Top>
                   <Left>1.6542cm</Left>
                   <Height>11.33858pt</Height>
                   <Width>4.61341cm</Width>
-                  <ZIndex>4</ZIndex>
+                  <ZIndex>3</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -4033,11 +3937,11 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.53174cm</Top>
+                  <Top>1.76974cm</Top>
                   <Left>1.6542cm</Left>
                   <Height>11.33858pt</Height>
                   <Width>4.61095cm</Width>
-                  <ZIndex>5</ZIndex>
+                  <ZIndex>4</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -4064,11 +3968,11 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.13174cm</Top>
+                  <Top>1.36974cm</Top>
                   <Left>0cm</Left>
                   <Height>11.33858pt</Height>
                   <Width>1.23219cm</Width>
-                  <ZIndex>6</ZIndex>
+                  <ZIndex>5</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -4096,11 +4000,11 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.13174cm</Top>
+                  <Top>1.36974cm</Top>
                   <Left>1.23219cm</Left>
                   <Height>11.33858pt</Height>
                   <Width>0.2809cm</Width>
-                  <ZIndex>7</ZIndex>
+                  <ZIndex>6</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -4127,11 +4031,11 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.53174cm</Top>
+                  <Top>1.76974cm</Top>
                   <Left>0cm</Left>
                   <Height>11.33858pt</Height>
                   <Width>1.23219cm</Width>
-                  <ZIndex>8</ZIndex>
+                  <ZIndex>7</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -4159,11 +4063,11 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.53174cm</Top>
+                  <Top>1.76974cm</Top>
                   <Left>1.23219cm</Left>
                   <Height>11.33858pt</Height>
                   <Width>0.2809cm</Width>
-                  <ZIndex>9</ZIndex>
+                  <ZIndex>8</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -4171,43 +4075,11 @@
                     <VerticalAlign>Middle</VerticalAlign>
                   </Style>
                 </Textbox>
-                <Textbox Name="ExecutionTimeTextBox66">
-                  <CanGrow>true</CanGrow>
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=First(Fields!Shippostcodecitycountrycounty.Value, "DataSet_Result")</Value>
-                          <Style>
-                            <FontStyle>Normal</FontStyle>
-                            <FontSize>9pt</FontSize>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>1.73174cm</Top>
-                  <Left>0cm</Left>
-                  <Height>0.4cm</Height>
-                  <Width>6.26761cm</Width>
-                  <ZIndex>10</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <VerticalAlign>Top</VerticalAlign>
-                    <PaddingLeft>3pt</PaddingLeft>
-                  </Style>
-                </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
               <Top>3.13569cm</Top>
               <Left>6.26269cm</Left>
-              <Height>2.99198cm</Height>
+              <Height>2.3cm</Height>
               <Width>6.26761cm</Width>
               <ZIndex>14</ZIndex>
               <Style>
@@ -4620,6 +4492,12 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         </Field>
         <Field Name="CompanyPicture1">
           <DataField>CompanyPicture1</DataField>
+        </Field>
+        <Field Name="ShipToAddrTxt">
+          <DataField>ShipToAddrTxt</DataField>
+        </Field>
+        <Field Name="BillToAddrTxt">
+          <DataField>BillToAddrTxt</DataField>
         </Field>
         <Field Name="CompanyPicture2">
           <DataField>CompanyPicture2</DataField>
