@@ -23,17 +23,5 @@ tableextension 50219 "Item Ext" extends Item
             Caption = 'Print Charges in Footer';
             DataClassification = CustomerContent;
         }
-        modify("VAT Bus. Posting Gr. (Price)")
-        {
-            Caption = 'SST Bus. Posting Gr. (Price)';
-        }
-        modify("VAT Prod. Posting Group")
-        {
-            Caption = 'SST Prod. Posting Group';
-        }
-        modify("Price Includes VAT")
-        {
-            Caption = 'Price Includes SST';
-        }
     }
 }

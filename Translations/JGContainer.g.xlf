@@ -529,7 +529,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Item Label Print - Control UOM - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 4169440518 - Action 3229512621 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Will add Transport Contract services to Shipment</source>
+          <source>Print the label</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Item Label Print - Action ItemLabel - Property ToolTip</note>
         </trans-unit>
@@ -537,6 +537,16 @@
           <source>Print Item Label</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Item Label Print - Action ItemLabel - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4169440518 - Action 2344544688 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print the label</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item Label Print - Action RMItemLabel - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4169440518 - Action 2344544688 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>RM Print Item Label</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item Label Print - Action RMItemLabel - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1966141544 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Pack Size</source>
@@ -1438,6 +1448,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ProfomaInvoice - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 845427071 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>RM Item Label Print</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report RM Item Label Print - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 845427071 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report RM Item Label Print - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 845427071 - Control 3192306909 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies how many copies of the label to print.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report RM Item Label Print - Control NoofCopies - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 845427071 - Control 3192306909 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No. of Copies</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report RM Item Label Print - Control NoofCopies - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 1187637088 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sales Quotation Report</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2237,6 +2267,11 @@
           <source>Specifies the Quantity Pieces</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Item Ledger Entries Preview Ex - Control Quantity Pieces - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2405046370 - Change 236064653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4178721393">
+          <source>SST Prod. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Item List Ext - Change VAT Prod. Posting Group - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2099160840 - Control 3088522385 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2041607962">
           <source>Specifies the Net Weight</source>
@@ -3552,21 +3587,6 @@
           <source>Print Charges in Footer</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Item Ext - Field Print Charges in Footer - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 2480387432 - Change 3425905091 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
-          <source>Price Includes SST</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Item Ext - Change Price Includes VAT - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 2480387432 - Change 1232104226 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
-          <source>SST Bus. Posting Gr. (Price)</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Item Ext - Change VAT Bus. Posting Gr. (Price) - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 2480387432 - Change 236064653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
-          <source>SST Prod. Posting Group</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Item Ext - Change VAT Prod. Posting Group - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3522557669 - Field 4190130733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 346005766">
           <source>Customer No.</source>

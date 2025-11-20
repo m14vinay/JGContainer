@@ -1,10 +1,10 @@
-report 50203 "Item Label Print"
+report 50204 "RM Item Label Print"
 {
     ApplicationArea = All;
-    Caption = 'Item Label Print';
+    Caption = 'RM Item Label Print';
     DefaultLayout = RDLC;
     PreviewMode = PrintLayout;
-    RDLCLayout = './src/Reports/Layouts/PrintLabelPrint.rdl';
+    RDLCLayout = './src/Reports/Layouts/RMPrintLabelPrint.rdl';
     dataset
     {
         dataitem(ItemLabelPrint; "Item Label Print")

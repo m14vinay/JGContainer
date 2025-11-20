@@ -187,7 +187,7 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
 
                 end;
             }
-           
+            
         }
         modify(ProformaInvoice)
         {

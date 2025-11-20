@@ -57,7 +57,7 @@ page 50214 "Item Label Print"
                     Promoted = True;
                     PromotedIsBig = True;
                     PromotedCategory = Process;
-                    ToolTip = 'Will add Transport Contract services to Shipment';
+                    ToolTip = 'Print the label';
                     trigger OnAction()
                     var
                         ItemLabel: Record "Item Label Print";
@@ -65,6 +65,24 @@ page 50214 "Item Label Print"
                         CurrPage.SetSelectionFilter(ItemLabel);
                         //SetRecord.SetWHseRecptHdr(Rec);
                         Report.RunModal(Report::"Item Label Print", True, false, ItemLabel);
+                    end;
+                }
+                 action(RMItemLabel)
+                {
+                    ApplicationArea = All;
+                    Caption = 'RM Print Item Label';
+                    Image = Print;
+                    Promoted = True;
+                    PromotedIsBig = True;
+                    PromotedCategory = Process;
+                    ToolTip = 'Print the label';
+                    trigger OnAction()
+                    var
+                        ItemLabel: Record "Item Label Print";
+                    begin
+                        CurrPage.SetSelectionFilter(ItemLabel);
+                        //SetRecord.SetWHseRecptHdr(Rec);
+                        Report.RunModal(Report::"RM Item Label Print", True, false, ItemLabel);
                     end;
                 }
             }

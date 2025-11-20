@@ -64,8 +64,20 @@ pageextension 50209 "Customer Ext" extends "Customer Card"
                 Promoted = true;
                 PromotedCategory = Category9;
                 trigger OnAction()
+                var
+                ExtManagement : Codeunit "Extension Management";
+                NAVInstalledAPP : Record "NAV App Installed App";
+                PackageID : Boolean;
                 begin
                     Rec.Blocked := Rec.Blocked::All;
+                    //ExtManagement.UninstallExtension();
+                    /*NAVInstalledAPP.Reset();
+                    NAVInstalledAPP.SetRange("App ID",'fd09b53c-ff32-4d9c-91ce-6a82a87b8c9c');
+                    If NAVInstalledAPP.FindFirst() then
+                     Message('%1',NAVInstalledAPP."Package ID");
+
+                    PackageID := ExtManagement.UnpublishExtension('02CF4BF5-94D4-48BF-94A6-B6259B46B09C');
+                    Message('%1',PackageID);*/
                 end;
             }
             action(SSTExemptionList)
