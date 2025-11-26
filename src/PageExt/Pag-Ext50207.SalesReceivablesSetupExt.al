@@ -21,6 +21,11 @@ pageextension 50207 "Sales Receivables Setup Ext" extends "Sales & Receivables S
                 ApplicationArea = All;
                 ToolTip = 'Specifies Commercial Invoice Nos.';
             }
+             field("Customer Complaint Report No."; Rec."Customer Complaint Report No.")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Specifies Customer Complaint Report No.';
+            }
         }
             modify("VAT Bus. Posting Gr. (Price)")
         {

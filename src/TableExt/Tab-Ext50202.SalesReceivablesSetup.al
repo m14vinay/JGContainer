@@ -20,6 +20,12 @@ tableextension 50202 "Sales Receivables Setup" extends "Sales & Receivables Setu
             DataClassification = CustomerContent;
             TableRelation = "No. Series".Code;
         }
+        field(50203; "Customer Complaint Report No."; Code[20])
+        {
+            Caption = 'Customer Complaint Report No.';
+            DataClassification = CustomerContent;
+            TableRelation = "No. Series".Code;
+        }
         modify("VAT Bus. Posting Gr. (Price)")
         {
             Caption = 'SST Bus. Posting Gr. (Price)';

@@ -12,8 +12,9 @@ tableextension 50201 "Sales Price Ext" extends "Sales Price"
         {
             Caption = 'Price Per Piece';
             DataClassification = CustomerContent;
+            Editable = false;
             DecimalPlaces = 0:5;
-            trigger OnValidate()
+            /*trigger OnValidate()
             var
                 Item: Record Item;
                 PackSize: Record "Pack Size";
@@ -21,7 +22,7 @@ tableextension 50201 "Sales Price Ext" extends "Sales Price"
                 If Item.Get("Item No.") then
                     If PackSize.Get(Item."Pack Size") then
                         "Unit Price" := PackSize."Qty Per Pack" * "Price Per Piece";
-            end;
+            end;*/
         }
         modify("Sales Code")
         {
@@ -85,6 +86,15 @@ tableextension 50201 "Sales Price Ext" extends "Sales Price"
             trigger OnBeforeValidate()
             begin
                 Rec.TestField("Approval Status", Rec."Approval Status"::Open);
+            end;
+            trigger OnAfterValidate()
+            var
+                Item: Record Item;
+                PackSize: Record "Pack Size";
+            begin
+                If Item.Get("Item No.") then
+                    If PackSize.Get(Item."Pack Size") then
+                        "Price Per Piece" := "Unit Price" / PackSize."Qty Per Pack" ;
             end;
         }
         modify("Starting Date")

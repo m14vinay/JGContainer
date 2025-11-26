@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-10-03T09:29:49.5225238Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-11-24T08:19:11.4016505Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -73,14 +73,14 @@
                                             </Paragraphs>
                                             <ZIndex>13</ZIndex>
                                             <Visibility>
-                                              <Hidden>=Code.SetData(Cstr(Fields!CustAddr1.Value) + Chr(177) + 
-Cstr(Fields!CustAddr2.Value) + Chr(177) + 
-Cstr(Fields!CustAddr3.Value) + Chr(177) + 
-Cstr(Fields!CustAddr4.Value) + Chr(177) + 
-Cstr(Fields!CustAddr5.Value) + Chr(177) + 
-Cstr(Fields!CustAddr6.Value) + Chr(177) + 
-Cstr(Fields!CustAddr7.Value) + Chr(177) + 
-Cstr(Fields!CustAddr8.Value) + Chr(177) + 
+                                              <Hidden>=Code.SetData(Cstr(Fields!Cust_Address.Value) + Chr(177) + 
+Cstr(Fields!Cust_PostCityCountyRegion.Value) + Chr(177) + 
+Cstr(Fields!Cust_Phone_No_.Value) + Chr(177) + 
+Cstr(Fields!Cust_Fax_No_.Value) + Chr(177) + 
+Cstr(Fields!Cust_E_Mail.Value) + Chr(177) + 
+Cstr(Fields!Payment_Terms_Code.Value) + Chr(177) + 
+Cstr(Fields!Salesperson_Code.Value) + Chr(177) + 
+Cstr(Fields!CustName.Value) + Chr(177) + 
 Chr(177) + 
 Cstr(Fields!No1_Cust.Value) + Chr(177) + 
 Cstr(Fields!CompanyAddr1.Value) + Chr(177) + 
@@ -129,6 +129,9 @@ Cstr(Fields!CustBalanceCaption.Value)
 , 1)</Hidden>
                                             </Visibility>
                                             <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
@@ -1967,7 +1970,6 @@ Cstr(Fields!CustBalanceCaption.Value)
                                                                 <PaddingRight>5pt</PaddingRight>
                                                               </Style>
                                                             </Textbox>
-                                                            <rd:Selected>true</rd:Selected>
                                                           </CellContents>
                                                         </TablixCell>
                                                         <TablixCell>
@@ -4857,7 +4859,7 @@ Cstr(Fields!CustBalanceCaption.Value)
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!CustName.Value, "DataSet_Result")</Value>
+                          <Value>=Code.GetData(8,1)</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>9pt</FontSize>
@@ -4882,12 +4884,13 @@ Cstr(Fields!CustBalanceCaption.Value)
                   </Style>
                 </Textbox>
                 <Textbox Name="ExecutionTimeTextBox17">
+                  <CanGrow>true</CanGrow>
                   <KeepTogether>true</KeepTogether>
                   <Paragraphs>
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!Cust_Address.Value, "DataSet_Result")</Value>
+                          <Value>=Code.GetData(1,1)</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Segoe UI</FontFamily>
@@ -4918,7 +4921,7 @@ Cstr(Fields!CustBalanceCaption.Value)
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!Cust_PostCityCountyRegion.Value, "DataSet_Result")</Value>
+                          <Value>=Code.GetData(2,1)</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Segoe UI</FontFamily>
@@ -5335,7 +5338,7 @@ Cstr(Fields!CustBalanceCaption.Value)
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!Cust_Phone_No_.Value, "DataSet_Result")</Value>
+                          <Value>=Code.GetData(3,1)</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>9pt</FontSize>
@@ -5365,7 +5368,7 @@ Cstr(Fields!CustBalanceCaption.Value)
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!Cust_Fax_No_.Value, "DataSet_Result")</Value>
+                          <Value>=Code.GetData(4,1)</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>9pt</FontSize>
@@ -5395,7 +5398,7 @@ Cstr(Fields!CustBalanceCaption.Value)
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!Cust_E_Mail.Value, "DataSet_Result")</Value>
+                          <Value>=Code.GetData(5,1)</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>9pt</FontSize>
@@ -5455,7 +5458,7 @@ Cstr(Fields!CustBalanceCaption.Value)
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!Payment_Terms_Code.Value, "DataSet_Result")</Value>
+                          <Value>=Code.GetData(6,1)</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>9pt</FontSize>
@@ -5485,7 +5488,7 @@ Cstr(Fields!CustBalanceCaption.Value)
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!Salesperson_Code.Value, "DataSet_Result")</Value>
+                          <Value>=Code.GetData(7,1)</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>9pt</FontSize>
