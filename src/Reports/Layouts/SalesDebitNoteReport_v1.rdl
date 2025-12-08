@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-11-13T06:52:05.5466617Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-12-08T01:55:22.8201915Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -905,7 +905,7 @@
                                                     <Value>=Fields!UnitPrice.Value</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
-                                                      <Format>#,0.00;(#,0.00)</Format>
+                                                      <Format>#,0.0000;(#,0.0000)</Format>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
@@ -927,6 +927,7 @@
                                               <PaddingBottom>2pt</PaddingBottom>
                                             </Style>
                                           </Textbox>
+                                          <rd:Selected>true</rd:Selected>
                                         </CellContents>
                                       </TablixCell>
                                       <TablixCell>
