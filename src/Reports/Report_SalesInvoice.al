@@ -59,6 +59,9 @@ report 50207 SalesInvoiceReport
             column(CompanyInfoBankAccountNo; CompanyInfo."Bank Account No.")
             {
             }
+            column(CompanyTIN; CompanyInfo."ADY E-INV TIN No.")
+            {
+            }
             column(CompanyInfoBankBranchNo; CompanyInfo."Bank Branch No.")
             {
             }

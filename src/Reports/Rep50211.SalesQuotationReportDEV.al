@@ -24,6 +24,7 @@ report 50211 "Sales Quotation Report"
             column(companySSTReg; CompanyInfo."ADY E-INV SST Reg No.") { }
             column(ShipToAddrTxt; ShipToAddrTxt) { }
             column(companyPicture; CompanyInfo.Picture) { }
+            column(CompanyTIN; CompanyInfo."ADY E-INV TIN No.") { }
             column(companyLogo1; CompanyInfo."Company Logo 1") { }
             column(companyLogo2; CompanyInfo."Company Logo 2") { }
             column(companyLogo3; CompanyInfo."Company Logo 3") { }

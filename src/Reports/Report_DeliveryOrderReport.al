@@ -23,6 +23,9 @@ report 50201 DeliveryOrderReport
             column(CompanyCity; CompanyInfo."City")
             {
             }
+            column(CompanyTIN; CompanyInfo."ADY E-INV TIN No.")
+            {
+            }
             column(CompanyState; CompanyCounty)
             {
             }

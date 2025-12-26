@@ -29,6 +29,9 @@ report 50208 SalesOrderReport
             column(CompanyCountry; CompanyCountry)
             {
             }
+            column(CompanyTIN; CompanyInfo."ADY E-INV TIN No.")
+            {
+            }
             column(CompanyInfoName; CompanyInfo.Name)
             {
             }

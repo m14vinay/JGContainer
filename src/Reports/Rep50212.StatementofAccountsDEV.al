@@ -75,6 +75,9 @@ report 50212 "SOA"
                 {
 
                 }
+                column(CompanyTIN; CompanyInfo."ADY E-INV TIN No.")
+                {
+                }
                 column(CompanyInfo1Picture; CompanyInfo1.Picture)
                 {
                 }

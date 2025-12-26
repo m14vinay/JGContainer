@@ -17,6 +17,9 @@ report 50206 SalesDebitNoteReport
             column(CompanyAddress; CompanyInfo."Address")
             {
             }
+            column(CompanyTIN; CompanyInfo."ADY E-INV TIN No.")
+            {
+            }
             column(CompanyPostcode; CompanyInfo."Post Code")
             {
             }
