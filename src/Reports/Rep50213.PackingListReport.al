@@ -29,6 +29,9 @@ report 50213 "Packing List Report"
             column(CompanyTIN; CompanyInfo."ADY E-INV TIN No.")
             {
             }
+            column(CompanyMSICCode; CompanyMSICCode)
+            {
+            }
             column(CompanyState; CompanyCounty)
             {
             }
@@ -314,6 +317,11 @@ report 50213 "Packing List Report"
                         CompanyCountry := CountryRegion.Name;
                     if County.Get(CompanyInfo."County") then
                         CompanyCounty := County."Description";
+                    // Lookup MSIC Code from ADY e-Inv Comp MSIC Setup
+                    Clear(CompanyMSICCode);
+                    if ADYEInvCompMSICSetup.FindFirst() then
+                        if ADYEInvCompMSICSetup."ADY Name" = CompanyInfo.Name then
+                            CompanyMSICCode := ADYEInvCompMSICSetup."ADY E-INV MSIC CODE";
                 end;
 
                 GLSetup.Get();
@@ -366,6 +374,8 @@ report 50213 "Packing List Report"
         GLSetup: Record "General Ledger Setup";
         Currency: Record Currency;
         FormatAddr: Codeunit "Format Address";
+        ADYEInvCompMSICSetup: Record "ADY e-Inv Comp MSIC Setup";
+        CompanyMSICCode: Code[20];
         BillToAddrTxt: Text[200];
         ShipToAddrTxt: Text[200];
         Shiptotxt: Text[100];

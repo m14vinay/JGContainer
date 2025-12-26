@@ -4443,6 +4443,12 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         <Field Name="CompanyPostcode">
           <DataField>CompanyPostcode</DataField>
         </Field>
+        <Field Name="CompanyTIN">
+          <DataField>CompanyTIN</DataField>
+        </Field>
+        <Field Name="CompanyMSICCode">
+          <DataField>CompanyMSICCode</DataField>
+        </Field>
         <Field Name="CompanyCity">
           <DataField>CompanyCity</DataField>
         </Field>

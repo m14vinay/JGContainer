@@ -78,6 +78,9 @@ report 50212 "SOA"
                 column(CompanyTIN; CompanyInfo."ADY E-INV TIN No.")
                 {
                 }
+                column(CompanyMSICCode; CompanyMSICCode)
+                {
+                }
                 column(CompanyInfo1Picture; CompanyInfo1.Picture)
                 {
                 }
@@ -729,6 +732,12 @@ report 50212 "SOA"
                     CustLedgerEntry.SetFilter("Currency Code", '>%1', CustLedgerEntry."Currency Code");
                 end;
 
+                // Lookup MSIC Code from ADY e-Inv Comp MSIC Setup
+                Clear(CompanyMSICCode);
+                if ADYEInvCompMSICSetup.FindFirst() then
+                    if ADYEInvCompMSICSetup."ADY Name" = CompanyInfo.Name then
+                        CompanyMSICCode := ADYEInvCompMSICSetup."ADY E-INV MSIC CODE";
+
                 if PrintAllHavingBal and not PrintAllHavingEntry then begin
                     SetAutoCalcFields("Balance (LCY)");
                     SetFilter("Balance (LCY)", '<>0');
@@ -1059,6 +1068,8 @@ report 50212 "SOA"
         CompanyInfo1: Record "Company Information";
         CompanyInfo2: Record "Company Information";
         CompanyInfo3: Record "Company Information";
+        ADYEInvCompMSICSetup: Record "ADY e-Inv Comp MSIC Setup";
+        CompanyMSICCode: Code[20];
 
     local procedure GetDate(PostingDate: Date; DueDate: Date): Date
     begin

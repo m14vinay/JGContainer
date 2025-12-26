@@ -6160,6 +6160,12 @@ End Function
         <Field Name="CompanyLogo3">
           <DataField>CompanyLogo3</DataField>
         </Field>
+        <Field Name="CompanyTIN">
+          <DataField>CompanyTIN</DataField>
+        </Field>
+        <Field Name="CompanyMSICCode">
+          <DataField>CompanyMSICCode</DataField>
+        </Field>
         <Field Name="CompanyInfo1Picture">
           <DataField>CompanyInfo1Picture</DataField>
         </Field>

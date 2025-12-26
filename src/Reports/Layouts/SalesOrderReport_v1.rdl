@@ -4512,6 +4512,12 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         <Field Name="CompanyCountry">
           <DataField>CompanyCountry</DataField>
         </Field>
+        <Field Name="CompanyTIN">
+          <DataField>CompanyTIN</DataField>
+        </Field>
+        <Field Name="CompanyMSICCode">
+          <DataField>CompanyMSICCode</DataField>
+        </Field>
         <Field Name="CompanyInfoName">
           <DataField>CompanyInfoName</DataField>
         </Field>

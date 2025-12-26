@@ -3205,6 +3205,12 @@ End Function
         <Field Name="CompanyCity">
           <DataField>CompanyCity</DataField>
         </Field>
+        <Field Name="CompanyTIN">
+          <DataField>CompanyTIN</DataField>
+        </Field>
+        <Field Name="CompanyMSICCode">
+          <DataField>CompanyMSICCode</DataField>
+        </Field>
         <Field Name="CompanyState">
           <DataField>CompanyState</DataField>
         </Field>

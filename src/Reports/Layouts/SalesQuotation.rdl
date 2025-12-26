@@ -4987,6 +4987,12 @@ j3/yPJ57/gVlR3/2Ao7Ko/k89s3/fye2iX2bZvo2bSjfppm+TTN9m5bk2zTTt2lJvk1L8m1akm/TTN+m
         <Field Name="companyPicture">
           <DataField>companyPicture</DataField>
         </Field>
+        <Field Name="CompanyTIN">
+          <DataField>CompanyTIN</DataField>
+        </Field>
+        <Field Name="CompanyMSICCode">
+          <DataField>CompanyMSICCode</DataField>
+        </Field>
         <Field Name="companyLogo1">
           <DataField>companyLogo1</DataField>
         </Field>
