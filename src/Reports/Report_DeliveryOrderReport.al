@@ -23,6 +23,12 @@ report 50201 DeliveryOrderReport
             column(CompanyCity; CompanyInfo."City")
             {
             }
+            column(CompanyTIN; CompanyInfo."ADY E-INV TIN No.")
+            {
+            }
+            column(CompanyMSICCode; CompanyMSICCode)
+            {
+            }
             column(CompanyState; CompanyCounty)
             {
             }
@@ -269,6 +275,11 @@ report 50201 DeliveryOrderReport
                         CompanyCountry := CountryRegion.Name;
                     if County.Get(CompanyInfo."County") then
                         CompanyCounty := County."Description";
+                    // Lookup MSIC Code from ADY e-Inv Comp MSIC Setup
+                    Clear(CompanyMSICCode);
+                    if ADYEInvCompMSICSetup.FindFirst() then
+                        if ADYEInvCompMSICSetup."ADY Name" = CompanyInfo.Name then
+                            CompanyMSICCode := ADYEInvCompMSICSetup."ADY E-INV MSIC CODE";
                 end;
                 GLSetup.Get();
             end;
@@ -296,6 +307,8 @@ report 50201 DeliveryOrderReport
 
         Currency: Record Currency;
         FormatAddr: Codeunit "Format Address";
+        ADYEInvCompMSICSetup: Record "ADY e-Inv Comp MSIC Setup";
+        CompanyMSICCode: Code[20];
         ReportTitle: Text[30];
         CompanyAddr: array[8] of Text[100];
         VendAddr: array[8] of Text[100];

@@ -29,6 +29,12 @@ report 50208 SalesOrderReport
             column(CompanyCountry; CompanyCountry)
             {
             }
+            column(CompanyTIN; CompanyInfo."ADY E-INV TIN No.")
+            {
+            }
+            column(CompanyMSICCode; CompanyMSICCode)
+            {
+            }
             column(CompanyInfoName; CompanyInfo.Name)
             {
             }
@@ -471,6 +477,11 @@ report 50208 SalesOrderReport
                         AlternateBankAddress2 := BuildBank2Address(BankAccount);
                         AlternateBankSwiftCode2 := BankAccount."SWIFT Code";
                     end;
+                    // Lookup MSIC Code from ADY e-Inv Comp MSIC Setup
+                    Clear(CompanyMSICCode);
+                    if ADYEInvCompMSICSetup.FindFirst() then
+                        if ADYEInvCompMSICSetup."ADY Name" = CompanyInfo.Name then
+                            CompanyMSICCode := ADYEInvCompMSICSetup."ADY E-INV MSIC CODE";
                 end;
 
                 GLSetup.Get();
@@ -538,6 +549,8 @@ report 50208 SalesOrderReport
         FormatAddr: Codeunit "Format Address";
         SalesPersonPurch: Record "Salesperson/Purchaser";
         ShipmentMethod: Record "Shipment Method";
+        ADYEInvCompMSICSetup: Record "ADY e-Inv Comp MSIC Setup";
+        CompanyMSICCode: Code[20];
         OwnCollectTxt: Text[100];
         ReportTitle: Text[30];
         CompanyAddr: array[8] of Text[100];

@@ -21,6 +21,12 @@ report 50209 ProfomaInvoice
             column(CompanyPostcode; CompanyInfo."Post Code")
             {
             }
+            column(CompanyTIN; CompanyInfo."ADY E-INV TIN No.")
+            {
+            }
+            column(CompanyMSICCode; CompanyMSICCode)
+            {
+            }
             column(CompanyCity; CompanyInfo."City")
             {
             }
@@ -334,7 +340,7 @@ report 50209 ProfomaInvoice
                 VATPostingSetup: Record "VAT Posting Setup";
             begin
                 Clear(EffectiveDate);
-                 Clear(ShipToAddrTxt);
+                Clear(ShipToAddrTxt);
                 Clear(BillToAddrTxt);
                 Clear(ShipCountry);
                 Clear(BIllCountry);
@@ -353,8 +359,8 @@ report 50209 ProfomaInvoice
                 if CountryRegion.Get(Customer."Country/Region Code") then
                     BIllCountry := CountryRegion.Name;
                 BIllpostcodecitycountrycounty := Customer."Post Code" + ', ' + Customer.City + ', ' + Customer.County + ', ' + BIllCountry;
-                
-                  If Customer.Address <> '' then
+
+                If Customer.Address <> '' then
                     BillToAddrTxt += Customer.Address + Format(cr) + Format(lf);
                 If Customer."Address 2" <> '' then
                     BillToAddrTxt += Customer."Address 2" + Format(cr) + Format(lf);
@@ -376,7 +382,7 @@ report 50209 ProfomaInvoice
                     end;
                 If BIllCountry <> '' then
                     BillToAddrTxt += BIllCountry;
-                
+
                 If "Ship-to Address" <> '' then
                     ShipToAddrTxt += "Ship-to Address" + Format(cr) + Format(lf);
                 If "Ship-to Address 2" <> '' then
@@ -452,6 +458,11 @@ report 50209 ProfomaInvoice
                         AlternateBankAddress2 := BuildBank2Address(BankAccount);
                         AlternateBankSwiftCode2 := BankAccount."SWIFT Code";
                     end;
+                    // Lookup MSIC Code from ADY e-Inv Comp MSIC Setup
+                    Clear(CompanyMSICCode);
+                    if ADYEInvCompMSICSetup.FindFirst() then
+                        if ADYEInvCompMSICSetup."ADY Name" = CompanyInfo.Name then
+                            CompanyMSICCode := ADYEInvCompMSICSetup."ADY E-INV MSIC CODE";
                 end;
                 GLSetup.Get();
             end;
@@ -499,6 +510,8 @@ report 50209 ProfomaInvoice
 
         Currency: Record Currency;
         FormatAddr: Codeunit "Format Address";
+        ADYEInvCompMSICSetup: Record "ADY e-Inv Comp MSIC Setup";
+        CompanyMSICCode: Code[20];
         ReportTitle: Text[30];
         CompanyAddr: array[8] of Text[100];
         VendAddr: array[8] of Text[100];

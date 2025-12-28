@@ -24,6 +24,8 @@ report 50211 "Sales Quotation Report"
             column(companySSTReg; CompanyInfo."ADY E-INV SST Reg No.") { }
             column(ShipToAddrTxt; ShipToAddrTxt) { }
             column(companyPicture; CompanyInfo.Picture) { }
+            column(CompanyTIN; CompanyInfo."ADY E-INV TIN No.") { }
+            column(CompanyMSICCode; CompanyMSICCode) { }
             column(companyLogo1; CompanyInfo."Company Logo 1") { }
             column(companyLogo2; CompanyInfo."Company Logo 2") { }
             column(companyLogo3; CompanyInfo."Company Logo 3") { }
@@ -303,6 +305,8 @@ report 50211 "Sales Quotation Report"
         CountryName: Text;
         County1: Record County;
         CountyName: Text;
+        ADYEInvCompMSICSetup: Record "ADY e-Inv Comp MSIC Setup";
+        CompanyMSICCode: Code[20];
 
     trigger OnPreReport()
     begin
@@ -333,6 +337,12 @@ report 50211 "Sales Quotation Report"
     begin
         if not CompanyInfo.Get() then
             CompanyInfo.Init();
+
+        // Lookup MSIC Code from ADY e-Inv Comp MSIC Setup
+        Clear(CompanyMSICCode);
+        if ADYEInvCompMSICSetup.FindFirst() then
+            if ADYEInvCompMSICSetup."ADY Name" = CompanyInfo.Name then
+                CompanyMSICCode := ADYEInvCompMSICSetup."ADY E-INV MSIC CODE";
 
         // Build company address
         CompanyAddress := CompanyInfo.Address;

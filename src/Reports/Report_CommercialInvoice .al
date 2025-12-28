@@ -26,6 +26,12 @@ report 50200 CommercialInvoiceReport
             column(CompanyState; CompanyCounty)
             {
             }
+            column(CompanyTIN; CompanyInfo."ADY E-INV TIN No.")
+            {
+            }
+            column(CompanyMSICCode; CompanyMSICCode)
+            {
+            }
             column(CompanyCountry; CompanyCountry)
             {
             }
@@ -373,7 +379,7 @@ report 50200 CommercialInvoiceReport
 
             begin
                 Clear(EffectiveDate);
-                 Clear(ShipToAddrTxt);
+                Clear(ShipToAddrTxt);
                 Clear(BillToAddrTxt);
                 cr := 13;
                 lf := 10;
@@ -413,7 +419,7 @@ report 50200 CommercialInvoiceReport
                 If ShipCountry <> '' then
                     ShipToAddrTxt += ShipCountry;
 
-                  If Customer.Address <> '' then
+                If Customer.Address <> '' then
                     BillToAddrTxt += Customer.Address + Format(cr) + Format(lf);
                 If Customer."Address 2" <> '' then
                     BillToAddrTxt += Customer."Address 2" + Format(cr) + Format(lf);
@@ -450,7 +456,7 @@ report 50200 CommercialInvoiceReport
                 SalesLine.SetRange("Document No.", "No.");
                 SalesLine.SetRange(Type, SalesLine.Type::Item);
                 SalesLine.SetFilter("VAT %", '>%1', 0);
-                if SalesLine.FindFirst() then 
+                if SalesLine.FindFirst() then
                     SalesTaxPercent := 'Sales Tax ' + SalesLine."VAT %".ToText() + ' %'
                 else begin
                     SalesTaxPercent := 'Sales Tax ' + '0 %'
@@ -491,6 +497,11 @@ report 50200 CommercialInvoiceReport
                         AlternateBankAddress2 := BuildBank2Address(BankAccount);
                         AlternateBankSwiftCode2 := BankAccount."SWIFT Code";
                     end;
+                    // Lookup MSIC Code from ADY e-Inv Comp MSIC Setup
+                    Clear(CompanyMSICCode);
+                    if ADYEInvCompMSICSetup.FindFirst() then
+                        if ADYEInvCompMSICSetup."ADY Name" = CompanyInfo.Name then
+                            CompanyMSICCode := ADYEInvCompMSICSetup."ADY E-INV MSIC CODE";
                 end;
                 GLSetup.Get();
             end;
@@ -545,6 +556,8 @@ report 50200 CommercialInvoiceReport
 
         Currency: Record Currency;
         FormatAddr: Codeunit "Format Address";
+        ADYEInvCompMSICSetup: Record "ADY e-Inv Comp MSIC Setup";
+        CompanyMSICCode: Code[20];
         ReportTitle: Text[30];
         CompanyAddr: array[8] of Text[100];
         VendAddr: array[8] of Text[100];
