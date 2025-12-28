@@ -398,7 +398,7 @@ report 50208 SalesOrderReport
                 If "Ship-to Address 2" <> '' then
                     ShipToAddrTxt += "Ship-to Address 2" + Format(cr) + Format(lf);
                 If "Ship-to Post Code" <> '' then
-                    ShipToAddrTxt += "Ship-to Post Code" + ', ';
+                    ShipToAddrTxt += "Ship-to Post Code" + ' ';
                 If "Ship-to City" <> '' then
                     ShipToAddrTxt += "Ship-to City" + ', ';
 
