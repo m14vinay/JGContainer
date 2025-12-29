@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-12-26T09:12:09.0125808Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-12-29T03:05:24.7541014Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -1195,8 +1195,8 @@
                                 </Textbox>
                               </ReportItems>
                               <KeepTogether>true</KeepTogether>
-                              <Top>0.95152cm</Top>
-                              <Left>12.49513cm</Left>
+                              <Top>0.2636cm</Top>
+                              <Left>12.54781cm</Left>
                               <Height>2.94247cm</Height>
                               <Width>6.46998cm</Width>
                               <ZIndex>2</ZIndex>
@@ -1206,35 +1206,6 @@
                                 </Border>
                               </Style>
                             </Rectangle>
-                            <Textbox Name="ReportTitle2">
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>SALES QUOTATION</Value>
-                                      <Style>
-                                        <FontStyle>Normal</FontStyle>
-                                        <FontFamily>Times New Roman</FontFamily>
-                                        <FontSize>18pt</FontSize>
-                                        <FontWeight>Bold</FontWeight>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <LeftIndent>2pt</LeftIndent>
-                                  <Style>
-                                    <TextAlign>Center</TextAlign>
-                                  </Style>
-                                </Paragraph>
-                              </Paragraphs>
-                              <Left>12.49513cm</Left>
-                              <Height>26.97221pt</Height>
-                              <Width>6.46998cm</Width>
-                              <ZIndex>3</ZIndex>
-                              <Style>
-                                <VerticalAlign>Top</VerticalAlign>
-                              </Style>
-                            </Textbox>
                             <Tablix Name="Tablix4">
                               <TablixBody>
                                 <TablixColumns>
@@ -2302,7 +2273,7 @@
                               <Left>0.01833in</Left>
                               <Height>1.67071cm</Height>
                               <Width>18.97123cm</Width>
-                              <ZIndex>4</ZIndex>
+                              <ZIndex>3</ZIndex>
                               <Style>
                                 <Border>
                                   <Style>Solid</Style>
@@ -2888,7 +2859,7 @@
                               <Left>0.01833in</Left>
                               <Height>1.6cm</Height>
                               <Width>18.97123cm</Width>
-                              <ZIndex>5</ZIndex>
+                              <ZIndex>4</ZIndex>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -4075,7 +4046,7 @@
                               <Left>0.03298cm</Left>
                               <Height>7.69758cm</Height>
                               <Width>15.53835cm</Width>
-                              <ZIndex>6</ZIndex>
+                              <ZIndex>5</ZIndex>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -4780,6 +4751,36 @@
                   <Style>None</Style>
                 </Border>
                 <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="ReportTitle2">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>SALES QUOTATION</Value>
+                      <Style>
+                        <FontStyle>Normal</FontStyle>
+                        <FontFamily>Times New Roman</FontFamily>
+                        <FontSize>18pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <LeftIndent>2pt</LeftIndent>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>1.0875in</Top>
+              <Left>12.44856cm</Left>
+              <Height>26.97221pt</Height>
+              <Width>6.50291cm</Width>
+              <ZIndex>23</ZIndex>
+              <Style>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
           </ReportItems>
