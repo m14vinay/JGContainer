@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-12-29T01:55:35.4612437Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-01-02T04:47:34.4205415Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -41,7 +41,6 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <rd:Selected>true</rd:Selected>
                         <Rectangle Name="list1_Contents2">
                           <ReportItems>
                             <Rectangle Name="Rectangle1">
@@ -3882,7 +3881,7 @@
                       <Value>=First(Fields!PrintName.Value, "DataSet_Result") &amp; "(" +First(Fields!CompanyInfoBusinessRegistrationNo.Value, "DataSet_Result") +")"</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
-                        <FontSize>14pt</FontSize>
+                        <FontSize>13pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -4481,16 +4480,16 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>2.91682cm</Top>
+              <Top>2.68763cm</Top>
               <Left>12.48119cm</Left>
-              <Height>0.70609cm</Height>
+              <Height>1.04111cm</Height>
               <Width>6.42194cm</Width>
               <ZIndex>21</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Top</VerticalAlign>
+                <VerticalAlign>Middle</VerticalAlign>
               </Style>
             </Textbox>
           </ReportItems>
