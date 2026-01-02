@@ -24,286 +24,6 @@
       <rd:DataSourceID>848055eb-d646-4962-9ce1-9c258be6521b</rd:DataSourceID>
     </DataSource>
   </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-      <Fields>
-        <Field Name="PrintName">
-          <DataField>PrintName</DataField>
-        </Field>
-        <Field Name="CompanyAddress">
-          <DataField>CompanyAddress</DataField>
-        </Field>
-        <Field Name="CompanyPostcode">
-          <DataField>CompanyPostcode</DataField>
-        </Field>
-        <Field Name="CompanyCity">
-          <DataField>CompanyCity</DataField>
-        </Field>
-        <Field Name="CompanyTIN">
-          <DataField>CompanyTIN</DataField>
-        </Field>
-        <Field Name="CompanyMSICCode">
-          <DataField>CompanyMSICCode</DataField>
-        </Field>
-        <Field Name="CompanyState">
-          <DataField>CompanyState</DataField>
-        </Field>
-        <Field Name="ShipToAddrTxt">
-          <DataField>ShipToAddrTxt</DataField>
-        </Field>
-        <Field Name="BillToAddrTxt">
-          <DataField>BillToAddrTxt</DataField>
-        </Field>
-        <Field Name="CompanyCountry">
-          <DataField>CompanyCountry</DataField>
-        </Field>
-        <Field Name="CompanyInfoName">
-          <DataField>CompanyInfoName</DataField>
-        </Field>
-        <Field Name="CompanyInfoFax">
-          <DataField>CompanyInfoFax</DataField>
-        </Field>
-        <Field Name="CompanyInfoPhoneNo">
-          <DataField>CompanyInfoPhoneNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoEmail">
-          <DataField>CompanyInfoEmail</DataField>
-        </Field>
-        <Field Name="CompanyInfoHomePage">
-          <DataField>CompanyInfoHomePage</DataField>
-        </Field>
-        <Field Name="CompanyInfoVATRegNo">
-          <DataField>CompanyInfoVATRegNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoBusinessRegistrationNo">
-          <DataField>CompanyInfoBusinessRegistrationNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoGiroNo">
-          <DataField>CompanyInfoGiroNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoBankName">
-          <DataField>CompanyInfoBankName</DataField>
-        </Field>
-        <Field Name="CompanyInfoBankAccountNo">
-          <DataField>CompanyInfoBankAccountNo</DataField>
-        </Field>
-        <Field Name="CompanyInfoBankBranchNo">
-          <DataField>CompanyInfoBankBranchNo</DataField>
-        </Field>
-        <Field Name="CompanyLogo">
-          <DataField>CompanyLogo</DataField>
-        </Field>
-        <Field Name="CompanyPicture1">
-          <DataField>CompanyPicture1</DataField>
-        </Field>
-        <Field Name="CompanyPicture2">
-          <DataField>CompanyPicture2</DataField>
-        </Field>
-        <Field Name="CompanyPicture3">
-          <DataField>CompanyPicture3</DataField>
-        </Field>
-        <Field Name="AlternateBank1">
-          <DataField>AlternateBank1</DataField>
-        </Field>
-        <Field Name="AlternateBank2">
-          <DataField>AlternateBank2</DataField>
-        </Field>
-        <Field Name="CompanyPhoneFax">
-          <DataField>CompanyPhoneFax</DataField>
-        </Field>
-        <Field Name="ReportTitle">
-          <DataField>ReportTitle</DataField>
-        </Field>
-        <Field Name="ReportDate">
-          <DataField>ReportDate</DataField>
-        </Field>
-        <Field Name="CommercialInvoiceDate">
-          <DataField>CommercialInvoiceDate</DataField>
-        </Field>
-        <Field Name="Bill_to_Name">
-          <DataField>Bill_to_Name</DataField>
-        </Field>
-        <Field Name="Bill_to_Address">
-          <DataField>Bill_to_Address</DataField>
-        </Field>
-        <Field Name="Bill_to_Address2">
-          <DataField>Bill_to_Address2</DataField>
-        </Field>
-        <Field Name="BilltoPhoneNo">
-          <DataField>BilltoPhoneNo</DataField>
-        </Field>
-        <Field Name="Billtomobileno">
-          <DataField>Billtomobileno</DataField>
-        </Field>
-        <Field Name="BIllpostcodecitycountrycounty">
-          <DataField>BIllpostcodecitycountrycounty</DataField>
-        </Field>
-        <Field Name="Ship_to_Name">
-          <DataField>Ship_to_Name</DataField>
-        </Field>
-        <Field Name="Ship_to_Address">
-          <DataField>Ship_to_Address</DataField>
-        </Field>
-        <Field Name="Ship_to_Address_2">
-          <DataField>Ship_to_Address_2</DataField>
-        </Field>
-        <Field Name="Shippostcodecitycountrycounty">
-          <DataField>Shippostcodecitycountrycounty</DataField>
-        </Field>
-        <Field Name="Ship_to_Phone_No_">
-          <DataField>Ship_to_Phone_No_</DataField>
-        </Field>
-        <Field Name="Ship_to_Contact">
-          <DataField>Ship_to_Contact</DataField>
-        </Field>
-        <Field Name="SalesHeaderNo_">
-          <DataField>SalesHeaderNo_</DataField>
-        </Field>
-        <Field Name="Shipment_Date">
-          <DataField>Shipment_Date</DataField>
-        </Field>
-        <Field Name="PaymentTerms">
-          <DataField>PaymentTerms</DataField>
-        </Field>
-        <Field Name="CustomerCode">
-          <DataField>CustomerCode</DataField>
-        </Field>
-        <Field Name="Incoterm">
-          <DataField>Incoterm</DataField>
-        </Field>
-        <Field Name="SalesPerson">
-          <DataField>SalesPerson</DataField>
-        </Field>
-        <Field Name="Document_Date">
-          <DataField>Document_Date</DataField>
-        </Field>
-        <Field Name="selltocustomercode">
-          <DataField>selltocustomercode</DataField>
-        </Field>
-        <Field Name="Shipping_Agent_Code">
-          <DataField>Shipping_Agent_Code</DataField>
-        </Field>
-        <Field Name="External_Document_No_">
-          <DataField>External_Document_No_</DataField>
-        </Field>
-        <Field Name="Work_Description">
-          <DataField>Work_Description</DataField>
-        </Field>
-        <Field Name="ShipemntHeaderNo">
-          <DataField>ShipemntHeaderNo</DataField>
-        </Field>
-        <Field Name="Currency">
-          <DataField>Currency</DataField>
-        </Field>
-        <Field Name="SSTExemption">
-          <DataField>SSTExemption</DataField>
-        </Field>
-        <Field Name="EffectiveDate">
-          <DataField>EffectiveDate</DataField>
-        </Field>
-        <Field Name="Vessel">
-          <DataField>Vessel</DataField>
-        </Field>
-        <Field Name="CommercialInvoiceNo">
-          <DataField>CommercialInvoiceNo</DataField>
-        </Field>
-        <Field Name="Commercial_Invoice_Date">
-          <DataField>Commercial_Invoice_Date</DataField>
-        </Field>
-        <Field Name="TotalQuantity">
-          <DataField>TotalQuantity</DataField>
-        </Field>
-        <Field Name="TotalQuantityFormat">
-          <DataField>TotalQuantityFormat</DataField>
-        </Field>
-        <Field Name="TotalNetWeight">
-          <DataField>TotalNetWeight</DataField>
-        </Field>
-        <Field Name="TotalNetWeightFormat">
-          <DataField>TotalNetWeightFormat</DataField>
-        </Field>
-        <Field Name="TotalGrossWeight">
-          <DataField>TotalGrossWeight</DataField>
-        </Field>
-        <Field Name="TotalGrossWeightFormat">
-          <DataField>TotalGrossWeightFormat</DataField>
-        </Field>
-        <Field Name="TotalVolume">
-          <DataField>TotalVolume</DataField>
-        </Field>
-        <Field Name="TotalVolumeFormat">
-          <DataField>TotalVolumeFormat</DataField>
-        </Field>
-        <Field Name="ShipmentFrom">
-          <DataField>ShipmentFrom</DataField>
-        </Field>
-        <Field Name="ShipmentTo">
-          <DataField>ShipmentTo</DataField>
-        </Field>
-        <Field Name="Job_No_">
-          <DataField>Job_No_</DataField>
-        </Field>
-        <Field Name="ItemNo">
-          <DataField>ItemNo</DataField>
-        </Field>
-        <Field Name="Description">
-          <DataField>Description</DataField>
-        </Field>
-        <Field Name="Quantity">
-          <DataField>Quantity</DataField>
-        </Field>
-        <Field Name="QuantityFormat">
-          <DataField>QuantityFormat</DataField>
-        </Field>
-        <Field Name="QuantityBase">
-          <DataField>QuantityBase</DataField>
-        </Field>
-        <Field Name="QuantityBaseFormat">
-          <DataField>QuantityBaseFormat</DataField>
-        </Field>
-        <Field Name="Quantity_Pieces">
-          <DataField>Quantity_Pieces</DataField>
-        </Field>
-        <Field Name="Quantity_PiecesFormat">
-          <DataField>Quantity_PiecesFormat</DataField>
-        </Field>
-        <Field Name="NetWeight">
-          <DataField>NetWeight</DataField>
-        </Field>
-        <Field Name="NetWeightFormat">
-          <DataField>NetWeightFormat</DataField>
-        </Field>
-        <Field Name="GrossWeight">
-          <DataField>GrossWeight</DataField>
-        </Field>
-        <Field Name="GrossWeightFormat">
-          <DataField>GrossWeightFormat</DataField>
-        </Field>
-        <Field Name="Unit_Volume">
-          <DataField>Unit_Volume</DataField>
-        </Field>
-        <Field Name="Unit_VolumeFormat">
-          <DataField>Unit_VolumeFormat</DataField>
-        </Field>
-        <Field Name="QtyPerPack">
-          <DataField>QtyPerPack</DataField>
-        </Field>
-        <Field Name="QtyPerPackFormat">
-          <DataField>QtyPerPackFormat</DataField>
-        </Field>
-        <Field Name="Container">
-          <DataField>Container</DataField>
-        </Field>
-        <Field Name="SealNo">
-          <DataField>SealNo</DataField>
-        </Field>
-      </Fields>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -3606,12 +3326,6 @@
       </Page>
     </ReportSection>
   </ReportSections>
-  <ReportParametersLayout>
-    <GridLayoutDefinition>
-      <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
-    </GridLayoutDefinition>
-  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -3649,4 +3363,284 @@ End Function
 </Code>
   <Language>=User!Language</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="PrintName">
+          <DataField>PrintName</DataField>
+        </Field>
+        <Field Name="CompanyAddress">
+          <DataField>CompanyAddress</DataField>
+        </Field>
+        <Field Name="CompanyPostcode">
+          <DataField>CompanyPostcode</DataField>
+        </Field>
+        <Field Name="CompanyCity">
+          <DataField>CompanyCity</DataField>
+        </Field>
+        <Field Name="CompanyTIN">
+          <DataField>CompanyTIN</DataField>
+        </Field>
+        <Field Name="CompanyMSICCode">
+          <DataField>CompanyMSICCode</DataField>
+        </Field>
+        <Field Name="CompanyState">
+          <DataField>CompanyState</DataField>
+        </Field>
+        <Field Name="ShipToAddrTxt">
+          <DataField>ShipToAddrTxt</DataField>
+        </Field>
+        <Field Name="BillToAddrTxt">
+          <DataField>BillToAddrTxt</DataField>
+        </Field>
+        <Field Name="CompanyCountry">
+          <DataField>CompanyCountry</DataField>
+        </Field>
+        <Field Name="CompanyInfoName">
+          <DataField>CompanyInfoName</DataField>
+        </Field>
+        <Field Name="CompanyInfoFax">
+          <DataField>CompanyInfoFax</DataField>
+        </Field>
+        <Field Name="CompanyInfoPhoneNo">
+          <DataField>CompanyInfoPhoneNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoEmail">
+          <DataField>CompanyInfoEmail</DataField>
+        </Field>
+        <Field Name="CompanyInfoHomePage">
+          <DataField>CompanyInfoHomePage</DataField>
+        </Field>
+        <Field Name="CompanyInfoVATRegNo">
+          <DataField>CompanyInfoVATRegNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoBusinessRegistrationNo">
+          <DataField>CompanyInfoBusinessRegistrationNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoGiroNo">
+          <DataField>CompanyInfoGiroNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoBankName">
+          <DataField>CompanyInfoBankName</DataField>
+        </Field>
+        <Field Name="CompanyInfoBankAccountNo">
+          <DataField>CompanyInfoBankAccountNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoBankBranchNo">
+          <DataField>CompanyInfoBankBranchNo</DataField>
+        </Field>
+        <Field Name="CompanyLogo">
+          <DataField>CompanyLogo</DataField>
+        </Field>
+        <Field Name="CompanyPicture1">
+          <DataField>CompanyPicture1</DataField>
+        </Field>
+        <Field Name="CompanyPicture2">
+          <DataField>CompanyPicture2</DataField>
+        </Field>
+        <Field Name="CompanyPicture3">
+          <DataField>CompanyPicture3</DataField>
+        </Field>
+        <Field Name="AlternateBank1">
+          <DataField>AlternateBank1</DataField>
+        </Field>
+        <Field Name="AlternateBank2">
+          <DataField>AlternateBank2</DataField>
+        </Field>
+        <Field Name="CompanyPhoneFax">
+          <DataField>CompanyPhoneFax</DataField>
+        </Field>
+        <Field Name="ReportTitle">
+          <DataField>ReportTitle</DataField>
+        </Field>
+        <Field Name="ReportDate">
+          <DataField>ReportDate</DataField>
+        </Field>
+        <Field Name="CommercialInvoiceDate">
+          <DataField>CommercialInvoiceDate</DataField>
+        </Field>
+        <Field Name="Bill_to_Name">
+          <DataField>Bill_to_Name</DataField>
+        </Field>
+        <Field Name="Bill_to_Address">
+          <DataField>Bill_to_Address</DataField>
+        </Field>
+        <Field Name="Bill_to_Address2">
+          <DataField>Bill_to_Address2</DataField>
+        </Field>
+        <Field Name="BilltoPhoneNo">
+          <DataField>BilltoPhoneNo</DataField>
+        </Field>
+        <Field Name="Billtomobileno">
+          <DataField>Billtomobileno</DataField>
+        </Field>
+        <Field Name="BIllpostcodecitycountrycounty">
+          <DataField>BIllpostcodecitycountrycounty</DataField>
+        </Field>
+        <Field Name="Ship_to_Name">
+          <DataField>Ship_to_Name</DataField>
+        </Field>
+        <Field Name="Ship_to_Address">
+          <DataField>Ship_to_Address</DataField>
+        </Field>
+        <Field Name="Ship_to_Address_2">
+          <DataField>Ship_to_Address_2</DataField>
+        </Field>
+        <Field Name="Shippostcodecitycountrycounty">
+          <DataField>Shippostcodecitycountrycounty</DataField>
+        </Field>
+        <Field Name="Ship_to_Phone_No_">
+          <DataField>Ship_to_Phone_No_</DataField>
+        </Field>
+        <Field Name="Ship_to_Contact">
+          <DataField>Ship_to_Contact</DataField>
+        </Field>
+        <Field Name="SalesHeaderNo_">
+          <DataField>SalesHeaderNo_</DataField>
+        </Field>
+        <Field Name="Shipment_Date">
+          <DataField>Shipment_Date</DataField>
+        </Field>
+        <Field Name="PaymentTerms">
+          <DataField>PaymentTerms</DataField>
+        </Field>
+        <Field Name="CustomerCode">
+          <DataField>CustomerCode</DataField>
+        </Field>
+        <Field Name="Incoterm">
+          <DataField>Incoterm</DataField>
+        </Field>
+        <Field Name="SalesPerson">
+          <DataField>SalesPerson</DataField>
+        </Field>
+        <Field Name="Document_Date">
+          <DataField>Document_Date</DataField>
+        </Field>
+        <Field Name="selltocustomercode">
+          <DataField>selltocustomercode</DataField>
+        </Field>
+        <Field Name="Shipping_Agent_Code">
+          <DataField>Shipping_Agent_Code</DataField>
+        </Field>
+        <Field Name="External_Document_No_">
+          <DataField>External_Document_No_</DataField>
+        </Field>
+        <Field Name="Work_Description">
+          <DataField>Work_Description</DataField>
+        </Field>
+        <Field Name="ShipemntHeaderNo">
+          <DataField>ShipemntHeaderNo</DataField>
+        </Field>
+        <Field Name="Currency">
+          <DataField>Currency</DataField>
+        </Field>
+        <Field Name="SSTExemption">
+          <DataField>SSTExemption</DataField>
+        </Field>
+        <Field Name="EffectiveDate">
+          <DataField>EffectiveDate</DataField>
+        </Field>
+        <Field Name="Vessel">
+          <DataField>Vessel</DataField>
+        </Field>
+        <Field Name="CommercialInvoiceNo">
+          <DataField>CommercialInvoiceNo</DataField>
+        </Field>
+        <Field Name="Commercial_Invoice_Date">
+          <DataField>Commercial_Invoice_Date</DataField>
+        </Field>
+        <Field Name="TotalQuantity">
+          <DataField>TotalQuantity</DataField>
+        </Field>
+        <Field Name="TotalQuantityFormat">
+          <DataField>TotalQuantityFormat</DataField>
+        </Field>
+        <Field Name="TotalNetWeight">
+          <DataField>TotalNetWeight</DataField>
+        </Field>
+        <Field Name="TotalNetWeightFormat">
+          <DataField>TotalNetWeightFormat</DataField>
+        </Field>
+        <Field Name="TotalGrossWeight">
+          <DataField>TotalGrossWeight</DataField>
+        </Field>
+        <Field Name="TotalGrossWeightFormat">
+          <DataField>TotalGrossWeightFormat</DataField>
+        </Field>
+        <Field Name="TotalVolume">
+          <DataField>TotalVolume</DataField>
+        </Field>
+        <Field Name="TotalVolumeFormat">
+          <DataField>TotalVolumeFormat</DataField>
+        </Field>
+        <Field Name="ShipmentFrom">
+          <DataField>ShipmentFrom</DataField>
+        </Field>
+        <Field Name="ShipmentTo">
+          <DataField>ShipmentTo</DataField>
+        </Field>
+        <Field Name="Job_No_">
+          <DataField>Job_No_</DataField>
+        </Field>
+        <Field Name="ItemNo">
+          <DataField>ItemNo</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="Quantity">
+          <DataField>Quantity</DataField>
+        </Field>
+        <Field Name="QuantityFormat">
+          <DataField>QuantityFormat</DataField>
+        </Field>
+        <Field Name="QuantityBase">
+          <DataField>QuantityBase</DataField>
+        </Field>
+        <Field Name="QuantityBaseFormat">
+          <DataField>QuantityBaseFormat</DataField>
+        </Field>
+        <Field Name="Quantity_Pieces">
+          <DataField>Quantity_Pieces</DataField>
+        </Field>
+        <Field Name="Quantity_PiecesFormat">
+          <DataField>Quantity_PiecesFormat</DataField>
+        </Field>
+        <Field Name="NetWeight">
+          <DataField>NetWeight</DataField>
+        </Field>
+        <Field Name="NetWeightFormat">
+          <DataField>NetWeightFormat</DataField>
+        </Field>
+        <Field Name="GrossWeight">
+          <DataField>GrossWeight</DataField>
+        </Field>
+        <Field Name="GrossWeightFormat">
+          <DataField>GrossWeightFormat</DataField>
+        </Field>
+        <Field Name="Unit_Volume">
+          <DataField>Unit_Volume</DataField>
+        </Field>
+        <Field Name="Unit_VolumeFormat">
+          <DataField>Unit_VolumeFormat</DataField>
+        </Field>
+        <Field Name="QtyPerPack">
+          <DataField>QtyPerPack</DataField>
+        </Field>
+        <Field Name="QtyPerPackFormat">
+          <DataField>QtyPerPackFormat</DataField>
+        </Field>
+        <Field Name="Container">
+          <DataField>Container</DataField>
+        </Field>
+        <Field Name="SealNo">
+          <DataField>SealNo</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
 </Report>
