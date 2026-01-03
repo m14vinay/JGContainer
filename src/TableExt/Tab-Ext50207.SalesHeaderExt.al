@@ -32,10 +32,16 @@ tableextension 50207 "Sales Header Ext" extends "Sales Header"
                 SSTExemptionDetails: Record "SST Exemption Details";
             begin
                 SSTExemptionDetails.Reset();
-                SSTExemptionDetails.SetRange("Customer No.","Sell-to Customer No.");
-                SSTExemptionDetails.SetRange("SST Exemption Registration No.",Rec."SST Exemption Registration No.");
+                SSTExemptionDetails.SetRange("Customer No.", "Sell-to Customer No.");
+                SSTExemptionDetails.SetRange("SST Exemption Registration No.", Rec."SST Exemption Registration No.");
+                SSTExemptionDetails.SetFilter("Effective Date", '<=%1', Rec."Document Date");
                 If SSTExemptionDetails.FindFirst() then
-                    Rec.Validate("VAT Bus. Posting Group", SSTExemptionDetails."SST Business Posting Group");
+                    If SSTExemptionDetails."Expiry Date" <> 0D then
+                        SSTExemptionDetails.SetFilter("Expiry Date", '>=%1', Rec."Document Date");
+                If not SSTExemptionDetails.IsEmpty then
+                    Rec.Validate("VAT Bus. Posting Group", SSTExemptionDetails."SST Business Posting Group")
+                Else
+                    Error('It is not within the date range/Expired');
 
             end;
         }

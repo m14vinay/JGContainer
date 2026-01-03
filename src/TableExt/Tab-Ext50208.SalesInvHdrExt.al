@@ -27,6 +27,7 @@ tableextension 50208 "Sales Inv Hdr Ext" extends "Sales Invoice Header"
             Caption = 'SST Exemption registration No.';
             DataClassification = CustomerContent;
             TableRelation = "SST Exemption Details"."SST Exemption Registration No.";
+            
         }
         field(50207; "Delivery Area"; Code[20])
         {
