@@ -27,7 +27,7 @@ tableextension 50210 "Sales Shipment Hdr" extends "Sales Shipment Header"
             Caption = 'Vehicle No.';
             DataClassification = CustomerContent;
         }
-        field(50206; "SST Exemption registration No."; Text[20])
+        field(50206; "SST Exemption registration No."; Text[30])
         {
             Caption = 'SST Exemption registration No.';
             DataClassification = CustomerContent;

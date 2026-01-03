@@ -22,7 +22,7 @@ tableextension 50207 "Sales Header Ext" extends "Sales Header"
             Caption = 'Vehicle No.';
             DataClassification = CustomerContent;
         }
-        field(50206; "SST Exemption Registration No."; Text[20])
+        field(50206; "SST Exemption Registration No."; Text[30])
         {
             Caption = 'SST Exemption Registration No.';
             DataClassification = CustomerContent;

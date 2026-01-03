@@ -10,7 +10,7 @@ table 50202 "SST Exemption Details"
             Caption = 'Customer No.';
             TableRelation = Customer."No.";
         }
-        field(2; "SST Exemption Registration No."; Text[25])
+        field(2; "SST Exemption Registration No."; Text[30])
         {
             Caption = 'SST Exemption Registration No.';
         }

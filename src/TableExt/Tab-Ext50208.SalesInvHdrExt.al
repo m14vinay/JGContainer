@@ -22,7 +22,7 @@ tableextension 50208 "Sales Inv Hdr Ext" extends "Sales Invoice Header"
             DataClassification = CustomerContent;
             Caption = 'Shipment To';
         }
-        field(50206; "SST Exemption registration No."; Text[20])
+        field(50206; "SST Exemption registration No."; Text[30])
         {
             Caption = 'SST Exemption registration No.';
             DataClassification = CustomerContent;
