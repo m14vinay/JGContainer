@@ -1,7 +1,8 @@
 report 50201 DeliveryOrderReport
 {
-    DefaultLayout = RDLC;
-    RDLCLayout = './src/Reports/Layouts/DeliveryOrderReport_v1.rdl';
+    // DefaultLayout = RDLC;
+    // RDLCLayout = './src/Reports/Layouts/DeliveryOrderReport_v1.rdl';
+    DefaultRenderingLayout = LayoutA4;
     Caption = 'Print Delivery Order';
     ApplicationArea = Suite;
     UsageCategory = Documents;
@@ -9,6 +10,7 @@ report 50201 DeliveryOrderReport
 
     dataset
     {
+
         dataitem("Sales Shipment Header"; "Sales Shipment Header")
         {
             column(PrintName; CompanyInfo."Print Name")
@@ -285,6 +287,25 @@ report 50201 DeliveryOrderReport
             end;
         }
     }
+
+    rendering
+    {
+        layout(LayoutA4)
+        {
+            Type = RDLC;
+            LayoutFile = './src/Reports/Layouts/DeliveryOrderReport_v1.rdl';
+            Caption = 'Delivery Order (A4)';
+            Summary = 'Standard A4 layout for Delivery Order Report.';
+        }
+        layout(LayoutLetter)
+        {
+            Type = RDLC;
+            LayoutFile = './src/Reports/Layouts/DeliveryOrderReport_Letter.rdl';
+            Caption = 'Delivery Order (Letter)';
+            Summary = 'Standard Letter layout for Delivery Order Report.';
+        }
+    }
+
     trigger OnInitReport()
     begin
         CompanyInfo.SetAutoCalcFields(Picture);
@@ -329,5 +350,7 @@ report 50201 DeliveryOrderReport
         else
             exit(SrcCurrCode);
     end;
+
+
 
 }
