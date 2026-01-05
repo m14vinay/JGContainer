@@ -89,6 +89,9 @@ report 50207 SalesInvoiceReport
             column(ReportTitle; ReportTitle)
             {
             }
+            column(External_Document_No_; "External Document No.")
+            {
+            }
             column(Bill_to_Name; "Bill-to Name")
             {
             }

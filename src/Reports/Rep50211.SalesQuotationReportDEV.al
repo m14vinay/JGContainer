@@ -63,6 +63,7 @@ report 50211 "Sales Quotation Report"
             column(Salesperson_Code; SalesPersonPurch.Name) { }
             column(Incoterms; "ADY E-INV Incoterms Code") { }
             column(Work_Description; WorkDescriptionTxt) { }
+            column(External_Document_No_; "External Document No.") { }
 
             column(AmountInWords; AmtInWords) { }
 

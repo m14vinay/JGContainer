@@ -89,6 +89,9 @@ report 50206 SalesDebitNoteReport
             column(AlternateBank2; CompanyInfo."Alternative Bank 2")
             {
             }
+            column(External_Document_No_; "External Document No.")
+            {
+            }
             column(ReportTitle; ReportTitle)
             {
             }

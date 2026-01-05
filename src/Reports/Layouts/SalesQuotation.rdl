@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-01-02T04:54:14.1095373Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-01-05T06:42:35.6619766Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -668,7 +668,7 @@
                                       <Style>None</Style>
                                     </Border>
                                     <VerticalAlign>Top</VerticalAlign>
-                                    <PaddingLeft>16pt</PaddingLeft>
+                                    <PaddingLeft>14pt</PaddingLeft>
                                   </Style>
                                 </Textbox>
                                 <Textbox Name="ExecutionTimeTextBox57">
@@ -699,7 +699,7 @@
                                       <Style>None</Style>
                                     </Border>
                                     <VerticalAlign>Top</VerticalAlign>
-                                    <PaddingLeft>16pt</PaddingLeft>
+                                    <PaddingLeft>14pt</PaddingLeft>
                                   </Style>
                                 </Textbox>
                                 <Textbox Name="ExecutionTimeTextBox60">
@@ -730,7 +730,7 @@
                                       <Style>None</Style>
                                     </Border>
                                     <VerticalAlign>Top</VerticalAlign>
-                                    <PaddingLeft>16pt</PaddingLeft>
+                                    <PaddingLeft>14pt</PaddingLeft>
                                   </Style>
                                 </Textbox>
                                 <Textbox Name="ExecutionTimeTextBox61">
@@ -761,7 +761,7 @@
                                       <Style>None</Style>
                                     </Border>
                                     <VerticalAlign>Top</VerticalAlign>
-                                    <PaddingLeft>16pt</PaddingLeft>
+                                    <PaddingLeft>14pt</PaddingLeft>
                                   </Style>
                                 </Textbox>
                                 <Textbox Name="ExecutionTimeTextBox63">
@@ -785,14 +785,14 @@
                                   <Top>2.03664cm</Top>
                                   <Left>0cm</Left>
                                   <Height>0.4cm</Height>
-                                  <Width>3.08162cm</Width>
+                                  <Width>3.08978cm</Width>
                                   <ZIndex>4</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
                                     </Border>
                                     <VerticalAlign>Top</VerticalAlign>
-                                    <PaddingLeft>16pt</PaddingLeft>
+                                    <PaddingLeft>14pt</PaddingLeft>
                                   </Style>
                                 </Textbox>
                                 <Textbox Name="ExecutionTimeTextBox65">
@@ -823,7 +823,7 @@
                                       <Style>None</Style>
                                     </Border>
                                     <VerticalAlign>Top</VerticalAlign>
-                                    <PaddingLeft>16pt</PaddingLeft>
+                                    <PaddingLeft>14pt</PaddingLeft>
                                   </Style>
                                 </Textbox>
                                 <Textbox Name="ExecutionTimeTextBox19">
@@ -845,9 +845,9 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <Top>0.01625cm</Top>
-                                  <Left>3.11264cm</Left>
+                                  <Left>3.16035cm</Left>
                                   <Height>0.39999cm</Height>
-                                  <Width>0.13882cm</Width>
+                                  <Width>0.1264cm</Width>
                                   <ZIndex>6</ZIndex>
                                   <Style>
                                     <Border>
@@ -875,9 +875,9 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <Top>0.51914cm</Top>
-                                  <Left>3.11265cm</Left>
+                                  <Left>3.16036cm</Left>
                                   <Height>0.4cm</Height>
-                                  <Width>0.13882cm</Width>
+                                  <Width>0.1264cm</Width>
                                   <ZIndex>7</ZIndex>
                                   <Style>
                                     <Border>
@@ -905,9 +905,9 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <Top>1.5308cm</Top>
-                                  <Left>3.11264cm</Left>
+                                  <Left>3.16035cm</Left>
                                   <Height>0.4cm</Height>
-                                  <Width>0.13882cm</Width>
+                                  <Width>0.1264cm</Width>
                                   <ZIndex>8</ZIndex>
                                   <Style>
                                     <Border>
@@ -935,9 +935,9 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <Top>2.03664cm</Top>
-                                  <Left>3.1169cm</Left>
+                                  <Left>3.16461cm</Left>
                                   <Height>0.39706cm</Height>
-                                  <Width>0.13456cm</Width>
+                                  <Width>0.12214cm</Width>
                                   <ZIndex>9</ZIndex>
                                   <Style>
                                     <Border>
@@ -965,9 +965,9 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <Top>2.54247cm</Top>
-                                  <Left>3.1169cm</Left>
+                                  <Left>3.16461cm</Left>
                                   <Height>0.4cm</Height>
-                                  <Width>0.13456cm</Width>
+                                  <Width>0.12214cm</Width>
                                   <ZIndex>10</ZIndex>
                                   <Style>
                                     <Border>
@@ -995,9 +995,9 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <Top>1.02497cm</Top>
-                                  <Left>3.11264cm</Left>
+                                  <Left>3.16035cm</Left>
                                   <Height>0.4cm</Height>
-                                  <Width>0.13882cm</Width>
+                                  <Width>0.1264cm</Width>
                                   <ZIndex>11</ZIndex>
                                   <Style>
                                     <Border>
@@ -1193,12 +1193,104 @@
                                     <VerticalAlign>Top</VerticalAlign>
                                   </Style>
                                 </Textbox>
+                                <Textbox Name="ExecutionTimeTextBox105">
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>Customer PO No.</Value>
+                                          <Style>
+                                            <FontStyle>Normal</FontStyle>
+                                            <FontSize>9pt</FontSize>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Left</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <Top>3.0483cm</Top>
+                                  <Left>0cm</Left>
+                                  <Height>0.4cm</Height>
+                                  <Width>3.08978cm</Width>
+                                  <ZIndex>18</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <VerticalAlign>Top</VerticalAlign>
+                                    <PaddingLeft>14pt</PaddingLeft>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="ExecutionTimeTextBox41">
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>:</Value>
+                                          <Style>
+                                            <FontStyle>Normal</FontStyle>
+                                            <FontSize>9pt</FontSize>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Center</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <Top>3.0483cm</Top>
+                                  <Left>3.16461cm</Left>
+                                  <Height>0.4cm</Height>
+                                  <Width>0.12214cm</Width>
+                                  <ZIndex>19</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <VerticalAlign>Top</VerticalAlign>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="ExecutionTimeTextBox106">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>=Fields!External_Document_No_.Value</Value>
+                                          <Style>
+                                            <FontStyle>Normal</FontStyle>
+                                            <FontSize>9pt</FontSize>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Left</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <Top>3.0483cm</Top>
+                                  <Left>3.42786cm</Left>
+                                  <Height>0.4cm</Height>
+                                  <Width>3.05683cm</Width>
+                                  <ZIndex>20</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <VerticalAlign>Top</VerticalAlign>
+                                  </Style>
+                                </Textbox>
                               </ReportItems>
                               <KeepTogether>true</KeepTogether>
                               <Top>0.2636cm</Top>
                               <Left>12.54781cm</Left>
-                              <Height>2.94247cm</Height>
-                              <Width>6.46998cm</Width>
+                              <Height>3.4483cm</Height>
+                              <Width>6.48469cm</Width>
                               <ZIndex>2</ZIndex>
                               <Style>
                                 <Border>
@@ -4182,7 +4274,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Top</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="ExecutionTimeTextBox4">
@@ -4213,7 +4305,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="ExecutionTimeTextBox6">
@@ -4244,7 +4336,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="ExecutionTimeTextBox7">
@@ -4275,7 +4367,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="ExecutionTimeTextBox8">
@@ -4306,7 +4398,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="ExecutionTimeTextBox10">
@@ -4337,7 +4429,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="ExecutionTimeTextBox12">
@@ -4368,7 +4460,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="ExecutionTimeTextBox11">
@@ -4399,7 +4491,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="ExecutionTimeTextBox13">
@@ -4430,7 +4522,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="ExecutionTimeTextBox15">
@@ -4461,7 +4553,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Image Name="Image1">
@@ -4595,7 +4687,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="ExecutionTimeTextBox36">
@@ -4626,7 +4718,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="ExecutionTimeTextBox37">
@@ -4657,7 +4749,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="ExecutionTimeTextBox38">
@@ -4688,7 +4780,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="ExecutionTimeTextBox39">
@@ -4719,7 +4811,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="ExecutionTimeTextBox40">
@@ -4750,7 +4842,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="ReportTitle2">
@@ -5271,6 +5363,9 @@ j3/yPJ57/gVlR3/2Ao7Ko/k89s3/fye2iX2bZvo2bSjfppm+TTN9m5bk2zTTt2lJvk1L8m1akm/TTN+m
         </Field>
         <Field Name="Work_Description">
           <DataField>Work_Description</DataField>
+        </Field>
+        <Field Name="External_Document_No_">
+          <DataField>External_Document_No_</DataField>
         </Field>
         <Field Name="AmountInWords">
           <DataField>AmountInWords</DataField>

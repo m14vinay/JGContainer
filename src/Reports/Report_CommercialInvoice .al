@@ -83,6 +83,9 @@ report 50200 CommercialInvoiceReport
             column(PrintName; CompanyInfo."Print Name")
             {
             }
+            column(External_Document_No_; "External Document No.")
+            {
+            }
             column(AlternateBank1; CompanyInfo."Alternative Bank 1")
             {
             }
