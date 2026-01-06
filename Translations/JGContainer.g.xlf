@@ -1403,6 +1403,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report DeliveryOrderReport - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 2762295800 - ReportLayout 1439446569 - Property 2166945456" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Standard A4 layout for Delivery Order Report.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report DeliveryOrderReport - ReportLayout LayoutA4 - Property Summary</note>
+        </trans-unit>
+        <trans-unit id="Report 2762295800 - ReportLayout 1439446569 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Delivery Order (A4)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report DeliveryOrderReport - ReportLayout LayoutA4 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2762295800 - ReportLayout 1015437288 - Property 2166945456" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Standard Letter layout for Delivery Order Report.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report DeliveryOrderReport - ReportLayout LayoutLetter - Property Summary</note>
+        </trans-unit>
+        <trans-unit id="Report 2762295800 - ReportLayout 1015437288 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Delivery Order (Letter)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report DeliveryOrderReport - ReportLayout LayoutLetter - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 3580343970 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Generate Commercial Invoice &amp; Packing List</source>
           <note from="Developer" annotates="general" priority="2"></note>
