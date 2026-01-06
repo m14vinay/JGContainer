@@ -239,7 +239,15 @@ report 50207 SalesInvoiceReport
                 {
 
                 }
+                column(NoofpltsLabel; GetNoofpltsLabel())
+                {
+
+                }
                 column(UnitPrice; "Price Per Piece")
+                {
+
+                }
+                column(UnitPriceLabel; GetUnitPriceLabel())
                 {
 
                 }
@@ -248,6 +256,14 @@ report 50207 SalesInvoiceReport
 
                 }
                 column(Quantity; "Quantity")
+                {
+
+                }
+                column(QuantityPcsLabel; GetQuantityPcsLabel())
+                {
+
+                }
+                column(QuantityPcsValue; GetQuantityPcsValue())
                 {
 
                 }
@@ -505,6 +521,26 @@ report 50207 SalesInvoiceReport
             end;
         }
     }
+
+    requestpage
+    {
+        layout
+        {
+            area(Content)
+            {
+                group("Sales Invoice Header")
+                {
+                    field(ScrapFilter; ScrapFilterValue)
+                    {
+                        ApplicationArea = Suite;
+                        Caption = 'Scrap';
+                        ToolTip = 'Filter sales invoices by scrap status.';
+                    }
+                }
+            }
+        }
+    }
+
     trigger OnInitReport()
     begin
         CompanyInfo.SetAutoCalcFields(Picture);
@@ -539,6 +575,8 @@ report 50207 SalesInvoiceReport
         BIllpostcodecitycountrycounty: Text;
         EffectiveDate: Date;
         SSTExemption: Record "SST Exemption Details";
+        ScrapFilterValue: Boolean;
+        UOM: Record "Unit of Measure";
 
         Billtomobileno: Text;
         BilltoPhoneNo: Text;
@@ -604,6 +642,38 @@ report 50207 SalesInvoiceReport
         end;
 
         exit(Addr);
+    end;
+
+    local procedure GetNoofpltsLabel(): Text
+    begin
+        if ScrapFilterValue then
+            exit('Quantity')
+        else
+            exit('No of Plts');
+    end;
+
+    local procedure GetQuantityPcsLabel(): Text
+    begin
+        if ScrapFilterValue then
+            exit('UOM')
+        else
+            exit('Quantity Pcs');
+    end;
+
+    local procedure GetUnitPriceLabel(): Text
+    begin
+        if ScrapFilterValue then
+            exit('Rate')
+        else
+            exit('Unit Price/Pcs');
+    end;
+
+    local procedure GetQuantityPcsValue(): Text
+    begin
+        if ScrapFilterValue then
+            exit("Sales Invoice Line"."Unit of Measure Code")
+        else
+            exit(Format(Packing * "Sales Invoice Line"."Quantity"));
     end;
 
 }

@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-01-05T06:54:49.1640748Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-01-06T05:38:09.0435328Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -1520,10 +1520,10 @@
                                     <Width>2.31422cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>4.75749cm</Width>
+                                    <Width>4.31947cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>1.16689cm</Width>
+                                    <Width>1.62308cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
                                     <Width>1.55984cm</Width>
@@ -1761,7 +1761,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>No of Plts</Value>
+                                                    <Value>=Fields!NoofpltsLabel.Value</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -1865,7 +1865,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Quantity Pcs</Value>
+                                                    <Value>=Fields!QuantityPcsLabel.Value</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -1917,7 +1917,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Unit Price/Pcs</Value>
+                                                    <Value>=Fields!UnitPriceLabel.Value</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -2313,15 +2313,15 @@
                                       </TablixCell>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="Quantity">
-                                            <rd:DefaultName>Quantity</rd:DefaultName>
+                                          <Textbox Name="QuantityPcsValue">
+                                            <rd:DefaultName>QuantityPcsValue</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!Quantity.Value</Value>
+                                                    <Value>=Fields!QuantityPcsValue.Value</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <Format>#,0;(#,0)</Format>
@@ -2347,6 +2347,7 @@
                                       </TablixCell>
                                       <TablixCell>
                                         <CellContents>
+                                          <rd:Selected>true</rd:Selected>
                                           <Textbox Name="UnitPrice">
                                             <rd:DefaultName>UnitPrice</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
@@ -2392,7 +2393,7 @@
                                                     <Value>=Fields!Amount.Value</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
-                                                      <Format>#,0.00;(#,0.00)</Format>
+                                                      <Format>#,##0.00;-#,##0.00</Format>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
@@ -2517,7 +2518,7 @@
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
-                                                      <Format>#,0.00;(#,0.00)</Format>
+                                                      <Format>#,##0.00;-#,##0.00</Format>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
@@ -2579,7 +2580,7 @@
                               <Top>4.82577cm</Top>
                               <Left>0cm</Left>
                               <Height>1.65071cm</Height>
-                              <Width>18.80276cm</Width>
+                              <Width>18.82093cm</Width>
                               <ZIndex>3</ZIndex>
                               <Style>
                                 <Border>
@@ -2626,13 +2627,13 @@
                                     <Width>0.86596cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>3.57009cm</Width>
+                                    <Width>3.58415cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
                                     <Width>1.71129cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>2.75317cm</Width>
+                                    <Width>2.75728cm</Width>
                                   </TablixColumn>
                                 </TablixColumns>
                                 <TablixRows>
@@ -2746,7 +2747,7 @@
                                                     <Value>=Fields!Amount.Value</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
-                                                      <Format>#,0.00;(#,0.00)</Format>
+                                                      <Format>#,##0.00;-#,##0.00</Format>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
@@ -2905,7 +2906,7 @@
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Normal</FontWeight>
-                                                      <Format>#,0.00;(#,0.00)</Format>
+                                                      <Format>#,##0.00;-#,##0.00</Format>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
@@ -3051,7 +3052,7 @@
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
-                                                      <Format>#,0.00;(#,0.00)</Format>
+                                                      <Format>#,##0.00;-#,##0.00</Format>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
@@ -3429,7 +3430,7 @@
                               <Top>6.47648cm</Top>
                               <Left>0.00001cm</Left>
                               <Height>2cm</Height>
-                              <Width>18.80275cm</Width>
+                              <Width>18.82092cm</Width>
                               <ZIndex>4</ZIndex>
                               <Style>
                                 <Border>
@@ -5006,11 +5007,23 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         <Field Name="NoofpltsFormat">
           <DataField>NoofpltsFormat</DataField>
         </Field>
+        <Field Name="NoofpltsLabel">
+          <DataField>NoofpltsLabel</DataField>
+        </Field>
         <Field Name="UnitPrice">
           <DataField>UnitPrice</DataField>
         </Field>
         <Field Name="UnitPriceFormat">
           <DataField>UnitPriceFormat</DataField>
+        </Field>
+        <Field Name="UnitPriceLabel">
+          <DataField>UnitPriceLabel</DataField>
+        </Field>
+        <Field Name="UnitPriceValue">
+          <DataField>UnitPriceValue</DataField>
+        </Field>
+        <Field Name="UnitPriceValueFormat">
+          <DataField>UnitPriceValueFormat</DataField>
         </Field>
         <Field Name="Packing">
           <DataField>Packing</DataField>
@@ -5023,6 +5036,12 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         </Field>
         <Field Name="QuantityFormat">
           <DataField>QuantityFormat</DataField>
+        </Field>
+        <Field Name="QuantityPcsLabel">
+          <DataField>QuantityPcsLabel</DataField>
+        </Field>
+        <Field Name="QuantityPcsValue">
+          <DataField>QuantityPcsValue</DataField>
         </Field>
         <Field Name="No_">
           <DataField>No_</DataField>

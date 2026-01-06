@@ -245,7 +245,19 @@ report 50208 SalesOrderReport
                 {
 
                 }
+                column(NoofpltsLabel; GetNoofpltsLabel())
+                {
+
+                }
                 column(UnitPrice; "Sales Line"."Price Per Piece")
+                {
+
+                }
+                column(UnitPriceLabel; GetUnitPriceLabel())
+                {
+
+                }
+                column(UnitPriceValue; GetUnitPriceValue())
                 {
 
                 }
@@ -254,6 +266,14 @@ report 50208 SalesOrderReport
 
                 }
                 column(Quantity; "Sales Line"."Quantity Pieces")
+                {
+
+                }
+                column(QuantityPcsLabel; GetQuantityPcsLabel())
+                {
+
+                }
+                column(QuantityPcsValue; GetQuantityPcsValue())
                 {
 
                 }
@@ -501,6 +521,15 @@ report 50208 SalesOrderReport
                 {
                     Caption = 'Options';
                 }
+                group("Sales Header")
+                {
+                    field(ScrapFilter; ScrapFilterValue)
+                    {
+                        ApplicationArea = Suite;
+                        Caption = 'Scrap';
+                        ToolTip = 'Filter sales orders by scrap status.';
+                    }
+                }
             }
         }
     }
@@ -545,6 +574,8 @@ report 50208 SalesOrderReport
         GLSetup: Record "General Ledger Setup";
         EffectiveDate: Date;
         SSTExemption: Record "SST Exemption Details";
+        ScrapFilterValue: Boolean;
+        UOM: Record "Unit of Measure";
         Currency: Record Currency;
         FormatAddr: Codeunit "Format Address";
         SalesPersonPurch: Record "Salesperson/Purchaser";
@@ -599,6 +630,47 @@ report 50208 SalesOrderReport
         end;
 
         exit(Addr);
+    end;
+
+    local procedure GetNoofpltsLabel(): Text
+    begin
+        if ScrapFilterValue then
+            exit('Quantity')
+        else
+            exit('No of Plts');
+    end;
+
+    local procedure GetQuantityPcsLabel(): Text
+    begin
+        if ScrapFilterValue then
+            exit('UOM')
+        else
+            exit('Quantity Pcs');
+    end;
+
+    local procedure GetUnitPriceLabel(): Text
+    begin
+        if ScrapFilterValue then
+            exit('Rate')
+        else
+            exit('Unit Price/Pcs');
+    end;
+
+    local procedure GetQuantityPcsValue(): Text
+    begin
+        if ScrapFilterValue then
+            exit("Sales Line"."Unit of Measure Code")
+        else
+            exit(Format(Packing * "Sales Line"."Quantity"));
+    end;
+
+    local procedure GetUnitPriceValue(): Decimal
+    begin
+        if ScrapFilterValue then begin
+            // Return UOM-based price or similar value
+            exit("Sales Line"."Price Per Piece");
+        end else
+            exit("Sales Line"."Price Per Piece");
     end;
 
 }
