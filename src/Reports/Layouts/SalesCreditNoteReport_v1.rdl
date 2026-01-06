@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-01-02T06:12:12.8937396Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-01-05T07:34:52.6153740Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -2527,9 +2527,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>0.00522in</Top>
-                  <Left>2.64708cm</Left>
-                  <Height>12.5pt</Height>
-                  <Width>3.81467cm</Width>
+                  <Left>2.89787cm</Left>
+                  <Height>12.1241pt</Height>
+                  <Width>3.56388cm</Width>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -2557,10 +2557,10 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>0.51656cm</Top>
-                  <Left>2.64708cm</Left>
+                  <Top>0.50329cm</Top>
+                  <Left>2.89787cm</Left>
                   <Height>12.75591pt</Height>
-                  <Width>3.81467cm</Width>
+                  <Width>3.56388cm</Width>
                   <ZIndex>1</ZIndex>
                   <Style>
                     <Border>
@@ -2588,10 +2588,10 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>1.03712cm</Top>
-                  <Left>2.64708cm</Left>
+                  <Top>1.02385cm</Top>
+                  <Left>2.89787cm</Left>
                   <Height>12.75591pt</Height>
-                  <Width>3.81467cm</Width>
+                  <Width>3.56388cm</Width>
                   <ZIndex>2</ZIndex>
                   <Style>
                     <Border>
@@ -2619,10 +2619,10 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>1.55767cm</Top>
-                  <Left>2.64708cm</Left>
-                  <Height>12.48354pt</Height>
-                  <Width>3.81467cm</Width>
+                  <Top>1.5444cm</Top>
+                  <Left>2.89787cm</Left>
+                  <Height>12.75591pt</Height>
+                  <Width>3.56388cm</Width>
                   <ZIndex>3</ZIndex>
                   <Style>
                     <Border>
@@ -2651,10 +2651,10 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.07823cm</Top>
-                  <Left>2.64708cm</Left>
+                  <Top>2.06496cm</Top>
+                  <Left>2.89787cm</Left>
                   <Height>12.75591pt</Height>
-                  <Width>3.81467cm</Width>
+                  <Width>3.56388cm</Width>
                   <ZIndex>4</ZIndex>
                   <Style>
                     <Border>
@@ -2683,9 +2683,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>1.02385cm</Top>
-                  <Left>0.53142cm</Left>
+                  <Left>0.14111cm</Left>
                   <Height>0.45cm</Height>
-                  <Width>1.62831cm</Width>
+                  <Width>2.51251cm</Width>
                   <ZIndex>5</ZIndex>
                   <Style>
                     <Border>
@@ -2714,9 +2714,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>1.5444cm</Top>
-                  <Left>0.53142cm</Left>
+                  <Left>0.14111cm</Left>
                   <Height>0.45cm</Height>
-                  <Width>1.62831cm</Width>
+                  <Width>2.51251cm</Width>
                   <ZIndex>6</ZIndex>
                   <Style>
                     <Border>
@@ -2745,9 +2745,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>2.06496cm</Top>
-                  <Left>0.20922in</Left>
+                  <Left>0.05556in</Left>
                   <Height>0.45cm</Height>
-                  <Width>1.62831cm</Width>
+                  <Width>2.51251cm</Width>
                   <ZIndex>7</ZIndex>
                   <Style>
                     <Border>
@@ -2770,14 +2770,14 @@
                         </TextRun>
                       </TextRuns>
                       <Style>
-                        <TextAlign>Center</TextAlign>
+                        <TextAlign>Right</TextAlign>
                       </Style>
                     </Paragraph>
                   </Paragraphs>
                   <Top>0.50329cm</Top>
-                  <Left>2.15973cm</Left>
+                  <Left>2.65362cm</Left>
                   <Height>12.75591pt</Height>
-                  <Width>0.31096cm</Width>
+                  <Width>0.20513cm</Width>
                   <ZIndex>8</ZIndex>
                   <Style>
                     <Border>
@@ -2800,14 +2800,14 @@
                         </TextRun>
                       </TextRuns>
                       <Style>
-                        <TextAlign>Center</TextAlign>
+                        <TextAlign>Right</TextAlign>
                       </Style>
                     </Paragraph>
                   </Paragraphs>
                   <Top>1.02385cm</Top>
-                  <Left>2.15973cm</Left>
+                  <Left>2.65362cm</Left>
                   <Height>12.75591pt</Height>
-                  <Width>0.31096cm</Width>
+                  <Width>0.20513cm</Width>
                   <ZIndex>9</ZIndex>
                   <Style>
                     <Border>
@@ -2830,14 +2830,14 @@
                         </TextRun>
                       </TextRuns>
                       <Style>
-                        <TextAlign>Center</TextAlign>
+                        <TextAlign>Right</TextAlign>
                       </Style>
                     </Paragraph>
                   </Paragraphs>
                   <Top>1.5444cm</Top>
-                  <Left>2.15973cm</Left>
-                  <Height>12.48348pt</Height>
-                  <Width>0.31096cm</Width>
+                  <Left>2.65362cm</Left>
+                  <Height>12.75603pt</Height>
+                  <Width>0.20513cm</Width>
                   <ZIndex>10</ZIndex>
                   <Style>
                     <Border>
@@ -2860,14 +2860,14 @@
                         </TextRun>
                       </TextRuns>
                       <Style>
-                        <TextAlign>Center</TextAlign>
+                        <TextAlign>Right</TextAlign>
                       </Style>
                     </Paragraph>
                   </Paragraphs>
                   <Top>2.06496cm</Top>
-                  <Left>2.15973cm</Left>
+                  <Left>2.65362cm</Left>
                   <Height>12.75591pt</Height>
-                  <Width>0.31096cm</Width>
+                  <Width>0.20513cm</Width>
                   <ZIndex>11</ZIndex>
                   <Style>
                     <Border>
@@ -2890,14 +2890,14 @@
                         </TextRun>
                       </TextRuns>
                       <Style>
-                        <TextAlign>Center</TextAlign>
+                        <TextAlign>Right</TextAlign>
                       </Style>
                     </Paragraph>
                   </Paragraphs>
                   <Top>0cm</Top>
-                  <Left>2.15973cm</Left>
+                  <Left>2.65362cm</Left>
                   <Height>12.5pt</Height>
-                  <Width>0.31096cm</Width>
+                  <Width>0.20513cm</Width>
                   <ZIndex>12</ZIndex>
                   <Style>
                     <Border>
@@ -2926,9 +2926,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>0.50329cm</Top>
-                  <Left>0.53142cm</Left>
+                  <Left>0.14111cm</Left>
                   <Height>0.45cm</Height>
-                  <Width>1.62831cm</Width>
+                  <Width>2.51251cm</Width>
                   <ZIndex>13</ZIndex>
                   <Style>
                     <Border>
@@ -2956,10 +2956,103 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Left>0.53142cm</Left>
+                  <Left>0.14111cm</Left>
                   <Height>0.44097cm</Height>
-                  <Width>1.62831cm</Width>
+                  <Width>2.51251cm</Width>
                   <ZIndex>14</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                    <VerticalAlign>Top</VerticalAlign>
+                  </Style>
+                </Textbox>
+                <Textbox Name="txtpaymentamount2">
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>=" " &amp; First(Fields!External_Document_No_.Value, "DataSet_Result")</Value>
+                          <Style>
+                            <FontSize>9pt</FontSize>
+                            <FontWeight>Normal</FontWeight>
+                            <Format>#,0.00;(#,0.00)</Format>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <LeftIndent>3pt</LeftIndent>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                      </Style>
+                    </Paragraph>
+                  </Paragraphs>
+                  <Top>2.58552cm</Top>
+                  <Left>2.89787cm</Left>
+                  <Height>12.75591pt</Height>
+                  <Width>3.56388cm</Width>
+                  <ZIndex>15</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                    <VerticalAlign>Top</VerticalAlign>
+                  </Style>
+                </Textbox>
+                <Textbox Name="ExecutionTimeTextBox39">
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>Customer PO No.</Value>
+                          <Style>
+                            <FontStyle>Normal</FontStyle>
+                            <FontSize>9pt</FontSize>
+                            <FontWeight>Normal</FontWeight>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                      </Style>
+                    </Paragraph>
+                  </Paragraphs>
+                  <Top>2.58552cm</Top>
+                  <Left>0.05556in</Left>
+                  <Height>0.45cm</Height>
+                  <Width>2.51251cm</Width>
+                  <ZIndex>16</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                    <VerticalAlign>Top</VerticalAlign>
+                  </Style>
+                </Textbox>
+                <Textbox Name="ExecutionTimeTextBox46">
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>:</Value>
+                          <Style>
+                            <FontStyle>Normal</FontStyle>
+                            <FontSize>9pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                      </Style>
+                    </Paragraph>
+                  </Paragraphs>
+                  <Top>2.58552cm</Top>
+                  <Left>2.65362cm</Left>
+                  <Height>12.75591pt</Height>
+                  <Width>0.20513cm</Width>
+                  <ZIndex>17</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -2971,7 +3064,7 @@
               <KeepTogether>true</KeepTogether>
               <Top>3.56243cm</Top>
               <Left>12.53825cm</Left>
-              <Height>2.52823cm</Height>
+              <Height>3.03552cm</Height>
               <Width>6.46175cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
@@ -3339,7 +3432,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="txttelno">
@@ -3369,7 +3462,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="txtemail">
@@ -3400,7 +3493,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="txtsst">
@@ -3430,7 +3523,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="lbltelno">
@@ -3460,7 +3553,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="lblemail">
@@ -3490,7 +3583,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="lblsst">
@@ -3520,7 +3613,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="ExecutionTimeTextBox11">
@@ -3550,7 +3643,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="ExecutionTimeTextBox13">
@@ -3580,7 +3673,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="ExecutionTimeTextBox15">
@@ -3610,7 +3703,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Rectangle Name="Rectangle2">
@@ -4094,7 +4187,7 @@
                 </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
-              <Top>6.58598cm</Top>
+              <Top>6.90348cm</Top>
               <Left>0.06518cm</Left>
               <Height>0.8cm</Height>
               <Width>18.93482cm</Width>
@@ -4240,7 +4333,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="txtsst2">
@@ -4270,7 +4363,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="lblemail2">
@@ -4300,7 +4393,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="lblsst2">
@@ -4330,7 +4423,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="ExecutionTimeTextBox12">
@@ -4360,7 +4453,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
             <Textbox Name="ExecutionTimeTextBox19">
@@ -4390,7 +4483,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
           </ReportItems>
