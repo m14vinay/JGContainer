@@ -82,6 +82,9 @@ report 50201 DeliveryOrderReport
             column(CompanyPicture3; CompanyInfo."Company Logo 3")
             {
             }
+            column(Bill_to_Name; "Bill-to Name")
+            {
+            }
             column(ReportTitle; ReportTitle)
             {
             }
