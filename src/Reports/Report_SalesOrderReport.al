@@ -237,6 +237,10 @@ report 50208 SalesOrderReport
                 {
 
                 }
+                column(Unit_Price; "Unit Price")
+                {
+
+                }
                 column(ItemCode; "Sales Line"."Item Reference No.")
                 {
 
@@ -667,8 +671,7 @@ report 50208 SalesOrderReport
     local procedure GetUnitPriceValue(): Decimal
     begin
         if ScrapFilterValue then begin
-            // Return UOM-based price or similar value
-            exit("Sales Line"."Price Per Piece");
+            exit("Sales Line"."Unit Price");
         end else
             exit("Sales Line"."Price Per Piece");
     end;

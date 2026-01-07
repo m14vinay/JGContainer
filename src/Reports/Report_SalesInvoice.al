@@ -251,6 +251,10 @@ report 50207 SalesInvoiceReport
                 {
 
                 }
+                column(UnitPriceValue; GetUnitPriceValue())
+                {
+
+                }
                 column(Packing; Packing)
                 {
 
@@ -674,6 +678,15 @@ report 50207 SalesInvoiceReport
             exit("Sales Invoice Line"."Unit of Measure Code")
         else
             exit(Format(Packing * "Sales Invoice Line"."Quantity"));
+    end;
+
+
+    local procedure GetUnitPriceValue(): Decimal
+    begin
+        if ScrapFilterValue then begin
+            exit("Sales Invoice Line"."Unit Price");
+        end else
+            exit("Sales Invoice Line"."Price Per Piece");
     end;
 
 }
