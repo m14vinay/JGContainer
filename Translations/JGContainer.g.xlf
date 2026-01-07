@@ -1508,6 +1508,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SalesInvoiceReport - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 374109625 - Control 3603683837 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Filter sales invoices by scrap status.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SalesInvoiceReport - Control ScrapFilter - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 374109625 - Control 3603683837 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Scrap</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SalesInvoiceReport - Control ScrapFilter - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 2736130244 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sales Order</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1517,6 +1527,16 @@
           <source>Options</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SalesOrderReport - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2736130244 - Control 3603683837 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Filter sales orders by scrap status.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SalesOrderReport - Control ScrapFilter - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 2736130244 - Control 3603683837 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Scrap</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SalesOrderReport - Control ScrapFilter - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 10644911 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Statement of Accounts</source>
@@ -2072,6 +2092,11 @@
           <source>Specifies the Quantity Pieces</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Consumption Jnrl Ext - Control Quantity Pieces - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 547327133 - Control 2852088013 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2774095456">
+          <source>Specifies the Hide in Documents</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension County Ext - Control Hide in Documents - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2204447775 - Action 3502244639 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
           <source>Block the Customer</source>
@@ -3547,6 +3572,11 @@
           <source>SST Registration No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Comp Info Ext - Change VAT Registration No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 547327133 - Field 2852088013 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 499448942">
+          <source>Hide in Documents</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension County Ext - Field Hide in Documents - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2204447775 - Field 1197504074 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
           <source>Agent/Distributor Name</source>

@@ -63,6 +63,7 @@ tableextension 50207 "Sales Header Ext" extends "Sales Header"
         {
             Caption = 'Commercial Invoice No';
             DataClassification = CustomerContent;
+            TableRelation = "Sales Header"."No." where("Document Type" = CONST(Invoice));
         }
         field(50211; "Order No"; Code[20])
         {
