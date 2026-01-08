@@ -333,7 +333,7 @@
                               </ReportItems>
                               <KeepTogether>true</KeepTogether>
                               <Top>0.18537cm</Top>
-                              <Left>0.00002cm</Left>
+                              <Left>0.00004cm</Left>
                               <Height>2.23cm</Height>
                               <Width>6.163cm</Width>
                               <Style>
@@ -1102,7 +1102,7 @@
                               </ReportItems>
                               <KeepTogether>true</KeepTogether>
                               <Top>0.18917cm</Top>
-                              <Left>12.33879cm</Left>
+                              <Left>12.33881cm</Left>
                               <Height>3.70015cm</Height>
                               <Width>6.46333cm</Width>
                               <ZIndex>1</ZIndex>
@@ -1402,7 +1402,7 @@
                               </ReportItems>
                               <KeepTogether>true</KeepTogether>
                               <Top>0.18537cm</Top>
-                              <Left>6.163cm</Left>
+                              <Left>6.16302cm</Left>
                               <Height>2.23cm</Height>
                               <Width>6.163cm</Width>
                               <ZIndex>2</ZIndex>
@@ -2480,7 +2480,7 @@
                                 </TablixMembers>
                               </TablixRowHierarchy>
                               <DataSetName>DataSet_Result</DataSetName>
-                              <Top>4.82577cm</Top>
+                              <Top>4.44268cm</Top>
                               <Left>0cm</Left>
                               <Height>1.65071cm</Height>
                               <Width>18.82093cm</Width>
@@ -3330,7 +3330,7 @@
                                 </TablixMembers>
                               </TablixRowHierarchy>
                               <DataSetName>DataSet_Result</DataSetName>
-                              <Top>6.47648cm</Top>
+                              <Top>6.09339cm</Top>
                               <Left>0.00001cm</Left>
                               <Height>2cm</Height>
                               <Width>18.82092cm</Width>
@@ -3806,7 +3806,7 @@
                                 </Textbox>
                               </ReportItems>
                               <KeepTogether>true</KeepTogether>
-                              <Top>8.62328cm</Top>
+                              <Top>8.24019cm</Top>
                               <Left>0.00002cm</Left>
                               <Height>5.66837cm</Height>
                               <Width>18.36472cm</Width>
