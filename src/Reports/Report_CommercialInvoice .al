@@ -408,11 +408,13 @@ report 50200 CommercialInvoiceReport
                 If "Ship-to City" <> '' then
                     ShipToAddrTxt += "Ship-to City" + ', ';
                 If "Ship-to County" <> '' then
-                    if County.Get("Ship-to County") then begin
-                        If ShipCountry <> '' then
-                            ShipToAddrTxt += County.Description + ', '
-                        else
-                            ShipToAddrTxt += County.Description;
+                    if FindCountyByNameOrDescription("Ship-to County", County) then begin
+                        if not County."Hide in Documents" then begin
+                            If ShipCountry <> '' then
+                                ShipToAddrTxt += County.Description + ', '
+                            else
+                                ShipToAddrTxt += County.Description;
+                        end;
                     end else begin
                         If ShipCountry <> '' then
                             ShipToAddrTxt += "Ship-to County" + ', '
@@ -431,11 +433,13 @@ report 50200 CommercialInvoiceReport
                 If Customer.City <> '' then
                     BillToAddrTxt += Customer.City + ', ';
                 If Customer.County <> '' then
-                    if County.Get(Customer.County) then begin
-                        If BIllCountry <> '' then
-                            BillToAddrTxt += County.Description + ', '
-                        else
-                            BillToAddrTxt += County.Description;
+                    if FindCountyByNameOrDescription(Customer.County, County) then begin
+                        if not County."Hide in Documents" then begin
+                            If BIllCountry <> '' then
+                                BillToAddrTxt += County.Description + ', '
+                            else
+                                BillToAddrTxt += County.Description;
+                        end;
                     end else begin
                         If BIllCountry <> '' then
                             BillToAddrTxt += Customer.County + ', '
@@ -608,6 +612,17 @@ report 50200 CommercialInvoiceReport
         end;
 
         exit(Addr);
+    end;
+
+    local procedure FindCountyByNameOrDescription(CountyValue: Text; var CountyRec: Record County): Boolean
+    begin
+        if CountyRec.Get(CountyValue) then
+            exit(true);
+        CountyRec.Reset();
+        CountyRec.SetRange(Description, CountyValue);
+        if CountyRec.FindFirst() then
+            exit(true);
+        exit(false);
     end;
 
 }

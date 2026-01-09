@@ -121,7 +121,7 @@ report 50208 SalesOrderReport
             column(Ship_to_Address_2; "Ship-to Address 2")
             {
             }
-            column(Shippostcodecitycountrycounty; "Ship-to Post Code" + ', ' + "Ship-to City" + ', ' + "Ship-to County" + ', ' + ShipCountry)
+            column(Shippostcodecitycountrycounty; ShippostcodecitycountrycountyTxt)
             {
             }
             column(Ship_to_Phone_No_; "Ship-to Phone No.")
@@ -367,6 +367,7 @@ report 50208 SalesOrderReport
                 Clear(BillToAddrTxt);
                 Clear(ShipCountry);
                 Clear(BIllCountry);
+                Clear(ShippostcodecitycountrycountyTxt);
                 cr := 13;
                 lf := 10;
                 // End - Added by NF on 22/05/2024 to calculate Total Amount including Sales Tax (For multi select)
@@ -398,14 +399,25 @@ report 50208 SalesOrderReport
                         Billtomobileno := Customer."Mobile Phone No.";
                         if CountryRegion.Get(Customer."Country/Region Code") then
                             BIllCountry := CountryRegion.Name;
-                        BIllpostcodecitycountrycounty := Customer."Post Code" + ', ' + Customer.City + ', ' + Customer.County + ', ' + BIllCountry;
+                        // Build BIllpostcodecitycountrycounty with Hide in Documents check
+                        BIllpostcodecitycountrycounty := Customer."Post Code" + ', ' + Customer.City;
+                        if Customer.County <> '' then
+                            if FindCountyByNameOrDescription(Customer.County, County) then begin
+                                if not County."Hide in Documents" then
+                                    BIllpostcodecitycountrycounty += ', ' + County.Description;
+                            end else
+                                BIllpostcodecitycountrycounty += ', ' + Customer.County;
+                        if BIllCountry <> '' then
+                            BIllpostcodecitycountrycounty += ', ' + BIllCountry;
 
                         If Customer.County <> '' then
-                            if County.Get(Customer.County) then begin
-                                If BIllCountry <> '' then
-                                    BillToAddrTxt += County.Description + ', '
-                                else
-                                    BillToAddrTxt += County.Description;
+                            if FindCountyByNameOrDescription(Customer.County, County) then begin
+                                if not County."Hide in Documents" then begin
+                                    If BIllCountry <> '' then
+                                        BillToAddrTxt += County.Description + ', '
+                                    else
+                                        BillToAddrTxt += County.Description;
+                                end;
                             end else begin
                                 If BIllCountry <> '' then
                                     BillToAddrTxt += Customer.County + ', '
@@ -434,11 +446,13 @@ report 50208 SalesOrderReport
 
 
                 If "Ship-to County" <> '' then
-                    If County.Get("Ship-to County") then begin
-                        If ShipCountry <> '' then
-                            ShipToAddrTxt += County.Description + ', '
-                        else
-                            ShipToAddrTxt += County.Description;
+                    If FindCountyByNameOrDescription("Ship-to County", County) then begin
+                        if not County."Hide in Documents" then begin
+                            If ShipCountry <> '' then
+                                ShipToAddrTxt += County.Description + ', '
+                            else
+                                ShipToAddrTxt += County.Description;
+                        end;
                     end else begin
                         If ShipCountry <> '' then
                             ShipToAddrTxt += "Ship-to County" + ', '
@@ -447,6 +461,17 @@ report 50208 SalesOrderReport
                     end;
                 If ShipCountry <> '' then
                     ShipToAddrTxt += ShipCountry;
+
+                // Build ShippostcodecitycountrycountyTxt with Hide in Documents check
+                ShippostcodecitycountrycountyTxt := "Ship-to Post Code" + ', ' + "Ship-to City";
+                if "Ship-to County" <> '' then
+                    if FindCountyByNameOrDescription("Ship-to County", County) then begin
+                        if not County."Hide in Documents" then
+                            ShippostcodecitycountrycountyTxt += ', ' + County.Description;
+                    end else
+                        ShippostcodecitycountrycountyTxt += ', ' + "Ship-to County";
+                if ShipCountry <> '' then
+                    ShippostcodecitycountrycountyTxt += ', ' + ShipCountry;
 
                 "Sales Header".CalcFields("Amount Including VAT");
                 CodeCheck.InitTextVariable();
@@ -570,6 +595,7 @@ report 50208 SalesOrderReport
         BilltoPhoneNo: Text;
         SalesTax: Decimal;
         ShipCountry: text;
+        ShippostcodecitycountrycountyTxt: Text;
         BIllCountry: Text;
         AmountInWords: text;
         NoText: array[2] of Text;
@@ -674,6 +700,21 @@ report 50208 SalesOrderReport
             exit("Sales Line"."Unit Price");
         end else
             exit("Sales Line"."Price Per Piece");
+    end;
+
+    local procedure FindCountyByNameOrDescription(CountyValue: Text; var CountyRec: Record County): Boolean
+    begin
+        // First try to find by Name (primary key)
+        if CountyRec.Get(CountyValue) then
+            exit(true);
+
+        // If not found by Name, try to find by Description
+        CountyRec.Reset();
+        CountyRec.SetRange(Description, CountyValue);
+        if CountyRec.FindFirst() then
+            exit(true);
+
+        exit(false);
     end;
 
 }

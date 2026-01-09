@@ -236,9 +236,12 @@ report 50201 DeliveryOrderReport
 
                 Clear(postcodecitycountrycounty_g);
                 if "Ship-to County" <> '' then begin
-                    if County.Get("Ship-to County") then
-                        postcodecitycountrycounty_g := "Ship-to Post Code" + ', ' + "Ship-to City" + ', ' + County.Description + ', ' + Country
-                    else
+                    if FindCountyByNameOrDescription("Ship-to County", County) then begin
+                        if not County."Hide in Documents" then
+                            postcodecitycountrycounty_g := "Ship-to Post Code" + ', ' + "Ship-to City" + ', ' + County.Description + ', ' + Country
+                        else
+                            postcodecitycountrycounty_g := "Ship-to Post Code" + ', ' + "Ship-to City" + ', ' + Country;
+                    end else
                         postcodecitycountrycounty_g := "Ship-to Post Code" + ', ' + "Ship-to City" + ', ' + "Ship-to County" + ', ' + Country;
                 end else
                     postcodecitycountrycounty_g := "Ship-to Post Code" + ', ' + "Ship-to City" + ', ' + Country;
@@ -251,11 +254,13 @@ report 50201 DeliveryOrderReport
                 If "Ship-to City" <> '' then
                     ShipToAddrTxt += "Ship-to City" + ', ';
                 If "Ship-to County" <> '' then
-                    if County.Get("Ship-to County") then begin
-                        If Country <> '' then
-                            ShipToAddrTxt += County.Description + ', '
-                        else
-                            ShipToAddrTxt += County.Description;
+                    if FindCountyByNameOrDescription("Ship-to County", County) then begin
+                        if not County."Hide in Documents" then begin
+                            If Country <> '' then
+                                ShipToAddrTxt += County.Description + ', '
+                            else
+                                ShipToAddrTxt += County.Description;
+                        end;
                     end else begin
                         If Country <> '' then
                             ShipToAddrTxt += "Ship-to County" + ', '
@@ -355,5 +360,16 @@ report 50201 DeliveryOrderReport
     end;
 
 
+
+    local procedure FindCountyByNameOrDescription(CountyValue: Text; var CountyRec: Record County): Boolean
+    begin
+        if CountyRec.Get(CountyValue) then
+            exit(true);
+        CountyRec.Reset();
+        CountyRec.SetRange(Description, CountyValue);
+        if CountyRec.FindFirst() then
+            exit(true);
+        exit(false);
+    end;
 
 }

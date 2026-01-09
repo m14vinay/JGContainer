@@ -359,11 +359,13 @@ report 50205 SalesCreditNoteReport
                 If Customer.City <> '' then
                     BillToAddrTxt += Customer.City + ', ';
                 If Customer.County <> '' then
-                    if County.Get(Customer.County) then begin
-                        If BIllCountry <> '' then
-                            BillToAddrTxt += County.Description + ', '
-                        else
-                            BillToAddrTxt += County.Description;
+                    if FindCountyByNameOrDescription(Customer.County, County) then begin
+                        if not County."Hide in Documents" then begin
+                            If BIllCountry <> '' then
+                                BillToAddrTxt += County.Description + ', '
+                            else
+                                BillToAddrTxt += County.Description;
+                        end;
                     end else begin
                         If BIllCountry <> '' then
                             BillToAddrTxt += Customer.County + ', '
@@ -373,18 +375,24 @@ report 50205 SalesCreditNoteReport
                 If BIllCountry <> '' then
                     BillToAddrTxt += BIllCountry;
                 if Customer.County <> '' then begin
-                    if County.Get(Customer.County) then
-                        BIllpostcodecitycountrycounty := Customer."Post Code" + ', ' + Customer.City + ', ' + County.Description + ', ' + BIllCountry
-                    else
+                    if FindCountyByNameOrDescription(Customer.County, County) then begin
+                        if not County."Hide in Documents" then
+                            BIllpostcodecitycountrycounty := Customer."Post Code" + ', ' + Customer.City + ', ' + County.Description + ', ' + BIllCountry
+                        else
+                            BIllpostcodecitycountrycounty := Customer."Post Code" + ', ' + Customer.City + ', ' + BIllCountry;
+                    end else
                         BIllpostcodecitycountrycounty := Customer."Post Code" + ', ' + Customer.City + ', ' + Customer.County + ', ' + BIllCountry;
                 end else
                     BIllpostcodecitycountrycounty := Customer."Post Code" + ', ' + Customer.City + ', ' + BIllCountry;
 
                 Clear(Shippostcodecitycountrycounty_g);
                 if "Ship-to County" <> '' then begin
-                    if County.Get("Ship-to County") then
-                        Shippostcodecitycountrycounty_g := "Ship-to Post Code" + ', ' + "Ship-to City" + ', ' + County.Description + ', ' + ShipCountry
-                    else
+                    if FindCountyByNameOrDescription("Ship-to County", County) then begin
+                        if not County."Hide in Documents" then
+                            Shippostcodecitycountrycounty_g := "Ship-to Post Code" + ', ' + "Ship-to City" + ', ' + County.Description + ', ' + ShipCountry
+                        else
+                            Shippostcodecitycountrycounty_g := "Ship-to Post Code" + ', ' + "Ship-to City" + ', ' + ShipCountry;
+                    end else
                         Shippostcodecitycountrycounty_g := "Ship-to Post Code" + ', ' + "Ship-to City" + ', ' + "Ship-to County" + ', ' + ShipCountry;
                 end else
                     Shippostcodecitycountrycounty_g := "Ship-to Post Code" + ', ' + "Ship-to City" + ', ' + ShipCountry;
@@ -398,11 +406,13 @@ report 50205 SalesCreditNoteReport
                 If "Ship-to City" <> '' then
                     ShipToAddrTxt += "Ship-to City" + ', ';
                 If "Ship-to County" <> '' then
-                    if County.Get("Ship-to County") then begin
-                        If ShipCountry <> '' then
-                            ShipToAddrTxt += County.Description + ', '
-                        else
-                            ShipToAddrTxt += County.Description;
+                    if FindCountyByNameOrDescription("Ship-to County", County) then begin
+                        if not County."Hide in Documents" then begin
+                            If ShipCountry <> '' then
+                                ShipToAddrTxt += County.Description + ', '
+                            else
+                                ShipToAddrTxt += County.Description;
+                        end;
                     end else begin
                         If ShipCountry <> '' then
                             ShipToAddrTxt += "Ship-to County" + ', '
@@ -573,6 +583,17 @@ report 50205 SalesCreditNoteReport
         end;
 
         exit(Addr);
+    end;
+
+    local procedure FindCountyByNameOrDescription(CountyValue: Text; var CountyRec: Record County): Boolean
+    begin
+        if CountyRec.Get(CountyValue) then
+            exit(true);
+        CountyRec.Reset();
+        CountyRec.SetRange(Description, CountyValue);
+        if CountyRec.FindFirst() then
+            exit(true);
+        exit(false);
     end;
 
 }
