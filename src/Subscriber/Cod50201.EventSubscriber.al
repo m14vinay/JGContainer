@@ -49,6 +49,14 @@ codeunit 50201 "Event Subscriber"
         If ShipToAddress.Get(Rec."Sell-to Customer No.", Rec."Ship-to Code") then
             Rec."Delivery Area" := ShipToAddress."Delivery Area";
     end;
+    [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterValidateEvent', 'SST Exemption Registration No.', false, false)]
+    local procedure UpdateTaxExemption(var Rec: Record "Sales Header"; var xRec: Record "Sales Header"; CurrFieldNo: Integer)
+    var
+        ShipToAddress: Record "Ship-to Address";
+    begin
+       If Rec."SST Exemption Registration No." <> '' then
+         Rec."ADY E-INV Dtl of Tax Exemption" := Rec."SST Exemption Registration No.";
+    end;
 
     [EventSubscriber(ObjectType::Codeunit, CodeUnit::"Get Source Doc. Outbound", 'OnAfterFindWarehouseRequestForSalesOrder', '', false, false)]
     local procedure UpdateDeliveryCode(var WarehouseRequest: Record "Warehouse Request"; SalesHeader: Record "Sales Header")
