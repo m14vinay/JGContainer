@@ -49,7 +49,7 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
                 ToolTip = 'Specifies vessel';
                 ApplicationArea = All;
             }
-              field("Vessel 1"; Rec."Vessel 1")
+            field("Vessel 1"; Rec."Vessel 1")
             {
                 ToolTip = 'Specifies Mother vessel';
                 ApplicationArea = All;
@@ -79,7 +79,7 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
         {
             Caption = 'SST Reporting Date';
         }
-          modify("Prices Including VAT")
+        modify("Prices Including VAT")
         {
             Caption = 'Prices Including SST';
         }
@@ -153,12 +153,15 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
                     GLSetup.Get();
                     SalesReceSetup.Get();
 
-                    If (Rec."Currency Code" <> GLSetup."LCY Code") and (Rec."Currency Code" <> '') then
+                    If (Rec."Currency Code" <> GLSetup."LCY Code") and (Rec."Currency Code" <> '') then begin
                         If Rec."Proforma Invoice No" = '' then begin
                             Rec."Proforma Invoice No" := NoSeries.GetNextNo(SalesReceSetup."Proforma Invoice Nos.");
                             Rec.Modify();
                         end else
                             Message('Proforma Invoice exists');
+                    end else
+                        Error('Only applicable for foreign currency');
+
                 end;
             }
             action(GenerateCommercialInvoice)
@@ -171,7 +174,7 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
                 PromotedCategory = Category7;
                 trigger OnAction()
                 var
-                    SalesHeader : Record "Sales Header";
+                    SalesHeader: Record "Sales Header";
                     GLSetup: Record "General Ledger Setup";
                     NoSeries: Codeunit "No. Series";
                     SalesReceSetup: Record "Sales & Receivables Setup";
@@ -182,12 +185,13 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
                     CurrPage.SetSelectionFilter(SalesHeader);
                     MyReportID := Report::"Generate Commercial Invoice";
                     If (Rec."Currency Code" <> GLSetup."LCY Code") and (Rec."Currency Code" <> '') then
-                        Report.RunModal(MyReportID, true, false, SalesHeader);
-
-
+                        Report.RunModal(MyReportID, true, false, SalesHeader)
+                    else
+                        Error('Only applicable for foreign currency');
                 end;
             }
-            
+
+
         }
         modify(ProformaInvoice)
         {
@@ -196,7 +200,22 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
                 myInt: Integer;
             begin
                 If Rec."Proforma Invoice No" = '' then
-                  Error('Generate Proforma Invoice before report is printed.');
+                    Error('Generate Proforma Invoice before report is printed.');
+            end;
+        }
+        modify(SendApprovalRequest)
+        {
+            trigger OnBeforeAction()
+            var
+                SalesLine: Record "Sales Line";
+            begin
+                SalesLine.Reset();
+                SalesLine.SetRange("Document Type", SalesLine."Document Type"::Order);
+                SalesLine.SetRange("Document No.", Rec."No.");
+                SalesLine.SetRange(Type, SalesLine.Type::Item);
+                SalesLine.SetRange("ADY E-INV Classification Code", '');
+                If SalesLine.FindFirst() then
+                    Error('Classification Code must have value in sales line');
             end;
         }
     }

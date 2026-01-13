@@ -16,7 +16,6 @@ report 50212 "SOA"
             {
 
             }
-
             column(CustName; Name)
             {
 
