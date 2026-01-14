@@ -428,7 +428,7 @@ report 50212 "SOA"
                                         ExternalDocumentNo := CustLedgerEntry."External Document No.";
 
                                 if PrintLine then begin
-                                    CustBalance := CustBalance + Amount;
+                                    CustBalance := CustBalance + RemainingAmount;
                                     IsNewCustCurrencyGroup := IsFirstPrintLine;
                                     IsFirstPrintLine := false;
                                     ClearCompanyPicture();
