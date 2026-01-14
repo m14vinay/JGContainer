@@ -327,6 +327,11 @@ report 50212 "SOA"
                                 AutoFormatExpression = "Currency Code";
                                 AutoFormatType = 1;
                             }
+                            column(PaidAmt_DtldCustLedgEntries; PaidAmount)
+                            {
+                                AutoFormatExpression = "Currency Code";
+                                AutoFormatType = 1;
+                            }
                             column(CustBalance; CustBalance)
                             {
                                 AutoFormatExpression = "Currency Code";
@@ -350,6 +355,7 @@ report 50212 "SOA"
                                     CurrReport.Skip();
 
                                 RemainingAmount := 0;
+                                PaidAmount := 0;
                                 PrintLine := true;
                                 ExternalDocumentNo := '';
                                 case "Entry Type" of
@@ -362,7 +368,13 @@ report 50212 "SOA"
                                             CustLedgerEntry.CalcFields("Remaining Amount");
                                             RemainingAmount := CustLedgerEntry."Remaining Amount";
 
-                                            // Get External Document No by checking if Document No matches Sales Invoice
+                                            // Calculate Paid Amount = Original Amount - Remaining Amount
+                                            // For invoices (positive amounts): PaidAmount = Amount - RemainingAmount
+                                            // For credit memos (negative amounts): PaidAmount = Amount - RemainingAmount (will be negative or zero)
+                                            if Amount >= 0 then
+                                                PaidAmount := Amount - RemainingAmount
+                                            else
+                                                PaidAmount := Amount - RemainingAmount; // For credit memos
 
                                         end;
                                     "Entry Type"::Application:

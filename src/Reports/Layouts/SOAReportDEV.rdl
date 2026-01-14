@@ -1048,11 +1048,11 @@ Cstr(Fields!CustBalanceCaption.Value)
                                                                 <Paragraph>
                                                                   <TextRuns>
                                                                     <TextRun>
-                                                                      <Value>= First(Fields!Amt_DtldCustLedgEntries.Value, "DataSet_Result") - First(Fields!RemainAmt_DtldCustLedgEntries.Value, "DataSet_Result")</Value>
+                                                                      <Value>=Fields!PaidAmt_DtldCustLedgEntries.Value</Value>
                                                                       <Style>
                                                                         <FontFamily>Segoe UI</FontFamily>
                                                                         <FontSize>8pt</FontSize>
-                                                                        <Format>n2</Format>
+                                                                        <Format>=Fields!PaidAmt_DtldCustLedgEntriesFormat.Value</Format>
                                                                       </Style>
                                                                     </TextRun>
                                                                   </TextRuns>
@@ -6399,6 +6399,12 @@ End Function
         </Field>
         <Field Name="RemainAmt_DtldCustLedgEntriesFormat">
           <DataField>RemainAmt_DtldCustLedgEntriesFormat</DataField>
+        </Field>
+        <Field Name="PaidAmt_DtldCustLedgEntries">
+          <DataField>PaidAmt_DtldCustLedgEntries</DataField>
+        </Field>
+        <Field Name="PaidAmt_DtldCustLedgEntriesFormat">
+          <DataField>PaidAmt_DtldCustLedgEntriesFormat</DataField>
         </Field>
         <Field Name="CustBalance">
           <DataField>CustBalance</DataField>
