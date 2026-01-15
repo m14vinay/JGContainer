@@ -368,6 +368,10 @@ report 50212 "SOA"
                                             CustLedgerEntry.CalcFields("Remaining Amount");
                                             RemainingAmount := CustLedgerEntry."Remaining Amount";
 
+                                            // Skip entries where Outstanding Amount = 0 (fully paid)
+                                            if RemainingAmount = 0 then
+                                                CurrReport.Skip();
+
                                             // Calculate Paid Amount = Original Amount - Remaining Amount
                                             // For invoices (positive amounts): PaidAmount = Amount - RemainingAmount
                                             // For credit memos (negative amounts): PaidAmount = Amount - RemainingAmount (will be negative or zero)
