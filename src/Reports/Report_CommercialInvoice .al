@@ -328,7 +328,7 @@ report 50200 CommercialInvoiceReport
                     GrossWeight += "Gross Weight";
                     UnitVolume += "Unit Volume";
                     ShowAmount := "Line Amount";
-                    SalesTax := "Amount Including VAT" - "Line Amount";
+                    SalesTax := "Amount Including VAT" - "Amount";
                     TotalShowAmount := ShowAmount + TotalShowAmount + SalesTax;
                     if Type = Type::Item then begin
                         if ItemCard.Get("No.") then begin
