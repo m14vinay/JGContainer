@@ -290,7 +290,7 @@ report 50205 SalesCreditNoteReport
                     SalesPrice: Record "Sales Price";
                 begin
                     ShowAmount := "Line Amount";
-                    SalesTax := "Amount Including VAT" - "Line Amount";
+                    SalesTax := "Amount Including VAT" - "Amount";
                     TotalShowAmount := ShowAmount + TotalShowAmount + SalesTax;
 
                     if Type = Type::Item then begin

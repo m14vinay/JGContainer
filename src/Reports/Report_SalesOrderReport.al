@@ -312,7 +312,7 @@ report 50208 SalesOrderReport
                 begin
 
                     ShowAmount := "Sales Line"."Line Amount";
-                    SalesTax := "Sales Line"."Amount Including VAT" - "Sales Line"."Line Amount";
+                    SalesTax := "Sales Line"."Amount Including VAT" - "Sales Line"."Amount";
                     TotalShowAmount := ShowAmount + TotalShowAmount + SalesTax;
                     if "Sales Line".Type = "Sales Line".Type::Item then begin
                         if ItemCard.Get("No.") then begin
