@@ -304,6 +304,10 @@ report 50200 CommercialInvoiceReport
                 {
 
                 }
+                column(AmountWithoutVAT; "Amount")
+                {
+
+                }
                 column(UnitVolume; UnitVolume) { }
                 column(IsCharge; IsCharge)
                 {
@@ -362,7 +366,7 @@ report 50200 CommercialInvoiceReport
 
                     if not IsCharge then begin
                         LineNo := LineNo + 1;
-                        SubTotal += "Sales Line"."Line Amount";
+                        SubTotal += "Sales Line"."Amount";
                     end;
                 end;
 

@@ -268,6 +268,10 @@ report 50206 SalesDebitNoteReport
                 {
 
                 }
+                column(AmountWithoutVAT; "Amount")
+                {
+
+                }
                 column(IsCharge; IsCharge)
                 {
 
@@ -311,7 +315,7 @@ report 50206 SalesDebitNoteReport
 
                     IsCharge := false;
                     LineNo := LineNo + 1;
-                    SubTotal += "Sales Invoice Line"."Line Amount";
+                    SubTotal += "Sales Invoice Line"."Amount";
                 end;
 
                 trigger OnPreDataItem()

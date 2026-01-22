@@ -271,6 +271,10 @@ report 50205 SalesCreditNoteReport
                 {
 
                 }
+                column(AmountWithoutVAT; "Amount")
+                {
+
+                }
                 column(IsCharge; IsCharge)
                 {
 
@@ -313,7 +317,7 @@ report 50205 SalesCreditNoteReport
 
                     IsCharge := false;
                     LineNo := LineNo + 1;
-                    SubTotal += "Sales Cr.Memo Line"."Line Amount";
+                    SubTotal += "Sales Cr.Memo Line"."Amount";
                 end;
 
                 trigger OnPreDataItem()

@@ -293,6 +293,11 @@ report 50208 SalesOrderReport
                 {
 
                 }
+
+                column(AmountWithoutVAT; "Sales Line"."Amount")
+                {
+
+                }
                 column(IsCharge; IsCharge)
                 {
 
@@ -338,7 +343,7 @@ report 50208 SalesOrderReport
 
                     if not IsCharge then begin
                         LineNo := LineNo + 1;
-                        SubTotal += "Sales Line"."Line Amount";
+                        SubTotal += "Sales Line"."Amount";
                     end;
                 end;
 

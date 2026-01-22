@@ -277,6 +277,10 @@ report 50209 ProfomaInvoice
                 {
 
                 }
+                column(AmountWithoutVAT; "Amount")
+                {
+
+                }
                 column(IsCharge; IsCharge)
                 {
 
@@ -321,7 +325,7 @@ report 50209 ProfomaInvoice
 
                     if not IsCharge then begin
                         LineNo := LineNo + 1;
-                        SubTotal += "Sales Line"."Line Amount";
+                        SubTotal += "Sales Line"."Amount";
                     end;
                 end;
 

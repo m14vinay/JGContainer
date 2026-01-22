@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-01-19T09:21:53.4535853Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-01-22T09:16:14.9820478Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -288,6 +288,12 @@
         </Field>
         <Field Name="AmountFormat">
           <DataField>AmountFormat</DataField>
+        </Field>
+        <Field Name="AmountWithoutVAT">
+          <DataField>AmountWithoutVAT</DataField>
+        </Field>
+        <Field Name="AmountWithoutVATFormat">
+          <DataField>AmountWithoutVATFormat</DataField>
         </Field>
         <Field Name="IsCharge">
           <DataField>IsCharge</DataField>
@@ -1221,7 +1227,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!Amount.Value</Value>
+                                                    <Value>=Fields!AmountWithoutVAT.Value</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <Format>#,0.00;(#,0.00)</Format>

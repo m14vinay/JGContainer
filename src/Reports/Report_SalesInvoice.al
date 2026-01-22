@@ -287,6 +287,10 @@ report 50207 SalesInvoiceReport
                 {
 
                 }
+                column(AmountWithoutVAT; "Amount")
+                {
+
+                }
                 column(IsCharge; IsCharge)
                 {
 
@@ -339,7 +343,7 @@ report 50207 SalesInvoiceReport
 
                     if not IsCharge then begin
                         LineNo := LineNo + 1;
-                        SubTotal += "Sales Invoice Line"."Line Amount";
+                        SubTotal += "Sales Invoice Line"."Amount";
                     end;
                 end;
 
