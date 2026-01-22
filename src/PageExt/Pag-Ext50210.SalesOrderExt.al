@@ -177,6 +177,7 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
                     SalesHeader: Record "Sales Header";
                     GLSetup: Record "General Ledger Setup";
                     NoSeries: Codeunit "No. Series";
+                    CustomerNeeded : Record Customer;
                     SalesReceSetup: Record "Sales & Receivables Setup";
                     CommercialInvoice: Report "Generate Commercial Invoice";
                     MyReportID: Integer;
@@ -184,10 +185,11 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
                     GLSetup.Get();
                     CurrPage.SetSelectionFilter(SalesHeader);
                     MyReportID := Report::"Generate Commercial Invoice";
-                    If (Rec."Currency Code" <> GLSetup."LCY Code") and (Rec."Currency Code" <> '') then
+                    If CustomerNeeded.Get(Rec."Sell-to Customer No.") then;
+                    If ((Rec."Currency Code" <> GLSetup."LCY Code") and (Rec."Currency Code" <> '')) or (CustomerNeeded."Commercial Invoice Needed") then
                         Report.RunModal(MyReportID, true, false, SalesHeader)
                     else
-                        Error('Only applicable for foreign currency');
+                        Error('Only applicable for foreign currency and for customer for which commercial invoice needed');
                 end;
             }
 

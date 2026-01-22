@@ -9,6 +9,11 @@ pageextension 50209 "Customer Ext" extends "Customer Card"
                 ToolTip = 'Specifies agent/distributor name';
                 ApplicationArea = All;
             }
+             field("Commercial Invoice Needed"; Rec."Commercial Invoice Needed")
+            {
+                ToolTip = 'Specifies Commercial Invoice Needed';
+                ApplicationArea = All;
+            }
         }
         addafter("Shipment Method Code")
         {

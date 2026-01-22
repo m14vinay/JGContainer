@@ -238,6 +238,11 @@ page 50208 "Sales Prices Cust"
                     ApplicationArea = Basic, Suite;
                     ToolTip = 'Specifies the price of one unit of the item or resource. You can enter a price manually or have it entered according to the Price/Profit Calculation field on the related card.';
                 }
+                field("Price Per Piece"; Rec."Price Per Piece")
+                {
+                    ToolTip = 'Specifies the Price Per Piece';
+                    ApplicationArea = All;
+                }
                 field("Approval Status"; Rec."Approval Status")
                 {
                     ToolTip = 'Specifies the approval status';
@@ -642,10 +647,9 @@ page 50208 "Sales Prices Cust"
             Rec.SetRange("Item No.");
 
         if (CurrencyCodeFilter = '') or (CurrencyCodeFilter = '''') then
-            
-            Rec.SetRange("Currency Code",'')
+            Rec.SetRange("Currency Code", '')
         else
-           Rec.SetFilter("Currency Code", CurrencyCodeFilter);
+            Rec.SetFilter("Currency Code", CurrencyCodeFilter);
 
         case SalesTypeFilter of
             SalesTypeFilter::Customer:

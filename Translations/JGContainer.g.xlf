@@ -823,6 +823,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Sales Prices Cust - Control Price Includes VAT - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 3554044321 - Control 3153765980 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the Price Per Piece</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Sales Prices Cust - Control Price Per Piece - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 3554044321 - Control 2377549359 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies that the unit price of the item is assigned here from the item table.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1893,6 +1898,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SOA - Control ReportOutput - Property OptionCaption</note>
         </trans-unit>
+        <trans-unit id="Report 4201250456 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transport Cost Summary</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Transport Cost Summary - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 747112720 - Control 1535571897 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2259427799">
           <source>Specifies vehicle no</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2122,6 +2132,11 @@
           <source>Specifies agent/distributor name</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Ext - Control Agent/Distributor Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2204447775 - Control 1083327434 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source>Specifies Commercial Invoice Needed</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Ext - Control Commercial Invoice Needed - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2204447775 - Control 3269052218 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
           <source>Specifies Place of Export</source>
@@ -3582,6 +3597,11 @@
           <source>Agent/Distributor Name</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Ext - Field Agent/Distributor Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2204447775 - Field 1083327434 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
+          <source>Commercial Invoice Needed</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Ext - Field Commercial Invoice Needed - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2204447775 - Field 395248923 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
           <source>Specifies the customer's telephone number 2.</source>

@@ -16,7 +16,7 @@ pageextension 50224 Item extends "Item Card"
                 ToolTip = 'Specifies the Brand of the Item';
                 ApplicationArea = All;
             }
-             field("Print Charges in Footer"; Rec."Print Charges in Footer")
+            field("Print Charges in Footer"; Rec."Print Charges in Footer")
             {
                 ToolTip = 'Specifies the Print Charges in Footer for Reports';
                 ApplicationArea = All;
@@ -34,15 +34,15 @@ pageextension 50224 Item extends "Item Card"
         {
             Editable = false;
         }
-          modify("VAT Bus. Posting Gr. (Price)")
+        modify("VAT Bus. Posting Gr. (Price)")
         {
             Caption = 'SST Bus. Posting Gr. (Price)';
         }
-         modify("VAT Prod. Posting Group")
+        modify("VAT Prod. Posting Group")
         {
             Caption = 'SST Prod. Posting Group';
         }
-         modify("Price Includes VAT")
+        modify("Price Includes VAT")
         {
             Caption = 'Price Includes SST';
         }
@@ -66,10 +66,18 @@ pageextension 50224 Item extends "Item Card"
             }
         }
         modify(Approve)
-         {
+        {
             trigger OnAfterAction()
             begin
                 Rec.Blocked := false;
+            end;
+        }
+        modify(SendApprovalRequest)
+        {
+            trigger OnBeforeAction()
+            begin
+                Rec.TestField("Base Unit of Measure");
+                Rec.TestField("Gen. Prod. Posting Group");
             end;
         }
     }

@@ -25,6 +25,11 @@ tableextension 50206 "Customer Ext" extends Customer
                 end;
             end;
         }
+        field(50202; "Commercial Invoice Needed"; Boolean)
+        {
+            Caption = 'Commercial Invoice Needed';
+            DataClassification = CustomerContent;
+        }
         modify("VAT Bus. Posting Group")
         {
             Caption = 'SST Bus. Posting Group';
