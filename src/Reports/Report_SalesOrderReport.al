@@ -225,61 +225,49 @@ report 50208 SalesOrderReport
             }
             column(Currency_Code; Currency_Code) { }
             column(OwnCollectTxt; OwnCollectTxt) { }
+            column(AmountIncldingVAT; "Sales Header"."Amount Including VAT") { }
             dataitem("Sales Line"; "Sales Line")
             {
                 DataItemLink = "Document No." = field("No.");
                 DataItemLinkReference = "Sales Header";
                 column(Type; "Sales Line"."Type")
                 {
-
                 }
                 column(Variant_Code; Variant_Code)
                 {
-
                 }
                 column(Unit_Price; "Unit Price")
                 {
-
                 }
                 column(ItemCode; "Sales Line"."Item Reference No.")
                 {
-
                 }
                 column(Noofplts; "Sales Line"."Quantity")
                 {
-
                 }
                 column(NoofpltsLabel; GetNoofpltsLabel())
                 {
-
                 }
                 column(UnitPrice; "Sales Line"."Price Per Piece")
                 {
-
                 }
                 column(UnitPriceLabel; GetUnitPriceLabel())
                 {
-
                 }
                 column(UnitPriceValue; GetUnitPriceValue())
                 {
-
                 }
                 column(Packing; Packing)
                 {
-
                 }
                 column(Quantity; "Sales Line"."Quantity Pieces")
                 {
-
                 }
                 column(QuantityPcsLabel; GetQuantityPcsLabel())
                 {
-
                 }
                 column(QuantityPcsValue; GetQuantityPcsValue())
                 {
-
                 }
                 column(No_; "Sales Line"."Shortcut Dimension 2 Code")
                 {

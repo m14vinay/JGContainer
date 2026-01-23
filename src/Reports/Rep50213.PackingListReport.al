@@ -188,6 +188,7 @@ report 50213 "Packing List Report"
             column(TotalVolume; TotalVolume) { }
             column(ShipmentFrom; "Shipment From") { }
             column(ShipmentTo; "Shipment To") { }
+            column(AmountIncludingVAT; "Amount Including VAT") { }
             dataitem(SalesLine; "Sales Line")
             {
                 DataItemLink = "Document Type" = field("Document Type"),

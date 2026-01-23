@@ -229,9 +229,9 @@ report 50209 ProfomaInvoice
             }
             column(SalesTaxPercent; SalesTaxPercent)
             {
-
             }
             column(Currency_Code; Currency_Code) { }
+            column(Amount_Including_VAT;"Amount Including VAT"){}
             dataitem("Sales Line"; "Sales Line")
             {
                 DataItemLink = "Document No." = field("No.");

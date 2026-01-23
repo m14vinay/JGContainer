@@ -196,30 +196,25 @@ report 50206 SalesDebitNoteReport
             }
             column(AlternateBankAddress2; AlternateBankAddress2)
             {
-
             }
             column(AlternateBankSwiftCode2; AlternateBankSwiftCode2)
             {
-
             }
             column(AlternateBankAccountNo1; AlternateBankAccountNo1)
             {
-
             }
             column(Currency; "Currency Code")
             {
-
             }
             column(SSTExemption; "SST Exemption registration No.")
             {
-
             }
             column(EffectiveDate; Format(EffectiveDate, 0, '<day,2>.<month,2>.<year4>')) { }
             column(SalesTaxPercent; SalesTaxPercent)
             {
-
             }
             column(Currency_Code; Currency_Code) { }
+            column(AmountIncludingVAT; "Amount Including VAT") { }
             dataitem("Sales Invoice Line"; "Sales Invoice Line")
             {
                 DataItemLink = "Document No." = field("No.");

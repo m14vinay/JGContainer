@@ -207,26 +207,22 @@ report 50205 SalesCreditNoteReport
             }
             column(AlternateBankAccountNo1; AlternateBankAccountNo1)
             {
-
             }
             column(Currency; "Currency Code")
             {
-
             }
             column(DONo; DONo)
             {
-
             }
             column(SSTExemption; "SST Exemption registration No.")
             {
-
             }
             column(EffectiveDate; Format(EffectiveDate, 0, '<day,2>.<month,2>.<year4>')) { }
             column(SalesTaxPercent; SalesTaxPercent)
             {
-
             }
             column(Currency_Code; Currency_Code) { }
+            column(AmountIncludingVAT; "Amount Including VAT") { }
             dataitem("Sales Cr.Memo Line"; "Sales Cr.Memo Line")
             {
                 DataItemLink = "Document No." = field("No.");

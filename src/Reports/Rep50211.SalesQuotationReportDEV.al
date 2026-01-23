@@ -73,6 +73,7 @@ report 50211 "Sales Quotation Report"
 
             }
             column(Currency_Code; Currency_Code) { }
+            column(AmountIncludingVAT; "Amount Including VAT") { }
 
             // --- Related Customer ---
             dataitem(Customer; Customer)

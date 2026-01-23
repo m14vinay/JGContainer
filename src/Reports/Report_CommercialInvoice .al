@@ -243,22 +243,19 @@ report 50200 CommercialInvoiceReport
             }
             column(GrossWeight; GrossWeight)
             {
-
             }
             column(HSCode; TariffNumber)
             {
-
             }
             column(CommercialInvoiceNo; "Commercial Invoice No")
             {
-
             }
             column(SalesTaxPercent; SalesTaxPercent)
             {
-
             }
             column(EffectiveDate; Format(EffectiveDate, 0, '<day,2>.<month,2>.<year4>')) { }
             column(Currency_Code; Currency_Code) { }
+            column(Amount_Including_VAT;"Amount Including VAT"){}
             dataitem("Sales Line"; "Sales Line")
             {
                 DataItemLink = "Document No." = field("No.");
