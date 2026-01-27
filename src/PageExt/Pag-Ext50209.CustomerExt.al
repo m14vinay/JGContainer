@@ -54,7 +54,9 @@ pageextension 50209 "Customer Ext" extends "Customer Card"
          modify("Prices Including VAT")
         {
             Caption = 'Prices Including SST';
+            Visible = false;
         }
+        
     }
     actions
     {

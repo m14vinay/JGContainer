@@ -82,6 +82,7 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
         modify("Prices Including VAT")
         {
             Caption = 'Prices Including SST';
+            Visible = false;
         }
     }
     actions
