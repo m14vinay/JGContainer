@@ -29,6 +29,10 @@ page 50207 Item
                 {
                     Caption = 'Pack Size';
                 }
+                field(netWeight; Rec."Net Weight")
+                {
+                    Caption = 'Net Weight';
+                }
             }
         }
     }

@@ -483,6 +483,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Item - Control itemcode - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3276313895 - Control 764685697 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Net Weight</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item - Control netWeight - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3276313895 - Control 915413896 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Pack Size</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -643,6 +648,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Sales Invoice Line - Control amountIncludingVAT - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2079186865 - Control 1255474815 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>amountincvatlcy</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Sales Invoice Line - Control amountincvatlcy - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2079186865 - Control 1826362222 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>amountLCY</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Sales Invoice Line - Control amountLCY - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2079186865 - Control 1108393212 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Invoice No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -727,6 +742,16 @@
           <source>Unit Cost</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Sales Invoice Line - Control unitCost - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2079186865 - Control 3421409717 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>unitPrice</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Sales Invoice Line - Control unitPrice - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2079186865 - Control 3307811623 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>unitPriceLcy</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Sales Invoice Line - Control unitPriceLcy - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2079186865 - Control 783251086 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Variant Code</source>
@@ -2253,6 +2278,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Item - Action BlockItem - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 3276313895 - Control 3341423874 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Specifies the Allow Only Negative Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Item - Control Allow Negative Amount - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 3276313895 - Control 3011597373 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
           <source>Specifies the Brand of the Item</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3642,6 +3672,11 @@
           <source>MR No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Inventory Setup - Field MR No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2480387432 - Field 3341423874 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+          <source>Allow Only Negative Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Item Ext - Field Allow Negative Amount - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2480387432 - Field 3011597373 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
           <source>Brand</source>

@@ -21,6 +21,11 @@ pageextension 50224 Item extends "Item Card"
                 ToolTip = 'Specifies the Print Charges in Footer for Reports';
                 ApplicationArea = All;
             }
+             field("Allow Negative Amount"; Rec."Allow Negative Amount")
+            {
+                ToolTip = 'Specifies the Allow Only Negative Amount';
+                ApplicationArea = All;
+            }
         }
         addafter(Description)
         {

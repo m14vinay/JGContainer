@@ -10,7 +10,7 @@ page 50203 "Sales Invoice Line"
     EntitySetName = 'SalesInvoiceLines';
     PageType = API;
     SourceTable = "Sales Invoice Line";
-    SourceTableView = where ("No." = filter(<>''), Type = CONST(Item));
+    SourceTableView = where("No." = filter(<> ''), Type = CONST(Item));
     layout
     {
         area(Content)
@@ -45,7 +45,7 @@ page 50203 "Sales Invoice Line"
                 {
                     Caption = 'Amount Including VAT';
                 }
-                field(salesTax; Rec."Amount Including VAT"- Rec.Amount)
+                field(salesTax; Rec."Amount Including VAT" - Rec.Amount)
                 {
                     Caption = 'sales Tax';
                 }
@@ -81,16 +81,16 @@ page 50203 "Sales Invoice Line"
                 {
                     Caption = 'Qty. per Unit of Measure';
                 }
-               
-                  field(pricePerPiece; Rec."Price Per Piece")
+
+                field(pricePerPiece; Rec."Price Per Piece")
                 {
                     Caption = 'Price Per Piece';
                 }
-                 field(qtyPerPack; Rec."Qty Per Pack")
+                field(qtyPerPack; Rec."Qty Per Pack")
                 {
                     Caption = 'Qty Per Pack';
                 }
-                 field(quantityPieces; Rec."Quantity Pieces")
+                field(quantityPieces; Rec."Quantity Pieces")
                 {
                     Caption = 'Quantity Pieces';
                 }
@@ -102,7 +102,46 @@ page 50203 "Sales Invoice Line"
                 {
                     Caption = 'Shortcut Dimension 2 Code';
                 }
+                field(amountLCY; AmountLCY)
+                {
+                    Caption = 'amountLCY';
+                }
+                 field(amountincvatlcy; Amountincvatlcy)
+                {
+                    Caption = 'amountincvatlcy';
+                }
+                 field(unitPriceLcy; unitPriceLcy)
+                {
+                    Caption = 'unitPriceLcy';
+                }
+                 field(unitPrice; "Unit Price")
+                {
+                    Caption = 'unitPrice';
+                }
             }
         }
     }
+    var
+        CurrencyExchangeRate: Record "Currency Exchange Rate";
+        Amountincvatlcy: Decimal;
+        AmountLCY : Decimal;
+        unitPriceLcy : Decimal;
+        SalesInvoiceHeader: Record "Sales Invoice Header";
+        Currency  : Record Currency;
+    trigger OnAfterGetRecord()
+    begin
+        SalesInvoiceHeader.Reset();
+        SalesInvoiceHeader.SetRange("No.", Rec."Document No.");
+        If SalesInvoiceHeader.FindFirst() then begin
+            If SalesInvoiceHeader."Currency Code" = '' then begin
+            Amountincvatlcy := Rec."Amount Including VAT";
+            AmountLCY := Rec.Amount;
+            end else begin
+            If Currency.Get(SalesInvoiceHeader."Currency Code") then;
+            Amountincvatlcy := Round(CurrencyExchangeRate.ExchangeAmtFCYToLCY(Rec."Posting Date", SalesInvoiceHeader."Currency Code", (Rec."Amount Including VAT"), SalesInvoiceHeader."Currency Factor"), Currency."Amount Rounding Precision");
+            AmountLCY  := Round(CurrencyExchangeRate.ExchangeAmtFCYToLCY(Rec."Posting Date", SalesInvoiceHeader."Currency Code", (Rec.Amount), SalesInvoiceHeader."Currency Factor"), Currency."Amount Rounding Precision");
+            unitPriceLcy := Round(CurrencyExchangeRate.ExchangeAmtFCYToLCY(Rec."Posting Date", SalesInvoiceHeader."Currency Code", (Rec."Unit Price"), SalesInvoiceHeader."Currency Factor"), Currency."Amount Rounding Precision");
+            end;
+        end;
+    end;
 }

@@ -80,12 +80,12 @@ page 50211 "Transport Contract Services"
                         CurrPage.SetSelectionFilter(TransportContractPric);
                         If TransportContractPric.FindSet() then
                             repeat
-                                WareShipmentServices.Reset();
+                                /*WareShipmentServices.Reset();
                                 WareShipmentServices.SetRange("Carrier Code", TransportContractPric."Carrier Code");
                                 WareShipmentServices.SetRange("Delivery Area Code", TransportContractPric."Delivery Area Code");
                                 WareShipmentServices.SetRange("Item Code", TransportContractPric."Item Code");
                                 WareShipmentServices.SetRange("Whse Shipment No.",JGSingleInstance.GetWhseShipNo());
-                                If not WareShipmentServices.FindFirst() then begin
+                                If not WareShipmentServices.FindFirst() then begin*/
                                     WareShipmentServices.Init();
                                     WareShipmentServices."Whse Shipment No." := JGSingleInstance.GetWhseShipNo();
                                     WareShipmentServicesLine.Reset();
@@ -106,7 +106,7 @@ page 50211 "Transport Contract Services"
                                     WareShipmentServices.Rate := TransportContractPric.Rate;
                                     WareShipmentServices."Rate Type" := TransportContractPric."Rate Type";
                                     WareShipmentServices.Insert();
-                                end;
+                               // end;
                             until TransportContractPric.Next() = 0;
                         Clear(JGSingleInstance);
                         Message('Transport services created');

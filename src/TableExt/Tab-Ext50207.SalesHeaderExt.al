@@ -30,6 +30,8 @@ tableextension 50207 "Sales Header Ext" extends "Sales Header"
             trigger OnValidate()
             var
                 SSTExemptionDetails: Record "SST Exemption Details";
+                Customer : Record Customer;
+                SalesLine : Record "Sales Line";
             begin
                 SSTExemptionDetails.Reset();
                 SSTExemptionDetails.SetRange("Customer No.", "Sell-to Customer No.");
@@ -40,7 +42,19 @@ tableextension 50207 "Sales Header Ext" extends "Sales Header"
                     Rec.Validate("VAT Bus. Posting Group", SSTExemptionDetails."SST Business Posting Group")
                 Else
                     Error('It is not within the date range/Expired');
-
+                If Customer.Get("Sell-to Customer No.") then begin
+                    SalesLine.Reset();
+                    SalesLine.SetRange("Document Type",SalesLine."Document Type"::Order);
+                    SalesLine.SetRange("Document No.","No.");
+                    SalesLine.SetRange(Type,SalesLine.Type::Item);
+                    SalesLine.SetRange("ADY E-INV Classification Code",'');
+                    if SalesLine.FindSet() then 
+                        repeat
+                            SalesLine.Validate("ADY E-INV Classification Code", Customer."ADY E-INV Classification Code");
+                            SalesLine.Modify();
+                        until SalesLine.Next() = 0;
+                end;
+                  
             end;
         }
         field(50207; "Delivery Area"; Code[20])

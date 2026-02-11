@@ -178,7 +178,7 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
                     SalesHeader: Record "Sales Header";
                     GLSetup: Record "General Ledger Setup";
                     NoSeries: Codeunit "No. Series";
-                    CustomerNeeded : Record Customer;
+                    CustomerNeeded: Record Customer;
                     SalesReceSetup: Record "Sales & Receivables Setup";
                     CommercialInvoice: Report "Generate Commercial Invoice";
                     MyReportID: Integer;
@@ -211,14 +211,22 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
             trigger OnBeforeAction()
             var
                 SalesLine: Record "Sales Line";
+                Item: Record Item;
             begin
                 SalesLine.Reset();
                 SalesLine.SetRange("Document Type", SalesLine."Document Type"::Order);
                 SalesLine.SetRange("Document No.", Rec."No.");
                 SalesLine.SetRange(Type, SalesLine.Type::Item);
-                SalesLine.SetRange("ADY E-INV Classification Code", '');
-                If SalesLine.FindFirst() then
-                    Error('Classification Code must have value in sales line');
+                //SalesLine.SetRange("ADY E-INV Classification Code", '');
+                If SalesLine.FindSet() then
+                    repeat
+                        If SalesLine."ADY E-INV Classification Code" = '' then
+                            Error('Classification Code must have value in sales line');
+                        If Item.Get(SalesLine."No.") then
+                            If Item."Allow Negative Amount" then
+                                If SalesLine."Line Amount" > 0 then
+                                    Error('Transport Discount amount should be negative');
+                    until SalesLine.Next() = 0;
             end;
         }
     }
