@@ -22,7 +22,11 @@ report 50202 "Generate Commercial Invoice"
 
                 //SalesInvoice.Validate("No. Series",SalesRecSetup."Commercial Invoice Nos.");
                 //SalesInvoice.AssistEdit(SalesInvoice);
-                SalesInvoice."No. Series" := SalesRecSetup."Commercial Invoice Nos.";
+                If (SalesHeader."Currency Code" = '') or (SalesHeader."Currency Code" = 'MYR') then
+                    SalesInvoice."No. Series" := SalesRecSetup."Invoice Nos."
+                else
+                    SalesInvoice."No. Series" := SalesRecSetup."Commercial Invoice Nos.";
+
                 SalesInvoice."No." := NoSeries.GetNextNo(SalesInvoice."No. Series");
                 //SalesInvoice.Validate("Posting No. Series",SalesRecSetup."Commercial Invoice Nos.");
                 //SalesInvoice.Status := SalesInvoice.Status::Open;

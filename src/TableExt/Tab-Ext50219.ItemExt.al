@@ -23,9 +23,14 @@ tableextension 50219 "Item Ext" extends Item
             Caption = 'Print Charges in Footer';
             DataClassification = CustomerContent;
         }
-         field(50205; "Allow Negative Amount"; Boolean)
+        field(50205; "Allow Negative Amount"; Boolean)
         {
             Caption = 'Allow Only Negative Amount';
+            DataClassification = CustomerContent;
+        }
+        field(50206; "PM Pack Qty"; Integer)
+        {
+            Caption = 'PM Pack Qty';
             DataClassification = CustomerContent;
         }
     }

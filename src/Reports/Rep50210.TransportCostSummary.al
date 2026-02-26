@@ -8,11 +8,10 @@ report 50210 "Transport Cost Summary"
     RDLCLayout = './src/Reports/Layouts/TransportCostSummary.rdl';
     dataset
     {
-        dataitem(SalesShipmentHeader; "Sales Shipment Header")
-        {
-            RequestFilterFields = "Shipment Date";
+       
             dataitem(TransportCostDetails; "Transport Cost Details")
             {
+                RequestFilterFields = "DO Date";
                 column(DO; TransportCostDetails."DO") { }
                 column(DO_Date; "DO Date") { }
                 column(Vendor_No_; "Vendor No.") { }
@@ -35,10 +34,8 @@ report 50210 "Transport Cost Summary"
                 end;
 
             }
-            trigger OnAfterGetRecord()
+            /*trigger OnAfterGetRecord()
             begin
-                If TransportCostDetailsLine.FindSet() then
-                    TransportCostDetailsLine.DeleteAll();
                 WarehouseShipment.Reset();
                 WarehouseShipment.SetRange("Whse Shipment No.", SalesShipmentHeader."Whse Ship No");
                 If WarehouseShipment.FindSet() then
@@ -90,8 +87,8 @@ report 50210 "Transport Cost Summary"
                             TransportCostDetails.Insert();
                         end;
                     until WarehouseShipment.Next() = 0;
-            end;
-        }
+            end;*/
+        
     }
     requestpage
     {

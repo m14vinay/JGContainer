@@ -49,6 +49,10 @@ table 50203 "Transport Cost Details"
         {
             Caption = 'Customer';
         }
+           field(12; "Whse Shipment No."; Code[20])
+        {
+            Caption = 'Whse Shipment No.';
+        }
 
     }
     keys

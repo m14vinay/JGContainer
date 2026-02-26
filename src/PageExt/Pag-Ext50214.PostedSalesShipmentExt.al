@@ -89,15 +89,17 @@ pageextension 50214 "Posted Sales Shipment Ext" extends "Posted Sales Shipment"
                 PromotedIsBig = True;
                 PromotedCategory = Category5;
                 ToolTip = 'Show Transport Cost Details';
-                trigger OnAction()
+                RunObject = Page "Transport Cost Details";
+                RunPageLink = "DO" = field("No.");
+                /*trigger OnAction()
                 var
                     TransportPricing: Record "Transport Contract Pricing";
                     JGSingleInstance: Codeunit "JGSingleInstance";
                 begin
-                    JGSingleInstance.SetWhseShipNo(Rec."Whse Ship No");
-                    JGSingleInstance.SetShipNo(Rec."No.");
-                    Page.RunModal(Page::"Transport Cost Details");
-                end;
+                    //JGSingleInstance.SetWhseShipNo(Rec."Whse Ship No");
+                   // JGSingleInstance.SetShipNo(Rec."No.");
+                    //Page.RunModal(Page::"Transport Cost Details");
+                end;*/
             }
 
         }

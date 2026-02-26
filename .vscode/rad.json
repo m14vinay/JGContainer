@@ -1,1 +1,1 @@
-﻿{"Added":[],"Modified":[{"Id":50203,"Kind":12,"Name":"Sales Invoice Line","Namespace":""}],"Removed":[]}
+﻿{"Added":[],"Modified":[{"Id":50206,"Kind":13,"Name":"SalesDebitNoteReport","Namespace":""},{"Id":50205,"Kind":13,"Name":"SalesCreditNoteReport","Namespace":""},{"Kind":106,"Name":"RequestOptionsPage","Namespace":""},{"Id":50207,"Kind":13,"Name":"SalesInvoiceReport","Namespace":""}],"Removed":[]}

@@ -438,9 +438,6 @@ report 50212 "SOA"
                                     ClearCompanyPicture();
                                 end;
                             end;
-
-
-
                             trigger OnPreDataItem()
                             begin
                                 SetRange("Customer No.", Customer."No.");

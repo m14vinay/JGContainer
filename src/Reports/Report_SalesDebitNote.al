@@ -214,6 +214,7 @@ report 50206 SalesDebitNoteReport
             {
             }
             column(Currency_Code; Currency_Code) { }
+            column(GTINQRCode; "ADY E-INV QR Code") { }
             column(AmountIncludingVAT; "Amount Including VAT") { }
             dataitem("Sales Invoice Line"; "Sales Invoice Line")
             {
@@ -332,6 +333,7 @@ report 50206 SalesDebitNoteReport
                 Clear(BillToAddrTxt);
                 Clear(ShipCountry);
                 Clear(BIllCountry);
+                CalcFields("ADY E-INV QR Code");
                 cr := 13;
                 lf := 10;
                 If SalesPersonPurch.Get("Salesperson Code") then;

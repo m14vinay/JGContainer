@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-01-23T06:03:23.0985549Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-02-13T03:58:12.3437558Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -35,7 +35,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>14.29165cm</Height>
+                  <Height>11.6155cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -3396,7 +3396,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value EvaluationMode="Constant">Our bank details to facilitate MYR Remittance as follows :</Value>
+                                          <Value>=If(Fields!Currency_Code.Value= "MYR","Our bank details to facilitate MYR Remittance as follows :","Our bank details to facilitate USD Remittance as follows :")</Value>
                                           <Style>
                                             <FontSize>9pt</FontSize>
                                             <FontWeight>Bold</FontWeight>
@@ -3428,7 +3428,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>="Name of Bank : "&amp;First(Fields!CompanyInfoBankName.Value, "DataSet_Result")</Value>
+                                          <Value>=If(Fields!Currency_Code.Value= "MYR","Name of Bank : "&amp;First(Fields!CompanyInfoBankName.Value, "DataSet_Result"),"Name of Bank : "&amp;First(Fields!AlternateBankName2.Value, "DataSet_Result"))</Value>
                                           <Style>
                                             <FontSize>9pt</FontSize>
                                             <FontWeight>Normal</FontWeight>
@@ -3492,7 +3492,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>="Bank Account No. : "&amp;First(Fields!CompanyInfoBankAccountNo.Value, "DataSet_Result")</Value>
+                                          <Value>=If(Fields!Currency_Code.Value= "MYR","Bank Account No. : "&amp;First(Fields!CompanyInfoBankAccountNo.Value, "DataSet_Result"),"Bank Account No. : "&amp;First(Fields!AlternateBankAccountNo2.Value, "DataSet_Result"))</Value>
                                           <Style>
                                             <FontSize>9pt</FontSize>
                                             <FontWeight>Normal</FontWeight>
@@ -3522,7 +3522,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>="Beneficiary : "&amp;First(Fields!CompanyInfoName.Value, "DataSet_Result")</Value>
+                                          <Value>=If(Fields!Currency_Code.Value= "MYR","Beneficiary : "&amp;First(Fields!CompanyInfoName.Value, "DataSet_Result"),"Address : "&amp;First(Fields!AlternateBankAddress2.Value, "DataSet_Result"))</Value>
                                           <Style>
                                             <FontSize>9pt</FontSize>
                                             <FontWeight>Normal</FontWeight>
@@ -3554,7 +3554,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>="Bank Account No. : "&amp;First(Fields!AlternateBankAccountNo1.Value, "DataSet_Result")</Value>
+                                          <Value>=If(Fields!Currency_Code.Value= "MYR","Bank Account No. : "&amp;First(Fields!AlternateBankAccountNo1.Value, "DataSet_Result"),"Swift Code : "&amp;First(Fields!AlternateBankSwiftCode2.Value, "DataSet_Result"))</Value>
                                           <Style>
                                             <FontSize>9pt</FontSize>
                                             <FontWeight>Normal</FontWeight>
@@ -3603,198 +3603,9 @@
                                   <Height>0.4cm</Height>
                                   <Width>13.72792cm</Width>
                                   <ZIndex>7</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <VerticalAlign>Top</VerticalAlign>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="Textbox20">
-                                  <CanGrow>true</CanGrow>
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value EvaluationMode="Constant">Our bank details to facilitate USD Remittance as follows :</Value>
-                                          <Style>
-                                            <FontSize>9pt</FontSize>
-                                            <FontWeight>Bold</FontWeight>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <rd:DefaultName>Textbox10</rd:DefaultName>
-                                  <Top>3.23528cm</Top>
-                                  <Left>0cm</Left>
-                                  <Height>0.4cm</Height>
-                                  <Width>13.72793cm</Width>
-                                  <ZIndex>8</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <VerticalAlign>Top</VerticalAlign>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="Textbox21">
-                                  <CanGrow>true</CanGrow>
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>="Beneficiary : "&amp;First(Fields!CompanyInfoName.Value, "DataSet_Result")</Value>
-                                          <Style>
-                                            <FontSize>9pt</FontSize>
-                                            <FontWeight>Normal</FontWeight>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <rd:DefaultName>Textbox10</rd:DefaultName>
-                                  <Top>3.63528cm</Top>
-                                  <Left>0cm</Left>
-                                  <Height>0.4cm</Height>
-                                  <Width>13.72793cm</Width>
-                                  <ZIndex>9</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <VerticalAlign>Top</VerticalAlign>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="Textbox27">
-                                  <CanGrow>true</CanGrow>
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>="Bank Account No. : "&amp;First(Fields!AlternateBankAccountNo2.Value, "DataSet_Result")</Value>
-                                          <Style>
-                                            <FontSize>9pt</FontSize>
-                                            <FontWeight>Normal</FontWeight>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <rd:DefaultName>Textbox10</rd:DefaultName>
-                                  <Top>4.03528cm</Top>
-                                  <Left>0cm</Left>
-                                  <Height>0.4cm</Height>
-                                  <Width>13.72793cm</Width>
-                                  <ZIndex>10</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <VerticalAlign>Top</VerticalAlign>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="Textbox29">
-                                  <CanGrow>true</CanGrow>
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>="Swift Code : "&amp;First(Fields!AlternateBankSwiftCode2.Value, "DataSet_Result")</Value>
-                                          <Style>
-                                            <FontSize>9pt</FontSize>
-                                            <FontWeight>Normal</FontWeight>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <rd:DefaultName>Textbox10</rd:DefaultName>
-                                  <Top>5.21837cm</Top>
-                                  <Left>0cm</Left>
-                                  <Height>0.45cm</Height>
-                                  <Width>13.72793cm</Width>
-                                  <ZIndex>11</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <VerticalAlign>Top</VerticalAlign>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="Textbox30">
-                                  <CanGrow>true</CanGrow>
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>="Name of Bank : "&amp;First(Fields!AlternateBankName2.Value, "DataSet_Result")</Value>
-                                          <Style>
-                                            <FontSize>9pt</FontSize>
-                                            <FontWeight>Normal</FontWeight>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <rd:DefaultName>Textbox10</rd:DefaultName>
-                                  <Top>4.43528cm</Top>
-                                  <Left>0cm</Left>
-                                  <Height>0.38309cm</Height>
-                                  <Width>13.72793cm</Width>
-                                  <ZIndex>12</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <VerticalAlign>Top</VerticalAlign>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="Textbox31">
-                                  <CanGrow>true</CanGrow>
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>="Address : "&amp;First(Fields!AlternateBankAddress2.Value, "DataSet_Result")</Value>
-                                          <Style>
-                                            <FontSize>9pt</FontSize>
-                                            <FontWeight>Normal</FontWeight>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <rd:DefaultName>Textbox10</rd:DefaultName>
-                                  <Top>4.81837cm</Top>
-                                  <Left>0cm</Left>
-                                  <Height>0.4cm</Height>
-                                  <Width>13.72793cm</Width>
-                                  <ZIndex>13</ZIndex>
+                                  <Visibility>
+                                    <Hidden>=If(Fields!Currency_Code.Value= "MYR",False,True)</Hidden>
+                                  </Visibility>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -3806,8 +3617,8 @@
                               <KeepTogether>true</KeepTogether>
                               <Top>8.24019cm</Top>
                               <Left>0.00002cm</Left>
-                              <Height>5.66837cm</Height>
-                              <Width>18.36472cm</Width>
+                              <Height>3.34004cm</Height>
+                              <Width>14.44123cm</Width>
                               <ZIndex>5</ZIndex>
                               <Style>
                                 <Border>
@@ -3852,12 +3663,12 @@
               <BreakLocation>End</BreakLocation>
             </PageBreak>
             <Left>0.05607in</Left>
-            <Height>14.29165cm</Height>
+            <Height>11.6155cm</Height>
             <Width>18.82093cm</Width>
             <Style />
           </Tablix>
         </ReportItems>
-        <Height>14.29165cm</Height>
+        <Height>11.6155cm</Height>
         <Style />
       </Body>
       <Width>19cm</Width>

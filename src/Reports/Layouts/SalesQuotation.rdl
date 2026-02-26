@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-01-23T06:44:57.8701833Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-02-16T04:51:15.1840047Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -35,7 +35,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>15.35381cm</Height>
+                  <Height>12.902cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -2829,7 +2829,6 @@
                                               <PaddingRight>2pt</PaddingRight>
                                             </Style>
                                           </Textbox>
-                                          <rd:Selected>true</rd:Selected>
                                         </CellContents>
                                       </TablixCell>
                                     </TablixCells>
@@ -3083,7 +3082,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>Our bank details to facilitate MYR Remittance as follows :</Value>
+                                          <Value>=If(Fields!Currency_Code.Value= "MYR","Our bank details to facilitate MYR Remittance as follows :","Our bank details to facilitate USD Remittance as follows :")</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
@@ -3294,7 +3293,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>Bank Account No.</Value>
+                                          <Value>=If(Fields!Currency_Code.Value= "MYR","Bank Account No.","Swift Code")</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
@@ -3306,9 +3305,10 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>4.26113cm</Top>
+                                  <Top>4.13413cm</Top>
+                                  <Left>0.0125in</Left>
                                   <Height>0.4cm</Height>
-                                  <Width>3.12741cm</Width>
+                                  <Width>3.09213cm</Width>
                                   <ZIndex>9</ZIndex>
                                   <Style>
                                     <Border>
@@ -3323,7 +3323,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>Beneficiary</Value>
+                                          <Value>=If(Fields!Currency_Code.Value= "MYR","Beneficiary","Address")</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
@@ -3335,9 +3335,10 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>3.8475cm</Top>
+                                  <Top>3.7205cm</Top>
+                                  <Left>0.0125in</Left>
                                   <Height>0.4cm</Height>
-                                  <Width>3.12741cm</Width>
+                                  <Width>3.09213cm</Width>
                                   <ZIndex>10</ZIndex>
                                   <Style>
                                     <Border>
@@ -3364,10 +3365,14 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>4.70297cm</Top>
+                                  <Top>4.54422cm</Top>
+                                  <Left>0.0125in</Left>
                                   <Height>0.4cm</Height>
-                                  <Width>3.12741cm</Width>
+                                  <Width>3.09213cm</Width>
                                   <ZIndex>11</ZIndex>
+                                  <Visibility>
+                                    <Hidden>=If(Fields!Currency_Code.Value = "MYR",False,True)</Hidden>
+                                  </Visibility>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -3393,8 +3398,8 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>3.8475cm</Top>
-                                  <Left>3.12741cm</Left>
+                                  <Top>3.7205cm</Top>
+                                  <Left>3.15916cm</Left>
                                   <Height>0.4cm</Height>
                                   <Width>0.40142cm</Width>
                                   <ZIndex>12</ZIndex>
@@ -3423,8 +3428,8 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>4.26113cm</Top>
-                                  <Left>3.12741cm</Left>
+                                  <Top>4.13413cm</Top>
+                                  <Left>3.15916cm</Left>
                                   <Height>0.4cm</Height>
                                   <Width>0.40142cm</Width>
                                   <ZIndex>13</ZIndex>
@@ -3453,336 +3458,14 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>4.70297cm</Top>
-                                  <Left>3.12741cm</Left>
+                                  <Top>4.54422cm</Top>
+                                  <Left>3.15916cm</Left>
                                   <Height>0.4cm</Height>
                                   <Width>0.40142cm</Width>
                                   <ZIndex>14</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="ExecutionTimeTextBox53">
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>Our bank details to facilitate USD Remittance as follows :</Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontSize>9pt</FontSize>
-                                            <FontWeight>Bold</FontWeight>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <Top>5.1872cm</Top>
-                                  <Height>0.4cm</Height>
-                                  <Width>10.30536cm</Width>
-                                  <ZIndex>15</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <VerticalAlign>Bottom</VerticalAlign>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="ExecutionTimeTextBox83">
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>Bank Account No.</Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontSize>9pt</FontSize>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <Top>6.03556cm</Top>
-                                  <Height>0.4cm</Height>
-                                  <Width>3.11143cm</Width>
-                                  <ZIndex>16</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="ExecutionTimeTextBox84">
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>Beneficiary</Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontSize>9pt</FontSize>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <Top>5.62193cm</Top>
-                                  <Height>0.4cm</Height>
-                                  <Width>3.11143cm</Width>
-                                  <ZIndex>17</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="ExecutionTimeTextBox85">
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>Name of Bank</Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontSize>9pt</FontSize>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <Top>6.44868cm</Top>
-                                  <Height>0.4cm</Height>
-                                  <Width>3.11143cm</Width>
-                                  <ZIndex>18</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="ExecutionTimeTextBox86">
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>:</Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontSize>9pt</FontSize>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Center</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <Top>5.62193cm</Top>
-                                  <Left>3.14441cm</Left>
-                                  <Height>0.4cm</Height>
-                                  <Width>0.36844cm</Width>
-                                  <ZIndex>19</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="ExecutionTimeTextBox87">
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>:</Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontSize>9pt</FontSize>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Center</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <Top>6.03556cm</Top>
-                                  <Left>3.14441cm</Left>
-                                  <Height>0.4cm</Height>
-                                  <Width>0.36844cm</Width>
-                                  <ZIndex>20</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="ExecutionTimeTextBox88">
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>:</Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontSize>9pt</FontSize>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Center</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <Top>6.44868cm</Top>
-                                  <Left>3.14441cm</Left>
-                                  <Height>0.4cm</Height>
-                                  <Width>0.36844cm</Width>
-                                  <ZIndex>21</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="ExecutionTimeTextBox89">
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>Address</Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontSize>9pt</FontSize>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <Top>6.88749cm</Top>
-                                  <Height>0.4cm</Height>
-                                  <Width>3.12741cm</Width>
-                                  <ZIndex>22</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="ExecutionTimeTextBox90">
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>Swift Code</Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontSize>9pt</FontSize>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <Top>7.29758cm</Top>
-                                  <Height>0.4cm</Height>
-                                  <Width>3.12741cm</Width>
-                                  <ZIndex>23</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="ExecutionTimeTextBox91">
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>:</Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontSize>9pt</FontSize>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Center</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <Top>6.88749cm</Top>
-                                  <Left>3.12741cm</Left>
-                                  <Height>0.4cm</Height>
-                                  <Width>0.38544cm</Width>
-                                  <ZIndex>24</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="ExecutionTimeTextBox92">
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>:</Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontSize>9pt</FontSize>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Center</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <Top>7.29758cm</Top>
-                                  <Left>3.12741cm</Left>
-                                  <Height>0.4cm</Height>
-                                  <Width>0.38544cm</Width>
-                                  <ZIndex>25</ZIndex>
+                                  <Visibility>
+                                    <Hidden>=If(Fields!Currency_Code.Value = "MYR",False,True)</Hidden>
+                                  </Visibility>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -3813,7 +3496,7 @@
                                   <Left>3.54583cm</Left>
                                   <Height>0.4cm</Height>
                                   <Width>6.77551cm</Width>
-                                  <ZIndex>26</ZIndex>
+                                  <ZIndex>15</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -3827,7 +3510,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=Fields!BankAccountNo.Value</Value>
+                                          <Value>=If(Fields!Currency_Code.Value= "MYR",Fields!BankAccountNo.Value,Fields!Bank2_AccountNo.Value)</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
@@ -3844,7 +3527,7 @@
                                   <Left>3.54583cm</Left>
                                   <Height>0.4cm</Height>
                                   <Width>6.77551cm</Width>
-                                  <ZIndex>27</ZIndex>
+                                  <ZIndex>16</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -3858,7 +3541,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=Fields!CompInfoBankName.Value</Value>
+                                          <Value>=If(Fields!Currency_Code.Value= "MYR",Fields!CompInfoBankName.Value,Fields!Bank2_Name.Value)</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
@@ -3875,7 +3558,7 @@
                                   <Left>3.54583cm</Left>
                                   <Height>0.4cm</Height>
                                   <Width>6.77551cm</Width>
-                                  <ZIndex>28</ZIndex>
+                                  <ZIndex>17</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -3889,7 +3572,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=Fields!companyName.Value</Value>
+                                          <Value>=If(Fields!Currency_Code.Value= "MYR",Fields!companyName.Value,Fields!Bank2_AddressFull.Value)</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
@@ -3902,11 +3585,11 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>3.8475cm</Top>
-                                  <Left>3.52883cm</Left>
+                                  <Top>3.7205cm</Top>
+                                  <Left>3.56058cm</Left>
                                   <Height>0.4cm</Height>
                                   <Width>6.79251cm</Width>
-                                  <ZIndex>29</ZIndex>
+                                  <ZIndex>18</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -3920,7 +3603,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=Fields!Bank1_AccountNo.Value</Value>
+                                          <Value>=If(Fields!Currency_Code.Value= "MYR",Fields!Bank1_AccountNo.Value,Fields!Bank2_Swift.Value)</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontSize>9pt</FontSize>
@@ -3933,11 +3616,11 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>4.26113cm</Top>
-                                  <Left>3.52883cm</Left>
+                                  <Top>4.13413cm</Top>
+                                  <Left>3.56058cm</Left>
                                   <Height>0.4cm</Height>
                                   <Width>6.79251cm</Width>
-                                  <ZIndex>30</ZIndex>
+                                  <ZIndex>19</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -3964,166 +3647,14 @@
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Top>4.70297cm</Top>
-                                  <Left>3.52883cm</Left>
+                                  <Top>4.54422cm</Top>
+                                  <Left>3.56058cm</Left>
                                   <Height>0.4cm</Height>
                                   <Width>6.79251cm</Width>
-                                  <ZIndex>31</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="ExecutionTimeTextBox100">
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>=Fields!companyName.Value</Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontSize>9pt</FontSize>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <LeftIndent>2pt</LeftIndent>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <Top>5.62193cm</Top>
-                                  <Left>3.51285cm</Left>
-                                  <Height>0.4cm</Height>
-                                  <Width>6.79251cm</Width>
-                                  <ZIndex>32</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="ExecutionTimeTextBox101">
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>=Fields!Bank2_AccountNo.Value</Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontSize>9pt</FontSize>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <LeftIndent>2pt</LeftIndent>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <Top>6.03556cm</Top>
-                                  <Left>3.51285cm</Left>
-                                  <Height>0.4cm</Height>
-                                  <Width>6.79251cm</Width>
-                                  <ZIndex>33</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="ExecutionTimeTextBox102">
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>=Fields!Bank2_Name.Value</Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontSize>9pt</FontSize>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <LeftIndent>2pt</LeftIndent>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <Top>6.44868cm</Top>
-                                  <Left>3.52883cm</Left>
-                                  <Height>0.4cm</Height>
-                                  <Width>6.79251cm</Width>
-                                  <ZIndex>34</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="ExecutionTimeTextBox103">
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>=Fields!Bank2_AddressFull.Value</Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontSize>9pt</FontSize>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <LeftIndent>2pt</LeftIndent>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <Top>6.88749cm</Top>
-                                  <Left>3.52135cm</Left>
-                                  <Height>0.4cm</Height>
-                                  <Width>11.5826cm</Width>
-                                  <ZIndex>35</ZIndex>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                  </Style>
-                                </Textbox>
-                                <Textbox Name="ExecutionTimeTextBox104">
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>=Fields!Bank2_Swift.Value</Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontSize>9pt</FontSize>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <LeftIndent>2pt</LeftIndent>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <Top>7.29758cm</Top>
-                                  <Left>3.52135cm</Left>
-                                  <Height>0.4cm</Height>
-                                  <Width>6.79999cm</Width>
-                                  <ZIndex>36</ZIndex>
+                                  <ZIndex>20</ZIndex>
+                                  <Visibility>
+                                    <Hidden>=If(Fields!Currency_Code.Value = "MYR",False,True)</Hidden>
+                                  </Visibility>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -4135,7 +3666,7 @@
                               <KeepTogether>true</KeepTogether>
                               <Top>7.63818cm</Top>
                               <Left>0.03298cm</Left>
-                              <Height>7.69758cm</Height>
+                              <Height>5.2105cm</Height>
                               <Width>15.53835cm</Width>
                               <ZIndex>5</ZIndex>
                               <Style>
@@ -4183,7 +3714,7 @@
             <DataSetName>DataSet_Result</DataSetName>
             <Top>0cm</Top>
             <Left>0cm</Left>
-            <Height>15.35381cm</Height>
+            <Height>12.902cm</Height>
             <Width>19.0325cm</Width>
             <Style>
               <Border>
@@ -4192,7 +3723,7 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>17.55228cm</Height>
+        <Height>12.902cm</Height>
         <Style />
       </Body>
       <Width>19.0325cm</Width>
@@ -4883,7 +4414,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>3.00356cm</Height>
+          <Height>1.46898cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>

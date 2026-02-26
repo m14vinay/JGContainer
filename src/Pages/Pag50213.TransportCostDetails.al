@@ -12,7 +12,11 @@ page 50213 "Transport Cost Details"
         {
             repeater(General)
             {
-
+                field("Whse Shipment No."; Rec."Whse Shipment No.")
+                {
+                    ToolTip = 'Specifies the value of the Whse Shipment No field.', Comment = '%';
+                    Caption = 'Whse Shipment No.';
+                }
                 field("Line No."; Rec."Line No")
                 {
                     ToolTip = 'Specifies the value of the Line No. field.', Comment = '%';
@@ -41,7 +45,6 @@ page 50213 "Transport Cost Details"
                     ToolTip = 'Specifies the gross weight of one unit of the item. In the sales statistics window, the gross weight on the line is included in the total gross weight of all the lines for the particular sales document.';
                     Caption = 'Line Amount';
                 }
-
                 field(Carrier; Rec.Carrier)
                 {
                     ToolTip = 'Specifies the number of the related project.';
@@ -70,7 +73,7 @@ page 50213 "Transport Cost Details"
             }
         }
     }
-    trigger OnOpenPage()
+   /* trigger OnOpenPage()
     var
         WarehouseShipment: Record "Warehouse Shipment Services";
         PostedSalesShipment: Record "Sales Shipment Header";
@@ -132,5 +135,5 @@ page 50213 "Transport Cost Details"
                     TransportCostDetails.Insert();
                 end;
             until WarehouseShipment.Next() = 0;
-    end;
+    end;*/
 }

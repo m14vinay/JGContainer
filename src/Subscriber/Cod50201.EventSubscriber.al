@@ -34,11 +34,10 @@ codeunit 50201 "Event Subscriber"
     [EventSubscriber(ObjectType::Codeunit, CodeUnit::"Sales Price Calc. Mgt.", 'OnFindSalesLinePriceOnItemTypeOnAfterSetUnitPrice', '', false, false)]
     local procedure UpdatePricePerPiece(var SalesHeader: Record "Sales Header"; var SalesLine: Record "Sales Line"; var TempSalesPrice: Record "Sales Price" temporary; CalledByFieldNo: Integer; FoundSalesPrice: Boolean)
     begin
-        If TempSalesPrice."Approval Status" = TempSalesPrice."Approval Status"::Released then 
-        
+        If TempSalesPrice."Approval Status" = TempSalesPrice."Approval Status"::Released then
             SalesLine."Price Per Piece" := TempSalesPrice."Price Per Piece"
         Else
-           SalesLine."Unit Price" := 0;
+            SalesLine."Unit Price" := 0;
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterValidateEvent', 'Ship-to Code', false, false)]
@@ -49,19 +48,87 @@ codeunit 50201 "Event Subscriber"
         If ShipToAddress.Get(Rec."Sell-to Customer No.", Rec."Ship-to Code") then
             Rec."Delivery Area" := ShipToAddress."Delivery Area";
     end;
+
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterValidateEvent', 'SST Exemption Registration No.', false, false)]
     local procedure UpdateTaxExemption(var Rec: Record "Sales Header"; var xRec: Record "Sales Header"; CurrFieldNo: Integer)
     var
         ShipToAddress: Record "Ship-to Address";
     begin
-       If Rec."SST Exemption Registration No." <> '' then
-         Rec."ADY E-INV Dtl of Tax Exemption" := Rec."SST Exemption Registration No.";
+        If Rec."SST Exemption Registration No." <> '' then
+            Rec."ADY E-INV Dtl of Tax Exemption" := Rec."SST Exemption Registration No.";
     end;
 
     [EventSubscriber(ObjectType::Codeunit, CodeUnit::"Get Source Doc. Outbound", 'OnAfterFindWarehouseRequestForSalesOrder', '', false, false)]
     local procedure UpdateDeliveryCode(var WarehouseRequest: Record "Warehouse Request"; SalesHeader: Record "Sales Header")
     begin
         WarehouseRequest."Delivery Area" := SalesHeader."Delivery Area";
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, CodeUnit::"Sales-Post", 'OnAfterPostSalesDoc', '', false, false)]
+    local procedure UpdateTransportCost(var SalesHeader: Record "Sales Header"; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line"; SalesShptHdrNo: Code[20])
+    var
+        WarehouseShipment: Record "Warehouse Shipment Services";
+        SalesShipmentHeader: Record "Sales Shipment Header";
+        SalesShipmentLine: Record "Sales Shipment Line";
+        TransportCostDetails: Record "Transport Cost Details";
+        TransportCostDetailsLine: Record "Transport Cost Details";
+    begin
+        SalesShipmentHeader.Reset();
+        SalesShipmentHeader.SetRange("No.", SalesShptHdrNo);
+        If SalesShipmentHeader.FindFirst() then;
+        WarehouseShipment.Reset();
+        WarehouseShipment.SetRange("Whse Shipment No.", SalesShipmentHeader."Whse Ship No");
+        If WarehouseShipment.FindSet() then
+            repeat
+                If WarehouseShipment."Rate Type" = WarehouseShipment."Rate Type"::Pallet then begin
+                    SalesShipmentLine.Reset();
+                    SalesShipmentLine.SetRange("Document No.", SalesShptHdrNo);
+                    SalesShipmentLine.SetRange(Type, SalesShipmentLine.Type::Item);
+                    SalesShipmentLine.SetFilter(Quantity, '>%1', 0);
+                    If SalesShipmentLine.FindSet() then
+                        repeat
+                            TransportCostDetails.Init();
+                            TransportCostDetailsLine.SetAscending("Line No", false);
+                            If TransportCostDetailsLine.FindFirst() then
+                                TransportCostDetails."Line No" := TransportCostDetailsLine."Line No" + 10000
+                            else
+                                TransportCostDetails."Line No" := 10000;
+                            TransportCostDetails."Item No." := SalesShipmentLine."No.";
+                            TransportCostDetails.QTY := SalesShipmentLine.Quantity;
+                            TransportCostDetails.UOM := SalesShipmentLine."Unit of Measure Code";
+                            TransportCostDetails.Cost := WarehouseShipment.Rate;
+                            TransportCostDetails."Line Amount" := WarehouseShipment.Rate * SalesShipmentLine.Quantity;
+                            TransportCostDetails.Carrier := WarehouseShipment."Carrier Code";
+                            TransportCostDetails."Vendor No." := WarehouseShipment."Vendor No.";
+                            TransportCostDetails."DO" := SalesShipmentLine."Document No.";
+                            TransportCostDetails."DO Date" := SalesShipmentLine."Shipment Date";
+                            TransportCostDetails.Customer := SalesShipmentLine."Sell-to Customer No.";
+                            TransportCostDetails."Whse Shipment No." := WarehouseShipment."Whse Shipment No.";
+                            TransportCostDetails.Insert();
+                        until SalesShipmentLine.Next() = 0;
+                end;
+                If WarehouseShipment."Rate Type" = WarehouseShipment."Rate Type"::Fixed then begin
+                    TransportCostDetails.Init();
+                    TransportCostDetailsLine.SetAscending("Line No", false);
+                    If TransportCostDetailsLine.FindFirst() then
+                        TransportCostDetails."Line No" := TransportCostDetailsLine."Line No" + 10000
+                    else
+                        TransportCostDetails."Line No" := 10000;
+                    TransportCostDetails."Item No." := WarehouseShipment."Item Code";
+                    TransportCostDetails.QTY := 1;
+                    TransportCostDetails.UOM := WarehouseShipment."Unit of Measure Code";
+                    TransportCostDetails.Cost := WarehouseShipment.Rate;
+                    TransportCostDetails."Line Amount" := WarehouseShipment.Rate * 1;
+                    TransportCostDetails.Carrier := WarehouseShipment."Carrier Code";
+                    TransportCostDetails."Vendor No." := WarehouseShipment."Vendor No.";
+                    TransportCostDetails."DO" := SalesShipmentHeader."No.";
+                    TransportCostDetails."DO Date" := SalesShipmentHeader."Shipment Date";
+                    TransportCostDetails.Customer := SalesShipmentHeader."Sell-to Customer No.";
+                    TransportCostDetails."Whse Shipment No." := WarehouseShipment."Whse Shipment No.";
+                    TransportCostDetails.Insert();
+                end;
+                WarehouseShipment.Delete();
+            until WarehouseShipment.Next() = 0;
     end;
 
     [EventSubscriber(ObjectType::Report, Report::"Get Source Documents", 'OnSalesLineOnAfterCreateShptHeader', '', false, false)]
@@ -105,9 +172,9 @@ codeunit 50201 "Event Subscriber"
         ItemLedgerEntry."Net Weight" := ItemJournalLine."Net Weight";
     end;
 
-    
 
-   
+
+
 
     [EventSubscriber(ObjectType::Codeunit, CodeUnit::"Sales-Post", 'OnPostItemJnlLineOnAfterPrepareItemJnlLine', '', false, false)]
     local procedure OnPostItemJnlLineOnAfterPrepareItemJnlLine(var ItemJournalLine: Record "Item Journal Line"; SalesLine: Record "Sales Line")

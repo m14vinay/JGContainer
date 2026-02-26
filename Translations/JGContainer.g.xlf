@@ -168,6 +168,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Transport Cost Details - Field Vendor No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1305469798 - Field 2665164818 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Whse Shipment No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Transport Cost Details - Field Whse Shipment No. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1529097293 - NamedType 1324170193" size-unit="char" translate="yes" xml:space="preserve">
           <source> is already applied to %1 %2 for employee %3.</source>
           <note from="Developer" annotates="general" priority="2">%1 = Document type, %2 = Document No., %3 = Employee No.</note>
@@ -1368,6 +1373,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Transport Cost Details - Control Vendor No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1305469798 - Control 2665164818 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Whse Shipment No field.</source>
+          <note from="Developer" annotates="general" priority="2">%</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transport Cost Details - Control Whse Shipment No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1305469798 - Control 2665164818 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Whse Shipment No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transport Cost Details - Control Whse Shipment No. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1763261097 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shipment Services</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1928,6 +1943,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Transport Cost Summary - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 3721483957 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Update Transport Cost Details</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Update Transport Cost Details - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 747112720 - Control 1535571897 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2259427799">
           <source>Specifies vehicle no</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2302,6 +2322,11 @@
           <source>Specifies the Pack Size of the Item</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Item - Control Pack Size - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3276313895 - Control 1336355172 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Specifies the PM Pack Qty of the Item</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Item - Control PM Pack Qty - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3276313895 - Change 3425905091 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
           <source>Price Includes SST</source>
@@ -3533,6 +3558,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension WareShip Line Ext - Control Returnable - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 563467910 - Action 4260549000 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2938519335">
+          <source>Show posted transport contract services</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Whse Ship Ext - Action PostedTransportServices - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 563467910 - Action 4260549000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2938519335">
+          <source>Posted Transport Services</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Whse Ship Ext - Action PostedTransportServices - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 563467910 - Action 1043458144 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2938519335">
           <source>Show selected transport contract services</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3692,6 +3727,11 @@
           <source>Pallet Tracking Required</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Item Ext - Field Pallet Tracking Required - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2480387432 - Field 1336355172 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+          <source>PM Pack Qty</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Item Ext - Field PM Pack Qty - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2480387432 - Field 2045909982 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
           <source>Print Charges in Footer</source>

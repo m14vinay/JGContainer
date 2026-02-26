@@ -9,7 +9,7 @@ pageextension 50209 "Customer Ext" extends "Customer Card"
                 ToolTip = 'Specifies agent/distributor name';
                 ApplicationArea = All;
             }
-             field("Commercial Invoice Needed"; Rec."Commercial Invoice Needed")
+            field("Commercial Invoice Needed"; Rec."Commercial Invoice Needed")
             {
                 ToolTip = 'Specifies Commercial Invoice Needed';
                 ApplicationArea = All;
@@ -17,13 +17,13 @@ pageextension 50209 "Customer Ext" extends "Customer Card"
         }
         addafter("Shipment Method Code")
         {
-             field("Place of Export"; Rec."Place of Export")
+            field("Place of Export"; Rec."Place of Export")
             {
                 ToolTip = 'Specifies Place of Export';
                 ApplicationArea = All;
             }
         }
-         modify(Blocked)
+        modify(Blocked)
         {
             Editable = false;
         }
@@ -39,24 +39,48 @@ pageextension 50209 "Customer Ext" extends "Customer Card"
         {
             ShowMandatory = true;
         }
-         modify("Phone No.")
+        modify("Phone No.")
         {
             ShowMandatory = true;
         }
-            modify("VAT Bus. Posting Group")
+        modify("VAT Bus. Posting Group")
         {
             Caption = 'SST Bus. Posting Group';
         }
-         modify("VAT Registration No.")
+        modify("VAT Registration No.")
         {
             Caption = 'SST Registration No.';
         }
-         modify("Prices Including VAT")
+        modify("Prices Including VAT")
         {
             Caption = 'Prices Including SST';
             Visible = false;
         }
-        
+        modify("ADY E-INV Classification Code")
+        {
+            ShowMandatory = True;
+        }
+        modify("ADY E-INV TIN No.")
+        {
+            ShowMandatory = True;
+        }
+        modify("ADY e-Inv TIN Status")
+        {
+            ShowMandatory = True;
+        }
+        modify("ADY E-INV SST Reg No.")
+        {
+            ShowMandatory = True;
+        }
+        modify("ADY E-INV ID Type")
+        {
+            ShowMandatory = True;
+        }
+          modify("ADY E-INV ID No.")
+        {
+            ShowMandatory = True;
+        }
+
     }
     actions
     {
@@ -72,9 +96,9 @@ pageextension 50209 "Customer Ext" extends "Customer Card"
                 PromotedCategory = Category9;
                 trigger OnAction()
                 var
-                ExtManagement : Codeunit "Extension Management";
-                NAVInstalledAPP : Record "NAV App Installed App";
-                PackageID : Boolean;
+                    ExtManagement: Codeunit "Extension Management";
+                    NAVInstalledAPP: Record "NAV App Installed App";
+                    PackageID: Boolean;
                 begin
                     Rec.Blocked := Rec.Blocked::All;
                     //ExtManagement.UninstallExtension();
@@ -100,9 +124,10 @@ pageextension 50209 "Customer Ext" extends "Customer Card"
             }
         }
         modify(Approve)
-         {
+        {
             trigger OnAfterAction()
             begin
+                Rec.TestField("ADY E-INV State Code");
                 Rec.Blocked := Rec.Blocked::" ";
             end;
         }

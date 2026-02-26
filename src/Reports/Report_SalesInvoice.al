@@ -215,7 +215,7 @@ report 50207 SalesInvoiceReport
             }
             column(Currency_Code; Currency_Code) { }
             column(GTINQRCode; "ADY E-INV QR Code") { }
-             column(AmountIncludingVAT; "Amount Including VAT") { }
+            column(AmountIncludingVAT; "Amount Including VAT") { }
             dataitem("Sales Invoice Line"; "Sales Invoice Line")
             {
                 DataItemLink = "Document No." = field("No.");
@@ -482,18 +482,27 @@ report 50207 SalesInvoiceReport
                 SalesInvoiceLine.SetRange("Document No.", "No.");
                 SalesInvoiceLine.SetRange(Type, SalesInvoiceLine.Type::Item);
                 SalesInvoiceLine.SetFilter("VAT %", '>%1', 0);
-                if SalesInvoiceLine.FindFirst() then begin
-                    DONo := SalesInvoiceLine."Shipment No.";
-                    SalesTaxPercent := 'Sales Tax ' + SalesInvoiceLine."VAT %".ToText() + ' %';
-                end else begin
+                if SalesInvoiceLine.FindFirst() then 
+                    SalesTaxPercent := 'Sales Tax ' + SalesInvoiceLine."VAT %".ToText() + ' %'
+                else 
                     SalesTaxPercent := 'Sales Tax ' + '0 %';
-                    SalesInvoiceLine.SetRange("Document No.", "No.");
-                    SalesInvoiceLine.SetRange(Type, SalesInvoiceLine.Type::Item);
-                    SalesInvoiceLine.SetRange("VAT %");
-                    if SalesInvoiceLine.FindFirst() then
-                        DONo := SalesInvoiceLine."Shipment No.";
-                end;
 
+                SalesInvoiceLineShiNo.Reset();
+                SalesInvoiceLineShiNo.SetRange("Document No.", "No.");
+                SalesInvoiceLineShiNo.SetRange(Type, SalesInvoiceLineShiNo.Type::Item);
+                SalesInvoiceLineShiNo.SetFilter("Shipment No.", '<>%1', '');
+                If SalesInvoiceLineShiNo.FindSet() then
+                    repeat
+                        if not TempList.Contains(SalesInvoiceLineShiNo."Shipment No.") then
+                            TempList.Add(SalesInvoiceLineShiNo."Shipment No.");
+                    until SalesInvoiceLineShiNo.Next() = 0;
+
+                foreach ShipmentNo in TempList do begin
+                    if DONo = '' then
+                        DONo := ShipmentNo
+                    else
+                        DONo +=  Format(cr) + Format(lf) + ShipmentNo;
+                end;
                 SSTExemption.Reset();
                 SSTExemption.SetRange("Customer No.", "Sell-to Customer No.");
                 SSTExemption.SetRange("SST Exemption Registration No.", "SST Exemption Registration No.");
@@ -574,7 +583,10 @@ report 50207 SalesInvoiceReport
         SalesTaxPercent: Text;
         CompanyCounty: Text;
         Unit_Price: Decimal;
-        DONo: Code[20];
+        DONo: Code[250];
+        TempList: List of [Code[20]];
+        SalesInvoiceLineShiNo: Record "Sales Invoice Line";
+        ShipmentNo: Code[20];
         Packing: Decimal;
         AmountInWordCal: Text;
         AlternateBankName1: Text;
@@ -592,7 +604,8 @@ report 50207 SalesInvoiceReport
         SSTExemption: Record "SST Exemption Details";
         ScrapFilterValue: Boolean;
         UOM: Record "Unit of Measure";
-
+         cr: Char;
+        lf: Char;
         Billtomobileno: Text;
         BilltoPhoneNo: Text;
         SalesTax: Decimal;
@@ -618,8 +631,7 @@ report 50207 SalesInvoiceReport
         BillToAddrTxt: Text[200];
         ShipToAddrTxt: Text[200];
         Shiptotxt: Text[100];
-        cr: Char;
-        lf: Char;
+        
 
 
 

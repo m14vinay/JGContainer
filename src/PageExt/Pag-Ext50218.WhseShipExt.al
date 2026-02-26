@@ -59,6 +59,18 @@ pageextension 50218 "Whse Ship Ext" extends "Warehouse Shipment"
                 RunObject = page "Whse Shipment Services";
                 RunPageLink = "Whse Shipment No." = field("No.");
             }
+            action(PostedTransportServices)
+            {
+                ApplicationArea = All;
+                Caption = 'Posted Transport Services';
+                Image = ServiceLines;
+                Promoted = True;
+                PromotedIsBig = True;
+                PromotedCategory = Category7;
+                ToolTip = 'Show posted transport contract services';
+                RunObject =  Page "Transport Cost Details";
+                RunPageLink = "Whse Shipment No." = field("No.");
+            }
         }
     }
 }
