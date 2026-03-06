@@ -129,8 +129,7 @@ pageextension 50224 Item extends "Item Card"
                     Rec.TestField("Standard Cost");
                     If not (Rec."Costing Method" = Rec."Costing Method"::Standard) then
                         Error('Costing Method should be Standard');
-                    If Rec."Standard Cost" = 0 then
-                        Error('Standard Cost must have a value');
+                   
                     DimensionSetEntry.Reset();
                     DimensionSetEntry.SetRange("Table ID", 27);
                     DimensionSetEntry.SetRange("No.", Rec."No.");

@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-02-24T08:06:34.1895556Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-03-04T06:15:11.4839603Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -764,7 +764,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!Noofplts.Value</Value>
+                                                    <Value>=If(Fields!UOM.Value="PCS",0,Fields!Noofplts.Value)</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                     </Style>
@@ -855,6 +855,7 @@
                                               <PaddingBottom>2pt</PaddingBottom>
                                             </Style>
                                           </Textbox>
+                                          <rd:Selected>true</rd:Selected>
                                         </CellContents>
                                       </TablixCell>
                                       <TablixCell>
@@ -866,7 +867,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!Noofplts.Value*Fields!Packing.Value</Value>
+                                                    <Value>=If(Fields!UOM.Value="PCS",Fields!Noofplts.Value,Fields!Noofplts.Value*Fields!Packing.Value)</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                     </Style>
@@ -917,7 +918,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!UnitPrice.Value</Value>
+                                                    <Value>=If(Fields!UOM.Value="PCS",Fields!UnitPricePcs.Value,Fields!UnitPrice.Value)</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <Format>#,0.0000;(#,0.0000)</Format>
@@ -4777,6 +4778,15 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         </Field>
         <Field Name="AmountFormat">
           <DataField>AmountFormat</DataField>
+        </Field>
+        <Field Name="UOM">
+          <DataField>UOM</DataField>
+        </Field>
+        <Field Name="UnitPricePcs">
+          <DataField>UnitPricePcs</DataField>
+        </Field>
+        <Field Name="UnitPricePcsFormat">
+          <DataField>UnitPricePcsFormat</DataField>
         </Field>
         <Field Name="AmountWithoutVAT">
           <DataField>AmountWithoutVAT</DataField>

@@ -33,6 +33,7 @@ pageextension 50209 "Customer Ext" extends "Customer Card"
             {
                 ApplicationArea = All;
                 ToolTip = 'Specifies the customer''s telephone number 2.';
+                ShowMandatory = True;
             }
         }
         modify("E-Mail")
@@ -76,7 +77,7 @@ pageextension 50209 "Customer Ext" extends "Customer Card"
         {
             ShowMandatory = True;
         }
-          modify("ADY E-INV ID No.")
+        modify("ADY E-INV ID No.")
         {
             ShowMandatory = True;
         }
@@ -101,14 +102,6 @@ pageextension 50209 "Customer Ext" extends "Customer Card"
                     PackageID: Boolean;
                 begin
                     Rec.Blocked := Rec.Blocked::All;
-                    //ExtManagement.UninstallExtension();
-                    /*NAVInstalledAPP.Reset();
-                    NAVInstalledAPP.SetRange("App ID",'fd09b53c-ff32-4d9c-91ce-6a82a87b8c9c');
-                    If NAVInstalledAPP.FindFirst() then
-                     Message('%1',NAVInstalledAPP."Package ID");
-
-                    PackageID := ExtManagement.UnpublishExtension('02CF4BF5-94D4-48BF-94A6-B6259B46B09C');
-                    Message('%1',PackageID);*/
                 end;
             }
             action(SSTExemptionList)
@@ -126,9 +119,44 @@ pageextension 50209 "Customer Ext" extends "Customer Card"
         modify(Approve)
         {
             trigger OnAfterAction()
+            var
+                DimensionSetEntryAppro: Record "Default Dimension";
+                JobExistAppro: Boolean;
             begin
+                JobExistAppro := False;
+                DimensionSetEntryAppro.Reset();
+                DimensionSetEntryAppro.SetRange("Table ID", 18);
+                DimensionSetEntryAppro.SetRange("No.", Rec."No.");
+                If DimensionSetEntryAppro.FindSet() then
+                    repeat
+                        If DimensionSetEntryAppro."Dimension Code" = 'CUSTOMER SEGMENT' then
+                            JobExistAppro := True;
+                    until DimensionSetEntryAppro.Next() = 0;
+                If not (JobExistAppro) then
+                    Error('Please update dimension Customer Segment');
                 Rec.TestField("ADY E-INV State Code");
                 Rec.Blocked := Rec.Blocked::" ";
+            end;
+        }
+        modify(SendApprovalRequest)
+        {
+            trigger OnBeforeAction()
+            var
+                DimensionSetEntryApproSend: Record "Default Dimension";
+                JobExistApproSend: Boolean;
+            begin
+                JobExistApproSend := False;
+                DimensionSetEntryApproSend.Reset();
+                DimensionSetEntryApproSend.SetRange("Table ID", 18);
+                DimensionSetEntryApproSend.SetRange("No.", Rec."No.");
+                If DimensionSetEntryApproSend.FindSet() then
+                    repeat
+                        If DimensionSetEntryApproSend."Dimension Code" = 'CUSTOMER SEGMENT' then
+                            JobExistApproSend := True;
+                    until DimensionSetEntryApproSend.Next() = 0;
+                If not (JobExistApproSend) then
+                    Error('Please update dimension Customer Segment');
+                Rec.TestField("ADY E-INV State Code");
             end;
         }
     }

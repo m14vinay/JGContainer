@@ -149,7 +149,6 @@ codeunit 50201 "Event Subscriber"
         WareShipLine.SetRange("Source Document", WareShipLine."Source Document"::"Sales Order");
         If WareShipLine.FindSet() then
             repeat
-
                 SalesHeader.Reset();
                 SalesHeader.SetRange("Document Type", SalesHeader."Document Type"::Order);
                 SalesHeader.SetRange("No.", WareShipLine."Source No.");
@@ -157,7 +156,6 @@ codeunit 50201 "Event Subscriber"
                     SalesHeader."Whse Ship No" := WareShipLine."No.";
                     SalesHeader.Modify(false);
                 end;
-
             until WareShipLine.Next() = 0;
 
     end;

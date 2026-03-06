@@ -268,6 +268,14 @@ report 50205 SalesCreditNoteReport
                 {
 
                 }
+                 column(UOM; "Unit of Measure Code")
+                {
+
+                }
+                  column(UnitPricePcs; "Unit Price")
+                {
+
+                }
                 column(AmountWithoutVAT; "Amount")
                 {
 
@@ -296,7 +304,7 @@ report 50205 SalesCreditNoteReport
 
                     if Type = Type::Item then begin
                         if ItemCard.Get("No.") then begin
-                            if Packsize.Get(Variant_Code) then begin
+                            if Packsize.Get(ItemCard."Pack Size") then begin
                                 Packing := Packsize."Qty Per Pack";
                             end
                             else

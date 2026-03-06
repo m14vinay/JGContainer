@@ -212,7 +212,34 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
             var
                 SalesLine: Record "Sales Line";
                 Item: Record Item;
+                DimensionSetEntryApproSend: Record "Dimension Set Entry";
+                JobExistApproSend: Boolean;
             begin
+                Rec.TestField("ADY E-INV MSIC CODE");
+                Rec.TestField("ADY E-INV SST Reg No.");
+                Rec.TestField("ADY E-INV State Code");
+                Rec.TestField("ADY E-INV Rcpt Address");
+                Rec.TestField("ADY E-INV Rcpt City");
+                Rec.TestField("ADY E-INV Rcpt Post Code");
+                Rec.TestField("ADY E-INV Rcpt County");
+                Rec.TestField("ADY E-INV Rcpt State Code");
+                Rec.TestField("ADY E-INV TTx Registration No.");
+                Rec.TestField("ADY E-INV TIN No.");
+                Rec.TestField("ADY E-INV ID Type");
+                Rec.TestField("ADY E-INV ID No.");
+                Rec.TestField("ADY E-INV Rcpt Email");
+                Rec.Testfield("ADY E-INV Rcpt Phone No.");
+                JobExistApproSend := False;
+                DimensionSetEntryApproSend.Reset();
+                DimensionSetEntryApproSend.SetRange("Dimension Set ID",Rec."Dimension Set ID");
+                If DimensionSetEntryApproSend.FindSet() then
+                    repeat
+                        If DimensionSetEntryApproSend."Dimension Code" = 'CUSTOMER SEGMENT' then
+                            JobExistApproSend := True;
+                    until DimensionSetEntryApproSend.Next() = 0;
+                If not (JobExistApproSend) then
+                    Error('Please update dimension Customer Segment');
+
                 SalesLine.Reset();
                 SalesLine.SetRange("Document Type", SalesLine."Document Type"::Order);
                 SalesLine.SetRange("Document No.", Rec."No.");

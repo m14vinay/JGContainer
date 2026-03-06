@@ -4,7 +4,7 @@ page 50213 "Transport Cost Details"
     Caption = 'Transport Cost Details';
     PageType = List;
     SourceTable = "Transport Cost Details";
-    Editable = false;
+    UsageCategory = Lists;
     DeleteAllowed = false;
     layout
     {
@@ -16,59 +16,71 @@ page 50213 "Transport Cost Details"
                 {
                     ToolTip = 'Specifies the value of the Whse Shipment No field.', Comment = '%';
                     Caption = 'Whse Shipment No.';
+                    Editable = false;
                 }
                 field("Line No."; Rec."Line No")
                 {
                     ToolTip = 'Specifies the value of the Line No. field.', Comment = '%';
                     Caption = 'Line No.';
+                    Editable = false;
                 }
                 field("No."; Rec."Item No.")
                 {
                     ToolTip = 'Specifies the number of the involved entry or record, according to the specified number series.';
                     Caption = 'Item No.';
+                    Editable = false;
                 }
                 field("Unit of Measure"; Rec."UOM")
                 {
                     ToolTip = 'Specifies the name of the item or resource''s unit of measure, such as piece or hour.';
+                    Editable = false;
                 }
                 field(Quantity; Rec.QTY)
                 {
                     ToolTip = 'Specifies the number of units of the item, general ledger account, or item charge on the line.';
+                    Editable = false;
                 }
                 field("Unit Price"; Rec.Cost)
                 {
                     ToolTip = 'Specifies the value of the Unit Price field.', Comment = '%';
                     Caption = 'Cost';
+                    
                 }
                 field("Line Amount"; Rec."Line Amount")
                 {
                     ToolTip = 'Specifies the gross weight of one unit of the item. In the sales statistics window, the gross weight on the line is included in the total gross weight of all the lines for the particular sales document.';
                     Caption = 'Line Amount';
+                    
                 }
                 field(Carrier; Rec.Carrier)
                 {
                     ToolTip = 'Specifies the number of the related project.';
                     Caption = 'Carrier';
+                    Editable = false;
                 }
                 field("Vendor No."; Rec."Vendor No.")
                 {
                     ToolTip = 'Specifies the number of the related project task.';
                     Caption = 'Vendor No.';
+                    Editable = false;
                 }
                 field(DO; Rec."DO")
                 {
                     ToolTip = 'Specifies the number of the related document.';
                     Caption = 'DO';
+                    Editable = false;
                 }
                 field("Shipment Date"; Rec."DO Date")
                 {
                     ToolTip = 'Specifies when items on the document are shipped or were shipped. A shipment date is usually calculated from a requested delivery date plus lead time.';
                     Caption = 'DO Date';
+                    Editable = false;
                 }
                 field("Sell-to Customer No."; Rec.Customer)
                 {
                     ToolTip = 'Specifies the number of the customer.';
                     Caption = 'Customer';
+                    Editable = false;
                 }
             }
         }

@@ -131,5 +131,6 @@ tableextension 50207 "Sales Header Ext" extends "Sales Header"
             Caption = 'Prices Including SST';
         }
     }
+    
 
 }
