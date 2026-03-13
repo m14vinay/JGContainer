@@ -91,11 +91,10 @@ pageextension 50224 Item extends "Item Card"
                     Rec.TestField("Item Tracking Code");
                     Rec.TestField("Production BOM No.");
                     Rec.TestField("Routing No.");
-                    Rec.TestField("Standard Cost");
+                    
                     If not (Rec."Costing Method" = Rec."Costing Method"::Standard) then
                         Error('Costing Method should be Standard');
-                    If Rec."Standard Cost" = 0 then
-                        Error('Standard Cost must have a value');
+                    
                     DimensionSetEntryAppro.Reset();
                     DimensionSetEntryAppro.SetRange("Table ID", 27);
                     DimensionSetEntryAppro.SetRange("No.", Rec."No.");
@@ -126,7 +125,7 @@ pageextension 50224 Item extends "Item Card"
                     Rec.TestField("Item Tracking Code");
                     Rec.TestField("Production BOM No.");
                     Rec.TestField("Routing No.");
-                    Rec.TestField("Standard Cost");
+                   
                     If not (Rec."Costing Method" = Rec."Costing Method"::Standard) then
                         Error('Costing Method should be Standard');
                    

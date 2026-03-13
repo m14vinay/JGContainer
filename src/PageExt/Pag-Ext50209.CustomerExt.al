@@ -123,18 +123,7 @@ pageextension 50209 "Customer Ext" extends "Customer Card"
                 DimensionSetEntryAppro: Record "Default Dimension";
                 JobExistAppro: Boolean;
             begin
-                JobExistAppro := False;
-                DimensionSetEntryAppro.Reset();
-                DimensionSetEntryAppro.SetRange("Table ID", 18);
-                DimensionSetEntryAppro.SetRange("No.", Rec."No.");
-                If DimensionSetEntryAppro.FindSet() then
-                    repeat
-                        If DimensionSetEntryAppro."Dimension Code" = 'CUSTOMER SEGMENT' then
-                            JobExistAppro := True;
-                    until DimensionSetEntryAppro.Next() = 0;
-                If not (JobExistAppro) then
-                    Error('Please update dimension Customer Segment');
-                Rec.TestField("ADY E-INV State Code");
+
                 Rec.Blocked := Rec.Blocked::" ";
             end;
         }
@@ -145,18 +134,20 @@ pageextension 50209 "Customer Ext" extends "Customer Card"
                 DimensionSetEntryApproSend: Record "Default Dimension";
                 JobExistApproSend: Boolean;
             begin
-                JobExistApproSend := False;
-                DimensionSetEntryApproSend.Reset();
-                DimensionSetEntryApproSend.SetRange("Table ID", 18);
-                DimensionSetEntryApproSend.SetRange("No.", Rec."No.");
-                If DimensionSetEntryApproSend.FindSet() then
-                    repeat
-                        If DimensionSetEntryApproSend."Dimension Code" = 'CUSTOMER SEGMENT' then
-                            JobExistApproSend := True;
-                    until DimensionSetEntryApproSend.Next() = 0;
-                If not (JobExistApproSend) then
-                    Error('Please update dimension Customer Segment');
-                Rec.TestField("ADY E-INV State Code");
+                If Rec."Customer Posting Group" = 'TRADE' then begin
+                    JobExistApproSend := False;
+                    DimensionSetEntryApproSend.Reset();
+                    DimensionSetEntryApproSend.SetRange("Table ID", 18);
+                    DimensionSetEntryApproSend.SetRange("No.", Rec."No.");
+                    If DimensionSetEntryApproSend.FindSet() then
+                        repeat
+                            If DimensionSetEntryApproSend."Dimension Code" = 'CUSTOMER SEGMENT' then
+                                JobExistApproSend := True;
+                        until DimensionSetEntryApproSend.Next() = 0;
+                    If not (JobExistApproSend) then
+                        Error('Please update dimension Customer Segment');
+                    Rec.TestField("ADY E-INV State Code");
+                end;
             end;
         }
     }
