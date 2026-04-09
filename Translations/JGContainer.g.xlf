@@ -3008,6 +3008,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order Ext - Control SST Exemption registration No. - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 1633892545 - Control 1908046867 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Reason Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order Ext - Control Reason Code - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1633892545 - Change 304272296 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
           <source>Prices Including SST</source>
           <note from="Developer" annotates="general" priority="2"></note>

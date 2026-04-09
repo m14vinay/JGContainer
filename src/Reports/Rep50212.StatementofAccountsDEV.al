@@ -174,7 +174,7 @@ report 50212 "SOA"
                 column(No1_Cust; Customer."No.")
                 {
                 }
-                column(TodayFormatted; Format(Today))
+                column(TodayFormatted; WorkDate())
                 {
                 }
                 column(StartDate; Format(StartDate))
@@ -343,8 +343,9 @@ report 50212 "SOA"
                             column(ExtDocNo_DtldCustLedgEntries; ExternalDocumentNo)
                             {
                             }
-
-
+                            column(DayDiff1; DayDiff1)
+                            {
+                            }
                             trigger OnAfterGetRecord()
                             var
                                 CustLedgerEntry: Record "Cust. Ledger Entry";
@@ -353,7 +354,8 @@ report 50212 "SOA"
                             begin
                                 if SkipReversedUnapplied("Detailed Cust. Ledg. Entry") or (Amount = 0) then
                                     CurrReport.Skip();
-
+                                
+                                Clear(DayDiff1);
                                 RemainingAmount := 0;
                                 PaidAmount := 0;
                                 PrintLine := true;
@@ -437,7 +439,9 @@ report 50212 "SOA"
                                     IsFirstPrintLine := false;
                                     ClearCompanyPicture();
                                 end;
+                                DayDiff1 := WorkDate() - "Document Date" ;
                             end;
+
                             trigger OnPreDataItem()
                             begin
                                 SetRange("Customer No.", Customer."No.");
@@ -529,11 +533,12 @@ report 50212 "SOA"
                         column(ExtDocNo_CustLedgEntry2; ExternalDocumentNo2)
                         {
                         }
+                         column(DayDiff2; DayDiff2)
+                        {
+                        }
                         column(External_Document_No_CustLedgerEntry; "External Document No.")
                         {
-
                         }
-
                         trigger OnAfterGetRecord()
                         var
                             CustLedgEntry: Record "Cust. Ledger Entry";
@@ -570,6 +575,8 @@ report 50212 "SOA"
                                 CurrReport.Skip();
 
                             ClearCompanyPicture();
+                            Clear(DayDiff2);
+                            DayDiff2 := WorkDate() - "Document Date";
                         end;
 
                         trigger OnPreDataItem()
@@ -1074,6 +1081,8 @@ report 50212 "SOA"
         CurrReportPageNoCaptionLbl: Label 'Page';
         ExternalDocumentNo: Code[35];
         ExternalDocumentNo2: Code[35];
+        DayDiff1: Integer;
+        DayDiff2: Integer;
 
     protected var
         CompanyInfo: Record "Company Information";

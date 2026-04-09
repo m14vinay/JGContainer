@@ -5,7 +5,7 @@ page 50210 "SST Exemption Details"
     PageType = List;
     SourceTable = "SST Exemption Details";
     UsageCategory = Lists;
-    
+    DeleteAllowed = false;
     layout
     {
         area(Content)

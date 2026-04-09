@@ -185,31 +185,24 @@ report 50208 SalesOrderReport
             }
             column(SalesTax; "SalesTax")
             {
-
             }
             column(AlternateBankName1; AlternateBankName1)
             {
-
             }
             column(AlternateBankName2; AlternateBankName2)
             {
-
             }
             column(AlternateBankAccountNo2; AlternateBankAccountNo2)
             {
-
             }
             column(AlternateBankAddress2; AlternateBankAddress2)
             {
-
             }
             column(AlternateBankSwiftCode2; AlternateBankSwiftCode2)
             {
-
             }
             column(AlternateBankAccountNo1; AlternateBankAccountNo1)
             {
-
             }
             column(Currency; "Currency Code")
             {
@@ -242,7 +235,7 @@ report 50208 SalesOrderReport
                 column(ItemCode; "Sales Line"."Item Reference No.")
                 {
                 }
-                column(Noofplts; "Sales Line"."Quantity")
+                column(Noofplts; Noofplts)
                 {
                 }
                 column(NoofpltsLabel; GetNoofpltsLabel())
@@ -333,6 +326,10 @@ report 50208 SalesOrderReport
                         LineNo := LineNo + 1;
                         SubTotal += "Sales Line"."Amount";
                     end;
+                    If "Unit of Measure Code" = 'PCS' then
+                       Noofplts := 0
+                    else
+                       Noofplts := Quantity;
                 end;
 
                 trigger OnPreDataItem()
@@ -426,6 +423,7 @@ report 50208 SalesOrderReport
                         Clear(BIllpostcodecitycountrycounty);
                         Clear(BIllCountry);
                     end;
+                    
                 end;
 
                 If "Ship-to Address" <> '' then
@@ -618,6 +616,7 @@ report 50208 SalesOrderReport
         ShowAmount: Decimal;
         cr: Char;
         lf: Char;
+        Noofplts : Integer;
 
     local procedure CurrencyCode(SrcCurrCode: Code[10]): Code[10]
     begin
@@ -684,12 +683,15 @@ report 50208 SalesOrderReport
         if ScrapFilterValue then
             exit("Sales Line"."Unit of Measure Code")
         else
-            exit(Format(Packing * "Sales Line"."Quantity"));
+            If "Sales Line"."Unit of Measure Code" = 'PCS' then
+                exit(Format("Sales Line"."Quantity"))
+            else
+                exit(Format(Packing * "Sales Line"."Quantity"));
     end;
 
     local procedure GetUnitPriceValue(): Decimal
     begin
-        if ScrapFilterValue then begin
+        if (ScrapFilterValue) or ("Sales Line"."Unit of Measure Code" = 'PCS') then begin
             exit("Sales Line"."Unit Price");
         end else
             exit("Sales Line"."Price Per Piece");

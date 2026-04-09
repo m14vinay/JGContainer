@@ -191,11 +191,15 @@ report 50201 DeliveryOrderReport
                 {
 
                 }
+                 column(ReturnablePallets; ReturnablePallets)
+                {
+                }
                 trigger OnAfterGetRecord()
                 var
                     ItemCard: Record Item;
                     Packsize: Record "Pack Size";
                 begin
+                    Clear(ReturnablePallets);
                     if ItemCard.Get("No.") then begin
                         Variant_Code := ItemCard."Pack Size";   // Custom field from Item
                         if Packsize.Get(Variant_Code) then begin
@@ -205,6 +209,24 @@ report 50201 DeliveryOrderReport
                             Clear(Packing);
                     end else
                         Clear(Variant_Code);  // 
+
+                     If Item.Get("No.") then
+                        If Item."Production BOM No." <> '' then begin
+                            BOMComponent.Reset();
+                            BOMComponent.SetRange("No.", Item."Production BOM No.");
+                            BOMComponent.SetRange(Status, BOMComponent.Status::Certified);
+                            If BOMComponent.FindFirst() then begin
+                                BOMLine.Reset();
+                                BOMLine.SetRange("Production BOM No.", BOMComponent."No.");
+                                If BOMLine.FindSet() then
+                                    repeat
+                                        If ItemRec.Get(BOMLine."No.") then
+                                            If ItemRec."Pallet Tracking Required" then begin
+                                                ReturnablePallets += Quantity;
+                                            end;
+                                    until BOMLine.Next() = 0;
+                            end;
+                        end;
                 end;
 
                 trigger OnPreDataItem()
@@ -350,6 +372,11 @@ report 50201 DeliveryOrderReport
         Shiptotxt: Text[100];
         cr: Char;
         lf: Char;
+         Item: Record Item;
+        ItemRec: Record Item;
+        BOMComponent: Record "Production BOM Header";
+        BOMLine: Record "Production BOM Line";
+        ReturnablePallets : Integer;
 
     local procedure CurrencyCode(SrcCurrCode: Code[10]): Code[10]
     begin

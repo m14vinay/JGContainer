@@ -131,6 +131,12 @@ tableextension 50207 "Sales Header Ext" extends "Sales Header"
             Caption = 'Prices Including SST';
         }
     }
+    trigger OnBeforeDelete()
+    begin
+        If Rec."Document Type" = Rec."Document Type"::Order then
+           Rec.TestField("Reason Code");
+       
+    end;
     
 
 }

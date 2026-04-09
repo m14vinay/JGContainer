@@ -232,7 +232,7 @@ report 50207 SalesInvoiceReport
                 {
 
                 }
-                column(Noofplts; "Quantity")
+                column(Noofplts; Noofplts)
                 {
 
                 }
@@ -342,6 +342,11 @@ report 50207 SalesInvoiceReport
                         LineNo := LineNo + 1;
                         SubTotal += "Sales Invoice Line"."Amount";
                     end;
+
+                    If "Unit of Measure Code" = 'PCS' then
+                       Noofplts := 0
+                    else
+                       Noofplts := Quantity;
                 end;
 
                 trigger OnPreDataItem()
@@ -482,9 +487,9 @@ report 50207 SalesInvoiceReport
                 SalesInvoiceLine.SetRange("Document No.", "No.");
                 SalesInvoiceLine.SetRange(Type, SalesInvoiceLine.Type::Item);
                 SalesInvoiceLine.SetFilter("VAT %", '>%1', 0);
-                if SalesInvoiceLine.FindFirst() then 
+                if SalesInvoiceLine.FindFirst() then
                     SalesTaxPercent := 'Sales Tax ' + SalesInvoiceLine."VAT %".ToText() + ' %'
-                else 
+                else
                     SalesTaxPercent := 'Sales Tax ' + '0 %';
 
                 SalesInvoiceLineShiNo.Reset();
@@ -501,7 +506,7 @@ report 50207 SalesInvoiceReport
                     if DONo = '' then
                         DONo := ShipmentNo
                     else
-                        DONo +=  Format(cr) + Format(lf) + ShipmentNo;
+                        DONo += Format(cr) + Format(lf) + ShipmentNo;
                 end;
                 SSTExemption.Reset();
                 SSTExemption.SetRange("Customer No.", "Sell-to Customer No.");
@@ -604,7 +609,7 @@ report 50207 SalesInvoiceReport
         SSTExemption: Record "SST Exemption Details";
         ScrapFilterValue: Boolean;
         UOM: Record "Unit of Measure";
-         cr: Char;
+        cr: Char;
         lf: Char;
         Billtomobileno: Text;
         BilltoPhoneNo: Text;
@@ -616,7 +621,6 @@ report 50207 SalesInvoiceReport
         CodeCheck: Codeunit 50200;
         CompanyInfo: Record "Company Information";
         GLSetup: Record "General Ledger Setup";
-
         Currency: Record Currency;
         FormatAddr: Codeunit "Format Address";
         ADYEInvCompMSICSetup: Record "ADY e-Inv Comp MSIC Setup";
@@ -631,9 +635,7 @@ report 50207 SalesInvoiceReport
         BillToAddrTxt: Text[200];
         ShipToAddrTxt: Text[200];
         Shiptotxt: Text[100];
-        
-
-
+        Noofplts : Integer;
 
     local procedure CurrencyCode(SrcCurrCode: Code[10]): Code[10]
     begin
@@ -700,13 +702,16 @@ report 50207 SalesInvoiceReport
         if ScrapFilterValue then
             exit("Sales Invoice Line"."Unit of Measure Code")
         else
-            exit(Format(Packing * "Sales Invoice Line"."Quantity"));
+            If "Sales Invoice Line"."Unit of Measure Code" = 'PCS' then
+                exit(Format("Sales Invoice Line"."Quantity"))
+            else
+                exit(Format(Packing * "Sales Invoice Line"."Quantity"));
     end;
 
 
     local procedure GetUnitPriceValue(): Decimal
     begin
-        if ScrapFilterValue then begin
+        if (ScrapFilterValue) or ("Sales Invoice Line"."Unit of Measure Code" = 'PCS') then begin
             exit("Sales Invoice Line"."Unit Price");
         end else
             exit("Sales Invoice Line"."Price Per Piece");

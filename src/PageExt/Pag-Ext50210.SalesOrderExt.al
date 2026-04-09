@@ -63,6 +63,14 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
                 ApplicationArea = All;
             }
         }
+        addafter("Completely Shipped")
+        {
+            field("Reason Code"; Rec."Reason Code")
+            {
+                ToolTip = 'Reason Code';
+                ApplicationArea = All;
+            }
+        }
         modify("VAT Bus. Posting Group")
         {
             Caption = 'SST Bus. Posting Group';

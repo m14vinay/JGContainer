@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-01-11T09:30:14.0814563Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-04-09T03:07:21.3027445Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -980,7 +980,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>="Returnable Pallet: "+Format(Sum(Fields!NoofPlts.Value))</Value>
+                                      <Value>="Returnable Pallet: "+Format(Sum(Fields!ReturnablePallets.Value))</Value>
                                       <Style>
                                         <FontSize>9pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
@@ -3829,6 +3829,9 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         </Field>
         <Field Name="Description">
           <DataField>Description</DataField>
+        </Field>
+        <Field Name="ReturnablePallets">
+          <DataField>ReturnablePallets</DataField>
         </Field>
       </Fields>
       <Query>

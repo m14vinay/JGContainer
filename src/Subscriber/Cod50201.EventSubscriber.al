@@ -101,7 +101,7 @@ codeunit 50201 "Event Subscriber"
                             TransportCostDetails.Carrier := WarehouseShipment."Carrier Code";
                             TransportCostDetails."Vendor No." := WarehouseShipment."Vendor No.";
                             TransportCostDetails."DO" := SalesShipmentLine."Document No.";
-                            TransportCostDetails."DO Date" := SalesShipmentLine."Shipment Date";
+                            TransportCostDetails."DO Date" := SalesShipmentHeader."Document Date";
                             TransportCostDetails.Customer := SalesShipmentLine."Sell-to Customer No.";
                             TransportCostDetails."Whse Shipment No." := WarehouseShipment."Whse Shipment No.";
                             TransportCostDetails.Insert();
@@ -122,7 +122,7 @@ codeunit 50201 "Event Subscriber"
                     TransportCostDetails.Carrier := WarehouseShipment."Carrier Code";
                     TransportCostDetails."Vendor No." := WarehouseShipment."Vendor No.";
                     TransportCostDetails."DO" := SalesShipmentHeader."No.";
-                    TransportCostDetails."DO Date" := SalesShipmentHeader."Shipment Date";
+                    TransportCostDetails."DO Date" := SalesShipmentHeader."Document Date";
                     TransportCostDetails.Customer := SalesShipmentHeader."Sell-to Customer No.";
                     TransportCostDetails."Whse Shipment No." := WarehouseShipment."Whse Shipment No.";
                     TransportCostDetails.Insert();
