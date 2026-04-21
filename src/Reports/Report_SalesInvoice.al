@@ -176,10 +176,7 @@ report 50207 SalesInvoiceReport
             column(TotalShowAmount; TotalShowAmount)
             {
             }
-            column(SalesTax; "SalesTax")
-            {
 
-            }
             column(AlternateBankName1; AlternateBankName1)
             {
 
@@ -235,6 +232,12 @@ report 50207 SalesInvoiceReport
                 column(Noofplts; Noofplts)
                 {
 
+                }
+                column(SalesTax; "SalesTax")
+                {
+                }
+                column(NegSalesTax; ABS(NegSalesTax))
+                {
                 }
                 column(NoofpltsLabel; GetNoofpltsLabel())
                 {
@@ -306,8 +309,13 @@ report 50207 SalesInvoiceReport
                     Packsize: Record "Pack Size";
                     SalesPrice: Record "Sales Price";
                 begin
+                    Clear(SalesTax);
+                    Clear(NegSalesTax);
                     ShowAmount := "Line Amount";
-                    SalesTax := "Amount Including VAT" - "Amount";
+                    If "Amount Including VAT" > 0 then
+                        SalesTax := "Amount Including VAT" - "Amount"
+                    else
+                        NegSalesTax := "Amount Including VAT" - "Amount";
                     TotalShowAmount := ShowAmount + TotalShowAmount + SalesTax;
 
                     if Type = Type::Item then begin
@@ -344,9 +352,9 @@ report 50207 SalesInvoiceReport
                     end;
 
                     If "Unit of Measure Code" = 'PCS' then
-                       Noofplts := 0
+                        Noofplts := 0
                     else
-                       Noofplts := Quantity;
+                        Noofplts := Quantity;
                 end;
 
                 trigger OnPreDataItem()
@@ -485,7 +493,7 @@ report 50207 SalesInvoiceReport
                 end;
 
                 SalesInvoiceLine.SetRange("Document No.", "No.");
-                SalesInvoiceLine.SetRange(Type, SalesInvoiceLine.Type::Item);
+                SalesInvoiceLine.SetFilter(Type, '<>%1', SalesInvoiceLine.Type::" ");
                 SalesInvoiceLine.SetFilter("VAT %", '>%1', 0);
                 if SalesInvoiceLine.FindFirst() then
                     SalesTaxPercent := 'Sales Tax ' + SalesInvoiceLine."VAT %".ToText() + ' %'
@@ -614,6 +622,7 @@ report 50207 SalesInvoiceReport
         Billtomobileno: Text;
         BilltoPhoneNo: Text;
         SalesTax: Decimal;
+        NegSalesTax: Decimal;
         ShipCountry: text;
         BIllCountry: Text;
         AmountInWords: text;
@@ -635,7 +644,7 @@ report 50207 SalesInvoiceReport
         BillToAddrTxt: Text[200];
         ShipToAddrTxt: Text[200];
         Shiptotxt: Text[100];
-        Noofplts : Integer;
+        Noofplts: Integer;
 
     local procedure CurrencyCode(SrcCurrCode: Code[10]): Code[10]
     begin

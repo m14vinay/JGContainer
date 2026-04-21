@@ -34,7 +34,7 @@ report 50212 "SOA"
             {
 
             }
-            column(Currency_Code; "Currency Code")
+            column(Currency_Code; CurrencyCode)
             {
 
             }
@@ -174,7 +174,7 @@ report 50212 "SOA"
                 column(No1_Cust; Customer."No.")
                 {
                 }
-                column(TodayFormatted; WorkDate())
+                column(TodayFormatted; EndDate)
                 {
                 }
                 column(StartDate; Format(StartDate))
@@ -354,7 +354,7 @@ report 50212 "SOA"
                             begin
                                 if SkipReversedUnapplied("Detailed Cust. Ledg. Entry") or (Amount = 0) then
                                     CurrReport.Skip();
-                                
+
                                 Clear(DayDiff1);
                                 RemainingAmount := 0;
                                 PaidAmount := 0;
@@ -371,6 +371,7 @@ report 50212 "SOA"
                                             RemainingAmount := CustLedgerEntry."Remaining Amount";
 
                                             // Skip entries where Outstanding Amount = 0 (fully paid)
+                                            // If CustLedgerEntry."Document Type" = CustLedgerEntry."Document Type"::Invoice then
                                             if RemainingAmount = 0 then
                                                 CurrReport.Skip();
 
@@ -378,9 +379,9 @@ report 50212 "SOA"
                                             // For invoices (positive amounts): PaidAmount = Amount - RemainingAmount
                                             // For credit memos (negative amounts): PaidAmount = Amount - RemainingAmount (will be negative or zero)
                                             if Amount >= 0 then
-                                                PaidAmount := Amount - RemainingAmount
+                                                PaidAmount := "Amount" - RemainingAmount
                                             else
-                                                PaidAmount := Amount - RemainingAmount; // For credit memos
+                                                PaidAmount := "Amount" - RemainingAmount; // For credit memos
 
                                         end;
                                     "Entry Type"::Application:
@@ -439,7 +440,7 @@ report 50212 "SOA"
                                     IsFirstPrintLine := false;
                                     ClearCompanyPicture();
                                 end;
-                                DayDiff1 := WorkDate() - "Document Date" ;
+                                DayDiff1 := WorkDate() - "Document Date";
                             end;
 
                             trigger OnPreDataItem()
@@ -533,7 +534,7 @@ report 50212 "SOA"
                         column(ExtDocNo_CustLedgEntry2; ExternalDocumentNo2)
                         {
                         }
-                         column(DayDiff2; DayDiff2)
+                        column(DayDiff2; DayDiff2)
                         {
                         }
                         column(External_Document_No_CustLedgerEntry; "External Document No.")
@@ -592,6 +593,8 @@ report 50212 "SOA"
                     trigger OnAfterGetRecord()
                     var
                         CustLedgerEntry: Record "Cust. Ledger Entry";
+                        CustLedgerEntryPayCN: Record "Cust. Ledger Entry";
+                        CustLedgerEntryAppliedEntry: Record "Cust. Ledger Entry";
                     begin
                         if Number = 1 then
                             TempCurrency2.FindSet();
@@ -613,6 +616,22 @@ report 50212 "SOA"
                         Cust2.CalcFields("Net Change");
                         StartBalance := Cust2."Net Change";
                         CustBalance := Cust2."Net Change";
+                        CustLedgerEntryPayCN.Reset();
+                        CustLedgerEntryPayCN.SetRange("Customer No.", Customer."No.");
+                        CustLedgerEntryPayCN.SetRange("Posting Date", StartDate, EndDate);
+                        CustLedgerEntryPayCN.SETFILTER(CustLedgerEntryPayCN."Document Type", '%1|%2', CustLedgerEntryPayCN."Document Type"::"Credit Memo", CustLedgerEntryPayCN."Document Type"::Payment);
+                        CustLedgerEntryPayCN.SetRange("Remaining Amount", 0);
+                        If CustLedgerEntryPayCN.FindSet() then
+                            repeat
+                                CustLedgerEntryAppliedEntry.Reset();
+                                CustLedgerEntryAppliedEntry.SetRange("Closed by Entry No.", CustLedgerEntryPayCN."Entry No.");
+                                CustLedgerEntryAppliedEntry.SetRange("Posting Date", 0D, StartDate);
+                                If CustLedgerEntryAppliedEntry.FindSet() then
+                                    repeat
+                                        StartBalance -= CustLedgerEntryAppliedEntry."Closed by Amount";
+                                        CustBalance -= CustLedgerEntryAppliedEntry."Closed by Amount";
+                                    until CustLedgerEntryAppliedEntry.Next() = 0;
+                            until CustLedgerEntryPayCN.Next() = 0;
                     end;
 
                     trigger OnPreDataItem()
@@ -707,6 +726,7 @@ report 50212 "SOA"
             trigger OnAfterGetRecord()
             var
                 CustLedgerEntry: Record "Cust. Ledger Entry";
+                
             begin
                 TempAgingBandBuf.DeleteAll();
                 CurrReport.Language := LanguageMgt.GetLanguageIdOrDefault("Language Code");
@@ -729,6 +749,11 @@ report 50212 "SOA"
                 PrintedCustomersList.Add("No.");
 
                 IsFirstLoop := false;
+
+                If "Currency Code" = '' then
+                  CurrencyCode := GLSetup."LCY Code"
+                else
+                  CurrencyCode := "Currency Code";
             end;
 
             trigger OnPreDataItem()
@@ -1091,6 +1116,7 @@ report 50212 "SOA"
         CompanyInfo3: Record "Company Information";
         ADYEInvCompMSICSetup: Record "ADY e-Inv Comp MSIC Setup";
         CompanyMSICCode: Code[20];
+        CurrencyCode: Code[20];
 
     local procedure GetDate(PostingDate: Date; DueDate: Date): Date
     begin

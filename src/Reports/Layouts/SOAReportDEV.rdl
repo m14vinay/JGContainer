@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-04-08T01:46:33.3285274Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-04-16T02:15:23.4783921Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -5428,7 +5428,7 @@ Cstr(Fields!CustBalanceCaption.Value)
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>MYR</Value>
+                          <Value>=First(Fields!Currency_Code.Value, "DataSet_Result")</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>9pt</FontSize>

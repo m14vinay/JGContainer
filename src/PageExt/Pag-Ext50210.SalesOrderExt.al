@@ -92,6 +92,22 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
             Caption = 'Prices Including SST';
             Visible = false;
         }
+        /* modify("Invoice Details")
+         {
+             Editable = InvoiceDetailsEditable;
+         }
+          modify("Shipping and Billing")
+         {
+             Editable = InvoiceDetailsEditable;
+         }
+         modify(General)
+         {
+             Editable = InvoiceDetailsEditable;
+         }
+           modify(Control1900201301)
+         {
+             Editable = InvoiceDetailsEditable;
+         }*/
     }
     actions
     {
@@ -239,7 +255,7 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
                 Rec.Testfield("ADY E-INV Rcpt Phone No.");
                 JobExistApproSend := False;
                 DimensionSetEntryApproSend.Reset();
-                DimensionSetEntryApproSend.SetRange("Dimension Set ID",Rec."Dimension Set ID");
+                DimensionSetEntryApproSend.SetRange("Dimension Set ID", Rec."Dimension Set ID");
                 If DimensionSetEntryApproSend.FindSet() then
                     repeat
                         If DimensionSetEntryApproSend."Dimension Code" = 'CUSTOMER SEGMENT' then
@@ -257,19 +273,45 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
                     repeat
                         If SalesLine."ADY E-INV Classification Code" = '' then
                             Error('Classification Code must have value in sales line');
-                        If Item.Get(SalesLine."No.") then
-                            If Item."Allow Negative Amount" then
-                                If SalesLine."Line Amount" > 0 then
-                                    Error('Transport Discount amount should be negative');
+                        If Item.Get(SalesLine."No.") then;
+                        If Item."Allow Negative Amount" then
+                            If SalesLine."Line Amount" > 0 then
+                                Error('Transport Discount amount should be negative');
+                        Item.CalcFields("Assembly BOM");
+                        If Item."Assembly BOM" then begin
+                            If SalesLine."Qty. to Assemble to Order" = 0 then
+                                Error('Qty. to Assemble to Order must have a value');
+                            If SalesLine."Item Category Code" = '' then
+                                Error('Item Category Code must have a value');
+                            JobExistApproSend := False;
+                            DimensionSetEntryApproSend.Reset();
+                            DimensionSetEntryApproSend.SetRange("Dimension Set ID", SalesLine."Dimension Set ID");
+                            If DimensionSetEntryApproSend.FindSet() then
+                                repeat
+                                    If DimensionSetEntryApproSend."Dimension Code" = 'ITEM CATEGORY' then
+                                        JobExistApproSend := True;
+                                until DimensionSetEntryApproSend.Next() = 0;
+                            If not (JobExistApproSend) then
+                                Error('Please update dimension Item Category for item %1',SalesLine."No.");
+                        end;
                     until SalesLine.Next() = 0;
             end;
         }
     }
+
     trigger OnAfterGetRecord()
     begin
         DeliveryAreaEditable := True;
+        InvoiceDetailsEditable := True;
         If Rec."Ship-to Code" <> '' then
             DeliveryAreaEditable := false;
+        If Rec.Ship then
+            InvoiceDetailsEditable := false;
+    end;
+
+    trigger OnOpenPage()
+    begin
+        InvoiceDetailsEditable := True;
     end;
 
     trigger OnModifyRecord(): Boolean
@@ -279,6 +321,13 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
             DeliveryAreaEditable := false;
     end;
 
+    Procedure CheckShip()
+    begin
+        If Rec.Ship then
+            Error('Cannot change after shipping');
+    end;
+
     var
         DeliveryAreaEditable: Boolean;
+        InvoiceDetailsEditable: Boolean;
 }
