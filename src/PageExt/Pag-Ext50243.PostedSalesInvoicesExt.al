@@ -6,7 +6,7 @@ pageextension 50243 "Posted Sales Invoices Ext" extends "Posted Sales Invoices"
             Caption = 'Amount Including SST';
         }
     }
-    actions
+    /*actions
     {
         modify("Print")
         {
@@ -19,5 +19,5 @@ pageextension 50243 "Posted Sales Invoices Ext" extends "Posted Sales Invoices"
                 Report.RunModal(Report::"SalesInvoiceReport", true, true, SalesInvoiceHeader);
             end;
         }
-    }
+    }*/
 }

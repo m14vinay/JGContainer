@@ -16,12 +16,12 @@ pageextension 50203 "Sales Line Subform" extends "Sales Order Subform"
             {
                 ApplicationArea = All;
             }
-             field("Container No."; Rec."Container No.")
+            field("Container No."; Rec."Container No.")
             {
                 ApplicationArea = All;
                 ToolTip = 'Specifies the Container No.';
             }
-             field(Seal; Rec.Seal)
+            field(Seal; Rec.Seal)
             {
                 ApplicationArea = All;
                 ToolTip = 'Specifies the Seal';
@@ -36,30 +36,44 @@ pageextension 50203 "Sales Line Subform" extends "Sales Order Subform"
         {
             Visible = true;
         }
-         modify("VAT Bus. Posting Group")
+        modify("VAT Bus. Posting Group")
         {
             Caption = 'SST Bus. Posting Group';
         }
-         modify("VAT Prod. Posting Group")
+        modify("VAT Prod. Posting Group")
         {
             Caption = 'SST Prod. Posting Group';
         }
         modify("Total VAT Amount")
         {
             Caption = 'Total SST';
-            CaptionClass = Rec.GetCaptionWithCurrencyCode('Total SST',Currency.Code);;
+            CaptionClass = Rec.GetCaptionWithCurrencyCode('Total SST', Currency.Code);
+            ;
         }
         modify("Total Amount Excl. VAT")
         {
             Caption = 'Total Excl. SST';
-            CaptionClass = Rec.GetCaptionWithCurrencyCode('Total Excl. SST',Currency.Code);
+            CaptionClass = Rec.GetCaptionWithCurrencyCode('Total Excl. SST', Currency.Code);
         }
         modify("Total Amount Incl. VAT")
         {
             Caption = 'Total Incl. SST';
-            CaptionClass = Rec.GetCaptionWithCurrencyCode('Total Incl. SST',Currency.Code);
+            CaptionClass = Rec.GetCaptionWithCurrencyCode('Total Incl. SST', Currency.Code);
         }
-        movebefore("Qty. to Assemble to Order";"Blanket Order No.")
-        movebefore("Qty. to Assemble to Order";"Blanket Order Line No.")
+        movebefore("Qty. to Assemble to Order"; "Blanket Order No.")
+        movebefore("Qty. to Assemble to Order"; "Blanket Order Line No.")
+        modify("Unit Price")
+        {
+            trigger OnBeforeValidate()
+            var
+                ItemRec: Record Item;
+            begin
+                If ItemRec.Get(Rec."No.") then
+                    If ItemRec."Item Category Code" = 'FG' then
+                        Error('Cannot update unit price in OC for Finished Goods');
+            end;
+        }
     }
+
+
 }

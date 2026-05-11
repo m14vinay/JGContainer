@@ -1533,6 +1533,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report RM Item Label Print - Control NoofCopies - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 4034894651 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Invoice</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Sales Invoice - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4034894651 - Control 3603683837 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Filter sales invoices by scrap status.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Sales Invoice - Control ScrapFilter - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 4034894651 - Control 3603683837 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Scrap</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Sales Invoice - Control ScrapFilter - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 1187637088 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sales Quotation Report</source>
           <note from="Developer" annotates="general" priority="2"></note>

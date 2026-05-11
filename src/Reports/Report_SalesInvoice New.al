@@ -1,7 +1,7 @@
-report 50216 SalesInvoiceReport
+report 50207 "Sales Invoice"
 {
     DefaultLayout = RDLC;
-    RDLCLayout = './src/Reports/Layouts/SalesInvoiceReport_v1.rdl';
+    RDLCLayout = './src/Reports/Layouts/SalesInvoice.rdl';
     Caption = 'Sales Invoice';
     ApplicationArea = Suite;
     UsageCategory = Documents;
@@ -11,6 +11,7 @@ report 50216 SalesInvoiceReport
     {
         dataitem("Sales Invoice Header"; "Sales Invoice Header")
         {
+            RequestFilterFields = "No.";
             column(PrintName; CompanyInfo."Print Name")
             {
             }
@@ -213,25 +214,22 @@ report 50216 SalesInvoiceReport
             column(Currency_Code; Currency_Code) { }
             column(GTINQRCode; "ADY E-INV QR Code") { }
             column(AmountIncludingVAT; "Amount Including VAT") { }
+            column(PrepaymentAmount; -1 * PrepaymentAmount) { }
             dataitem("Sales Invoice Line"; "Sales Invoice Line")
             {
                 DataItemLink = "Document No." = field("No.");
                 DataItemLinkReference = "Sales Invoice Header";
                 column(Type; "Type")
                 {
-
                 }
                 column(Variant_Code; Variant_Code)
                 {
-
                 }
                 column(ItemCode; "Item Reference No.")
                 {
-
                 }
                 column(Noofplts; Noofplts)
                 {
-
                 }
                 column(SalesTax; "SalesTax")
                 {
@@ -241,63 +239,48 @@ report 50216 SalesInvoiceReport
                 }
                 column(NoofpltsLabel; GetNoofpltsLabel())
                 {
-
                 }
                 column(UnitPrice; "Price Per Piece")
                 {
-
                 }
                 column(UnitPriceLabel; GetUnitPriceLabel())
                 {
-
                 }
                 column(UnitPriceValue; GetUnitPriceValue())
                 {
-
                 }
                 column(Packing; Packing)
                 {
-
                 }
                 column(Quantity; "Quantity")
                 {
-
                 }
                 column(QuantityPcsLabel; GetQuantityPcsLabel())
                 {
-
                 }
                 column(QuantityPcsValue; GetQuantityPcsValue())
                 {
-
                 }
                 column(No_; "Shortcut Dimension 2 Code")
                 {
-
                 }
                 column(SalesHeaderNo_; "Order No.")
                 {
                 }
-
                 column(Description; "Description")
                 {
-
                 }
                 column(Amount; "Line Amount")
                 {
-
                 }
                 column(AmountWithoutVAT; "Amount")
                 {
-
                 }
                 column(IsCharge; IsCharge)
                 {
-
                 }
                 column(SubTotal; SubTotal)
                 {
-
                 }
                 column(LineNo; LineNo)
                 {
@@ -348,7 +331,8 @@ report 50216 SalesInvoiceReport
 
                     if not IsCharge then begin
                         LineNo := LineNo + 1;
-                        SubTotal += "Sales Invoice Line"."Amount";
+                        If Amount > 0 then
+                            SubTotal += "Sales Invoice Line"."Amount";
                     end;
 
                     If "Unit of Measure Code" = 'PCS' then
@@ -361,7 +345,7 @@ report 50216 SalesInvoiceReport
                 begin
                     "Sales Invoice Line".SetRange("Document No.", "Sales Invoice Header"."No.");
                     "Sales Invoice Line".SetFilter("Sales Invoice Line".Type, '<>%1', "Sales Invoice Line".Type::" ");
-
+                    //"Sales Invoice Line".SetFilter("Amount Including VAT", '>%1', 0);
 
                 end;
             }
@@ -521,6 +505,15 @@ report 50216 SalesInvoiceReport
                 SSTExemption.SetRange("SST Exemption Registration No.", "SST Exemption Registration No.");
                 If SSTExemption.FindFirst() then
                     EffectiveDate := SSTExemption."Effective Date";
+                PrepaymentAmount := 0;
+                SalesInvoiceLinePrep.Reset();
+                SalesInvoiceLinePrep.SetRange("Document No.", "No.");
+                SalesInvoiceLinePrep.SetRange(Type, SalesInvoiceLinePrep.Type::"G/L Account");
+                SalesInvoiceLinePrep.SetFilter("Amount Including VAT", '<%1', 0);
+                If SalesInvoiceLinePrep.FindSet() then
+                    repeat
+                        PrepaymentAmount += ABS(SalesInvoiceLinePrep."Amount Including VAT");
+                    until SalesInvoiceLinePrep.Next() = 0;
             end;
 
             trigger OnPreDataItem()
@@ -645,6 +638,8 @@ report 50216 SalesInvoiceReport
         ShipToAddrTxt: Text[200];
         Shiptotxt: Text[100];
         Noofplts: Integer;
+        SalesInvoiceLinePrep: Record "Sales Invoice Line";
+        PrepaymentAmount: Decimal;
 
     local procedure CurrencyCode(SrcCurrCode: Code[10]): Code[10]
     begin
