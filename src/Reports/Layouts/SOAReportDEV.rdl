@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-04-16T02:15:23.4783921Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-05-12T06:59:00.2222161Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -125,7 +125,8 @@ Cstr(Fields!Desc_CustLedgEntry2Caption.Value) + Chr(177) +
 Cstr(Fields!DueDate_CustLedgEntry2Caption.Value) + Chr(177) + 
 Cstr(Fields!OriginalAmt_CustLedgEntry2Caption.Value) + Chr(177) + 
 Cstr(Fields!RemainAmtCustLedgEntry2Caption.Value) + Chr(177) + 
-Cstr(Fields!CustBalanceCaption.Value)
+Cstr(Fields!CustBalanceCaption.Value) + Chr(177) + 
+Cstr(Fields!Currency_Code.Value)
 , 1)</Hidden>
                                             </Visibility>
                                             <Style>
@@ -5428,7 +5429,7 @@ Cstr(Fields!CustBalanceCaption.Value)
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!Currency_Code.Value, "DataSet_Result")</Value>
+                          <Value>=Code.GetData(54,1)</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>9pt</FontSize>

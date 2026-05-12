@@ -10,6 +10,10 @@ tableextension 50222 "User Setup" extends "User Setup"
                                                           Blocked = const(false));
 
         }
+        field(50201; "Allowed to Change COA"; Boolean)
+        {
+            Caption = 'Allowed to Change COA';
+        }
         modify("Allow VAT Date From")
         {
             Caption = 'Allow SST Date From';

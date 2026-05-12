@@ -5,7 +5,12 @@ pageextension 50229 "User Setup" extends "User Setup"
         {
             field("Shortcut Dimension 1 Code"; Rec."Shortcut Dimension 1 Code")
             {
-                ToolTip = 'Specifies whether the pallet tracking required for the item';
+                ToolTip = 'Specifies Dimension Department';
+                ApplicationArea = All;
+            }
+            field("Allowed to Change COA"; Rec."Allowed to Change COA")
+            {
+                ToolTip = 'Specifies Allowed to Change COA';
                 ApplicationArea = All;
             }
         }

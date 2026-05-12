@@ -749,7 +749,7 @@ report 50212 "SOA"
                 PrintedCustomersList.Add("No.");
 
                 IsFirstLoop := false;
-
+                Clear(CurrencyCode);
                 If "Currency Code" = '' then
                   CurrencyCode := GLSetup."LCY Code"
                 else

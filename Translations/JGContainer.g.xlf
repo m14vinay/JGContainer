@@ -3478,8 +3478,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension User Setup - Change Allow VAT To - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 337631938 - Control 177993852 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
+          <source>Specifies Allowed to Change COA</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension User Setup - Control Allowed to Change COA - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 337631938 - Control 1577567912 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
-          <source>Specifies whether the pallet tracking required for the item</source>
+          <source>Specifies Dimension Department</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension User Setup - Control Shortcut Dimension 1 Code - Property ToolTip</note>
         </trans-unit>
@@ -4907,6 +4912,11 @@
           <source>SST Registration No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Shipment Hdr - Change VAT Registration No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 337631938 - Field 177993852 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>Allowed to Change COA</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup - Field Allowed to Change COA - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 337631938 - Field 1577567912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>Shortcut Dimension 1 Code</source>

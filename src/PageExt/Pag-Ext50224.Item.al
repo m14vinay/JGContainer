@@ -56,6 +56,16 @@ pageextension 50224 Item extends "Item Card"
         {
             Caption = 'Price Includes SST';
         }
+        modify(PreventNegInventoryDefaultNo)
+        {
+            Visible = false; 
+            Editable = false;
+        }
+         modify(PreventNegInventoryDefaultYes)
+        {
+            Visible = false;
+            Editable = false;
+        }
     }
     actions
     {

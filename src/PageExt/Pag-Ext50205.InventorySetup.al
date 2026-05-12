@@ -18,7 +18,10 @@ pageextension 50205 "Inventory Setup" extends "Inventory Setup"
                 ToolTip = 'Specifies MR No.';
             }
         }
-        
+        modify("Prevent Negative Inventory")
+        {
+            Editable = false;
+        }
        
     }
 }
