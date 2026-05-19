@@ -6,7 +6,7 @@ report 50207 "Sales Invoice"
     ApplicationArea = Suite;
     UsageCategory = Documents;
     WordMergeDataItem = "Sales Invoice Header";
-
+    EnableHyperlinks = true;
     dataset
     {
         dataitem("Sales Invoice Header"; "Sales Invoice Header")
@@ -215,6 +215,9 @@ report 50207 "Sales Invoice"
             column(GTINQRCode; "ADY E-INV QR Code") { }
             column(AmountIncludingVAT; "Amount Including VAT") { }
             column(PrepaymentAmount; -1 * PrepaymentAmount) { }
+            column(TermsandConditions; SalesReceivablesSetup."Terms and Conditions Sales") { 
+            }
+            column(TermsQRCode; TermsQRCode) { }
             dataitem("Sales Invoice Line"; "Sales Invoice Line")
             {
                 DataItemLink = "Document No." = field("No.");
@@ -514,6 +517,12 @@ report 50207 "Sales Invoice"
                     repeat
                         PrepaymentAmount += ABS(SalesInvoiceLinePrep."Amount Including VAT");
                     until SalesInvoiceLinePrep.Next() = 0;
+                BarcodeFontProvider := Enum::"Barcode Font Provider"::IDAutomation1D;
+                BarcodeFontProvider2D := Enum::"Barcode Font Provider 2D"::IDAutomation2D;
+                TermsString := Format(SalesReceivablesSetup."Terms and Conditions Sales");
+                TermsString := DelChr(TermsString, '=', ' ');
+                BarcodeFontProvider.ValidateInput(TermsString, BarcodeSymbology);
+                TermsQRCode := BarcodeFontProvider2D.EncodeFont(TermsString, BarcodeSymbology2D);
             end;
 
             trigger OnPreDataItem()
@@ -577,7 +586,9 @@ report 50207 "Sales Invoice"
         CompanyInfo.SetAutoCalcFields("Company Logo 1");
         CompanyInfo.SetAutoCalcFields("Company Logo 2");
         CompanyInfo.SetAutoCalcFields("Company Logo 3");
-
+        SalesReceivablesSetup.Get();
+        BarcodeSymbology := Enum::"Barcode Symbology"::Code128;
+        BarcodeSymbology2D := Enum::"Barcode Symbology 2D"::"QR-Code";
 
     end;
 
@@ -640,6 +651,14 @@ report 50207 "Sales Invoice"
         Noofplts: Integer;
         SalesInvoiceLinePrep: Record "Sales Invoice Line";
         PrepaymentAmount: Decimal;
+        SalesReceivablesSetup : Record "Sales & Receivables Setup";
+        TermsString: Text[150];
+        TermsQRCode: Text[500];
+        BarcodeSymbology: Enum "Barcode Symbology";
+        BarcodeSymbology2D: Enum "Barcode Symbology 2D";
+        BarcodeFontProvider: Interface "Barcode Font Provider";
+        BarcodeFontProvider2D: Interface "Barcode Font Provider 2D";
+
 
     local procedure CurrencyCode(SrcCurrCode: Code[10]): Code[10]
     begin

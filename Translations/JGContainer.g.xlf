@@ -3298,6 +3298,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Receivables Setup Ext - Control Proforma Invoice Nos. - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 307354779 - Control 3688000690 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4145206282">
+          <source>Specifies Terms and Conditions Sales</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Receivables Setup Ext - Control Terms and Conditions Sales - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 307354779 - Change 1232104226 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4145206282">
           <source>SST Bus. Posting Gr. (Price)</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4822,6 +4827,11 @@
           <source>SST Exempted Business Posting Group</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Receivables Setup - Field SST Exempted BPG - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2691068236 - Field 3688000690 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4145206282">
+          <source>Terms and Conditions Sales</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Receivables Setup - Field Terms and Conditions Sales - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2691068236 - Change 1064988743 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4145206282">
           <source>Allow SST Difference</source>

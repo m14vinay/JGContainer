@@ -26,6 +26,11 @@ tableextension 50202 "Sales Receivables Setup" extends "Sales & Receivables Setu
             DataClassification = CustomerContent;
             TableRelation = "No. Series".Code;
         }
+        field(50204; "Terms and Conditions Sales"; Text[150])
+        {
+            Caption = 'Terms and Conditions Sales';
+            ExtendedDatatype = URL;
+        }
         modify("VAT Bus. Posting Gr. (Price)")
         {
             Caption = 'SST Bus. Posting Gr. (Price)';

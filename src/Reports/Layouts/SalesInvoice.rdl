@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-04-24T07:15:13.8448849Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-05-19T01:48:10.6745305Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -4454,7 +4454,7 @@
           <Style />
         </PageHeader>
         <PageFooter>
-          <Height>1.12024cm</Height>
+          <Height>0.97691cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -4475,7 +4475,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox10</rd:DefaultName>
-              <Top>0.3175cm</Top>
+              <Top>0.254cm</Top>
               <Left>0.12887cm</Left>
               <Height>0.37013cm</Height>
               <Width>13.67794cm</Width>
@@ -4505,7 +4505,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox4</rd:DefaultName>
-              <Top>0.3175cm</Top>
+              <Top>0.254cm</Top>
               <Left>14.10723cm</Left>
               <Height>0.37013cm</Height>
               <Width>4.87097cm</Width>
@@ -4859,6 +4859,12 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         </Field>
         <Field Name="PrepaymentAmountFormat">
           <DataField>PrepaymentAmountFormat</DataField>
+        </Field>
+        <Field Name="TermsandConditions">
+          <DataField>TermsandConditions</DataField>
+        </Field>
+        <Field Name="TermsQRCode">
+          <DataField>TermsQRCode</DataField>
         </Field>
         <Field Name="Type">
           <DataField>Type</DataField>

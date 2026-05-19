@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-03-04T06:15:11.4839603Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-05-15T03:39:43.9224290Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -855,7 +855,6 @@
                                               <PaddingBottom>2pt</PaddingBottom>
                                             </Style>
                                           </Textbox>
-                                          <rd:Selected>true</rd:Selected>
                                         </CellContents>
                                       </TablixCell>
                                       <TablixCell>
@@ -918,7 +917,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=If(Fields!UOM.Value="PCS",Fields!UnitPricePcs.Value,Fields!UnitPrice.Value)</Value>
+                                                    <Value>=If(Fields!UOM.Value="PLT",Fields!UnitPrice.Value,Fields!UnitPricePcs.Value)</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <Format>#,0.0000;(#,0.0000)</Format>
@@ -943,6 +942,7 @@
                                               <PaddingBottom>2pt</PaddingBottom>
                                             </Style>
                                           </Textbox>
+                                          <rd:Selected>true</rd:Selected>
                                         </CellContents>
                                       </TablixCell>
                                       <TablixCell>

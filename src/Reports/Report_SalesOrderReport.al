@@ -6,7 +6,7 @@ report 50208 SalesOrderReport
     ApplicationArea = Suite;
     UsageCategory = Documents;
     WordMergeDataItem = "Sales Header";
-
+    EnableHyperlinks = True;
     dataset
     {
         dataitem("Sales Header"; "Sales Header")
@@ -204,21 +204,15 @@ report 50208 SalesOrderReport
             column(AlternateBankAccountNo1; AlternateBankAccountNo1)
             {
             }
-            column(Currency; "Currency Code")
-            {
-
-            }
-            column(SSTExemption; "SST Exemption registration No.")
-            {
-
-            }
+            column(Currency; "Currency Code") { }
+            column(SSTExemption; "SST Exemption registration No.") { }
             column(EffectiveDate; Format(EffectiveDate, 0, '<day,2>.<month,2>.<year4>')) { }
-            column(SalesTaxPercent; SalesTaxPercent)
-            {
-            }
+            column(SalesTaxPercent; SalesTaxPercent) { }
             column(Currency_Code; Currency_Code) { }
             column(OwnCollectTxt; OwnCollectTxt) { }
             column(AmountIncldingVAT; "Sales Header"."Amount Including VAT") { }
+            column(TermsandConditions; SalesReceivablesSetup."Terms and Conditions Sales") { }
+            column(TermsQRCode; TermsQRCode) { }
             dataitem("Sales Line"; "Sales Line")
             {
                 DataItemLink = "Document No." = field("No.");
@@ -327,9 +321,9 @@ report 50208 SalesOrderReport
                         SubTotal += "Sales Line"."Amount";
                     end;
                     If "Unit of Measure Code" = 'PCS' then
-                       Noofplts := 0
+                        Noofplts := 0
                     else
-                       Noofplts := Quantity;
+                        Noofplts := Quantity;
                 end;
 
                 trigger OnPreDataItem()
@@ -423,7 +417,7 @@ report 50208 SalesOrderReport
                         Clear(BIllpostcodecitycountrycounty);
                         Clear(BIllCountry);
                     end;
-                    
+
                 end;
 
                 If "Ship-to Address" <> '' then
@@ -491,6 +485,13 @@ report 50208 SalesOrderReport
                 If SSTExemption.FindFirst() then
                     EffectiveDate := SSTExemption."Effective Date";
 
+                BarcodeFontProvider := Enum::"Barcode Font Provider"::IDAutomation1D;
+                BarcodeFontProvider2D := Enum::"Barcode Font Provider 2D"::IDAutomation2D;
+                TermsString := Format(SalesReceivablesSetup."Terms and Conditions Sales");
+                TermsString := DelChr(TermsString, '=', ' ');
+                BarcodeFontProvider.ValidateInput(TermsString, BarcodeSymbology);
+                TermsQRCode := BarcodeFontProvider2D.EncodeFont(TermsString, BarcodeSymbology2D);
+
             end;
 
             trigger OnPreDataItem()
@@ -531,8 +532,6 @@ report 50208 SalesOrderReport
 
     requestpage
     {
-        SaveValues = true;
-
         layout
         {
             area(content)
@@ -559,6 +558,9 @@ report 50208 SalesOrderReport
         CompanyInfo.SetAutoCalcFields("Company Logo 1");
         CompanyInfo.SetAutoCalcFields("Company Logo 2");
         CompanyInfo.SetAutoCalcFields("Company Logo 3");
+        BarcodeSymbology := Enum::"Barcode Symbology"::Code128;
+        BarcodeSymbology2D := Enum::"Barcode Symbology 2D"::"QR-Code";
+        SalesReceivablesSetup.Get();
     end;
 
     var
@@ -616,7 +618,14 @@ report 50208 SalesOrderReport
         ShowAmount: Decimal;
         cr: Char;
         lf: Char;
-        Noofplts : Integer;
+        Noofplts: Integer;
+        SalesReceivablesSetup: Record "Sales & Receivables Setup";
+        TermsString: Text[150];
+        TermsQRCode: Text[500];
+        BarcodeSymbology: Enum "Barcode Symbology";
+        BarcodeSymbology2D: Enum "Barcode Symbology 2D";
+        BarcodeFontProvider: Interface "Barcode Font Provider";
+        BarcodeFontProvider2D: Interface "Barcode Font Provider 2D";
 
     local procedure CurrencyCode(SrcCurrCode: Code[10]): Code[10]
     begin

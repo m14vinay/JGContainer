@@ -1,6 +1,7 @@
 pageextension 50207 "Sales Receivables Setup Ext" extends "Sales & Receivables Setup"
 {
-    layout{
+    layout
+    {
         addafter("Payment Discount Reason Code")
         {
             field("SST Exempted BPG"; Rec."SST Exempted BPG")
@@ -21,21 +22,30 @@ pageextension 50207 "Sales Receivables Setup Ext" extends "Sales & Receivables S
                 ApplicationArea = All;
                 ToolTip = 'Specifies Commercial Invoice Nos.';
             }
-             field("Customer Complaint Report No."; Rec."Customer Complaint Report No.")
+            field("Customer Complaint Report No."; Rec."Customer Complaint Report No.")
             {
                 ApplicationArea = All;
                 ToolTip = 'Specifies Customer Complaint Report No.';
             }
         }
-            modify("VAT Bus. Posting Gr. (Price)")
+        addafter("Default Cancel Reason Code")
+        {
+            field("Terms and Conditions Sales"; Rec."Terms and Conditions Sales")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Specifies Terms and Conditions Sales';
+                ExtendedDatatype = URL;
+            }
+        }
+        modify("VAT Bus. Posting Gr. (Price)")
         {
             Caption = 'SST Bus. Posting Gr. (Price)';
         }
-         modify("Allow VAT Difference")
+        modify("Allow VAT Difference")
         {
             Caption = 'Allow SST Difference';
         }
-         modify("Calc. Inv. Disc. per VAT ID")
+        modify("Calc. Inv. Disc. per VAT ID")
         {
             Caption = 'Calc. Inv. Disc. per SST ID';
         }

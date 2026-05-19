@@ -244,7 +244,7 @@ report 50205 SalesCreditNoteReport
                 {
 
                 }
-                column(UnitPrice; Unit_Price)
+                column(UnitPrice; "Price Per Piece")
                 {
 
                 }
@@ -298,6 +298,7 @@ report 50205 SalesCreditNoteReport
                     Packsize: Record "Pack Size";
                     SalesPrice: Record "Sales Price";
                 begin
+                    Clear(Unit_Price);
                     ShowAmount := "Line Amount";
                     SalesTax := "Amount Including VAT" - "Amount";
                     TotalShowAmount := ShowAmount + TotalShowAmount + SalesTax;
