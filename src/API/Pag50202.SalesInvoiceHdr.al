@@ -10,14 +10,14 @@ page 50202 "Sales Invoice Hdr"
     Editable = false;
     PageType = API;
     SourceTable = "Sales Invoice Header";
-    
+
     layout
     {
         area(Content)
         {
             repeater(General)
             {
-                
+
                 field(invoiceno; Rec."No.")
                 {
                     Caption = 'Invoice No.';
@@ -53,6 +53,10 @@ page 50202 "Sales Invoice Hdr"
                 field(saleorderNo; Rec."Order No.")
                 {
                     Caption = 'Sale Order No.';
+                }
+                field(currencyCode; Rec."Currency Code")
+                {
+                    Caption = 'Currency Code';
                 }
             }
         }

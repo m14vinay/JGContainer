@@ -593,6 +593,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Sales Invoice Hdr - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3127140753 - Control 1808640270 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Currency Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Sales Invoice Hdr - Control currencyCode - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3127140753 - Control 4022440299 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1078,6 +1083,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Sales Prices Cust - Action CancelApprovalRequest - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3554044321 - Action 1062429549 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Add a file as an attachment. You can attach images as well as documents.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Sales Prices Cust - Action DocAttach - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3554044321 - Action 1062429549 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Attachments</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Sales Prices Cust - Action DocAttach - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3554044321 - Action 383335270 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Send the approval request.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1102,6 +1117,11 @@
           <source>salesShipmentHeader</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Sales Shipment Header - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3118382297 - Control 1808640270 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Currency Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Sales Shipment Header - Control currencyCode - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3118382297 - Control 272791941 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Lorry No.</source>
@@ -3274,9 +3294,19 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Price Ext - NamedType Text003</note>
         </trans-unit>
         <trans-unit id="PageExtension 1263304200 - Action 2131274615 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 352260082">
-          <source>Release</source>
+          <source>Reopen</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Price Ext - Action Action12 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1263304200 - Action 1062429549 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 352260082">
+          <source>Add a file as an attachment. You can attach images as well as documents.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Price Ext - Action DocAttach - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1263304200 - Action 1062429549 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 352260082">
+          <source>Attachments</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Price Ext - Action DocAttach - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1263304200 - Action 2071937805 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 352260082">
           <source>Reopen to change it after it has been approved.</source>
@@ -3912,6 +3942,51 @@
           <source>SST Registration No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Ext - Change VAT Registration No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1431060665 - Field 4198939294 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 282138634">
+          <source>Currency Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Document Attachment Ext - Field Currency Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1431060665 - Field 568743302 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 282138634">
+          <source>Item No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Document Attachment Ext - Field Item No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1431060665 - Field 67248183 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 282138634">
+          <source>Minimum Quantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Document Attachment Ext - Field Minimum Quantity - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1431060665 - Field 2897660500 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 282138634">
+          <source>Record ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Document Attachment Ext - Field Record ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1431060665 - Field 231418639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 282138634">
+          <source>Sales Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Document Attachment Ext - Field Sales Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1431060665 - Field 1406664548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 282138634">
+          <source>Sales Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Document Attachment Ext - Field Sales Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1431060665 - Field 460889064 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 282138634">
+          <source>Starting Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Document Attachment Ext - Field Starting Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1431060665 - Field 2385270358 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 282138634">
+          <source>Unit of Measure Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Document Attachment Ext - Field Unit of Measure Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1431060665 - Field 3450651614 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 282138634">
+          <source>Variant Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Document Attachment Ext - Field Variant Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1180040559 - Field 3983113909 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1180040559">
           <source>IPG to Split Item &amp; Variant</source>

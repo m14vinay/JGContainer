@@ -86,7 +86,6 @@ codeunit 50202 "Sales Custom WorkFlow Mgt"
                     Variant := SalesPricePending;
                     IsHandled := true;
                 end;
-
         end;
     end;
 
@@ -106,16 +105,6 @@ codeunit 50202 "Sales Custom WorkFlow Mgt"
                 begin
                     RecRef.SetTable(SalesPricePopulate);
                     ApprovalEntryArgument."Document No." := SalesPricePopulate."Item No.";
-                    /*If SalesPricePopulate."Sales Type" = SalesPricePopulate."Sales Type"::Customer then
-                       SalesType := 'Customer';
-                        If SalesPricePopulate."Sales Type" = SalesPricePopulate."Sales Type"::"All Customers" then
-                       SalesType := 'All Customers';
-                        If SalesPricePopulate."Sales Type" = SalesPricePopulate."Sales Type"::Campaign then
-                       SalesType := 'Campaign';
-                        If SalesPricePopulate."Sales Type" = SalesPricePopulate."Sales Type"::"Customer Price Group" then
-                       SalesType := 'Customer Price Group';*/
-
-
                 end;
         end;
     end;

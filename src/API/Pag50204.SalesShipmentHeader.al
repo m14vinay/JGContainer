@@ -33,6 +33,10 @@ page 50204 "Sales Shipment Header"
                 {
                     Caption = 'Order Date';
                 }
+                field(currencyCode; Rec."Currency Code")
+                {
+                    Caption = 'Currency Code';
+                }
             }
         }
     }

@@ -25,14 +25,31 @@ pageextension 50202 "Sales Price Ext" extends "Sales Prices"
         {
             Caption = 'Price Includes SST';
         }
+         /*addafter(Control1905767507)
+         {
+             part("Attached Documents List"; "Doc. Attachment List Factbox")
+             {
+                 ApplicationArea = RecordLinks;
+                 Caption = 'Documents';
+             }
+         }*/
+         modify(Control1905767507){
+            Visible = True;
+         }
+         modify(Control1900383207){
+            Visible = false;
+         }
+
     }
+    
+
     actions
     {
         addafter(CopyPrices)
         {
             group(Action12)
             {
-                Caption = 'Release';
+                Caption = 'Reopen';
                 Image = ReleaseDoc;
                 action(Reopen)
                 {
@@ -50,6 +67,24 @@ pageextension 50202 "Sales Price Ext" extends "Sales Prices"
                         ReleasePurchDoc: Codeunit "Release Purchase Document";
                     begin
                         PerformManualReopen(Rec);
+                    end;
+                }
+                action(DocAttach)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Attachments';
+                    Image = Attach;
+                    ToolTip = 'Add a file as an attachment. You can attach images as well as documents.';
+                    Promoted = True;
+                    PromotedCategory = Category6;
+                    trigger OnAction()
+                    var
+                        DocumentAttachmentDetails: Page "Document Attachment Details";
+                        RecRef: RecordRef;
+                    begin
+                        RecRef.GetTable(Rec);
+                        DocumentAttachmentDetails.OpenForRecRef(RecRef);
+                        DocumentAttachmentDetails.RunModal();
                     end;
                 }
             }
@@ -193,6 +228,7 @@ pageextension 50202 "Sales Price Ext" extends "Sales Prices"
 
         }
     }
+
     procedure PerformManualReopen(var SalesPrice: Record "Sales Price")
     begin
         if SalesPrice."Approval Status" = SalesPrice."Approval Status"::"Pending Approval" then
@@ -221,7 +257,9 @@ pageextension 50202 "Sales Price Ext" extends "Sales Prices"
         OpenApprovalEntriesExist := ApprovalsMgmt.HasOpenApprovalEntries(Rec.RecordId());
         CanCancelApprovalForRecord := ApprovalsMgmt.CanCancelApprovalForRecord(Rec.RecordId());
         WorkflowWebhookMgt.GetCanRequestAndCanCancel(Rec.RecordId(), CanRequestApprovalForFlow, CanCancelApprovalForFlow);
+
     end;
+
 
     trigger OnOpenPage()
     var

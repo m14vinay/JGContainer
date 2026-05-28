@@ -189,6 +189,154 @@ codeunit 50201 "Event Subscriber"
             ItemJournalLine."Quantity Pieces" := -SalesLine."Qty. to Ship" * PackSize."Qty Per Pack"
     end;
 
+    [EventSubscriber(ObjectType::Page, Page::"Doc. Attachment List Factbox", 'OnAfterGetRecRefFail', '', false, false)]
+    local procedure OnBeforeDrillDown(var Sender: Page "Doc. Attachment List Factbox"; DocumentAttachment: Record "Document Attachment"; var RecRef: RecordRef);
+    var
+        SalesPrice: Record "Sales Price";
+    begin
+        case DocumentAttachment."Table ID" of
+            DATABASE::"Sales Price":
+                begin
+                    RecRef.Open(DATABASE::"Sales Price");
+                    SalesPrice.Reset();
+                    SalesPrice.SetRange("Item No.", DocumentAttachment."No.");
+                    SalesPrice.SetRange("Sales Type", DocumentAttachment."Sales Type");
+                    SalesPrice.SetRange("Starting Date", DocumentAttachment."Starting Date");
+                    SalesPrice.SetRange("Variant Code", DocumentAttachment."Variant Code");
+                    SalesPrice.SetRange("Unit of Measure Code", DocumentAttachment."Unit of Measure Code");
+                    SalesPrice.SetRange("Sales Code", DocumentAttachment."Sales Code");
+                    SalesPrice.SetRange("Currency Code", DocumentAttachment."Currency Code");
+                    If SalesPrice.FindFirst() then
+                        //if SalesPrice.Get(DocumentAttachment."No.",DocumentAttachment."Sales Type",DocumentAttachment."Sales Code",DocumentAttachment."Starting Date",DocumentAttachment."Currency Code",DocumentAttachment."Variant Code",DocumentAttachment."Unit of Measure Code") then
+                        RecRef.GetTable(SalesPrice);
+                end;
+        end;
+    end;
+
+    [EventSubscriber(ObjectType::Page, Page::"Document Attachment Details", 'OnAfterOpenForRecRef', '', false, false)]
+    local procedure OnAfterOpenForRecRef(var DocumentAttachment: Record "Document Attachment"; var RecRef: RecordRef; var FlowFieldsEditable: Boolean);
+    var
+        FieldRef: FieldRef;
+        RecNo: Code[20];
+        LineNo: Integer;
+        StartDate: Date;
+        SalesType: Enum "Sales Price Type";
+        MinQty: Decimal;
+    begin
+        case RecRef.Number of
+            DATABASE::"Sales Price":
+                begin
+                    FieldRef := RecRef.Field(1);
+                    RecNo := FieldRef.Value;
+                    DocumentAttachment.SetRange("No.", RecNo);
+                    FieldRef := RecRef.Field(13);
+                    SalesType := FieldRef.Value;
+                    DocumentAttachment.SetRange("Sales Type", SalesType);
+                    FieldRef := RecRef.Field(3);
+                    RecNo := FieldRef.Value;
+                    DocumentAttachment.SetRange("Currency Code", RecNo);
+                    FieldRef := RecRef.Field(4);
+                    StartDate := FieldRef.Value;
+                    DocumentAttachment.SetRange("Starting Date", StartDate);
+                    FieldRef := RecRef.Field(13);
+                    SalesType := FieldRef.Value;
+                    DocumentAttachment.SetRange("Sales Type", SalesType);
+                    FieldRef := RecRef.Field(5400);
+                    RecNo := FieldRef.Value;
+                    DocumentAttachment.SetRange("Unit of Measure Code", RecNo);
+                    FieldRef := RecRef.Field(5700);
+                    RecNo := FieldRef.Value;
+                    DocumentAttachment.SetRange("Variant Code", RecNo);
+                    FieldRef := RecRef.Field(14);
+                    MinQty := FieldRef.Value;
+                    DocumentAttachment.SetRange("Minimum Quantity", MinQty);
+                   // FlowFieldsEditable := false;
+                end;
+        end;
+    end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Document Attachment", 'OnAfterInitFieldsFromRecRef', '', false, false)]
+    local procedure OnAfterInitFieldsFromRecRef(var DocumentAttachment: Record "Document Attachment"; var RecRef: RecordRef)
+    var
+        FieldRef: FieldRef;
+        RecNo: Code[20];
+        StartDate: Date;
+        SalesType: Enum "Sales Price Type";
+        LineNo: Integer;
+        MinQty: Decimal;
+    begin
+        case RecRef.Number of
+            DATABASE::"Sales Price":
+                begin
+                    FieldRef := RecRef.Field(1);
+                    RecNo := FieldRef.Value;
+                    DocumentAttachment.Validate("No.", RecNo);
+                    FieldRef := RecRef.Field(13);
+                    SalesType := FieldRef.Value;
+                    DocumentAttachment.Validate("Sales Type", SalesType);
+                    FieldRef := RecRef.Field(3);
+                    RecNo := FieldRef.Value;
+                    DocumentAttachment.Validate("Currency Code", RecNo);
+                    FieldRef := RecRef.Field(4);
+                    StartDate := FieldRef.Value;
+                    DocumentAttachment.Validate("Starting Date", StartDate);
+                    FieldRef := RecRef.Field(13);
+                    SalesType := FieldRef.Value;
+                    DocumentAttachment.Validate("Sales Type", SalesType);
+                    FieldRef := RecRef.Field(5400);
+                    RecNo := FieldRef.Value;
+                    DocumentAttachment.Validate("Unit of Measure Code", RecNo);
+                    FieldRef := RecRef.Field(5700);
+                    RecNo := FieldRef.Value;
+                    DocumentAttachment.Validate("Variant Code", RecNo);
+                    FieldRef := RecRef.Field(14);
+                    MinQty := FieldRef.Value;
+                    DocumentAttachment.Validate("Minimum Quantity", MinQty);
+
+                end;
+        end;
+    end;
+
+    /*[EventSubscriber(ObjectType::Table, Database::"Document Attachment", 'OnBeforeInsertAttachment', '', false, false)]
+    local procedure OnBeforeInsertAttachment(
+    var DocumentAttachment: Record "Document Attachment";
+    RecRef: RecordRef)
+    var
+        SalesPrice: Record "Sales Price";
+    begin
+        if RecRef.Number = Database::"Sales Price" then begin
+            RecRef.SetTable(SalesPrice);
+
+            DocumentAttachment."Sales Type" := SalesPrice."Sales Type";
+            DocumentAttachment."Sales Code" := SalesPrice."Sales Code";
+            DocumentAttachment."Starting Date" := SalesPrice."Starting Date";
+            DocumentAttachment."Currency Code" := SalesPrice."Currency Code";
+            DocumentAttachment."Variant Code" := SalesPrice."Variant Code";
+            DocumentAttachment."Unit of Measure Code" := SalesPrice."Unit of Measure Code";
+            DocumentAttachment."Minimum Quantity" := SalesPrice."Minimum Quantity";
+        end;
+    end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Document Attachment",'OnAfterInitFieldsFromRecRef', '', false, false)]
+    local procedure UpdateDoc(var DocumentAttachment: Record "Document Attachment";RecRef: RecordRef)
+    var
+        SalesPrice: Record "Sales Price";
+    begin
+        if RecRef.Number <> Database::"Sales Price" then
+            exit;
+
+        RecRef.SetTable(SalesPrice);
+
+        DocumentAttachment."No." := SalesPrice."Item No.";
+        DocumentAttachment."Sales Type" := SalesPrice."Sales Type";
+        DocumentAttachment."Sales Code" := SalesPrice."Sales Code";
+        DocumentAttachment."Starting Date" := SalesPrice."Starting Date";
+        DocumentAttachment."Currency Code" := SalesPrice."Currency Code";
+        DocumentAttachment."Variant Code" := SalesPrice."Variant Code";
+        DocumentAttachment."Unit of Measure Code" := SalesPrice."Unit of Measure Code";
+        DocumentAttachment."Minimum Quantity" := SalesPrice."Minimum Quantity";
+    end;*/
+
 
 
 }
