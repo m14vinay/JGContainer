@@ -6,7 +6,6 @@ codeunit 50201 "Event Subscriber"
         PostedWhseShipmentHeader."Vehicle No." := WarehouseShipmentHeader."Vehicle No.";
     end;
 
-
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Record Restriction Mgt.", 'OnRestrictRecordUsageOnBeforeSetFilter', '', false, false)]
     local procedure BlockRecordsOnRecordRestrict(var RestrictedRecord: Record "Restricted Record"; RecordReference: RecordRef)
     var
@@ -47,6 +46,47 @@ codeunit 50201 "Event Subscriber"
     begin
         If ShipToAddress.Get(Rec."Sell-to Customer No.", Rec."Ship-to Code") then
             Rec."Delivery Area" := ShipToAddress."Delivery Area";
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnAfterPostSalesDoc', '', false, false)]
+    local procedure UpdateClosed(var SalesHeader: Record "Sales Header"; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line"; SalesShptHdrNo: Code[20]; RetRcpHdrNo: Code[20]; SalesInvHdrNo: Code[20]; SalesCrMemoHdrNo: Code[20]; CommitIsSuppressed: Boolean; InvtPickPutaway: Boolean; var CustLedgerEntry: Record "Cust. Ledger Entry"; WhseShip: Boolean; WhseReceiv: Boolean; PreviewMode: Boolean)
+    var
+        SalesL: Record "Sales Line";
+        FullyInvoice: Boolean;
+        SalesHdr: Record "Sales Header";
+        CRLine: Record "Sales Cr.Memo Line";
+        CNInvoiceQty: Decimal;
+        ReturnOrderNo: Code[20];
+        Returorder: Boolean;
+    begin
+        If SalesCrMemoHdrNo <> '' then begin
+            Clear(ReturnOrderNo);
+            CRLine.Reset();
+            CRLine.SetRange("Document No.", SalesCrMemoHdrNo);
+            CRLine.Setfilter("Order No.", '<>%1', '');
+            If CRLine.FindFirst then
+                ReturnOrderNo := CRLine."Order No.";
+
+            If ReturnOrderNo <> '' then begin
+                FullyInvoice := True;
+                SalesL.Reset();
+                SalesL.SetRange("Document Type", SalesL."Document Type"::"Return Order");
+                SalesL.SetRange("Document No.", ReturnOrderNo);
+                If SalesL.FindSet() then begin
+                    repeat
+                        Returorder := True;
+                        If SalesL.Quantity <> SalesL."Quantity Invoiced" then
+                            FullyInvoice := false;
+                    until SalesL.Next() = 0;
+                    If FullyInvoice and Returorder then
+                        If SalesHdr.Get(SalesHdr."Document Type"::"Return Order", ReturnOrderNo) then begin
+                            SalesHdr.Closed := True;
+                            SalesHdr.Modify();
+                        end;
+                end;
+            End;
+        END;
+
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterValidateEvent', 'SST Exemption Registration No.', false, false)]
@@ -170,10 +210,6 @@ codeunit 50201 "Event Subscriber"
         ItemLedgerEntry."Net Weight" := ItemJournalLine."Net Weight";
     end;
 
-
-
-
-
     [EventSubscriber(ObjectType::Codeunit, CodeUnit::"Sales-Post", 'OnPostItemJnlLineOnAfterPrepareItemJnlLine', '', false, false)]
     local procedure OnPostItemJnlLineOnAfterPrepareItemJnlLine(var ItemJournalLine: Record "Item Journal Line"; SalesLine: Record "Sales Line")
     var
@@ -250,7 +286,7 @@ codeunit 50201 "Event Subscriber"
                     FieldRef := RecRef.Field(14);
                     MinQty := FieldRef.Value;
                     DocumentAttachment.SetRange("Minimum Quantity", MinQty);
-                   // FlowFieldsEditable := false;
+                    // FlowFieldsEditable := false;
                 end;
         end;
     end;
@@ -296,47 +332,4 @@ codeunit 50201 "Event Subscriber"
                 end;
         end;
     end;
-
-    /*[EventSubscriber(ObjectType::Table, Database::"Document Attachment", 'OnBeforeInsertAttachment', '', false, false)]
-    local procedure OnBeforeInsertAttachment(
-    var DocumentAttachment: Record "Document Attachment";
-    RecRef: RecordRef)
-    var
-        SalesPrice: Record "Sales Price";
-    begin
-        if RecRef.Number = Database::"Sales Price" then begin
-            RecRef.SetTable(SalesPrice);
-
-            DocumentAttachment."Sales Type" := SalesPrice."Sales Type";
-            DocumentAttachment."Sales Code" := SalesPrice."Sales Code";
-            DocumentAttachment."Starting Date" := SalesPrice."Starting Date";
-            DocumentAttachment."Currency Code" := SalesPrice."Currency Code";
-            DocumentAttachment."Variant Code" := SalesPrice."Variant Code";
-            DocumentAttachment."Unit of Measure Code" := SalesPrice."Unit of Measure Code";
-            DocumentAttachment."Minimum Quantity" := SalesPrice."Minimum Quantity";
-        end;
-    end;
-
-    [EventSubscriber(ObjectType::Table, Database::"Document Attachment",'OnAfterInitFieldsFromRecRef', '', false, false)]
-    local procedure UpdateDoc(var DocumentAttachment: Record "Document Attachment";RecRef: RecordRef)
-    var
-        SalesPrice: Record "Sales Price";
-    begin
-        if RecRef.Number <> Database::"Sales Price" then
-            exit;
-
-        RecRef.SetTable(SalesPrice);
-
-        DocumentAttachment."No." := SalesPrice."Item No.";
-        DocumentAttachment."Sales Type" := SalesPrice."Sales Type";
-        DocumentAttachment."Sales Code" := SalesPrice."Sales Code";
-        DocumentAttachment."Starting Date" := SalesPrice."Starting Date";
-        DocumentAttachment."Currency Code" := SalesPrice."Currency Code";
-        DocumentAttachment."Variant Code" := SalesPrice."Variant Code";
-        DocumentAttachment."Unit of Measure Code" := SalesPrice."Unit of Measure Code";
-        DocumentAttachment."Minimum Quantity" := SalesPrice."Minimum Quantity";
-    end;*/
-
-
-
 }

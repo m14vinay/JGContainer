@@ -1,5 +1,11 @@
 pageextension 50204 "Approval Entry Ext" extends "Requests to Approve"
 {
+    layout{
+        modify(Amount)
+        {
+            Visible = true;
+        }
+    }
     actions
     {
         modify(Approve)

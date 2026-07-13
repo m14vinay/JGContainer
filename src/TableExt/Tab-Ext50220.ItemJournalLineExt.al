@@ -23,6 +23,11 @@ tableextension 50220 "Item Journal Line Ext" extends "Item Journal Line"
             DecimalPlaces = 0 : 2;
             BlankZero = True;
         }
+         field(50204; "Approval Status"; Enum "Approval Status Item Jnrl Line")
+        {
+            Caption = 'Approval Status';
+            DataClassification = CustomerContent;
+        }
         modify(Quantity)
         {
             trigger OnAfterValidate()

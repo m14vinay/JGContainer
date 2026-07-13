@@ -308,18 +308,15 @@ report 50206 SalesDebitNoteReport
                         end else
                             Clear(Variant_Code);
                     end;
-
                     IsCharge := false;
                     LineNo := LineNo + 1;
                     SubTotal += "Sales Invoice Line"."Amount";
                 end;
-
                 trigger OnPreDataItem()
                 begin
                     "Sales Invoice Line".SetFilter(Type, '<>%1', "Sales Invoice Line".Type::" ");
                 end;
             }
-
             trigger OnAfterGetRecord()
             var
                 CountryRegion: Record "Country/Region";

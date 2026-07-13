@@ -13,11 +13,25 @@ codeunit 50202 "Sales Custom WorkFlow Mgt"
 
         if ShowNothingToApproveError then
             Error(NothingToApproveErr);
-
-
-
         exit(true);
     end;
+
+    procedure CheckJournalApprovalPossible(var RecRef: RecordRef): Boolean
+    var
+        IsHandled: Boolean;
+        ShowNothingToApproveError: Boolean;
+        ItemJournalLine: Record "Item Journal Line";
+    begin
+        if not WorkflowManagement.CanExecuteWorkflow(RecRef, GetWorkFlowCode(RUNWORKFLOWONSENDFORAPPROVALCODE, RecRef)) then
+            Error(NoWorkflowEnabledErr);
+        RecRef.SetTable(ItemJournalLine);
+        ShowNothingToApproveError := ItemJournalLine.IsEmpty;
+
+        if ShowNothingToApproveError then
+            Error(NothingToApproveErr);
+        exit(true);
+    end;
+
 
     [IntegrationEvent(false, false)]
     procedure OnSendSalesPriceForApproval(var RecRef: RecordRef)
@@ -26,6 +40,16 @@ codeunit 50202 "Sales Custom WorkFlow Mgt"
 
     [IntegrationEvent(false, false)]
     procedure OnCancelSalesPriceForApproval(var RecRef: RecordRef)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    procedure OnSendItemRevaluationForApproval(var RecRef: RecordRef)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    procedure OnCancelItemRevaluationForApproval(var RecRef: RecordRef)
     begin
     end;
 
@@ -43,6 +67,20 @@ codeunit 50202 "Sales Custom WorkFlow Mgt"
         GetWorkFlowEventDesc(WorkflowCancelApprovalEventDesc, RecRef), 0, false);
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Workflow Event Handling", OnAddWorkflowEventsToLibrary, '', false, false)]
+    local procedure OnAddItemRevaluationWorkflowEventsToLibrary()
+    var
+        RecRef: RecordRef;
+        WorkFlowEventHandling: Codeunit "Workflow Event Handling";
+    begin
+        Clear(WorkFlowEventHandling);
+        RecRef.Open(Database::"Item Journal Line");
+        WorkFlowEventHandling.AddEventToLibrary(GetWorkFlowCode(RUNWORKFLOWONSENDFORAPPROVALCODE, RecRef), Database::"Item Journal Line",
+        GetWorkFlowEventDesc(WorkflowSendApprovalEventDesc, RecRef), 0, false);
+        WorkFlowEventHandling.AddEventToLibrary(GetWorkFlowCode(RUNWORKFLOWONCANCELFORAPPROVALCODE, RecRef), Database::"Item Journal Line",
+        GetWorkFlowEventDesc(WorkflowCancelApprovalEventDesc, RecRef), 0, false);
+    end;
+
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales Custom WorkFlow Mgt", OnSendSalesPriceForApproval, '', false, false)]
     local procedure RunWorkFlowOnSendPriceCompForApproval(var RecRef: RecordRef)
@@ -56,10 +94,27 @@ codeunit 50202 "Sales Custom WorkFlow Mgt"
         WorkflowManagement.HandleEvent(GetWorkFlowCode(RUNWORKFLOWONCANCELFORAPPROVALCODE, RecRef), RecRef);
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales Custom WorkFlow Mgt", OnSendItemRevaluationForApproval, '', false, false)]
+    local procedure RunWorkFlowOnSendItemJnrForApproval(var RecRef: RecordRef)
+    var
+        BatchProcessingMgt: Codeunit "Batch Processing Mgt.";
+        NoOfSelected: Integer;
+        NoOfSkipped: Integer;
+    begin
+        WorkflowManagement.HandleEvent(GetWorkFlowCode(RUNWORKFLOWONSENDFORAPPROVALCODE, RecRef), RecRef);
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales Custom WorkFlow Mgt", OnCancelItemRevaluationForApproval, '', false, false)]
+    local procedure RunWorkFlowOnCancelItemJnorlForApproval(var RecRef: RecordRef)
+    begin
+        WorkflowManagement.HandleEvent(GetWorkFlowCode(RUNWORKFLOWONCANCELFORAPPROVALCODE, RecRef), RecRef);
+    end;
+
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Workflow Response Handling", OnOpenDocument, '', false, false)]
     local procedure OnOpenDocument(RecRef: RecordRef; var Handled: Boolean)
     var
         SalesPrice: Record "Sales Price";
+        ItmJnlrCanc: Record "Item Journal Line";
     begin
         case RecRef.Number of
             Database::"Sales Price":
@@ -70,12 +125,22 @@ codeunit 50202 "Sales Custom WorkFlow Mgt"
                     Handled := true;
                 end;
         end;
+        case RecRef.Number of
+            Database::"Item Journal Line":
+                begin
+                    RecRef.SetTable(ItmJnlrCanc);
+                    ItmJnlrCanc.Validate("Approval Status", ItmJnlrCanc."Approval Status"::Cancelled);
+                    ItmJnlrCanc.Modify(true);
+                    Handled := true;
+                end;
+        end;
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Approvals Mgmt.", OnSetStatusToPendingApproval, '', false, false)]
     local procedure OnSetStatusToPendingApproval(RecRef: RecordRef; var Variant: Variant; var IsHandled: Boolean)
     var
         SalesPricePending: Record "Sales Price";
+        ItemJnrlLinePending: Record "Item Journal Line";
     begin
         case RecRef.Number of
             Database::"Sales Price":
@@ -84,6 +149,16 @@ codeunit 50202 "Sales Custom WorkFlow Mgt"
                     SalesPricePending.Validate("Approval Status", SalesPricePending."Approval Status"::"Pending Approval");
                     SalesPricePending.Modify(true);
                     Variant := SalesPricePending;
+                    IsHandled := true;
+                end;
+        end;
+        case RecRef.Number of
+            Database::"Item Journal Line":
+                begin
+                    RecRef.SetTable(ItemJnrlLinePending);
+                    ItemJnrlLinePending.Validate("Approval Status", ItemJnrlLinePending."Approval Status"::"Pending Approval");
+                    ItemJnrlLinePending.Modify(true);
+                    Variant := ItemJnrlLinePending;
                     IsHandled := true;
                 end;
         end;
@@ -98,6 +173,7 @@ codeunit 50202 "Sales Custom WorkFlow Mgt"
         SalesPriceRecordID: RecordId;
         DateText: Text;
         SalesTypeNew: Text;
+        ItemJnrl: Record "Item Journal Line";
     begin
         Clear(SalesType);
         case RecRef.Number of
@@ -105,6 +181,17 @@ codeunit 50202 "Sales Custom WorkFlow Mgt"
                 begin
                     RecRef.SetTable(SalesPricePopulate);
                     ApprovalEntryArgument."Document No." := SalesPricePopulate."Item No.";
+                    ApprovalEntryArgument.Amount := SalesPricePopulate."Unit Price";
+                    ApprovalEntryArgument."Currency Code" := SalesPricePopulate."Currency Code";
+                end;
+        end;
+        case RecRef.Number of
+            Database::"Item Journal Line":
+                begin
+                    RecRef.SetTable(ItemJnrl);
+                    ApprovalEntryArgument."Document No." := ItemJnrl."Document No.";
+                    ApprovalEntryArgument.Amount := ItemJnrl.Amount;
+                  //  ApprovalEntryArgument."Currency Code" := ItemJnrl."Currency Code";
                 end;
         end;
     end;
@@ -113,7 +200,7 @@ codeunit 50202 "Sales Custom WorkFlow Mgt"
     local procedure OnRejectApprovalRequest(var ApprovalEntry: Record "Approval Entry")
     var
         SalesPriceRej: Record "Sales Price";
-
+        ItenJnrlRej: Record "Item Journal Line";
     begin
         case ApprovalEntry."Table ID" of
             Database::"Sales Price":
@@ -123,12 +210,21 @@ codeunit 50202 "Sales Custom WorkFlow Mgt"
                     SalesPriceRej.Modify(True);
                 end;
         end;
+        case ApprovalEntry."Table ID" of
+            Database::"Item Journal Line":
+                begin
+                    if ItenJnrlRej.Get(ApprovalEntry."Record ID to Approve") then
+                        ItenJnrlRej.Validate("Approval Status", ItenJnrlRej."Approval Status"::Rejected);
+                    ItenJnrlRej.Modify(True);
+                end;
+        end;
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Workflow Response Handling", OnReleaseDocument, '', false, false)]
     local procedure OnReleaseDocument(RecRef: RecordRef; Var Handled: Boolean)
     var
         SalesPriceRelease: Record "Sales Price";
+        ItmJnrlAprv: Record "Item Journal Line";
     begin
         case RecRef.Number of
             DataBase::"Sales Price":
@@ -136,6 +232,16 @@ codeunit 50202 "Sales Custom WorkFlow Mgt"
                     RecRef.SetTable(SalesPriceRelease);
                     SalesPriceRelease.Validate("Approval Status", SalesPriceRelease."Approval Status"::Released);
                     SalesPriceRelease.Modify(True);
+                    Handled := true;
+                end;
+        end;
+
+        case RecRef.Number of
+            DataBase::"Item Journal Line":
+                begin
+                    RecRef.SetTable(ItmJnrlAprv);
+                    ItmJnrlAprv.Validate("Approval Status", ItmJnrlAprv."Approval Status"::Approved);
+                    ItmJnrlAprv.Modify(True);
                     Handled := true;
                 end;
         end;
@@ -161,7 +267,7 @@ codeunit 50202 "Sales Custom WorkFlow Mgt"
             SequenceNo := ApprovalEntry."Sequence No.";
             RecordID := ApprovalEntry."Record ID to Approve";
         end;
-        //If SalesHeader.Get(ApprovalEntry."Record ID to Approve") then begin
+
         ApprovalEntry.Reset();
         ApprovalEntry.SetRange("Sequence No.", SequenceNo);
         ApprovalEntry.SetRange("Record ID to Approve", RecordID);
@@ -174,7 +280,7 @@ codeunit 50202 "Sales Custom WorkFlow Mgt"
     var
         SalesHeader: Record "Sales Header";
         SequenceNo: Integer;
-        RecordIDtoApprove : RecordId;
+        RecordIDtoApprove: RecordId;
     begin
         SequenceNo := ApprovalEntry."Sequence No.";
         RecordIDtoApprove := ApprovalEntry."Record ID to Approve";
@@ -209,5 +315,16 @@ codeunit 50202 "Sales Custom WorkFlow Mgt"
         exit(StrSubstNo(WorkflowEventDesc, RecRef.Name))
     end;
 
-
+    [EventSubscriber(ObjectType::Table, Database::"Item Journal Line", 'OnAfterDeleteEvent', '', false, false)]
+    procedure DeleteApprovalEntriesAfterDeleteJournalLine(var Rec: Record "Item Journal Line"; RunTrigger: Boolean)
+    var
+        ApprovalEntry: Record "Approval Entry";
+        ApprovalCommentLine: Record "Approval Comment Line";
+        ApprovalMgt : Codeunit "Approvals Mgmt.";
+    begin
+        if not Rec.IsTemporary then begin
+           ApprovalMgt.DeleteApprovalEntries(Rec.RecordId);
+           ApprovalMgt.DeleteApprovalCommentLines(Rec.RecordId);
+        End;
+    end;
 }

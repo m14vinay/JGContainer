@@ -30,31 +30,34 @@ tableextension 50207 "Sales Header Ext" extends "Sales Header"
             trigger OnValidate()
             var
                 SSTExemptionDetails: Record "SST Exemption Details";
-                Customer : Record Customer;
-                SalesLine : Record "Sales Line";
+                Customer: Record Customer;
+                SalesLine: Record "Sales Line";
             begin
-                SSTExemptionDetails.Reset();
-                SSTExemptionDetails.SetRange("Customer No.", "Sell-to Customer No.");
-                SSTExemptionDetails.SetRange("SST Exemption Registration No.", Rec."SST Exemption Registration No.");
-                SSTExemptionDetails.SetFilter("Effective Date", '<=%1', Rec."Document Date");
-                SSTExemptionDetails.SetFilter("Expiry Date", '=%1|>=%2', 0D, Rec."Document Date");
-                If SSTExemptionDetails.FindFirst() then
-                    Rec.Validate("VAT Bus. Posting Group", SSTExemptionDetails."SST Business Posting Group")
-                Else
-                    Error('It is not within the date range/Expired');
-                If Customer.Get("Sell-to Customer No.") then begin
-                    SalesLine.Reset();
-                    SalesLine.SetRange("Document Type",SalesLine."Document Type"::Order);
-                    SalesLine.SetRange("Document No.","No.");
-                    SalesLine.SetRange(Type,SalesLine.Type::Item);
-                    SalesLine.SetRange("ADY E-INV Classification Code",'');
-                    if SalesLine.FindSet() then 
-                        repeat
-                            SalesLine.Validate("ADY E-INV Classification Code", Customer."ADY E-INV Classification Code");
-                            SalesLine.Modify();
-                        until SalesLine.Next() = 0;
+                If "SST Exemption Registration No." <> '' then begin
+                    SSTExemptionDetails.Reset();
+                    SSTExemptionDetails.SetRange("Customer No.", "Sell-to Customer No.");
+                    SSTExemptionDetails.SetRange("SST Exemption Registration No.", Rec."SST Exemption Registration No.");
+                    SSTExemptionDetails.SetFilter("Effective Date", '<=%1', Rec."Document Date");
+                    SSTExemptionDetails.SetFilter("Expiry Date", '=%1|>=%2', 0D, Rec."Document Date");
+                    If SSTExemptionDetails.FindFirst() then
+                        Rec.Validate("VAT Bus. Posting Group", SSTExemptionDetails."SST Business Posting Group")
+                    Else
+                        Error('It is not within the date range/Expired');
+
+                    If Customer.Get("Sell-to Customer No.") then begin
+                        SalesLine.Reset();
+                        SalesLine.SetRange("Document Type", SalesLine."Document Type"::Order);
+                        SalesLine.SetRange("Document No.", "No.");
+                        SalesLine.SetRange(Type, SalesLine.Type::Item);
+                        SalesLine.SetRange("ADY E-INV Classification Code", '');
+                        if SalesLine.FindSet() then
+                            repeat
+                                SalesLine.Validate("ADY E-INV Classification Code", Customer."ADY E-INV Classification Code");
+                                SalesLine.Modify();
+                            until SalesLine.Next() = 0;
+                    end;
                 end;
-                  
+
             end;
         }
         field(50207; "Delivery Area"; Code[20])
@@ -93,6 +96,11 @@ tableextension 50207 "Sales Header Ext" extends "Sales Header"
         {
             DataClassification = CustomerContent;
             Caption = 'Mother Vessel';
+        }
+        field(50215; "Closed"; Boolean)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Closed';
         }
         modify("VAT Base Discount %")
         {
@@ -134,9 +142,9 @@ tableextension 50207 "Sales Header Ext" extends "Sales Header"
     trigger OnBeforeDelete()
     begin
         If Rec."Document Type" = Rec."Document Type"::Order then
-           Rec.TestField("Reason Code");
-       
+            Rec.TestField("Reason Code");
+
     end;
-    
+
 
 }

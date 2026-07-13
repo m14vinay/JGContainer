@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-05-19T05:54:46.8560696Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-06-08T09:30:16.2126032Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -1221,7 +1221,6 @@
                                               <PaddingRight>2pt</PaddingRight>
                                             </Style>
                                           </Textbox>
-                                          <rd:Selected>true</rd:Selected>
                                         </CellContents>
                                       </TablixCell>
                                     </TablixCells>
@@ -4745,7 +4744,7 @@
           <Style />
         </PageHeader>
         <PageFooter>
-          <Height>1.25357cm</Height>
+          <Height>2.47065cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -4766,7 +4765,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox10</rd:DefaultName>
-              <Top>0.28539cm</Top>
+              <Top>1.80939cm</Top>
               <Left>0.09717cm</Left>
               <Height>14.70831pt</Height>
               <Width>13.58015cm</Width>
@@ -4796,7 +4795,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox4</rd:DefaultName>
-              <Top>0.28539cm</Top>
+              <Top>1.80939cm</Top>
               <Left>13.67732cm</Left>
               <Height>14.70831pt</Height>
               <Width>5.15273cm</Width>
@@ -4806,6 +4805,127 @@
                   <Style>None</Style>
                 </Border>
                 <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox21">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Constant">Standard terms and conditions of sales are applied.</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox21</rd:DefaultName>
+              <Top>0.15673cm</Top>
+              <Left>0.07353cm</Left>
+              <Height>0.40597cm</Height>
+              <Width>10.22774cm</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingRight>2pt</PaddingRight>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox23">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Constant">To view Terms and conditions of sales visit :</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox21</rd:DefaultName>
+              <Top>0.59995cm</Top>
+              <Left>0.07353cm</Left>
+              <Height>0.40597cm</Height>
+              <Width>7.00544cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox24">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Fields!TermsandConditions.Value</Value>
+                      <Style>
+                        <Color>SlateBlue</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox21</rd:DefaultName>
+              <ActionInfo>
+                <Actions>
+                  <Action>
+                    <Hyperlink>=Fields!TermsandConditions.Value</Hyperlink>
+                  </Action>
+                </Actions>
+              </ActionInfo>
+              <Top>0.59995cm</Top>
+              <Left>7.08603cm</Left>
+              <Height>0.40597cm</Height>
+              <Width>6.85357cm</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <BackgroundColor>White</BackgroundColor>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+              </Style>
+            </Textbox>
+            <Textbox Name="GTINQRCode">
+              <CanShrink>true</CanShrink>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Fields!TermsQRCode.Value</Value>
+                      <Style>
+                        <FontFamily>IDAutomation2D</FontFamily>
+                        <FontSize>4pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>GTINQRCode</rd:DefaultName>
+              <Top>0cm</Top>
+              <Left>14.05987cm</Left>
+              <Height>1.69112cm</Height>
+              <Width>2.00689cm</Width>
+              <ZIndex>5</ZIndex>
+              <Style>
+                <Border />
+                <VerticalAlign>Bottom</VerticalAlign>
               </Style>
             </Textbox>
           </ReportItems>
@@ -5183,6 +5303,12 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         </Field>
         <Field Name="Amount_Including_VATFormat">
           <DataField>Amount_Including_VATFormat</DataField>
+        </Field>
+        <Field Name="TermsandConditions">
+          <DataField>TermsandConditions</DataField>
+        </Field>
+        <Field Name="TermsQRCode">
+          <DataField>TermsQRCode</DataField>
         </Field>
         <Field Name="Type">
           <DataField>Type</DataField>

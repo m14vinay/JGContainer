@@ -6,7 +6,7 @@ report 50200 CommercialInvoiceReport
     ApplicationArea = Suite;
     UsageCategory = Documents;
     WordMergeDataItem = "Sales Header";
-
+    EnableHyperlinks = True;
     dataset
     {
         dataitem("Sales Header"; "Sales Header")
@@ -255,7 +255,9 @@ report 50200 CommercialInvoiceReport
             }
             column(EffectiveDate; Format(EffectiveDate, 0, '<day,2>.<month,2>.<year4>')) { }
             column(Currency_Code; Currency_Code) { }
-            column(Amount_Including_VAT;"Amount Including VAT"){}
+            column(Amount_Including_VAT; "Amount Including VAT") { }
+            column(TermsandConditions; SalesReceivablesSetup."Terms and Conditions Sales") { }
+            column(TermsQRCode; TermsQRCode) { }
             dataitem("Sales Line"; "Sales Line")
             {
                 DataItemLink = "Document No." = field("No.");
@@ -479,6 +481,13 @@ report 50200 CommercialInvoiceReport
                 SSTExemption.SetRange("SST Exemption Registration No.", "SST Exemption Registration No.");
                 If SSTExemption.FindFirst() then
                     EffectiveDate := SSTExemption."Effective Date";
+
+                BarcodeFontProvider := Enum::"Barcode Font Provider"::IDAutomation1D;
+                BarcodeFontProvider2D := Enum::"Barcode Font Provider 2D"::IDAutomation2D;
+                TermsString := Format(SalesReceivablesSetup."Terms and Conditions Sales");
+                TermsString := DelChr(TermsString, '=', ' ');
+                BarcodeFontProvider.ValidateInput(TermsString, BarcodeSymbology);
+                TermsQRCode := BarcodeFontProvider2D.EncodeFont(TermsString, BarcodeSymbology2D);
             end;
 
             trigger OnPreDataItem()
@@ -521,6 +530,9 @@ report 50200 CommercialInvoiceReport
         CompanyInfo.SetAutoCalcFields("Company Logo 1");
         CompanyInfo.SetAutoCalcFields("Company Logo 2");
         CompanyInfo.SetAutoCalcFields("Company Logo 3");
+        BarcodeSymbology := Enum::"Barcode Symbology"::Code128;
+        BarcodeSymbology2D := Enum::"Barcode Symbology 2D"::"QR-Code";
+        SalesReceivablesSetup.Get();
     end;
 
     var
@@ -561,7 +573,13 @@ report 50200 CommercialInvoiceReport
         CodeCheck: Codeunit 50200;
         CompanyInfo: Record "Company Information";
         GLSetup: Record "General Ledger Setup";
-
+        SalesReceivablesSetup: Record "Sales & Receivables Setup";
+        TermsString: Text[150];
+        TermsQRCode: Text[500];
+        BarcodeSymbology: Enum "Barcode Symbology";
+        BarcodeSymbology2D: Enum "Barcode Symbology 2D";
+        BarcodeFontProvider: Interface "Barcode Font Provider";
+        BarcodeFontProvider2D: Interface "Barcode Font Provider 2D";
         Currency: Record Currency;
         FormatAddr: Codeunit "Format Address";
         ADYEInvCompMSICSetup: Record "ADY e-Inv Comp MSIC Setup";

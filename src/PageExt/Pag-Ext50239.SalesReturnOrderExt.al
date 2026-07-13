@@ -9,6 +9,11 @@ pageextension 50239 "Sales Return Order Ext" extends "Sales Return Order"
                 ToolTip = 'Specifies vehicle no';
                 ApplicationArea = All;
             }
+             field(Closed; Rec.Closed)
+            {
+                ToolTip = 'Closed';
+                ApplicationArea = All;
+            }
         }
          addafter("Package Tracking No.")
         {
