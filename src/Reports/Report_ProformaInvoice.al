@@ -231,7 +231,7 @@ report 50209 ProfomaInvoice
             {
             }
             column(Currency_Code; Currency_Code) { }
-            column(Amount_Including_VAT;"Amount Including VAT"){}
+            column(Amount_Including_VAT; "Amount Including VAT") { }
             dataitem("Sales Line"; "Sales Line")
             {
                 DataItemLink = "Document No." = field("No.");
@@ -438,6 +438,8 @@ report 50209 ProfomaInvoice
                 SSTExemption.Reset();
                 SSTExemption.SetRange("Customer No.", "Sell-to Customer No.");
                 SSTExemption.SetRange("SST Exemption Registration No.", "SST Exemption Registration No.");
+                SSTExemption.SetFilter("Effective Date", '<=%1', "Document Date");
+                SSTExemption.SetFilter("Expiry Date", '=%1|>=%2', 0D, "Document Date");
                 If SSTExemption.FindFirst() then
                     EffectiveDate := SSTExemption."Effective Date";
             end;

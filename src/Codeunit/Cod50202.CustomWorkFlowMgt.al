@@ -191,7 +191,7 @@ codeunit 50202 "Sales Custom WorkFlow Mgt"
                     RecRef.SetTable(ItemJnrl);
                     ApprovalEntryArgument."Document No." := ItemJnrl."Document No.";
                     ApprovalEntryArgument.Amount := ItemJnrl.Amount;
-                  //  ApprovalEntryArgument."Currency Code" := ItemJnrl."Currency Code";
+                    //  ApprovalEntryArgument."Currency Code" := ItemJnrl."Currency Code";
                 end;
         end;
     end;
@@ -320,11 +320,60 @@ codeunit 50202 "Sales Custom WorkFlow Mgt"
     var
         ApprovalEntry: Record "Approval Entry";
         ApprovalCommentLine: Record "Approval Comment Line";
-        ApprovalMgt : Codeunit "Approvals Mgmt.";
+        ApprovalMgt: Codeunit "Approvals Mgmt.";
     begin
         if not Rec.IsTemporary then begin
-           ApprovalMgt.DeleteApprovalEntries(Rec.RecordId);
-           ApprovalMgt.DeleteApprovalCommentLines(Rec.RecordId);
+            ApprovalMgt.DeleteApprovalEntries(Rec.RecordId);
+            ApprovalMgt.DeleteApprovalCommentLines(Rec.RecordId);
         End;
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Get Shipment", 'OnAfterInsertLines', '', false, false)]
+    local procedure OnAfterInsertLines(var SalesHeader: Record "Sales Header"; var SalesLine: Record "Sales Line")
+    var
+        SalesInvLine: Record "Sales Line";
+    begin
+
+        If SalesHeader."Document Type" = SalesHeader."Document Type"::Invoice then begin
+            SalesInvLine.Reset();
+            SalesInvLine.SetRange("Document Type", SalesInvLine."Document Type"::Invoice);
+            SalesInvLine.SetRange("Document No.", SalesHeader."No.");
+            SalesInvLine.SetFilter("Shipment No.", '<>%1', '');
+            If SalesInvLine.FindFirst() then begin
+                SalesHeader."Posting Description" := CopyStr(SalesInvLine.Description + ' ' + SalesInvLine."Shipment No.", 1, 100);
+                SalesHeader.Modify();
+            end;
+        end;
+    end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Quantity', false, false)]
+    local procedure UpdatePostingDesc(var Rec: Record "Sales Line"; var xRec: Record "Sales Line"; CurrFieldNo: Integer)
+    var
+        SalesHeader: Record "Sales Header";
+        SalesLine: Record "Sales Line";
+        ChargeItem: Record "Item Charge";
+        ItemRec: Record Item;
+        GLAccount: Record "G/L Account";
+        PostingDesc: Text[100];
+        Count: Integer;
+    begin
+        If Rec."Document Type" = Rec."Document Type"::Invoice then begin
+            Clear(PostingDesc);
+            SalesLine.Reset();
+            SalesLine.SetRange("Document Type", SalesLine."Document Type"::Invoice);
+            SalesLine.SetRange("Document No.", Rec."Document No.");
+            //PurchLine.SetFilter(Description, '<>%1', '');
+            SalesLine.SetFilter(Type, '<>%1', SalesLine.Type::" ");
+            Count := SalesLine.Count;
+            If SalesLine.FindFirst() then begin
+                If SalesLine."Shipment No." = '' then
+                    If SalesHeader.Get(SalesHeader."Document Type"::Invoice, Rec."Document No.") then
+                        if Rec."Line No." = SalesLine."Line No." then begin
+                            SalesHeader."Posting Description" := Rec.Description;
+                            SalesHeader.Modify();
+                        end;
+            end;
+
+        end;
     end;
 }

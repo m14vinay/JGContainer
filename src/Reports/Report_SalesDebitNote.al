@@ -233,11 +233,11 @@ report 50206 SalesDebitNoteReport
                 {
 
                 }
-                column(Noofplts; "Quantity")
+                column(Noofplts; GetPltsValue())
                 {
 
                 }
-                column(UnitPrice; "Price Per Piece")
+                column(UnitPrice; GetUnitPriceValue())
                 {
 
                 }
@@ -280,12 +280,16 @@ report 50206 SalesDebitNoteReport
                 {
 
                 }
+                column(QuantityPcsValue; GetQuantityPcsValue())
+                {
+                }
                 trigger OnAfterGetRecord()
                 var
                     ItemCard: Record Item;
                     Packsize: Record "Pack Size";
                     SalesPrice: Record "Sales Price";
                 begin
+                    clear(Packing);
                     ShowAmount := "Line Amount";
                     SalesTax := "Amount Including VAT" - "Amount";
                     TotalShowAmount := ShowAmount + TotalShowAmount + SalesTax;
@@ -312,6 +316,7 @@ report 50206 SalesDebitNoteReport
                     LineNo := LineNo + 1;
                     SubTotal += "Sales Invoice Line"."Amount";
                 end;
+
                 trigger OnPreDataItem()
                 begin
                     "Sales Invoice Line".SetFilter(Type, '<>%1', "Sales Invoice Line".Type::" ");
@@ -449,6 +454,8 @@ report 50206 SalesDebitNoteReport
                 SSTExemption.Reset();
                 SSTExemption.SetRange("Customer No.", "Sell-to Customer No.");
                 SSTExemption.SetRange("SST Exemption Registration No.", "SST Exemption Registration No.");
+                SSTExemption.SetFilter("Effective Date", '<=%1', "Document Date");
+                SSTExemption.SetFilter("Expiry Date", '=%1|>=%2', 0D, "Document Date");
                 If SSTExemption.FindFirst() then
                     EffectiveDate := SSTExemption."Effective Date";
             end;
@@ -592,5 +599,30 @@ report 50206 SalesDebitNoteReport
             exit(true);
         exit(false);
     end;
+
+    local procedure GetQuantityPcsValue(): Text
+    begin
+        If "Sales Invoice Line"."Unit of Measure Code" = 'PLT' then
+            exit(Format(Packing * "Sales Invoice Line"."Quantity"))
+
+        else
+            exit(Format("Sales Invoice Line"."Quantity"))
+    end;
+
+    local procedure GetPltsValue(): Text
+    begin
+        If "Sales Invoice Line"."Unit of Measure Code" = 'PLT' then
+            exit(Format("Sales Invoice Line"."Quantity"))
+
+    end;
+
+    local procedure GetUnitPriceValue(): Decimal
+    begin
+        if ("Sales Invoice Line"."Unit of Measure Code" = 'PLT') then
+            exit("Sales Invoice Line"."Price Per Piece")
+        else
+            exit("Sales Invoice Line"."Unit Price");
+    end;
+
 
 }

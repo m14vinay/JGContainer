@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-02-24T07:58:01.7081321Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-07-27T07:23:22.1268492Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -855,6 +855,7 @@
                                               <PaddingBottom>2pt</PaddingBottom>
                                             </Style>
                                           </Textbox>
+                                          <rd:Selected>true</rd:Selected>
                                         </CellContents>
                                       </TablixCell>
                                       <TablixCell>
@@ -866,7 +867,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!Noofplts.Value*Fields!Packing.Value</Value>
+                                                    <Value>=Fields!QuantityPcsValue.Value</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <Format>#,0.00;(#,0.00)</Format>
@@ -4707,9 +4708,6 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         <Field Name="Noofplts">
           <DataField>Noofplts</DataField>
         </Field>
-        <Field Name="NoofpltsFormat">
-          <DataField>NoofpltsFormat</DataField>
-        </Field>
         <Field Name="UnitPrice">
           <DataField>UnitPrice</DataField>
         </Field>
@@ -4760,6 +4758,9 @@ ohhNZOMp2UrqoTkcOfwTbdukMGnSBG697Q7sNttxtvIJHQ+333oTz/Xsdn5Z1OWU8zeZMWsOb703jJ5P
         </Field>
         <Field Name="LineNo">
           <DataField>LineNo</DataField>
+        </Field>
+        <Field Name="QuantityPcsValue">
+          <DataField>QuantityPcsValue</DataField>
         </Field>
       </Fields>
       <Query>

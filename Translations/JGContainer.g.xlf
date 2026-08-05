@@ -979,29 +979,9 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Sales Prices Cust - Control SystemId - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3554044321 - Action 2131274615 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Home</source>
+          <source>Release</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Sales Prices Cust - Action Action12 - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3554044321 - Action 3860314472 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>View approval requests</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Sales Prices Cust - Action Approvals - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 3554044321 - Action 3860314472 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Approvals</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Sales Prices Cust - Action Approvals - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3554044321 - Action 1062429549 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Add a file as an attachment. You can attach images as well as documents.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Sales Prices Cust - Action DocAttach - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 3554044321 - Action 1062429549 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Attachments</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Sales Prices Cust - Action DocAttach - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3554044321 - Action 2071937805 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reopen to change it after it has been approved.</source>
@@ -1083,6 +1063,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Sales Prices Cust - Action Request Approval - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3554044321 - Action 3860314472 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View approval requests</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Sales Prices Cust - Action Approvals - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3554044321 - Action 3860314472 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Approvals</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Sales Prices Cust - Action Approvals - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3554044321 - Action 858296388 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cancel the approval request.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1092,6 +1082,16 @@
           <source>Cancel Approval Re&amp;quest</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Sales Prices Cust - Action CancelApprovalRequest - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3554044321 - Action 1062429549 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Add a file as an attachment. You can attach images as well as documents.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Sales Prices Cust - Action DocAttach - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3554044321 - Action 1062429549 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Attachments</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Sales Prices Cust - Action DocAttach - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3554044321 - Action 383335270 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Send the approval request.</source>
@@ -3564,19 +3564,9 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Price Ext - NamedType Text003</note>
         </trans-unit>
         <trans-unit id="PageExtension 1263304200 - Action 2131274615 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 352260082">
-          <source>Home</source>
+          <source>Reopen</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Price Ext - Action Action12 - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 1263304200 - Action 3860314472 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 352260082">
-          <source>View approval requests</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Price Ext - Action Approvals - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 1263304200 - Action 3860314472 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 352260082">
-          <source>Approvals</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Price Ext - Action Approvals - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1263304200 - Action 1062429549 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 352260082">
           <source>Add a file as an attachment. You can attach images as well as documents.</source>
@@ -3598,10 +3588,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Price Ext - Action Reopen - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 1263304200 - Action 455362834 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 352260082">
-          <source>Approve</source>
+        <trans-unit id="PageExtension 1263304200 - Action 227370865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 352260082">
+          <source>Approval</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Price Ext - Action Approve1 - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Price Ext - Action Approval - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1263304200 - Action 803889193 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 352260082">
           <source>Approve the requested changes.</source>
@@ -3647,6 +3637,16 @@
           <source>Request Approval</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Price Ext - Action Request Approval - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1263304200 - Action 3860314472 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 352260082">
+          <source>View approval requests</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Price Ext - Action Approvals - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1263304200 - Action 3860314472 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 352260082">
+          <source>Approvals</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Price Ext - Action Approvals - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1263304200 - Action 858296388 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 352260082">
           <source>Cancel the approval request.</source>

@@ -220,9 +220,9 @@ codeunit 50201 "Event Subscriber"
         If Item.Get(SalesLine."No.") then
             If PackSize.Get(Item."Pack Size") then
                 If SalesLine."Document Type" = SalesLine."Document Type"::"Return Order" then
-                    ItemJournalLine."Quantity Pieces" := SalesLine."Return Qty. to Receive" * PackSize."Qty Per Pack";
+                    ItemJournalLine."Quantity Pieces" := PackSize."Qty Per Pack";
         If (SalesLine."Document Type" = SalesLine."Document Type"::Order) and (SalesLine."Qty. to Ship" <> 0) then
-            ItemJournalLine."Quantity Pieces" := -SalesLine."Qty. to Ship" * PackSize."Qty Per Pack"
+            ItemJournalLine."Quantity Pieces" :=  PackSize."Qty Per Pack"
     end;
 
     [EventSubscriber(ObjectType::Page, Page::"Doc. Attachment List Factbox", 'OnAfterGetRecRefFail', '', false, false)]

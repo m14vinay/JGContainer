@@ -138,6 +138,16 @@ tableextension 50207 "Sales Header Ext" extends "Sales Header"
         {
             Caption = 'Prices Including SST';
         }
+        modify("Payment Terms Code")
+        {
+            trigger OnAfterValidate()
+            var
+                PaymentTerm: Record "Payment Terms";
+            begin
+                If PaymentTerm.Get("Payment Terms Code") then
+                    PaymentTerm.TestField("Due Date Calculation");
+            end;
+        }
     }
     trigger OnBeforeDelete()
     begin

@@ -238,7 +238,11 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
                 Item: Record Item;
                 DimensionSetEntryApproSend: Record "Dimension Set Entry";
                 JobExistApproSend: Boolean;
+                InsuffInv: Boolean;
+                ItemNO: Code[20];
             begin
+                InsuffInv := False;
+                Clear(ItemNO);
                 Rec.TestField("ADY E-INV MSIC CODE");
                 Rec.TestField("ADY E-INV SST Reg No.");
                 Rec.TestField("ADY E-INV State Code");
@@ -253,6 +257,7 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
                 Rec.TestField("ADY E-INV ID No.");
                 Rec.TestField("ADY E-INV Rcpt Email");
                 Rec.Testfield("ADY E-INV Rcpt Phone No.");
+                Rec.TestField("VAT Bus. Posting Group");
                 JobExistApproSend := False;
                 DimensionSetEntryApproSend.Reset();
                 DimensionSetEntryApproSend.SetRange("Dimension Set ID", Rec."Dimension Set ID");
@@ -292,7 +297,41 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
                                         JobExistApproSend := True;
                                 until DimensionSetEntryApproSend.Next() = 0;
                             If not (JobExistApproSend) then
-                                Error('Please update dimension Item Category for item %1',SalesLine."No.");
+                                Error('Please update dimension Item Category for item %1', SalesLine."No.");
+                        end;
+                        Item.CalcFields(Inventory);
+                        Item.CalcFields("Qty. on Sales Order");
+                        If Item.Inventory - Item."Qty. on Sales Order" < 0 then
+                            if not Confirm('Item %1 has insufficient inventory. Do you want to continue sending approval request?', true, SalesLine."No.") then
+                                Error('Approval request not sent due to insufficient inventory for item %1', SalesLine."No.");
+
+                    until SalesLine.Next() = 0;
+
+
+            end;
+        }
+        modify(Approve)
+        {
+            trigger OnBeforeAction()
+            var
+                SalesLine: Record "Sales Line";
+                Item: Record Item;
+                InsuffInv: Boolean;
+                ItemNO: Code[20];
+            begin
+                SalesLine.Reset();
+                SalesLine.SetRange("Document Type", SalesLine."Document Type"::Order);
+                SalesLine.SetRange("Document No.", Rec."No.");
+                SalesLine.SetRange(Type, SalesLine.Type::Item);
+                //SalesLine.SetRange("ADY E-INV Classification Code", '');
+                If SalesLine.FindSet() then
+                    repeat
+                        If Item.Get(SalesLine."No.") then;
+                        Item.CalcFields(Inventory);
+                        Item.CalcFields("Qty. on Sales Order");
+                        If Item.Inventory - Item."Qty. on Sales Order" < 0 then begin
+                            if not Confirm('Item %1 has insufficient inventory. Do you want to continue sending approval request?', true, SalesLine."No.") then
+                                Error('Not approved due to insufficient inventory for item %1', SalesLine."No.");
                         end;
                     until SalesLine.Next() = 0;
             end;

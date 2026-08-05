@@ -25,7 +25,6 @@ pageextension 50346 "Item Revaluation Jnrl" extends "Revaluation Journal"
                 ToolTip = 'Specifies the approval status for general journal line.';
             }
         }
-
     }
     actions
     {

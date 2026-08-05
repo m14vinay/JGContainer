@@ -215,7 +215,8 @@ report 50207 "Sales Invoice"
             column(GTINQRCode; "ADY E-INV QR Code") { }
             column(AmountIncludingVAT; "Amount Including VAT") { }
             column(PrepaymentAmount; -1 * PrepaymentAmount) { }
-            column(TermsandConditions; SalesReceivablesSetup."Terms and Conditions Sales") { 
+            column(TermsandConditions; SalesReceivablesSetup."Terms and Conditions Sales")
+            {
             }
             column(TermsQRCode; TermsQRCode) { }
             dataitem("Sales Invoice Line"; "Sales Invoice Line")
@@ -506,6 +507,8 @@ report 50207 "Sales Invoice"
                 SSTExemption.Reset();
                 SSTExemption.SetRange("Customer No.", "Sell-to Customer No.");
                 SSTExemption.SetRange("SST Exemption Registration No.", "SST Exemption Registration No.");
+                SSTExemption.SetFilter("Effective Date", '<=%1', "Document Date");
+                SSTExemption.SetFilter("Expiry Date", '=%1|>=%2', 0D, "Document Date");
                 If SSTExemption.FindFirst() then
                     EffectiveDate := SSTExemption."Effective Date";
                 PrepaymentAmount := 0;
@@ -651,7 +654,7 @@ report 50207 "Sales Invoice"
         Noofplts: Integer;
         SalesInvoiceLinePrep: Record "Sales Invoice Line";
         PrepaymentAmount: Decimal;
-        SalesReceivablesSetup : Record "Sales & Receivables Setup";
+        SalesReceivablesSetup: Record "Sales & Receivables Setup";
         TermsString: Text[150];
         TermsQRCode: Text[500];
         BarcodeSymbology: Enum "Barcode Symbology";

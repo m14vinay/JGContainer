@@ -20,7 +20,7 @@ tableextension 50206 "Customer Ext" extends Customer
             begin
                 for i := 1 to StrLen("Phone No. 2") do begin
                     c := "Phone No. 2"[i];
-                    if c in ['A' .. 'Z', 'a' .. 'z','*','-','(',')'] then
+                    if c in ['A' .. 'Z', 'a' .. 'z', '*', '-', '(', ')'] then
                         FieldError("Phone No. 2", 'Phone number cannot contain letters or special characters.');
                 end;
             end;
@@ -48,32 +48,41 @@ tableextension 50206 "Customer Ext" extends Customer
         }
         modify("Phone No.")
         {
-             trigger OnBeforeValidate()
+            trigger OnBeforeValidate()
             var
                 c: Char;
                 i: Integer;
             begin
                 for i := 1 to StrLen("Phone No.") do begin
                     c := "Phone No."[i];
-                    if c in ['A' .. 'Z', 'a' .. 'z','*','-','(',')'] then
+                    if c in ['A' .. 'Z', 'a' .. 'z', '*', '-', '(', ')'] then
                         FieldError("Phone No.", 'Phone number cannot contain letters or special characters.');
                 end;
             end;
         }
         modify("Mobile Phone No.")
         {
-             trigger OnBeforeValidate()
+            trigger OnBeforeValidate()
             var
                 c: Char;
                 i: Integer;
             begin
                 for i := 1 to StrLen("Mobile Phone No.") do begin
                     c := "Mobile Phone No."[i];
-                    if c in ['A' .. 'Z', 'a' .. 'z','*','-','(',')'] then
+                    if c in ['A' .. 'Z', 'a' .. 'z', '*', '-', '(', ')'] then
                         FieldError("Mobile Phone No.", 'Phone number cannot contain letters or special characters.');
                 end;
             end;
         }
+        modify("Payment Terms Code")
+        {
+            trigger OnAfterValidate()
+            var
+                PaymentTerm: Record "Payment Terms";
+            begin
+                If PaymentTerm.Get("Payment Terms Code") then
+                    PaymentTerm.TestField("Due Date Calculation");
+            end;
+        }
     }
-
 }

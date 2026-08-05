@@ -268,11 +268,11 @@ report 50205 SalesCreditNoteReport
                 {
 
                 }
-                 column(UOM; "Unit of Measure Code")
+                column(UOM; "Unit of Measure Code")
                 {
 
                 }
-                  column(UnitPricePcs; "Unit Price")
+                column(UnitPricePcs; "Unit Price")
                 {
 
                 }
@@ -463,6 +463,8 @@ report 50205 SalesCreditNoteReport
                 SSTExemption.Reset();
                 SSTExemption.SetRange("Customer No.", "Sell-to Customer No.");
                 SSTExemption.SetRange("SST Exemption Registration No.", "SST Exemption Registration No.");
+                SSTExemption.SetFilter("Effective Date", '<=%1', "Document Date");
+                SSTExemption.SetFilter("Expiry Date", '=%1|>=%2', 0D, "Document Date");
                 If SSTExemption.FindFirst() then
                     EffectiveDate := SSTExemption."Effective Date";
             end;
