@@ -1673,6 +1673,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report DeliveryOrderReport - ReportLayout LayoutLetter - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 2365920972 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fixed Asset Label</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fixed Asset Label - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2365920972 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fixed Asset Label - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2365920972 - Control 3192306909 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies how many copies of the label to print.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fixed Asset Label - Control NoofCopies - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 2365920972 - Control 3192306909 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No. of Copies</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fixed Asset Label - Control NoofCopies - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 3580343970 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Generate Commercial Invoice &amp; Packing List</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2437,6 +2457,11 @@
           <source>SST Registration No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Ext - Change VAT Registration No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1486240493 - Action 1619252947 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3133908286">
+          <source>Print Fixed Asset Label</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Fixed Asset Card Ext - Action PrintFixedAssetLabel - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 3081950932 - Change 1844012642 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4219821699">
           <source>SST Bus. Posting Group</source>
