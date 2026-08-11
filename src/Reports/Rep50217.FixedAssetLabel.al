@@ -43,7 +43,9 @@ report 50217 "Fixed Asset Label"
                 BarcodeString: Text;
                 BarcodeFontProvider: Interface "Barcode Font Provider";
                 BarcodeFontProvider2D: Interface "Barcode Font Provider 2D";
-
+                FASubclass: Record "FA Subclass";
+                FALocation : Record "FA Location";
+                FAEmployee : Record Employee;
             begin
                 // Declare the barcode provider using the barcode provider interface and enum
                 BarcodeFontProvider := Enum::"Barcode Font Provider"::IDAutomation1D;
@@ -54,14 +56,21 @@ report 50217 "Fixed Asset Label"
                 BarcodeString := Format(FixedAsset."No.");
                 If FixedAsset.Description <> '' then
                     BarcodeString += '-' + Format(FixedAsset.Description);
+
                 If FixedAsset."FA Subclass Code" <> '' then
-                    BarcodeString += '-' + Format(FixedAsset."FA Subclass Code");
-                If FixedAsset."Location Code" <> '' then
-                    BarcodeString += '-' + Format(FixedAsset."Location Code");
+                   If FASubclass.Get(FixedAsset."FA Subclass Code") then
+                        BarcodeString += '-' + Format(FASubclass.Name);
+                    
+                If FixedAsset."FA Location Code" <> '' then
+                   If FALocation.Get(FixedAsset."FA Location Code") then
+                        BarcodeString += '-' + Format(FALocation.Name);
+                    
                 If FixedAsset."Responsible Employee" <> '' then
-                    BarcodeString += '-' + Format(FixedAsset."Responsible Employee");
+                     If FAEmployee.Get(FixedAsset."Responsible Employee") then
+                        BarcodeString += '-' + Format(FAEmployee."First Name") + ' ' + Format(FAEmployee."Last Name");
+                    
                 // Validate the input
-                BarcodeString := DelChr(BarcodeString, '=', '()');
+               // BarcodeString := DelChr(BarcodeString, '=', '()');
                 If BarcodeString <> '' then begin
                     BarcodeFontProvider.ValidateInput(BarcodeString, BarcodeSymbology);
                     // Encode the data string to the barcode font
