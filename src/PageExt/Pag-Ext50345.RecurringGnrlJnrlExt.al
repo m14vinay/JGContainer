@@ -14,6 +14,17 @@ pageextension 50345 "Recurring Gnrl Jnrl Ext" extends "Recurring General Journal
                 ToolTip = 'Specifies the approval status for general journal line.';
             }
         }
+        addafter(CurrentJnlBatchName)
+        {
+            field(GenJnlBatchApprovalStatus; GenJnlBatchApprovalStatus)
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = 'Batch Approval Status';
+                Editable = false;
+                Visible = EnabledGenJnlBatchWorkflowsExist;
+                ToolTip = 'Specifies the approval status for general journal batch.';
+            }
+        }
     }
     actions
     {
@@ -247,6 +258,7 @@ pageextension 50345 "Recurring Gnrl Jnrl Ext" extends "Recurring General Journal
         OpenApprovalEntriesOnBatchOrAnyJnlLineExist: Boolean;
         EnabledGenJnlLineWorkflowsExist: Boolean;
         EnabledGenJnlBatchWorkflowsExist: Boolean;
+        GenJnlBatchApprovalStatus: Text[20];
         ShowWorkflowStatusOnBatch: Boolean;
         ShowWorkflowStatusOnLine: Boolean;
         CanCancelApprovalForJnlBatch: Boolean;
@@ -267,20 +279,23 @@ pageextension 50345 "Recurring Gnrl Jnrl Ext" extends "Recurring General Journal
         WorkflowManagement: Codeunit "Workflow Management";
         WorkflowEventHandling: Codeunit "Workflow Event Handling";
     begin
-        // SetControlAppearanceFromBatch();
-        SetControlAppearance();
+         SetControlAppearance();
+         
+       
         if GenJournalBatch.Get(GetJournalTemplateNameFromFilter(), CurrentJnlBatchName) then
             SetApprovalStateForBatch(GenJournalBatch, Rec, OpenApprovalEntriesExistForCurrUser, OpenApprovalEntriesOnJnlBatchExist, OpenApprovalEntriesOnBatchOrAnyJnlLineExist, CanCancelApprovalForJnlBatch, CanRequestFlowApprovalForBatch, CanCancelFlowApprovalForBatch, CanRequestFlowApprovalForBatchAndAllLines, ApprovalEntriesExistSentByCurrentUser, EnabledGenJnlBatchWorkflowsExist, EnabledGenJnlLineWorkflowsExist);
 
-        ApprovalMgmt.GetGenJnlBatchApprovalStatus(Rec, JnlBatchApprovalStatus, EnabledGenJnlBatchWorkflowsExist);
+        ApprovalMgmt.GetGenJnlBatchApprovalStatus(Rec, GenJnlBatchApprovalStatus, EnabledGenJnlBatchWorkflowsExist);
         OpenApprovalEntriesExistForCurrUser := ApprovalsMgmt.HasOpenApprovalEntriesForCurrentUser(Rec.RecordId());
+        if not OpenApprovalEntriesExistForCurrUser then
+            SetControlAppearanceFromBatch();
     end;
 
 
     trigger OnModifyRecord(): Boolean
     begin
 
-        ApprovalMgmt.CleanGenJournalApprovalStatus(Rec, JnlBatchApprovalStatus, GenJnlLineApprovalStatus);
+        ApprovalMgmt.CleanGenJournalApprovalStatus(Rec, GenJnlBatchApprovalStatus, GenJnlLineApprovalStatus);
     end;
 
     trigger OnNewRecord(BelowxRec: Boolean)
@@ -291,6 +306,7 @@ pageextension 50345 "Recurring Gnrl Jnrl Ext" extends "Recurring General Journal
     trigger OnAfterGetRecord()
     begin
         ApprovalMgmt.GetGenJnlLineApprovalStatus(Rec, GenJnlLineApprovalStatus, EnabledGenJnlLineWorkflowsExist);
+        ApprovalMgmt.GetGenJnlBatchApprovalStatus(Rec, GenJnlBatchApprovalStatus, EnabledGenJnlBatchWorkflowsExist);
     end;
 
     trigger OnOpenPage()
@@ -319,15 +335,15 @@ pageextension 50345 "Recurring Gnrl Jnrl Ext" extends "Recurring General Journal
         if not GenJournalBatch.Get(Rec.GetRangeMax("Journal Template Name"), CurrentJnlBatchName) then
             exit;
 
-        //ShowWorkflowStatusOnBatch := CurrPage.WorkflowStatusBatch.PAGE.SetFilterOnWorkflowRecord(GenJournalBatch.RecordId);
+       // ShowWorkflowStatusOnBatch := CurrPage.WorkflowStatusBatch.PAGE.SetFilterOnWorkflowRecord(GenJournalBatch.RecordId);
         SetApprovalStateForBatch(GenJournalBatch, Rec, OpenApprovalEntriesExistForCurrUser, OpenApprovalEntriesOnJnlBatchExist, OpenApprovalEntriesOnBatchOrAnyJnlLineExist, CanCancelApprovalForJnlBatch, CanRequestFlowApprovalForBatch, CanCancelFlowApprovalForBatch, CanRequestFlowApprovalForBatchAndAllLines, ApprovalEntriesExistSentByCurrentUser, EnabledGenJnlBatchWorkflowsExist, EnabledGenJnlLineWorkflowsExist);
-
+       
     end;
 
     local procedure SetControlAppearance()
     begin
         SetApprovalState(Rec.RecordId, OpenApprovalEntriesOnJnlBatchExist, CanRequestFlowApprovalForBatch, CanCancelFlowApprovalForLine, OpenApprovalEntriesExistForCurrUser, OpenApprovalEntriesOnJnlLineExist, OpenApprovalEntriesOnBatchOrCurrJnlLineExist, CanCancelApprovalForJnlLine, CanRequestFlowApprovalForBatchAndCurrentLine);
-        //ShowWorkflowStatusOnLine := CurrPage.WorkflowStatusLine.PAGE.SetFilterOnWorkflowRecord(Rec.RecordId);
+       // ShowWorkflowStatusOnLine := CurrPage.WorkflowStatusLine.PAGE.SetFilterOnWorkflowRecord(Rec.RecordId);
 
     end;
 

@@ -92,22 +92,6 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
             Caption = 'Prices Including SST';
             Visible = false;
         }
-        /* modify("Invoice Details")
-         {
-             Editable = InvoiceDetailsEditable;
-         }
-          modify("Shipping and Billing")
-         {
-             Editable = InvoiceDetailsEditable;
-         }
-         modify(General)
-         {
-             Editable = InvoiceDetailsEditable;
-         }
-           modify(Control1900201301)
-         {
-             Editable = InvoiceDetailsEditable;
-         }*/
     }
     actions
     {
@@ -250,7 +234,7 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
                 Rec.TestField("ADY E-INV Rcpt City");
                 Rec.TestField("ADY E-INV Rcpt Post Code");
                 Rec.TestField("ADY E-INV Rcpt County");
-                Rec.TestField("ADY E-INV Rcpt State Code");
+                Rec."ADY E-INV State Code" := Rec."ADY E-INV Rcpt State Code";
                 Rec.TestField("ADY E-INV TTx Registration No.");
                 Rec.TestField("ADY E-INV TIN No.");
                 Rec.TestField("ADY E-INV ID Type");
@@ -273,6 +257,7 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
                 SalesLine.SetRange("Document Type", SalesLine."Document Type"::Order);
                 SalesLine.SetRange("Document No.", Rec."No.");
                 SalesLine.SetRange(Type, SalesLine.Type::Item);
+                //SalesLine.SetRange("Item Category Code", 'FG');
                 //SalesLine.SetRange("ADY E-INV Classification Code", '');
                 If SalesLine.FindSet() then
                     repeat
@@ -299,12 +284,13 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
                             If not (JobExistApproSend) then
                                 Error('Please update dimension Item Category for item %1', SalesLine."No.");
                         end;
-                        Item.CalcFields(Inventory);
-                        Item.CalcFields("Qty. on Sales Order");
-                        If Item.Inventory - Item."Qty. on Sales Order" < 0 then
-                            if not Confirm('Item %1 has insufficient inventory. Do you want to continue sending approval request?', true, SalesLine."No.") then
-                                Error('Approval request not sent due to insufficient inventory for item %1', SalesLine."No.");
-
+                        If SalesLine."Item Category Code" = 'FG' then begin
+                            Item.CalcFields(Inventory);
+                            Item.CalcFields("Qty. on Sales Order");
+                            If Item.Inventory - Item."Qty. on Sales Order" < 0 then
+                                if not Confirm('Item %1 has insufficient inventory. Do you want to continue sending approval request?', true, SalesLine."No.") then
+                                    Error('Approval request not sent due to insufficient inventory for item %1', SalesLine."No.");
+                        end;
                     until SalesLine.Next() = 0;
 
 
@@ -324,6 +310,7 @@ pageextension 50210 "Sales Order Ext" extends "Sales Order"
                 SalesLine.SetRange("Document No.", Rec."No.");
                 SalesLine.SetRange(Type, SalesLine.Type::Item);
                 //SalesLine.SetRange("ADY E-INV Classification Code", '');
+                SalesLine.SetRange("Item Category Code",'FG');
                 If SalesLine.FindSet() then
                     repeat
                         If Item.Get(SalesLine."No.") then;

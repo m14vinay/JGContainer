@@ -14,6 +14,8 @@ report 50202 "Generate Commercial Invoice"
                 NoSeries: Codeunit "No. Series";
                 SalesRecSetup: Record "Sales & Receivables Setup";
                 SalesOrder: Record "Sales Header";
+                InStream : InStream;
+                OutStream : OutStream;
             begin
                 SalesRecSetup.Get();
                 //SalesInvoice.InitFromSalesHeader(SalesHeader);
@@ -46,6 +48,11 @@ report 50202 "Generate Commercial Invoice"
                 SalesInvoice.Validate("ADY E-INV Incoterms Code", SalesHeader."ADY E-INV Incoterms Code");
                 SalesInvoice.Validate("Location Code", SalesHeader."Location Code");
                 SalesInvoice.Validate("Dimension Set ID", SalesHeader."Dimension Set ID");
+                SalesInvoice.Validate("External Document No.", SalesHeader."External Document No.");
+                SalesHeader.CalcFields("Work Description");
+                SalesHeader."Work Description".CreateInStream(InStream);
+                SalesInvoice."Work Description".CreateOutStream(OutStream);
+                CopyStream(OutStream, InStream);
                 SalesInvoice.Modify();
                 If SalesOrder.Get(SalesOrder."Document Type"::Order, SalesHeader."No.") then begin
                     SalesOrder."Commercial Invoice No" := SalesInvoice."No.";

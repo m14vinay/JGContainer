@@ -3168,6 +3168,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Recurring Gnrl Jnrl Ext - Control GenJnlLineApprovalStatus - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 4144469951 - Control 3513878709 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3301928242">
+          <source>Specifies the approval status for general journal batch.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Recurring Gnrl Jnrl Ext - Control GenJnlBatchApprovalStatus - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 4144469951 - Control 3513878709 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3301928242">
+          <source>Batch Approval Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Recurring Gnrl Jnrl Ext - Control GenJnlBatchApprovalStatus - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1087254316 - Control 3088522385 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 319452331">
           <source>Specifies the Net Weight</source>
           <note from="Developer" annotates="general" priority="2"></note>
